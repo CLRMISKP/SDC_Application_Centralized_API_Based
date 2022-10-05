@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E022551F-2302-475B-9531-5BB65E0A386E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDC_Application</RootNamespace>
+    <AssemblyName>SDC_Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://175.107.63.54/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://175.107.63.54/smbrbk/</InstallUrl>
+    <ProductName>SDC Application</ProductName>
+    <PublisherName>Project Management Unit, Board of Revenue</PublisherName>
+    <SuiteName>Land Record Management Information System</SuiteName>
+    <MinimumRequiredVersion>1.0.0.16</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>252FE7DD1137210158F64708A9E89EDAB33F2342</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SDC_Application_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SDC_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\DPFPDevNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\DPFPEngNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DPFPGuiNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d4f4a0bd9c559145, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\DPFPGuiNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\DPFPShrNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DPFPVerNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\DPFPVerNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Json.NET.Web, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json.NET.Web.1.0.49\lib\portable45-net45+win8+wpa81\Json.NET.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WebCam_Capture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AL\frmAfradRegisterWIthSplitNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmAfradRegisterWIthSplitNames.Designer.cs">
+      <DependentUpon>frmAfradRegisterWIthSplitNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmDocReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmDocReceiving.Designer.cs">
+      <DependentUpon>frmDocReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmFard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFard.Designer.cs">
+      <DependentUpon>frmFard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmFardBioMetricOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFardBioMetricOperation.Designer.cs">
+      <DependentUpon>frmFardBioMetricOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalNew.Designer.cs">
+      <DependentUpon>frmIntiqalNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalOperatorNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalOperatorNote.Designer.cs">
+      <DependentUpon>frmIntiqalOperatorNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalReportOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalReportOptions.Designer.cs">
+      <DependentUpon>frmIntiqalReportOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraFardBadar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraFardBadar.Designer.cs">
+      <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\FardMalkan_LiveDC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FardMalkan_LiveDC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AL\frmFardeBadar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFardeBadar.Designer.cs">
+      <DependentUpon>frmFardeBadar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraGardawri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraGardawri.Designer.cs">
+      <DependentUpon>frmKhassraGardawri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraMinTaqseem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraMinTaqseem.Designer.cs">
+      <DependentUpon>frmKhassraMinTaqseem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMushteryanTaqseem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMushteryanTaqseem.designer.cs">
+      <DependentUpon>frmMushteryanTaqseem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMinhayeIntiqal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMinhayeIntiqal.designer.cs">
+      <DependentUpon>frmIntiqalMinhayeIntiqal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmCalculatorcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmCalculatorcs.designer.cs">
+      <DependentUpon>frmCalculatorcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhanakashtBayanMushteryan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhanakashtBayanMushteryan.Designer.cs">
+      <DependentUpon>frmKhanakashtBayanMushteryan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraSearch.designer.cs">
+      <DependentUpon>frmKhassraSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhatooniMushteryanFromKhatooni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhatooniMushteryanFromKhatooni.designer.cs">
+      <DependentUpon>frmKhatooniMushteryanFromKhatooni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMalkanSearchingMerging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMalkanSearchingMerging.Designer.cs">
+      <DependentUpon>frmMalkanSearchingMerging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMalkiatHistoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMalkiatHistoryDetails.Designer.cs">
+      <DependentUpon>frmMalkiatHistoryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRevenueDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRevenueDashboard.Designer.cs">
+      <DependentUpon>frmRevenueDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRhzAmaladaramad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRhzAmaladaramad.Designer.cs">
+      <DependentUpon>frmRhzAmaladaramad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSearchPersonInAllMouzas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSearchPersonInAllMouzas.Designer.cs">
+      <DependentUpon>frmSearchPersonInAllMouzas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhanakashtMushteryanReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhanakashtMushteryanReport.Designer.cs">
+      <DependentUpon>frmKhanakashtMushteryanReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMisalBadarAttestationByAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMisalBadarAttestationByAdmin.Designer.cs">
+      <DependentUpon>frmMisalBadarAttestationByAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalAttestationByRO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalAttestationByRO.Designer.cs">
+      <DependentUpon>frmIntiqalAttestationByRO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmFardOperatorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFardOperatorReport.Designer.cs">
+      <DependentUpon>frmFardOperatorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\FardMalkan_Katlang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FardMalkan_Katlang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AL\FardMalkan_TakhtBhai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FardMalkan_TakhtBhai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AL\frmSetPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSetPath.designer.cs">
+      <DependentUpon>frmSetPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmUserChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmUserChangePassword.Designer.cs">
+      <DependentUpon>frmUserChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalAmalDaramadByKhata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalAmalDaramadByKhata.Designer.cs">
+      <DependentUpon>frmIntiqalAmalDaramadByKhata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhattaLocking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhattaLocking.Designer.cs">
+      <DependentUpon>frmKhattaLocking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\FardMalkan_Peshawar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FardMalkan_Peshawar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AL\frmGainTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmGainTax.Designer.cs">
+      <DependentUpon>frmGainTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalPendingReasons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalPendingReasons.designer.cs">
+      <DependentUpon>frmIntiqalPendingReasons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMisalMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMisalMain.Designer.cs">
+      <DependentUpon>frmMisalMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSDCReportingMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSDCReportingMain.designer.cs">
+      <DependentUpon>frmSDCReportingMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMalkan_Taqseem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMalkan_Taqseem.designer.cs">
+      <DependentUpon>frmMalkan_Taqseem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\FardMalkan_Mardan_Test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FardMalkan_Mardan_Test.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AL\frmBankRecipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmBankRecipt.Designer.cs">
+      <DependentUpon>frmBankRecipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJatKhtooniMalkiat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJatKhtooniMalkiat.Designer.cs">
+      <DependentUpon>frmIntiqalKhattaJatKhtooniMalkiat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJatKhatooni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJatKhatooni.Designer.cs">
+      <DependentUpon>frmIntiqalKhattaJatKhatooni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\FardMalikan_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\FardMalikan_Report.Designer.cs">
+      <DependentUpon>FardMalikan_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\FardMalkan_Mardan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FardMalkan_Mardan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AL\frmAfradRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmAfradRegister.Designer.cs">
+      <DependentUpon>frmAfradRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmAssignRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmAssignRole.Designer.cs">
+      <DependentUpon>frmAssignRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmDucomentRecievedForScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmDucomentRecievedForScan.Designer.cs">
+      <DependentUpon>frmDucomentRecievedForScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmFingerPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFingerPrint.Designer.cs">
+      <DependentUpon>frmFingerPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmdisApprovedetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmdisApprovedetail.Designer.cs">
+      <DependentUpon>frmdisApprovedetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmDocumentApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmDocumentApproval.Designer.cs">
+      <DependentUpon>frmDocumentApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmGetNoOfPagesForFard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmGetNoOfPagesForFard.Designer.cs">
+      <DependentUpon>frmGetNoOfPagesForFard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmInteqalWitness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmInteqalWitness.Designer.cs">
+      <DependentUpon>frmInteqalWitness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalDucomentCheckList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalDucomentCheckList.Designer.cs">
+      <DependentUpon>frmIntiqalDucomentCheckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalDucomentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalDucomentViewer.Designer.cs">
+      <DependentUpon>frmIntiqalDucomentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMain.Designer.cs">
+      <DependentUpon>frmIntiqalMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMasterDefinitions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMasterDefinitions.Designer.cs">
+      <DependentUpon>frmIntiqalMasterDefinitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalPersonSnaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalPersonSnaps.Designer.cs">
+      <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalRevenueReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalRevenueReports.Designer.cs">
+      <DependentUpon>frmIntiqalRevenueReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalTasdiqDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalTasdiqDate.Designer.cs">
+      <DependentUpon>frmIntiqalTasdiqDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalTaxes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalTaxes.Designer.cs">
+      <DependentUpon>frmIntiqalTaxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraValuation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraValuation.Designer.cs">
+      <DependentUpon>frmKhassraValuation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhataPictureViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhataPictureViewer.designer.cs">
+      <DependentUpon>frmKhataPictureViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJat.Designer.cs">
+      <DependentUpon>frmIntiqalKhattaJat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhattaSearchByPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhattaSearchByPerson.Designer.cs">
+      <DependentUpon>frmKhattaSearchByPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMalkanTaqseem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMalkanTaqseem.designer.cs">
+      <DependentUpon>frmMalkanTaqseem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMozaSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMozaSelection.designer.cs">
+      <DependentUpon>frmMozaSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmNaqalIntiqal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmNaqalIntiqal.Designer.cs">
+      <DependentUpon>frmNaqalIntiqal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmNewKhasrajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmNewKhasrajat.Designer.cs">
+      <DependentUpon>frmNewKhasrajat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmNewKhatooniAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmNewKhatooniAdd.Designer.cs">
+      <DependentUpon>frmNewKhatooniAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmPersonKhattaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmPersonKhattaSearch.designer.cs">
+      <DependentUpon>frmPersonKhattaSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmPictureIndexMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmPictureIndexMain.designer.cs">
+      <DependentUpon>frmPictureIndexMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRecipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRecipt.Designer.cs">
+      <DependentUpon>frmRecipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmReciptPopulate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmReciptPopulate.Designer.cs">
+      <DependentUpon>frmReciptPopulate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRecordVarification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRecordVarification.Designer.cs">
+      <DependentUpon>frmRecordVarification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRHZKhatoonies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRHZKhatoonies.Designer.cs">
+      <DependentUpon>frmRHZKhatoonies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSDCBankreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSDCBankreport.Designer.cs">
+      <DependentUpon>frmSDCBankreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSDCMasterDefinition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSDCMasterDefinition.Designer.cs">
+      <DependentUpon>frmSDCMasterDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSearchinAfradRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSearchinAfradRegister.Designer.cs">
+      <DependentUpon>frmSearchinAfradRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSearchPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSearchPerson.Designer.cs">
+      <DependentUpon>frmSearchPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSearchPersonByMoza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSearchPersonByMoza.Designer.cs">
+      <DependentUpon>frmSearchPersonByMoza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSearchRecipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSearchRecipt.Designer.cs">
+      <DependentUpon>frmSearchRecipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmTaxNotificationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmTaxNotificationDetails.Designer.cs">
+      <DependentUpon>frmTaxNotificationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmTestMalkanSelcIntiqalWirasath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmTestMalkanSelcIntiqalWirasath.designer.cs">
+      <DependentUpon>frmTestMalkanSelcIntiqalWirasath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmTokenPopulate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmTokenPopulate.Designer.cs">
+      <DependentUpon>frmTokenPopulate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmUserLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmUserLogs.Designer.cs">
+      <DependentUpon>frmUserLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmVerificationFinger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmVerificationFinger.Designer.cs">
+      <DependentUpon>frmVerificationFinger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmVoucher.Designer.cs">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmVoucherPopulate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmVoucherPopulate.Designer.cs">
+      <DependentUpon>frmVoucherPopulate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\SDCReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\SDCReports.Designer.cs">
+      <DependentUpon>SDCReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\UserRolDefination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\UserRolDefination.Designer.cs">
+      <DependentUpon>UserRolDefination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL\AreaProfile.cs" />
+    <Compile Include="BL\Bank_SDC_Data.cs" />
+    <Compile Include="BL\DocReceiving.cs" />
+    <Compile Include="BL\Gardawri.cs" />
+    <Compile Include="BL\DocumentApproval.cs" />
+    <Compile Include="BL\EFardeBadar.cs" />
+    <Compile Include="BL\fileIndexing.cs" />
+    <Compile Include="BL\frmcharges.cs" />
+    <Compile Include="BL\frmIntiqalTaxes.cs" />
+    <Compile Include="BL\frmRecipt.cs" />
+    <Compile Include="BL\frmToken.cs" />
+    <Compile Include="BL\frmVoucher.cs" />
+    <Compile Include="BL\Intiqal.cs" />
+    <Compile Include="BL\Khatoonies.cs" />
+    <Compile Include="BL\Malikan_n_Khattajat.cs" />
+    <Compile Include="BL\MasterDefinition.cs" />
+    <Compile Include="BL\Misal.cs" />
+    <Compile Include="BL\Persons.cs" />
+    <Compile Include="BL\Reports.cs" />
+    <Compile Include="BL\ResizeImages.cs" />
+    <Compile Include="BL\Search.cs" />
+    <Compile Include="BL\TaqseemNewKhataJatMin.cs" />
+    <Compile Include="BL\Taxes.cs" />
+    <Compile Include="BL\UserMangement.cs" />
+    <Compile Include="BL\Users.cs" />
+    <Compile Include="Classess\APIClient.cs" />
+    <Compile Include="Classess\AutoComplete.cs" />
+    <Compile Include="Classess\ClearFormsGroupsFields.cs" />
+    <Compile Include="Classess\CommanFunctions.cs" />
+    <Compile Include="Classess\Crypto.cs" />
+    <Compile Include="Classess\datagrid_controls.cs" />
+    <Compile Include="Classess\DPFP.cs" />
+    <Compile Include="Classess\Helper.cs" />
+    <Compile Include="Classess\ImagePathManger.cs" />
+    <Compile Include="Classess\IntiqalFB.cs" />
+    <Compile Include="Classess\KhataNoIndex.cs" />
+    <Compile Include="Classess\KhataPicture.cs" />
+    <Compile Include="Classess\MenuRight.cs" />
+    <Compile Include="Classess\Person.cs" />
+    <Compile Include="Classess\UserRequest.cs" />
+    <Compile Include="Classess\UserRequestLogin.cs" />
+    <Compile Include="Classess\UsersManagments.cs" />
+    <Compile Include="Classess\Validations.cs" />
+    <Compile Include="AL\frmToken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmToken.Designer.cs">
+      <DependentUpon>frmToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classess\WebCam.cs" />
+    <Compile Include="DL\Database.cs" />
+    <Compile Include="DL\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocumentImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocumentImageViewer.Designer.cs">
+      <DependentUpon>frmDocumentImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmNewIntiqalDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmNewIntiqalDoc.Designer.cs">
+      <DependentUpon>frmNewIntiqalDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AL\frmAfradRegisterWIthSplitNames.resx">
+      <DependentUpon>frmAfradRegisterWIthSplitNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmDocReceiving.resx">
+      <DependentUpon>frmDocReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmFard.resx">
+      <DependentUpon>frmFard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmFardBioMetricOperation.resx">
+      <DependentUpon>frmFardBioMetricOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalNew.resx">
+      <DependentUpon>frmIntiqalNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalOperatorNote.resx">
+      <DependentUpon>frmIntiqalOperatorNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalReportOptions.resx">
+      <DependentUpon>frmIntiqalReportOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraFardBadar.resx">
+      <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalkan_LiveDC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FardMalkan_LiveDC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmFardeBadar.resx">
+      <DependentUpon>frmFardeBadar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraGardawri.resx">
+      <DependentUpon>frmKhassraGardawri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraMinTaqseem.resx">
+      <DependentUpon>frmKhassraMinTaqseem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMushteryanTaqseem.resx">
+      <DependentUpon>frmMushteryanTaqseem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalMinhayeIntiqal.resx">
+      <DependentUpon>frmIntiqalMinhayeIntiqal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmCalculatorcs.resx">
+      <DependentUpon>frmCalculatorcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhanakashtBayanMushteryan.resx">
+      <DependentUpon>frmKhanakashtBayanMushteryan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraSearch.resx">
+      <DependentUpon>frmKhassraSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhatooniMushteryanFromKhatooni.resx">
+      <DependentUpon>frmKhatooniMushteryanFromKhatooni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMalkanSearchingMerging.resx">
+      <DependentUpon>frmMalkanSearchingMerging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMalkiatHistoryDetails.resx">
+      <DependentUpon>frmMalkiatHistoryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRevenueDashboard.resx">
+      <DependentUpon>frmRevenueDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRhzAmaladaramad.resx">
+      <DependentUpon>frmRhzAmaladaramad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSearchPersonInAllMouzas.resx">
+      <DependentUpon>frmSearchPersonInAllMouzas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhanakashtMushteryanReport.resx">
+      <DependentUpon>frmKhanakashtMushteryanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMisalBadarAttestationByAdmin.resx">
+      <DependentUpon>frmMisalBadarAttestationByAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalAttestationByRO.resx">
+      <DependentUpon>frmIntiqalAttestationByRO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmFardOperatorReport.resx">
+      <DependentUpon>frmFardOperatorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalkan_Katlang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FardMalkan_Katlang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalkan_TakhtBhai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FardMalkan_TakhtBhai.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSetPath.resx">
+      <DependentUpon>frmSetPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmUserChangePassword.resx">
+      <DependentUpon>frmUserChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalAmalDaramadByKhata.resx">
+      <DependentUpon>frmIntiqalAmalDaramadByKhata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhattaLocking.resx">
+      <DependentUpon>frmKhattaLocking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalkan_Peshawar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FardMalkan_Peshawar.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmGainTax.resx">
+      <DependentUpon>frmGainTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalPendingReasons.resx">
+      <DependentUpon>frmIntiqalPendingReasons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMisalMain.resx">
+      <DependentUpon>frmMisalMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSDCReportingMain.resx">
+      <DependentUpon>frmSDCReportingMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMalkan_Taqseem.resx">
+      <DependentUpon>frmMalkan_Taqseem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalkan_Mardan_Test.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FardMalkan_Mardan_Test.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmBankRecipt.resx">
+      <DependentUpon>frmBankRecipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalKhattaJatKhtooniMalkiat.resx">
+      <DependentUpon>frmIntiqalKhattaJatKhtooniMalkiat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalKhattaJatKhatooni.resx">
+      <DependentUpon>frmIntiqalKhattaJatKhatooni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalikan_Report.resx">
+      <DependentUpon>FardMalikan_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\FardMalkan_Mardan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FardMalkan_Mardan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmAfradRegister.resx">
+      <DependentUpon>frmAfradRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmAssignRole.resx">
+      <DependentUpon>frmAssignRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmDucomentRecievedForScan.resx">
+      <DependentUpon>frmDucomentRecievedForScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmFingerPrint.resx">
+      <DependentUpon>frmFingerPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmdisApprovedetail.resx">
+      <DependentUpon>frmdisApprovedetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmDocumentApproval.resx">
+      <DependentUpon>frmDocumentApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmGetNoOfPagesForFard.resx">
+      <DependentUpon>frmGetNoOfPagesForFard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmInteqalWitness.resx">
+      <DependentUpon>frmInteqalWitness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalDucomentCheckList.resx">
+      <DependentUpon>frmIntiqalDucomentCheckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalDucomentViewer.resx">
+      <DependentUpon>frmIntiqalDucomentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalMain.resx">
+      <DependentUpon>frmIntiqalMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalMasterDefinitions.resx">
+      <DependentUpon>frmIntiqalMasterDefinitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalPersonSnaps.resx">
+      <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalRevenueReports.resx">
+      <DependentUpon>frmIntiqalRevenueReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalTasdiqDate.resx">
+      <DependentUpon>frmIntiqalTasdiqDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalTaxes.resx">
+      <DependentUpon>frmIntiqalTaxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraValuation.resx">
+      <DependentUpon>frmKhassraValuation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhataPictureViewer.resx">
+      <DependentUpon>frmKhataPictureViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalKhattaJat.resx">
+      <DependentUpon>frmIntiqalKhattaJat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhattaSearchByPerson.resx">
+      <DependentUpon>frmKhattaSearchByPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMalkanTaqseem.resx">
+      <DependentUpon>frmMalkanTaqseem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMozaSelection.resx">
+      <DependentUpon>frmMozaSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmNaqalIntiqal.resx">
+      <DependentUpon>frmNaqalIntiqal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmNewIntiqalDoc.resx">
+      <DependentUpon>frmNewIntiqalDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmNewKhasrajat.resx">
+      <DependentUpon>frmNewKhasrajat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmNewKhatooniAdd.resx">
+      <DependentUpon>frmNewKhatooniAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmPersonKhattaSearch.resx">
+      <DependentUpon>frmPersonKhattaSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmPictureIndexMain.resx">
+      <DependentUpon>frmPictureIndexMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRecipt.resx">
+      <DependentUpon>frmRecipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmReciptPopulate.resx">
+      <DependentUpon>frmReciptPopulate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRecordVarification.resx">
+      <DependentUpon>frmRecordVarification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRHZKhatoonies.resx">
+      <DependentUpon>frmRHZKhatoonies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSDCBankreport.resx">
+      <DependentUpon>frmSDCBankreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSDCMasterDefinition.resx">
+      <DependentUpon>frmSDCMasterDefinition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSearchinAfradRegister.resx">
+      <DependentUpon>frmSearchinAfradRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSearchPerson.resx">
+      <DependentUpon>frmSearchPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSearchPersonByMoza.resx">
+      <DependentUpon>frmSearchPersonByMoza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSearchRecipt.resx">
+      <DependentUpon>frmSearchRecipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmTaxNotificationDetails.resx">
+      <DependentUpon>frmTaxNotificationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmTestMalkanSelcIntiqalWirasath.resx">
+      <DependentUpon>frmTestMalkanSelcIntiqalWirasath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmToken.resx">
+      <DependentUpon>frmToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmTokenPopulate.resx">
+      <DependentUpon>frmTokenPopulate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmUserLogs.resx">
+      <DependentUpon>frmUserLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmUserManagement.resx">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmVerificationFinger.resx">
+      <DependentUpon>frmVerificationFinger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmVoucher.resx">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmVoucherPopulate.resx">
+      <DependentUpon>frmVoucherPopulate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\SDCReports.resx">
+      <DependentUpon>SDCReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\UserRolDefination.resx">
+      <DependentUpon>UserRolDefination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocumentImageViewer.resx">
+      <DependentUpon>frmDocumentImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="AL\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SDC_Application_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Minimize Square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Maximize Square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Close_Box_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\imagesCA25P5OY.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\imagesCADG3AXZ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1338735730_search_lense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckAll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckAll2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\SDC_Application.Common.csproj">
+      <Project>{48577B95-D685-4702-BFF6-1B5F84C4B2B6}</Project>
+      <Name>SDC_Application.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlsLib\SDC_Application.ControlsLib.csproj">
+      <Project>{DAD83E46-ADF4-4E3C-BE9B-0EC27713E0BB}</Project>
+      <Name>SDC_Application.ControlsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LandInfo.LanguageManager\SDC_Application.LanguageManager.vbproj">
+      <Project>{B640502A-54BC-458E-8B94-91B15BEC8A79}</Project>
+      <Name>SDC_Application.LanguageManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\headerbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hakoomatkpk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewIcon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go_forward-icon1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openfolderHS.png" />
+    <None Include="Resources\Bank.jpg" />
+    <None Include="Resources\time-machine-icon.png" />
+    <Content Include="ReferenceFiles\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="ReferenceFiles\CrystalDecisions.ReportSource.dll" />
+    <Content Include="ReferenceFiles\CrystalDecisions.Shared.dll" />
+    <Content Include="ReferenceFiles\DPFPDevNET.dll" />
+    <Content Include="ReferenceFiles\DPFPEngNET.dll" />
+    <Content Include="ReferenceFiles\DPFPGuiNET.dll" />
+    <Content Include="ReferenceFiles\DPFPShrNET.dll" />
+    <Content Include="ReferenceFiles\DPFPVerNET.dll" />
+    <Content Include="ReferenceFiles\FlashControlV71.dll" />
+    <Content Include="ReferenceFiles\itextsharp.dll" />
+    <Content Include="ReferenceFiles\itextsharp.xml" />
+    <Content Include="ReferenceFiles\SDC_Application.Common.dll" />
+    <Content Include="ReferenceFiles\SDC_Application.Common.pdb" />
+    <Content Include="ReferenceFiles\SDC_Application.ControlsLib.dll" />
+    <Content Include="ReferenceFiles\SDC_Application.ControlsLib.pdb" />
+    <Content Include="ReferenceFiles\SDC_Application.LanguageManager.dll" />
+    <Content Include="ReferenceFiles\SDC_Application.LanguageManager.pdb" />
+    <Content Include="ReferenceFiles\SDC_Application.LanguageManager.xml" />
+    <Content Include="ReferenceFiles\WebCam_Capture.dll" />
+    <Content Include="SDC_Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="txtChangesTrack.txt" />
+    <None Include="Resources\pdf2.png" />
+    <None Include="Resources\search01.png" />
+    <None Include="Resources\rightimage.png" />
+    <None Include="Resources\TaxRes.png" />
+    <None Include="Resources\user-group-icon.png" />
+    <None Include="Resources\Partition-icon2.png" />
+    <None Include="Resources\partitions-icon.png" />
+    <None Include="Resources\showIcon1.jpg" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\secrecy-icon1.png" />
+    <None Include="Resources\secrecy-icon.png" />
+    <None Include="Resources\Save-icon.png" />
+    <None Include="Resources\Reject.png" />
+    <None Include="Resources\last1.png" />
+    <None Include="Resources\Cancel1.png" />
+    <None Include="Resources\Print31.png" />
+    <None Include="Resources\last.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Print3.png" />
+    <None Include="Resources\Add_Icon.png" />
+    <None Include="Resources\Accept.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\New-icon1.png" />
+    <None Include="Resources\New-icon1_res.png" />
+    <None Include="Resources\Modify.png" />
+    <None Include="Resources\edit_delete1.png" />
+    <None Include="Resources\capture.png" />
+    <None Include="Resources\capture_icon.jpg" />
+    <None Include="Resources\icon-refresh.png" />
+    <None Include="Resources\fingerPrint1.png" />
+    <None Include="Resources\Khyber Pakhtunkhwa %28KPK%29 Government  Logo1.png" />
+    <None Include="Resources\Check_Res.png" />
+    <None Include="Resources\back-icon.png" />
+    <None Include="Resources\Document-icon.png" />
+    <None Include="Resources\General-Ledger.png" />
+    <None Include="Resources\General-Ledger1.png" />
+    <None Include="Resources\Client_list.png" />
+    <None Include="Resources\attachment.jpg" />
+    <None Include="Resources\Attach-44.png" />
+    <None Include="Resources\family_icon2.png" />
+    <None Include="Resources\Documents_List_res.png" />
+    <None Include="Resources\LeftImage.png" />
+    <None Include="Resources\fingrPrint.png" />
+    <None Include="Resources\FingerprintImage.png" />
+    <None Include="Resources\fingerprint2.jpg" />
+    <Content Include="Resources\open-file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DPFPCtlXTypeLibNET">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DPFPCtlXWrapperNET">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DPFPShrXTypeLibNET">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WebForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

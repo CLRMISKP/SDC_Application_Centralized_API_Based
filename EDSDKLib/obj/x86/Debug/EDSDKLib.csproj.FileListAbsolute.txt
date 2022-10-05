@@ -1,0 +1,24 @@
+C:\Users\Shehzad\Downloads\EDSDKLib-1.1.2\EDSDKLib-1.1.2\EDSDKLib\bin\Debug\EDSDKLib.dll
+C:\Users\Shehzad\Downloads\EDSDKLib-1.1.2\EDSDKLib-1.1.2\EDSDKLib\bin\Debug\EDSDKLib.pdb
+C:\Users\Shehzad\Downloads\EDSDKLib-1.1.2\EDSDKLib-1.1.2\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
+C:\Users\Shehzad\Downloads\EDSDKLib-1.1.2\EDSDKLib-1.1.2\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
+C:\Users\Shehzad\Downloads\EDSDKLib-1.1.2\EDSDKLib-1.1.2\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\EDSDKLib\bin\Debug\EDSDKLib.dll
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\EDSDKLib\bin\Debug\EDSDKLib.pdb
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\EDSDKLib\bin\Debug\EDSDKLib.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\EDSDKLib\bin\Debug\EDSDKLib.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\bin\Debug\EDSDKLib.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\bin\Debug\EDSDKLib.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\bin\Debug\EDSDKLib.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\bin\Debug\EDSDKLib.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache

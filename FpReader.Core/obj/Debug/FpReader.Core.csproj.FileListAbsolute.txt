@@ -1,0 +1,55 @@
+E:\C#学习\MyProject\指纹采集仪\FpReader\FpReader.Core\bin\Debug\FpReader.Core.dll
+E:\C#学习\MyProject\指纹采集仪\FpReader\FpReader.Core\bin\Debug\FpReader.Core.pdb
+E:\C#学习\MyProject\指纹采集仪\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csprojAssemblyReference.cache
+E:\C#学习\MyProject\指纹采集仪\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csproj.CoreCompileInputs.cache
+E:\C#学习\MyProject\指纹采集仪\FpReader\FpReader.Core\obj\Debug\FpReader.Core.dll
+E:\C#学习\MyProject\指纹采集仪\FpReader\FpReader.Core\obj\Debug\FpReader.Core.pdb
+L:\vs2017编译\指纹采集仪\指纹采集仪C#demo\FpReader\FpReader.Core\bin\Debug\FpReader.Core.dll
+L:\vs2017编译\指纹采集仪\指纹采集仪C#demo\FpReader\FpReader.Core\bin\Debug\FpReader.Core.pdb
+L:\vs2017编译\指纹采集仪\指纹采集仪C#demo\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csprojAssemblyReference.cache
+L:\vs2017编译\指纹采集仪\指纹采集仪C#demo\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csproj.CoreCompileInputs.cache
+L:\vs2017编译\指纹采集仪\指纹采集仪C#demo\FpReader\FpReader.Core\obj\Debug\FpReader.Core.dll
+L:\vs2017编译\指纹采集仪\指纹采集仪C#demo\FpReader\FpReader.Core\obj\Debug\FpReader.Core.pdb
+F:\桌面\软件\席工\FpReader\FpReader.Core\bin\Debug\FpReader.Core.dll
+F:\桌面\软件\席工\FpReader\FpReader.Core\bin\Debug\FpReader.Core.pdb
+F:\桌面\软件\席工\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csproj.CoreCompileInputs.cache
+F:\桌面\软件\席工\FpReader\FpReader.Core\obj\Debug\FpReader.Core.dll
+F:\桌面\软件\席工\FpReader\FpReader.Core\obj\Debug\FpReader.Core.pdb
+F:\桌面\软件\席工\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csprojAssemblyReference.cache
+F:\桌面\软件\席工\指纹采集仪\英文\FpReader\FpReader.Core\bin\Debug\FpReader.Core.dll
+F:\桌面\软件\席工\指纹采集仪\英文\FpReader\FpReader.Core\bin\Debug\FpReader.Core.pdb
+F:\桌面\软件\席工\指纹采集仪\英文\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csproj.CoreCompileInputs.cache
+F:\桌面\软件\席工\指纹采集仪\英文\FpReader\FpReader.Core\obj\Debug\FpReader.Core.dll
+F:\桌面\软件\席工\指纹采集仪\英文\FpReader\FpReader.Core\obj\Debug\FpReader.Core.pdb
+C:\Users\Shehzad\Documents\FpReader\FpReader.Core\bin\Debug\FpReader.Core.dll
+C:\Users\Shehzad\Documents\FpReader\FpReader.Core\bin\Debug\FpReader.Core.pdb
+C:\Users\Shehzad\Documents\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csprojResolveAssemblyReference.cache
+C:\Users\Shehzad\Documents\FpReader\FpReader.Core\obj\Debug\FpReader.Core.dll
+C:\Users\Shehzad\Documents\FpReader\FpReader.Core\obj\Debug\FpReader.Core.pdb
+F:\PrjFpDll_2010nw\Alter2017\FpReader\FpReader.Core\bin\Debug\FpReader.Core.dll
+F:\PrjFpDll_2010nw\Alter2017\FpReader\FpReader.Core\bin\Debug\FpReader.Core.pdb
+F:\PrjFpDll_2010nw\Alter2017\FpReader\FpReader.Core\obj\Debug\FpReader.Core.csprojResolveAssemblyReference.cache
+F:\PrjFpDll_2010nw\Alter2017\FpReader\FpReader.Core\obj\Debug\FpReader.Core.dll
+F:\PrjFpDll_2010nw\Alter2017\FpReader\FpReader.Core\obj\Debug\FpReader.Core.pdb
+F:\PrjFpDll_2010nw\SDC_Application_1.60\FpReader.Core\bin\Debug\FpReader.Core.dll
+F:\PrjFpDll_2010nw\SDC_Application_1.60\FpReader.Core\bin\Debug\FpReader.Core.pdb
+F:\PrjFpDll_2010nw\SDC_Application_1.60\FpReader.Core\obj\Debug\FpReader.Core.dll
+F:\PrjFpDll_2010nw\SDC_Application_1.60\FpReader.Core\obj\Debug\FpReader.Core.pdb
+D:\Office Data\Land System\SDC_Application_1.6\FpReader.Core\bin\Debug\FpReader.Core.dll
+D:\Office Data\Land System\SDC_Application_1.6\FpReader.Core\bin\Debug\FpReader.Core.pdb
+D:\Office Data\Land System\SDC_Application_1.6\FpReader.Core\obj\Debug\FpReader.Core.dll
+D:\Office Data\Land System\SDC_Application_1.6\FpReader.Core\obj\Debug\FpReader.Core.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\bin\Debug\FpReader.Core.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\bin\Debug\FpReader.Core.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\obj\Debug\FpReader.Core.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\obj\Debug\FpReader.Core.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Debug\FpReader.Core.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Debug\FpReader.Core.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Debug\FpReader.Core.csprojResolveAssemblyReference.cache
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Debug\FpReader.Core.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Debug\FpReader.Core.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Debug\FpReader.Core.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Debug\FpReader.Core.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Debug\FpReader.Core.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Debug\FpReader.Core.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Debug\FpReader.Core.csprojResolveAssemblyReference.cache

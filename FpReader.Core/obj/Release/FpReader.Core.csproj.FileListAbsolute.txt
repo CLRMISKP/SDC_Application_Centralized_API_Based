@@ -1,0 +1,21 @@
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\FpReader.Core\bin\Release\FpReader.Core.dll
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\FpReader.Core\bin\Release\FpReader.Core.pdb
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\FpReader.Core\obj\Release\FpReader.Core.dll
+F:\SDC APP DEVELOPMENT\SDC_Application_1.6\FpReader.Core\obj\Release\FpReader.Core.pdb
+D:\Office Data\Land System\SDC_Application\FpReader.Core\bin\Release\FpReader.Core.dll
+D:\Office Data\Land System\SDC_Application\FpReader.Core\bin\Release\FpReader.Core.pdb
+D:\Office Data\Land System\SDC_Application\FpReader.Core\obj\Release\FpReader.Core.dll
+D:\Office Data\Land System\SDC_Application\FpReader.Core\obj\Release\FpReader.Core.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\bin\Release\FpReader.Core.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\bin\Release\FpReader.Core.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\obj\Release\FpReader.Core.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\FpReader.Core\obj\Release\FpReader.Core.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Release\FpReader.Core.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Release\FpReader.Core.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Release\FpReader.Core.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Release\FpReader.Core.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Release\FpReader.Core.csprojResolveAssemblyReference.cache
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Release\FpReader.Core.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\bin\Release\FpReader.Core.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Release\FpReader.Core.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\FpReader.Core\obj\Release\FpReader.Core.pdb

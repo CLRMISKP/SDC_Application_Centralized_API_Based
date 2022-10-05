@@ -1,0 +1,92 @@
+﻿
+Changes and Updation of Software after SMBR visit, on Friday, 24th Oct 2014
+
+1. Insertion of Images during Intiqal required document has been replaced by pdf files.
+	now all images are combined in a single pdf file and then that file is iserted in db instead of individual image file.
+
+2. Stored Procedure "proc_Get_Intiqal_List_For_Naqal" modified and the naqal image is separately called by another 
+procedure. "proc_Get_Intiqal_DocImage_For_Naqal".
+
+3. iTextsharp third party tool has been installed from package manager to process images and pdf files.
+
+4. 
+
+/////               Images to Pdf -----------------
+
+
+Convert images to a PDF with iTextSharp
+3 Replies	
+
+I just finished working on a project that required multiple images to be combined into a single PDF document. I used iTextSharp to create the PDF, and I’m pretty happy with the solution that I came up with. There were only two functions required: one that converts an image to a smaller size & lesser quality and one that combines the images into PDF.
+
+/// <summary>
+/// Takes a collection of BMP files and converts them into a PDF document
+/// </summary>
+/// <param name="bmpFilePaths"></param>
+/// <returns></returns>
+private byte[] CreatePdf(string[] bmpFilePaths)
+{
+    using (var ms = new MemoryStream())
+    {
+        var document = new iTextSharp.text.Document(iTextSharp.text.PageSize.LETTER.Rotate(), 0, 0, 0, 0);
+        iTextSharp.text.pdf.PdfWriter.GetInstance(document, ms).SetFullCompression();
+        document.Open();
+        foreach (var path in bmpFilePaths)
+        {
+            var imgStream = GetImageStream(path);
+            var image = iTextSharp.text.Image.GetInstance(imgStream);
+            image.ScaleToFit(document.PageSize.Width, document.PageSize.Height);
+            document.Add(image);
+        }
+        document.Close();
+        return ms.ToArray();
+    }
+}
+ 
+/// <summary>
+/// Gets the image at the specified path, shrinks it, converts to JPG, and returns as a stream
+/// </summary>
+/// <param name="imagePath"></param>
+/// <returns></returns>
+private Stream GetImageStream(string imagePath)
+{
+    var ms = new MemoryStream();
+    using (var img = Image.FromFile(imagePath))
+    {
+        var jpegCodec = ImageCodecInfo.GetImageEncoders()
+            .Where(x => x.MimeType == "image/jpeg")
+            .FirstOrDefault();
+ 
+        var encoderParams = new EncoderParameters(1);
+        encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, (long)20);
+ 
+        int dpi = 175;
+        var thumb = img.GetThumbnailImage((int)(11 * dpi), (int)(8.5 * dpi), null, IntPtr.Zero);
+        thumb.Save(ms, jpegCodec, encoderParams);
+    }
+    ms.Seek(0, SeekOrigin.Begin);
+    return ms;
+}
+
+//////------- End Images to Pdf ---------------
+
+
+
+/////--------------- Start -----------------/////////////
+
+Intiqal Procedures Changes for accomodating DE Application Runs parallal to SDC Application on Same DB.
+
+Procedure Changes:
+1. proc_Get_Intiqal_Main						 -to- proc_Get_Intiqal_Main_SDC							Both SP Exists
+2. Web_SP_Insert_Intiqal_Main					 -to- Web_SP_Insert_Intiqal_Main_SDC						//
+3. proc_Get_Intiqal_Main_By_MozaId				 -to- proc_Get_Intiqal_Main_By_MozaId_SDC					//
+4. proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  -to- proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo_SDC		only in SDC
+5. Proc_Get_Admin_RolesDetail					 -to- Proc_Get_Admin_RolesDetail_SDC					Both Exists
+6. Proc_Get_Person_KhataJats				     -to- Proc_Get_Person_KhataJats_SDC
+
+/////--------------- End -----------------/////////////
+
+
+SP Addition 
+
+1. Proc_Get_SDC_TokenService_By_TokenId

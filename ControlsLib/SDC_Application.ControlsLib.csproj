@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAD83E46-ADF4-4E3C-BE9B-0EC27713E0BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDC_Application.ControlsLib</RootNamespace>
+    <AssemblyName>SDC_Application.ControlsLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Khasrajat.cs" />
+    <Compile Include="khasraControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="khasraControl.Designer.cs">
+      <DependentUpon>khasraControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Khatooni.cs" />
+    <Compile Include="KhatooniControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhatooniControl.Designer.cs">
+      <DependentUpon>KhatooniControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhewatAfraad.cs" />
+    <Compile Include="KhewatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhewatControl.Designer.cs">
+      <DependentUpon>KhewatControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhewatMain.cs" />
+    <Compile Include="MyEventArgs.cs" />
+    <Compile Include="picThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="picThumbnail.Designer.cs">
+      <DependentUpon>picThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="khasraControl.resx">
+      <DependentUpon>khasraControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhatooniControl.resx">
+      <DependentUpon>KhatooniControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhewatControl.resx">
+      <DependentUpon>KhewatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="picThumbnail.resx">
+      <DependentUpon>picThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\SDC_Application.Common.csproj">
+      <Project>{48577B95-D685-4702-BFF6-1B5F84C4B2B6}</Project>
+      <Name>SDC_Application.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LandInfo.LanguageManager\SDC_Application.LanguageManager.vbproj">
+      <Project>{B640502A-54BC-458E-8B94-91B15BEC8A79}</Project>
+      <Name>SDC_Application.LanguageManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

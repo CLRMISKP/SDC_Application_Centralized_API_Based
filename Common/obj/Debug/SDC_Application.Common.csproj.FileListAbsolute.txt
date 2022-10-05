@@ -1,0 +1,18 @@
+D:\Office Data\Land System\SDC_Application\SDC_Application\Common\bin\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application\SDC_Application\Common\bin\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application\SDC_Application\Common\obj\Debug\SDC_Application.Common.csprojResolveAssemblyReference.cache
+D:\Office Data\Land System\SDC_Application\SDC_Application\Common\obj\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application\SDC_Application\Common\obj\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\Common\bin\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\Common\bin\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\Common\obj\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\Common\obj\Debug\SDC_Application.Common.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\Common\bin\Debug\SDC_Application.Common.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\Common\bin\Debug\SDC_Application.Common.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.csprojResolveAssemblyReference.cache
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\bin\Debug\SDC_Application.Common.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\bin\Debug\SDC_Application.Common.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.pdb

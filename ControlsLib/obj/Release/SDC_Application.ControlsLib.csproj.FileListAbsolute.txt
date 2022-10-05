@@ -1,0 +1,141 @@
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.MozaSearchControl.resources
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC_Application\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.dll
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.pdb
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+E:\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+E:\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+E:\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+E:\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+E:\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+E:\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.MozaSearchControl.resources
+E:\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+E:\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+E:\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+E:\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.dll
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.pdb
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.MozaSearchControl.resources
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+C:\Users\DLR7\Desktop\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.dll
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.Common.pdb
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.MozaSearchControl.resources
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+C:\Users\DLR7\Desktop\BOP Visit\SDC_Application\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.Common.dll
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.Common.pdb
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+D:\DUMP\SDC_Application_TKB\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\LandInfo.ControlsLib.MozaSearchControl.resources
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+D:\DUMP\SDC_Application_TKB\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.Common.dll
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.Common.pdb
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\LandInfo.ControlsLib.MozaSearchControl.resources
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+D:\DUMP\SDC_ApplicationV2.1_MRD\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC Application V2.1\SDC_ApplicationV2.1_05102020\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.Common.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.Common.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+C:\APPS_CODE\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.Common.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.Common.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
