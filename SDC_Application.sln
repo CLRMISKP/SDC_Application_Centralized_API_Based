@@ -14,30 +14,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FpReader.Core", "FpReader.Core\FpReader.Core.csproj", "{0AEDA06A-4819-4184-B3FD-2076CC24CC87}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dwizdnoor.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Common\\SDC_Application.Common.csproj
-		SccProjectName1 = Common
-		SccLocalPath1 = Common
-		SccProjectUniqueName2 = ControlsLib\\SDC_Application.ControlsLib.csproj
-		SccProjectName2 = ControlsLib
-		SccLocalPath2 = ControlsLib
-		SccProjectUniqueName3 = LandInfo.LanguageManager\\SDC_Application.LanguageManager.vbproj
-		SccProjectName3 = LandInfo.LanguageManager
-		SccLocalPath3 = LandInfo.LanguageManager
-		SccProjectUniqueName4 = SDC_Application\\SDC_Application.csproj
-		SccProjectName4 = SDC_Application
-		SccLocalPath4 = SDC_Application
-		SccProjectUniqueName5 = EDSDKLib\\EDSDKLib.csproj
-		SccProjectName5 = EDSDKLib
-		SccLocalPath5 = EDSDKLib
-		SccProjectUniqueName6 = FpReader.Core\\FpReader.Core.csproj
-		SccProjectName6 = FpReader.Core
-		SccLocalPath6 = FpReader.Core
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
