@@ -75,3 +75,11 @@ C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Re
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.dll
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.xml
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.pdb
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.dll
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.pdb
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.xml
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.Resources.resources
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.vbproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.dll
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.xml
+C:\Users\Administrator\Documents\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.pdb

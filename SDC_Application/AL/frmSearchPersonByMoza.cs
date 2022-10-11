@@ -655,7 +655,7 @@ namespace SDC_Application.AL
                 int seqNo = 1;
                 string PersonId = this.txtPersonId.Text;
                 string khattaNos = this.GetKhattaNoCantcatString();
-                lastId = mnk.InsertUpdateFardPersonDetail("-1", FPGId, UsersManagments._Tehsilid.ToString(), this.TokenId, PersonId, seqNo.ToString(), khattaNos, "0", "NULL ", "0", " NULL");
+                lastId = mnk.InsertUpdateFardPersonDetail("-1", FPGId, UsersManagments._Tehsilid.ToString(), this.TokenId, PersonId, seqNo.ToString(), khattaNos, UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
 
             }
             catch (Exception ex)
@@ -800,14 +800,14 @@ namespace SDC_Application.AL
                             if (duplication)
                             {
                                // duplication = true;
-                                string lastId = mnk.InsertUpdateFardPersonDetail("-1", FPGid, UsersManagments._Tehsilid.ToString(), this.TokenId, PersonId, seqNo.ToString(), khattaNos, "0", "NULL ", "0", " NULL");
+                                string lastId = mnk.InsertUpdateFardPersonDetail("-1", FPGid, UsersManagments._Tehsilid.ToString(), this.TokenId, PersonId, seqNo.ToString(), khattaNos, UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                                // btnSave.Enabled = true;
                             }
                         }
                         else
                         {
 
-                            string lastId = mnk.InsertUpdateFardPersonDetail("-1", FPGid, UsersManagments._Tehsilid.ToString(), this.TokenId, PersonId, seqNo.ToString(), khattaNos, "0", "NULL ", "0", " NULL");
+                            string lastId = mnk.InsertUpdateFardPersonDetail("-1", FPGid, UsersManagments._Tehsilid.ToString(), this.TokenId, PersonId, seqNo.ToString(), khattaNos, UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                            // btnSave.Enabled = true;
                         }
                         gridviewMalikan.Rows[i].Cells["chk"].Value = false;

@@ -186,16 +186,18 @@ namespace SDC_Application.AL
                 {
                     if (cmbTaxPayer.SelectedIndex > 0)
                     {
-                        ReportParameter[] rp = new ReportParameter[2];
+                        ReportParameter[] rp = new ReportParameter[3];
                         rp[0] = new ReportParameter("intiqalid", this.IntiqalId);
                         rp[1] = new ReportParameter("personid", cmbTaxPayer.SelectedValue.ToString());
+                        rp[2] = new ReportParameter("tehsilid", UsersManagments._Tehsilid.ToString());
                         this.SetCredentials("Gain_TaxChallan", rp, false);
                     }
                     else
                     {
-                        ReportParameter[] rp = new ReportParameter[2];
+                        ReportParameter[] rp = new ReportParameter[3];
                         rp[0] = new ReportParameter("intiqalid", "");
                         rp[1] = new ReportParameter("personid", "");
+                        rp[2] = new ReportParameter("tehsilid", UsersManagments._Tehsilid.ToString());
                         this.SetCredentials("Gain_TaxChallan", rp, false);
                     }
                 }

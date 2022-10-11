@@ -2502,11 +2502,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ReferenceFiles\SDC_Application.Common.dll" />
-    <Content Include="ReferenceFiles\SDC_Application.Common.pdb" />
     <Content Include="ReferenceFiles\SDC_Application.ControlsLib.dll" />
-    <Content Include="ReferenceFiles\SDC_Application.ControlsLib.pdb" />
     <Content Include="ReferenceFiles\SDC_Application.LanguageManager.dll" />
-    <Content Include="ReferenceFiles\SDC_Application.LanguageManager.pdb" />
     <Content Include="ReferenceFiles\SDC_Application.LanguageManager.xml" />
     <Content Include="ReferenceFiles\WebCam_Capture.dll" />
     <None Include="Resources\fingerPrint_Cancel.png" />
