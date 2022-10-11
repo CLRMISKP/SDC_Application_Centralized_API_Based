@@ -22,3 +22,4 @@ C:\Users\Administrator\Documents\SDC_Application_Centralized\EDSDKLib\bin\Releas
 C:\Users\Administrator\Documents\SDC_Application_Centralized\EDSDKLib\bin\Release\EDSDKLib.pdb
 C:\Users\Administrator\Documents\SDC_Application_Centralized\EDSDKLib\obj\x86\Release\EDSDKLib.dll
 C:\Users\Administrator\Documents\SDC_Application_Centralized\EDSDKLib\obj\x86\Release\EDSDKLib.pdb
+C:\Users\Administrator\Documents\SDC_Application_Centralized\EDSDKLib\bin\Release\EDSDKLib.xml

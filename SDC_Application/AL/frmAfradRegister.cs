@@ -1157,7 +1157,10 @@ namespace SDC_Application.AL
                             txtFardName.Text = row.Cells["PersonName"].Value.ToString();
                             cboFardRelation.Text = row.Cells["Relation"].Value.ToString();
                             cboFardParent.SelectedValue = row.Cells["ParentId"].Value.ToString();
-                            txtFardMotherName.Text = row.Cells["MotherName"].Value.ToString();
+                            if (cbMother.DataSource != null)
+                            {
+                                cbMother.SelectedValue = row.Cells["MotherName"].Value != null ? row.Cells["MotherName"].Value.ToString() : "0";
+                            }
                             cboFardGender.Text = row.Cells["Gender"].Value.ToString();
                             fillPersonCatergoryFard(UsersManagments._Tehsilid.ToString());
                             cboFardAfradType.SelectedValue = row.Cells["PersonCategoryId"].Value.ToString();
