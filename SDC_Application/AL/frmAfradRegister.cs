@@ -28,6 +28,7 @@ namespace SDC_Application.AL
         BindingSource bs = new BindingSource();
         BindingSource bsFH = new BindingSource();
         BindingSource bsR = new BindingSource();
+        BindingSource bsFamilyFard = new BindingSource();
 
         Persons Pr = new Persons();
 
@@ -225,7 +226,7 @@ namespace SDC_Application.AL
 
             if (empty == null)
             {
-                  if (txtFamilyHeadCNIC.Text.Trim().Length == 13 || txtFamilyHeadCNIC.Text.Trim().Length == 0)
+                if (txtFamilyHeadCNIC.Text.Trim().Length == 13 || txtFamilyHeadCNIC.Text.Trim().Length == 0 || txtFamilyHeadCNIC.Text.Trim().Length == 1)
                 {
                 
                     string PersonId = txtFamilyHeadId.Text.ToString();
@@ -242,7 +243,7 @@ namespace SDC_Application.AL
                     string MotherName = txtFamilyHeadMotherName.Text.ToString();
                     string Gender = cboFamilyHeadGender.Text.ToString();
                     string mozaId = cboFardMauza.SelectedValue.ToString();
-                    string CNIC = txtFamilyHeadCNIC.Text != "" ? txtFamilyHeadCNIC.Text.ToString() : "NULL";
+                    string CNIC = txtFamilyHeadCNIC.Text.Length==13 ? txtFamilyHeadCNIC.Text.ToString() : "NULL";
                     string DOB = "NULL";
                     string Sakna = txtFamilyHeadSakna.Text.ToString();
                     string Address = txtFamilyHeadFullAddress.Text.ToString();
@@ -251,7 +252,7 @@ namespace SDC_Application.AL
                     { PersonDied = "1"; }
                     else
                     { PersonDied = "0"; }
-                     string PersonCategoryId = cboFamilyHeadPersonCategroy.SelectedIndex > 0 ? cboFamilyHeadPersonCategroy.SelectedValue.ToString(): "1901";
+                     string PersonCategoryId = cboFamilyHeadPersonCategroy.SelectedIndex > 0 ? cboFamilyHeadPersonCategroy.SelectedValue.ToString(): "1";
                     string UsrId = UsersManagments.UserId.ToString();
 
                     if (txtFamilyHeadId.Text == "-1")
@@ -797,12 +798,22 @@ namespace SDC_Application.AL
             //this.ClearFormControls(grpFamilyHeadTop);
             this.ClearFormControls(grpFardTop);
             txtFardId.Text = "-1";
+            int count = grdFard.Rows.Count;
+            txtSrNoChild.Text = (count + 1).ToString();
         }
         
         private void btnSaveFard_Click(object sender, EventArgs e)
         {
-            SaveFard();
-            FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
+            if ((txtFardCNIC.Text.Trim().Length == 13 || txtFardCNIC.Text.Trim().Length == 0 || txtFardCNIC.Text.Trim().Length == 1) && txtFardName.Text.Trim().Length > 0 && cboFardParent.SelectedValue.ToString().Length > 2 &&
+                cboFardRelation.Text.Length > 2 && cboFardGender.Text.Length > 2 && cboFardAfradType.SelectedValue.ToString() != "0" && cboFardCaste.SelectedValue.ToString() != "0" && txtSrNoChild.Text.Length > 0)
+            {
+                SaveFard();
+                FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
+                int count = grdFard.Rows.Count;
+                txtSrNoChild.Text = (count + 1).ToString();
+            }
+            else
+                MessageBox.Show("فرد خاندان کے تمام کوائف مکمل کریں", "نا مکمل کوائف", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
 
         #endregion
@@ -929,9 +940,11 @@ namespace SDC_Application.AL
             try
     			{
             dtFard = ObjPerson.GetFamilyPersonsListByMozaId(famlyId, mouzaId);
+            bsFamilyFard.DataSource = dtFard;
+            grdFard.DataSource = null;
             if (dtFard != null)
             {
-                    grdFard.DataSource = dtFard;
+                    grdFard.DataSource = bsFamilyFard.DataSource;
                     grdFard.Columns["PersonId"].Visible = false;
                     grdFard.Columns["PersonTypeId"].Visible = false;
                     grdFard.Columns["FamilyHead"].Visible = false;
@@ -1014,7 +1027,7 @@ namespace SDC_Application.AL
 
             if (empty == null)
             {
-               if (txtFardCNIC.Text.Trim().Length == 13 || txtFardCNIC.Text.Trim().Length == 0)
+                if (txtFardCNIC.Text.Trim().Length == 13 || txtFardCNIC.Text.Trim().Length == 0 || txtFardCNIC.Text.Trim().Length == 1)
                 {
                     string PersonId = txtFardId.Text.ToString();
                     string PersonTypeId = "1";
@@ -1027,10 +1040,10 @@ namespace SDC_Application.AL
                     string PersonName = txtFardName.Text.ToString();
                     string Relation = cboFardRelation.Text.ToString();
                     string FatherName = cboFardParent.Text.ToString();
-                    string MotherName = txtFardMotherName.Text.ToString();
+                   string MotherName =cbMother.DataSource!=null? cbMother.SelectedValue.ToString():"0";
                     string Gender = cboFardGender.Text.ToString();
                     string mozaId = cboFardMauza.SelectedValue.ToString();
-                    string CNIC = txtFardCNIC.Text != "" ? txtFardCNIC.Text.ToString() : "NULL";
+                    string CNIC = txtFardCNIC.Text.Length==13 ? txtFardCNIC.Text.ToString() : "NULL";
                     string DOB = "NULL";
                     string Sakna = txtfardSakna.Text.ToString();
                     string Address = txtFardCompleteAddress.Text.ToString();
@@ -1103,6 +1116,8 @@ namespace SDC_Application.AL
                          fillFardParent(cboFardMauza.SelectedValue.ToString(), row.Cells["FmailyNo"].Value.ToString());
                          txtFardFamilyId.Text = row.Cells["FmailyNo"].Value.ToString();
                          FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
+                         int count = grdFard.Rows.Count;
+                         txtSrNoChild.Text = (count + 1).ToString();
                         }
                         else
                         {
@@ -1190,6 +1205,8 @@ namespace SDC_Application.AL
                     //this.ClearFormControls(grpFamilyHeadTop);
                     this.ClearFormControls(grpFardTop);
                     txtFardId.Text = "-1";
+                    int count = grdFard.Rows.Count;
+                    txtSrNoChild.Text = (count + 1).ToString();
                 }
                 else
                 {
@@ -1693,6 +1710,24 @@ namespace SDC_Application.AL
             SelectedFamilyNodeData = data;
             txtFamilyRectification.Text = data.PersonName;
             txtFamilyRectificationId.Text = data.FamilyNo.ToString();
+        }
+
+        private void cboFardParent_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cbMother.DataSource = null;
+            objauto.FillCombo("Proc_Get_Fard_Zowja_List " + cboFardParent.SelectedValue.ToString(), cbMother, "PersonName", "PersonId");
+            if (cbMother.DataSource != null)
+                cbMother.SelectedValue = "0";
+        }
+
+        private void txtSearchFamilyFardName_TextChanged(object sender, EventArgs e)
+        {
+            bsFamilyFard.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchFamilyFardName.Text);
+        }
+
+        private void txtSearchFamilyFardCNIC_TextChanged(object sender, EventArgs e)
+        {
+            bsFamilyFard.Filter = string.Format("CNIC LIKE '%{0}%' ", Convert.ToInt64(txtSearchFamilyFardCNIC.Text));
         }
     }
 }
