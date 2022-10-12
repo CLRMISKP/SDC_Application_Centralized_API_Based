@@ -16,3 +16,7 @@ C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\bin\Debug\SDC_Applicatio
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\bin\Debug\SDC_Application.Common.pdb
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.dll
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\Common\obj\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb

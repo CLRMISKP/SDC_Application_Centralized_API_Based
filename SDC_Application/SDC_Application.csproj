@@ -719,6 +719,12 @@
     <Compile Include="AL\frmLandTax.Designer.cs">
       <DependentUpon>frmLandTax.cs</DependentUpon>
     </Compile>
+    <Compile Include="AL\frmRhzZerekar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRhzZerekar.designer.cs">
+      <DependentUpon>frmRhzZerekar.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmRoznamcha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1453,6 +1459,7 @@
     <Compile Include="BL\Persons.cs" />
     <Compile Include="BL\Reports.cs" />
     <Compile Include="BL\ResizeImages.cs" />
+    <Compile Include="BL\RhzZereakr.cs" />
     <Compile Include="BL\Search.cs" />
     <Compile Include="BL\TaqseemNewKhataJatMin.cs" />
     <Compile Include="BL\Taxes.cs" />
@@ -1489,6 +1496,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DL\Database.cs" />
+    <Compile Include="DL\DatabaseZerekar.cs" />
     <Compile Include="DL\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1953,6 +1961,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmLandTax.resx">
       <DependentUpon>frmLandTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRhzZerekar.resx">
+      <DependentUpon>frmRhzZerekar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmRoznamcha.resx">
       <DependentUpon>frmRoznamcha.cs</DependentUpon>

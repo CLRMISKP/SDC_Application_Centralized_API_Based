@@ -31,3 +31,11 @@ C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\De
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.dll
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.xml
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.Resources.resources
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.vbproj.GenerateResource.Cache
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.pdb
