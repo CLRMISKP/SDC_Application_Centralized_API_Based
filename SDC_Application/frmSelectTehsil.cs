@@ -29,6 +29,7 @@ namespace SDC_Application
                this.cmdDistrict.DataSource = districts;
                cmdDistrict.DisplayMember = "DistrictnameUrdu";
                cmdDistrict.ValueMember = "DistrictId";
+   
               
         }
 

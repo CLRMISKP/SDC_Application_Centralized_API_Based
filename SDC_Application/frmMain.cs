@@ -1212,6 +1212,16 @@ namespace SDC_Application
         private void mnuRHZzerekar_Click(object sender, EventArgs e)
         {
 
+            bool isOpen = IsFrmOpen("frmRhzZerejar");
+
+            if (!isOpen)
+            {
+
+                frmRhzZerejar obj = new frmRhzZerejar();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
         }
 
      

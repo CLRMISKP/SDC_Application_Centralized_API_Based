@@ -24,7 +24,6 @@ C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib
 C:\Release\SDC_ApplicationV2.1_05102020_FromNoor\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
 D:\Office Data\Land System\SDC_Application_Centralized\EDSDKLib\bin\Debug\EDSDKLib.dll
 D:\Office Data\Land System\SDC_Application_Centralized\EDSDKLib\bin\Debug\EDSDKLib.pdb
-D:\Office Data\Land System\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
 D:\Office Data\Land System\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
 D:\Office Data\Land System\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
 D:\Land System\SDC_Application_Centralized\EDSDKLib\bin\Debug\EDSDKLib.dll

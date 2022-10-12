@@ -55,7 +55,7 @@ namespace SDC_Application.BL
         #region Get Register Haqdaran zameen Khattajat by Moza Id
         public DataTable GetKhatajatByMoza(int mozaId)
         {
-            string spWithParms = "Proc_Get_Moza_Register_KhataJat " + mozaId.ToString() + "," +"0";
+            string spWithParms = "Proc_Get_Moza_Register_KhataJat " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaId.ToString() + "," + "0";
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
 

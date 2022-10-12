@@ -23,7 +23,7 @@ namespace SDC_Application.DL
 
         static string dsZerekar ="175.107.62.190"; //System.Configuration.ConfigurationSettings.AppSettings["server"];
         static string dbZerekar = "CLRMIS_ScanJamabandi"; //ConfigurationSettings.AppSettings["db"];
-        static string passwordZerekar = "zerekar@clrmis@2022##"; //ConfigurationSettings.AppSettings["allow"];
+        static string passwordZerekar = "$$#Un#hAbItAt@@2013##"; //ConfigurationSettings.AppSettings["allow"];
         
         //
 //private static string mySqlConnectionStringZerekar = "Data Source=unh-pak-1860\\unhabitat1;Initial Catalog=Mardan_AmalDaramad; MultipleActiveResultSets=True;integrated security=true";

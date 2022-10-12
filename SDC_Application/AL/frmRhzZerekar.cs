@@ -19,8 +19,8 @@ namespace SDC_Application.AL
         Intiqal intiqal = new Intiqal();
         RhzZerekar misal = new RhzZerekar();
         AutoComplete objauto = new AutoComplete();
-        TaqseemNewKhataJatMin khatas = new TaqseemNewKhataJatMin();
-        Khatoonies Khatooni = new Khatoonies();
+        RhzZerekrKhatas khatas = new RhzZerekrKhatas();
+        KhatooniesZerekar Khatooni = new KhatooniesZerekar();
 
         // Data Tables //----------
         DataTable dtkj = new DataTable();
@@ -53,7 +53,7 @@ namespace SDC_Application.AL
 
         private void frmRhzAmaladaramad_Load(object sender, EventArgs e)
         {
-            objauto.FillCombo("Proc_Get_Moza_List", cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
         }
 
         private void cmbMouza_SelectionChangeCommitted(object sender, EventArgs e)
@@ -90,6 +90,11 @@ namespace SDC_Application.AL
 
         private void cbokhataNo_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            dgKhatooniBayan.DataSource = null;
+            dgKhatooniKhassras.DataSource = null;
+            dgKhewatFareeqainAll.DataSource = null;
+            dgMushteriFareeqainAll.DataSource = null;
+            dgMushteriFareeqainDetails.DataSource = null;
             this.txtParentKhata.Clear();
             this.ClearKhatooniControls();
             foreach (DataRow row in dtkj.Rows)
@@ -194,17 +199,17 @@ namespace SDC_Application.AL
     
         private void btnShowPrevious_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.dtKhewatFareeqainAll = intiqal.GetKhewatFareeqeinGroupByKhataPrevious(this.KhataId);
-                this.dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainAll;
-                viewAll = new DataView(dtKhewatFareeqainAll);
-                this.PopulateGridViewKhewatMalkanAll(dgKhewatFreeqDetails, false);
-            } 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    this.dtKhewatFareeqainAll = intiqal.GetKhewatFareeqeinGroupByKhataPrevious(this.KhataId);
+            //    this.dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainAll;
+            //    viewAll = new DataView(dtKhewatFareeqainAll);
+            //    this.PopulateGridViewKhewatMalkanAll(dgKhewatFreeqDetails, false);
+            //} 
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         #endregion
@@ -538,40 +543,7 @@ namespace SDC_Application.AL
         }
 
        
-        #region Fill Gridview Malkan by Person Id for Single Malk History and Details
-
-        private void PopulateGridviewKhewFareeqByPersonId()
-        {
-            try
-            {
-                dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-                dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
-                dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
-                dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-                dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
-                dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
-                dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
-                dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
-                dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
-                dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
-                dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
-                dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        #endregion
+        
 
         #region Gridview Khewat group fareeqain Cell Click Event
 
@@ -592,8 +564,6 @@ namespace SDC_Application.AL
                             string khataId = cbokhataNo.SelectedValue.ToString();
                             DataTable dtKhewatFareeqainByPerson = new DataTable();
                             dtKhewatFareeqainByPerson = intiqal.KhewatGroupFareeqByKhataIdPersonId(khataId, personId);
-                            this.dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainByPerson;
-                            PopulateGridviewKhewFareeqByPersonId();
 
                         }
                         else
