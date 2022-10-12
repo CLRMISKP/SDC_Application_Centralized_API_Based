@@ -66,7 +66,6 @@
             this.btnAssignRole = new System.Windows.Forms.Button();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cachedFardMalkan_Ukm_Trans1 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
             this.lblCycleRoles = new System.Windows.Forms.Label();
             this.grp.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -591,7 +590,6 @@
         private System.Windows.Forms.Button btnFingerHysoon;
         private System.Windows.Forms.Button btnInsRole;
         private System.Windows.Forms.Button btnDelRole;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans1;
         private System.Windows.Forms.Label lblCycleRoles;
     }
 }

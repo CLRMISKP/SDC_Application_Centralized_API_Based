@@ -202,7 +202,6 @@
             this.btnSearchToken = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtHiddenServiceTypeId = new System.Windows.Forms.TextBox();
-            this.cachedFardMalkan_TakhtBhai_Trans1 = new SDC_Application.AL.CachedFardMalkan_TakhtBhai_Trans();
             this.tabControl1.SuspendLayout();
             this.tbMalkiat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -2574,7 +2573,6 @@
         private System.Windows.Forms.DataGridView GridViewFardKhatajat;
         private System.Windows.Forms.Button btnNewKhata;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colCheckKhata;
-        private CachedFardMalkan_TakhtBhai_Trans cachedFardMalkan_TakhtBhai_Trans1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox txtOperatorReport;

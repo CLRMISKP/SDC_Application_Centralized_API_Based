@@ -329,11 +329,7 @@
             this.txtFardType = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearchToken = new System.Windows.Forms.Button();
-            this.cachedFardMalkan_TakhtBhai_Trans1 = new SDC_Application.AL.CachedFardMalkan_TakhtBhai_Trans();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cachedFardMalkan_Ukm_Trans1 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
-            this.cachedFardMalkan_Ukm_Trans2 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
-            this.cachedFardMalkan_Ukm_Trans3 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
             this.tabControl1.SuspendLayout();
             this.tbMalkiat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -4453,7 +4449,6 @@
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.GroupBox gbOperatorReport;
-        private CachedFardMalkan_TakhtBhai_Trans cachedFardMalkan_TakhtBhai_Trans1;
         private System.Windows.Forms.CheckBox chkAllKhassras;
         private System.Windows.Forms.TabPage tabFingerPrint;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -4617,8 +4612,5 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Button btnFingerHysoon;
         private System.Windows.Forms.Button btnLandTax;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans1;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans2;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans3;
     }
     }

@@ -107,7 +107,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cachedFardMalkan_Ukm_Trans1 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -895,6 +894,5 @@
         private System.Windows.Forms.ToolStripMenuItem menuCovid19Booking;
         private System.Windows.Forms.ToolStripMenuItem tsmBultROAttestation;
         private System.Windows.Forms.ToolStripMenuItem ٹوکنرولToolStripMenuItem;
-        private AL.CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans1;
     }
 }

@@ -58,3 +58,7 @@ D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\bin\Debug\F
 D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\obj\Debug\FpReader.Core.csprojResolveAssemblyReference.cache
 D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\obj\Debug\FpReader.Core.dll
 D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\obj\Debug\FpReader.Core.pdb
+D:\Land System\SDC_Application_Centralized\FpReader.Core\bin\Debug\FpReader.Core.dll
+D:\Land System\SDC_Application_Centralized\FpReader.Core\bin\Debug\FpReader.Core.pdb
+D:\Land System\SDC_Application_Centralized\FpReader.Core\obj\Debug\FpReader.Core.dll
+D:\Land System\SDC_Application_Centralized\FpReader.Core\obj\Debug\FpReader.Core.pdb

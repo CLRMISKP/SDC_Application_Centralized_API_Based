@@ -20,3 +20,7 @@ D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Appl
 D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.pdb
 D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.dll
 D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb
+D:\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.dll
+D:\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.pdb
+D:\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.dll
+D:\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb

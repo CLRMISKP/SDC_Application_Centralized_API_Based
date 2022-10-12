@@ -89,3 +89,18 @@ D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\Lan
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.dll
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.pdb
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.ControlsLib.dll
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.ControlsLib.pdb
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.Common.dll
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.dll
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.Common.pdb
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.pdb
+D:\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.xml
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.khasraControl.resources
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.KhatooniControl.resources
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.KhewatControl.resources
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.picThumbnail.resources
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.dll
+D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.pdb

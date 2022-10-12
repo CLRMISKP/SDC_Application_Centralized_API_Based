@@ -153,7 +153,6 @@
             this.txtRName = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtRTokenNo = new System.Windows.Forms.TextBox();
-            this.cachedFardMalkan_TakhtBhai_Trans1 = new SDC_Application.AL.CachedFardMalkan_TakhtBhai_Trans();
             this.tabControl1.SuspendLayout();
             this.tabChallan.SuspendLayout();
             this.groupBox26.SuspendLayout();
@@ -1885,7 +1884,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private CachedFardMalkan_TakhtBhai_Trans cachedFardMalkan_TakhtBhai_Trans1;
         private System.Windows.Forms.TabPage tabChallan;
         private System.Windows.Forms.TextBox txtUnit;
         private System.Windows.Forms.TextBox txtMasterCostunitID;

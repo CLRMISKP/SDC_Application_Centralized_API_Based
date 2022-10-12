@@ -94,8 +94,6 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cachedFardMalkan_Ukm_Trans1 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
-            this.cachedFardMalkan_Ukm_Trans2 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
             ((System.ComponentModel.ISupportInitialize)(this.errorChar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumeric)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -1031,7 +1029,5 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dgPersonTokenDetails;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans1;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans2;
     }
 }

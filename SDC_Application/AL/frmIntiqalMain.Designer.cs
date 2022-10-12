@@ -140,7 +140,6 @@
             this.btnIntiqalPersonSnaps = new System.Windows.Forms.Button();
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.cachedFardMalkan_Ukm_Trans1 = new SDC_Application.AL.CachedFardMalkan_Ukm_Trans();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1720,6 +1719,5 @@
         private System.Windows.Forms.Button btnRoznamcha;
         private System.Windows.Forms.DateTimePicker dtpIntiqalAndrajDate;
         private System.Windows.Forms.Button btnLandTax;
-        private CachedFardMalkan_Ukm_Trans cachedFardMalkan_Ukm_Trans1;
     }
 }
