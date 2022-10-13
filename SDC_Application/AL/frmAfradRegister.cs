@@ -241,7 +241,7 @@ namespace SDC_Application.AL
                     string Relation = cboFamilyHeadRelation.Text.ToString();
                     string FatherName = txtFamilyHeadFatherName.Text.ToString();
                     string MotherName = txtFamilyHeadMotherName.Text.ToString();
-                    string Gender = cboFamilyHeadGender.Text.ToString();
+                    string Gender = cboFamilyHeadGender.Text.ToString().Length<3?"مرد":cboFamilyHeadGender.Text;
                     string mozaId = cboFardMauza.SelectedValue.ToString();
                     string CNIC = txtFamilyHeadCNIC.Text.Length==13 ? txtFamilyHeadCNIC.Text.ToString() : "NULL";
                     string DOB = "NULL";
