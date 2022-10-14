@@ -51,9 +51,9 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
-        public DataTable GetKhatooniDetailbyKhatooniId(string KhataId)
+        public DataTable GetKhatooniDetailbyKhatooniId(string KhatooniId)
         {
-            string spWithParam = "Proc_Get_KhatoonisDeatail_By_KhatooniId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            string spWithParam = "Proc_Get_KhatoonisDeatail_By_KhatooniId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
@@ -74,6 +74,12 @@ namespace SDC_Application.BL
         public DataTable GetKhassrajatByKhatooniId(string KhatooniId)
         {
             string spWithParam = "Proc_Get_Khatooni_KhassraArea_Detail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public DataTable GetKhassraListByKhatooni(string KhatooniId)
+        {
+            string spWithParam = "Proc_Get_Khatooni_Khasra_List  "  + KhatooniId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }

@@ -196,6 +196,12 @@
     <Compile Include="AL\frmCovid19Booking.designer.cs">
       <DependentUpon>frmCovid19Booking.cs</DependentUpon>
     </Compile>
+    <Compile Include="AL\frmGardawriAttestationByRO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmGardawriAttestationByRO.designer.cs">
+      <DependentUpon>frmGardawriAttestationByRO.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalAttestHysoon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1078,6 +1084,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmCovid19Booking.resx">
       <DependentUpon>frmCovid19Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmGardawriAttestationByRO.resx">
+      <DependentUpon>frmGardawriAttestationByRO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalAttestHysoon.resx">
       <DependentUpon>frmIntiqalAttestHysoon.cs</DependentUpon>

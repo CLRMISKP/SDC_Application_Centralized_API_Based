@@ -124,8 +124,8 @@
             this.mnuSupervisorMain,
             this.mnuReports,
             this.ToolStripMenuCorrection,
-            this.ToolStripMenuUsers,
-            this.mnuRHZ});
+            this.mnuRHZ,
+            this.ToolStripMenuUsers});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 3, 0, 3);
@@ -662,7 +662,6 @@
             this.mnuKhassraGardawri.Name = "mnuKhassraGardawri";
             this.mnuKhassraGardawri.Size = new System.Drawing.Size(311, 42);
             this.mnuKhassraGardawri.Text = "3 - رجسٹر خسرہ گرداوری";
-            this.mnuKhassraGardawri.Visible = false;
             this.mnuKhassraGardawri.Click += new System.EventHandler(this.mnuKhassraGardawri_Click);
             // 
             // labelUser
