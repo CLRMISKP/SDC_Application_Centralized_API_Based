@@ -800,6 +800,7 @@ namespace SDC_Application.AL
             txtFardId.Text = "-1";
             int count = grdFard.Rows.Count;
             txtSrNoChild.Text = (count + 1).ToString();
+            cboFardCaste.SelectedValue = grdFardForFH.SelectedRows[0].Cells["QoamId"].Value;
         }
         
         private void btnSaveFard_Click(object sender, EventArgs e)
@@ -811,6 +812,7 @@ namespace SDC_Application.AL
                 FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
                 int count = grdFard.Rows.Count;
                 txtSrNoChild.Text = (count + 1).ToString();
+                cboFardCaste.SelectedValue = grdFardForFH.SelectedRows[0].Cells["QoamId"].Value;
             }
             else
                 MessageBox.Show("فرد خاندان کے تمام کوائف مکمل کریں", "نا مکمل کوائف", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1115,6 +1117,7 @@ namespace SDC_Application.AL
                             grpFardBottom.Enabled = true;
                          fillFardParent(cboFardMauza.SelectedValue.ToString(), row.Cells["FmailyNo"].Value.ToString());
                          txtFardFamilyId.Text = row.Cells["FmailyNo"].Value.ToString();
+                         cboFardCaste.SelectedValue = row.Cells["QoamId"].Value.ToString();
                          FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
                          int count = grdFard.Rows.Count;
                          txtSrNoChild.Text = (count + 1).ToString();
@@ -1210,6 +1213,7 @@ namespace SDC_Application.AL
                     txtFardId.Text = "-1";
                     int count = grdFard.Rows.Count;
                     txtSrNoChild.Text = (count + 1).ToString();
+                    cboFardCaste.SelectedValue = grdFardForFH.SelectedRows[0].Cells["QoamId"].Value;
                 }
                 else
                 {
@@ -1564,15 +1568,10 @@ namespace SDC_Application.AL
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            UsersManagments.check = 11;
-            // SDCReports TokenReport = new SDCReports();
-            frmSDCReportingMain TokenReport = new frmSDCReportingMain();
-            //TokenReport.FormClosed -= new FormClosedEventHandler(TokenReport_FormClosed);
-            //TokenReport.FormClosed += new FormClosedEventHandler(TokenReport_FormClosed);
-            //TokenReport.TokenID = "11";// this.txttokenid.Text;
-            TokenReport.MozaId = MozaId;
-            TokenReport.FamilyId = txtFHFamilyId.Text;
-            TokenReport.ShowDialog();
+            if (txtFHFamilyId.Text.Length > 5)
+            {
+                System.Diagnostics.Process.Start("http://175.107.63.31:9181/Shajra/Window_app_shajra/" + txtFHFamilyId.Text);
+            }
         }
 
 

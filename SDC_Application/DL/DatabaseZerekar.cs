@@ -21,7 +21,7 @@ namespace SDC_Application.DL
         public SqlCommand Command;
         public SqlDataAdapter da=new SqlDataAdapter();
 
-        static string dsZerekar ="175.107.62.190"; //System.Configuration.ConfigurationSettings.AppSettings["server"];
+        static string dsZerekar = "172.16.103.72";//"175.107.62.190"; //System.Configuration.ConfigurationSettings.AppSettings["server"];
         static string dbZerekar = "CLRMIS_ScanJamabandi"; //ConfigurationSettings.AppSettings["db"];
         static string passwordZerekar = "$$#Un#hAbItAt@@2013##"; //ConfigurationSettings.AppSettings["allow"];
         

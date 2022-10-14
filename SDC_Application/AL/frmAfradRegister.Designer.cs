@@ -440,6 +440,7 @@
             this.btnLoadShajra.Size = new System.Drawing.Size(53, 56);
             this.btnLoadShajra.TabIndex = 101;
             this.btnLoadShajra.UseVisualStyleBackColor = false;
+            this.btnLoadShajra.Visible = false;
             this.btnLoadShajra.Click += new System.EventHandler(this.btnLoadShajra_Click);
             // 
             // btnPrint
@@ -456,10 +457,12 @@
             this.btnPrint.Padding = new System.Windows.Forms.Padding(2);
             this.btnPrint.Size = new System.Drawing.Size(53, 56);
             this.btnPrint.TabIndex = 100;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -473,6 +476,7 @@
             // 
             // txtSearchFH
             // 
+            this.txtSearchFH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchFH.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchFH.Location = new System.Drawing.Point(914, 34);
             this.txtSearchFH.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -1081,6 +1085,7 @@
             // 
             // txtFardFamilyId
             // 
+            this.txtFardFamilyId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFardFamilyId.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFardFamilyId.Location = new System.Drawing.Point(710, 29);
             this.txtFardFamilyId.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -1094,6 +1099,7 @@
             // 
             // txtFardParentId
             // 
+            this.txtFardParentId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFardParentId.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFardParentId.Location = new System.Drawing.Point(656, 29);
             this.txtFardParentId.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -1269,11 +1275,11 @@
             this.cboFardParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFardParent.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFardParent.FormattingEnabled = true;
-            this.cboFardParent.Location = new System.Drawing.Point(366, 24);
+            this.cboFardParent.Location = new System.Drawing.Point(256, 24);
             this.cboFardParent.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFardParent.Name = "cboFardParent";
             this.cboFardParent.Size = new System.Drawing.Size(227, 38);
-            this.cboFardParent.TabIndex = 2;
+            this.cboFardParent.TabIndex = 3;
             this.cboFardParent.SelectionChangeCommitted += new System.EventHandler(this.cboFardParent_SelectionChangeCommitted);
             // 
             // lblf8
@@ -1296,7 +1302,7 @@
             this.lblf2.AutoSize = true;
             this.lblf2.BackColor = System.Drawing.Color.Transparent;
             this.lblf2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblf2.Location = new System.Drawing.Point(595, 28);
+            this.lblf2.Location = new System.Drawing.Point(485, 28);
             this.lblf2.Name = "lblf2";
             this.lblf2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblf2.Size = new System.Drawing.Size(89, 30);
@@ -1388,7 +1394,7 @@
             this.lblf1.AutoSize = true;
             this.lblf1.BackColor = System.Drawing.Color.Transparent;
             this.lblf1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblf1.Location = new System.Drawing.Point(872, 27);
+            this.lblf1.Location = new System.Drawing.Point(872, 28);
             this.lblf1.Name = "lblf1";
             this.lblf1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblf1.Size = new System.Drawing.Size(49, 30);
@@ -1439,7 +1445,7 @@
             // 
             this.txtFardName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFardName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFardName.Location = new System.Drawing.Point(720, 24);
+            this.txtFardName.Location = new System.Drawing.Point(720, 25);
             this.txtFardName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtFardName.Name = "txtFardName";
             this.txtFardName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1483,7 +1489,7 @@
             this.lblf6.AutoSize = true;
             this.lblf6.BackColor = System.Drawing.Color.Transparent;
             this.lblf6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblf6.Location = new System.Drawing.Point(301, 29);
+            this.lblf6.Location = new System.Drawing.Point(670, 28);
             this.lblf6.Name = "lblf6";
             this.lblf6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblf6.Size = new System.Drawing.Size(41, 30);
@@ -1497,7 +1503,7 @@
             this.lblf3.AutoSize = true;
             this.lblf3.BackColor = System.Drawing.Color.Transparent;
             this.lblf3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblf3.Location = new System.Drawing.Point(125, 27);
+            this.lblf3.Location = new System.Drawing.Point(125, 28);
             this.lblf3.Name = "lblf3";
             this.lblf3.Size = new System.Drawing.Size(65, 30);
             this.lblf3.TabIndex = 111;
@@ -1520,12 +1526,12 @@
             "شوہر",
             "ہمشیرہ",
             "برادر"});
-            this.cboFardRelation.Location = new System.Drawing.Point(216, 25);
+            this.cboFardRelation.Location = new System.Drawing.Point(585, 24);
             this.cboFardRelation.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFardRelation.Name = "cboFardRelation";
             this.cboFardRelation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cboFardRelation.Size = new System.Drawing.Size(84, 38);
-            this.cboFardRelation.TabIndex = 3;
+            this.cboFardRelation.TabIndex = 2;
             this.cboFardRelation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
             // groupBox3
