@@ -92,12 +92,12 @@
             this.ToolStripMenuCorrection = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuIndrajMisal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardeBadar = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuUsers = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuKhassraGardawri = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuUsers = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.labelUser = new System.Windows.Forms.Label();
             this.txtUserRoleId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -107,6 +107,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuRhzSDCEditing = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -618,26 +619,12 @@
             this.mnuFardeBadar.Text = "فرد بدر";
             this.mnuFardeBadar.Click += new System.EventHandler(this.mnuFardeBadar_Click);
             // 
-            // ToolStripMenuUsers
-            // 
-            this.ToolStripMenuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuChangePassword});
-            this.ToolStripMenuUsers.Name = "ToolStripMenuUsers";
-            this.ToolStripMenuUsers.Size = new System.Drawing.Size(77, 42);
-            this.ToolStripMenuUsers.Text = "صارفین";
-            // 
-            // mnuChangePassword
-            // 
-            this.mnuChangePassword.Name = "mnuChangePassword";
-            this.mnuChangePassword.Size = new System.Drawing.Size(207, 42);
-            this.mnuChangePassword.Text = "پاسوارڈ تبدیل کریں";
-            this.mnuChangePassword.Click += new System.EventHandler(this.mnuChangePassword_Click);
-            // 
             // mnuRHZ
             // 
             this.mnuRHZ.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuRHZamaldaramad,
             this.mnuRHZzerekar,
+            this.mnuRhzSDCEditing,
             this.mnuKhassraGardawri});
             this.mnuRHZ.Name = "mnuRHZ";
             this.mnuRHZ.Size = new System.Drawing.Size(144, 42);
@@ -661,8 +648,23 @@
             // 
             this.mnuKhassraGardawri.Name = "mnuKhassraGardawri";
             this.mnuKhassraGardawri.Size = new System.Drawing.Size(311, 42);
-            this.mnuKhassraGardawri.Text = "3 - رجسٹر خسرہ گرداوری";
+            this.mnuKhassraGardawri.Text = "4 - رجسٹر خسرہ گرداوری";
             this.mnuKhassraGardawri.Click += new System.EventHandler(this.mnuKhassraGardawri_Click);
+            // 
+            // ToolStripMenuUsers
+            // 
+            this.ToolStripMenuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuChangePassword});
+            this.ToolStripMenuUsers.Name = "ToolStripMenuUsers";
+            this.ToolStripMenuUsers.Size = new System.Drawing.Size(77, 42);
+            this.ToolStripMenuUsers.Text = "صارفین";
+            // 
+            // mnuChangePassword
+            // 
+            this.mnuChangePassword.Name = "mnuChangePassword";
+            this.mnuChangePassword.Size = new System.Drawing.Size(207, 42);
+            this.mnuChangePassword.Text = "پاسوارڈ تبدیل کریں";
+            this.mnuChangePassword.Click += new System.EventHandler(this.mnuChangePassword_Click);
             // 
             // labelUser
             // 
@@ -776,6 +778,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
+            // 
+            // mnuRhzSDCEditing
+            // 
+            this.mnuRhzSDCEditing.Name = "mnuRhzSDCEditing";
+            this.mnuRhzSDCEditing.Size = new System.Drawing.Size(311, 42);
+            this.mnuRhzSDCEditing.Text = "3 - تبدیلی ملکیت ، رقبہ و قسم اراضی";
+            this.mnuRhzSDCEditing.Click += new System.EventHandler(this.mnuRhzSDCEditing_Click);
             // 
             // frmMain
             // 
@@ -892,5 +901,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuCovid19Booking;
         private System.Windows.Forms.ToolStripMenuItem tsmBultROAttestation;
         private System.Windows.Forms.ToolStripMenuItem ٹوکنرولToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuRhzSDCEditing;
     }
 }

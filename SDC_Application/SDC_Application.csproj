@@ -160,6 +160,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmRhzSDCEditing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRhzSDCEditing.Designer.cs">
+      <DependentUpon>frmRhzSDCEditing.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\FardMalkan_Pwa.cs">
       <DependentUpon>FardMalkan_Pwa.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -912,6 +918,7 @@
     </Compile>
     <Compile Include="BL\AreaProfile.cs" />
     <Compile Include="BL\Bank_SDC_Data.cs" />
+    <Compile Include="BL\RhzSDC.cs" />
     <Compile Include="BL\KhatooniesZerekar.cs" />
     <Compile Include="BL\RhzZereakrKhatas.cs" />
     <Compile Include="BL\DocReceiving.cs" />
@@ -1030,12 +1037,6 @@
     <Compile Include="ImageCropResize.designer.cs">
       <DependentUpon>ImageCropResize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportToken.cs">
@@ -1063,6 +1064,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmRhzSDCEditing.resx">
+      <DependentUpon>frmRhzSDCEditing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\FardMalkan_Pwa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FardMalkan_Pwa.cs</LastGenOutput>
@@ -1485,9 +1489,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageCropResize.resx">
       <DependentUpon>ImageCropResize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportToken.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -44,7 +44,7 @@
             this.cmdDistrict.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdDistrict.FormattingEnabled = true;
             this.cmdDistrict.Location = new System.Drawing.Point(94, 34);
-            this.cmdDistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdDistrict.Margin = new System.Windows.Forms.Padding(4);
             this.cmdDistrict.Name = "cmdDistrict";
             this.cmdDistrict.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmdDistrict.Size = new System.Drawing.Size(427, 44);
@@ -57,7 +57,7 @@
             this.cmbTehsil.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTehsil.FormattingEnabled = true;
             this.cmbTehsil.Location = new System.Drawing.Point(94, 107);
-            this.cmbTehsil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTehsil.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTehsil.Name = "cmbTehsil";
             this.cmbTehsil.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbTehsil.Size = new System.Drawing.Size(427, 44);
@@ -67,7 +67,7 @@
             // ok
             // 
             this.ok.Location = new System.Drawing.Point(179, 183);
-            this.ok.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ok.Margin = new System.Windows.Forms.Padding(4);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(155, 49);
             this.ok.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancel.Location = new System.Drawing.Point(342, 183);
-            this.cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancel.Margin = new System.Windows.Forms.Padding(4);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(155, 49);
             this.cancel.TabIndex = 3;
@@ -120,12 +120,12 @@
             this.Controls.Add(this.ok);
             this.Controls.Add(this.cmbTehsil);
             this.Controls.Add(this.cmdDistrict);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSelectTehsil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Select Tehsil";
+            this.Text = "ضلع اور تحصیل کا انتخاب";
             this.Load += new System.EventHandler(this.frmSelectTehsil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

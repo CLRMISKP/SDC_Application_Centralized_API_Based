@@ -1211,13 +1211,24 @@ namespace SDC_Application
 
         private void mnuRHZzerekar_Click(object sender, EventArgs e)
         {
-
             bool isOpen = IsFrmOpen("frmRhzZerejar");
-
             if (!isOpen)
             {
 
                 frmRhzZerejar obj = new frmRhzZerejar();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuRhzSDCEditing_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmRhzSDCEditing");
+            if (!isOpen)
+            {
+
+                frmRhzSDCEditing obj = new frmRhzSDCEditing();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
