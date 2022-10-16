@@ -189,9 +189,9 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-        public string WEB_SP_INSERT_KhewatGroupFareeqeinEdit(string KhewatGroupFareeqRecId, string KhewatGroupFareeqId, string KhewatGroupId, string PersonId, string FardAreaPart, string fardkanal, string fardmarla, string fardsarsai, string fardfeet, string KhewatTypeId, string RegisterHaqkhataid, string InsertUserId, string InsertLoginName, string FardPart_Bata, string TransactionType, string SeqNo)
+        public string WEB_SP_INSERT_KhewatGroupFareeqeinEdit(string KhewatGroupFareeqRecId, string KhewatGroupFareeqId, string KhewatGroupId, string PersonId, string PersonIdProp, string FardAreaPart, string FardAreaPartProp, string fardkanal, string fardkanalProp, string fardmarla, string fardmarlaProp, string fardsarsai, string fardsarsaiProp, string fardfeet, string fardfeetProp, string KhewatTypeId, string KhewatTypeIdProp, string RegisterHaqkhataid, string InsertUserId, string InsertLoginName, string FardPart_Bata, string FardPart_BataProp, string TransactionType, string SeqNo)
         {
-            string spWithParam = "WEB_SP_INSERT_KhewatGroupFareeqeinEdit "+KhewatGroupFareeqRecId+"," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhewatGroupFareeqId + "'," + KhewatGroupId + "," + PersonId + ",'" + FardAreaPart + "'," + fardkanal + "," + fardmarla + "," + fardsarsai + "," + fardfeet + "," + KhewatTypeId + "," + RegisterHaqkhataid + "," + InsertUserId +",'" + InsertLoginName + "','" + FardPart_Bata + "','"+TransactionType+"',"+SeqNo;
+            string spWithParam = "WEB_SP_INSERT_KhewatGroupFareeqeinEdit " + KhewatGroupFareeqRecId + "," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhewatGroupFareeqId + "'," + KhewatGroupId + "," + PersonId + "," + PersonIdProp + ",'" + FardAreaPart + "','" + FardAreaPartProp + "'," + fardkanal + "," + fardkanalProp + "," + fardmarla + "," + fardmarlaProp + "," + fardsarsai + "," + fardsarsaiProp + "," + fardfeet + "," + fardfeetProp + "," + KhewatTypeId + "," + KhewatTypeIdProp + "," + RegisterHaqkhataid + "," + InsertUserId + ",'" + InsertLoginName + "','" + FardPart_Bata + "','" + FardPart_BataProp +"','" + TransactionType + "'," + SeqNo;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 

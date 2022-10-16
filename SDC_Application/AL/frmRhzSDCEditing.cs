@@ -69,7 +69,6 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
-            objauto.FillCombo("Proc_Get_SDC_TokenPurpose_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() , cboTokenPurpose, "TokenPurpose_Urdu", "TokenPurposeId");
             objauto.FillCombo("Proc_Get_KhewatTypes  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboQismMalik, "KhewatType", "KhewatTypeId");
         }
 
@@ -136,7 +135,6 @@ namespace SDC_Application.AL
                     FillKhatooniList();
                     this.LoadKhewatFareeqainMeezan(cbokhataNo.SelectedValue.ToString());
                     tabControl1.Enabled = true;
-                    this.panelSdcFard.Enabled = true;
                     this.LoadKhataLockDetails(cbokhataNo.SelectedValue.ToString());
                     break;
                 }
@@ -150,7 +148,6 @@ namespace SDC_Application.AL
                     txtKhataKifiat.Clear();
                     this.KhataId = "0";
                     tabControl1.Enabled = false;
-                    this.panelSdcFard.Enabled = false;
                 }
             }
         }
@@ -432,6 +429,7 @@ namespace SDC_Application.AL
         #endregion
 
         #region Khatoonies Controls and Methods
+
         private void FillKhatooniList()
         {
             try
@@ -678,81 +676,7 @@ namespace SDC_Application.AL
 
         #endregion
 
-        #region Fard Purpose Combo Box Selection Change Event
-
-        private void cboTokenPurpose_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (cboTokenPurpose.SelectedValue.ToString() != "0")
-                {
-                    if (chkFardDateFilter.Checked)
-                    {
-                        DataTable dtFardRecord = new DataTable();
-                        dtFardRecord = khatooni.GetFardDetailsByKhataIdByTokenPurposeId(cbokhataNo.SelectedValue.ToString(), cboTokenPurpose.SelectedValue.ToString(), dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString());
-                        dgFardDetails.DataSource = dtFardRecord;
-                        dgFardDetails.Columns["VisitorName"].HeaderText = "درخوست دہندہ";
-                        dgFardDetails.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-                        dgFardDetails.Columns["TokenDate"].HeaderText = "بتاریخ";
-                        dgFardDetails.Columns["TokenPurpose_Urdu"].HeaderText = "مقصد";
-                        dgFardDetails.Columns["KhewatMalikName"].HeaderText = "نام مالک";
-                        dgFardDetails.Columns["TokenId"].Visible = false;
-                        dgFardDetails.Columns["PVKhataId"].Visible = false;
-                    }
-                    else
-                    {
-                       
-                        DataTable dtFardRecord = new DataTable();
-                        dtFardRecord = khatooni.GetFardDetailsByKhataIdByTokenPurposeId(cbokhataNo.SelectedValue.ToString(), cboTokenPurpose.SelectedValue.ToString(),"0", "0");
-                        dgFardDetails.DataSource = dtFardRecord;
-                        dgFardDetails.Columns["VisitorName"].HeaderText = "درخوست دہندہ";
-                        dgFardDetails.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-                        dgFardDetails.Columns["TokenDate"].HeaderText = "بتاریخ";
-                        dgFardDetails.Columns["TokenPurpose_Urdu"].HeaderText = "مقصد";
-                        dgFardDetails.Columns["KhewatMalikName"].HeaderText = "نام مالک";
-                        dgFardDetails.Columns["TokenId"].Visible = false;
-                        dgFardDetails.Columns["PVKhataId"].Visible = false;
-                    }
-                }
-                else
-                {
-                    dgFardDetails.DataSource = null;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        #endregion
-
         #region Data / Grid  Filtering
-
-        private void chkFardDateFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkFardDateFilter.Checked)
-            {
-                dtpEndDate.Visible = true;
-                dtpStartDate.Visible = true;
-                lblEndDate.Visible = true;
-                lblStartDate.Visible = true;
-            }
-            else
-            {
-                dtpEndDate.Visible = false;
-                dtpStartDate.Visible = false;
-                lblStartDate.Visible = false;
-                lblEndDate.Visible = false;
-            }
-        }
-
-        private void dtpEndDate_ValueChanged(object sender, EventArgs e)
-        {
-            this.cboTokenPurpose_SelectionChangeCommitted(sender, e);
-        }
 
         private void txtSearchAmalIntiqal_TextChanged(object sender, EventArgs e)
         {
@@ -1143,19 +1067,6 @@ namespace SDC_Application.AL
 
         #endregion
 
-        #region Search Malik 
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (dgFardDetails.ColumnCount > 0)
-            {
-                (dgFardDetails.DataSource as DataTable).DefaultView.RowFilter = string.Format("KhewatMalikName LIKE '{0}%' OR KhewatMalikName LIKE '% {0}%'", txtSearch.Text);
-            }
-           
-        }
-
-        #endregion
-
         #region auto urdu language conversion
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -1214,12 +1125,14 @@ namespace SDC_Application.AL
                     }
                         if (retVal.Length > 5)
                         {
+                            string[] ExistingArea = dgKhewatFareeqainAll.SelectedRows[0].Cells["Khewat_Area"].Value.ToString().Split('-');
                             string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhataHissa.Text), float.Parse(txtPersonNetHissa.Text), Convert.ToInt32(txtKhataKanal.Text), Convert.ToInt32(txtKhataMarla.Text), float.Parse(txtKhataSarsai.Text != "" ? txtKhataSarsai.Text : "0"), float.Parse(txtKhataSFT.Text != "" ? txtKhataSFT.Text : "0"));
-                            string LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text,txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, txtPersonId.Text, txtPersonNetHissa.Text, Area[0].ToString(), Area[1].ToString(), Area[2].ToString(), Area[3].ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim());
+                            string LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(), txtPersonId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(),
+                                txtPersonNetHissa.Text, ExistingArea[0], Area[0], ExistingArea[1], Area[1].ToString(), ExistingArea[2], Area[2].ToString(), (float.Parse(ExistingArea[2])*30.25).ToString(), Area[3].ToString(), dgKhewatFareeqainAll.SelectedRows[0].Cells["KhewatTypeId"].Value.ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(), txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim());
                             if (LastId.Length > 5)
                             {
                                 ResetMalakEntryFields();
-                                //btnShowCurrent_Click(sender, e);
+                                //btnShowCurrent_Click(sender, e);FardAreaPart
                                 PopulateGridviewKhewFareeqByPersonId();
                             }
                         } 
@@ -1297,6 +1210,8 @@ namespace SDC_Application.AL
 
         #endregion
 
+        #region Button Search Person selection click event
+
         private void btnSearchPerson_Click(object sender, EventArgs e)
         {
             try
@@ -1319,6 +1234,10 @@ namespace SDC_Application.AL
             this.txtPersonId.Text = searchp.PersonId.ToString();
             this.txtPersonName.Text = searchp.PersonName;
         }
+
+        #endregion
+
+        #region Calculate net part from fard part bata
 
         private void txtPersonHissaBata_Leave(object sender, EventArgs e)
         {
@@ -1362,6 +1281,10 @@ namespace SDC_Application.AL
             return NetPart;
         }
 
+        #endregion
+
+        #region Button Delete Malik click event
+
         private void btnDeleteMalik_Click(object sender, EventArgs e)
         {
             try
@@ -1379,11 +1302,16 @@ namespace SDC_Application.AL
             }
         }
 
+        #endregion
+
+        #region Button new Malik click event
+
         private void btnNewMalik_Click(object sender, EventArgs e)
         {
             ResetMalakEntryFields();
         }
 
-        
+        #endregion
+
     }
 }
