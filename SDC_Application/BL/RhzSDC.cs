@@ -57,6 +57,18 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        public string SaveNewKhata(string RegisterHqDKhataId, string RegisterHaqdaranId, string KhataNo, string Taraf, string Patai, string TotalParts, string Kanal, string Maral, string Sarsai, string feet, string malia, string kefiat, string insertuserid, string InsertLoginName)
+        {
+            string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + RegisterHqDKhataId + ", " + RegisterHaqdaranId + ", '" + KhataNo + "', '" + Taraf + "', '" + Patai + "', " + TotalParts + ", " + Kanal + ", " + Maral + ", " + Sarsai + ", " + feet + ", N'" + malia + "', N'" + kefiat + "', " + insertuserid + ", '" + InsertLoginName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public string SaveKhataDetails(string KhataRecId, string KhataId, string RegisterId, string KhataNo, string KhataNoProp,string KhataHissas, string KhataHissasProp ,string Kanal, string KanalProp, string Marla, string MarlaProp, string Sarsai, string SarsaiProp, string Sft, string SftProp, string Kyfiat, string UserId, string LoginName, string KyfiatProp)
+        {
+            string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajatEdit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataRecId + ",'" + KhataId + "'," + RegisterId + ",'" + KhataNo + "','" + KhataNoProp + "'," + KhataHissas + "," + KhataHissasProp + ","+ Kanal + "," + KanalProp + "," + Marla + "," + MarlaProp + "," + Sarsai + "," + SarsaiProp + "," + Sft + "," + SftProp + "," + UserId + ",'" + LoginName + "',N'" + Kyfiat + "',N'" + KyfiatProp + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
         public DataTable Proc_Get_Max_Khatooni_No_By_Moza(string mozaid)
         {
             string spWithParam = "Proc_Get_Max_Khatooni_No_By_Moza  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaid;
@@ -118,7 +130,14 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
-                         
+
+        public DataTable GetKhatajatEditByKhataId(string KhataId)
+        {
+            string spWithParam = "Proc_Get_KhataJat_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+     
         public DataTable Proc_Get_KhewatFareeqeinByKhataId(string KhataId)
         {
             string spWithParam = "Proc_Get_KhewatFareeqeinGroup_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
