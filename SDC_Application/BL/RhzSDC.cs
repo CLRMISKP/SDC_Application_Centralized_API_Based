@@ -87,6 +87,12 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        public string WEB_SP_INSERT_KhatooniRegisterEdit(string KhatooniRecId, string KhatooniId, string KhatooniNo, string KhatooniNoProp, string KhatooniKashtkaranFullDetail_New, string KhatooniKashtkaranFullDetail_NewProp, string RegisterHqDKhataId, string Wasail_e_Abpashi, string Wasail_e_AbpashiProp, string KhatooniLagan, string KhatooniLaganProp, string insertuserid, string InsertLoginName)
+        {
+            string spWithParam = "WEB_SP_INSERT_KhatooniRegisterEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniRecId + ", " + KhatooniId + ",'" + KhatooniNo + "','" + KhatooniNoProp + "',N'" + KhatooniKashtkaranFullDetail_New + "',N'" + KhatooniKashtkaranFullDetail_NewProp + "'," + RegisterHqDKhataId + ",N'" + Wasail_e_Abpashi + "',N'" + Wasail_e_AbpashiProp + "',N'" + KhatooniLagan + "',N'" + KhatooniLaganProp + "'," + insertuserid + ",'" + InsertLoginName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
         public DataTable Proc_Get_KhassraJatByIntiqalId(string khataid)
         {
             string spWithParam = "Proc_Get_KhassraJatByIntiqalId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + khataid;

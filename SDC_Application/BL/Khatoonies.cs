@@ -47,7 +47,7 @@ namespace SDC_Application.BL
         }
         public DataTable GetKhatooniNosListbyKhataId(string KhataId)
         {
-            string spWithParam = "Proc_Get_KhatooniNos_List_By_KhataId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            string spWithParam = "Proc_Get_Khatoonis  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }

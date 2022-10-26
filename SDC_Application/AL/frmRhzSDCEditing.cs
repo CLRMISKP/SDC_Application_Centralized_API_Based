@@ -33,6 +33,7 @@ namespace SDC_Application.AL
         DataTable dtMushteriFareeqain = new DataTable();
         DataTable dtMushteriFareeqainSel = new DataTable();
         DataTable dtKhatajatEdit = new DataTable();
+        DataTable KhatooniesByKhata = new DataTable();
         Khatoonies khatooni = new Khatoonies();
         DataView dtvKhewatFareeqainByPerson = new DataView();
         DataView viewMF;
@@ -365,7 +366,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                DataTable KhatooniesByKhata = new DataTable();
+               
                 string KhataId =cbokhataNo.SelectedValue.ToString();
                // MessageBox.Show(KhataId);
                 KhatooniesByKhata = khatooni.GetKhatooniNosListbyKhataId(KhataId.ToString());
@@ -446,8 +447,9 @@ namespace SDC_Application.AL
                     foreach (DataRow row in KhatooniDetail.Rows)
                     {
                         txtKhatooniLagan.Text = row["KhatooniLagan"].ToString();
+                        txtKhatooniNo.Text = row["KhatooniNo"].ToString();
                         txtWasailAbpashi.Text = row["Wasail_e_Abpashi"].ToString();
-                        txtKhatooniFullDeatils.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                        txtKhatooniFullDetails.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
                         chkBeahShoda.Checked = Convert.ToBoolean(row["BeahShud"].ToString());
                         if (chkBeahShoda.Checked)
                         {
@@ -456,6 +458,7 @@ namespace SDC_Application.AL
                             txtKhatooniMarla.Text = row["KhatooniMarla"].ToString();
                             txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString();
                             txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
+                            
 
                         }
                     }
@@ -463,6 +466,7 @@ namespace SDC_Application.AL
                     this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
                     this.GetKhatooniBayan(cboKhatoonies.SelectedValue.ToString());
                     btnLoadKhassras_Click(sender, e);
+                    
                 }
                 else
                 {
@@ -503,7 +507,7 @@ namespace SDC_Application.AL
         {
             txtKhatooniLagan.Clear();
             txtWasailAbpashi.Clear();
-            txtKhatooniFullDeatils.Clear();
+            txtKhatooniFullDetails.Clear();
             chkBeahShoda.Checked = false;
             txtKhatooniHissa.Text = "";
             txtKhatooniKanal.Text = "";
@@ -1054,18 +1058,21 @@ namespace SDC_Application.AL
 
         private void btnDeleteMalik_Click(object sender, EventArgs e)
         {
-            try
+            if (DialogResult.Yes == MessageBox.Show("آپ فرد انتخاب کردہ ریکارڈ خذف کرنا چاہتے ہے؟", "خذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
-                string retVal= rhz.DeleteKhewatGroupFareeqEdite(txtKhewatGroupFareeqRecId.Text);
-                if (retVal == "1")
+                try
                 {
-                    ResetMalakEntryFields();
-                    PopulateGridviewKhewFareeqByPersonId();
+                    string retVal = rhz.DeleteKhewatGroupFareeqEdite(txtKhewatGroupFareeqRecId.Text);
+                    if (retVal == "1")
+                    {
+                        ResetMalakEntryFields();
+                        PopulateGridviewKhewFareeqByPersonId();
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -1152,6 +1159,65 @@ namespace SDC_Application.AL
                     break;
                 }
             }
+        }
+
+        #endregion
+
+        #region Khatooni Operations Buttons Click Events
+
+        private void btnSaveKhatooni_Click(object sender, EventArgs e)
+        {
+            if (cboKhatoonies.SelectedValue.ToString().Length > 5 && txtKhatooniFullDetails.Text.Trim().Length > 1 && txtKhatooniNo.Text.Trim().Length>0)
+            {
+                string KhatooniNo=""; string KhatooniKashtkarFullDetails=""; string KhatooniLagan=""; string WasaileAbpashi="";
+                foreach(DataRow row in KhatooniesByKhata.Rows)
+                {
+                    if (row["KhatooniId"].ToString() == cboKhatoonies.SelectedValue.ToString())
+                    {
+                        KhatooniNo=row["KhatooniNo"].ToString();
+                        KhatooniKashtkarFullDetails=row["KhatooniKashtkaranFullDetail_New"].ToString();
+                        KhatooniLagan=row["KhatooniLagan"].ToString();
+                        WasaileAbpashi=row["Wasail_e_Abpashi"].ToString();
+                        break;
+                    }
+                }
+                try
+                {
+                    string retVal = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, cboKhatoonies.SelectedValue.ToString(), KhatooniNo, txtKhatooniNo.Text.Trim(), KhatooniKashtkarFullDetails, txtKhatooniFullDetails.Text.Trim(), cbokhataNo.SelectedValue.ToString(), WasaileAbpashi, txtWasailAbpashi.Text, KhatooniLagan, txtKhatooniLagan.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    MessageBox.Show(retVal);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                if (txtKhatooniFullDetails.Text.Trim().Length > 1 && txtKhatooniNo.Text.Trim().Length > 0)
+                {
+                if (DialogResult.Yes == MessageBox.Show("آپ نے کوئی کھتونی منتخب نہیں کیا، کیا آپ نیئے کھتونی کااندراج کرنا چاہتے ہے؟", "اندراج کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    try
+                    {
+                        string retVal = rhz.WEB_SP_INSERT_KhatooniRegister("-1", txtKhatooniNo.Text.Trim(), txtKhatooniFullDetails.Text.Trim(), cbokhataNo.SelectedValue.ToString(), txtWasailAbpashi.Text.Trim(), txtKhatooniLagan.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                }
+            }
+        }
+
+        private void btnNewKhatooni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleKhatooni_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
