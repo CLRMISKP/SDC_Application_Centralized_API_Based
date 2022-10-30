@@ -160,6 +160,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmIntiqalMainForManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMainForManual.Designer.cs">
+      <DependentUpon>frmIntiqalMainForManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraFardBadar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraFardBadar.designer.cs">
+      <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraNewKhassraAreaType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraNewKhassraAreaType.Designer.cs">
+      <DependentUpon>frmKhassraNewKhassraAreaType.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmRhzSDCEditing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,12 +339,6 @@
     </Compile>
     <Compile Include="AL\frmIntiqalTaxReport.designer.cs">
       <DependentUpon>frmIntiqalTaxReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AL\frmKhassraFardBadar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AL\frmKhassraFardBadar.Designer.cs">
-      <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmFardeBadar.cs">
       <SubType>Form</SubType>
@@ -645,12 +657,6 @@
     </Compile>
     <Compile Include="AL\frmGetNoOfPagesForFard.Designer.cs">
       <DependentUpon>frmGetNoOfPagesForFard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AL\frmInteqalRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AL\frmInteqalRegister.designer.cs">
-      <DependentUpon>frmInteqalRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmInteqalWitness.cs">
       <SubType>Form</SubType>
@@ -1064,6 +1070,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmIntiqalMainForManual.resx">
+      <DependentUpon>frmIntiqalMainForManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraFardBadar.resx">
+      <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraNewKhassraAreaType.resx">
+      <DependentUpon>frmKhassraNewKhassraAreaType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmRhzSDCEditing.resx">
       <DependentUpon>frmRhzSDCEditing.cs</DependentUpon>
     </EmbeddedResource>
@@ -1148,9 +1163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalTaxReport.resx">
       <DependentUpon>frmIntiqalTaxReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AL\frmKhassraFardBadar.resx">
-      <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmFardeBadar.resx">
       <DependentUpon>frmFardeBadar.cs</DependentUpon>
@@ -1315,9 +1327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmGetNoOfPagesForFard.resx">
       <DependentUpon>frmGetNoOfPagesForFard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AL\frmInteqalRegister.resx">
-      <DependentUpon>frmInteqalRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmInteqalWitness.resx">
       <DependentUpon>frmInteqalWitness.cs</DependentUpon>
@@ -1643,6 +1652,8 @@
     <None Include="Resources\Down_Arrow.png" />
     <None Include="Resources\dslr.png" />
     <None Include="Resources\AIT.png" />
+    <None Include="Resources\Approved.png" />
+    <None Include="Resources\Approve_icon2.png" />
     <Content Include="SDC_Icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

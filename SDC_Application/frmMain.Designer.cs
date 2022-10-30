@@ -95,6 +95,7 @@
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRhzSDCEditing = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuKhassraGardawri = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChangePassword = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,7 +108,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuRhzSDCEditing = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuIntiqalManual = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -625,6 +626,7 @@
             this.mnuRHZamaldaramad,
             this.mnuRHZzerekar,
             this.mnuRhzSDCEditing,
+            this.mnuIntiqalManual,
             this.mnuKhassraGardawri});
             this.mnuRHZ.Name = "mnuRHZ";
             this.mnuRHZ.Size = new System.Drawing.Size(144, 42);
@@ -644,11 +646,18 @@
             this.mnuRHZzerekar.Text = "2 - رجسٹر حقدران زمین سکین جمعبندی";
             this.mnuRHZzerekar.Click += new System.EventHandler(this.mnuRHZzerekar_Click);
             // 
+            // mnuRhzSDCEditing
+            // 
+            this.mnuRhzSDCEditing.Name = "mnuRhzSDCEditing";
+            this.mnuRhzSDCEditing.Size = new System.Drawing.Size(311, 42);
+            this.mnuRhzSDCEditing.Text = "3 - تبدیلی ملکیت ، رقبہ و قسم اراضی";
+            this.mnuRhzSDCEditing.Click += new System.EventHandler(this.mnuRhzSDCEditing_Click);
+            // 
             // mnuKhassraGardawri
             // 
             this.mnuKhassraGardawri.Name = "mnuKhassraGardawri";
             this.mnuKhassraGardawri.Size = new System.Drawing.Size(311, 42);
-            this.mnuKhassraGardawri.Text = "4 - رجسٹر خسرہ گرداوری";
+            this.mnuKhassraGardawri.Text = "5 - رجسٹر خسرہ گرداوری";
             this.mnuKhassraGardawri.Click += new System.EventHandler(this.mnuKhassraGardawri_Click);
             // 
             // ToolStripMenuUsers
@@ -779,12 +788,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuRhzSDCEditing
+            // mnuIntiqalManual
             // 
-            this.mnuRhzSDCEditing.Name = "mnuRhzSDCEditing";
-            this.mnuRhzSDCEditing.Size = new System.Drawing.Size(311, 42);
-            this.mnuRhzSDCEditing.Text = "3 - تبدیلی ملکیت ، رقبہ و قسم اراضی";
-            this.mnuRhzSDCEditing.Click += new System.EventHandler(this.mnuRhzSDCEditing_Click);
+            this.mnuIntiqalManual.Name = "mnuIntiqalManual";
+            this.mnuIntiqalManual.Size = new System.Drawing.Size(311, 42);
+            this.mnuIntiqalManual.Text = "4- اندراج دستی گمشدہ انتقالات";
+            this.mnuIntiqalManual.Click += new System.EventHandler(this.mnuIntiqalManual_Click);
             // 
             // frmMain
             // 
@@ -902,5 +911,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmBultROAttestation;
         private System.Windows.Forms.ToolStripMenuItem ٹوکنرولToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuRhzSDCEditing;
+        private System.Windows.Forms.ToolStripMenuItem mnuIntiqalManual;
     }
 }

@@ -1235,6 +1235,19 @@ namespace SDC_Application
             }
         }
 
+        private void mnuIntiqalManual_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmIntiqalMainForManual");
+            if (!isOpen)
+            {
+
+                frmIntiqalMainForManual obj = new frmIntiqalMainForManual();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
      
       
     }
