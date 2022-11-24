@@ -1248,6 +1248,31 @@ namespace SDC_Application
             }
         }
 
+        private void mnuamnualMutReportWithLandTypendValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuReportsRTS_RTI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuReportMutForFBR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuReportMutAttestCancelPending_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuTaxnServicesReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
      
       
     }
