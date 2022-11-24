@@ -244,11 +244,13 @@ namespace SDC_Application
             {
                 mnucreateUsers.Visible = true;
                 mnuSupervisorMain.Visible = true;
+                mnuReports.Visible = true;
             }
             else
             {
                 mnucreateUsers.Visible = false;
                 mnuSupervisorMain.Visible = false;
+                mnuReports.Visible = false;
             }
            
         }
@@ -1270,7 +1272,18 @@ namespace SDC_Application
 
         private void mnuTaxnServicesReport_Click(object sender, EventArgs e)
         {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
 
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 7;
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
         }
 
      
