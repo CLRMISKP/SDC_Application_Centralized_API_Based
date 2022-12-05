@@ -71,11 +71,13 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -419,8 +421,6 @@
             this.groupBox7.Controls.Add(this.btnIntiqalAmal);
             this.groupBox7.Controls.Add(this.btnEdit);
             this.groupBox7.Controls.Add(this.btnConfirm);
-            this.groupBox7.Controls.Add(this.lblIntiqalPending);
-            this.groupBox7.Controls.Add(this.chkPendingIntiqal);
             this.groupBox7.Controls.Add(this.btnKhataJat);
             this.groupBox7.Controls.Add(this.btnDelMain);
             this.groupBox7.Controls.Add(this.btnSave);
@@ -481,9 +481,9 @@
             // lblIntiqalPending
             // 
             this.lblIntiqalPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblIntiqalPending.Location = new System.Drawing.Point(-92, 31);
+            this.lblIntiqalPending.Location = new System.Drawing.Point(10, 24);
             this.lblIntiqalPending.Name = "lblIntiqalPending";
-            this.lblIntiqalPending.Size = new System.Drawing.Size(447, 50);
+            this.lblIntiqalPending.Size = new System.Drawing.Size(965, 68);
             this.lblIntiqalPending.TabIndex = 32;
             this.lblIntiqalPending.TabStop = true;
             this.lblIntiqalPending.Text = "\'";
@@ -492,9 +492,9 @@
             // 
             this.chkPendingIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPendingIntiqal.AutoSize = true;
-            this.chkPendingIntiqal.Location = new System.Drawing.Point(387, 39);
+            this.chkPendingIntiqal.Location = new System.Drawing.Point(1007, 37);
             this.chkPendingIntiqal.Name = "chkPendingIntiqal";
-            this.chkPendingIntiqal.Size = new System.Drawing.Size(76, 34);
+            this.chkPendingIntiqal.Size = new System.Drawing.Size(68, 29);
             this.chkPendingIntiqal.TabIndex = 5;
             this.chkPendingIntiqal.Text = "زیر التواء:";
             this.chkPendingIntiqal.UseVisualStyleBackColor = true;
@@ -563,9 +563,9 @@
             this.lblOperatorNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOperatorNote.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperatorNote.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblOperatorNote.Location = new System.Drawing.Point(-92, 23);
+            this.lblOperatorNote.Location = new System.Drawing.Point(-92, 26);
             this.lblOperatorNote.Name = "lblOperatorNote";
-            this.lblOperatorNote.Size = new System.Drawing.Size(1110, 101);
+            this.lblOperatorNote.Size = new System.Drawing.Size(1110, 80);
             this.lblOperatorNote.TabIndex = 76;
             this.lblOperatorNote.TabStop = true;
             this.lblOperatorNote.Text = "آپریٹر نوٹ لکھنے کیلئے کلک کریں";
@@ -577,7 +577,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(1029, 44);
+            this.label2.Location = new System.Drawing.Point(1029, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 30);
             this.label2.TabIndex = 75;
@@ -590,16 +590,29 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(10, 364);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1138, 135);
+            this.groupBox1.Size = new System.Drawing.Size(1138, 117);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblIntiqalPending);
+            this.groupBox2.Controls.Add(this.chkPendingIntiqal);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(10, 481);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1138, 100);
+            this.groupBox2.TabIndex = 78;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "انتقال زیر التواء";
             // 
             // frmIntiqalMainForManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 617);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -618,9 +631,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,5 +683,6 @@
         private System.Windows.Forms.DateTimePicker dtpIntiqalAndrajDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnIntiqalAmal;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
