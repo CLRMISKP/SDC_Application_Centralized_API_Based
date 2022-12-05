@@ -113,6 +113,26 @@ namespace SDC_Application {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Approve_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("Approve_icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Approved {
+            get {
+                object obj = ResourceManager.GetObject("Approved", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Attach_35 {
             get {
                 object obj = ResourceManager.GetObject("Attach-35", resourceCulture);

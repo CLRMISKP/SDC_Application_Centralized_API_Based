@@ -217,6 +217,9 @@
   <data name="Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FingerprintImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FingerprintImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1338735730_search_lense" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\1338735730_search_lense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -256,8 +259,8 @@
   <data name="back-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\back-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FingerprintImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\FingerprintImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hakoomatkpk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hakoomatkpk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="family_icon21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\family_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -267,6 +270,9 @@
   </data>
   <data name="LeftImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\LeftImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AIT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-group-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\user-group-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -285,9 +291,6 @@
   </data>
   <data name="partitions-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\partitions-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hakoomatkpk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\hakoomatkpk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Partition-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Partition-icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,6 +331,9 @@
   <data name="Check_Res" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Check_Res.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Approved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Approved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Bank.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -349,7 +355,7 @@
   <data name="SaveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\SaveIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\AIT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Approve_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Approve_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

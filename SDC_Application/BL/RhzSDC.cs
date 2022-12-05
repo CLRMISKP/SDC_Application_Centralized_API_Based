@@ -69,6 +69,55 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        #region Save Khewat Group Fareeq Proposed FB
+        public string SaveKhassraRegisterEdit(
+                   string KhassraRecId,
+                   string KhassraDetailRecId,
+                   string KhassraId,
+                   string MozaId,
+                   string KhassraNo,
+                   string KhassraNo_Proposed,
+                   string KhassraDetailId,
+                   string KhatooniId,
+                   string AreaTypeId,
+                   string AreaTypeIdProposed,
+                   string Kanal,
+                   string Kanal_Proposed,
+                   string Marla,
+                   string Marla_Proposed,
+                   string Sarsai,
+                   string Sarsai_Proposed,
+                   string Feet,
+                   string Feet_Proposed,
+                   string InsertUserId,
+                   string InsertLoginName
+                  )
+        {
+            string spWithParms = "WEB_SP_INSERT_KhassraRegister_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," +
+            KhassraRecId + "," +
+            KhassraDetailRecId + "," +
+            KhassraId + "," +
+            MozaId + ",N'" +
+            KhassraNo + "',N'" +
+            KhassraNo_Proposed + "'," +
+            KhassraDetailId + "," +
+            KhatooniId + "," +
+            AreaTypeId + "," + AreaTypeIdProposed + "," +
+            Kanal + "," +
+            Kanal_Proposed + "," +
+            Marla + "," +
+            Marla_Proposed + "," +
+            Sarsai + "," +
+            Sarsai_Proposed + "," +
+            Feet + "," +
+            Feet_Proposed + "," +
+            InsertUserId + ",'" +
+            InsertLoginName + "'";
+
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+        }
+        #endregion
+
         public DataTable Proc_Get_Max_Khatooni_No_By_Moza(string mozaid)
         {
             string spWithParam = "Proc_Get_Max_Khatooni_No_By_Moza  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaid;
@@ -93,9 +142,27 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        public string SaveKhassraRegister(string KhassraId, string KhatooniId, string MozaId, string KhassraNo, string insertuserid, string InsertLoginName)
+        {
+            string spWithParam = "WEB_SP_INSERT_KhassraRegisterWithKhatooniKhassraGroup " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhassraId + ", " + KhatooniId + ", " + MozaId + ",N'" + KhassraNo + "'," + insertuserid + ",'" + InsertLoginName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string SaveKhassraRegisterDetails(string KhassraDetailId, string KhassraId, string AreaTypeId, string Kanal, string Marla,string Sarsai, string Feet, string insertuserid)
+        {
+            string spWithParam = "WEB_SP_INSERT_KhassraRegisterDetail " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhassraDetailId + ", " + KhassraId + ", " + AreaTypeId + ", " + Kanal + ", " + Marla + ", " + Sarsai + ", " + Feet+ "," + insertuserid ;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
         public DataTable Proc_Get_KhassraJatByIntiqalId(string khataid)
         {
             string spWithParam = "Proc_Get_KhassraJatByIntiqalId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + khataid;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+
+        public DataTable GetKhassraListByKhatooni(string KhatooniId)
+        {
+            string spWithParam = "Proc_Get_Khatooni_Khasra_List "  + KhatooniId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
@@ -112,9 +179,22 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
+        public DataTable GetKhatooniKhassraDetailEdit(string Khatooniid)
+        {
+            string spWithParam = "Proc_Get_Khatooni_KhassraArea_Detail_Edit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + Khatooniid;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
         public DataTable Proc_Get_Khatoonis(string khataid)
         {
             string spWithParam = "Proc_Get_Khatoonis  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + khataid;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+
+        public DataTable GetKhatooniEditingDetailsByKhatooniId(string KhatooniId)
+        {
+            string spWithParam = "Proc_Get_KhatooniEditingDetail_By_KhatooniId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
