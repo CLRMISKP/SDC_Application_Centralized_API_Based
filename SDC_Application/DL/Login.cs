@@ -268,9 +268,13 @@ namespace SDC_Application.DL
                         {
                             MessageBox.Show("آپ مطوبہ سروسز کے لئے اھل نہیں ہیں", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else
+                        else if (RetMessage == "Invalid Password")
                         {
                             MessageBox.Show("صارف نام یا پاسوارڈ غلط ہے - دوبارہ کوشش کریں۔", "Invalid Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show(RetMessage, RetMessage, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         UsersManagments.LoginAttempts += 1;
                         //MessageBox.Show(UsersManagments.LoginAttempts.ToString());

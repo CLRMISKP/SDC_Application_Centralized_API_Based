@@ -234,7 +234,7 @@ namespace SDC_Application.AL
         {
             if (this.IntiqalId != string.Empty && this.IntiqalId != "-1" && this.MozaId!= string.Empty && this.MozaId!="-1")
             {
-
+                UsersManagments.check = 8;
                 ReportParameter[] rp = new ReportParameter[3];
                 rp[0] = new ReportParameter("IntiqalId", this.IntiqalId);
                 rp[1] = new ReportParameter("userId", UsersManagments.UserId.ToString());
@@ -268,6 +268,8 @@ namespace SDC_Application.AL
 
             }
         }
+
+
 
     }
 }

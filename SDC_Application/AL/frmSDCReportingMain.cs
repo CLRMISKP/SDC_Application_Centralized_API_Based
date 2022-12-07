@@ -149,6 +149,7 @@ namespace SDC_Application.AL
             }
             else
             {
+                rvIntiqalReport.ServerReport.SetParameters(rp);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
             rvIntiqalReport.RefreshReport();
@@ -243,6 +244,7 @@ namespace SDC_Application.AL
             if (UsersManagments.check == 7)
             {
                 ReportParameter[] rp = new ReportParameter[1];
+                rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                 this.SetCredentials("FeeCollectionReport", rp, false);
 
             }
