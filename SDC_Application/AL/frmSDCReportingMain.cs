@@ -149,6 +149,10 @@ namespace SDC_Application.AL
             }
             else
             {
+                ReportParameter param=new   ReportParameter();
+                param.Name="TehsilId";
+                param.Values.Add(Tehsilid);
+                rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
             rvIntiqalReport.RefreshReport();
