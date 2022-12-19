@@ -37,10 +37,10 @@
     <ProductName>Centralized Land Record Management Information Center</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>CLRMIS</SuiteName>
-    <MinimumRequiredVersion>1.0.0.12</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -160,11 +160,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AL\frmAfradRegisterEdit.cs">
+    <Compile Include="AL\frmIntiqalOperations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AL\frmAfradRegisterEdit.Designer.cs">
-      <DependentUpon>frmAfradRegisterEdit.cs</DependentUpon>
+    <Compile Include="AL\frmIntiqalOperations.Designer.cs">
+      <DependentUpon>frmIntiqalOperations.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmIntiqalMainForManual.cs">
       <SubType>Form</SubType>
@@ -1076,9 +1076,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AL\frmAfradRegisterEdit.resx">
-      <DependentUpon>frmAfradRegisterEdit.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="AL\frmIntiqalOperations.resx">
+      <DependentUpon>frmIntiqalOperations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalMainForManual.resx">
       <DependentUpon>frmIntiqalMainForManual.cs</DependentUpon>

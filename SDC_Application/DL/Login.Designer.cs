@@ -35,7 +35,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +140,5 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnSaveLogin;
-        private AL.CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
     }
 }

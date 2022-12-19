@@ -1,6 +1,6 @@
 ﻿namespace SDC_Application.AL
 {
-    partial class frmIntiqalMainForManual
+    partial class frmIntiqalOperations
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntiqalMainForManual));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntiqalOperations));
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panelCurrentStatus = new System.Windows.Forms.Panel();
             this.lbCurrentStatus = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.txtMisalNo = new System.Windows.Forms.TextBox();
             this.lbl3 = new System.Windows.Forms.Label();
             this.cboMoza = new System.Windows.Forms.ComboBox();
+            this.btnSearchInteqal = new System.Windows.Forms.Button();
             this.lbl12 = new System.Windows.Forms.Label();
             this.dtpIntiqalAndrajDate = new System.Windows.Forms.DateTimePicker();
             this.lbl11 = new System.Windows.Forms.Label();
@@ -57,20 +58,18 @@
             this.dtpTasdiq = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnRevertRetainBiometric = new System.Windows.Forms.Button();
+            this.btnIntiqalRevert = new System.Windows.Forms.Button();
+            this.btnIntiqalAmal = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.lblIntiqalPending = new System.Windows.Forms.LinkLabel();
             this.chkPendingIntiqal = new System.Windows.Forms.CheckBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnIntiqalAmal = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnKhataJat = new System.Windows.Forms.Button();
-            this.btnDelMain = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnNewInteqal = new System.Windows.Forms.Button();
-            this.btnSearchInteqal = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -148,7 +147,7 @@
             this.panel1.Controls.Add(this.radkhanakashtmalkiat);
             this.panel1.Controls.Add(this.radKhanaKasht);
             this.panel1.Controls.Add(this.radKhanaMalkiat);
-            this.panel1.Location = new System.Drawing.Point(333, 37);
+            this.panel1.Location = new System.Drawing.Point(266, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(373, 57);
             this.panel1.TabIndex = 3;
@@ -206,17 +205,17 @@
             // txtHawalaNo
             // 
             this.txtHawalaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHawalaNo.Location = new System.Drawing.Point(991, 170);
+            this.txtHawalaNo.Location = new System.Drawing.Point(924, 170);
             this.txtHawalaNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtHawalaNo.Name = "txtHawalaNo";
-            this.txtHawalaNo.Size = new System.Drawing.Size(151, 44);
+            this.txtHawalaNo.Size = new System.Drawing.Size(218, 44);
             this.txtHawalaNo.TabIndex = 12;
             this.txtHawalaNo.Tag = "3";
             // 
             // txtMisalNo
             // 
             this.txtMisalNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMisalNo.Location = new System.Drawing.Point(712, 170);
+            this.txtMisalNo.Location = new System.Drawing.Point(642, 170);
             this.txtMisalNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtMisalNo.Name = "txtMisalNo";
             this.txtMisalNo.Size = new System.Drawing.Size(166, 44);
@@ -228,7 +227,7 @@
             this.lbl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(1150, 43);
+            this.lbl3.Location = new System.Drawing.Point(1150, 46);
             this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3.Name = "lbl3";
             this.lbl3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -242,19 +241,32 @@
             this.cboMoza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMoza.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMoza.FormattingEnabled = true;
-            this.cboMoza.Location = new System.Drawing.Point(991, 48);
+            this.cboMoza.Location = new System.Drawing.Point(924, 46);
             this.cboMoza.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboMoza.Name = "cboMoza";
             this.cboMoza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboMoza.Size = new System.Drawing.Size(151, 39);
+            this.cboMoza.Size = new System.Drawing.Size(218, 39);
             this.cboMoza.TabIndex = 75;
             this.cboMoza.SelectedIndexChanged += new System.EventHandler(this.cboMoza_SelectedIndexChanged);
+            // 
+            // btnSearchInteqal
+            // 
+            this.btnSearchInteqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchInteqal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchInteqal.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnSearchInteqal.Location = new System.Drawing.Point(642, 44);
+            this.btnSearchInteqal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnSearchInteqal.Name = "btnSearchInteqal";
+            this.btnSearchInteqal.Size = new System.Drawing.Size(46, 42);
+            this.btnSearchInteqal.TabIndex = 2;
+            this.btnSearchInteqal.UseVisualStyleBackColor = true;
+            this.btnSearchInteqal.Click += new System.EventHandler(this.btnSearchInteqal_Click);
             // 
             // lbl12
             // 
             this.lbl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl12.AutoSize = true;
-            this.lbl12.Location = new System.Drawing.Point(885, 173);
+            this.lbl12.Location = new System.Drawing.Point(820, 173);
             this.lbl12.Name = "lbl12";
             this.lbl12.Size = new System.Drawing.Size(74, 38);
             this.lbl12.TabIndex = 33;
@@ -265,7 +277,7 @@
             this.dtpIntiqalAndrajDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpIntiqalAndrajDate.CustomFormat = "dd/MM/yyyy";
             this.dtpIntiqalAndrajDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpIntiqalAndrajDate.Location = new System.Drawing.Point(386, 171);
+            this.dtpIntiqalAndrajDate.Location = new System.Drawing.Point(316, 171);
             this.dtpIntiqalAndrajDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalAndrajDate.Name = "dtpIntiqalAndrajDate";
             this.dtpIntiqalAndrajDate.ShowCheckBox = true;
@@ -277,7 +289,7 @@
             // 
             this.lbl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl11.AutoSize = true;
-            this.lbl11.Location = new System.Drawing.Point(570, 174);
+            this.lbl11.Location = new System.Drawing.Point(500, 174);
             this.lbl11.Name = "lbl11";
             this.lbl11.Size = new System.Drawing.Size(136, 38);
             this.lbl11.TabIndex = 16;
@@ -286,7 +298,7 @@
             // txtLandValue
             // 
             this.txtLandValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLandValue.Location = new System.Drawing.Point(425, 106);
+            this.txtLandValue.Location = new System.Drawing.Point(351, 109);
             this.txtLandValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtLandValue.Name = "txtLandValue";
             this.txtLandValue.Size = new System.Drawing.Size(137, 44);
@@ -299,12 +311,12 @@
             this.cboIntiqalInitiation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIntiqalInitiation.DisplayMember = "IntiqalInitiationType";
             this.cboIntiqalInitiation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIntiqalInitiation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboIntiqalInitiation.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboIntiqalInitiation.FormattingEnabled = true;
-            this.cboIntiqalInitiation.Location = new System.Drawing.Point(712, 113);
+            this.cboIntiqalInitiation.Location = new System.Drawing.Point(643, 112);
             this.cboIntiqalInitiation.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboIntiqalInitiation.Name = "cboIntiqalInitiation";
-            this.cboIntiqalInitiation.Size = new System.Drawing.Size(166, 31);
+            this.cboIntiqalInitiation.Size = new System.Drawing.Size(166, 39);
             this.cboIntiqalInitiation.TabIndex = 5;
             this.cboIntiqalInitiation.Tag = "1";
             this.cboIntiqalInitiation.ValueMember = "IntiqalInitiationId";
@@ -313,7 +325,7 @@
             // 
             this.lbl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl10.AutoSize = true;
-            this.lbl10.Location = new System.Drawing.Point(570, 109);
+            this.lbl10.Location = new System.Drawing.Point(500, 112);
             this.lbl10.Name = "lbl10";
             this.lbl10.Size = new System.Drawing.Size(94, 38);
             this.lbl10.TabIndex = 18;
@@ -324,12 +336,12 @@
             this.cboIntiqalType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboIntiqalType.DisplayMember = "IntiqalType";
             this.cboIntiqalType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIntiqalType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboIntiqalType.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboIntiqalType.FormattingEnabled = true;
-            this.cboIntiqalType.Location = new System.Drawing.Point(991, 113);
+            this.cboIntiqalType.Location = new System.Drawing.Point(924, 112);
             this.cboIntiqalType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboIntiqalType.Name = "cboIntiqalType";
-            this.cboIntiqalType.Size = new System.Drawing.Size(151, 31);
+            this.cboIntiqalType.Size = new System.Drawing.Size(218, 39);
             this.cboIntiqalType.TabIndex = 4;
             this.cboIntiqalType.Tag = "1";
             this.cboIntiqalType.ValueMember = "IntiqalTypeId";
@@ -340,7 +352,7 @@
             // 
             this.lbl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl5.AutoSize = true;
-            this.lbl5.Location = new System.Drawing.Point(1150, 109);
+            this.lbl5.Location = new System.Drawing.Point(1150, 112);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(81, 38);
             this.lbl5.TabIndex = 14;
@@ -350,7 +362,7 @@
             // 
             this.lbl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl6.AutoSize = true;
-            this.lbl6.Location = new System.Drawing.Point(885, 109);
+            this.lbl6.Location = new System.Drawing.Point(820, 112);
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(98, 38);
             this.lbl6.TabIndex = 15;
@@ -359,7 +371,7 @@
             // txtIntiqalNo
             // 
             this.txtIntiqalNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIntiqalNo.Location = new System.Drawing.Point(759, 39);
+            this.txtIntiqalNo.Location = new System.Drawing.Point(692, 43);
             this.txtIntiqalNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtIntiqalNo.Name = "txtIntiqalNo";
             this.txtIntiqalNo.Size = new System.Drawing.Size(119, 44);
@@ -370,7 +382,7 @@
             // 
             this.lbl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(885, 41);
+            this.lbl4.Location = new System.Drawing.Point(820, 46);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(82, 38);
             this.lbl4.TabIndex = 12;
@@ -403,32 +415,99 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnRevertRetainBiometric);
+            this.groupBox7.Controls.Add(this.btnIntiqalRevert);
             this.groupBox7.Controls.Add(this.btnIntiqalAmal);
             this.groupBox7.Controls.Add(this.btnEdit);
             this.groupBox7.Controls.Add(this.btnConfirm);
             this.groupBox7.Controls.Add(this.lblIntiqalPending);
             this.groupBox7.Controls.Add(this.chkPendingIntiqal);
-            this.groupBox7.Controls.Add(this.btnKhataJat);
-            this.groupBox7.Controls.Add(this.btnDelMain);
             this.groupBox7.Controls.Add(this.btnSave);
-            this.groupBox7.Controls.Add(this.btnNewInteqal);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(10, 283);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox7.Size = new System.Drawing.Size(1248, 96);
+            this.groupBox7.Size = new System.Drawing.Size(1248, 151);
             this.groupBox7.TabIndex = 30;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "اندراج و تبدیلی انتقال";
             // 
+            // btnRevertRetainBiometric
+            // 
+            this.btnRevertRetainBiometric.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRevertRetainBiometric.Image = global::SDC_Application.Resource1.icon_refresh;
+            this.btnRevertRetainBiometric.Location = new System.Drawing.Point(821, 54);
+            this.btnRevertRetainBiometric.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnRevertRetainBiometric.Name = "btnRevertRetainBiometric";
+            this.btnRevertRetainBiometric.Size = new System.Drawing.Size(65, 60);
+            this.btnRevertRetainBiometric.TabIndex = 36;
+            this.btnRevertRetainBiometric.TabStop = false;
+            this.toolTip.SetToolTip(this.btnRevertRetainBiometric, " نظر ثانی کیلئے انتقال بمع عملدارامد و  بغیر بائیو مٹرک تصدیق واپس  کریں");
+            this.btnRevertRetainBiometric.UseVisualStyleBackColor = true;
+            // 
+            // btnIntiqalRevert
+            // 
+            this.btnIntiqalRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnIntiqalRevert.Location = new System.Drawing.Point(987, 54);
+            this.btnIntiqalRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnIntiqalRevert.Name = "btnIntiqalRevert";
+            this.btnIntiqalRevert.Size = new System.Drawing.Size(65, 60);
+            this.btnIntiqalRevert.TabIndex = 35;
+            this.btnIntiqalRevert.TabStop = false;
+            this.toolTip.SetToolTip(this.btnIntiqalRevert, " نظر ثانی کیلئے انتقال بمع عملدارامد و بائیو مٹرک تصدیق واپس  کریں");
+            this.btnIntiqalRevert.UseVisualStyleBackColor = true;
+            // 
+            // btnIntiqalAmal
+            // 
+            this.btnIntiqalAmal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalAmal.Enabled = false;
+            this.btnIntiqalAmal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIntiqalAmal.Image = global::SDC_Application.Resource1.Approve_icon2;
+            this.btnIntiqalAmal.Location = new System.Drawing.Point(571, 54);
+            this.btnIntiqalAmal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnIntiqalAmal.Name = "btnIntiqalAmal";
+            this.btnIntiqalAmal.Size = new System.Drawing.Size(65, 60);
+            this.btnIntiqalAmal.TabIndex = 34;
+            this.btnIntiqalAmal.UseVisualStyleBackColor = true;
+            this.btnIntiqalAmal.Click += new System.EventHandler(this.btnIntiqalAmal_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Location = new System.Drawing.Point(903, 54);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(65, 60);
+            this.btnEdit.TabIndex = 33;
+            this.toolTip.SetToolTip(this.btnEdit, "انتقال صرف تبدیلی کیلئے  فعال کریں");
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirm.Enabled = false;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
+            this.btnConfirm.Location = new System.Drawing.Point(741, 54);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(65, 60);
+            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // lblIntiqalPending
             // 
-            this.lblIntiqalPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblIntiqalPending.Location = new System.Drawing.Point(18, 31);
+            this.lblIntiqalPending.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblIntiqalPending.Location = new System.Drawing.Point(3, 43);
             this.lblIntiqalPending.Name = "lblIntiqalPending";
-            this.lblIntiqalPending.Size = new System.Drawing.Size(447, 50);
+            this.lblIntiqalPending.Size = new System.Drawing.Size(447, 102);
             this.lblIntiqalPending.TabIndex = 32;
             this.lblIntiqalPending.TabStop = true;
             this.lblIntiqalPending.Text = "\'";
@@ -437,13 +516,26 @@
             // 
             this.chkPendingIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPendingIntiqal.AutoSize = true;
-            this.chkPendingIntiqal.Location = new System.Drawing.Point(479, 39);
+            this.chkPendingIntiqal.Location = new System.Drawing.Point(463, 66);
             this.chkPendingIntiqal.Name = "chkPendingIntiqal";
             this.chkPendingIntiqal.Size = new System.Drawing.Size(94, 42);
             this.chkPendingIntiqal.TabIndex = 5;
             this.chkPendingIntiqal.Text = "زیر التواء:";
             this.chkPendingIntiqal.UseVisualStyleBackColor = true;
             this.chkPendingIntiqal.Click += new System.EventHandler(this.chkPendingIntiqal_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSave.Location = new System.Drawing.Point(657, 54);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(65, 60);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // toolTip
             // 
@@ -479,123 +571,14 @@
             this.groupBox1.Controls.Add(this.lblOperatorNote);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(10, 379);
+            this.groupBox1.Location = new System.Drawing.Point(10, 434);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1248, 135);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
             // 
-            // btnIntiqalAmal
-            // 
-            this.btnIntiqalAmal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIntiqalAmal.Enabled = false;
-            this.btnIntiqalAmal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIntiqalAmal.Image = global::SDC_Application.Resource1.Approve_icon2;
-            this.btnIntiqalAmal.Location = new System.Drawing.Point(612, 39);
-            this.btnIntiqalAmal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnIntiqalAmal.Name = "btnIntiqalAmal";
-            this.btnIntiqalAmal.Size = new System.Drawing.Size(53, 49);
-            this.btnIntiqalAmal.TabIndex = 34;
-            this.btnIntiqalAmal.UseVisualStyleBackColor = true;
-            this.btnIntiqalAmal.Click += new System.EventHandler(this.btnIntiqalAmal_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Enabled = false;
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(1038, 39);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(53, 49);
-            this.btnEdit.TabIndex = 33;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirm.Enabled = false;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
-            this.btnConfirm.Location = new System.Drawing.Point(971, 39);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(53, 49);
-            this.btnConfirm.TabIndex = 0;
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnKhataJat
-            // 
-            this.btnKhataJat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKhataJat.Image = global::SDC_Application.Resource1.Document_icon;
-            this.btnKhataJat.Location = new System.Drawing.Point(679, 38);
-            this.btnKhataJat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnKhataJat.Name = "btnKhataJat";
-            this.btnKhataJat.Size = new System.Drawing.Size(53, 49);
-            this.btnKhataJat.TabIndex = 4;
-            this.btnKhataJat.TabStop = false;
-            this.toolTip.SetToolTip(this.btnKhataJat, "انتقال کھاتہ جات");
-            this.btnKhataJat.UseVisualStyleBackColor = true;
-            this.btnKhataJat.Click += new System.EventHandler(this.btnKhataJat_Click);
-            // 
-            // btnDelMain
-            // 
-            this.btnDelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelMain.Enabled = false;
-            this.btnDelMain.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelMain.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMain.Location = new System.Drawing.Point(752, 38);
-            this.btnDelMain.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnDelMain.Name = "btnDelMain";
-            this.btnDelMain.Size = new System.Drawing.Size(53, 49);
-            this.btnDelMain.TabIndex = 3;
-            this.btnDelMain.TabStop = false;
-            this.btnDelMain.UseVisualStyleBackColor = true;
-            this.btnDelMain.Click += new System.EventHandler(this.btnDelMain_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSave.Location = new System.Drawing.Point(825, 38);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(53, 49);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnNewInteqal
-            // 
-            this.btnNewInteqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewInteqal.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewInteqal.Location = new System.Drawing.Point(898, 38);
-            this.btnNewInteqal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnNewInteqal.Name = "btnNewInteqal";
-            this.btnNewInteqal.Size = new System.Drawing.Size(53, 49);
-            this.btnNewInteqal.TabIndex = 1;
-            this.btnNewInteqal.UseVisualStyleBackColor = true;
-            this.btnNewInteqal.Click += new System.EventHandler(this.btnNewInteqal_Click);
-            // 
-            // btnSearchInteqal
-            // 
-            this.btnSearchInteqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchInteqal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchInteqal.Image = global::SDC_Application.Resource1._1338735730_search_lense;
-            this.btnSearchInteqal.Location = new System.Drawing.Point(709, 40);
-            this.btnSearchInteqal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnSearchInteqal.Name = "btnSearchInteqal";
-            this.btnSearchInteqal.Size = new System.Drawing.Size(46, 42);
-            this.btnSearchInteqal.TabIndex = 2;
-            this.btnSearchInteqal.UseVisualStyleBackColor = true;
-            this.btnSearchInteqal.Click += new System.EventHandler(this.btnSearchInteqal_Click);
-            // 
-            // frmIntiqalMainForManual
+            // frmIntiqalOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -607,7 +590,7 @@
             this.Controls.Add(this.label47);
             this.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.Name = "frmIntiqalMainForManual";
+            this.Name = "frmIntiqalOperations";
             this.Padding = new System.Windows.Forms.Padding(10, 19, 10, 19);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "اندراج داستی گمشدہ انتقالات";
@@ -646,11 +629,8 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button btnDelMain;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnNewInteqal;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Button btnKhataJat;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.ComboBox cboMoza;
         private System.Windows.Forms.RadioButton radKhanaKasht;
@@ -669,5 +649,7 @@
         private System.Windows.Forms.DateTimePicker dtpIntiqalAndrajDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnIntiqalAmal;
+        private System.Windows.Forms.Button btnIntiqalRevert;
+        private System.Windows.Forms.Button btnRevertRetainBiometric;
     }
 }

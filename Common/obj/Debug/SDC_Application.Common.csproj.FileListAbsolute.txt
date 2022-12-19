@@ -24,7 +24,3 @@ D:\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Comm
 D:\Land System\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.pdb
 D:\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.dll
 D:\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb
-C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.dll
-C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.pdb
-C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.dll
-C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb
