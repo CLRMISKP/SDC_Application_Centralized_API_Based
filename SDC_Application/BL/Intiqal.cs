@@ -1087,16 +1087,26 @@ namespace SDC_Application.BL
         
        
             #endregion
-            #region Get Next Intiqal No for Mouza
 
-            public string GetNextIntiqalNoForMoza(string MozaId, string TokenId)
+            #region Get Next Intiqal No for Mouza 
+
+            public string GetNextIntiqalNoForMoza(string MozaId, string TokenId) //--GetintiqalMainByIntiqalNoMozaId
             {
                 string spWithParam = "Proc_Get_Intiqal_Next_Intiqal_No_By_Moza  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + TokenId + "'";
                 string lastNo= dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return lastNo;
             }
 
+            public DataTable GetintiqalMainByIntiqalNoMozaId(string MozaId, string IntiqalNo) //--GetintiqalMainByIntiqalNoMozaId
+            {
+                string spWithParam = "proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  "+ MozaId + ",'" + IntiqalNo + "'";
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+                
+            }
+
+
             #endregion
+
             #region Get Intiqal Juzvi Status
 
             public bool GetIntiqalKhataJuzviStatus(string IntiqalKhataRecId)
@@ -1563,6 +1573,7 @@ namespace SDC_Application.BL
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
             # endregion
+
             #region Check for registry alrady Entered
 
             public string CheckRegAlreadyEntered(string RegNo, int Y, string mozaId)

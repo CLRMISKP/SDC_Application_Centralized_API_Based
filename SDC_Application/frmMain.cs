@@ -856,6 +856,7 @@ namespace SDC_Application
                 //UsersManagments.check = 2;
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check= 7;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();

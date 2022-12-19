@@ -349,7 +349,7 @@ namespace SDC_Application.AL
 
         private void FillIntiqalByIntiqalId(string mozaId, string intiqalNo)
         {
-            this.intiqalRtrv = Iq.GetintiqalMainByIntiqalIdMozaId(mozaId, intiqalNo);
+            intiqalRtrv = Iq.GetintiqalMainByIntiqalNoMozaId(mozaId, intiqalNo);
             
            if (intiqalRtrv.Rows.Count > 0)
             {
@@ -370,28 +370,15 @@ namespace SDC_Application.AL
                     this.intiqalIId = data["IntiqalInitiationId"].ToString();
                     txtLandValue.Text = data["LandValue"].ToString();
                     LandValue = data["LandValue"].ToString();
-                    this.Teh_Report = data["Teh_Report"].ToString().Length;
+                    //this.Teh_Report = data["Teh_Report"].ToString().Length;
                     // dtpTasdiq.Value = data.IntiqalAttestationDate;
+                isConfirmed=Convert.ToBoolean(data["isConfirm"].ToString());
+                    btnConfirm.Enabled = !isConfirmed;
                    
                 //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
                     
-                    this.fardTokenId = data["fardTokenId"].ToString();
-                   
-                    string tokId = data["TokenId"].ToString();
-                    TokenId = data["TokenId"].ToString();
-                    btnDelMain.Enabled = true;
-                    //radKhanaKasht.Enabled = false;
-                    //radKhanaMalkiat.Enabled = false;
-                    //radkhanakashtmalkiat.Enabled = false;
-                    this.MinhayeIntiqalId = data["MinhaieIntiqalId"].ToString();
-                    this.AmalDaramad = Convert.ToBoolean(data["AmalDaramadStatus"]);
-                    this.Attested = Convert.ToBoolean(data["Attested"]);  //Cancelled
-                    this.isConfirmed = Convert.ToBoolean(data["OperatorConfirm"]); 
-                    this.btnConfirm.Enabled =!this.isConfirmed;
-                    this.Cancelled = Convert.ToBoolean(data["Cancelled"]);
-                    this.GardawarId = data["GardawarId"].ToString();
-                    this.GardawarUserId = data["GardawarUserId"].ToString();
+                    
                     if (!AmalDaramad && isConfirmed && UsersManagments._IsAdmin)
                     {
                         btnIntiqalAmal.Enabled = true;                           
@@ -467,8 +454,8 @@ namespace SDC_Application.AL
                     if (data["IntiqalPending"].ToString()=="True")
                     {
                         this.chkPendingIntiqal.Checked = true;
-                        this.groupBox7.Enabled = false;
-                        this.groupBox1.Enabled = false;
+                        //this.groupBox7.Enabled = false;
+                        //this.groupBox1.Enabled = false;
                         //this.gbAmalDaramad.Height = 150;
                         this.lblIntiqalPending.Text = data["IntiqalPendingReason_Urdu"].ToString();
                         //this.IntiqalRemarks = data.IntiqalPendingRemakrs;
@@ -679,7 +666,7 @@ namespace SDC_Application.AL
                     frmIK.MinhayeIntiqalId = this.MinhayeIntiqalId;
 
                     frmIK.IntiqalTypeId = this.intiqalTypeId;
-                    frmIK.FardTokenId = this.fardTokenId;
+                    frmIK.FardTokenId = "0";
                     frmIK.intiqalIId = this.intiqalIId;
 
                     frmIK.Show();
