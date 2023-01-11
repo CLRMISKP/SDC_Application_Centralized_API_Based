@@ -90,3 +90,15 @@ Procedure Changes:
 SP Addition 
 
 1. Proc_Get_SDC_TokenService_By_TokenId
+
+
+
+
+intiqal.cs
+string spWithParam = "proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  " +  MozaId + ",'" + IntiqalNo + "'"; 
+to 
+string spWithParam = "proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + IntiqalNo + "'";
+
+Gardawri.cs(104):            string spWithParms = "Proc_Get_GradawariTaghairat " + GardwariId+","+KhatooniId;
+Gardawri.cs(104):            string spWithParms = "Proc_Get_GradawariTaghairat " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+ GardwariId+","+KhatooniId;
+

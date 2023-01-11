@@ -1099,7 +1099,7 @@ namespace SDC_Application.BL
 
             public DataTable GetintiqalMainByIntiqalNoMozaId(string MozaId, string IntiqalNo) //--GetintiqalMainByIntiqalNoMozaId
             {
-                string spWithParam = "proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  "+ MozaId + ",'" + IntiqalNo + "'";
+                string spWithParam = "proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + IntiqalNo + "'";
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
                 
             }

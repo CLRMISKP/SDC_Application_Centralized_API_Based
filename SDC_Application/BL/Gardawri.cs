@@ -101,7 +101,7 @@ namespace SDC_Application.BL
 
         public DataTable GetGardawriTaghairat(string GardwariId, string KhatooniId)
         {
-            string spWithParms = "Proc_Get_GradawariTaghairat " + GardwariId+","+KhatooniId;
+            string spWithParms = "Proc_Get_GradawariTaghairat " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + GardwariId + "," + KhatooniId;
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
 

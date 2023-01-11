@@ -104,3 +104,18 @@ D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.Contro
 D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
 D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.dll
 D:\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.pdb
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.ControlsLib.dll
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.ControlsLib.pdb
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.Common.dll
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.dll
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.Common.pdb
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.pdb
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.xml
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.khasraControl.resources
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.KhatooniControl.resources
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.KhewatControl.resources
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.picThumbnail.resources
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.dll
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.pdb

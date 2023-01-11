@@ -47,3 +47,11 @@ D:\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SD
 D:\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.dll
 D:\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.xml
 D:\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.pdb
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.dll
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.pdb
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.xml
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.Resources.resources
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.vbproj.GenerateResource.Cache
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.dll
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.xml
+C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.pdb
