@@ -102,3 +102,4 @@ string spWithParam = "proc_Get_Intiqal_Main_By_MozaId_By_IntiqalNo  " + SDC_Appl
 Gardawri.cs(104):            string spWithParms = "Proc_Get_GradawariTaghairat " + GardwariId+","+KhatooniId;
 Gardawri.cs(104):            string spWithParms = "Proc_Get_GradawariTaghairat " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+ GardwariId+","+KhatooniId;
 
+test change
