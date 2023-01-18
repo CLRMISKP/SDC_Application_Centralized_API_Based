@@ -35,3 +35,4 @@ C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\bin\Debug
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache

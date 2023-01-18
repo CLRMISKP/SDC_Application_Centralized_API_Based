@@ -117,7 +117,7 @@ namespace SDC_Application.AL
                         }
                     }
                 }
-                MessageBox.Show("کھتونی محفوظ ہوگیے", "کھتونی", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("خسرہ جات محفوظ ہوگیے", "خسرہ جات", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
             }

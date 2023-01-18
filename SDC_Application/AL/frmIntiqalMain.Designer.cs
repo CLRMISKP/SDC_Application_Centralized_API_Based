@@ -140,6 +140,7 @@
             this.btnIntiqalPersonSnaps = new System.Windows.Forms.Button();
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -250,7 +251,7 @@
             this.cmbIntialListForMinhayeIntiqal.FormattingEnabled = true;
             this.cmbIntialListForMinhayeIntiqal.Location = new System.Drawing.Point(275, 183);
             this.cmbIntialListForMinhayeIntiqal.Name = "cmbIntialListForMinhayeIntiqal";
-            this.cmbIntialListForMinhayeIntiqal.Size = new System.Drawing.Size(67, 27);
+            this.cmbIntialListForMinhayeIntiqal.Size = new System.Drawing.Size(67, 31);
             this.cmbIntialListForMinhayeIntiqal.TabIndex = 14;
             this.cmbIntialListForMinhayeIntiqal.Tag = "1";
             this.cmbIntialListForMinhayeIntiqal.ValueMember = "IntiqalInitiationId";
@@ -262,7 +263,7 @@
             this.label89.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.Location = new System.Drawing.Point(647, 176);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(110, 30);
+            this.label89.Size = new System.Drawing.Size(139, 38);
             this.label89.TabIndex = 87;
             this.label89.Text = "بعد از منہائے انتقال:";
             // 
@@ -283,7 +284,7 @@
             this.radkhanakashtmalkiat.Location = new System.Drawing.Point(159, 4);
             this.radkhanakashtmalkiat.Name = "radkhanakashtmalkiat";
             this.radkhanakashtmalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radkhanakashtmalkiat.Size = new System.Drawing.Size(106, 34);
+            this.radkhanakashtmalkiat.Size = new System.Drawing.Size(132, 42);
             this.radkhanakashtmalkiat.TabIndex = 88;
             this.radkhanakashtmalkiat.TabStop = true;
             this.radkhanakashtmalkiat.Text = "خانہ کاشت ملکیت";
@@ -295,7 +296,7 @@
             this.radKhanaKasht.Location = new System.Drawing.Point(77, 4);
             this.radKhanaKasht.Name = "radKhanaKasht";
             this.radKhanaKasht.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radKhanaKasht.Size = new System.Drawing.Size(77, 34);
+            this.radKhanaKasht.Size = new System.Drawing.Size(96, 42);
             this.radKhanaKasht.TabIndex = 87;
             this.radKhanaKasht.TabStop = true;
             this.radKhanaKasht.Text = "خانہ کاشت";
@@ -308,7 +309,7 @@
             this.radKhanaMalkiat.Location = new System.Drawing.Point(4, 4);
             this.radKhanaMalkiat.Name = "radKhanaMalkiat";
             this.radKhanaMalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radKhanaMalkiat.Size = new System.Drawing.Size(78, 34);
+            this.radKhanaMalkiat.Size = new System.Drawing.Size(98, 42);
             this.radKhanaMalkiat.TabIndex = 86;
             this.radKhanaMalkiat.TabStop = true;
             this.radKhanaMalkiat.Text = "خانہ ملکیت";
@@ -334,7 +335,7 @@
             this.txtTokenNo.Location = new System.Drawing.Point(1037, 28);
             this.txtTokenNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtTokenNo.Name = "txtTokenNo";
-            this.txtTokenNo.Size = new System.Drawing.Size(107, 37);
+            this.txtTokenNo.Size = new System.Drawing.Size(107, 44);
             this.txtTokenNo.TabIndex = 83;
             this.txtTokenNo.Tag = "2";
             // 
@@ -366,7 +367,7 @@
             this.cboAreaType.Location = new System.Drawing.Point(993, 128);
             this.cboAreaType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboAreaType.Name = "cboAreaType";
-            this.cboAreaType.Size = new System.Drawing.Size(151, 27);
+            this.cboAreaType.Size = new System.Drawing.Size(151, 31);
             this.cboAreaType.TabIndex = 8;
             this.cboAreaType.Tag = "1";
             this.cboAreaType.ValueMember = "IntiqalTypeId";
@@ -377,7 +378,7 @@
             this.txtHawalaNo.Location = new System.Drawing.Point(761, 173);
             this.txtHawalaNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtHawalaNo.Name = "txtHawalaNo";
-            this.txtHawalaNo.Size = new System.Drawing.Size(137, 37);
+            this.txtHawalaNo.Size = new System.Drawing.Size(137, 44);
             this.txtHawalaNo.TabIndex = 12;
             this.txtHawalaNo.Tag = "3";
             // 
@@ -387,7 +388,7 @@
             this.txtMisalNo.Location = new System.Drawing.Point(173, 129);
             this.txtMisalNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtMisalNo.Name = "txtMisalNo";
-            this.txtMisalNo.Size = new System.Drawing.Size(169, 37);
+            this.txtMisalNo.Size = new System.Drawing.Size(169, 44);
             this.txtMisalNo.TabIndex = 11;
             this.txtMisalNo.Tag = "3";
             // 
@@ -411,7 +412,7 @@
             this.dtDegreeDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtDegreeDate.Name = "dtDegreeDate";
             this.dtDegreeDate.ShowCheckBox = true;
-            this.dtDegreeDate.Size = new System.Drawing.Size(62, 37);
+            this.dtDegreeDate.Size = new System.Drawing.Size(62, 44);
             this.dtDegreeDate.TabIndex = 11;
             this.dtDegreeDate.Tag = "2";
             this.dtDegreeDate.Visible = false;
@@ -435,7 +436,7 @@
             this.cboPlotConstructionType.Location = new System.Drawing.Point(173, 79);
             this.cboPlotConstructionType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboPlotConstructionType.Name = "cboPlotConstructionType";
-            this.cboPlotConstructionType.Size = new System.Drawing.Size(170, 27);
+            this.cboPlotConstructionType.Size = new System.Drawing.Size(170, 31);
             this.cboPlotConstructionType.TabIndex = 7;
             this.cboPlotConstructionType.Tag = "1";
             this.cboPlotConstructionType.ValueMember = "IntiqalInitiationId";
@@ -450,7 +451,7 @@
             this.cboPlotType.Location = new System.Drawing.Point(465, 79);
             this.cboPlotType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboPlotType.Name = "cboPlotType";
-            this.cboPlotType.Size = new System.Drawing.Size(177, 27);
+            this.cboPlotType.Size = new System.Drawing.Size(177, 31);
             this.cboPlotType.TabIndex = 6;
             this.cboPlotType.Tag = "1";
             this.cboPlotType.ValueMember = "IntiqalTypeId";
@@ -492,11 +493,11 @@
             this.checkBoxRegistry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRegistry.AutoSize = true;
             this.checkBoxRegistry.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRegistry.Location = new System.Drawing.Point(1102, 202);
+            this.checkBoxRegistry.Location = new System.Drawing.Point(1068, 202);
             this.checkBoxRegistry.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.checkBoxRegistry.Name = "checkBoxRegistry";
             this.checkBoxRegistry.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxRegistry.Size = new System.Drawing.Size(143, 29);
+            this.checkBoxRegistry.Size = new System.Drawing.Size(177, 35);
             this.checkBoxRegistry.TabIndex = 15;
             this.checkBoxRegistry.TabStop = false;
             this.checkBoxRegistry.Tag = "4";
@@ -514,7 +515,7 @@
             this.cboMoza.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboMoza.Name = "cboMoza";
             this.cboMoza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboMoza.Size = new System.Drawing.Size(139, 27);
+            this.cboMoza.Size = new System.Drawing.Size(139, 31);
             this.cboMoza.TabIndex = 75;
             this.cboMoza.SelectedIndexChanged += new System.EventHandler(this.cboMoza_SelectedIndexChanged);
             // 
@@ -550,7 +551,7 @@
             this.dtpIntiqalAndrajDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalAndrajDate.Name = "dtpIntiqalAndrajDate";
             this.dtpIntiqalAndrajDate.ShowCheckBox = true;
-            this.dtpIntiqalAndrajDate.Size = new System.Drawing.Size(176, 37);
+            this.dtpIntiqalAndrajDate.Size = new System.Drawing.Size(176, 44);
             this.dtpIntiqalAndrajDate.TabIndex = 10;
             this.dtpIntiqalAndrajDate.Tag = "2";
             // 
@@ -569,7 +570,7 @@
             this.txtLandValue.Location = new System.Drawing.Point(761, 129);
             this.txtLandValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtLandValue.Name = "txtLandValue";
-            this.txtLandValue.Size = new System.Drawing.Size(137, 37);
+            this.txtLandValue.Size = new System.Drawing.Size(137, 44);
             this.txtLandValue.TabIndex = 9;
             this.txtLandValue.Tag = "2";
             this.txtLandValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumericField);
@@ -584,7 +585,7 @@
             this.cboIntiqalInitiation.Location = new System.Drawing.Point(761, 79);
             this.cboIntiqalInitiation.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboIntiqalInitiation.Name = "cboIntiqalInitiation";
-            this.cboIntiqalInitiation.Size = new System.Drawing.Size(137, 27);
+            this.cboIntiqalInitiation.Size = new System.Drawing.Size(137, 31);
             this.cboIntiqalInitiation.TabIndex = 5;
             this.cboIntiqalInitiation.Tag = "1";
             this.cboIntiqalInitiation.ValueMember = "IntiqalInitiationId";
@@ -609,7 +610,7 @@
             this.cboIntiqalType.Location = new System.Drawing.Point(993, 79);
             this.cboIntiqalType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboIntiqalType.Name = "cboIntiqalType";
-            this.cboIntiqalType.Size = new System.Drawing.Size(151, 27);
+            this.cboIntiqalType.Size = new System.Drawing.Size(151, 31);
             this.cboIntiqalType.TabIndex = 4;
             this.cboIntiqalType.Tag = "1";
             this.cboIntiqalType.ValueMember = "IntiqalTypeId";
@@ -641,7 +642,7 @@
             this.txtIntiqalNo.Location = new System.Drawing.Point(523, 25);
             this.txtIntiqalNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtIntiqalNo.Name = "txtIntiqalNo";
-            this.txtIntiqalNo.Size = new System.Drawing.Size(119, 37);
+            this.txtIntiqalNo.Size = new System.Drawing.Size(119, 44);
             this.txtIntiqalNo.TabIndex = 1;
             this.txtIntiqalNo.Tag = "1";
             // 
@@ -690,7 +691,7 @@
             this.cboPC.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboPC.Name = "cboPC";
             this.cboPC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboPC.Size = new System.Drawing.Size(166, 27);
+            this.cboPC.Size = new System.Drawing.Size(166, 31);
             this.cboPC.TabIndex = 73;
             this.cboPC.Visible = false;
             this.cboPC.SelectionChangeCommitted += new System.EventHandler(this.cboPC_SelectionChangeCommitted);
@@ -711,7 +712,7 @@
             this.txtCourtName.Location = new System.Drawing.Point(324, 25);
             this.txtCourtName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtCourtName.Name = "txtCourtName";
-            this.txtCourtName.Size = new System.Drawing.Size(30, 37);
+            this.txtCourtName.Size = new System.Drawing.Size(30, 44);
             this.txtCourtName.TabIndex = 12;
             this.txtCourtName.Tag = "2";
             this.txtCourtName.Visible = false;
@@ -736,7 +737,7 @@
             this.dtpTasdiq.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpTasdiq.Name = "dtpTasdiq";
             this.dtpTasdiq.ShowCheckBox = true;
-            this.dtpTasdiq.Size = new System.Drawing.Size(62, 33);
+            this.dtpTasdiq.Size = new System.Drawing.Size(62, 39);
             this.dtpTasdiq.TabIndex = 7;
             this.dtpTasdiq.Tag = "2";
             this.dtpTasdiq.Visible = false;
@@ -761,7 +762,7 @@
             this.dtpIntiqalAmaldramadDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalAmaldramadDate.Name = "dtpIntiqalAmaldramadDate";
             this.dtpIntiqalAmaldramadDate.ShowCheckBox = true;
-            this.dtpIntiqalAmaldramadDate.Size = new System.Drawing.Size(62, 33);
+            this.dtpIntiqalAmaldramadDate.Size = new System.Drawing.Size(62, 39);
             this.dtpIntiqalAmaldramadDate.TabIndex = 6;
             this.dtpIntiqalAmaldramadDate.Tag = "2";
             this.dtpIntiqalAmaldramadDate.Visible = false;
@@ -828,7 +829,7 @@
             this.cmbFardTokenNo.FormattingEnabled = true;
             this.cmbFardTokenNo.Location = new System.Drawing.Point(506, 34);
             this.cmbFardTokenNo.Name = "cmbFardTokenNo";
-            this.cmbFardTokenNo.Size = new System.Drawing.Size(152, 27);
+            this.cmbFardTokenNo.Size = new System.Drawing.Size(152, 31);
             this.cmbFardTokenNo.TabIndex = 88;
             this.cmbFardTokenNo.Tag = "1";
             this.cmbFardTokenNo.ValueMember = "fardTokenId";
@@ -853,7 +854,7 @@
             this.dtFardToken.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtFardToken.Name = "dtFardToken";
             this.dtFardToken.ShowCheckBox = true;
-            this.dtFardToken.Size = new System.Drawing.Size(150, 37);
+            this.dtFardToken.Size = new System.Drawing.Size(150, 44);
             this.dtFardToken.TabIndex = 33;
             this.dtFardToken.Tag = "4";
             this.dtFardToken.ValueChanged += new System.EventHandler(this.dtFardToken_ValueChanged);
@@ -878,7 +879,7 @@
             this.dtRegisteryDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtRegisteryDate.Name = "dtRegisteryDate";
             this.dtRegisteryDate.ShowCheckBox = true;
-            this.dtRegisteryDate.Size = new System.Drawing.Size(106, 37);
+            this.dtRegisteryDate.Size = new System.Drawing.Size(106, 44);
             this.dtRegisteryDate.TabIndex = 1;
             this.dtRegisteryDate.Tag = "4";
             this.dtRegisteryDate.Visible = false;
@@ -888,11 +889,11 @@
             this.checkBoxRaptEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRaptEntry.AutoSize = true;
             this.checkBoxRaptEntry.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRaptEntry.Location = new System.Drawing.Point(1128, 131);
+            this.checkBoxRaptEntry.Location = new System.Drawing.Point(1102, 131);
             this.checkBoxRaptEntry.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.checkBoxRaptEntry.Name = "checkBoxRaptEntry";
             this.checkBoxRaptEntry.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxRaptEntry.Size = new System.Drawing.Size(105, 29);
+            this.checkBoxRaptEntry.Size = new System.Drawing.Size(131, 35);
             this.checkBoxRaptEntry.TabIndex = 7;
             this.checkBoxRaptEntry.TabStop = false;
             this.checkBoxRaptEntry.Tag = "4";
@@ -906,7 +907,7 @@
             this.txtCourt.Location = new System.Drawing.Point(749, 86);
             this.txtCourt.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtCourt.Name = "txtCourt";
-            this.txtCourt.Size = new System.Drawing.Size(150, 37);
+            this.txtCourt.Size = new System.Drawing.Size(150, 44);
             this.txtCourt.TabIndex = 5;
             this.txtCourt.Tag = "4";
             this.txtCourt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
@@ -917,7 +918,7 @@
             this.txtVersus.Location = new System.Drawing.Point(234, 31);
             this.txtVersus.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtVersus.Name = "txtVersus";
-            this.txtVersus.Size = new System.Drawing.Size(109, 37);
+            this.txtVersus.Size = new System.Drawing.Size(109, 44);
             this.txtVersus.TabIndex = 2;
             this.txtVersus.Tag = "4";
             this.txtVersus.Visible = false;
@@ -947,7 +948,7 @@
             this.txtTrialSubject.Location = new System.Drawing.Point(1004, 87);
             this.txtTrialSubject.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtTrialSubject.Name = "txtTrialSubject";
-            this.txtTrialSubject.Size = new System.Drawing.Size(122, 37);
+            this.txtTrialSubject.Size = new System.Drawing.Size(122, 44);
             this.txtTrialSubject.TabIndex = 4;
             this.txtTrialSubject.Tag = "4";
             this.txtTrialSubject.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
@@ -978,7 +979,7 @@
             this.txtTrialNo.Location = new System.Drawing.Point(18, 31);
             this.txtTrialNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtTrialNo.Name = "txtTrialNo";
-            this.txtTrialNo.Size = new System.Drawing.Size(127, 37);
+            this.txtTrialNo.Size = new System.Drawing.Size(127, 44);
             this.txtTrialNo.TabIndex = 3;
             this.txtTrialNo.Tag = "4";
             this.txtTrialNo.Visible = false;
@@ -1002,7 +1003,7 @@
             this.dtpDateOfDec.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpDateOfDec.Name = "dtpDateOfDec";
             this.dtpDateOfDec.ShowCheckBox = true;
-            this.dtpDateOfDec.Size = new System.Drawing.Size(151, 37);
+            this.dtpDateOfDec.Size = new System.Drawing.Size(151, 44);
             this.dtpDateOfDec.TabIndex = 6;
             this.dtpDateOfDec.Tag = "4";
             // 
@@ -1021,7 +1022,7 @@
             this.txtRegisteryNo.Location = new System.Drawing.Point(1004, 31);
             this.txtRegisteryNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtRegisteryNo.Name = "txtRegisteryNo";
-            this.txtRegisteryNo.Size = new System.Drawing.Size(122, 37);
+            this.txtRegisteryNo.Size = new System.Drawing.Size(122, 44);
             this.txtRegisteryNo.TabIndex = 0;
             this.txtRegisteryNo.Tag = "4";
             // 
@@ -1034,7 +1035,7 @@
             this.cboQismArazi.Location = new System.Drawing.Point(203, 22);
             this.cboQismArazi.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboQismArazi.Name = "cboQismArazi";
-            this.cboQismArazi.Size = new System.Drawing.Size(40, 38);
+            this.cboQismArazi.Size = new System.Drawing.Size(40, 44);
             this.cboQismArazi.TabIndex = 9;
             this.cboQismArazi.ValueMember = "AreaTypeId";
             this.cboQismArazi.Visible = false;
@@ -1066,7 +1067,7 @@
             this.txtValuationTableValue.Location = new System.Drawing.Point(164, 24);
             this.txtValuationTableValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtValuationTableValue.Name = "txtValuationTableValue";
-            this.txtValuationTableValue.Size = new System.Drawing.Size(33, 37);
+            this.txtValuationTableValue.Size = new System.Drawing.Size(33, 44);
             this.txtValuationTableValue.TabIndex = 8;
             this.txtValuationTableValue.Visible = false;
             // 
@@ -1126,7 +1127,7 @@
             this.dtpIntiqalRapatDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalRapatDate.Name = "dtpIntiqalRapatDate";
             this.dtpIntiqalRapatDate.ShowCheckBox = true;
-            this.dtpIntiqalRapatDate.Size = new System.Drawing.Size(158, 37);
+            this.dtpIntiqalRapatDate.Size = new System.Drawing.Size(158, 44);
             this.dtpIntiqalRapatDate.TabIndex = 1;
             this.dtpIntiqalRapatDate.Tag = "4";
             // 
@@ -1145,7 +1146,7 @@
             this.txtIntiqalRapatNo.Location = new System.Drawing.Point(948, 27);
             this.txtIntiqalRapatNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtIntiqalRapatNo.Name = "txtIntiqalRapatNo";
-            this.txtIntiqalRapatNo.Size = new System.Drawing.Size(178, 37);
+            this.txtIntiqalRapatNo.Size = new System.Drawing.Size(178, 44);
             this.txtIntiqalRapatNo.TabIndex = 0;
             this.txtIntiqalRapatNo.Tag = "4";
             // 
@@ -1212,9 +1213,9 @@
             // 
             this.chkPendingIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPendingIntiqal.AutoSize = true;
-            this.chkPendingIntiqal.Location = new System.Drawing.Point(581, 39);
+            this.chkPendingIntiqal.Location = new System.Drawing.Point(563, 39);
             this.chkPendingIntiqal.Name = "chkPendingIntiqal";
-            this.chkPendingIntiqal.Size = new System.Drawing.Size(76, 34);
+            this.chkPendingIntiqal.Size = new System.Drawing.Size(94, 42);
             this.chkPendingIntiqal.TabIndex = 5;
             this.chkPendingIntiqal.Text = "زیر التواء:";
             this.chkPendingIntiqal.UseVisualStyleBackColor = true;
@@ -1560,13 +1561,13 @@
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(1166, 679);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 30);
+            this.label2.Size = new System.Drawing.Size(88, 38);
             this.label2.TabIndex = 75;
             this.label2.Text = "آپریٹر نوٹ:";
             // 
             // frmIntiqalMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 741);
             this.Controls.Add(this.lblOperatorNote);
@@ -1719,5 +1720,6 @@
         private System.Windows.Forms.Button btnRoznamcha;
         private System.Windows.Forms.DateTimePicker dtpIntiqalAndrajDate;
         private System.Windows.Forms.Button btnLandTax;
+        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
     }
 }

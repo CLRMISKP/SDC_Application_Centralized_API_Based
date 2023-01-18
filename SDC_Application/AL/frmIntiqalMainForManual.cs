@@ -1202,40 +1202,7 @@ namespace SDC_Application.AL
 
         private void btnIntiqalAmalDaramadByKhata_Click(object sender, EventArgs e)
         {
-             if (this.IntiqalId != string.Empty && this.IntiqalId != "-1")
-            {
-                 if(this.radkhanakashtmalkiat.Checked)
-                 {
-                     MessageBox.Show(" خانہ کاشت یا ملکیت سلیکٹ کریں", "کھاتہ در کھاتہ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     return;
-                 }
-                try
-                {
-            frmIntiqalAmalDaramadByKhata IntiqalKhataAmal = new frmIntiqalAmalDaramadByKhata();
-            IntiqalKhataAmal.IntiqalId = this.IntiqalId;
-            IntiqalKhataAmal.MozaId = this.MozaId.ToString();
-            IntiqalKhataAmal.KhanaMalkiat = this.radKhanaMalkiat.Checked;
-            IntiqalKhataAmal.Khanakasht = this.radKhanaKasht.Checked;
-            IntiqalKhataAmal.IntiqalAmalDaramad = this.AmalDaramad;
 
-            IntiqalKhataAmal.isAttested = this.Attested;
-            IntiqalKhataAmal.isGardawar = this.GardawarId;
-            IntiqalKhataAmal.Teh_Report = this.Teh_Report;
-
-            IntiqalKhataAmal.MdiParent = this.ParentForm;
-            IntiqalKhataAmal.IntiqalPending = this.intiqalPending;
-            IntiqalKhataAmal.Show();
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-            }
-             else
-             {
-                 MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
         }
 
         private void btnROattestation_Click(object sender, EventArgs e)
@@ -1584,6 +1551,57 @@ namespace SDC_Application.AL
 
 
                 }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال کو ترمیم کیلئے فعال کرنا چاہتے ہے؟", "ترمیم انتقال", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                }
+                catch (Exception ex)
+                { 
+                }
+            }
+        }
+
+        private void btnIntiqalAmalDaramadByKhata_Click_1(object sender, EventArgs e)
+        {
+            if (this.IntiqalId != string.Empty && this.IntiqalId != "-1")
+            {
+                if (this.radkhanakashtmalkiat.Checked)
+                {
+                    MessageBox.Show(" خانہ کاشت یا ملکیت سلیکٹ کریں", "کھاتہ در کھاتہ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                try
+                {
+                    frmIntiqalAmalDaramadByKhata IntiqalKhataAmal = new frmIntiqalAmalDaramadByKhata();
+                    IntiqalKhataAmal.IntiqalId = this.IntiqalId;
+                    IntiqalKhataAmal.MozaId = this.MozaId.ToString();
+                    IntiqalKhataAmal.KhanaMalkiat = this.radKhanaMalkiat.Checked;
+                    IntiqalKhataAmal.Khanakasht = this.radKhanaKasht.Checked;
+                    IntiqalKhataAmal.IntiqalAmalDaramad = this.AmalDaramad;
+
+                    IntiqalKhataAmal.isAttested = this.Attested;
+                    IntiqalKhataAmal.isGardawar = this.GardawarId;
+                    IntiqalKhataAmal.Teh_Report = this.Teh_Report;
+
+                    IntiqalKhataAmal.MdiParent = this.ParentForm;
+                    IntiqalKhataAmal.IntiqalPending = this.intiqalPending;
+                    IntiqalKhataAmal.Show();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

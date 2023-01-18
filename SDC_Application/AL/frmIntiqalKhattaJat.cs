@@ -4131,11 +4131,13 @@ namespace SDC_Application.AL
             }
         }
 
-
+        
 
         void frmKhatooni_FormClosed(object sender, FormClosedEventArgs e)
         {
             FillGridKhatooniChange();
+            ClearFormControls(gbKhatooniControls);
+            txtNewkhatooniId.Text = "-1";
         }
 
         #endregion
@@ -4230,6 +4232,7 @@ namespace SDC_Application.AL
         {
             try
             {
+                ClearFormControls(gbKhatooniControls);
                 this.txtNewkhatooniId.Text = "-1";
                 string moza = this.IntiqalId.Substring(0, 5);
                 dt = taqseemnewkhata.Proc_Get_Max_Khatooni_No_By_Moza(moza);
@@ -4264,9 +4267,11 @@ namespace SDC_Application.AL
                 string khatoniid = this.taqseemnewkhata.WEB_SP_INSERT_KhatooniRegister(KhatooniId, KhatooniNo, KhatooniKashtkaranFullDetail_New, RegisterHqDKhataId, Wasail_e_Abpashi, KhatooniLagan, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
                 if (khatoniid != null)
                 {
-                    this.txtNewkhatooniId.Text = khatoniid;
+                    //this.txtNewkhatooniId.Text = khatoniid;
                     MessageBox.Show("کھتونی محفوظ ہوگیے", "کھتونی", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FillGridKhatooniChange();
+                    ClearFormControls(gbKhatooniControls);
+                    txtNewkhatooniId.Text = "-1";
                 }
             }
             catch (Exception ex)
@@ -4314,6 +4319,7 @@ namespace SDC_Application.AL
         {
             FillKhasraJatNew();
             getkhasrajatbykhatoni();
+            ClearFormControls(gbSubKhataKhassras);
         }
 
         #endregion
@@ -4429,6 +4435,7 @@ namespace SDC_Application.AL
                     FillKhasraJatNew();
                     //getkhasrajattotalarea();
                     getkhasrajatbykhatoni();
+                    ClearFormControls(gbSubKhataKhassras);
                 }
 
             }
@@ -4472,6 +4479,8 @@ namespace SDC_Application.AL
             this.taqseemnewkhata.WEB_SP_DELETE_KhatooniRegister(this.txtNewkhatooniId.Text); //grdGetkhatonichange.CurrentRow.Cells["KhatooniId"].Value.ToString());
             MessageBox.Show("  کھتونی حذف ہوگیا ہے", "", MessageBoxButtons.OK);
             FillGridKhatooniChange();
+            ClearFormControls(gbKhatooniControls);
+            txtNewkhatooniId.Text = "-1";
         }
 
         #endregion
@@ -4486,7 +4495,8 @@ namespace SDC_Application.AL
                 {
                     taqseemnewkhata.WEB_SP_DELETE_KhassraRegisterDetail_Direct(this.txthiddendetailid.Text);
                 }
-                MessageBox.Show("خسرہ نمبر حذف ہوگیا ہے", "", MessageBoxButtons.OK);
+                MessageBox.Show("خسرہ نمبر حذف ہوگیا ہے", "حزف خسرہ جات", MessageBoxButtons.OK);
+                ClearFormControls(gbSubKhataKhassras);
             }
             catch (Exception ex)
             {
@@ -5630,14 +5640,7 @@ namespace SDC_Application.AL
             {
                 MessageBox.Show("مالک کا انتخاب کریں");
             }
-        }
-
-        private void grdMushtrianMalinkanChange_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-     
+        }    
 
     }
 }
