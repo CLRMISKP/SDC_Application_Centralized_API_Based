@@ -21,7 +21,11 @@ namespace SDC_Application
             // if (Classess.UsersManagments.UserName != null)
             // {
             Application.EnableVisualStyles();
-            Application.Run(new Login());// MessageBox.Show("Null");
+
+
+
+            Application.Run(new FardMalikan_Report_TTx());
+            //Application.Run(new Login());// MessageBox.Show("Null");
             //Application.Run(new mainWinForm());
            
             //

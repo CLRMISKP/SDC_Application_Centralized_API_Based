@@ -160,6 +160,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\FardMalikan_Report_TTx.cs" />
+    <Compile Include="AL\FardMalikan_Report_TTx.designer.cs">
+      <DependentUpon>FardMalikan_Report_TTx.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalRevertEnable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1082,6 +1086,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\FardMalikan_Report_TTx.resx">
+      <DependentUpon>FardMalikan_Report_TTx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalRevertEnable.resx">
       <DependentUpon>frmIntiqalRevertEnable.cs</DependentUpon>
     </EmbeddedResource>
@@ -1765,62 +1772,62 @@
   <ItemGroup>
     <PublishFile Include="EDSDK.dll">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="EDSDKLib">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="EDSDKLib.dll">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="FlashControlV71">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="ShockwaveFlashObjects">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="txtChangesTrack.txt">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

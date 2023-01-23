@@ -1,0 +1,17 @@
+RegisterHqDKhataId	NUMBER		
+Malia	STRING	2000	
+currentKhataNo	NUMBER			
+oldKhataNo_string	STRING	25	
+Tehsilid	NUMBER
+MozaNameUrdu	STRING	1000	
+HadBastNo	NUMBER		
+TehsilNameUrdu	STRING	1000	
+DistrictnameUrdu	STRING	1000	
+TokenId	NUMBER		
+TokenDate	DATE		
+TaxName_Urdu	STRING	1000		
+InsertLoginName	STRING	100	
+TokenNo	NUMBER		
+Temp	STRING	1000	
+Temp2	STRING	1000	
+Temp3	STRING	1000	
