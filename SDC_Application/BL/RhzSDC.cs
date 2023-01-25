@@ -57,6 +57,30 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        public string SaveRHZChangeDetails(string RHZ_ChangeId, string MozaId, string SrNo, string ChangeDetails)
+        {
+            string spWithParam = "WEB_SP_INSERT_RHZ_Change_Record  "+RHZ_ChangeId+"," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + ", " + SrNo + ", N'" + ChangeDetails + "', " + Classess.UsersManagments.UserId + ", '" + Classess.UsersManagments.UserName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public string DeleteRHZChangeDetails(string RHZ_ChangeId)
+        {
+            string spWithParam = "WEB_SP_DELETE_RHZ_Change_Record  " + RHZ_ChangeId + "," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + Classess.UsersManagments.UserId + ", '" + Classess.UsersManagments.UserName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public string GetMaxSrNoRHZChangeBYMozaId(string MozaId)
+        {
+            string spWithParam = "Proc_Get_Max_SrNo_RHZ_Change_By_Moza  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public DataTable GetRHZChangeDetailsListBYMozaId(string MozaId)
+        {
+            string spWithParam = "Proc_Get_RHZ_Change_Details_List_By_MozaId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+
         public string SaveNewKhata(string RegisterHqDKhataId, string RegisterHaqdaranId, string KhataNo, string Taraf, string Patai, string TotalParts, string Kanal, string Maral, string Sarsai, string feet, string malia, string kefiat, string insertuserid, string InsertLoginName)
         {
             string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + RegisterHqDKhataId + ", " + RegisterHaqdaranId + ", '" + KhataNo + "', '" + Taraf + "', '" + Patai + "', " + TotalParts + ", " + Kanal + ", " + Maral + ", " + Sarsai + ", " + feet + ", N'" + malia + "', N'" + kefiat + "', " + insertuserid + ", '" + InsertLoginName + "'";

@@ -35,6 +35,7 @@ namespace SDC_Application.AL
         DataTable dtKhatajatEdit = new DataTable();
         DataTable KhatooniesByKhata = new DataTable();
         Khatoonies khatooni = new Khatoonies();
+        DataTable dtRHZchangeDetailsList = new DataTable();
         DataView dtvKhewatFareeqainByPerson = new DataView();
         DataView viewMF;
         DataView view;
@@ -81,6 +82,26 @@ namespace SDC_Application.AL
         private void cmbMouza_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.Fill_Khata_DropDown();
+            txtSerialNo.Text = getNextSrNoByMoza(cmbMouza.SelectedValue.ToString());
+            dtRHZchangeDetailsList = rhz.GetRHZChangeDetailsListBYMozaId(cmbMouza.SelectedValue.ToString());
+            cbSrNo.DataSource = dtRHZchangeDetailsList;
+            cbSrNo.DisplayMember = "SrNo";
+            cbSrNo.ValueMember = "RHZ_ChangeId";
+            //objauto.FillCombo("Proc_Get_RHZ_Change_Details_List_By_MozaId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + cmbMouza.SelectedValue.ToString(), cbSrNo, "SrNo", "RHZ_ChangeId");
+        }
+
+        #endregion
+
+        #region Get Next SrNo by Moza
+
+        private string getNextSrNoByMoza(string mozaId)
+        {
+           string maxSrNo= rhz.GetMaxSrNoRHZChangeBYMozaId(mozaId);
+           if (maxSrNo.Length > 0)
+           {
+              maxSrNo= (Convert.ToInt32(maxSrNo) + 1).ToString();
+           }
+           return maxSrNo;
         }
 
         #endregion
@@ -145,7 +166,7 @@ namespace SDC_Application.AL
                     FillKhatooniList();
                     objauto.FillCombo("Proc_Get_AreaTypes_List " + UsersManagments._Tehsilid.ToString(), cboAreaType, "AreaType", "AreaTypeId");
                     this.LoadKhewatFareeqainMeezan(cbokhataNo.SelectedValue.ToString());
-                    tabControl1.Enabled = true;
+                    tabControlMain.Enabled = true;
                     this.LoadKhataLockDetails(cbokhataNo.SelectedValue.ToString());
                     dtKhatajatEdit = rhz.GetKhatajatEditByKhataId(cbokhataNo.SelectedValue.ToString());
                         if(dtKhatajatEdit.Rows.Count>0)
@@ -179,7 +200,7 @@ namespace SDC_Application.AL
                     txtKhataSFT.Clear();
                     txtKhataKifiat.Clear();
                     this.KhataId = "0";
-                    tabControl1.Enabled = false;
+                    tabControlMain.Enabled = false;
                 }
             }
         }
@@ -1460,5 +1481,62 @@ namespace SDC_Application.AL
         }
 
         #endregion
+
+        private void btnImplementChanges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrintProposedChanges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void btnSaveSrNo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSerialNo.Text.Trim().Length > 0 && txtDetails.Text.Trim().Length > 0)
+                {
+                    string retVal = rhz.SaveRHZChangeDetails(txtRHZ_ChangeId.Text, cmbMouza.SelectedValue.ToString(), txtSerialNo.Text.Trim(), txtDetails.Text.Trim());
+                    if (retVal.Length > 5)
+                    {
+                        MessageBox.Show("درج شدہ تفصیل محوظ ہو چکا ہے۔");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        private void btnNewDetails_Click(object sender, EventArgs e)
+        {
+            txtSerialNo.Text = getNextSrNoByMoza(cmbMouza.SelectedValue.ToString());
+            txtDetails.Clear();
+            txtRHZ_ChangeId.Text = "-1";
+            tabControlMain.Enabled = true;
+        }
+
+        private void cbSrNo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataRow[] row = dtRHZchangeDetailsList.Select("RHZ_ChangeId="+cbSrNo.SelectedValue.ToString());
+            txtSerialNo.Text=row[0]["SrNo"].ToString();
+            txtRHZ_ChangeId.Text=row[0]["RHZ_ChangeId"].ToString();
+            txtDetails.Text = row[0]["ChangeDetails"].ToString();
+            tabControlMain.Enabled = row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false;
+        }
     }
 }

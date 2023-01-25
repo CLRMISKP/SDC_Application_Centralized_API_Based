@@ -46,6 +46,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgInteqalKhattas = new System.Windows.Forms.DataGridView();
+            this.ColSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -53,20 +59,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblKhataRevert = new System.Windows.Forms.Label();
+            this.btnRevertKhata = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnIntiqalEnableRevert = new System.Windows.Forms.Button();
-            this.ttIntiqalRevert = new System.Windows.Forms.ToolTip(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.txtCommentsRevert = new System.Windows.Forms.TextBox();
-            this.ColSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnRevertKhata = new System.Windows.Forms.Button();
-            this.lblKhataRevert = new System.Windows.Forms.Label();
+            this.ttIntiqalRevert = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbAttestationEnableDisable.SuspendLayout();
@@ -77,8 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgInteqalKhattas)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -167,6 +167,7 @@
             this.btnIntiqalEnableAttested.TabStop = false;
             this.ttIntiqalRevert.SetToolTip(this.btnIntiqalEnableAttested, "انتقال ترمیم کیلئے فعال کرِیں");
             this.btnIntiqalEnableAttested.UseVisualStyleBackColor = true;
+            this.btnIntiqalEnableAttested.Click += new System.EventHandler(this.btnIntiqalEnableAttested_Click);
             // 
             // gbAmalEnableDisable
             // 
@@ -226,6 +227,7 @@
             this.btnIntiqalEnable.TabStop = false;
             this.ttIntiqalRevert.SetToolTip(this.btnIntiqalEnable, "انتقال ترمیم کیلئے فعال کرِیں");
             this.btnIntiqalEnable.UseVisualStyleBackColor = true;
+            this.btnIntiqalEnable.Click += new System.EventHandler(this.btnIntiqalEnable_Click);
             // 
             // groupBox3
             // 
@@ -303,6 +305,56 @@
             this.dgInteqalKhattas.Size = new System.Drawing.Size(1216, 260);
             this.dgInteqalKhattas.TabIndex = 1;
             this.dgInteqalKhattas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInteqalKhattas_CellClick);
+            // 
+            // ColSel
+            // 
+            this.ColSel.HeaderText = "انتخاب کریں";
+            this.ColSel.Name = "ColSel";
+            this.ColSel.ReadOnly = true;
+            this.ColSel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "KhataNo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "کھاتہ نمبر";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Khata_TotalParts";
+            this.dataGridViewTextBoxColumn2.HeaderText = "کل حصے";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Khata_Area";
+            this.dataGridViewTextBoxColumn3.HeaderText = "کل رقبہ";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewLinkColumn1
+            // 
+            this.dataGridViewLinkColumn1.HeaderText = "بائعان/دہندہ گان";
+            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
+            this.dataGridViewLinkColumn1.ReadOnly = true;
+            this.dataGridViewLinkColumn1.Text = "بائعان/دہندہ گان";
+            this.dataGridViewLinkColumn1.UseColumnTextForLinkValue = true;
+            this.dataGridViewLinkColumn1.Visible = false;
+            // 
+            // dataGridViewLinkColumn2
+            // 
+            this.dataGridViewLinkColumn2.HeaderText = "مشتریان/گریندہ گان";
+            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
+            this.dataGridViewLinkColumn2.ReadOnly = true;
+            this.dataGridViewLinkColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLinkColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewLinkColumn2.Text = "مشتریان/گریندہ گان";
+            this.dataGridViewLinkColumn2.UseColumnTextForLinkValue = true;
+            this.dataGridViewLinkColumn2.Visible = false;
             // 
             // groupBox4
             // 
@@ -385,6 +437,51 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "سالم انتقال بمع تمام کھاتاجات ترمیم کیلئے فعال کریں";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lblKhataRevert);
+            this.groupBox6.Controls.Add(this.btnRevertKhata);
+            this.groupBox6.Location = new System.Drawing.Point(401, 38);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(200, 152);
+            this.groupBox6.TabIndex = 44;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "انتخاب کردہ کھاتہ ریورٹ کریں";
+            // 
+            // lblKhataRevert
+            // 
+            this.lblKhataRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblKhataRevert.AutoSize = true;
+            this.lblKhataRevert.Location = new System.Drawing.Point(9, 115);
+            this.lblKhataRevert.Name = "lblKhataRevert";
+            this.lblKhataRevert.Size = new System.Drawing.Size(0, 31);
+            this.lblKhataRevert.TabIndex = 14;
+            // 
+            // btnRevertKhata
+            // 
+            this.btnRevertKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRevertKhata.Enabled = false;
+            this.btnRevertKhata.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnRevertKhata.Location = new System.Drawing.Point(65, 41);
+            this.btnRevertKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnRevertKhata.Name = "btnRevertKhata";
+            this.btnRevertKhata.Size = new System.Drawing.Size(62, 63);
+            this.btnRevertKhata.TabIndex = 13;
+            this.btnRevertKhata.TabStop = false;
+            this.ttIntiqalRevert.SetToolTip(this.btnRevertKhata, " انخاب کردہ کھاتہ ترمیم کیلئے بمع ریورٹ  فعال کرِیں");
+            this.btnRevertKhata.UseVisualStyleBackColor = true;
+            this.btnRevertKhata.Click += new System.EventHandler(this.btnRevertKhata_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnIntiqalEnableRevert);
+            this.groupBox2.Location = new System.Drawing.Point(637, 38);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 152);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "سالم انتقال ریورٹ کریں";
+            // 
             // btnIntiqalEnableRevert
             // 
             this.btnIntiqalEnableRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -418,101 +515,6 @@
             this.ttIntiqalRevert.SetToolTip(this.txtCommentsRevert, "انتقال / کھاتہ ریورٹ کرنے کی تفصیل درج کریں");
             this.txtCommentsRevert.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
-            // ColSel
-            // 
-            this.ColSel.HeaderText = "انتخاب کریں";
-            this.ColSel.Name = "ColSel";
-            this.ColSel.ReadOnly = true;
-            this.ColSel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "KhataNo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "کھاتہ نمبر";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Khata_TotalParts";
-            this.dataGridViewTextBoxColumn2.HeaderText = "کل حصے";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Khata_Area";
-            this.dataGridViewTextBoxColumn3.HeaderText = "کل رقبہ";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewLinkColumn1
-            // 
-            this.dataGridViewLinkColumn1.HeaderText = "بائعان/دہندہ گان";
-            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
-            this.dataGridViewLinkColumn1.ReadOnly = true;
-            this.dataGridViewLinkColumn1.Text = "بائعان/دہندہ گان";
-            this.dataGridViewLinkColumn1.UseColumnTextForLinkValue = true;
-            this.dataGridViewLinkColumn1.Visible = false;
-            // 
-            // dataGridViewLinkColumn2
-            // 
-            this.dataGridViewLinkColumn2.HeaderText = "مشتریان/گریندہ گان";
-            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
-            this.dataGridViewLinkColumn2.ReadOnly = true;
-            this.dataGridViewLinkColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLinkColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewLinkColumn2.Text = "مشتریان/گریندہ گان";
-            this.dataGridViewLinkColumn2.UseColumnTextForLinkValue = true;
-            this.dataGridViewLinkColumn2.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnIntiqalEnableRevert);
-            this.groupBox2.Location = new System.Drawing.Point(637, 38);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 152);
-            this.groupBox2.TabIndex = 43;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "سالم انتقال ریورٹ کریں";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.lblKhataRevert);
-            this.groupBox6.Controls.Add(this.btnRevertKhata);
-            this.groupBox6.Location = new System.Drawing.Point(401, 38);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 152);
-            this.groupBox6.TabIndex = 44;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "انتخاب کردہ کھاتہ ریورٹ کریں";
-            // 
-            // btnRevertKhata
-            // 
-            this.btnRevertKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRevertKhata.Enabled = false;
-            this.btnRevertKhata.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnRevertKhata.Location = new System.Drawing.Point(65, 41);
-            this.btnRevertKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnRevertKhata.Name = "btnRevertKhata";
-            this.btnRevertKhata.Size = new System.Drawing.Size(62, 63);
-            this.btnRevertKhata.TabIndex = 13;
-            this.btnRevertKhata.TabStop = false;
-            this.ttIntiqalRevert.SetToolTip(this.btnRevertKhata, " انخاب کردہ کھاتہ ترمیم کیلئے بمع ریورٹ  فعال کرِیں");
-            this.btnRevertKhata.UseVisualStyleBackColor = true;
-            this.btnRevertKhata.Click += new System.EventHandler(this.btnRevertKhata_Click);
-            // 
-            // lblKhataRevert
-            // 
-            this.lblKhataRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblKhataRevert.AutoSize = true;
-            this.lblKhataRevert.Location = new System.Drawing.Point(9, 115);
-            this.lblKhataRevert.Name = "lblKhataRevert";
-            this.lblKhataRevert.Size = new System.Drawing.Size(0, 31);
-            this.lblKhataRevert.TabIndex = 14;
-            // 
             // frmIntiqalRevertEnable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -539,9 +541,9 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
