@@ -58,6 +58,7 @@
             this.dtpTasdiq = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnIntiqalAmalDaramadByKhata = new System.Windows.Forms.Button();
             this.btnIntiqalAmal = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -73,7 +74,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.cachedFardMalkan_Rzr_Trans2 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
-            this.btnIntiqalAmalDaramadByKhata = new System.Windows.Forms.Button();
+            this.cachedFardMalkan_Rzr_Trans3 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -440,6 +441,20 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "اندراج و تبدیلی انتقال";
             // 
+            // btnIntiqalAmalDaramadByKhata
+            // 
+            this.btnIntiqalAmalDaramadByKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalAmalDaramadByKhata.Image = global::SDC_Application.Resource1.partitions_icon;
+            this.btnIntiqalAmalDaramadByKhata.Location = new System.Drawing.Point(705, 46);
+            this.btnIntiqalAmalDaramadByKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnIntiqalAmalDaramadByKhata.Name = "btnIntiqalAmalDaramadByKhata";
+            this.btnIntiqalAmalDaramadByKhata.Size = new System.Drawing.Size(59, 50);
+            this.btnIntiqalAmalDaramadByKhata.TabIndex = 35;
+            this.btnIntiqalAmalDaramadByKhata.TabStop = false;
+            this.toolTip.SetToolTip(this.btnIntiqalAmalDaramadByKhata, "انتقال عمل دارمد کھاتہ در کھاتہ");
+            this.btnIntiqalAmalDaramadByKhata.UseVisualStyleBackColor = true;
+            this.btnIntiqalAmalDaramadByKhata.Click += new System.EventHandler(this.btnIntiqalAmalDaramadByKhata_Click_1);
+            // 
             // btnIntiqalAmal
             // 
             this.btnIntiqalAmal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -451,13 +466,13 @@
             this.btnIntiqalAmal.Name = "btnIntiqalAmal";
             this.btnIntiqalAmal.Size = new System.Drawing.Size(53, 49);
             this.btnIntiqalAmal.TabIndex = 34;
+            this.toolTip.SetToolTip(this.btnIntiqalAmal, "مکمل شدہ انتقال پر عمل کریں");
             this.btnIntiqalAmal.UseVisualStyleBackColor = true;
             this.btnIntiqalAmal.Click += new System.EventHandler(this.btnIntiqalAmal_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Enabled = false;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.Location = new System.Drawing.Point(1215, 46);
@@ -465,8 +480,8 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(53, 49);
             this.btnEdit.TabIndex = 33;
+            this.toolTip.SetToolTip(this.btnEdit, "انتقال فعال غیر فعال کریں");
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnConfirm
@@ -480,6 +495,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(53, 49);
             this.btnConfirm.TabIndex = 0;
+            this.toolTip.SetToolTip(this.btnConfirm, "انتقال ہر لحاظ سے مکمل ہونے کے بعد عمل کے لئے فائنل کریں");
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -531,6 +547,7 @@
             this.btnDelMain.Size = new System.Drawing.Size(53, 49);
             this.btnDelMain.TabIndex = 3;
             this.btnDelMain.TabStop = false;
+            this.toolTip.SetToolTip(this.btnDelMain, "انتخاب کردہ انتقال حذف کریں");
             this.btnDelMain.UseVisualStyleBackColor = true;
             this.btnDelMain.Click += new System.EventHandler(this.btnDelMain_Click);
             // 
@@ -544,6 +561,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(53, 49);
             this.btnSave.TabIndex = 2;
+            this.toolTip.SetToolTip(this.btnSave, "اندراج کردہ معلومات محفوظ کریں");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -556,6 +574,7 @@
             this.btnNewInteqal.Name = "btnNewInteqal";
             this.btnNewInteqal.Size = new System.Drawing.Size(53, 49);
             this.btnNewInteqal.TabIndex = 1;
+            this.toolTip.SetToolTip(this.btnNewInteqal, "نئے انتقال کا اندراج کرِیں");
             this.btnNewInteqal.UseVisualStyleBackColor = true;
             this.btnNewInteqal.Click += new System.EventHandler(this.btnNewInteqal_Click);
             // 
@@ -599,20 +618,6 @@
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
-            // 
-            // btnIntiqalAmalDaramadByKhata
-            // 
-            this.btnIntiqalAmalDaramadByKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIntiqalAmalDaramadByKhata.Image = global::SDC_Application.Resource1.partitions_icon;
-            this.btnIntiqalAmalDaramadByKhata.Location = new System.Drawing.Point(705, 46);
-            this.btnIntiqalAmalDaramadByKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnIntiqalAmalDaramadByKhata.Name = "btnIntiqalAmalDaramadByKhata";
-            this.btnIntiqalAmalDaramadByKhata.Size = new System.Drawing.Size(59, 50);
-            this.btnIntiqalAmalDaramadByKhata.TabIndex = 35;
-            this.btnIntiqalAmalDaramadByKhata.TabStop = false;
-            this.toolTip.SetToolTip(this.btnIntiqalAmalDaramadByKhata, "انتقال عمل دارمد کھاتہ در کھاتہ");
-            this.btnIntiqalAmalDaramadByKhata.UseVisualStyleBackColor = true;
-            this.btnIntiqalAmalDaramadByKhata.Click += new System.EventHandler(this.btnIntiqalAmalDaramadByKhata_Click_1);
             // 
             // frmIntiqalMainForManual
             // 
@@ -691,5 +696,6 @@
         private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
         private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans2;
         private System.Windows.Forms.Button btnIntiqalAmalDaramadByKhata;
+        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans3;
     }
 }

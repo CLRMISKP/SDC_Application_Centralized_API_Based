@@ -370,6 +370,9 @@ namespace SDC_Application.AL
                     this.intiqalIId = data["IntiqalInitiationId"].ToString();
                     txtLandValue.Text = data["LandValue"].ToString();
                     LandValue = data["LandValue"].ToString();
+                    AmalDaramad =Convert.ToBoolean(data["AmalDaramadStatus"].ToString());
+                    Attested = Convert.ToBoolean(data["Attested"].ToString());
+                    TokenId = data["TokenId"].ToString();
                     //this.Teh_Report = data["Teh_Report"].ToString().Length;
                     // dtpTasdiq.Value = data.IntiqalAttestationDate;
                 isConfirmed=Convert.ToBoolean(data["isConfirm"].ToString());
@@ -386,6 +389,12 @@ namespace SDC_Application.AL
                     else
                         btnIntiqalAmal.Enabled = false;
 
+                    if (UsersManagments._IsAdmin)
+                    {
+                        btnEdit.Enabled = true;
+                    }
+                    else
+                        btnEdit.Enabled = false;
                     if (cboMoza.SelectedIndex != -1 && txtIntiqalNo.Text.Trim().Length > 0 && cboIntiqalInitiation.SelectedValue.ToString() == "2")
                     {
                        
@@ -1560,11 +1569,27 @@ namespace SDC_Application.AL
             {
                 try
                 {
+                    frmIntiqalRevertEnable ire = new frmIntiqalRevertEnable();
+                    ire.IntiqalId = this.IntiqalId;
+                    ire.IntiqalAmalDaramad = AmalDaramad;
+                    ire.isAttested = Attested;
+                    ire.TokenId = this.TokenId;
+                    ire.FormClosed -= new FormClosedEventHandler(ire_FormClosed);
+                    ire.FormClosed += new FormClosedEventHandler(ire_FormClosed);
+                    ire.ShowDialog();
                 }
                 catch (Exception ex)
                 { 
+
                 }
             }
+        }
+
+        void ire_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string mozaId = cboMoza.SelectedValue.ToString();
+            string intiqalNo = txtIntiqalNo.Text.Trim();
+            FillIntiqalByIntiqalId(mozaId, intiqalNo);
         }
 
         private void btnIntiqalAmalDaramadByKhata_Click_1(object sender, EventArgs e)
