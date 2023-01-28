@@ -166,7 +166,7 @@ namespace SDC_Application.BL
 
         #endregion
 
-         #region Get Intiqal Plot Contruction Types List
+        #region Get Intiqal Plot Contruction Types List
 
         public DataTable GetIntiqalPlotConstructionTypeList(string PlotTypeId)
         {
@@ -177,7 +177,6 @@ namespace SDC_Application.BL
 
 
         #endregion
-
 
         #region Get Intiqal TaxDetails By TokenId
 
@@ -202,8 +201,6 @@ namespace SDC_Application.BL
 
 
         #endregion
-
-        
 
         #region Update Intiqal Taxes  Details
 

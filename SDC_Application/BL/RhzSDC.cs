@@ -81,16 +81,21 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
 
-        public string SaveNewKhata(string RegisterHqDKhataId, string RegisterHaqdaranId, string KhataNo, string Taraf, string Patai, string TotalParts, string Kanal, string Maral, string Sarsai, string feet, string malia, string kefiat, string insertuserid, string InsertLoginName)
+        public string SaveNewKhata(string RegisterHqDKhataId, string RegisterHaqdaranId, string KhataNo, string Taraf, string Patai, string TotalParts, string Kanal, string Maral, string Sarsai, string feet, string malia, string kefiat, string insertuserid, string InsertLoginName, string RecStatus)
         {
-            string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + RegisterHqDKhataId + ", " + RegisterHaqdaranId + ", '" + KhataNo + "', '" + Taraf + "', '" + Patai + "', " + TotalParts + ", " + Kanal + ", " + Maral + ", " + Sarsai + ", " + feet + ", N'" + malia + "', N'" + kefiat + "', " + insertuserid + ", '" + InsertLoginName + "'";
+            string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + RegisterHqDKhataId + ", " + RegisterHaqdaranId + ", '" + KhataNo + "', '" + Taraf + "', '" + Patai + "', " + TotalParts + ", " + Kanal + ", " + Maral + ", " + Sarsai + ", " + feet + ", N'" + malia + "', N'" + kefiat + "', " + insertuserid + ", '" + InsertLoginName + "',"+RecStatus;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-        public string SaveKhataDetails(string KhataRecId, string KhataId, string RegisterId, string KhataNo, string KhataNoProp,string KhataHissas, string KhataHissasProp ,string Kanal, string KanalProp, string Marla, string MarlaProp, string Sarsai, string SarsaiProp, string Sft, string SftProp, string Kyfiat, string UserId, string LoginName, string KyfiatProp)
+        public string SaveKhataDetails(string KhataRecId,string RHZ_ChangeId, string KhataId, string RegisterId, string KhataNo, string KhataNoProp,string KhataHissas, string KhataHissasProp ,string Kanal, string KanalProp, string Marla, string MarlaProp, string Sarsai, string SarsaiProp, string Sft, string SftProp, string Kyfiat, string UserId, string LoginName, string KyfiatProp, string EditingMode)
         {
-            string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajatEdit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataRecId + ",'" + KhataId + "'," + RegisterId + ",'" + KhataNo + "','" + KhataNoProp + "'," + KhataHissas + "," + KhataHissasProp + ","+ Kanal + "," + KanalProp + "," + Marla + "," + MarlaProp + "," + Sarsai + "," + SarsaiProp + "," + Sft + "," + SftProp + "," + UserId + ",'" + LoginName + "',N'" + Kyfiat + "',N'" + KyfiatProp + "'";
+            string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajatEdit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataRecId +","+RHZ_ChangeId+ ",'" + KhataId + "'," + RegisterId + ",'" + KhataNo + "','" + KhataNoProp + "'," + KhataHissas + "," + KhataHissasProp + ","+ Kanal + "," + KanalProp + "," + Marla + "," + MarlaProp + "," + Sarsai + "," + SarsaiProp + "," + Sft + "," + SftProp + "," + UserId + ",'" + LoginName + "',N'" + Kyfiat + "',N'" + KyfiatProp + "','"+EditingMode+"'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public DataTable GetKhatajatEditedByRHZ_ChangeId(string MozaId, string RHZ_ChangeId)
+        {
+            string spWithParam = "Proc_Get_Moza_Register_KhataJat_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + "," + RHZ_ChangeId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
 
         #region Save Khewat Group Fareeq Proposed FB
