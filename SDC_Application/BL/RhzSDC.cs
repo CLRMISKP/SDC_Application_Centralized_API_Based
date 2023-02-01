@@ -210,9 +210,9 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
-        public DataTable GetKhatooniKhassraDetailEdit(string Khatooniid)
+        public DataTable GetKhatooniKhassraDetailEdit(string Khatooniid, string RHZ_ChangeId)
         {
-            string spWithParam = "Proc_Get_Khatooni_KhassraArea_Detail_Edit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + Khatooniid;
+            string spWithParam = "Proc_Get_Khatooni_KhassraArea_Detail_Edit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + Khatooniid+","+RHZ_ChangeId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
@@ -223,9 +223,9 @@ namespace SDC_Application.BL
 
         }
 
-        public DataTable GetKhatooniEditingDetailsByKhatooniId(string KhatooniId)
+        public DataTable GetKhatooniEditingDetailsByKhatooniId(string KhatooniId, string RHZ_ChangeId)
         {
-            string spWithParam = "Proc_Get_KhatooniEditingDetail_By_KhatooniId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
+            string spWithParam = "Proc_Get_KhatooniEditingDetail_By_KhatooniId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId+","+RHZ_ChangeId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }

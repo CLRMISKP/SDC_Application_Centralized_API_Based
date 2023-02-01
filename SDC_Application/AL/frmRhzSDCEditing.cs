@@ -467,14 +467,17 @@ namespace SDC_Application.AL
                 {
                     this.panelKhassra.Enabled = true;
                     DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
-                    DataTable KhatooniEditingDetails = rhz.GetKhatooniEditingDetailsByKhatooniId(cboKhatoonies.SelectedValue.ToString());
+                    DataTable KhatooniEditingDetails = rhz.GetKhatooniEditingDetailsByKhatooniId(cboKhatoonies.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
                     foreach (DataRow row in KhatooniDetail.Rows)
                     {
                         //--- Existing Khatooni Fields ----
                         txtKhatooniLagan.Text = row["KhatooniLagan"].ToString();
+                        txtKhatooniLaganProp.Text = row["KhatooniLagan"].ToString();
                         txtKhatooniNoProp.Text = row["KhatooniNo"].ToString();
                         txtWasailAbpashi.Text = row["Wasail_e_Abpashi"].ToString();
+                        txtWasailAbpashiProp.Text = row["Wasail_e_Abpashi"].ToString();
                         txtKhatooniFullDetails.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                        txtKhatooniFullDetailsProp.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
                         chkBeahShoda.Checked = Convert.ToBoolean(row["BeahShud"].ToString());
                         //--- Proposed Khatooni Fields ----
                         if (KhatooniEditingDetails.Rows.Count > 0)
@@ -487,10 +490,10 @@ namespace SDC_Application.AL
                         }
                         else
                         {
-                            txtKhatooniLaganProp.Clear();
-                            txtKhatooniNoProp.Clear();
-                            txtWasailAbpashiProp.Clear();
-                            txtKhatooniFullDetailsProp.Clear();
+                            //txtKhatooniLaganProp.Clear();
+                            //txtKhatooniNoProp.Clear();
+                            //txtWasailAbpashiProp.Clear();
+                            //txtKhatooniFullDetailsProp.Clear();
                             txtKhatooniRecId.Text = "-1";
                         }
 
@@ -630,7 +633,7 @@ namespace SDC_Application.AL
                 DataTable dtKhassras = new DataTable();
                 DataTable dtKhassrasEdit = new DataTable();
                 dtKhassras = khatooni.GetKhassrajatByKhatooniId(cboKhatoonies.SelectedValue.ToString());
-                dtKhassrasEdit = rhz.GetKhatooniKhassraDetailEdit(cboKhatoonies.SelectedValue.ToString());
+                dtKhassrasEdit = rhz.GetKhatooniKhassraDetailEdit(cboKhatoonies.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
                 dgKhatooniKhassras.DataSource = dtKhassras;
                 dgkhatooniKhassraEdit.DataSource = dtKhassrasEdit;
                 this.viewKhassra = new DataView(dtKhassras);
@@ -716,19 +719,26 @@ namespace SDC_Application.AL
             {
                 dtKhewatFareeqainEdit = rhz.Proc_Get_KhewatFareeqeinBy_KhataId_Edite(cbokhataNo.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
                 dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainEdit;
-                dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-                dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
+                dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "موجودہ حصہ";
+                dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "موجودہ رقبہ";
+                dgKhewatFreeqDetails.Columns["FardAreaPartProp"].HeaderText = "مجوزہ حصہ";
+                dgKhewatFreeqDetails.Columns["Khewat_Area_Prop"].HeaderText = "مجوزہ رقبہ";
+                dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "موجودہ نام مالک";
+                dgKhewatFreeqDetails.Columns["PersonNameProp"].HeaderText = "مجوزہ نام مالک";
                 dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
                 dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-                dgKhewatFreeqDetails.Columns["KhewatType"].HeaderText = "قسم مالک";
+                dgKhewatFreeqDetails.Columns["KhewatType"].HeaderText = "موجودہ قسم مالک";
+                dgKhewatFreeqDetails.Columns["KhewatTypeProp"].HeaderText = "مجوزہ قسم مالک";
                 dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
+                dgKhewatFreeqDetails.Columns["FardPart_Bata_Prop"].Visible = false;
                 dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
                 dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
                 dgKhewatFreeqDetails.Columns["KhewatGroupFareeqRecId"].Visible = false;
                 dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
                 dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
+                dgKhewatFreeqDetails.Columns["PersonIdProp"].Visible = false;
                 dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
+                dgKhewatFreeqDetails.Columns["KhewatTypeIdProp"].Visible = false;
                 //dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
                 dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
                 dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
@@ -977,7 +987,7 @@ namespace SDC_Application.AL
                         string[] ExistingArea = dgKhewatFareeqainAll.SelectedRows[0].Cells["Khewat_Area"].Value.ToString().Split('-');
                         string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhataHissa.Text), float.Parse(txtPersonNetHissa.Text), Convert.ToInt32(txtKhataKanal.Text), Convert.ToInt32(txtKhataMarla.Text), float.Parse(txtKhataSarsai.Text != "" ? txtKhataSarsai.Text : "0"), float.Parse(txtKhataSFT.Text != "" ? txtKhataSFT.Text : "0"));
                         string LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(), txtPersonId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(),
-                            txtPersonNetHissa.Text, ExistingArea[0], Area[0], ExistingArea[1], Area[1].ToString(), ExistingArea[2], Area[2].ToString(), (float.Parse(ExistingArea[2]) * 30.25).ToString(), Area[3].ToString(), dgKhewatFareeqainAll.SelectedRows[0].Cells["KhewatTypeId"].Value.ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(), txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim(), txtRHZ_ChangeId.Text);
+                            txtPersonNetHissa.Text, ExistingArea[0], Area[0], ExistingArea[1], Area[1].ToString(), (Math.Round(float.Parse(ExistingArea[2])/30.25,5)).ToString(), Area[2].ToString(), ExistingArea[2], Area[3].ToString(), dgKhewatFareeqainAll.SelectedRows[0].Cells["KhewatTypeId"].Value.ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardPart_Bata"].Value.ToString(), txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim(), txtRHZ_ChangeId.Text);
                         if (LastId.Length > 5)
                         {
                             ResetMalakEntryFields();
@@ -1036,9 +1046,9 @@ namespace SDC_Application.AL
                             txtSeqNo.Text = row.Cells["seqno"].Value.ToString();
                             txtPersonName.Text = row.Cells["PersonName"].Value.ToString();
                             cboQismMalik.SelectedValue = row.Cells["KhewatTypeId"].Value;
-                            txtPersonHissaBata.Text = row.Cells["FardPart_Bata"].Value.ToString();
-                            txtPersonNetHissa.Text = row.Cells["FardAreaPart"].Value.ToString();
-                            txtPersonId.Text = row.Cells["PersonId"].Value.ToString();
+                            txtPersonHissaBata.Text = row.Cells["FardPart_Bata_Prop"].Value.ToString();
+                            txtPersonNetHissa.Text = row.Cells["FardAreaPartProp"].Value.ToString();
+                            txtPersonId.Text = row.Cells["PersonIdProp"].Value.ToString();
                             txtKhewatGroupId.Text = row.Cells["KhewatGroupId"].Value.ToString();
                             txtKhewatGroupFareeqId.Text = row.Cells["KhewatGroupFareeqId"].Value.ToString();
                             txtKhewatGroupFareeqRecId.Text = row.Cells["KhewatGroupFareeqRecId"].Value.ToString();
@@ -1458,7 +1468,7 @@ namespace SDC_Application.AL
 
         private void btnDeleteKhassra_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("آپ نے کوئی کھتونی منتخب نہیں کیا، کیا آپ انتخاب کردہ کھتونی کو حذف کرنا چاہتے ہے؟", "حذف کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            if (DialogResult.Yes == MessageBox.Show(" کیا آپ انتخاب کردہ خسرہ کو حذف کرنا چاہتے ہے؟", "حذف کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
                 try
                 {
@@ -1468,12 +1478,36 @@ namespace SDC_Application.AL
                         if(row.Cells["KhassraNo"].Value.ToString()==txtKhassraNo.Text.Trim())
                             NoOfDetails=NoOfDetails+1 ;
                     }
-                    if(NoOfDetails>1)
+                    if (NoOfDetails > 1)
                     {
-                        frmKhassraDeletionInput di=new frmKhassraDeletionInput();
-                        di.FormClosed-=new FormClosedEventHandler(di_FormClosed);
-                        di.FormClosed+=new FormClosedEventHandler(di_FormClosed);
+                        frmKhassraDeletionInput di = new frmKhassraDeletionInput();
+                        di.FormClosed -= new FormClosedEventHandler(di_FormClosed);
+                        di.FormClosed += new FormClosedEventHandler(di_FormClosed);
                         di.ShowDialog();
+                    }
+                    else
+                    {
+                        string KhassraNo = "0", AreaTypeId = "0", KhassraKanal = "0", KhassraMarla = "0", KhassraSarsai = "0";
+                        foreach (DataGridViewRow row in dgKhatooniKhassras.Rows)
+                        {
+                            if (row.Cells["KhassraDetailId"].Value.ToString() == txtKhassraDetailId.Text)
+                            {
+                                KhassraNo = row.Cells["KhassraNo"].Value.ToString();
+                                AreaTypeId = row.Cells["AreaTypeId"].Value.ToString();
+                                KhassraKanal = row.Cells["Kanal"].Value.ToString();
+                                KhassraMarla = row.Cells["Marla"].Value.ToString();
+                                KhassraSarsai = row.Cells["Sarsai"].Value.ToString();
+                                break;
+                            }
+                        }
+                        string retVal = rhz.SaveKhassraRegisterEdit(txtKhassraRecId.Text, txtKhassraDetailRecId.Text, txtKhassraId.Text, cmbMouza.SelectedValue.ToString(), KhassraNo, txtKhassraNo.Text.Trim(), txtKhassraDetailId.Text, cboKhatoonies.SelectedValue.ToString(),
+                           AreaTypeId, cboAreaType.SelectedValue.ToString(), KhassraKanal, txtKhassraKanal.Text.Trim(), KhassraMarla, txtKhassraMarla.Text.Trim(), KhassraSarsai, txtKhassraSarsai.Text.Trim(), Math.Round(float.Parse(KhassraSarsai) * 30.25, 0).ToString(), Math.Round(float.Parse(txtKhassraSarsai.Text.Trim()) * 30.25, 0).ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "CompleteDeleted", txtRHZ_ChangeId.Text);
+                        if (retVal.Length > 5)
+                        {
+                            resetKhassraFields();
+                            btnLoadKhassras_Click(sender, e);
+
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -1490,8 +1524,7 @@ namespace SDC_Application.AL
             isCompleteDelete = di.isCompleteDelete;
             try
                 {
-                    if (isCompleteDelete)
-                    {
+                    
                         //rhz.
                         string KhassraNo = "0", AreaTypeId = "0", KhassraKanal = "0", KhassraMarla = "0", KhassraSarsai = "0";
                         foreach (DataGridViewRow row in dgKhatooniKhassras.Rows)
@@ -1506,15 +1539,20 @@ namespace SDC_Application.AL
                                 break;
                             }
                         }
+                        string deletionMode = "CompleteDeleted";
+                        if (!isCompleteDelete)
+                        {
+                            deletionMode = "Deleted";
+                        }
                         string retVal = rhz.SaveKhassraRegisterEdit(txtKhassraRecId.Text, txtKhassraDetailRecId.Text, txtKhassraId.Text, cmbMouza.SelectedValue.ToString(), KhassraNo, txtKhassraNo.Text.Trim(), txtKhassraDetailId.Text, cboKhatoonies.SelectedValue.ToString(),
-                            AreaTypeId, cboAreaType.SelectedValue.ToString(), KhassraKanal, txtKhassraKanal.Text.Trim(), KhassraMarla, txtKhassraMarla.Text.Trim(), KhassraSarsai, txtKhassraSarsai.Text.Trim(), Math.Round(float.Parse(KhassraSarsai) * 30.25, 0).ToString(), Math.Round(float.Parse(txtKhassraSarsai.Text.Trim()) * 30.25, 0).ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "Deleted", txtRHZ_ChangeId.Text);
+                            AreaTypeId, cboAreaType.SelectedValue.ToString(), KhassraKanal, txtKhassraKanal.Text.Trim(), KhassraMarla, txtKhassraMarla.Text.Trim(), KhassraSarsai, txtKhassraSarsai.Text.Trim(), Math.Round(float.Parse(KhassraSarsai) * 30.25, 0).ToString(), Math.Round(float.Parse(txtKhassraSarsai.Text.Trim()) * 30.25, 0).ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, deletionMode, txtRHZ_ChangeId.Text);
                         if (retVal.Length > 5)
                         {
                             resetKhassraFields();
                             btnLoadKhassras_Click(sender, e);
 
                         }
-                    }
+                    
                 }
             catch (Exception ex)
             {
