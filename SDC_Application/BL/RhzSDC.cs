@@ -98,7 +98,7 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
 
-        #region Save Khewat Group Fareeq Proposed FB
+        #region Save Khassra Register Details 
         public string SaveKhassraRegisterEdit(
                    string KhassraRecId,
                    string KhassraDetailRecId,
@@ -119,7 +119,9 @@ namespace SDC_Application.BL
                    string Feet,
                    string Feet_Proposed,
                    string InsertUserId,
-                   string InsertLoginName
+                   string InsertLoginName,
+                    string ChangeMode,
+                    string RHZ_ChangeId
                   )
         {
             string spWithParms = "WEB_SP_INSERT_KhassraRegister_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," +
@@ -141,7 +143,7 @@ namespace SDC_Application.BL
             Feet + "," +
             Feet_Proposed + "," +
             InsertUserId + ",'" +
-            InsertLoginName + "'";
+            InsertLoginName + "','"+ChangeMode+"',"+RHZ_ChangeId;
 
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
         }
@@ -165,9 +167,9 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-        public string WEB_SP_INSERT_KhatooniRegisterEdit(string KhatooniRecId, string KhatooniId, string KhatooniNo, string KhatooniNoProp, string KhatooniKashtkaranFullDetail_New, string KhatooniKashtkaranFullDetail_NewProp, string RegisterHqDKhataId, string Wasail_e_Abpashi, string Wasail_e_AbpashiProp, string KhatooniLagan, string KhatooniLaganProp, string insertuserid, string InsertLoginName)
+        public string WEB_SP_INSERT_KhatooniRegisterEdit(string KhatooniRecId, string KhatooniId, string KhatooniNo, string KhatooniNoProp, string KhatooniKashtkaranFullDetail_New, string KhatooniKashtkaranFullDetail_NewProp, string RegisterHqDKhataId, string Wasail_e_Abpashi, string Wasail_e_AbpashiProp, string KhatooniLagan, string KhatooniLaganProp, string insertuserid, string InsertLoginName, string RHZ_ChangeId, string ChangeMode)
         {
-            string spWithParam = "WEB_SP_INSERT_KhatooniRegisterEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniRecId + ", " + KhatooniId + ",'" + KhatooniNo + "','" + KhatooniNoProp + "',N'" + KhatooniKashtkaranFullDetail_New + "',N'" + KhatooniKashtkaranFullDetail_NewProp + "'," + RegisterHqDKhataId + ",N'" + Wasail_e_Abpashi + "',N'" + Wasail_e_AbpashiProp + "',N'" + KhatooniLagan + "',N'" + KhatooniLaganProp + "'," + insertuserid + ",'" + InsertLoginName + "'";
+            string spWithParam = "WEB_SP_INSERT_KhatooniRegisterEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniRecId + ", " + KhatooniId + ",'" + KhatooniNo + "','" + KhatooniNoProp + "',N'" + KhatooniKashtkaranFullDetail_New + "',N'" + KhatooniKashtkaranFullDetail_NewProp + "'," + RegisterHqDKhataId + ",N'" + Wasail_e_Abpashi + "',N'" + Wasail_e_AbpashiProp + "',N'" + KhatooniLagan + "',N'" + KhatooniLaganProp + "'," + insertuserid + ",'" + InsertLoginName + "',"+RHZ_ChangeId+",'"+ChangeMode+"'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
@@ -239,9 +241,9 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
-        public DataTable Proc_Get_KhewatFareeqeinBy_KhataId_Edite(string KhataId)
+        public DataTable Proc_Get_KhewatFareeqeinBy_KhataId_Edite(string KhataId, string RHZ_ChangeId)
         {
-            string spWithParam = "Proc_Get_KhewatFareeqeinGroupEdit_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            string spWithParam = "Proc_Get_KhewatFareeqeinGroupEdit_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId+","+RHZ_ChangeId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
@@ -323,9 +325,9 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-        public string WEB_SP_INSERT_KhewatGroupFareeqeinEdit(string KhewatGroupFareeqRecId, string KhewatGroupFareeqId, string KhewatGroupId, string PersonId, string PersonIdProp, string FardAreaPart, string FardAreaPartProp, string fardkanal, string fardkanalProp, string fardmarla, string fardmarlaProp, string fardsarsai, string fardsarsaiProp, string fardfeet, string fardfeetProp, string KhewatTypeId, string KhewatTypeIdProp, string RegisterHaqkhataid, string InsertUserId, string InsertLoginName, string FardPart_Bata, string FardPart_BataProp, string TransactionType, string SeqNo)
+        public string WEB_SP_INSERT_KhewatGroupFareeqeinEdit(string KhewatGroupFareeqRecId, string KhewatGroupFareeqId, string KhewatGroupId, string PersonId, string PersonIdProp, string FardAreaPart, string FardAreaPartProp, string fardkanal, string fardkanalProp, string fardmarla, string fardmarlaProp, string fardsarsai, string fardsarsaiProp, string fardfeet, string fardfeetProp, string KhewatTypeId, string KhewatTypeIdProp, string RegisterHaqkhataid, string InsertUserId, string InsertLoginName, string FardPart_Bata, string FardPart_BataProp, string TransactionType, string SeqNo, string RHZ_ChangeId)
         {
-            string spWithParam = "WEB_SP_INSERT_KhewatGroupFareeqeinEdit " + KhewatGroupFareeqRecId + "," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhewatGroupFareeqId + "'," + KhewatGroupId + "," + PersonId + "," + PersonIdProp + ",'" + FardAreaPart + "','" + FardAreaPartProp + "'," + fardkanal + "," + fardkanalProp + "," + fardmarla + "," + fardmarlaProp + "," + fardsarsai + "," + fardsarsaiProp + "," + fardfeet + "," + fardfeetProp + "," + KhewatTypeId + "," + KhewatTypeIdProp + "," + RegisterHaqkhataid + "," + InsertUserId + ",'" + InsertLoginName + "','" + FardPart_Bata + "','" + FardPart_BataProp +"','" + TransactionType + "'," + SeqNo;
+            string spWithParam = "WEB_SP_INSERT_KhewatGroupFareeqeinEdit " + KhewatGroupFareeqRecId + "," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhewatGroupFareeqId + "'," + KhewatGroupId + "," + PersonId + "," + PersonIdProp + ",'" + FardAreaPart + "','" + FardAreaPartProp + "'," + fardkanal + "," + fardkanalProp + "," + fardmarla + "," + fardmarlaProp + "," + fardsarsai + "," + fardsarsaiProp + "," + fardfeet + "," + fardfeetProp + "," + KhewatTypeId + "," + KhewatTypeIdProp + "," + RegisterHaqkhataid + "," + InsertUserId + ",'" + InsertLoginName + "','" + FardPart_Bata + "','" + FardPart_BataProp +"','" + TransactionType + "'," + SeqNo+","+RHZ_ChangeId;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 

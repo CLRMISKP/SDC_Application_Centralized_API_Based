@@ -131,6 +131,7 @@
             this.btnSaveKhatooni = new System.Windows.Forms.Button();
             this.btnNewKhatooni = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.chkIsNewKhatooni = new System.Windows.Forms.CheckBox();
             this.txtKhatooniNoProp = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.txtWasailAbpashiProp = new System.Windows.Forms.TextBox();
@@ -262,7 +263,6 @@
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1439,9 +1439,9 @@
             this.groupBox7.Controls.Add(this.btnSaveKhatooni);
             this.groupBox7.Controls.Add(this.btnNewKhatooni);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox7.Location = new System.Drawing.Point(3, 377);
+            this.groupBox7.Location = new System.Drawing.Point(3, 303);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1376, 78);
+            this.groupBox7.Size = new System.Drawing.Size(1376, 81);
             this.groupBox7.TabIndex = 319;
             this.groupBox7.TabStop = false;
             // 
@@ -1455,6 +1455,7 @@
             this.btnDeleKhatooni.TabIndex = 307;
             this.btnDeleKhatooni.TabStop = false;
             this.btnDeleKhatooni.Text = "خذف کریں";
+            this.tt.SetToolTip(this.btnDeleKhatooni, "انتخاب کردہ کھتونی حذف کریں");
             this.btnDeleKhatooni.UseVisualStyleBackColor = true;
             this.btnDeleKhatooni.Click += new System.EventHandler(this.btnDeleKhatooni_Click);
             // 
@@ -1467,6 +1468,7 @@
             this.btnSaveKhatooni.Size = new System.Drawing.Size(83, 48);
             this.btnSaveKhatooni.TabIndex = 205;
             this.btnSaveKhatooni.Text = "محفوظ کریں";
+            this.tt.SetToolTip(this.btnSaveKhatooni, "اندراج کردہ تفصِل محفوظ کریں");
             this.btnSaveKhatooni.UseVisualStyleBackColor = true;
             this.btnSaveKhatooni.Click += new System.EventHandler(this.btnSaveKhatooni_Click);
             // 
@@ -1480,11 +1482,13 @@
             this.btnNewKhatooni.TabIndex = 309;
             this.btnNewKhatooni.TabStop = false;
             this.btnNewKhatooni.Text = "نیا کتھونی";
+            this.tt.SetToolTip(this.btnNewKhatooni, "کھاتہ ہذا میں نیا کھتونی کے اندراج کے لیے کلک کریں");
             this.btnNewKhatooni.UseVisualStyleBackColor = true;
             this.btnNewKhatooni.Click += new System.EventHandler(this.btnNewKhatooni_Click);
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.chkIsNewKhatooni);
             this.groupBox12.Controls.Add(this.txtKhatooniNoProp);
             this.groupBox12.Controls.Add(this.label50);
             this.groupBox12.Controls.Add(this.txtWasailAbpashiProp);
@@ -1494,20 +1498,32 @@
             this.groupBox12.Controls.Add(this.txtKhatooniLaganProp);
             this.groupBox12.Controls.Add(this.txtKhatooniFullDetailsProp);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox12.Location = new System.Drawing.Point(3, 190);
+            this.groupBox12.Location = new System.Drawing.Point(3, 150);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(1376, 187);
+            this.groupBox12.Size = new System.Drawing.Size(1376, 153);
             this.groupBox12.TabIndex = 318;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "مجوزہ تفصیل کھتونی";
             // 
+            // chkIsNewKhatooni
+            // 
+            this.chkIsNewKhatooni.AutoSize = true;
+            this.chkIsNewKhatooni.Location = new System.Drawing.Point(87, 51);
+            this.chkIsNewKhatooni.Name = "chkIsNewKhatooni";
+            this.chkIsNewKhatooni.Size = new System.Drawing.Size(110, 35);
+            this.chkIsNewKhatooni.TabIndex = 315;
+            this.chkIsNewKhatooni.Text = "checkBox1";
+            this.chkIsNewKhatooni.UseVisualStyleBackColor = true;
+            this.chkIsNewKhatooni.Visible = false;
+            // 
             // txtKhatooniNoProp
             // 
             this.txtKhatooniNoProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhatooniNoProp.Location = new System.Drawing.Point(968, 34);
+            this.txtKhatooniNoProp.Location = new System.Drawing.Point(1065, 34);
             this.txtKhatooniNoProp.Name = "txtKhatooniNoProp";
-            this.txtKhatooniNoProp.Size = new System.Drawing.Size(321, 39);
+            this.txtKhatooniNoProp.Size = new System.Drawing.Size(224, 39);
             this.txtKhatooniNoProp.TabIndex = 201;
+            this.tt.SetToolTip(this.txtKhatooniNoProp, "مجوزہ کھتونی نمبر");
             // 
             // label50
             // 
@@ -1523,9 +1539,9 @@
             // 
             this.txtWasailAbpashiProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWasailAbpashiProp.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWasailAbpashiProp.Location = new System.Drawing.Point(968, 82);
+            this.txtWasailAbpashiProp.Location = new System.Drawing.Point(1065, 93);
             this.txtWasailAbpashiProp.Name = "txtWasailAbpashiProp";
-            this.txtWasailAbpashiProp.Size = new System.Drawing.Size(321, 39);
+            this.txtWasailAbpashiProp.Size = new System.Drawing.Size(224, 39);
             this.txtWasailAbpashiProp.TabIndex = 202;
             this.txtWasailAbpashiProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
@@ -1533,7 +1549,7 @@
             // 
             this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(1295, 86);
+            this.label51.Location = new System.Drawing.Point(1295, 97);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(75, 31);
             this.label51.TabIndex = 27;
@@ -1543,7 +1559,7 @@
             // 
             this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(796, 43);
+            this.label52.Location = new System.Drawing.Point(597, 38);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(151, 31);
             this.label52.TabIndex = 17;
@@ -1553,7 +1569,7 @@
             // 
             this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(1295, 139);
+            this.label53.Location = new System.Drawing.Point(980, 38);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(69, 31);
             this.label53.TabIndex = 30;
@@ -1563,10 +1579,11 @@
             // 
             this.txtKhatooniLaganProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniLaganProp.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniLaganProp.Location = new System.Drawing.Point(968, 135);
+            this.txtKhatooniLaganProp.Location = new System.Drawing.Point(750, 34);
             this.txtKhatooniLaganProp.Name = "txtKhatooniLaganProp";
-            this.txtKhatooniLaganProp.Size = new System.Drawing.Size(321, 39);
+            this.txtKhatooniLaganProp.Size = new System.Drawing.Size(224, 39);
             this.txtKhatooniLaganProp.TabIndex = 203;
+            this.tt.SetToolTip(this.txtKhatooniLaganProp, "مجوزہ کھتونی لگان");
             this.txtKhatooniLaganProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
             // txtKhatooniFullDetailsProp
@@ -1577,8 +1594,9 @@
             this.txtKhatooniFullDetailsProp.Multiline = true;
             this.txtKhatooniFullDetailsProp.Name = "txtKhatooniFullDetailsProp";
             this.txtKhatooniFullDetailsProp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtKhatooniFullDetailsProp.Size = new System.Drawing.Size(556, 136);
+            this.txtKhatooniFullDetailsProp.Size = new System.Drawing.Size(366, 87);
             this.txtKhatooniFullDetailsProp.TabIndex = 204;
+            this.tt.SetToolTip(this.txtKhatooniFullDetailsProp, "مجوزہ تفصیل حصہ داران و کاشتکاران");
             this.txtKhatooniFullDetailsProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
             // groupBox6
@@ -1597,7 +1615,7 @@
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1376, 187);
+            this.groupBox6.Size = new System.Drawing.Size(1376, 147);
             this.groupBox6.TabIndex = 316;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "موجودہ تفصیل کھتونی";
@@ -1606,7 +1624,7 @@
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1290, 38);
+            this.label17.Location = new System.Drawing.Point(1294, 35);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(64, 31);
             this.label17.TabIndex = 26;
@@ -1626,9 +1644,9 @@
             this.txtWasailAbpashi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWasailAbpashi.Enabled = false;
             this.txtWasailAbpashi.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWasailAbpashi.Location = new System.Drawing.Point(968, 82);
+            this.txtWasailAbpashi.Location = new System.Drawing.Point(1065, 87);
             this.txtWasailAbpashi.Name = "txtWasailAbpashi";
-            this.txtWasailAbpashi.Size = new System.Drawing.Size(321, 39);
+            this.txtWasailAbpashi.Size = new System.Drawing.Size(224, 39);
             this.txtWasailAbpashi.TabIndex = 28;
             this.txtWasailAbpashi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
@@ -1645,7 +1663,7 @@
             // 
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1295, 86);
+            this.label18.Location = new System.Drawing.Point(1295, 91);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(75, 31);
             this.label18.TabIndex = 27;
@@ -1653,7 +1671,7 @@
             // 
             // txtKhatooniRecId
             // 
-            this.txtKhatooniRecId.Location = new System.Drawing.Point(116, 131);
+            this.txtKhatooniRecId.Location = new System.Drawing.Point(59, 38);
             this.txtKhatooniRecId.Name = "txtKhatooniRecId";
             this.txtKhatooniRecId.Size = new System.Drawing.Size(39, 39);
             this.txtKhatooniRecId.TabIndex = 313;
@@ -1664,7 +1682,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(796, 43);
+            this.label11.Location = new System.Drawing.Point(593, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(151, 31);
             this.label11.TabIndex = 17;
@@ -1677,10 +1695,11 @@
             this.cboKhatoonies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKhatoonies.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKhatoonies.FormattingEnabled = true;
-            this.cboKhatoonies.Location = new System.Drawing.Point(968, 34);
+            this.cboKhatoonies.Location = new System.Drawing.Point(1065, 33);
             this.cboKhatoonies.Name = "cboKhatoonies";
-            this.cboKhatoonies.Size = new System.Drawing.Size(321, 39);
+            this.cboKhatoonies.Size = new System.Drawing.Size(224, 39);
             this.cboKhatoonies.TabIndex = 25;
+            this.tt.SetToolTip(this.cboKhatoonies, "موجودہ کھتونی نمبر");
             this.cboKhatoonies.ValueMember = "KhatooniId";
             this.cboKhatoonies.SelectedIndexChanged += new System.EventHandler(this.cboKhatoonies_SelectionChangeCommitted);
             // 
@@ -1688,7 +1707,7 @@
             // 
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1295, 139);
+            this.label19.Location = new System.Drawing.Point(980, 33);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 31);
             this.label19.TabIndex = 30;
@@ -1699,10 +1718,11 @@
             this.txtKhatooniLagan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniLagan.Enabled = false;
             this.txtKhatooniLagan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniLagan.Location = new System.Drawing.Point(968, 135);
+            this.txtKhatooniLagan.Location = new System.Drawing.Point(750, 33);
             this.txtKhatooniLagan.Name = "txtKhatooniLagan";
-            this.txtKhatooniLagan.Size = new System.Drawing.Size(321, 39);
+            this.txtKhatooniLagan.Size = new System.Drawing.Size(224, 39);
             this.txtKhatooniLagan.TabIndex = 29;
+            this.tt.SetToolTip(this.txtKhatooniLagan, "موجودہ کھتونی لگان");
             this.txtKhatooniLagan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
             // txtKhatooniFullDetails
@@ -1710,12 +1730,13 @@
             this.txtKhatooniFullDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniFullDetails.Enabled = false;
             this.txtKhatooniFullDetails.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniFullDetails.Location = new System.Drawing.Point(225, 34);
+            this.txtKhatooniFullDetails.Location = new System.Drawing.Point(225, 33);
             this.txtKhatooniFullDetails.Multiline = true;
             this.txtKhatooniFullDetails.Name = "txtKhatooniFullDetails";
             this.txtKhatooniFullDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtKhatooniFullDetails.Size = new System.Drawing.Size(556, 136);
+            this.txtKhatooniFullDetails.Size = new System.Drawing.Size(366, 87);
             this.txtKhatooniFullDetails.TabIndex = 23;
+            this.tt.SetToolTip(this.txtKhatooniFullDetails, "موجودہ حصہ داران و کاشتکاران");
             this.txtKhatooniFullDetails.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
             // tabKhassras
@@ -2853,6 +2874,7 @@
             // 
             // btnImplementChanges
             // 
+            this.btnImplementChanges.Enabled = false;
             this.btnImplementChanges.Image = global::SDC_Application.Resource1.Approve_icon2;
             this.btnImplementChanges.Location = new System.Drawing.Point(85, 494);
             this.btnImplementChanges.Name = "btnImplementChanges";
@@ -2868,6 +2890,7 @@
             this.btnPrintProposedChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrintProposedChanges.BackgroundImage = global::SDC_Application.Resource1.Print3;
             this.btnPrintProposedChanges.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintProposedChanges.Enabled = false;
             this.btnPrintProposedChanges.Location = new System.Drawing.Point(14, 407);
             this.btnPrintProposedChanges.Name = "btnPrintProposedChanges";
             this.btnPrintProposedChanges.Size = new System.Drawing.Size(53, 48);
@@ -3255,9 +3278,9 @@
         private System.Windows.Forms.TextBox txtRHZ_ChangeId;
         private System.Windows.Forms.Button btnNewDetails;
         private System.Windows.Forms.Label label60;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.DataGridView dgKhatajatProposed;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dgKhataEditColSel;
+        private System.Windows.Forms.CheckBox chkIsNewKhatooni;
     }
 }
