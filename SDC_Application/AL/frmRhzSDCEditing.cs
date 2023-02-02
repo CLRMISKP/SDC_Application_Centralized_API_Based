@@ -971,12 +971,12 @@ namespace SDC_Application.AL
             try
             {
                 string retVal = "0";
-                if (txtPersonId.Text.Length > 5 && txtPersonNetHissa.Text.Length > 0 && cboQismMalik.SelectedValue.ToString().Length > 1 && cbokhataNo.SelectedValue.ToString().Length > 5)
+                if (txtPersonId.Text.Length > 5 && txtPersonNetHissa.Text.Length > 0 && cboQismMalik.SelectedValue.ToString().Length > 1 && this.KhataId.Length > 5 && txtSeqNo.Text.Trim().Length>0)
                 {
-                    if (txtKhewatGroupFareeqId.Text.Length < 2)
+                    if (txtKhewatGroupFareeqId.Text.Length < 5)
                     {
                         string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhataHissa.Text), float.Parse(txtPersonNetHissa.Text), Convert.ToInt32(txtKhataKanal.Text), Convert.ToInt32(txtKhataMarla.Text), float.Parse(txtKhataSarsai.Text != "" ? txtKhataSarsai.Text : "0"), float.Parse(txtKhataSFT.Text != "" ? txtKhataSFT.Text : "0"));
-                        retVal = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus(txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, txtPersonId.Text, txtPersonNetHissa.Text, Area[0].ToString(), Area[1].ToString(), Area[2].ToString(), Area[3].ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtPersonHissaBata.Text, "Data Entry", "0");
+                        retVal = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus(txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, txtPersonId.Text, txtPersonNetHissa.Text,Area[0]!=null? Area[0].ToString():"0", Area[1]!=null?Area[1].ToString():"0", Area[2]!=null? Area[2].ToString():"0",Area[3]!=null? Area[3].ToString():"0", cboQismMalik.SelectedValue.ToString(), this.KhataId, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtPersonHissaBata.Text, "Data Entry", "0");
                     }
                     else
                     {
@@ -984,11 +984,24 @@ namespace SDC_Application.AL
                     }
                     if (retVal.Length > 5)
                     {
-                        string[] ExistingArea = dgKhewatFareeqainAll.SelectedRows[0].Cells["Khewat_Area"].Value.ToString().Split('-');
+                        string[] ExistingArea; string LastId="0";
                         string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhataHissa.Text), float.Parse(txtPersonNetHissa.Text), Convert.ToInt32(txtKhataKanal.Text), Convert.ToInt32(txtKhataMarla.Text), float.Parse(txtKhataSarsai.Text != "" ? txtKhataSarsai.Text : "0"), float.Parse(txtKhataSFT.Text != "" ? txtKhataSFT.Text : "0"));
-                        string LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(), txtPersonId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(),
-                            txtPersonNetHissa.Text, ExistingArea[0], Area[0], ExistingArea[1], Area[1].ToString(), (Math.Round(float.Parse(ExistingArea[2])/30.25,5)).ToString(), Area[2].ToString(), ExistingArea[2], Area[3].ToString(), dgKhewatFareeqainAll.SelectedRows[0].Cells["KhewatTypeId"].Value.ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardPart_Bata"].Value.ToString(), txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim(), txtRHZ_ChangeId.Text);
-                        if (LastId.Length > 5)
+                        if (dgKhewatFareeqainAll.SelectedRows.Count > 0)
+                        {
+                            ExistingArea = dgKhewatFareeqainAll.SelectedRows[0].Cells["Khewat_Area"].Value.ToString().Split('-');
+                            LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(), txtPersonId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(),
+                            txtPersonNetHissa.Text, ExistingArea[0] != null ? ExistingArea[0] : "0", Area[0] != null ? Area[0] : "0", ExistingArea[1] != null ? ExistingArea[1] : "0", Area[1] != null ? Area[1].ToString() : "0", ExistingArea[2] != null ? (Math.Round(float.Parse(ExistingArea[2]) / 30.25, 5)).ToString() : "0", Area[2] != null ? Area[2].ToString() : "0", ExistingArea[2] != null ? ExistingArea[2] : "0", Area[3] != null ? Area[3].ToString() : "0", dgKhewatFareeqainAll.SelectedRows[0].Cells["KhewatTypeId"].Value.ToString(), cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardPart_Bata"].Value.ToString(), txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim(), txtRHZ_ChangeId.Text);
+                       
+                        }
+                        else
+                        {
+                            ExistingArea = "0-0-0-0".Split('-');
+                            LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, "0", txtPersonId.Text, "0",
+                            txtPersonNetHissa.Text, ExistingArea[0] != null ? ExistingArea[0] : "0", Area[0] != null ? Area[0] : "0", ExistingArea[1] != null ? ExistingArea[1] : "0", Area[1] != null ? Area[1].ToString() : "0", ExistingArea[2] != null ? (Math.Round(float.Parse(ExistingArea[2]) / 30.25, 5)).ToString() : "0", Area[2] != null ? Area[2].ToString() : "0", ExistingArea[2] != null ? ExistingArea[2] : "0", Area[3] != null ? Area[3].ToString() : "0", "0", cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim(), txtRHZ_ChangeId.Text);
+                       
+                        }
+                        
+                         if (LastId.Length > 5)
                         {
                             ResetMalakEntryFields();
                             //btnShowCurrent_Click(sender, e);FardAreaPart
@@ -1668,13 +1681,15 @@ namespace SDC_Application.AL
 
         private void cbSrNo_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            bool ImplementedBy=false;
             DataRow[] row = dtRHZchangeDetailsList.Select("RHZ_ChangeId=" + cbSrNo.SelectedValue.ToString());
             txtSerialNo.Text = row[0]["SrNo"].ToString();
             txtRHZ_ChangeId.Text = row[0]["RHZ_ChangeId"].ToString();
             txtDetails.Text = row[0]["ChangeDetails"].ToString();
-            tabControlMain.Enabled = row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false;
+            tabControlMain.Enabled = row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false;//ImplemnetedBy
+            ImplementedBy=row[0]["ImplemnetedBy"].ToString()=="0"?false:true;
             PopulateDgKhataJatEdited();
-            btnImplementChanges.Enabled = UsersManagments._IsAdmin;
+            btnImplementChanges.Enabled = UsersManagments._IsAdmin && !ImplementedBy;
 
         }
 

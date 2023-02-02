@@ -117,10 +117,10 @@ namespace SDC_Application.Classess
              {
              remMarla = smarla;
              }
-             raqba[0] = skanal.ToString();
-             raqba[1] = remMarla.ToString();
-             raqba[2] = Math.Round(remsft / (float)30.25, 4).ToString();//(remsft/30.25).ToString();
-             raqba[3] = remsft.ToString();
+             raqba[0] = skanal!=null?skanal.ToString():"0";
+             raqba[1] = remMarla!=null? remMarla.ToString():"0";
+             raqba[2] = remsft!=null? Math.Round(remsft / (float)30.25, 4).ToString():"0";//(remsft/30.25).ToString();
+             raqba[3] = remsft!=null? remsft.ToString():"0";
              
          }
          return raqba;
