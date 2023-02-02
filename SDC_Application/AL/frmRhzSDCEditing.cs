@@ -1771,5 +1771,25 @@ namespace SDC_Application.AL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnDelProposedKhata_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ ریکارڈ خذف کرنا چاہتے ہے؟", "خذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    string retVal = rhz.DeleteHaqdaranZameenKhatajatEdit(this.KhataId, txtRHZ_ChangeId.Text);
+                    if (retVal.Length > 5)
+                    {
+                        MessageBox.Show("ریکارڈ حذف ہو گیا۔");
+                        PopulateDgKhataJatEdited();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

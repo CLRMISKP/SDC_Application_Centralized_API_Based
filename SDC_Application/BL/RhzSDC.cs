@@ -69,6 +69,12 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        public string DeleteHaqdaranZameenKhatajatEdit(string KhataId,string RHZ_ChangeId)
+        {
+            string spWithParam = "WEB_SP_DELETE_HaqdaranZameenKhatajat_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhataId + "," + RHZ_ChangeId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
         public string GetMaxSrNoRHZChangeBYMozaId(string MozaId)
         {
             string spWithParam = "Proc_Get_Max_SrNo_RHZ_Change_By_Moza  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId;
