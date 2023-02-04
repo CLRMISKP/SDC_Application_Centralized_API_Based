@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>1.0.0.22</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -160,6 +160,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmAdminPendingTaskDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmAdminPendingTaskDashboard.Designer.cs">
+      <DependentUpon>frmAdminPendingTaskDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalRevertEnable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1088,6 +1094,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmAdminPendingTaskDashboard.resx">
+      <DependentUpon>frmAdminPendingTaskDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalRevertEnable.resx">
       <DependentUpon>frmIntiqalRevertEnable.cs</DependentUpon>
     </EmbeddedResource>

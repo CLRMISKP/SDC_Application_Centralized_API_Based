@@ -96,6 +96,7 @@
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRhzSDCEditing = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuIntiqalManual = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuKhassraGardawri = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChangePassword = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +109,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuIntiqalManual = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRhz_ChangeAdminDashboard = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -451,7 +452,8 @@
             this.toolStripPicIndexing,
             this.mnuInsertLoginDetails,
             this.mnuTextMessage,
-            this.ٹوکنرولToolStripMenuItem});
+            this.ٹوکنرولToolStripMenuItem,
+            this.mnuRhz_ChangeAdminDashboard});
             this.mnuSupervisorMain.Name = "mnuSupervisorMain";
             this.mnuSupervisorMain.Size = new System.Drawing.Size(94, 42);
             this.mnuSupervisorMain.Text = "سپروائزری";
@@ -459,92 +461,92 @@
             // mnuAllaqajat
             // 
             this.mnuAllaqajat.Name = "mnuAllaqajat";
-            this.mnuAllaqajat.Size = new System.Drawing.Size(268, 42);
-            this.mnuAllaqajat.Text = "1 - علاقہ ہائے جات";
+            this.mnuAllaqajat.Size = new System.Drawing.Size(385, 42);
+            this.mnuAllaqajat.Text = "- علاقہ ہائے جات";
             this.mnuAllaqajat.Click += new System.EventHandler(this.mnuAllaqajat_Click);
             // 
             // mnuMasterDefForms
             // 
             this.mnuMasterDefForms.Name = "mnuMasterDefForms";
-            this.mnuMasterDefForms.Size = new System.Drawing.Size(268, 42);
-            this.mnuMasterDefForms.Text = "1 - بنیادی تعریف فارم";
+            this.mnuMasterDefForms.Size = new System.Drawing.Size(385, 42);
+            this.mnuMasterDefForms.Text = "- بنیادی تعریف فارم";
             this.mnuMasterDefForms.Click += new System.EventHandler(this.mnuMasterDefForms_Click);
             // 
             // mnuIntiqalDefForm
             // 
             this.mnuIntiqalDefForm.Name = "mnuIntiqalDefForm";
-            this.mnuIntiqalDefForm.Size = new System.Drawing.Size(268, 42);
-            this.mnuIntiqalDefForm.Text = "1 - بنیادی تعریف فارم";
+            this.mnuIntiqalDefForm.Size = new System.Drawing.Size(385, 42);
+            this.mnuIntiqalDefForm.Text = " - بنیادی تعریف فارم";
             this.mnuIntiqalDefForm.Click += new System.EventHandler(this.mnuIntiqalDefForm_Click);
             // 
             // mnuKhassraValuation
             // 
             this.mnuKhassraValuation.Name = "mnuKhassraValuation";
-            this.mnuKhassraValuation.Size = new System.Drawing.Size(268, 42);
-            this.mnuKhassraValuation.Text = "2 - تعین قیمت نمبر خسرہ";
+            this.mnuKhassraValuation.Size = new System.Drawing.Size(385, 42);
+            this.mnuKhassraValuation.Text = " - تعین قیمت نمبر خسرہ";
             this.mnuKhassraValuation.Click += new System.EventHandler(this.mnuKhassraValuation_Click);
             // 
             // mnuAmalDaramad
             // 
             this.mnuAmalDaramad.Name = "mnuAmalDaramad";
-            this.mnuAmalDaramad.Size = new System.Drawing.Size(268, 42);
-            this.mnuAmalDaramad.Text = "6 - عمل درامد";
+            this.mnuAmalDaramad.Size = new System.Drawing.Size(385, 42);
+            this.mnuAmalDaramad.Text = " - عمل درامد";
             this.mnuAmalDaramad.Click += new System.EventHandler(this.mnuAmalDaramad_Click);
             // 
             // mnucreateUsers
             // 
             this.mnucreateUsers.Name = "mnucreateUsers";
-            this.mnucreateUsers.Size = new System.Drawing.Size(268, 42);
-            this.mnucreateUsers.Text = "3 - صارفین";
+            this.mnucreateUsers.Size = new System.Drawing.Size(385, 42);
+            this.mnucreateUsers.Text = " - صارفین";
             this.mnucreateUsers.Click += new System.EventHandler(this.createUsersToolStripMenuItem_Click);
             // 
             // mnucreaTRoles
             // 
             this.mnucreaTRoles.Name = "mnucreaTRoles";
-            this.mnucreaTRoles.Size = new System.Drawing.Size(268, 42);
-            this.mnucreaTRoles.Text = "4 - کردار صارفین";
+            this.mnucreaTRoles.Size = new System.Drawing.Size(385, 42);
+            this.mnucreaTRoles.Text = " - کردار صارفین";
             this.mnucreaTRoles.Click += new System.EventHandler(this.creaTRolesToolStripMenuItem_Click);
             // 
             // mnuIntiqalFardReport
             // 
             this.mnuIntiqalFardReport.Name = "mnuIntiqalFardReport";
-            this.mnuIntiqalFardReport.Size = new System.Drawing.Size(268, 42);
-            this.mnuIntiqalFardReport.Text = "5 - انتقالات و فردات رپورٹ";
+            this.mnuIntiqalFardReport.Size = new System.Drawing.Size(385, 42);
+            this.mnuIntiqalFardReport.Text = " - انتقالات و فردات رپورٹ";
             this.mnuIntiqalFardReport.Click += new System.EventHandler(this.mnuIntiqalFardReport_Click);
             // 
             // ڈیشبورڈToolStripMenuItem
             // 
             this.ڈیشبورڈToolStripMenuItem.Name = "ڈیشبورڈToolStripMenuItem";
-            this.ڈیشبورڈToolStripMenuItem.Size = new System.Drawing.Size(268, 42);
-            this.ڈیشبورڈToolStripMenuItem.Text = " 6 - ڈیش بورڈ";
+            this.ڈیشبورڈToolStripMenuItem.Size = new System.Drawing.Size(385, 42);
+            this.ڈیشبورڈToolStripMenuItem.Text = "  - ڈیش بورڈ";
             this.ڈیشبورڈToolStripMenuItem.Click += new System.EventHandler(this.ڈیشبورڈToolStripMenuItem_Click);
             // 
             // toolStripPicIndexing
             // 
             this.toolStripPicIndexing.Name = "toolStripPicIndexing";
-            this.toolStripPicIndexing.Size = new System.Drawing.Size(268, 42);
-            this.toolStripPicIndexing.Text = "7- تصویر انڈیکسنگ";
+            this.toolStripPicIndexing.Size = new System.Drawing.Size(385, 42);
+            this.toolStripPicIndexing.Text = "- تصویر انڈیکسنگ";
             this.toolStripPicIndexing.Click += new System.EventHandler(this.toolStripPicIndexing_Click);
             // 
             // mnuInsertLoginDetails
             // 
             this.mnuInsertLoginDetails.Name = "mnuInsertLoginDetails";
-            this.mnuInsertLoginDetails.Size = new System.Drawing.Size(268, 42);
-            this.mnuInsertLoginDetails.Text = "8 - تفصیل اندراجات آپریٹر";
+            this.mnuInsertLoginDetails.Size = new System.Drawing.Size(385, 42);
+            this.mnuInsertLoginDetails.Text = " - تفصیل اندراجات آپریٹر";
             this.mnuInsertLoginDetails.Click += new System.EventHandler(this.mnuInsertLoginDetails_Click);
             // 
             // mnuTextMessage
             // 
             this.mnuTextMessage.Name = "mnuTextMessage";
-            this.mnuTextMessage.Size = new System.Drawing.Size(268, 42);
-            this.mnuTextMessage.Text = "9 - ٹیکسٹ میسج سروس";
+            this.mnuTextMessage.Size = new System.Drawing.Size(385, 42);
+            this.mnuTextMessage.Text = " - ٹیکسٹ میسج سروس";
             this.mnuTextMessage.Click += new System.EventHandler(this.mnuTextMessage_Click);
             // 
             // ٹوکنرولToolStripMenuItem
             // 
             this.ٹوکنرولToolStripMenuItem.Name = "ٹوکنرولToolStripMenuItem";
-            this.ٹوکنرولToolStripMenuItem.Size = new System.Drawing.Size(268, 42);
-            this.ٹوکنرولToolStripMenuItem.Text = "10۔ٹوکن رول";
+            this.ٹوکنرولToolStripMenuItem.Size = new System.Drawing.Size(385, 42);
+            this.ٹوکنرولToolStripMenuItem.Text = "۔ٹوکن رول";
             this.ٹوکنرولToolStripMenuItem.Click += new System.EventHandler(this.ٹوکنرولToolStripMenuItem_Click);
             // 
             // mnuReports
@@ -652,6 +654,13 @@
             this.mnuRhzSDCEditing.Size = new System.Drawing.Size(311, 42);
             this.mnuRhzSDCEditing.Text = "3 - تبدیلی ملکیت ، رقبہ و قسم اراضی";
             this.mnuRhzSDCEditing.Click += new System.EventHandler(this.mnuRhzSDCEditing_Click);
+            // 
+            // mnuIntiqalManual
+            // 
+            this.mnuIntiqalManual.Name = "mnuIntiqalManual";
+            this.mnuIntiqalManual.Size = new System.Drawing.Size(311, 42);
+            this.mnuIntiqalManual.Text = "4- اندراج دستی گمشدہ انتقالات";
+            this.mnuIntiqalManual.Click += new System.EventHandler(this.mnuIntiqalManual_Click);
             // 
             // mnuKhassraGardawri
             // 
@@ -788,12 +797,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuIntiqalManual
+            // mnuRhz_ChangeAdminDashboard
             // 
-            this.mnuIntiqalManual.Name = "mnuIntiqalManual";
-            this.mnuIntiqalManual.Size = new System.Drawing.Size(311, 42);
-            this.mnuIntiqalManual.Text = "4- اندراج دستی گمشدہ انتقالات";
-            this.mnuIntiqalManual.Click += new System.EventHandler(this.mnuIntiqalManual_Click);
+            this.mnuRhz_ChangeAdminDashboard.Name = "mnuRhz_ChangeAdminDashboard";
+            this.mnuRhz_ChangeAdminDashboard.Size = new System.Drawing.Size(385, 42);
+            this.mnuRhz_ChangeAdminDashboard.Text = " - ترمیم ریکارڈ رجسٹر حقدران زمین ایڈمن ڈش بورڈ";
+            this.mnuRhz_ChangeAdminDashboard.Click += new System.EventHandler(this.mnuRhz_ChangeAdminDashboard_Click);
             // 
             // frmMain
             // 
@@ -912,5 +921,6 @@
         private System.Windows.Forms.ToolStripMenuItem ٹوکنرولToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuRhzSDCEditing;
         private System.Windows.Forms.ToolStripMenuItem mnuIntiqalManual;
+        private System.Windows.Forms.ToolStripMenuItem mnuRhz_ChangeAdminDashboard;
     }
 }

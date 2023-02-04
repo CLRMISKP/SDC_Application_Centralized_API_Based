@@ -1633,7 +1633,25 @@ namespace SDC_Application.AL
 
         private void btnImplementChanges_Click(object sender, EventArgs e)
         {
-
+            if (DialogResult.Yes == MessageBox.Show("آپ فرد انتخاب کردہ ترامیم پر عملدرامد کرنا چاہتے ہے؟", "عمل کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    if (txtRHZ_ChangeId.Text.Trim().Length > 5)
+                    {
+                        string retVal=rhz.RHZ_ChangeImplementation(txtRHZ_ChangeId.Text);
+                        if (retVal.Length > 5)
+                            MessageBox.Show("انتخاب کردہ ریکارڈ پر عمل درامد ہو چکا ہے۔");
+                        cbSrNo_SelectionChangeCommitted(sender, e);
+                    }
+                    else
+                        MessageBox.Show("عملدارمد کرنے کیلئے پہلے ریکارڈ کا انتخاب کریں", "ناقابل عمل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void btnPrintProposedChanges_Click(object sender, EventArgs e)

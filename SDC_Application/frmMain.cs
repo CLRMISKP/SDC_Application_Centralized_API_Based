@@ -329,6 +329,7 @@ namespace SDC_Application
             this.mnuKhataLock.Visible = isMenuVisible("frmKhattaLocking");
             this.mnuMalkanSearchandMerging.Visible = isMenuVisible("frmMalkanSearchingMerging");
             //this.mnuInsertLoginDetails.Visible = isMenuVisible("frmUserLogs");
+            this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
 
         }
         private void GetNavigationMenuRights()
@@ -1243,6 +1244,19 @@ namespace SDC_Application
             {
 
                 frmIntiqalMainForManual obj = new frmIntiqalMainForManual();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuRhz_ChangeAdminDashboard_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmAdminPendingTaskDashboard");
+            if (!isOpen)
+            {
+
+                frmAdminPendingTaskDashboard obj = new frmAdminPendingTaskDashboard();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
