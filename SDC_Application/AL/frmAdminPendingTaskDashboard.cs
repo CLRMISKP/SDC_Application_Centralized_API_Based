@@ -76,15 +76,15 @@ namespace SDC_Application.AL
         }
         private void fillDgTaskDetails()
         {
-            if (dgTaskDetails.Rows.Count > 0)
-            {
+            //if (dgTaskDetails.Rows.Count > 0)
+            //{
                 dgTaskDetails.Columns["SrNo"].HeaderText = "ٹاسک نمبر";
                 dgTaskDetails.Columns["ChangeDetails"].HeaderText = "تفصیل ترمیم";
                 dgTaskDetails.Columns["InsertLoginName"].HeaderText = "اندراج کنندہ";
                 dgTaskDetails.Columns["InsertDate"].HeaderText = "بتاریخ";
                 dgTaskDetails.Columns["RHZ_ChangeId"].Visible = false;
                 dgTaskDetails.Columns["ImplementedBy"].Visible = false;
-            }
+            //}
         }
 
         private void rbPending_CheckedChanged(object sender, EventArgs e)

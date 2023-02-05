@@ -163,6 +163,15 @@ namespace SDC_Application.BL
             ojbdb.ExecUpdateStoredProcedureWithNoRet(spWithParam);
             //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
         }
+
+        //WEB_SP_UPDATE_SDC_SDC_Fard_Status_Trans
+        public string SaveFardKhassras(string KhassraRecId, string PgId, string TokenId, string SeqNo, string KhassraId,string Kanal, string Marla, string Sarsai, string Feet, string UserId, string UserLoginName)
+        {
+
+            string spWithParam = "WEB_SP_INSERT_SDC_FardKhassrasDetail  "+KhassraRecId+","+PgId+","+TokenId+"," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SeqNo + "," + KhassraId+","+Kanal+","+Marla+","+Sarsai+","+Feet + "," + UserId + ",'" + UserLoginName + "'";
+             return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+            //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
+        }
         #endregion
 
         #region Get Fard Person Group Details
@@ -365,6 +374,13 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Self_Get_SDC_FardKhatoonies_ByTokenId_ByKhataId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + TokenId + "," + khataId;
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
             
+        }
+        public DataTable GetKhassrasByKhataId(string khataId)
+        {
+
+            string spWithParam = "Proc_Get_KhassraJatByKhataId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + khataId;
+            return ojbdb.filldatatable_from_storedProcedure(spWithParam);
+
         }
 
         public DataTable GetFardKhewatFareeqainFardNew(string FardKhataRecId)

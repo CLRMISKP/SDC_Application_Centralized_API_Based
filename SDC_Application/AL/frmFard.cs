@@ -51,6 +51,7 @@ namespace SDC_Application.AL
         DataTable dtPayment = new DataTable();
         DataTable dtReceipt = new DataTable();
         DataTable dtGrd = new DataTable();
+        DataTable dtKhassrasByKhata = new DataTable();
 
         public string ReportingFolder { get; set; }
         public string ReportinFolderLand { get; set; }
@@ -628,7 +629,8 @@ namespace SDC_Application.AL
                             cboKhatooniesByKhata.DataSource = null;
                             GridFardKhatoonies.DataSource = null;
                             auto.FillCombo("proc_Self_Get_Fard_Khata_On_Selection  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId + "," + this.SelectedTokenId, cboKhataNoSaved, "KhataNo", "FardKhataId");
-
+                            //auto.FillCombo("Proc_Get_KhassraJatByKhataId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId, cbKhassras, "KhassraNo", "KhassraId");
+                            FillKhassrasByKhataId(KhataId);
                             savedKhataId = KhataId;
                             DataTable dtKK = mnk.GetFardKhatooniesByTokenIdByKhataId(this.SelectedTokenId != null ? this.SelectedTokenId : "0", KhataId);
                             this.fillGridviewFardKhatoonies(dtKK);
@@ -645,6 +647,22 @@ namespace SDC_Application.AL
             }
         }
 
+        #endregion
+
+        #region FIll Khassras By Khata
+
+        private void FillKhassrasByKhataId(string KhataId)
+        {
+            dtKhassrasByKhata = mnk.GetKhassrasByKhataId(KhataId);
+            DataTable dtKhassra = dtKhassrasByKhata;
+            DataRow row = dtKhassra.NewRow();
+            row["KhassraId"] = "0";
+            row["KhassraNo"] = "--خسرہ کا انتخاب کریں--";
+            dtKhassra.Rows.InsertAt(row, 0);
+            cbKhassras.DataSource = dtKhassra;
+            cbKhassras.DisplayMember = "KhassraNo";
+            cbKhassras.ValueMember = "KhassraId";
+        }
         #endregion
 
         #region Fill Khata KheatFareeqain By Khata Id
@@ -1928,13 +1946,13 @@ namespace SDC_Application.AL
 
         public void tooltip()
         {
-            toolTip.SetToolTip(btnCancelFard, "فرد کینسل کریں");
+            tt.SetToolTip(btnCancelFard, "فرد کینسل کریں");
           
-            toolTip.SetToolTip(dgvCancel, "دستاویزات دیکھنے کے لئے ڈل کلک کریں");
+            tt.SetToolTip(dgvCancel, "دستاویزات دیکھنے کے لئے ڈل کلک کریں");
            
            
-            toolTip.SetToolTip(btnPics, "دستاویزات سیلیکٹ کریں");
-            toolTip.SetToolTip(btnSave, "محفوظ کریں");
+            tt.SetToolTip(btnPics, "دستاویزات سیلیکٹ کریں");
+            tt.SetToolTip(btnSave, "محفوظ کریں");
 
 
         }
@@ -3377,6 +3395,53 @@ namespace SDC_Application.AL
                 }
 
 
+            }
+        }
+
+        private void cbKhassras_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            txtKhatooniNo.Clear(); txtKhassraKanal.Clear(); txtKhassraMarla.Clear(); txtKhassraSarsai.Clear(); txtKhassraFeet.Clear();
+            int Kanal=0; int Marla=0; float Sarsai=0; float Feet=0; string KhatooniNo="0";
+            if (cbKhassras.SelectedValue.ToString() != "0")
+            {
+                foreach (DataRow row in dtKhassrasByKhata.Rows)
+                {
+                    if (row["KhassraId"].ToString() == cbKhassras.SelectedValue.ToString())
+                    {
+                        string[] Area=row["Khassra_Area"].ToString().Split('-');
+                        Kanal = Kanal + int.Parse( Area[0]);
+                        Marla=Marla+ int.Parse( Area[1]);
+                        Sarsai=Sarsai+ float.Parse( Area[2]);
+                        KhatooniNo=row["KhatooniNo"].ToString();
+                    }
+                }
+            }
+            txtKhatooniNo.Text = KhatooniNo;
+            txtKhassraKanal.Text = Kanal.ToString();
+            txtKhassraMarla.Text = Marla.ToString();
+            txtKhassraSarsai.Text = Sarsai.ToString();
+            txtKhassraFeet.Text = Math.Round((Sarsai * 30.25), 0).ToString();
+        }
+
+        private void btnSaveKhassra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               string retVal= mnk.SaveFardKhassras(txtKhassraRecId.Text, "NULL", SelectedTokenId, "0", cbKhassras.SelectedValue.ToString(),  txtKhassraKanal.Text, txtKhassraMarla.Text, txtKhassraSarsai.Text, txtKhassraFeet.Text,  UsersManagments.UserId.ToString(), UsersManagments.UserName);
+               if (retVal.Length > 5)
+               {
+                   MessageBox.Show("انتخاب کردہ خسرہ ریکارڈ محفوظ ہو گیا");
+                   txtKhassraRecId.Text = "-1";
+                   txtKhassraKanal.Clear();
+                   txtKhassraMarla.Clear();
+                   txtKhassraSarsai.Clear();
+                   txtKhassraFeet.Clear();
+                   cbKhassras.SelectedValue = 0;
+               }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
