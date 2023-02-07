@@ -42,6 +42,7 @@ namespace SDC_Application.AL
         TaqseemNewKhataJatMin MinKhataMethods = new TaqseemNewKhataJatMin();
         Intiqal intiqal=new Intiqal();
         DataView dvMinKhataMalkan = new DataView();
+        RhzSDC rhz = new RhzSDC();
 
         bool ConfirmationStatus = false;
         bool AmaldaramadStatus = false;
@@ -887,6 +888,10 @@ namespace SDC_Application.AL
                         {
                             //this.GetKhewatMaalikanBindingSource.DataSource = client.GetKhewatMalikanByKhataId(Convert.ToInt32(cboKhataNo.SelectedValue)).ToList();
                             // this.txtPersonName.Focus();
+                            if (txtKhewatGroupFareeqId.Text.Length < 5)
+                            {
+                               txtKhewatGroupFareeqId.Text= rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus("-1", "0", txtPersonId.Text, "0", "0", "0", "0", "0", cboQismMalikProp.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", "Fard e Badar", "0");
+                            }
                             this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(fbId, cboKhataNo.SelectedValue.ToString());
                             this.FillGridviewMalkan(khewatMalikanByFB);
                             this.txtKhewatFreeqainGroupId.Text = "-1";
