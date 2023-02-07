@@ -110,6 +110,29 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        #region Save New Name through AfardRegister_Edit
+        public string SaveProposedNameToShajra(string PersonRecId, string RHZ_ChangeId,string PersonId,string QoamIdProp,string CNICProp,string ProposedName,string  EditMode, string UserId, string LoginName)
+        {
+            string retVal = "";
+            string spWithParms = "WEB_SP_INSERT_AfradRegister_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+PersonRecId + "," + RHZ_ChangeId + "," +  PersonId + "," + QoamIdProp + "," + CNICProp+ ",N'" + ProposedName + "','" + EditMode + "'," + UserId + ",'"+LoginName+"'";
+            retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+            return retVal;
+        }
+        #endregion
+        #region Get Afrad list Edited
+        public DataTable GetAfradListProposed(string RHZ_ChangeId)
+        {
+            string spWithParms = "Proc_Get_Moza_AfradList_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RHZ_ChangeId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
+        #region Get Afrad list proposed 
+        public DataTable GetAfradListEdit(string RHZ_ChangeId)
+        {
+            string spWithParms = "Proc_Get_Moza_AfradList_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RHZ_ChangeId ;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
         public string SaveKhataDetails(string KhataRecId,string RHZ_ChangeId, string KhataId, string RegisterId, string KhataNo, string KhataNoProp,string KhataHissas, string KhataHissasProp ,string Kanal, string KanalProp, string Marla, string MarlaProp, string Sarsai, string SarsaiProp, string Sft, string SftProp, string Kyfiat, string UserId, string LoginName, string KyfiatProp, string EditingMode)
         {
             string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajatEdit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataRecId +","+RHZ_ChangeId+ ",'" + KhataId + "'," + RegisterId + ",'" + KhataNo + "','" + KhataNoProp + "'," + KhataHissas + "," + KhataHissasProp + ","+ Kanal + "," + KanalProp + "," + Marla + "," + MarlaProp + "," + Sarsai + "," + SarsaiProp + "," + Sft + "," + SftProp + "," + UserId + ",'" + LoginName + "',N'" + Kyfiat + "',N'" + KyfiatProp + "','"+EditingMode+"'";
