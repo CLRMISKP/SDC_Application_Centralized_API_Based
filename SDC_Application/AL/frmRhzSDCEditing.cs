@@ -1867,6 +1867,21 @@ namespace SDC_Application.AL
                 this.txtDrustNaam.Text = ap.PersonNameForFB;
                 this.txtfbShajraOldName.Text = ap.PersonNameForFB;
                 this.txtName.Text = ap.PersonName;
+                if (SelectedPersonId.Length > 5)
+                {
+                    try
+                    {
+                        txtPersonKhatajat.Text =rhz.GetKhatajatStringByPersonId(SelectedPersonId).Rows.Count>0? rhz.GetKhatajatStringByPersonId(SelectedPersonId).Rows[0][0].ToString():"";
+                        txtPersonIntiqalat.Text =rhz.GetIntiqalatByPersonId(SelectedPersonId).Rows.Count>0 ?rhz.GetIntiqalatByPersonId(SelectedPersonId).Rows[0][0].ToString():"";
+                        txtPersonFardats.Text = rhz.GetFardatsByPersonId(SelectedPersonId).Rows.Count>0? rhz.GetFardatsByPersonId(SelectedPersonId).Rows[0][0].ToString():"";
+                        txtPersonFardBadrat.Text = rhz.GetFardBadratByPersonId(SelectedPersonId).Rows.Count>0? rhz.GetFardBadratByPersonId(SelectedPersonId).Rows[0][0].ToString():"";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+         
+                }
             }
 
         }

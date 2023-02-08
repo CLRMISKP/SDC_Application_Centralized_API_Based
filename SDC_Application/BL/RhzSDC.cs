@@ -133,6 +133,34 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
         #endregion
+        #region Get Intiqalat By Person Id
+        public DataTable GetIntiqalatByPersonId(string PersonId)
+        {
+            string spWithParms = "Proc_Get_Intiqalat_By_PersonId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
+        #region Get Fard Badrat By Person Id
+        public DataTable GetFardBadratByPersonId(string PersonId)
+        {
+            string spWithParms = "Proc_Get_FardBadrat_By_PersonId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
+        #region Get Fardats By Person Id
+        public DataTable GetFardatsByPersonId(string PersonId)
+        {
+            string spWithParms = "Proc_Get_Fardats_By_PersonId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
+        #region Get Fardats By Person Id
+        public DataTable GetKhatajatStringByPersonId(string PersonId)
+        {
+            string spWithParms = "Proc_Get_KhatajatString_By_PersonId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
         public string SaveKhataDetails(string KhataRecId,string RHZ_ChangeId, string KhataId, string RegisterId, string KhataNo, string KhataNoProp,string KhataHissas, string KhataHissasProp ,string Kanal, string KanalProp, string Marla, string MarlaProp, string Sarsai, string SarsaiProp, string Sft, string SftProp, string Kyfiat, string UserId, string LoginName, string KyfiatProp, string EditingMode)
         {
             string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajatEdit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataRecId +","+RHZ_ChangeId+ ",'" + KhataId + "'," + RegisterId + ",'" + KhataNo + "','" + KhataNoProp + "'," + KhataHissas + "," + KhataHissasProp + ","+ Kanal + "," + KanalProp + "," + Marla + "," + MarlaProp + "," + Sarsai + "," + SarsaiProp + "," + Sft + "," + SftProp + "," + UserId + ",'" + LoginName + "',N'" + Kyfiat + "',N'" + KyfiatProp + "','"+EditingMode+"'";
