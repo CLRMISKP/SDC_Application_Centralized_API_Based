@@ -2957,7 +2957,7 @@ namespace SDC_Application.AL
                                 dtIntiqalat = intiqal.GetIntiqalatEnteredFardTokenId(this.SelectedTokenId);
                                 dgvIntiqalatDetails.DataSource = dtIntiqalat;
                                 dgvIntiqalatDetails.Columns["حصہ"].Visible = false;
-                                dgvIntiqalatDetails.Columns["نام"].Width = 130;
+                                //dgvIntiqalatDetails.Columns["نام"].Width = 130;
                                 //dgvIntiqalatDetailsfill();
 
 
@@ -2976,7 +2976,7 @@ namespace SDC_Application.AL
                                 dtRem = intiqal.GetRemainingFardTokenId(this.SelectedTokenId);
                                 dgvRemaining.DataSource = dtRem;
                                 dgvRemaining.Columns["حصہ"].Visible = false;
-                                dgvRemaining.Columns["نام"].Width = 130;
+                                //dgvRemaining.Columns["نام"].Width = 130;
 
 
                                 DataTable dtCancel = new DataTable();
@@ -2984,7 +2984,7 @@ namespace SDC_Application.AL
                                 dgvCancel.DataSource = dtCancel;
                                 dgvCancel.Columns["حصہ"].Visible = false;
                                 dgvCancel.Columns["picId"].Visible = false;
-                                dgvCancel.Columns["نام"].Width = 130;
+                                //dgvCancel.Columns["نام"].Width = 130;
 
 
 

@@ -888,10 +888,7 @@ namespace SDC_Application.AL
                         {
                             //this.GetKhewatMaalikanBindingSource.DataSource = client.GetKhewatMalikanByKhataId(Convert.ToInt32(cboKhataNo.SelectedValue)).ToList();
                             // this.txtPersonName.Focus();
-                            if (txtKhewatGroupFareeqId.Text.Length < 5)
-                            {
-                               txtKhewatGroupFareeqId.Text= rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus("-1", "0", txtPersonId.Text, "0", "0", "0", "0", "0", cboQismMalikProp.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", "Fard e Badar", "0");
-                            }
+                            
                             this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(fbId, cboKhataNo.SelectedValue.ToString());
                             this.FillGridviewMalkan(khewatMalikanByFB);
                             this.txtKhewatFreeqainGroupId.Text = "-1";
@@ -987,6 +984,10 @@ namespace SDC_Application.AL
             {
                 try
                 {
+                    if (kgf_id.Length < 5)
+                    {
+                        kgf_id = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus("-1", "0", txtPersonId.Text, "0", "0", "0", "0", "0", cboQismMalikProp.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", "Fard e Badar", "1");
+                    }
                    // string s = client.SaveKhewatGrouFreeqein(kgf_id, kg_id, pid, netPart, kanal, marla, sarsai, sft, khewatTypeId, kh_id, CurrentUser.UserId, darNo, totalDarParts, personParts, ofDarPart, CurrentUser.UserName, txtPersonNetHissa.Text.Trim());
                     /*string s = misalBL.SaveFBKhewatGroupFarqeen(FbFareeqId,FbId, kgf_id, kg_id, "Misal", "0", sqNo, pid, khewatTypeId, netPart, kanal, marla, sarsai, sft, UsersManagments.UserId, UsersManagments.UserName, 0, txtPersonNetHissa.Text.Trim(), KhattaId); 
                     */

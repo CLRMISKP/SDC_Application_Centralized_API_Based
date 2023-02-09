@@ -222,9 +222,9 @@ namespace SDC_Application.BL
         #endregion
 
         #region Save Fb Khassra Register Details
-        public string SaveFBKhassraRegisterDetails(long FB_KhassraRegisterDetailId, long FB_Id, int KhassraDetailId, int KhatooniId, string KhasraNo, int AreaTypeId, int Kanal, int Marla, float Sarsai, float Feet, int InsertUserId, string InsertLoginName, string TransactionType)
+        public string SaveFBKhassraRegisterDetails(string FB_KhassraRegisterDetailId, string FB_Id, string KhassraDetailId, string KhatooniId, string KhasraNo, string AreaTypeId, string Kanal, string Marla, string Sarsai, string  Feet, string  InsertUserId, string InsertLoginName, string TransactionType)
         {
-            string spWithParms = "WEB_SP_INSERT_FB_KhassraRegisterDetail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_KhassraRegisterDetailId + "," + FB_Id.ToString() + "," + KhassraDetailId.ToString() + "," + KhatooniId.ToString() + ",'" + KhasraNo + "'," + AreaTypeId.ToString() + "," + Kanal.ToString() + "," + Marla.ToString() + "," + Sarsai.ToString() + "," + Feet.ToString() + "," + InsertUserId.ToString() + ",'" + InsertLoginName + "','" + TransactionType + "'";
+            string spWithParms = "WEB_SP_INSERT_FB_KhassraRegisterDetail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_KhassraRegisterDetailId + "," + FB_Id + "," + KhassraDetailId + "," + KhatooniId + ",'" + KhasraNo + "'," + AreaTypeId + "," + Kanal + "," + Marla + "," + Sarsai + "," + Feet + "," + InsertUserId+ ",'" + InsertLoginName + "','" + TransactionType + "'";
              return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
         }
         #endregion
@@ -247,7 +247,7 @@ namespace SDC_Application.BL
         #endregion
 
         #region Save KhassraRegisterDetails Direct
-        public string saveKhassraRegisterDirect(int KhassraDetailId, string MozaId, int KhatooniId, string KhassraNo, int AreaTypeId, int Kanal, int Marla, float Sarsai, float Feet, int InsertUserId, string insertLoginName)
+        public string saveKhassraRegisterDirect(string KhassraDetailId, string MozaId, int KhatooniId, string KhassraNo, int AreaTypeId, int Kanal, int Marla, float Sarsai, float Feet, int InsertUserId, string insertLoginName)
         {
             string spWithParms = "WEB_SP_INSERT_KhassraRegisterDetail_Direct  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhassraDetailId.ToString() + "," + MozaId.ToString() + "," + KhatooniId.ToString() + ",'" + KhassraNo + "'," + AreaTypeId.ToString() + "," + Kanal.ToString() + "," + Marla.ToString() + "," + Sarsai.ToString() + "," + Feet.ToString() + "," + InsertUserId.ToString() + ",'" + insertLoginName + "'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
@@ -255,9 +255,9 @@ namespace SDC_Application.BL
         #endregion
 
         #region Save Fb Khassra Register
-        public string SaveFBKhassraRegister(long FB_KhassraId, long FB_Id, int KhassraId, string MozaId, string KhassraNo, int InsertUserId, string InsertLoginName, int KhassraDetailId, int KhatooniId, int AreaTypeId, int Kanal, int Marla, float Sarsai, float feet)
+        public string SaveFBKhassraRegister(string FB_KhassraId, string FB_Id, string KhassraId, string MozaId, string KhassraNo, string InsertUserId, string InsertLoginName, string KhassraDetailId, string  KhatooniId, string  AreaTypeId, string Kanal, string Marla, string  Sarsai, string feet)
         {
-            string spWithParms = "WEB_SP_INSERT_FB_KhassraRegister  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_KhassraId.ToString() + "," + FB_Id.ToString() + "," + KhassraId.ToString() + "," + MozaId + ",'" + KhassraNo + "'," + InsertUserId.ToString() + ",'" + InsertLoginName + "'," + KhassraDetailId.ToString() + "," + KhatooniId.ToString() + "," + AreaTypeId.ToString() + "," + Kanal.ToString() + "," + Marla.ToString() + "," + Sarsai.ToString() + "," + feet.ToString();
+            string spWithParms = "WEB_SP_INSERT_FB_KhassraRegister  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_KhassraId + "," + FB_Id+ "," + KhassraId + "," + MozaId + ",'" + KhassraNo + "'," + InsertUserId + ",'" + InsertLoginName + "'," + KhassraDetailId + "," + KhatooniId + "," + AreaTypeId + "," + Kanal+ "," + Marla + "," + Sarsai + "," + feet;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
         }
         #endregion

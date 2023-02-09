@@ -995,8 +995,8 @@ namespace SDC_Application.AL
         {
             try
             {
-                int khatoniid = Convert.ToInt32(cboKhatoni.SelectedValue);
-                int khasraDetailId = Convert.ToInt32(txtKhassraDetailId.Text);
+                string khatoniid =cboKhatoni.SelectedValue.ToString();
+                long khasraDetailId = long.Parse(txtKhassraDetailId.Text);
                 string khasrano = txtKhassraNo.Text;
                 int aretype = Convert.ToInt32(cboAreaType.SelectedValue);
                 int k = txtKhassraKanal.Text.Trim() != "" ? Convert.ToInt32(txtKhassraKanal.Text.Trim()) : 0;
@@ -1008,7 +1008,7 @@ namespace SDC_Application.AL
                 long FbKhatoniId = long.Parse(cboKhatoni.SelectedValue.ToString());
                 if(txtKhassraNo.Text==txtKhassraNoOld.Text) // if changes occur in khassra area detail without changes in khassra no etc...
                 {
-                    if (txtKhassraNo.Text.Trim() != "" && Convert.ToInt32(cboAreaType.SelectedValue) != 0 && Convert.ToInt32(cboKhatoni.SelectedValue)!=0)
+                    if (txtKhassraNo.Text.Trim().Length>0 && cboAreaType.SelectedValue.ToString().Length>2 && cboKhatoni.SelectedValue.ToString().Length>2)
                     {
                         long FbKhasraDetailId = long.Parse("-1");
                         long FbKhassraId = long.Parse("-1");
@@ -1023,10 +1023,10 @@ namespace SDC_Application.AL
                             FbKhassraId = long.Parse("-1");
                         }
                    
-                        int khasraId= Convert.ToInt32(txtKhassraId.Text);
+                        string khasraId= txtKhassraId.Text;
                         //string lastKhassraId = client.SaveFBKhassraRegister(FbKhassraId, FbId, khasraId, CurrentUser.MozaId, 0, txtKhassraNo.Text, DateTime.Now, DateTime.Now, DateTime.Now, "Active", CurrentUser.UserId, CurrentUser.UserName);
                         //string lastId = client.saveKhassraRegisterDirect(khasraDetailId, CurrentUser.MozaId, khatoniid, khasrano, aretype, k, m, s, f, CurrentUser.UserId, CurrentUser.UserName);
-                        string lastId = misalBL.SaveFBKhassraRegisterDetails(FbKhasraDetailId, FbId, khasraDetailId,khatoniid,txtKhassraNo.Text.Trim(), aretype, k, m, s, f, UsersManagments.UserId, UsersManagments.UserName, "Fard_e_Bader");
+                        string lastId = misalBL.SaveFBKhassraRegisterDetails(FbKhasraDetailId.ToString(), FbId.ToString(), khasraDetailId.ToString(),khatoniid,txtKhassraNo.Text.Trim(), aretype.ToString(), k.ToString(), m.ToString(), s.ToString(), f.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "Fard_e_Bader");
                         if (lastId != "-1")
                         {
                             this.txtKhassraNo.ReadOnly = false;
@@ -1055,14 +1055,14 @@ namespace SDC_Application.AL
                 else if (txtKhassraNoOld.Text != txtKhassraNo.Text.Trim())
                 {
                     long fbKhasraDetailId = long.Parse(txtKhassraDetailId.Text);
-                    int khasraId = Convert.ToInt32(txtKhassraId.Text);
+                    string khasraId = txtKhassraId.Text;
                     if (txtKhassraId.Text == "-1" && txtKhassraDetailId.Text == "-1") // if new khassra to be added to RHZ via Fard Bader...
                     {
-                        string lastKhassraDetailId = misalBL.saveKhassraRegisterDirect(-1, cmbMouza.SelectedValue.ToString(), Convert.ToInt32(cboKhatoni.SelectedValue), txtKhassraNo.Text.Trim(), aretype, k, m, s, f, UsersManagments.UserId, UsersManagments.UserName);
+                        string lastKhassraDetailId = misalBL.saveKhassraRegisterDirect("-1", cmbMouza.SelectedValue.ToString(), Convert.ToInt32(cboKhatoni.SelectedValue), txtKhassraNo.Text.Trim(), aretype, k, m, s, f, UsersManagments.UserId, UsersManagments.UserName);
                         //string lastId = client.SaveFBKhassraRegisterDetails(fbKhasraDetailId, FbId, Convert.ToInt32(txtKhassraDetailId.Text), khatoniid, txtKhassraNo.Text.Trim(), aretype, k, m, s, f, CurrentUser.UserId, CurrentUser.UserName);
 
                         long lstKhId=0;
-                        if (lastKhassraDetailId != "-1" && long.TryParse(lastKhassraDetailId, out lstKhId))
+                        if (lastKhassraDetailId.Length>5)
                         {
                             this.txtKhassraNo.ReadOnly = false;
                             this.txtKhassraNoOld.Text = "0";
@@ -1087,7 +1087,7 @@ namespace SDC_Application.AL
                     }
                     else // if khassra no change happens in existing records....  Here Transaction Type must have to send to SP and Table.. for time bieng it is skipped.
                     {
-                        string lastId = misalBL.SaveFBKhassraRegister(-1, FbId, khasraId, cmbMouza.SelectedValue.ToString(), txtKhassraNo.Text, UsersManagments.UserId, UsersManagments.UserName,Convert.ToInt32( fbKhasraDetailId), khatoniid, aretype, k, m, s, f);
+                        string lastId = misalBL.SaveFBKhassraRegister("-1", FbId.ToString(), khasraId, cmbMouza.SelectedValue.ToString(), txtKhassraNo.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, fbKhasraDetailId.ToString(), khatoniid, aretype.ToString(), k.ToString(), m.ToString(), s.ToString(), f.ToString());
                         if (lastId != "-1")
                         {
                             this.txtKhassraNo.ReadOnly = false;
@@ -1124,7 +1124,7 @@ namespace SDC_Application.AL
                     catch (Exception ex)
                     {
                         //string s2 = client.SaveFBKhassraRegisterDetails(-1, FbId, Convert.ToInt32(txtKhassraDetailId.Text), txtKhassraNo.Text.Trim(), areaType, Kanal, marla, sarsai, feet, CurrentUser.UserId, CurrentUser.UserName);
-
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
@@ -1740,7 +1740,7 @@ namespace SDC_Application.AL
                 DataGridView g = sender as DataGridView;
                 foreach (DataGridViewRow row in g.Rows)
                 {
-                    if (GridViewKhatoniList.SelectedRows.Count > 0)
+                    if (gridViewKhassraAreaDetails.SelectedRows.Count > 0)
                     {
                         if (row.Selected)
                         {
