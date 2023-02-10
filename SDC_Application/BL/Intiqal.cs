@@ -269,6 +269,12 @@ namespace SDC_Application.BL
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
 
+            public String GetIntiqalSellerBuyerDependencyByKhata(string IntiqalId, string IntiqalKhataRecId)
+            {
+                string spWithParam = "Proc_Intiqal_Revert_Sellers_Buyers_Dependency_Check_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalKhataRecId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+
             public String GetPersonIdByKhewatgroupFareeqId(string KhewatGroupFareeqId)
             {
                 string spWithParam = "proc_Self_Get_PersonId_By_KhewatGroupFareeqId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhewatGroupFareeqId;
@@ -1552,7 +1558,6 @@ namespace SDC_Application.BL
 
         #endregion
 
-
             # region "Get Deatils for Shajra"
 
             public string GetMutawafiHissa(string IntiqalId)
@@ -1651,7 +1656,6 @@ namespace SDC_Application.BL
 
             #endregion
 
-
             #region Approval of Gardawar
             public string UpdateIntiqalApprovalStatusGardawar(string TokenId, string Token_CurrentStatus, string Token_CurrentStatus_Reason, string GardawarId)
             {
@@ -1660,6 +1664,26 @@ namespace SDC_Application.BL
                 dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParams);
                 return lastId;
             }
+        #endregion
+
+        #region Intiqal Enable Disable Operations
+
+            public string IntiqalEnableDisable(string IntiqalId, string UpdateMode, string UpdateType, string Comments)
+            {
+                string spWithParam = "Web_Sp_Update_Intiqal_Amal_Attestation  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + " ,'" + UpdateMode+"','"+UpdateType+"',N'"+Comments+"',"+Classess.UsersManagments.UserId.ToString()+",'"+Classess.UsersManagments.UserName+"'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+
+        #endregion
+        //Proc_Intiqal_Revert_By_Khata
+             #region Intiqal Revert by Khata
+
+            public string IntiqalRevertByKhata(string IntiqalId, string IntiqalKhataRecId, string Comments)
+            {
+                string spWithParam = "Proc_Intiqal_Revert_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + " ," + IntiqalKhataRecId + ",N'" + Comments + "'," + Classess.UsersManagments.UserId.ToString() + ",'" + Classess.UsersManagments.UserName + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+
         #endregion
     }
     }

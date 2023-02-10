@@ -3005,7 +3005,7 @@
             this.tabKhanakashtMalkan.Location = new System.Drawing.Point(4, 40);
             this.tabKhanakashtMalkan.Name = "tabKhanakashtMalkan";
             this.tabKhanakashtMalkan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhanakashtMalkan.Size = new System.Drawing.Size(948, 468);
+            this.tabKhanakashtMalkan.Size = new System.Drawing.Size(948, 462);
             this.tabKhanakashtMalkan.TabIndex = 1;
             this.tabKhanakashtMalkan.Text = "ترمیم خانہ کاشت ملکان";
             this.tabKhanakashtMalkan.UseVisualStyleBackColor = true;
@@ -3019,7 +3019,7 @@
             this.panel4.Location = new System.Drawing.Point(3, 232);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(942, 233);
+            this.panel4.Size = new System.Drawing.Size(942, 227);
             this.panel4.TabIndex = 59;
             // 
             // panel5
@@ -3029,7 +3029,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(5, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(930, 221);
+            this.panel5.Size = new System.Drawing.Size(930, 215);
             this.panel5.TabIndex = 2;
             // 
             // dgMushteriFareeqain
@@ -3050,7 +3050,7 @@
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgMushteriFareeqain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMushteriFareeqain.Size = new System.Drawing.Size(928, 219);
+            this.dgMushteriFareeqain.Size = new System.Drawing.Size(928, 213);
             this.dgMushteriFareeqain.TabIndex = 0;
             this.dgMushteriFareeqain.TabStop = false;
             this.dgMushteriFareeqain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMushteriFareeqain_CellClick);
@@ -4327,7 +4327,7 @@
             this.MinMalkan.Location = new System.Drawing.Point(4, 40);
             this.MinMalkan.Name = "MinMalkan";
             this.MinMalkan.Padding = new System.Windows.Forms.Padding(3);
-            this.MinMalkan.Size = new System.Drawing.Size(946, 466);
+            this.MinMalkan.Size = new System.Drawing.Size(946, 460);
             this.MinMalkan.TabIndex = 1;
             this.MinMalkan.Text = "تفصیل من کھاتہ ملکان";
             this.MinMalkan.UseVisualStyleBackColor = true;
@@ -4341,7 +4341,7 @@
             this.panel10.Location = new System.Drawing.Point(3, 250);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(5);
-            this.panel10.Size = new System.Drawing.Size(940, 213);
+            this.panel10.Size = new System.Drawing.Size(940, 207);
             this.panel10.TabIndex = 1038;
             // 
             // panel11
@@ -4351,7 +4351,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(5, 5);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(928, 201);
+            this.panel11.Size = new System.Drawing.Size(928, 195);
             this.panel11.TabIndex = 2;
             // 
             // dgMinKhataMalkan
@@ -4372,7 +4372,7 @@
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgMinKhataMalkan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMinKhataMalkan.Size = new System.Drawing.Size(926, 199);
+            this.dgMinKhataMalkan.Size = new System.Drawing.Size(926, 193);
             this.dgMinKhataMalkan.TabIndex = 0;
             this.dgMinKhataMalkan.TabStop = false;
             this.dgMinKhataMalkan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMinKhataMalkan_CellContentClick);
@@ -4695,7 +4695,7 @@
             this.MinKhatoonies.Controls.Add(this.gbMinKhatooni);
             this.MinKhatoonies.Location = new System.Drawing.Point(4, 40);
             this.MinKhatoonies.Name = "MinKhatoonies";
-            this.MinKhatoonies.Size = new System.Drawing.Size(946, 466);
+            this.MinKhatoonies.Size = new System.Drawing.Size(946, 460);
             this.MinKhatoonies.TabIndex = 2;
             this.MinKhatoonies.Text = "تفصیل من کھاتہ کھتونی";
             this.MinKhatoonies.UseVisualStyleBackColor = true;
@@ -4706,7 +4706,7 @@
             this.groupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox21.Location = new System.Drawing.Point(0, 271);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(946, 195);
+            this.groupBox21.Size = new System.Drawing.Size(946, 189);
             this.groupBox21.TabIndex = 1018;
             this.groupBox21.TabStop = false;
             // 
@@ -4724,7 +4724,7 @@
             this.grdGetkhatonichange.ReadOnly = true;
             this.grdGetkhatonichange.RowTemplate.Height = 30;
             this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdGetkhatonichange.Size = new System.Drawing.Size(940, 157);
+            this.grdGetkhatonichange.Size = new System.Drawing.Size(940, 151);
             this.grdGetkhatonichange.TabIndex = 8;
             this.grdGetkhatonichange.Click += new System.EventHandler(this.grdGetkhatonichange_Click);
             // 
@@ -4924,7 +4924,7 @@
             this.MinKhassras.Controls.Add(this.gbMinKhatoniKhassraSelec);
             this.MinKhassras.Location = new System.Drawing.Point(4, 40);
             this.MinKhassras.Name = "MinKhassras";
-            this.MinKhassras.Size = new System.Drawing.Size(946, 466);
+            this.MinKhassras.Size = new System.Drawing.Size(946, 460);
             this.MinKhassras.TabIndex = 3;
             this.MinKhassras.Text = "تفصیل من کھاتہ خسرہ جات";
             this.MinKhassras.UseVisualStyleBackColor = true;
@@ -4935,7 +4935,7 @@
             this.groupBox23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox23.Location = new System.Drawing.Point(0, 238);
             this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(946, 228);
+            this.groupBox23.Size = new System.Drawing.Size(946, 222);
             this.groupBox23.TabIndex = 10009;
             this.groupBox23.TabStop = false;
             // 
@@ -4953,7 +4953,7 @@
             this.dgMinKhataKhassraJat.ReadOnly = true;
             this.dgMinKhataKhassraJat.RowTemplate.Height = 30;
             this.dgMinKhataKhassraJat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMinKhataKhassraJat.Size = new System.Drawing.Size(940, 190);
+            this.dgMinKhataKhassraJat.Size = new System.Drawing.Size(940, 184);
             this.dgMinKhataKhassraJat.TabIndex = 8;
             this.dgMinKhataKhassraJat.Click += new System.EventHandler(this.dgMinKhataKhassraJat_Click);
             // 

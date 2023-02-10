@@ -31,29 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.dgInteqalKhattas = new System.Windows.Forms.DataGridView();
-            this.colChoose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.KhataNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sellers = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Buyers = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.gbAttestationEnableDisable = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtComments = new System.Windows.Forms.TextBox();
+            this.btnIntiqalDisableAttested = new System.Windows.Forms.Button();
+            this.btnIntiqalEnableAttested = new System.Windows.Forms.Button();
+            this.gbAmalEnableDisable = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnIntiqalAmal = new System.Windows.Forms.Button();
+            this.txtCommentsAmal = new System.Windows.Forms.TextBox();
+            this.btnIntiqalEnable = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnIntiqalEnable = new System.Windows.Forms.Button();
-            this.ttIntiqalRevert = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgInteqalKhattas = new System.Windows.Forms.DataGridView();
+            this.ColSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,20 +59,26 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblKhataRevert = new System.Windows.Forms.Label();
+            this.btnRevertKhata = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnIntiqalEnableRevert = new System.Windows.Forms.Button();
-            this.btnIntiqalAmal = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCommentsRevert = new System.Windows.Forms.TextBox();
+            this.ttIntiqalRevert = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgInteqalKhattas)).BeginInit();
-            this.groupBox10.SuspendLayout();
+            this.gbAttestationEnableDisable.SuspendLayout();
+            this.gbAmalEnableDisable.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInteqalKhattas)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -93,179 +92,142 @@
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1250, 741);
+            this.tabControl1.Size = new System.Drawing.Size(1250, 608);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox12);
-            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.gbAttestationEnableDisable);
+            this.tabPage1.Controls.Add(this.gbAmalEnableDisable);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Location = new System.Drawing.Point(4, 40);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 12, 3, 12);
-            this.tabPage1.Size = new System.Drawing.Size(1242, 697);
+            this.tabPage1.Size = new System.Drawing.Size(1242, 564);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "فعال  برائے ترمیم";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox12
+            // gbAttestationEnableDisable
             // 
-            this.groupBox12.Controls.Add(this.dgInteqalKhattas);
-            this.groupBox12.Controls.Add(this.groupBox10);
-            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox12.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(3, 171);
-            this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Padding = new System.Windows.Forms.Padding(10, 19, 10, 19);
-            this.groupBox12.Size = new System.Drawing.Size(1236, 514);
-            this.groupBox12.TabIndex = 38;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "محصوص کھاتاجات ترمیم کیلئے فعال کریں";
-            // 
-            // dgInteqalKhattas
-            // 
-            this.dgInteqalKhattas.AllowUserToAddRows = false;
-            this.dgInteqalKhattas.AllowUserToDeleteRows = false;
-            this.dgInteqalKhattas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgInteqalKhattas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInteqalKhattas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colChoose,
-            this.KhataNo,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.Sellers,
-            this.Buyers});
-            this.dgInteqalKhattas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgInteqalKhattas.Location = new System.Drawing.Point(10, 51);
-            this.dgInteqalKhattas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.dgInteqalKhattas.MultiSelect = false;
-            this.dgInteqalKhattas.Name = "dgInteqalKhattas";
-            this.dgInteqalKhattas.ReadOnly = true;
-            this.dgInteqalKhattas.RowHeadersVisible = false;
-            this.dgInteqalKhattas.RowTemplate.Height = 30;
-            this.dgInteqalKhattas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgInteqalKhattas.Size = new System.Drawing.Size(1216, 444);
-            this.dgInteqalKhattas.TabIndex = 1;
-            this.dgInteqalKhattas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInteqalKhattas_CellClick);
-            // 
-            // colChoose
-            // 
-            this.colChoose.HeaderText = "انتخاب کریں";
-            this.colChoose.Name = "colChoose";
-            this.colChoose.ReadOnly = true;
-            // 
-            // KhataNo
-            // 
-            this.KhataNo.DataPropertyName = "KhataNo";
-            this.KhataNo.HeaderText = "کھاتہ نمبر";
-            this.KhataNo.Name = "KhataNo";
-            this.KhataNo.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Khata_TotalParts";
-            this.dataGridViewTextBoxColumn6.HeaderText = "کل حصے";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Khata_Area";
-            this.dataGridViewTextBoxColumn7.HeaderText = "کل رقبہ";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // Sellers
-            // 
-            this.Sellers.HeaderText = "بائعان/دہندہ گان";
-            this.Sellers.Name = "Sellers";
-            this.Sellers.ReadOnly = true;
-            this.Sellers.Text = "بائعان/دہندہ گان";
-            this.Sellers.UseColumnTextForLinkValue = true;
-            this.Sellers.Visible = false;
-            // 
-            // Buyers
-            // 
-            this.Buyers.HeaderText = "مشتریان/گریندہ گان";
-            this.Buyers.Name = "Buyers";
-            this.Buyers.ReadOnly = true;
-            this.Buyers.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Buyers.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Buyers.Text = "مشتریان/گریندہ گان";
-            this.Buyers.UseColumnTextForLinkValue = true;
-            this.Buyers.Visible = false;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label1);
-            this.groupBox10.Controls.Add(this.checkBox1);
-            this.groupBox10.Controls.Add(this.button4);
-            this.groupBox10.Controls.Add(this.label2);
-            this.groupBox10.Controls.Add(this.label3);
-            this.groupBox10.Location = new System.Drawing.Point(876, 554);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox10.Size = new System.Drawing.Size(404, 156);
-            this.groupBox10.TabIndex = 36;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "عمل درامد";
+            this.gbAttestationEnableDisable.Controls.Add(this.label1);
+            this.gbAttestationEnableDisable.Controls.Add(this.txtComments);
+            this.gbAttestationEnableDisable.Controls.Add(this.btnIntiqalDisableAttested);
+            this.gbAttestationEnableDisable.Controls.Add(this.btnIntiqalEnableAttested);
+            this.gbAttestationEnableDisable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbAttestationEnableDisable.Location = new System.Drawing.Point(3, 186);
+            this.gbAttestationEnableDisable.Name = "gbAttestationEnableDisable";
+            this.gbAttestationEnableDisable.Size = new System.Drawing.Size(1236, 227);
+            this.gbAttestationEnableDisable.TabIndex = 10;
+            this.gbAttestationEnableDisable.TabStop = false;
+            this.gbAttestationEnableDisable.Text = " تصدیق کے لحاظ سے انتقال فعال / غیر فعال کریں";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(4, 150);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1133, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 140);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "\'";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label1.Size = new System.Drawing.Size(53, 31);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "تفصیل:";
             // 
-            // checkBox1
+            // txtComments
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(321, 96);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(76, 35);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "زیر التواء";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtComments.Location = new System.Drawing.Point(6, 68);
+            this.txtComments.Name = "txtComments";
+            this.txtComments.Size = new System.Drawing.Size(1121, 39);
+            this.txtComments.TabIndex = 37;
+            this.ttIntiqalRevert.SetToolTip(this.txtComments, " تصدیق کے لحاظ سے انتقال فعال / غیر فعال کریں");
+            this.txtComments.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
-            // button4
+            // btnIntiqalDisableAttested
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(84, 79);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 65);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "عمل درامد کریں";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnIntiqalDisableAttested.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalDisableAttested.Enabled = false;
+            this.btnIntiqalDisableAttested.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIntiqalDisableAttested.Image = global::SDC_Application.Resource1.Approve_icon2;
+            this.btnIntiqalDisableAttested.Location = new System.Drawing.Point(494, 131);
+            this.btnIntiqalDisableAttested.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnIntiqalDisableAttested.Name = "btnIntiqalDisableAttested";
+            this.btnIntiqalDisableAttested.Size = new System.Drawing.Size(74, 61);
+            this.btnIntiqalDisableAttested.TabIndex = 35;
+            this.ttIntiqalRevert.SetToolTip(this.btnIntiqalDisableAttested, "انتقال کو غیر فعال کریں");
+            this.btnIntiqalDisableAttested.UseVisualStyleBackColor = true;
+            // 
+            // btnIntiqalEnableAttested
+            // 
+            this.btnIntiqalEnableAttested.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalEnableAttested.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnIntiqalEnableAttested.Location = new System.Drawing.Point(589, 131);
+            this.btnIntiqalEnableAttested.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnIntiqalEnableAttested.Name = "btnIntiqalEnableAttested";
+            this.btnIntiqalEnableAttested.Size = new System.Drawing.Size(74, 61);
+            this.btnIntiqalEnableAttested.TabIndex = 13;
+            this.btnIntiqalEnableAttested.TabStop = false;
+            this.ttIntiqalRevert.SetToolTip(this.btnIntiqalEnableAttested, "انتقال ترمیم کیلئے فعال کرِیں");
+            this.btnIntiqalEnableAttested.UseVisualStyleBackColor = true;
+            this.btnIntiqalEnableAttested.Click += new System.EventHandler(this.btnIntiqalEnableAttested_Click);
+            // 
+            // gbAmalEnableDisable
+            // 
+            this.gbAmalEnableDisable.Controls.Add(this.label2);
+            this.gbAmalEnableDisable.Controls.Add(this.btnIntiqalAmal);
+            this.gbAmalEnableDisable.Controls.Add(this.txtCommentsAmal);
+            this.gbAmalEnableDisable.Controls.Add(this.btnIntiqalEnable);
+            this.gbAmalEnableDisable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbAmalEnableDisable.Location = new System.Drawing.Point(3, 12);
+            this.gbAmalEnableDisable.Name = "gbAmalEnableDisable";
+            this.gbAmalEnableDisable.Size = new System.Drawing.Size(1236, 174);
+            this.gbAmalEnableDisable.TabIndex = 9;
+            this.gbAmalEnableDisable.TabStop = false;
+            this.gbAmalEnableDisable.Text = " عملدرامد کے لحاظ سے انتقال فعال / غیر فعال کریں";
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(104, 31);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1135, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 44);
-            this.label2.TabIndex = 17;
+            this.label2.Size = new System.Drawing.Size(53, 31);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "تفصیل:";
             // 
-            // label3
+            // btnIntiqalAmal
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Location = new System.Drawing.Point(232, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 44);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "موجودہ حیثیت:";
+            this.btnIntiqalAmal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalAmal.Enabled = false;
+            this.btnIntiqalAmal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIntiqalAmal.Image = global::SDC_Application.Resource1.Approve_icon2;
+            this.btnIntiqalAmal.Location = new System.Drawing.Point(504, 96);
+            this.btnIntiqalAmal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnIntiqalAmal.Name = "btnIntiqalAmal";
+            this.btnIntiqalAmal.Size = new System.Drawing.Size(74, 61);
+            this.btnIntiqalAmal.TabIndex = 35;
+            this.ttIntiqalRevert.SetToolTip(this.btnIntiqalAmal, "انتقال کو غیر فعال کریں");
+            this.btnIntiqalAmal.UseVisualStyleBackColor = true;
+            // 
+            // txtCommentsAmal
+            // 
+            this.txtCommentsAmal.Location = new System.Drawing.Point(8, 44);
+            this.txtCommentsAmal.Name = "txtCommentsAmal";
+            this.txtCommentsAmal.Size = new System.Drawing.Size(1121, 39);
+            this.txtCommentsAmal.TabIndex = 39;
+            this.ttIntiqalRevert.SetToolTip(this.txtCommentsAmal, "انتقال / کھاتہ فعال کرنے کی تفصیل درج کریں");
+            this.txtCommentsAmal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
+            // 
+            // btnIntiqalEnable
+            // 
+            this.btnIntiqalEnable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalEnable.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnIntiqalEnable.Location = new System.Drawing.Point(599, 96);
+            this.btnIntiqalEnable.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnIntiqalEnable.Name = "btnIntiqalEnable";
+            this.btnIntiqalEnable.Size = new System.Drawing.Size(74, 61);
+            this.btnIntiqalEnable.TabIndex = 13;
+            this.btnIntiqalEnable.TabStop = false;
+            this.ttIntiqalRevert.SetToolTip(this.btnIntiqalEnable, "انتقال ترمیم کیلئے فعال کرِیں");
+            this.btnIntiqalEnable.UseVisualStyleBackColor = true;
+            this.btnIntiqalEnable.Click += new System.EventHandler(this.btnIntiqalEnable_Click);
             // 
             // groupBox3
             // 
@@ -298,81 +260,58 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 12, 3, 12);
-            this.tabPage3.Size = new System.Drawing.Size(1242, 697);
+            this.tabPage3.Size = new System.Drawing.Size(1242, 564);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "فعال برائے ترمیم  بمع انتقال ریورٹ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnIntiqalAmal);
-            this.groupBox2.Controls.Add(this.btnIntiqalEnable);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(3, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1236, 159);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "سالم انتقال بمع تمام کھاتاجات ترمیم کیلئے فعال کریں";
-            // 
-            // btnIntiqalEnable
-            // 
-            this.btnIntiqalEnable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIntiqalEnable.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnIntiqalEnable.Location = new System.Drawing.Point(589, 63);
-            this.btnIntiqalEnable.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnIntiqalEnable.Name = "btnIntiqalEnable";
-            this.btnIntiqalEnable.Size = new System.Drawing.Size(74, 61);
-            this.btnIntiqalEnable.TabIndex = 13;
-            this.btnIntiqalEnable.TabStop = false;
-            this.ttIntiqalRevert.SetToolTip(this.btnIntiqalEnable, "سالم انتقال ترمیم کیلئے فعال کرِیں");
-            this.btnIntiqalEnable.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgInteqalKhattas);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 171);
+            this.groupBox1.Location = new System.Drawing.Point(3, 222);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10, 19, 10, 19);
-            this.groupBox1.Size = new System.Drawing.Size(1236, 514);
+            this.groupBox1.Size = new System.Drawing.Size(1236, 330);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "محصوص کھاتاجات ترمیم کیلئے فعال کریں";
             // 
-            // dataGridView1
+            // dgInteqalKhattas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1,
+            this.dgInteqalKhattas.AllowUserToAddRows = false;
+            this.dgInteqalKhattas.AllowUserToDeleteRows = false;
+            this.dgInteqalKhattas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgInteqalKhattas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInteqalKhattas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColSel,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewLinkColumn1,
             this.dataGridViewLinkColumn2});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 51);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1216, 444);
-            this.dataGridView1.TabIndex = 1;
+            this.dgInteqalKhattas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgInteqalKhattas.Location = new System.Drawing.Point(10, 51);
+            this.dgInteqalKhattas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.dgInteqalKhattas.MultiSelect = false;
+            this.dgInteqalKhattas.Name = "dgInteqalKhattas";
+            this.dgInteqalKhattas.ReadOnly = true;
+            this.dgInteqalKhattas.RowHeadersVisible = false;
+            this.dgInteqalKhattas.RowTemplate.Height = 30;
+            this.dgInteqalKhattas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgInteqalKhattas.Size = new System.Drawing.Size(1216, 260);
+            this.dgInteqalKhattas.TabIndex = 1;
+            this.dgInteqalKhattas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInteqalKhattas_CellClick);
             // 
-            // dataGridViewCheckBoxColumn1
+            // ColSel
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.ColSel.HeaderText = "انتخاب کریں";
+            this.ColSel.Name = "ColSel";
+            this.ColSel.ReadOnly = true;
+            this.ColSel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -486,20 +425,68 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnIntiqalEnableRevert);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.groupBox2);
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Controls.Add(this.txtCommentsRevert);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Location = new System.Drawing.Point(3, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1236, 159);
+            this.groupBox5.Size = new System.Drawing.Size(1236, 210);
             this.groupBox5.TabIndex = 39;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "سالم انتقال بمع تمام کھاتاجات ترمیم کیلئے فعال کریں";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lblKhataRevert);
+            this.groupBox6.Controls.Add(this.btnRevertKhata);
+            this.groupBox6.Location = new System.Drawing.Point(401, 38);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(200, 152);
+            this.groupBox6.TabIndex = 44;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "انتخاب کردہ کھاتہ ریورٹ کریں";
+            // 
+            // lblKhataRevert
+            // 
+            this.lblKhataRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblKhataRevert.AutoSize = true;
+            this.lblKhataRevert.Location = new System.Drawing.Point(9, 115);
+            this.lblKhataRevert.Name = "lblKhataRevert";
+            this.lblKhataRevert.Size = new System.Drawing.Size(0, 31);
+            this.lblKhataRevert.TabIndex = 14;
+            // 
+            // btnRevertKhata
+            // 
+            this.btnRevertKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRevertKhata.Enabled = false;
+            this.btnRevertKhata.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnRevertKhata.Location = new System.Drawing.Point(65, 41);
+            this.btnRevertKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnRevertKhata.Name = "btnRevertKhata";
+            this.btnRevertKhata.Size = new System.Drawing.Size(62, 63);
+            this.btnRevertKhata.TabIndex = 13;
+            this.btnRevertKhata.TabStop = false;
+            this.ttIntiqalRevert.SetToolTip(this.btnRevertKhata, " انخاب کردہ کھاتہ ترمیم کیلئے بمع ریورٹ  فعال کرِیں");
+            this.btnRevertKhata.UseVisualStyleBackColor = true;
+            this.btnRevertKhata.Click += new System.EventHandler(this.btnRevertKhata_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnIntiqalEnableRevert);
+            this.groupBox2.Location = new System.Drawing.Point(637, 38);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 152);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "سالم انتقال ریورٹ کریں";
             // 
             // btnIntiqalEnableRevert
             // 
             this.btnIntiqalEnableRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalEnableRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnIntiqalEnableRevert.Location = new System.Drawing.Point(589, 54);
+            this.btnIntiqalEnableRevert.Location = new System.Drawing.Point(65, 41);
             this.btnIntiqalEnableRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalEnableRevert.Name = "btnIntiqalEnableRevert";
             this.btnIntiqalEnableRevert.Size = new System.Drawing.Size(62, 63);
@@ -507,48 +494,56 @@
             this.btnIntiqalEnableRevert.TabStop = false;
             this.ttIntiqalRevert.SetToolTip(this.btnIntiqalEnableRevert, "سالم انتقال ترمیم کیلئے بمع ریورٹ  فعال کرِیں");
             this.btnIntiqalEnableRevert.UseVisualStyleBackColor = true;
+            this.btnIntiqalEnableRevert.Click += new System.EventHandler(this.btnIntiqalEnableRevert_Click);
             // 
-            // btnIntiqalAmal
+            // label3
             // 
-            this.btnIntiqalAmal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIntiqalAmal.Enabled = false;
-            this.btnIntiqalAmal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIntiqalAmal.Image = global::SDC_Application.Resource1.Approve_icon2;
-            this.btnIntiqalAmal.Location = new System.Drawing.Point(494, 63);
-            this.btnIntiqalAmal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnIntiqalAmal.Name = "btnIntiqalAmal";
-            this.btnIntiqalAmal.Size = new System.Drawing.Size(74, 61);
-            this.btnIntiqalAmal.TabIndex = 35;
-            this.ttIntiqalRevert.SetToolTip(this.btnIntiqalAmal, "سالم انتقال کو غیر فعال کریں");
-            this.btnIntiqalAmal.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1157, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 31);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "تفصیل:";
+            // 
+            // txtCommentsRevert
+            // 
+            this.txtCommentsRevert.Location = new System.Drawing.Point(884, 50);
+            this.txtCommentsRevert.Multiline = true;
+            this.txtCommentsRevert.Name = "txtCommentsRevert";
+            this.txtCommentsRevert.Size = new System.Drawing.Size(255, 140);
+            this.txtCommentsRevert.TabIndex = 41;
+            this.ttIntiqalRevert.SetToolTip(this.txtCommentsRevert, "انتقال / کھاتہ ریورٹ کرنے کی تفصیل درج کریں");
+            this.txtCommentsRevert.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
             // frmIntiqalRevertEnable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 741);
+            this.ClientSize = new System.Drawing.Size(1250, 608);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.Name = "frmIntiqalRevertEnable";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "عمل انتقال، کھاتہ در کھاتہ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmIntiqalAmalDaramadByKhata_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgInteqalKhattas)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.gbAttestationEnableDisable.ResumeLayout(false);
+            this.gbAttestationEnableDisable.PerformLayout();
+            this.gbAmalEnableDisable.ResumeLayout(false);
+            this.gbAmalEnableDisable.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInteqalKhattas)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -557,34 +552,14 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.DataGridView dgInteqalKhattas;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colChoose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KhataNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewLinkColumn Sellers;
-        private System.Windows.Forms.DataGridViewLinkColumn Buyers;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbAmalEnableDisable;
         private System.Windows.Forms.Button btnIntiqalEnable;
         private System.Windows.Forms.ToolTip ttIntiqalRevert;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn2;
+        private System.Windows.Forms.DataGridView dgInteqalKhattas;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -594,5 +569,24 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnIntiqalEnableRevert;
         private System.Windows.Forms.Button btnIntiqalAmal;
+        private System.Windows.Forms.GroupBox gbAttestationEnableDisable;
+        private System.Windows.Forms.Button btnIntiqalDisableAttested;
+        private System.Windows.Forms.Button btnIntiqalEnableAttested;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtComments;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCommentsAmal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCommentsRevert;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnRevertKhata;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblKhataRevert;
     }
 }
