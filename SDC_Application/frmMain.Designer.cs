@@ -122,6 +122,13 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuSubAttestedMutaions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubCancelledInital = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAntiCurruptionDrive = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnSubAntiCurIntiqal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubAntiCurFardat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuOperationalReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubInitqalEntryByOperator = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -577,7 +584,9 @@
             this.mnuReportMutAttestCancelPending,
             this.mnuDraReport,
             this.mnuIntiqalReport,
-            this.mnuYearlyIntiqalatReports});
+            this.mnuYearlyIntiqalatReports,
+            this.mnuAntiCurruptionDrive,
+            this.mnuOperationalReports});
             this.mnuReports.Name = "mnuReports";
             this.mnuReports.Size = new System.Drawing.Size(75, 42);
             this.mnuReports.Text = "رپورٹ";
@@ -617,6 +626,7 @@
             this.mnuReportMutForFBR.Name = "mnuReportMutForFBR";
             this.mnuReportMutForFBR.Size = new System.Drawing.Size(343, 42);
             this.mnuReportMutForFBR.Text = " - انتقال رپورٹ برائے ایف بی آر زربیع";
+            this.mnuReportMutForFBR.Click += new System.EventHandler(this.mnuReportMutForFBR_Click);
             // 
             // mnuReportMutAttestCancelPending
             // 
@@ -662,7 +672,9 @@
             this.mnuSubInitqalatTehsildar,
             this.mnuSubIntiqalRegistryPending,
             this.mnuSubRegistryIntiqalatDetails,
-            this.MnuSubREgistryIntiqalatDaily});
+            this.MnuSubREgistryIntiqalatDaily,
+            this.mnuSubAttestedMutaions,
+            this.mnuSubCancelledInital});
             this.mnuIntiqalReport.Name = "mnuIntiqalReport";
             this.mnuIntiqalReport.Size = new System.Drawing.Size(343, 42);
             this.mnuIntiqalReport.Text = " - انتقالا ت رپورٹس";
@@ -916,6 +928,58 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // mnuSubAttestedMutaions
+            // 
+            this.mnuSubAttestedMutaions.Name = "mnuSubAttestedMutaions";
+            this.mnuSubAttestedMutaions.Size = new System.Drawing.Size(264, 42);
+            this.mnuSubAttestedMutaions.Text = " - تصدیق شدہ انتقالات";
+            this.mnuSubAttestedMutaions.Click += new System.EventHandler(this.mnuSubAttestedMutaions_Click);
+            // 
+            // mnuSubCancelledInital
+            // 
+            this.mnuSubCancelledInital.Name = "mnuSubCancelledInital";
+            this.mnuSubCancelledInital.Size = new System.Drawing.Size(264, 42);
+            this.mnuSubCancelledInital.Text = " - خارج شدہ انتقالات";
+            this.mnuSubCancelledInital.Click += new System.EventHandler(this.mnuSubCancelledInital_Click);
+            // 
+            // mnuAntiCurruptionDrive
+            // 
+            this.mnuAntiCurruptionDrive.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnSubAntiCurIntiqal,
+            this.mnuSubAntiCurFardat});
+            this.mnuAntiCurruptionDrive.Name = "mnuAntiCurruptionDrive";
+            this.mnuAntiCurruptionDrive.Size = new System.Drawing.Size(343, 42);
+            this.mnuAntiCurruptionDrive.Text = " - انٹی کرپشن ڈرائو رپورٹس";
+            // 
+            // mnSubAntiCurIntiqal
+            // 
+            this.mnSubAntiCurIntiqal.Name = "mnSubAntiCurIntiqal";
+            this.mnSubAntiCurIntiqal.Size = new System.Drawing.Size(201, 42);
+            this.mnSubAntiCurIntiqal.Text = "- انتقالات رپورٹ";
+            this.mnSubAntiCurIntiqal.Click += new System.EventHandler(this.mnSubAntiCurIntiqal_Click);
+            // 
+            // mnuSubAntiCurFardat
+            // 
+            this.mnuSubAntiCurFardat.Name = "mnuSubAntiCurFardat";
+            this.mnuSubAntiCurFardat.Size = new System.Drawing.Size(201, 42);
+            this.mnuSubAntiCurFardat.Text = " - فردات رپورٹ";
+            this.mnuSubAntiCurFardat.Click += new System.EventHandler(this.mnuSubAntiCurFardat_Click);
+            // 
+            // mnuOperationalReports
+            // 
+            this.mnuOperationalReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSubInitqalEntryByOperator});
+            this.mnuOperationalReports.Name = "mnuOperationalReports";
+            this.mnuOperationalReports.Size = new System.Drawing.Size(343, 42);
+            this.mnuOperationalReports.Text = " - اپریشنل سٹاف رپورٹس";
+            // 
+            // mnuSubInitqalEntryByOperator
+            // 
+            this.mnuSubInitqalEntryByOperator.Name = "mnuSubInitqalEntryByOperator";
+            this.mnuSubInitqalEntryByOperator.Size = new System.Drawing.Size(234, 42);
+            this.mnuSubInitqalEntryByOperator.Text = " - انتقال اندراج رپورٹ";
+            this.mnuSubInitqalEntryByOperator.Click += new System.EventHandler(this.mnuSubInitqalEntryByOperator_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1046,5 +1110,12 @@
         private System.Windows.Forms.ToolStripMenuItem mnuYearlyIntiqalatReports;
         private System.Windows.Forms.ToolStripMenuItem mnuSubYaksalaQismZameen;
         private System.Windows.Forms.ToolStripMenuItem mnuSubYaksalMakhloot;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubAttestedMutaions;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubCancelledInital;
+        private System.Windows.Forms.ToolStripMenuItem mnuAntiCurruptionDrive;
+        private System.Windows.Forms.ToolStripMenuItem mnSubAntiCurIntiqal;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubAntiCurFardat;
+        private System.Windows.Forms.ToolStripMenuItem mnuOperationalReports;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubInitqalEntryByOperator;
     }
 }

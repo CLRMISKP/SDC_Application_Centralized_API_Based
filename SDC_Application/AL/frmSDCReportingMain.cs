@@ -143,9 +143,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if (UsersManagments.check == 25 || UsersManagments.check == 26 || UsersManagments.check == 27 || UsersManagments.check == 28 || UsersManagments.check == 29 
-                || UsersManagments.check == 30 || UsersManagments.check == 31 || UsersManagments.check == 32 || UsersManagments.check == 33 || UsersManagments.check == 34 
-                || UsersManagments.check == 35)
+            if (UsersManagments.check > 24)
             {
                 ReportParameter param = new ReportParameter();
                 param.Name = "TehsilId";
@@ -439,6 +437,47 @@ namespace SDC_Application.AL
                 this.SetCredentials("RTS_Fard_Issueance_dem", rp, false);
 
             }
+            if (UsersManagments.check == 36)
+            {
+                ReportParameter[] rp = new ReportParameter[1];
+                this.SetCredentials("Attestation_Mutation_For_AntiCorruption_Drive", rp, false);
+
+            }
+            if (UsersManagments.check == 37)
+            {
+                ReportParameter[] rp = new ReportParameter[1];
+                this.SetCredentials("Fard_Issuance_Report_For_AntiCorruptionDrive", rp, false);
+            }
+                if (UsersManagments.check == 38)
+                {
+                    ReportParameter[] rp = new ReportParameter[1];
+                    this.SetCredentials("IntiqalAndrajDetailReportForBeahIntiqalsFBR", rp, false);
+
+                }
+                if (UsersManagments.check == 39)
+                {
+                    ReportParameter[] rp = new ReportParameter[1];
+                    this.SetCredentials("IntiqalAttestationDateReport", rp, false);
+
+                }
+                if (UsersManagments.check == 40)
+                {
+                    ReportParameter[] rp = new ReportParameter[1];
+                    this.SetCredentials("IntiqalInsertReportByOperator", rp, false);
+
+                }
+             if (UsersManagments.check == 41)
+                {
+                    ReportParameter[] rp = new ReportParameter[1];
+                    this.SetCredentials("IntiqalKharijshudaDetailReport", rp, false);
+
+                }
+             if (UsersManagments.check == 42)
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 this.SetCredentials("IntiqalInsertReportByOperator", rp, false);
+
+             }
         }
 
     }
