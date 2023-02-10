@@ -175,6 +175,8 @@ namespace SDC_Application.AL
             this.IntiqalId = "-1";
            // this.FillPatwarCircle();
 
+
+           // bool tes  = isDowraAllowedToday(); // sak_debug
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -1036,6 +1038,99 @@ namespace SDC_Application.AL
             frmIntiqalDucomentCheckList.ShowDialog();
         }
 
+
+
+        bool isDowraAllowedToday()
+        {
+
+                int Tehsilid= UsersManagments._Tehsilid;
+                if (Tehsilid == -1 || Tehsilid == 0) return true;
+
+
+            //DateTime.Now.DayOfWeek = DayOfWeek.Friday
+            string dsvr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
+            string db = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);
+            string password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
+            string connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                /*
+                                if (!Int32.TryParse(this.txtTehsilid.Text, out Tehsilid))
+                                {
+                                    MessageBox.Show(this.txtTehsilid.Text + " is not tehsil id");
+                                }*/
+
+                string Query = @"
+DECLARE @Tehsilid INT = {0} 
+DECLARE @id int = {1}
+
+       SELECT id,
+              @Tehsilid AS Tehsilid,
+              [WeekDay]
+              INTO #TEmp
+       FROM   DowaraWeekDays
+       WHERE  (
+                  EXISTS(
+                      SELECT *
+                      FROM   DowaraWeekDays
+                      WHERE  TehsilId = @TehsilId
+                  )
+                  AND Tehsilid = @TehsilId
+              )
+              OR  (
+                      NOT EXISTS(
+                          SELECT *
+                          FROM   DowaraWeekDays
+                          WHERE  TehsilId = @TehsilId
+                      )
+                      AND Tehsilid = 0
+                  )
+
+
+    
+IF EXISTS( SELECT * FROM #TEmp WHERE id = @id)
+BEGIN
+	SELECT 1 as id
+END
+ELSE SELECT 0 as id
+
+DROP TABLE  #TEmp    
+";
+                int dayintval = (int) DateTime.Now.DayOfWeek;
+
+                Query = String.Format(Query, Tehsilid, dayintval);
+
+Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
+
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(Query, connection);
+                    command.CommandType = CommandType.Text;
+                    command.CommandTimeout = 5;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+
+
+                    int idValue = (int)ds.Tables[0].Rows[0]["id"];
+
+                    return idValue == 1;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+
+        }
+
+
         public void frmIntiqalDucomentCheckList_FormClosed(object sender, FormClosedEventArgs e)
         {
             frmIntiqalDucomentCheckList frmIntiqalDucomentCheckList = sender as frmIntiqalDucomentCheckList;
@@ -1048,6 +1143,14 @@ namespace SDC_Application.AL
 
         private void btnIntiqalPersonSnaps_Click(object sender, EventArgs e)
         {
+
+            if (!isDowraAllowedToday())
+            {
+                string today = DateTime.Now.DayOfWeek.ToString();
+                MessageBox.Show("Dowra is not allowed on " + today);
+                return;
+            }
+
             if (IntiqalId != "-1")
             {
                  // Load Intiqal Visiting Date //

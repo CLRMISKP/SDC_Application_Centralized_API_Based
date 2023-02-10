@@ -187,7 +187,7 @@
             this.groupBox6.Controls.Add(this.txtIntiqalNo);
             this.groupBox6.Controls.Add(this.lbl4);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(10, 19);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox6.Name = "groupBox6";
@@ -251,7 +251,7 @@
             this.cmbIntialListForMinhayeIntiqal.FormattingEnabled = true;
             this.cmbIntialListForMinhayeIntiqal.Location = new System.Drawing.Point(275, 183);
             this.cmbIntialListForMinhayeIntiqal.Name = "cmbIntialListForMinhayeIntiqal";
-            this.cmbIntialListForMinhayeIntiqal.Size = new System.Drawing.Size(67, 31);
+            this.cmbIntialListForMinhayeIntiqal.Size = new System.Drawing.Size(67, 27);
             this.cmbIntialListForMinhayeIntiqal.TabIndex = 14;
             this.cmbIntialListForMinhayeIntiqal.Tag = "1";
             this.cmbIntialListForMinhayeIntiqal.ValueMember = "IntiqalInitiationId";
@@ -260,10 +260,10 @@
             // 
             this.label89.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.Location = new System.Drawing.Point(647, 176);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(139, 38);
+            this.label89.Size = new System.Drawing.Size(140, 24);
             this.label89.TabIndex = 87;
             this.label89.Text = "بعد از منہائے انتقال:";
             // 
@@ -284,7 +284,7 @@
             this.radkhanakashtmalkiat.Location = new System.Drawing.Point(159, 4);
             this.radkhanakashtmalkiat.Name = "radkhanakashtmalkiat";
             this.radkhanakashtmalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radkhanakashtmalkiat.Size = new System.Drawing.Size(132, 42);
+            this.radkhanakashtmalkiat.Size = new System.Drawing.Size(139, 28);
             this.radkhanakashtmalkiat.TabIndex = 88;
             this.radkhanakashtmalkiat.TabStop = true;
             this.radkhanakashtmalkiat.Text = "خانہ کاشت ملکیت";
@@ -296,7 +296,7 @@
             this.radKhanaKasht.Location = new System.Drawing.Point(77, 4);
             this.radKhanaKasht.Name = "radKhanaKasht";
             this.radKhanaKasht.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radKhanaKasht.Size = new System.Drawing.Size(96, 42);
+            this.radKhanaKasht.Size = new System.Drawing.Size(97, 28);
             this.radKhanaKasht.TabIndex = 87;
             this.radKhanaKasht.TabStop = true;
             this.radKhanaKasht.Text = "خانہ کاشت";
@@ -309,7 +309,7 @@
             this.radKhanaMalkiat.Location = new System.Drawing.Point(4, 4);
             this.radKhanaMalkiat.Name = "radKhanaMalkiat";
             this.radKhanaMalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radKhanaMalkiat.Size = new System.Drawing.Size(98, 42);
+            this.radKhanaMalkiat.Size = new System.Drawing.Size(99, 28);
             this.radKhanaMalkiat.TabIndex = 86;
             this.radKhanaMalkiat.TabStop = true;
             this.radKhanaMalkiat.Text = "خانہ ملکیت";
@@ -335,7 +335,7 @@
             this.txtTokenNo.Location = new System.Drawing.Point(1037, 28);
             this.txtTokenNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtTokenNo.Name = "txtTokenNo";
-            this.txtTokenNo.Size = new System.Drawing.Size(107, 44);
+            this.txtTokenNo.Size = new System.Drawing.Size(107, 29);
             this.txtTokenNo.TabIndex = 83;
             this.txtTokenNo.Tag = "2";
             // 
@@ -367,7 +367,7 @@
             this.cboAreaType.Location = new System.Drawing.Point(993, 128);
             this.cboAreaType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboAreaType.Name = "cboAreaType";
-            this.cboAreaType.Size = new System.Drawing.Size(151, 31);
+            this.cboAreaType.Size = new System.Drawing.Size(151, 27);
             this.cboAreaType.TabIndex = 8;
             this.cboAreaType.Tag = "1";
             this.cboAreaType.ValueMember = "IntiqalTypeId";
@@ -378,7 +378,7 @@
             this.txtHawalaNo.Location = new System.Drawing.Point(761, 173);
             this.txtHawalaNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtHawalaNo.Name = "txtHawalaNo";
-            this.txtHawalaNo.Size = new System.Drawing.Size(137, 44);
+            this.txtHawalaNo.Size = new System.Drawing.Size(137, 29);
             this.txtHawalaNo.TabIndex = 12;
             this.txtHawalaNo.Tag = "3";
             // 
@@ -388,7 +388,7 @@
             this.txtMisalNo.Location = new System.Drawing.Point(173, 129);
             this.txtMisalNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtMisalNo.Name = "txtMisalNo";
-            this.txtMisalNo.Size = new System.Drawing.Size(169, 44);
+            this.txtMisalNo.Size = new System.Drawing.Size(169, 29);
             this.txtMisalNo.TabIndex = 11;
             this.txtMisalNo.Tag = "3";
             // 
@@ -412,7 +412,7 @@
             this.dtDegreeDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtDegreeDate.Name = "dtDegreeDate";
             this.dtDegreeDate.ShowCheckBox = true;
-            this.dtDegreeDate.Size = new System.Drawing.Size(62, 44);
+            this.dtDegreeDate.Size = new System.Drawing.Size(62, 29);
             this.dtDegreeDate.TabIndex = 11;
             this.dtDegreeDate.Tag = "2";
             this.dtDegreeDate.Visible = false;
@@ -436,7 +436,7 @@
             this.cboPlotConstructionType.Location = new System.Drawing.Point(173, 79);
             this.cboPlotConstructionType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboPlotConstructionType.Name = "cboPlotConstructionType";
-            this.cboPlotConstructionType.Size = new System.Drawing.Size(170, 31);
+            this.cboPlotConstructionType.Size = new System.Drawing.Size(170, 27);
             this.cboPlotConstructionType.TabIndex = 7;
             this.cboPlotConstructionType.Tag = "1";
             this.cboPlotConstructionType.ValueMember = "IntiqalInitiationId";
@@ -451,7 +451,7 @@
             this.cboPlotType.Location = new System.Drawing.Point(465, 79);
             this.cboPlotType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboPlotType.Name = "cboPlotType";
-            this.cboPlotType.Size = new System.Drawing.Size(177, 31);
+            this.cboPlotType.Size = new System.Drawing.Size(177, 27);
             this.cboPlotType.TabIndex = 6;
             this.cboPlotType.Tag = "1";
             this.cboPlotType.ValueMember = "IntiqalTypeId";
@@ -478,7 +478,7 @@
             // lbl3
             // 
             this.lbl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.Location = new System.Drawing.Point(925, 25);
             this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3.Name = "lbl3";
@@ -492,12 +492,12 @@
             // 
             this.checkBoxRegistry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRegistry.AutoSize = true;
-            this.checkBoxRegistry.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRegistry.Location = new System.Drawing.Point(1068, 202);
+            this.checkBoxRegistry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxRegistry.Location = new System.Drawing.Point(1046, 202);
             this.checkBoxRegistry.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.checkBoxRegistry.Name = "checkBoxRegistry";
             this.checkBoxRegistry.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxRegistry.Size = new System.Drawing.Size(177, 35);
+            this.checkBoxRegistry.Size = new System.Drawing.Size(199, 24);
             this.checkBoxRegistry.TabIndex = 15;
             this.checkBoxRegistry.TabStop = false;
             this.checkBoxRegistry.Tag = "4";
@@ -515,7 +515,7 @@
             this.cboMoza.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboMoza.Name = "cboMoza";
             this.cboMoza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboMoza.Size = new System.Drawing.Size(139, 31);
+            this.cboMoza.Size = new System.Drawing.Size(139, 27);
             this.cboMoza.TabIndex = 75;
             this.cboMoza.SelectedIndexChanged += new System.EventHandler(this.cboMoza_SelectedIndexChanged);
             // 
@@ -551,7 +551,7 @@
             this.dtpIntiqalAndrajDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalAndrajDate.Name = "dtpIntiqalAndrajDate";
             this.dtpIntiqalAndrajDate.ShowCheckBox = true;
-            this.dtpIntiqalAndrajDate.Size = new System.Drawing.Size(176, 44);
+            this.dtpIntiqalAndrajDate.Size = new System.Drawing.Size(176, 29);
             this.dtpIntiqalAndrajDate.TabIndex = 10;
             this.dtpIntiqalAndrajDate.Tag = "2";
             // 
@@ -570,7 +570,7 @@
             this.txtLandValue.Location = new System.Drawing.Point(761, 129);
             this.txtLandValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtLandValue.Name = "txtLandValue";
-            this.txtLandValue.Size = new System.Drawing.Size(137, 44);
+            this.txtLandValue.Size = new System.Drawing.Size(137, 29);
             this.txtLandValue.TabIndex = 9;
             this.txtLandValue.Tag = "2";
             this.txtLandValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumericField);
@@ -585,7 +585,7 @@
             this.cboIntiqalInitiation.Location = new System.Drawing.Point(761, 79);
             this.cboIntiqalInitiation.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboIntiqalInitiation.Name = "cboIntiqalInitiation";
-            this.cboIntiqalInitiation.Size = new System.Drawing.Size(137, 31);
+            this.cboIntiqalInitiation.Size = new System.Drawing.Size(137, 27);
             this.cboIntiqalInitiation.TabIndex = 5;
             this.cboIntiqalInitiation.Tag = "1";
             this.cboIntiqalInitiation.ValueMember = "IntiqalInitiationId";
@@ -610,7 +610,7 @@
             this.cboIntiqalType.Location = new System.Drawing.Point(993, 79);
             this.cboIntiqalType.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboIntiqalType.Name = "cboIntiqalType";
-            this.cboIntiqalType.Size = new System.Drawing.Size(151, 31);
+            this.cboIntiqalType.Size = new System.Drawing.Size(151, 27);
             this.cboIntiqalType.TabIndex = 4;
             this.cboIntiqalType.Tag = "1";
             this.cboIntiqalType.ValueMember = "IntiqalTypeId";
@@ -642,7 +642,7 @@
             this.txtIntiqalNo.Location = new System.Drawing.Point(523, 25);
             this.txtIntiqalNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtIntiqalNo.Name = "txtIntiqalNo";
-            this.txtIntiqalNo.Size = new System.Drawing.Size(119, 44);
+            this.txtIntiqalNo.Size = new System.Drawing.Size(119, 29);
             this.txtIntiqalNo.TabIndex = 1;
             this.txtIntiqalNo.Tag = "1";
             // 
@@ -671,7 +671,7 @@
             // lbl2
             // 
             this.lbl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.Location = new System.Drawing.Point(899, -5);
             this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl2.Name = "lbl2";
@@ -691,7 +691,7 @@
             this.cboPC.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboPC.Name = "cboPC";
             this.cboPC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboPC.Size = new System.Drawing.Size(166, 31);
+            this.cboPC.Size = new System.Drawing.Size(166, 27);
             this.cboPC.TabIndex = 73;
             this.cboPC.Visible = false;
             this.cboPC.SelectionChangeCommitted += new System.EventHandler(this.cboPC_SelectionChangeCommitted);
@@ -712,7 +712,7 @@
             this.txtCourtName.Location = new System.Drawing.Point(324, 25);
             this.txtCourtName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtCourtName.Name = "txtCourtName";
-            this.txtCourtName.Size = new System.Drawing.Size(30, 44);
+            this.txtCourtName.Size = new System.Drawing.Size(30, 29);
             this.txtCourtName.TabIndex = 12;
             this.txtCourtName.Tag = "2";
             this.txtCourtName.Visible = false;
@@ -737,7 +737,7 @@
             this.dtpTasdiq.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpTasdiq.Name = "dtpTasdiq";
             this.dtpTasdiq.ShowCheckBox = true;
-            this.dtpTasdiq.Size = new System.Drawing.Size(62, 39);
+            this.dtpTasdiq.Size = new System.Drawing.Size(62, 26);
             this.dtpTasdiq.TabIndex = 7;
             this.dtpTasdiq.Tag = "2";
             this.dtpTasdiq.Visible = false;
@@ -762,7 +762,7 @@
             this.dtpIntiqalAmaldramadDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalAmaldramadDate.Name = "dtpIntiqalAmaldramadDate";
             this.dtpIntiqalAmaldramadDate.ShowCheckBox = true;
-            this.dtpIntiqalAmaldramadDate.Size = new System.Drawing.Size(62, 39);
+            this.dtpIntiqalAmaldramadDate.Size = new System.Drawing.Size(62, 26);
             this.dtpIntiqalAmaldramadDate.TabIndex = 6;
             this.dtpIntiqalAmaldramadDate.Tag = "2";
             this.dtpIntiqalAmaldramadDate.Visible = false;
@@ -799,7 +799,7 @@
             this.groupBox5.Controls.Add(this.lbl14);
             this.groupBox5.Controls.Add(this.txtRegisteryNo);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox5.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(10, 256);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox5.Name = "groupBox5";
@@ -829,7 +829,7 @@
             this.cmbFardTokenNo.FormattingEnabled = true;
             this.cmbFardTokenNo.Location = new System.Drawing.Point(506, 34);
             this.cmbFardTokenNo.Name = "cmbFardTokenNo";
-            this.cmbFardTokenNo.Size = new System.Drawing.Size(152, 31);
+            this.cmbFardTokenNo.Size = new System.Drawing.Size(152, 27);
             this.cmbFardTokenNo.TabIndex = 88;
             this.cmbFardTokenNo.Tag = "1";
             this.cmbFardTokenNo.ValueMember = "fardTokenId";
@@ -854,7 +854,7 @@
             this.dtFardToken.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtFardToken.Name = "dtFardToken";
             this.dtFardToken.ShowCheckBox = true;
-            this.dtFardToken.Size = new System.Drawing.Size(150, 44);
+            this.dtFardToken.Size = new System.Drawing.Size(150, 29);
             this.dtFardToken.TabIndex = 33;
             this.dtFardToken.Tag = "4";
             this.dtFardToken.ValueChanged += new System.EventHandler(this.dtFardToken_ValueChanged);
@@ -879,7 +879,7 @@
             this.dtRegisteryDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtRegisteryDate.Name = "dtRegisteryDate";
             this.dtRegisteryDate.ShowCheckBox = true;
-            this.dtRegisteryDate.Size = new System.Drawing.Size(106, 44);
+            this.dtRegisteryDate.Size = new System.Drawing.Size(106, 29);
             this.dtRegisteryDate.TabIndex = 1;
             this.dtRegisteryDate.Tag = "4";
             this.dtRegisteryDate.Visible = false;
@@ -888,12 +888,12 @@
             // 
             this.checkBoxRaptEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRaptEntry.AutoSize = true;
-            this.checkBoxRaptEntry.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRaptEntry.Location = new System.Drawing.Point(1102, 131);
+            this.checkBoxRaptEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxRaptEntry.Location = new System.Drawing.Point(1101, 131);
             this.checkBoxRaptEntry.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.checkBoxRaptEntry.Name = "checkBoxRaptEntry";
             this.checkBoxRaptEntry.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxRaptEntry.Size = new System.Drawing.Size(131, 35);
+            this.checkBoxRaptEntry.Size = new System.Drawing.Size(132, 24);
             this.checkBoxRaptEntry.TabIndex = 7;
             this.checkBoxRaptEntry.TabStop = false;
             this.checkBoxRaptEntry.Tag = "4";
@@ -907,7 +907,7 @@
             this.txtCourt.Location = new System.Drawing.Point(749, 86);
             this.txtCourt.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtCourt.Name = "txtCourt";
-            this.txtCourt.Size = new System.Drawing.Size(150, 44);
+            this.txtCourt.Size = new System.Drawing.Size(150, 29);
             this.txtCourt.TabIndex = 5;
             this.txtCourt.Tag = "4";
             this.txtCourt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
@@ -918,7 +918,7 @@
             this.txtVersus.Location = new System.Drawing.Point(234, 31);
             this.txtVersus.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtVersus.Name = "txtVersus";
-            this.txtVersus.Size = new System.Drawing.Size(109, 44);
+            this.txtVersus.Size = new System.Drawing.Size(109, 29);
             this.txtVersus.TabIndex = 2;
             this.txtVersus.Tag = "4";
             this.txtVersus.Visible = false;
@@ -948,7 +948,7 @@
             this.txtTrialSubject.Location = new System.Drawing.Point(1004, 87);
             this.txtTrialSubject.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtTrialSubject.Name = "txtTrialSubject";
-            this.txtTrialSubject.Size = new System.Drawing.Size(122, 44);
+            this.txtTrialSubject.Size = new System.Drawing.Size(122, 29);
             this.txtTrialSubject.TabIndex = 4;
             this.txtTrialSubject.Tag = "4";
             this.txtTrialSubject.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
@@ -979,7 +979,7 @@
             this.txtTrialNo.Location = new System.Drawing.Point(18, 31);
             this.txtTrialNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtTrialNo.Name = "txtTrialNo";
-            this.txtTrialNo.Size = new System.Drawing.Size(127, 44);
+            this.txtTrialNo.Size = new System.Drawing.Size(127, 29);
             this.txtTrialNo.TabIndex = 3;
             this.txtTrialNo.Tag = "4";
             this.txtTrialNo.Visible = false;
@@ -1003,7 +1003,7 @@
             this.dtpDateOfDec.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpDateOfDec.Name = "dtpDateOfDec";
             this.dtpDateOfDec.ShowCheckBox = true;
-            this.dtpDateOfDec.Size = new System.Drawing.Size(151, 44);
+            this.dtpDateOfDec.Size = new System.Drawing.Size(151, 29);
             this.dtpDateOfDec.TabIndex = 6;
             this.dtpDateOfDec.Tag = "4";
             // 
@@ -1022,7 +1022,7 @@
             this.txtRegisteryNo.Location = new System.Drawing.Point(1004, 31);
             this.txtRegisteryNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtRegisteryNo.Name = "txtRegisteryNo";
-            this.txtRegisteryNo.Size = new System.Drawing.Size(122, 44);
+            this.txtRegisteryNo.Size = new System.Drawing.Size(122, 29);
             this.txtRegisteryNo.TabIndex = 0;
             this.txtRegisteryNo.Tag = "4";
             // 
@@ -1035,7 +1035,7 @@
             this.cboQismArazi.Location = new System.Drawing.Point(203, 22);
             this.cboQismArazi.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboQismArazi.Name = "cboQismArazi";
-            this.cboQismArazi.Size = new System.Drawing.Size(40, 44);
+            this.cboQismArazi.Size = new System.Drawing.Size(40, 32);
             this.cboQismArazi.TabIndex = 9;
             this.cboQismArazi.ValueMember = "AreaTypeId";
             this.cboQismArazi.Visible = false;
@@ -1067,7 +1067,7 @@
             this.txtValuationTableValue.Location = new System.Drawing.Point(164, 24);
             this.txtValuationTableValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtValuationTableValue.Name = "txtValuationTableValue";
-            this.txtValuationTableValue.Size = new System.Drawing.Size(33, 44);
+            this.txtValuationTableValue.Size = new System.Drawing.Size(33, 29);
             this.txtValuationTableValue.TabIndex = 8;
             this.txtValuationTableValue.Visible = false;
             // 
@@ -1096,7 +1096,7 @@
             this.groupBoxRapat.Controls.Add(this.label46);
             this.groupBoxRapat.Controls.Add(this.btnValuationTable);
             this.groupBoxRapat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxRapat.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRapat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRapat.Location = new System.Drawing.Point(10, 421);
             this.groupBoxRapat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBoxRapat.Name = "groupBoxRapat";
@@ -1127,7 +1127,7 @@
             this.dtpIntiqalRapatDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpIntiqalRapatDate.Name = "dtpIntiqalRapatDate";
             this.dtpIntiqalRapatDate.ShowCheckBox = true;
-            this.dtpIntiqalRapatDate.Size = new System.Drawing.Size(158, 44);
+            this.dtpIntiqalRapatDate.Size = new System.Drawing.Size(158, 29);
             this.dtpIntiqalRapatDate.TabIndex = 1;
             this.dtpIntiqalRapatDate.Tag = "4";
             // 
@@ -1146,7 +1146,7 @@
             this.txtIntiqalRapatNo.Location = new System.Drawing.Point(948, 27);
             this.txtIntiqalRapatNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtIntiqalRapatNo.Name = "txtIntiqalRapatNo";
-            this.txtIntiqalRapatNo.Size = new System.Drawing.Size(178, 44);
+            this.txtIntiqalRapatNo.Size = new System.Drawing.Size(178, 29);
             this.txtIntiqalRapatNo.TabIndex = 0;
             this.txtIntiqalRapatNo.Tag = "4";
             // 
@@ -1161,7 +1161,7 @@
             this.groupBox7.Controls.Add(this.btnSave);
             this.groupBox7.Controls.Add(this.btnNewInteqal);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox7.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(10, 495);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox7.Name = "groupBox7";
@@ -1213,9 +1213,9 @@
             // 
             this.chkPendingIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPendingIntiqal.AutoSize = true;
-            this.chkPendingIntiqal.Location = new System.Drawing.Point(563, 39);
+            this.chkPendingIntiqal.Location = new System.Drawing.Point(562, 39);
             this.chkPendingIntiqal.Name = "chkPendingIntiqal";
-            this.chkPendingIntiqal.Size = new System.Drawing.Size(94, 42);
+            this.chkPendingIntiqal.Size = new System.Drawing.Size(95, 28);
             this.chkPendingIntiqal.TabIndex = 5;
             this.chkPendingIntiqal.Text = "زیر التواء:";
             this.chkPendingIntiqal.UseVisualStyleBackColor = true;
@@ -1239,7 +1239,7 @@
             // 
             this.btnDelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelMain.Enabled = false;
-            this.btnDelMain.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelMain.Image = global::SDC_Application.Resource1.edit_delete1;
             this.btnDelMain.Location = new System.Drawing.Point(771, 29);
             this.btnDelMain.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -1253,7 +1253,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
             this.btnSave.Location = new System.Drawing.Point(838, 29);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -1481,7 +1481,7 @@
             this.groupBox1.Controls.Add(this.btnIntiqalDoc);
             this.groupBox1.Controls.Add(this.btnIntiqalPersonSnaps);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 586);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1248, 98);
@@ -1543,7 +1543,7 @@
             // lblOperatorNote
             // 
             this.lblOperatorNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblOperatorNote.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatorNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperatorNote.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lblOperatorNote.Location = new System.Drawing.Point(63, 679);
             this.lblOperatorNote.Name = "lblOperatorNote";
@@ -1557,17 +1557,17 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(1166, 679);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 38);
+            this.label2.Size = new System.Drawing.Size(85, 24);
             this.label2.TabIndex = 75;
             this.label2.Text = "آپریٹر نوٹ:";
             // 
             // frmIntiqalMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 741);
             this.Controls.Add(this.lblOperatorNote);
@@ -1584,7 +1584,7 @@
             this.Controls.Add(this.dtpIntiqalAmaldramadDate);
             this.Controls.Add(this.cboPC);
             this.Controls.Add(this.lbl2);
-            this.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.Name = "frmIntiqalMain";
             this.Padding = new System.Windows.Forms.Padding(10, 19, 10, 19);

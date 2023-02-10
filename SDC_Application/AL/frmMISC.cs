@@ -72,11 +72,11 @@ namespace SDC_Application.AL
                 bool bWednesday = this.checkBox3.Checked;
                 bool bThursday = this.checkBox4.Checked;
                 bool bFriday = this.checkBox5.Checked;
-
+/*
                 if (!Int32.TryParse(this.txtTehsilid.Text, out Tehsilid))
                 {
                     MessageBox.Show(this.txtTehsilid.Text + " is not tehsil id");
-                }
+                }*/
 
                 try
                 {
