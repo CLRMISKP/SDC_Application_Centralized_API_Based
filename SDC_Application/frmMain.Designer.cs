@@ -129,6 +129,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ایمآئاسسیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -472,7 +473,8 @@
             this.mnuInsertLoginDetails,
             this.mnuTextMessage,
             this.ٹوکنرولToolStripMenuItem,
-            this.mnuRhz_ChangeAdminDashboard});
+            this.mnuRhz_ChangeAdminDashboard,
+            this.ایمآئاسسیToolStripMenuItem});
             this.mnuSupervisorMain.Name = "mnuSupervisorMain";
             this.mnuSupervisorMain.Size = new System.Drawing.Size(93, 28);
             this.mnuSupervisorMain.Text = "سپروائزری";
@@ -980,6 +982,13 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // ایمآئاسسیToolStripMenuItem
+            // 
+            this.ایمآئاسسیToolStripMenuItem.Name = "ایمآئاسسیToolStripMenuItem";
+            this.ایمآئاسسیToolStripMenuItem.Size = new System.Drawing.Size(403, 28);
+            this.ایمآئاسسیToolStripMenuItem.Text = "ایم آئ اس سی";
+            this.ایمآئاسسیToolStripMenuItem.Click += new System.EventHandler(this.ایمآئاسسیToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1117,5 +1126,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSubAntiCurFardat;
         private System.Windows.Forms.ToolStripMenuItem mnuOperationalReports;
         private System.Windows.Forms.ToolStripMenuItem mnuSubInitqalEntryByOperator;
+        private System.Windows.Forms.ToolStripMenuItem ایمآئاسسیToolStripMenuItem;
     }
 }
