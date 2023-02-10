@@ -210,5 +210,10 @@ namespace SDC_Application.AL
             BuyerId = "";
             GridIntiqalList.DataSource = null;
         }
+
+        private void GridIntiqalList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
