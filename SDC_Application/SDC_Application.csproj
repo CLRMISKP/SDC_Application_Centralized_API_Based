@@ -160,6 +160,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmAdminPendingTaskDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmAdminPendingTaskDashboard.Designer.cs">
+      <DependentUpon>frmAdminPendingTaskDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqal_TaxBankChallanTTx.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -191,6 +197,12 @@
     </Compile>
     <Compile Include="AL\frmIntiqalMainForManual.Designer.cs">
       <DependentUpon>frmIntiqalMainForManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmKhassraDeletionInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhassraDeletionInput.Designer.cs">
+      <DependentUpon>frmKhassraDeletionInput.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmKhassraFardBadar.cs">
       <SubType>Form</SubType>
@@ -1096,6 +1108,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmAdminPendingTaskDashboard.resx">
+      <DependentUpon>frmAdminPendingTaskDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqal_TaxBankChallanTTx.resx">
       <DependentUpon>frmIntiqal_TaxBankChallanTTx.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1111,6 +1126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalMainForManual.resx">
       <DependentUpon>frmIntiqalMainForManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhassraDeletionInput.resx">
+      <DependentUpon>frmKhassraDeletionInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmKhassraFardBadar.resx">
       <DependentUpon>frmKhassraFardBadar.cs</DependentUpon>
