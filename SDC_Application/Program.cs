@@ -23,9 +23,9 @@ namespace SDC_Application
             Application.EnableVisualStyles();
 
 
-
-            Application.Run(new FardMalikan_Report_TTx());
-            //Application.Run(new Login());// MessageBox.Show("Null");
+            //Application.Run(new frmIntiqal_TaxBankChallanTTx());
+            //Application.Run(new FardMalikan_Report_TTx());
+            Application.Run(new Login());// MessageBox.Show("Null");
             //Application.Run(new mainWinForm());
            
             //

@@ -1,0 +1,16 @@
+PersonName	STRING	500	
+Fathername	STRING	500	
+Address	STRING	4000	
+intiqalid	NUMBER		
+intiqalno	STRING	50	
+MozaNameUrdu	STRING	1000	
+Fee_Intiqal_Digit	NUMBER		
+Fee_intiqal_Urdu	STRING	4010	
+area_sum	STRING	4000	
+TaxName_Urdu	STRING	56	
+TokenNo	NUMBER		
+TokenDate	STRING	30	
+challan_prefix	STRING	100	
+TEMP	STRING	1000	
+TEMP2	STRING	1000	
+TEMP3	STRING	1000	

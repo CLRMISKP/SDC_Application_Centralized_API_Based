@@ -160,7 +160,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AL\FardMalikan_Report_TTx.cs" />
+    <Compile Include="AL\frmIntiqal_TaxBankChallanTTx.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AL\frmIntiqal_TaxBankChallanTTx.designer.cs">
+      <DependentUpon>frmIntiqal_TaxBankChallanTTx.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="AL\FardMalikan_Report_TTx.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AL\FardMalikan_Report_TTx.designer.cs">
       <DependentUpon>FardMalikan_Report_TTx.cs</DependentUpon>
     </Compile>
@@ -1086,6 +1096,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmIntiqal_TaxBankChallanTTx.resx">
+      <DependentUpon>frmIntiqal_TaxBankChallanTTx.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\FardMalikan_Report_TTx.resx">
       <DependentUpon>FardMalikan_Report_TTx.cs</DependentUpon>
     </EmbeddedResource>

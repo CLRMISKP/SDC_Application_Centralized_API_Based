@@ -48,6 +48,7 @@ namespace SDC_Application.AL
             string reportName = report; //"IntiqalMainPart_Baeh_ADC";
             rvIntiqalReport.ProcessingMode = ProcessingMode.Remote;
             ServerReport serverReport;
+            //serverReport.
             serverReport = rvIntiqalReport.ServerReport;
 
             string usr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["usr"]);
@@ -83,6 +84,7 @@ namespace SDC_Application.AL
             {
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
+   
             rvIntiqalReport.RefreshReport();
         }
 
