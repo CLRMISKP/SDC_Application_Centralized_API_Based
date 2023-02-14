@@ -23,7 +23,7 @@
     <SccProvider>
     </SccProvider>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://172.16.103.72/</PublishUrl>
+    <PublishUrl>ftp://172.16.100.11/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -33,14 +33,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://172.16.103.72/</InstallUrl>
+    <InstallUrl>http://172.16.100.11/</InstallUrl>
     <ProductName>Centralized Land Record Management Information Center</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>CLRMIS</SuiteName>
-    <MinimumRequiredVersion>1.0.0.13</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.34</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>36</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

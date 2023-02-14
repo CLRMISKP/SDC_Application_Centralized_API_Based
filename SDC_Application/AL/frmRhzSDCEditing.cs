@@ -1214,7 +1214,7 @@ namespace SDC_Application.AL
         private void btnSaveKhataProp_Click(object sender, EventArgs e)
         {
 
-            if (cbokhataNo.SelectedValue.ToString() != "0" && txtRHZ_ChangeId.Text != "-1" && txtKhataHissaProp.Text.Trim().Length > 0 && txtKhataKanalProp.Text.Trim().Length > 0 && txtKhataMarlaProp.Text.Trim().Length > 0 && txtKhataSarsaiProp.Text.Trim().Length > 0)
+            if (txtRHZ_ChangeId.Text != "-1" && txtKhataHissaProp.Text.Trim().Length > 0 && txtKhataKanalProp.Text.Trim().Length > 0 && txtKhataMarlaProp.Text.Trim().Length > 0 && txtKhataSarsaiProp.Text.Trim().Length > 0)
             {
                 if (chkIsNewKhata.Checked)
                 {

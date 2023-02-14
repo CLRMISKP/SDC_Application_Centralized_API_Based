@@ -394,7 +394,7 @@ namespace SDC_Application.AL
                 {
                     TokenVerified = "False";
                     TokenDuplicate = "False";
-                    WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status1, TokenDuplicate);
+                    WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status1, TokenDuplicate, cbRelation.Text);
                     return true;
                 }
             }
@@ -425,7 +425,7 @@ namespace SDC_Application.AL
                         TokenVerified = "True";
                         TokenDuplicate = "False";
                         // txtLoad.Text = "";                          
-                        WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status2, TokenDuplicate);
+                        WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status2, TokenDuplicate, cbRelation.Text);
                       // MessageBox.Show("ریکارڈ کی تصدیق ھوچکی ھے", "تصدیق", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtStatus.Text = status2.Text.ToString();
                         btnSave.Enabled = false;
@@ -458,7 +458,7 @@ namespace SDC_Application.AL
             }
 
         }
-        public void WEB_SP_INSERT_SDC_Tokens(string username, string UserID, string tokenverified, TextBox tokenid, TextBox tokenno, TextBox status,string TokenDuplicate)
+        public void WEB_SP_INSERT_SDC_Tokens(string username, string UserID, string tokenverified, TextBox tokenid, TextBox tokenno, TextBox status,string TokenDuplicate, string Relation)
         {
 
 
@@ -480,7 +480,7 @@ namespace SDC_Application.AL
                                     +TokenDuplicate+"',N'" 
                                     + status.Text.ToString() +
                                     "','" + UserID + "','"
-                                    + username + "','" + UserID + "','" + username + "'");
+                                    + username + "','" + UserID + "','" + username + "',N'"+Relation+"'");
      
 
 
@@ -547,7 +547,7 @@ namespace SDC_Application.AL
                 TokenDuplicate = "False";
                 if (MessageBox.Show("کیا آپ منسوخ کرنا چاہتے ہیں:::::", "منسوخ", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
                 {
-                    WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status3, TokenDuplicate);
+                    WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status3, TokenDuplicate, cbRelation.Text);
                    // MessageBox.Show("ٹوکن منسوخ ہوا", "منسوخ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     txtStatus.Text = status3.Text.ToString();
@@ -755,7 +755,7 @@ namespace SDC_Application.AL
                             }
                             else
                             {
-                                WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status2, TokenDuplicate);
+                                WEB_SP_INSERT_SDC_Tokens(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status2, TokenDuplicate, cbRelation.Text);
                                 //MessageBox.Show("اب آپ نقل کی کاپی لے سکتے ہیں", "نقل کی کاپی", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             //  MessageBox.Show("ریکاڈ کی تصدیق ھوچکی ھے", "تصدیق", MessageBoxButtons.OK, MessageBoxIcon.Information);
