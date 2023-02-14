@@ -232,7 +232,7 @@
             // 
             this.btnMinhayeIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinhayeIntiqal.Image = global::SDC_Application.Resource1.open_file_icon;
-            this.btnMinhayeIntiqal.Location = new System.Drawing.Point(467, 185);
+            this.btnMinhayeIntiqal.Location = new System.Drawing.Point(6, 171);
             this.btnMinhayeIntiqal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnMinhayeIntiqal.Name = "btnMinhayeIntiqal";
             this.btnMinhayeIntiqal.Size = new System.Drawing.Size(51, 40);
@@ -250,25 +250,23 @@
             this.cmbIntialListForMinhayeIntiqal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIntialListForMinhayeIntiqal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIntialListForMinhayeIntiqal.FormattingEnabled = true;
-            this.cmbIntialListForMinhayeIntiqal.Location = new System.Drawing.Point(275, 183);
+            this.cmbIntialListForMinhayeIntiqal.Location = new System.Drawing.Point(453, 195);
             this.cmbIntialListForMinhayeIntiqal.Name = "cmbIntialListForMinhayeIntiqal";
-            this.cmbIntialListForMinhayeIntiqal.Size = new System.Drawing.Size(67, 31);
+            this.cmbIntialListForMinhayeIntiqal.Size = new System.Drawing.Size(149, 31);
             this.cmbIntialListForMinhayeIntiqal.TabIndex = 14;
             this.cmbIntialListForMinhayeIntiqal.Tag = "1";
             this.cmbIntialListForMinhayeIntiqal.ValueMember = "IntiqalInitiationId";
-            this.cmbIntialListForMinhayeIntiqal.Visible = false;
             // 
             // label89
             // 
             this.label89.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(523, 185);
+            this.label89.Location = new System.Drawing.Point(608, 191);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(139, 38);
             this.label89.TabIndex = 87;
             this.label89.Text = "بعد از منہائے انتقال:";
-            this.label89.Visible = false;
             // 
             // panel1
             // 
@@ -354,9 +352,10 @@
             // label53
             // 
             this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label53.Location = new System.Drawing.Point(901, 176);
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(915, 191);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(72, 31);
+            this.label53.Size = new System.Drawing.Size(77, 38);
             this.label53.TabIndex = 13;
             this.label53.Text = "حوالہ نمبر:";
             // 
@@ -378,7 +377,7 @@
             // txtHawalaNo
             // 
             this.txtHawalaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHawalaNo.Location = new System.Drawing.Point(761, 173);
+            this.txtHawalaNo.Location = new System.Drawing.Point(761, 189);
             this.txtHawalaNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtHawalaNo.Name = "txtHawalaNo";
             this.txtHawalaNo.Size = new System.Drawing.Size(137, 43);

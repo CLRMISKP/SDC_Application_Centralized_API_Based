@@ -53,7 +53,7 @@ namespace SDC_Application.DL
             {
                 try
                 {
-                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=40;Connect Timeout=4;" + mySqlConnectionString + ";";
+                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=40;Connect Timeout=300;" + mySqlConnectionString + ";";
                     Connection.Open();
                 }
                 catch (Exception)
@@ -62,7 +62,7 @@ namespace SDC_Application.DL
                     {
                         Connection.Close();
                     }
-                    Connection.ConnectionString = "Pooling=false;Connect Timeout=45;" + mySqlConnectionString + ";";
+                    Connection.ConnectionString = "Pooling=false;Connect Timeout=300;" + mySqlConnectionString + ";";
                     Connection.Open();
                 }
                 return Connection;
@@ -71,7 +71,7 @@ namespace SDC_Application.DL
             {
                 try
                 {
-                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=40;Connect Timeout=4;" + mySqlConnectionString + ";";
+                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=40;Connect Timeout=300;" + mySqlConnectionString + ";";
                     Connection.Open();
                 }
                 catch (Exception)
@@ -80,7 +80,7 @@ namespace SDC_Application.DL
                     {
                         Connection.Close();
                     }
-                    Connection.ConnectionString = "Pooling=false;Connect Timeout=45;" + mySqlConnectionString + ";";
+                    Connection.ConnectionString = "Pooling=false;Connect Timeout=300;" + mySqlConnectionString + ";";
                     Connection.Open();
                 }
             }

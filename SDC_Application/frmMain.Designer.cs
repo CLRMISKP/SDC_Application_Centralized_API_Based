@@ -130,6 +130,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuMisalManualFb = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -795,7 +796,8 @@
             // 
             this.ToolStripMenuCorrection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuIndrajMisal,
-            this.mnuFardeBadar});
+            this.mnuFardeBadar,
+            this.mnuMisalManualFb});
             this.ToolStripMenuCorrection.Name = "ToolStripMenuCorrection";
             this.ToolStripMenuCorrection.Size = new System.Drawing.Size(65, 42);
             this.ToolStripMenuCorrection.Text = "درستگی";
@@ -803,14 +805,15 @@
             // mnuIndrajMisal
             // 
             this.mnuIndrajMisal.Name = "mnuIndrajMisal";
-            this.mnuIndrajMisal.Size = new System.Drawing.Size(164, 42);
-            this.mnuIndrajMisal.Text = "اندراج مثل";
+            this.mnuIndrajMisal.Size = new System.Drawing.Size(239, 42);
+            this.mnuIndrajMisal.Text = "اندراج مثل ";
+            this.mnuIndrajMisal.Visible = false;
             this.mnuIndrajMisal.Click += new System.EventHandler(this.mnuIndrajMisal_Click);
             // 
             // mnuFardeBadar
             // 
             this.mnuFardeBadar.Name = "mnuFardeBadar";
-            this.mnuFardeBadar.Size = new System.Drawing.Size(164, 42);
+            this.mnuFardeBadar.Size = new System.Drawing.Size(239, 42);
             this.mnuFardeBadar.Text = "فرد بدر";
             this.mnuFardeBadar.Click += new System.EventHandler(this.mnuFardeBadar_Click);
             // 
@@ -885,7 +888,7 @@
             this.labelUser.ForeColor = System.Drawing.Color.Teal;
             this.labelUser.Location = new System.Drawing.Point(76, 5);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(115, 36);
+            this.labelUser.Size = new System.Drawing.Size(109, 34);
             this.labelUser.TabIndex = 7;
             this.labelUser.Text = "Unspecified";
             // 
@@ -990,6 +993,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
+            // 
+            // mnuMisalManualFb
+            // 
+            this.mnuMisalManualFb.Name = "mnuMisalManualFb";
+            this.mnuMisalManualFb.Size = new System.Drawing.Size(239, 42);
+            this.mnuMisalManualFb.Text = "اندراج مثل / دستی فرد بدر";
+            this.mnuMisalManualFb.Click += new System.EventHandler(this.mnuMisalManualFb_Click);
             // 
             // frmMain
             // 
@@ -1129,5 +1139,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOperationalReports;
         private System.Windows.Forms.ToolStripMenuItem mnuSubInitqalEntryByOperator;
         private System.Windows.Forms.ToolStripMenuItem ایمآئاسسیToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuMisalManualFb;
     }
 }

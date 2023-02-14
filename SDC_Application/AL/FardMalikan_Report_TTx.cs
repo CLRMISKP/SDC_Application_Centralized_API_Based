@@ -43,7 +43,7 @@ namespace SDC_Application.AL
                         command.Parameters.Add(new SqlParameter("@TehsilId", Classess.UsersManagments._Tehsilid.ToString()));
                         command.Parameters.Add(new SqlParameter("@TokenId", TokenId));
                         
-                        command.CommandTimeout = 5;
+                        command.CommandTimeout = 600;
 
                         SqlDataAdapter adapter = new SqlDataAdapter(command);
                         DataSet ds = new DataSet();
