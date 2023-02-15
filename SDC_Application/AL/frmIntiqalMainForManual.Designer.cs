@@ -75,6 +75,7 @@
             this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.cachedFardMalkan_Rzr_Trans2 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.cachedFardMalkan_Rzr_Trans3 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            this.btnCancelConfirm = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -253,6 +254,7 @@
             this.cboMoza.Size = new System.Drawing.Size(151, 39);
             this.cboMoza.TabIndex = 75;
             this.cboMoza.SelectedIndexChanged += new System.EventHandler(this.cboMoza_SelectedIndexChanged);
+            this.cboMoza.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
             // btnSearchInteqal
             // 
@@ -420,6 +422,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnCancelConfirm);
             this.groupBox7.Controls.Add(this.btnIntiqalAmalDaramadByKhata);
             this.groupBox7.Controls.Add(this.btnIntiqalAmal);
             this.groupBox7.Controls.Add(this.btnEdit);
@@ -475,7 +478,7 @@
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(1215, 46);
+            this.btnEdit.Location = new System.Drawing.Point(1268, 49);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(53, 49);
@@ -619,6 +622,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
             // 
+            // btnCancelConfirm
+            // 
+            this.btnCancelConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelConfirm.Image = global::SDC_Application.Resource1.back_icon;
+            this.btnCancelConfirm.Location = new System.Drawing.Point(1207, 47);
+            this.btnCancelConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelConfirm.Name = "btnCancelConfirm";
+            this.btnCancelConfirm.Size = new System.Drawing.Size(53, 49);
+            this.btnCancelConfirm.TabIndex = 36;
+            this.toolTip.SetToolTip(this.btnCancelConfirm, "فائنل شدہ انتقال دوبارہ ڈیٹا انٹری موڈ میں ولے ائے");
+            this.btnCancelConfirm.UseVisualStyleBackColor = true;
+            this.btnCancelConfirm.Click += new System.EventHandler(this.btnCancelConfirm_Click);
+            // 
             // frmIntiqalMainForManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -697,5 +714,6 @@
         private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans2;
         private System.Windows.Forms.Button btnIntiqalAmalDaramadByKhata;
         private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans3;
+        private System.Windows.Forms.Button btnCancelConfirm;
     }
 }

@@ -380,14 +380,18 @@ namespace SDC_Application.AL
                    
                 //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-                    
-                    
+
+
                     if (!AmalDaramad && isConfirmed && UsersManagments._IsAdmin)
                     {
-                        btnIntiqalAmal.Enabled = true;                           
+                        btnIntiqalAmal.Enabled = true;
+                        btnCancelConfirm.Enabled = true;
                     }
                     else
+                    {
                         btnIntiqalAmal.Enabled = false;
+                        btnCancelConfirm.Enabled = false;
+                    }
 
                     if (UsersManagments._IsAdmin)
                     {
@@ -395,6 +399,7 @@ namespace SDC_Application.AL
                     }
                     else
                         btnEdit.Enabled = false;
+   
                     if (cboMoza.SelectedIndex != -1 && txtIntiqalNo.Text.Trim().Length > 0 && cboIntiqalInitiation.SelectedValue.ToString() == "2")
                     {
                        
@@ -1627,6 +1632,24 @@ namespace SDC_Application.AL
             else
             {
                 MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelConfirm_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ فائنل انتقال کو ڈیٹا انٹری موڈ میں لے انا چاہتے ہے۔؟", "Un Confirmation of Intiqal Entry", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    bool isConfirm = Iq.UpdateIntiqalMainConfirmByOperator(this.IntiqalId, "0");
+                    this.isConfirmed = false;
+                    btnCancelConfirm.Enabled = isConfirmed;
+                    this.btnConfirm.Enabled = !isConfirm;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

@@ -20,6 +20,7 @@ namespace SDC_Application.AL
         public byte[] imgDataFinger=null;
         DataTable dt = new DataTable();
         Users ObjUser = new Users();
+        AutoComplete auto = new AutoComplete();
         public string Role { get; set; }
         public string Adminuserroldid { get; set; }
         public frmUserManagement()
@@ -126,42 +127,51 @@ namespace SDC_Application.AL
 
         private void btnAssignRole_Click(object sender, EventArgs e)
         {
-            frmAssignRole Populatee = new frmAssignRole();
-            Populatee.FormClosed -= new FormClosedEventHandler(Populatee_FormClosed);
-            Populatee.FormClosed += new FormClosedEventHandler(Populatee_FormClosed);
-            Populatee.LoginName = txtLoginId.Text;
-            Populatee.userid = txtUserId.Text;
-            Populatee.AdminUserRoleId = Adminuserroldid;
-            Populatee.ShowDialog(); 
+            string last;
+
+            string userinsertedid = UsersManagments.UserId.ToString();
+            string Roleid = cbUserRoles.SelectedValue.ToString();
+            if (Roleid.Length > 2)
+            {
+                last = ObjUser.SaveUserRole(txtUserRoleId.Text, UsersManagments._Tehsilid.ToString(), txtUserId.Text, Roleid, userinsertedid, txtLoginId.Text, "0");
+                LoadRoleid(Roleid);
+            }
+            //frmAssignRole Populatee = new frmAssignRole();
+            //Populatee.FormClosed -= new FormClosedEventHandler(Populatee_FormClosed);
+            //Populatee.FormClosed += new FormClosedEventHandler(Populatee_FormClosed);
+            //Populatee.LoginName = txtLoginId.Text;
+            //Populatee.userid = txtUserId.Text;
+            //Populatee.AdminUserRoleId = Adminuserroldid;
+            //Populatee.ShowDialog(); 
         }
 
 
         private void btnInsRole_Click(object sender, EventArgs e)
         {
-            frmAssignRole Populatee = new frmAssignRole();
-            Populatee.FormClosed -= new FormClosedEventHandler(Populatee_FormClosed);
-            Populatee.FormClosed += new FormClosedEventHandler(Populatee_FormClosed);
-            Populatee.LoginName = txtLoginId.Text;
-            Populatee.bMultiple = true;
-            Populatee.userid = txtUserId.Text;
-            Populatee.AdminUserRoleId = Adminuserroldid;
-            Populatee.ShowDialog();
+            //frmAssignRole Populatee = new frmAssignRole();
+            //Populatee.FormClosed -= new FormClosedEventHandler(Populatee_FormClosed);
+            //Populatee.FormClosed += new FormClosedEventHandler(Populatee_FormClosed);
+            //Populatee.LoginName = txtLoginId.Text;
+            //Populatee.bMultiple = true;
+            //Populatee.userid = txtUserId.Text;
+            //Populatee.AdminUserRoleId = Adminuserroldid;
+            //Populatee.ShowDialog();
 
-            BL.Users objuserrole = new BL.Users();  
-            DataTable dt = objuserrole.getAdminRoleid(txtUserId.Text);
-            StringBuilder sb = new StringBuilder();
-            string[] columnNames = dt.Columns.Cast<DataColumn>().Select(column => column.ColumnName).ToArray();
-            List<string> Rols = dt.AsEnumerable().Select(r => r.Field<int>("RoleID").ToString()).ToList<string>();
-            string joined = string.Join(",", Rols);
+            //BL.Users objuserrole = new BL.Users();  
+            //DataTable dt = objuserrole.getAdminRoleid(txtUserId.Text);
+            //StringBuilder sb = new StringBuilder();
+            //string[] columnNames = dt.Columns.Cast<DataColumn>().Select(column => column.ColumnName).ToArray();
+            //List<string> Rols = dt.AsEnumerable().Select(r => r.Field<int>("RoleID").ToString()).ToList<string>();
+            //string joined = string.Join(",", Rols);
 
-            String anyFirstRoleName = "";
-            try
-            {
-                 anyFirstRoleName = dt.Rows[0].Field<String>("RoleName");
-            }
-            catch (Exception) { }            
-            this.txtRole.Text = anyFirstRoleName ;
-            LoadRoleid(joined);
+            //String anyFirstRoleName = "";
+            //try
+            //{
+            //     anyFirstRoleName = dt.Rows[0].Field<String>("RoleName");
+            //}
+            //catch (Exception) { }            
+            //this.txtRole.Text = anyFirstRoleName ;
+            //LoadRoleid(joined);
 
         }
 
@@ -191,17 +201,17 @@ namespace SDC_Application.AL
             // -- load admin objects -------------------------------- end
         }
 
-        private void Populatee_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            frmAssignRole Populate = sender as frmAssignRole;
-            if (Populate.btn)
-            {
-                txtRole.Text = Populate.RoleName;
-                LoadRoleid(Populate.Roleid);
+        //private void Populatee_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    //frmAssignRole Populate = sender as frmAssignRole;
+        //    //if (Populate.btn)
+        //    //{
+        //    //    txtRole.Text = Populate.RoleName;
+        //    //    LoadRoleid(Populate.Roleid);
                 
-            }
+        //    //}
 
-        }
+        //}
 
 
         public void LoadRoleid(string roleid)
@@ -212,11 +222,15 @@ namespace SDC_Application.AL
                 this.grdUserRoles.Columns["ObjectId"].Visible = false;
                 this.grdUserRoles.Columns["RoleDetailId"].Visible = false;
                 grdUserRoles.Columns["ObjectId"].Visible = false;
-                grdUserRoles.Columns["ObjectActualName"].Visible = false;}
+                grdUserRoles.Columns["ObjectActualName"].Visible = false;
+                this.grdUserRoles.Columns["RoleId"].Visible = false;
+        }
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
 
             LoadExistingProfiles();
+            auto.FillCombo("Proc_Get_Admin_Roles " + UsersManagments._Tehsilid.ToString(), cbUserRoles, "RoleName", "RoleId");
+            
           
 
         }
@@ -251,7 +265,7 @@ namespace SDC_Application.AL
                 }
             }
             this.chbIsRO.Checked = Convert.ToBoolean(grdExistingUsers.CurrentRow.Cells["isRO"].Value);
-            
+            //cbUserRoles.SelectedValue=
             DataTable dt = new DataTable();
             dt=ObjUser.getAdminRoleid(txtUserId.Text);
             if (dt != null)
@@ -263,6 +277,7 @@ namespace SDC_Application.AL
                     txtRole.Text = row["RoleName"].ToString();
                     Adminuserroldid = row["AdminUserRoleId"].ToString();
 
+                    cbUserRoles.SelectedValue = row["RoleId"];
                 }
                 Role = iRole;
                 LoadRoleid(Role);

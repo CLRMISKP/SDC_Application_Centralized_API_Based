@@ -13,18 +13,19 @@ namespace SDC_Application.AL
 {
     public partial class FardMalikan_Report_TTx : Form
     {
+        public string TokenId { get; set; }
         public FardMalikan_Report_TTx()
         {
             InitializeComponent();
         }
 
 
-        public long TokenId = -1;
+        //public long TokenId = -1;
         
 
         private void FardMalikan_Report_TTx_Load(object sender, EventArgs e)
             {
-                TokenId = 43202301100001;
+                //TokenId = 43202301100001;
 
                 string dsvr =SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
                 string db =SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);            
@@ -39,8 +40,10 @@ namespace SDC_Application.AL
                         connection.Open();
                         SqlCommand command = new SqlCommand("clrmis_Sp_FardMalakan_TTx", connection);
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add(new SqlParameter("@TehsilId", Classess.UsersManagments._Tehsilid.ToString()));
                         command.Parameters.Add(new SqlParameter("@TokenId", TokenId));
-                        command.CommandTimeout = 5;
+                        
+                        command.CommandTimeout = 600;
 
                         SqlDataAdapter adapter = new SqlDataAdapter(command);
                         DataSet ds = new DataSet();

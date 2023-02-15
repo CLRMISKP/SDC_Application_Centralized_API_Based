@@ -1555,14 +1555,29 @@ namespace SDC_Application
 
         private void ایمآئاسسیToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+            bool isOpen = IsFrmOpen("frmMISC");
 
             if (!isOpen)
             {
 
                 //UsersManagments.check = 2;
                 frmMISC obj = new frmMISC();
-                UsersManagments.check = 42;
+                //obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuMisalManualFb_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmFardeBadarManual");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmFardeBadarManual obj = new frmFardeBadarManual();
                 //obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;

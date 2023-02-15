@@ -121,8 +121,8 @@ namespace SDC_Application
             {
                 MessageBox.Show(ex.Message);
             }
-            crystalReportViewer1.ShowLastPage();
-            UsersManagments.NoPages = Convert.ToInt32(crystalReportViewer1.GetCurrentPageNumber().ToString());
+            //crystalReportViewer1.ShowLastPage();
+            UsersManagments.NoPages = 1; //Convert.ToInt32(crystalReportViewer1.GetCurrentPageNumber().ToString());
            
            
 
