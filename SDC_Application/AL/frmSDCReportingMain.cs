@@ -478,6 +478,12 @@ namespace SDC_Application.AL
                  this.SetCredentials("IntiqalInsertReportByOperator", rp, false);
 
              }
+             if (UsersManagments.check == 43)
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 this.SetCredentials("IntiqalAttestedNotImplementedReport", rp, false);
+
+             }
         }
 
     }

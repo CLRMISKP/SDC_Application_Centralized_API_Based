@@ -291,7 +291,7 @@ namespace SDC_Application.DL
             {
                 string lastId = "0";
                 SqlCommand cmd = new SqlCommand(SpWithParams, CreateConn());
-                object retVal = cmd.ExecuteScalar();
+                object retVal =cmd.ExecuteScalar();
                 lastId = retVal != null ? retVal.ToString() : "0";
                 CloseConn();
                 return lastId;

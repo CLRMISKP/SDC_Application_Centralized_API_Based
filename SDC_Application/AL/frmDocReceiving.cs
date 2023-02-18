@@ -521,7 +521,7 @@ namespace SDC_Application.AL
 
                 if (txtRegId.Text == "-1")
                 {
-                    string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtRegNo.Text.Trim(), "0", dtReg.Value.Year);
+                    string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtRegNo.Text.Trim(), "0", dtReg.Value.Year, cboMouza.SelectedValue.ToString());
                     if (Reg != "-1")
                     {
 
@@ -698,7 +698,7 @@ namespace SDC_Application.AL
                     if (txtUpdateRecId.Text.ToString() != "-1")
                         
                     {
-                        string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtUpdateRegNo.Text, txtUpdateRecId.Text, dtUpdateRegDate.Value.Year);
+                        string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtUpdateRegNo.Text, txtUpdateRecId.Text, dtUpdateRegDate.Value.Year, cmbRegMoza.SelectedValue.ToString());
                         if (Reg != "-1")
                         {
 

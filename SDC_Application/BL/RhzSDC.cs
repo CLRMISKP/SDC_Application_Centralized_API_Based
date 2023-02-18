@@ -255,12 +255,17 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-        public string WEB_SP_INSERT_KhatooniRegisterEdit(string KhatooniRecId, string KhatooniId, string KhatooniNo, string KhatooniNoProp, string KhatooniKashtkaranFullDetail_New, string KhatooniKashtkaranFullDetail_NewProp, string RegisterHqDKhataId, string Wasail_e_Abpashi, string Wasail_e_AbpashiProp, string KhatooniLagan, string KhatooniLaganProp, string insertuserid, string InsertLoginName, string RHZ_ChangeId, string ChangeMode)
+        public string WEB_SP_INSERT_KhatooniRegisterEdit(string KhatooniRecId, string KhatooniId, string KhatooniNo, string KhatooniNoProp, string KhatooniKashtkaranFullDetail_New, string KhatooniKashtkaranFullDetail_NewProp, string RegisterHqDKhataId, string Wasail_e_Abpashi, string Wasail_e_AbpashiProp, string KhatooniLagan, string KhatooniLaganProp, string BeahShud,
+			string BeahShudProp,string Khatooni_Hissa, string Khatooni_HissaProp, string Khatooni_Kanal, string Khatooni_KanalProp, string Khatooni_Marla, string Khatooni_MarlaProp, string Khatooni_Sarsai, string Khatooni_SarsaiProp, string Khatooni_Feet, string Khatooni_FeetProp,string insertuserid, string InsertLoginName, string RHZ_ChangeId, string ChangeMode)
         {
-            string spWithParam = "WEB_SP_INSERT_KhatooniRegisterEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniRecId + ", " + KhatooniId + ",'" + KhatooniNo + "','" + KhatooniNoProp + "',N'" + KhatooniKashtkaranFullDetail_New + "',N'" + KhatooniKashtkaranFullDetail_NewProp + "'," + RegisterHqDKhataId + ",N'" + Wasail_e_Abpashi + "',N'" + Wasail_e_AbpashiProp + "',N'" + KhatooniLagan + "',N'" + KhatooniLaganProp + "'," + insertuserid + ",'" + InsertLoginName + "',"+RHZ_ChangeId+",'"+ChangeMode+"'";
+            string spWithParam = "WEB_SP_INSERT_KhatooniRegisterEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniRecId + ", " + KhatooniId + ",'" + KhatooniNo + "','" + KhatooniNoProp + "',N'" + KhatooniKashtkaranFullDetail_New + "',N'" + KhatooniKashtkaranFullDetail_NewProp + "'," + RegisterHqDKhataId + ",N'" + Wasail_e_Abpashi + "',N'" + Wasail_e_AbpashiProp + "',N'" + KhatooniLagan + "',N'" + KhatooniLaganProp + "',"+BeahShud+","+
+			BeahShudProp+","+Khatooni_Hissa+","+Khatooni_HissaProp+","+Khatooni_Kanal+","+Khatooni_KanalProp+","+Khatooni_Marla+","+Khatooni_MarlaProp+","+Khatooni_Sarsai+","+Khatooni_SarsaiProp+","+Khatooni_Feet+","+Khatooni_FeetProp+"," + insertuserid + ",'" + InsertLoginName + "',"+RHZ_ChangeId+",'"+ChangeMode+"'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
-
+        public string DeleteKhatooniEdit(string KhatooniRecId)
+        {
+            return dbobject.ExecInsertUpdateStoredProcedure("WEB_SP_DELETE_KhatooniRegister_Edit "+Classess.UsersManagments._Tehsilid.ToString()+"," + KhatooniRecId);
+        }
         public string SaveKhassraRegister(string KhassraId, string KhatooniId, string MozaId, string KhassraNo, string insertuserid, string InsertLoginName)
         {
             string spWithParam = "WEB_SP_INSERT_KhassraRegisterWithKhatooniKhassraGroup " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhassraId + ", " + KhatooniId + ", " + MozaId + ",N'" + KhassraNo + "'," + insertuserid + ",'" + InsertLoginName + "'";

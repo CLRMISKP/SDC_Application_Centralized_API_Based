@@ -51,6 +51,18 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
+        public DataTable GetKhatooniNosListbyKhataIdforRhzEdit(string KhataId)
+        {
+            string spWithParam = "Proc_Get_KhatoonisForEdit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public DataTable GetKhatooniEditedByKhataId(string KhataId)
+        {
+            string spWithParam = "Proc_Get_Khatoonis_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
         public DataTable GetKhatooniDetailbyKhatooniId(string KhatooniId)
         {
             string spWithParam = "Proc_Get_KhatoonisDeatail_By_KhatooniId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;

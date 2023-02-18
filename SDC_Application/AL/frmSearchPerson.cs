@@ -15,6 +15,7 @@ namespace SDC_Application
         LanguageConverter Lang = new LanguageConverter();
         Search Srch = new Search();
         Khatoonies kasht = new Khatoonies();
+        DataView dvAfrad = new DataView();
         #endregion
 
         #region Properties
@@ -93,12 +94,14 @@ namespace SDC_Application
                     dt = Srch.GetSearchAfradListByCNICSelf(MozaId, PTyep, PCNIC);
                 }
             }
+            dvAfrad = dt.AsDataView();
 
             if (this.IsForKhata)
                 {
                     dt1 = dt.DefaultView.ToTable(true, "PersonId", "PersonName", "CNIC", "KhewatTypeId", "Khewat_Area", "FardAreaPart", "FardPart_Bata", "KhewatGroupFareeqId",
                         "KhewatGroupId");
-                GridViewPersons.DataSource = dt1;
+                    dvAfrad = dt1.AsDataView();
+                GridViewPersons.DataSource = dvAfrad;
                 int count = GridViewPersons.Columns.Count;
                 GridViewPersons.Columns["PersonName"].HeaderText = "نام افراد";
                 GridViewPersons.Columns["Khewat_Area"].HeaderText = "رقبہ";
@@ -112,7 +115,8 @@ namespace SDC_Application
             else if (isForKhatooni)
             {
                 dt1 = dt.DefaultView.ToTable(true, "PersonId", "CompleteName", "KhewatTypeId", "Mushtri_Area_KMSqft", "FardAreaPart", "FardPart_Bata", "MushtriFareeqId");
-                GridViewPersons.DataSource = dt1;
+                dvAfrad = dt1.AsDataView();
+                GridViewPersons.DataSource = dvAfrad;
                 int count = GridViewPersons.Columns.Count;
                 GridViewPersons.Columns["CompleteName"].HeaderText = "نام افراد";
                 GridViewPersons.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
@@ -123,7 +127,7 @@ namespace SDC_Application
             }
             else if (isforShajraFb)
             {
-                GridViewPersons.DataSource = dt;
+                GridViewPersons.DataSource = dvAfrad;
                 GridViewPersons.Columns["PersonFullName"].HeaderText = "نام افراد";
                 GridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ نمبر";
                 GridViewPersons.Columns["QoamId"].Visible = false;
@@ -131,7 +135,7 @@ namespace SDC_Application
             }
             else
             {
-                GridViewPersons.DataSource = dt;
+                GridViewPersons.DataSource = dvAfrad;
                 GridViewPersons.Columns["PersonFullName"].HeaderText = "نام افراد";
                 GridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ نمبر";
 
@@ -269,6 +273,34 @@ namespace SDC_Application
            //afr.Show();
             
            
+        }
+
+        private void txtSearchByName_TextChanged(object sender, EventArgs e)
+        {
+            string filter = this.txtSearchByName.Text;
+            if (this.IsForKhata)
+                {
+                    dvAfrad.RowFilter = "PersonName LIKE '%" + filter + "%'";
+                    GridViewPersons.DataSource = dvAfrad;
+
+                }
+            else if (isForKhatooni)
+            {
+                dvAfrad.RowFilter = "CompleteName LIKE '%" + filter + "%'";
+                GridViewPersons.DataSource = dvAfrad;
+            }
+            else if (isforShajraFb)
+            {
+                dvAfrad.RowFilter = "PersonFullName LIKE '%" + filter + "%'";
+                GridViewPersons.DataSource = dvAfrad;
+            }
+            else
+            {
+                dvAfrad.RowFilter = "PersonFullName LIKE '%" + filter + "%'";
+                GridViewPersons.DataSource = dvAfrad;
+
+            }
+            
         }
 
       

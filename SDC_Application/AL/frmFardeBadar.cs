@@ -43,6 +43,7 @@ namespace SDC_Application.AL
         Intiqal intiqal=new Intiqal();
         DataView dvMinKhataMalkan = new DataView();
         RhzSDC rhz = new RhzSDC();
+        Classess.CommanFunctions cmnFns = new CommanFunctions();
 
         bool ConfirmationStatus = false;
         bool AmaldaramadStatus = false;
@@ -884,23 +885,36 @@ namespace SDC_Application.AL
             {
                 string  fbId =txtFbId.Text != "" ? txtFbId.Text : "0";
                 string fbExistsKGF = txtFbExistsKGF.Text;
-                   if (saveMalikNew())
-                        {
-                            //this.GetKhewatMaalikanBindingSource.DataSource = client.GetKhewatMalikanByKhataId(Convert.ToInt32(cboKhataNo.SelectedValue)).ToList();
-                            // this.txtPersonName.Focus();
-                            
-                            this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(fbId, cboKhataNo.SelectedValue.ToString());
-                            this.FillGridviewMalkan(khewatMalikanByFB);
-                            this.txtKhewatFreeqainGroupId.Text = "-1";
-                            this.txtKhewatGroupId.Text = "0";
-                           // this.ClearFormControls(groupBox1);
-                            this.btnSearchPerson.Focus();
-                            //this.btnDeleteMalik.Enabled = false;
-                            //this.txtSeqNo.Enabled = false;
-                            int idx = this.GridViewKhewatMalikaan.Rows.Count;
-                            this.txtSeqNo.Text = (idx + 1).ToString();
-                        }
-              
+             DataTable dtFardatIntiqalat = fardBadarBL.GetFardatIntiqalatOnKhewatGrpupFareeqId(txtKhewatFreeqainGroupId.Text.Length > 0 ? txtKhewatFreeqainGroupId.Text : "0");
+                bool isProceed = true;
+             if(dtFardatIntiqalat.Rows.Count>0)
+             {
+                 if (DialogResult.Yes == MessageBox.Show("اپکا انتخاب کردہ ریکارڈ " + dtFardatIntiqalat.Rows[0][0].ToString() + "  فردات اور " + dtFardatIntiqalat.Rows[0][1].ToString() + "  انتقالات میں موجود ہیں، کیا اپ اس مالک کو فرد بدر کے ذرئعے تبدیل کرنا چاہتے ہیں؟ ", "تبدیل کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                 {
+                     isProceed = true;
+                 }
+                 else
+                     isProceed = false;
+                }
+             if (isProceed)
+             {
+                 if (saveMalikNew())
+                 {
+                     //this.GetKhewatMaalikanBindingSource.DataSource = client.GetKhewatMalikanByKhataId(Convert.ToInt32(cboKhataNo.SelectedValue)).ToList();
+                     // this.txtPersonName.Focus();
+
+                     this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(fbId, cboKhataNo.SelectedValue.ToString());
+                     this.FillGridviewMalkan(khewatMalikanByFB);
+                     this.txtKhewatFreeqainGroupId.Text = "-1";
+                     this.txtKhewatGroupId.Text = "0";
+                     // this.ClearFormControls(groupBox1);
+                     this.btnSearchPerson.Focus();
+                     //this.btnDeleteMalik.Enabled = false;
+                     //this.txtSeqNo.Enabled = false;
+                     int idx = this.GridViewKhewatMalikaan.Rows.Count;
+                     this.txtSeqNo.Text = (idx + 1).ToString();
+                 }
+             }
             }
         }
         		 
@@ -2070,6 +2084,14 @@ namespace SDC_Application.AL
         private void txtDrustHissaBata_Leave(object sender, EventArgs e)
         {
             this.txtDrustHissa.Text = this.calculateNetPart(this.txtDrustHissaBata.Text.Trim()).ToString();
+            if (txtDrustHissa.Text.Length > 0)
+            {
+                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKulHisay.Text), float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
+                txtDrustPersonKanal.Text = Area[0] != null ? Area[0].ToString() : "0";
+                txtDrustPersonMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
+                txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
+                txtDrustPersonFeet.Text = Area[3] != null ? Area[3].ToString() : "0";
+            }
         }
         #endregion
 
@@ -3364,6 +3386,30 @@ namespace SDC_Application.AL
         private void dgMinKhataMalkan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtDrustHissa_Leave(object sender, EventArgs e)
+        {
+            if (txtDrustHissa.Text.Length > 0)
+            {
+                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKulHisay.Text), float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
+                txtDrustPersonKanal.Text = Area[0] != null ? Area[0].ToString() : "0";
+                txtDrustPersonMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
+                txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
+                txtDrustPersonFeet.Text = Area[3] != null ? Area[3].ToString() : "0";
+            }
+        }
+
+        private void btnHissaRaqba_Click(object sender, EventArgs e)
+        {
+            if (txtDrustHissa.Text.Length > 0)
+            {
+                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKulHisay.Text), float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
+                txtDrustPersonKanal.Text = Area[0] != null ? Area[0].ToString() : "0";
+                txtDrustPersonMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
+                txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
+                txtDrustPersonFeet.Text = Area[3] != null ? Area[3].ToString() : "0";
+            }
         }
 
     }

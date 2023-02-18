@@ -281,6 +281,14 @@ namespace SDC_Application.BL
         }
         #endregion
 
+        #region Get Fardat and Intiqalat by KhewatGrpupFareeqId
+        public DataTable GetFardatIntiqalatOnKhewatGrpupFareeqId(string KhewatGroupFareeqId)
+        {
+            string spWithParms = " Proc_Get_KhewatFareeqein_to_check_ByFard_ByIntiqal_for_FB  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhewatGroupFareeqId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
+        #endregion
+
         #region Get FB Khassrajat by Fb
         public DataTable GetKhassrajatDetailByFbId(string fbId, string fbKhataId)
         {

@@ -1584,6 +1584,52 @@ namespace SDC_Application
                 obj.Show();
             }
         }
+
+        private void mnuQabzulWasool_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmQabzUlWassol");
+
+            if (!isOpen)
+            {
+
+                frmQabzUlWassol obj = new frmQabzUlWassol();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuSubIntiqalatAttestedNotImplemented_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 43;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuSearchFardat_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmFardManhai");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmFardManhai obj = new frmFardManhai();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
      
     }
 }

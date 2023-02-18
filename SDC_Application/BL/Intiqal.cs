@@ -501,7 +501,7 @@ namespace SDC_Application.BL
                 //string KhanaMalikat1=Convert.ToString(KhanaMalikat);
                 // string KhanaMalikat1=Convert.ToString(KhanaKasht);
                 //string spWithParam = "WEB_SP_INSERT_Intiqal_Main_SDC " + IntiqalId + "," + MozaId + ", " + KhanaMalikat + ", " + KhanaKasht + "," + khanakashtmalkiat + " ," + IntiqalNo + ", " + HawalaNo + "," + IntiqalTypeId + ", " + InitiationId + ", '" + AndrajDate + "', " + RapatNo + ",'" + RapatDate + "', '" + AmaldarDate + "'," + LandValue.ToString() + ", '" + IntiqalAttestationDate + "'," + IntiqalReferenceNo + ", " + LandTypeId + ", " + LandValuationTableCost + ", '" + DegreeDate + "', N'" + CourtName + "', " + MisalNo + ",N'" + otherDetails + "', " + userid + ", '" + userName + "', " + TokenId + ", " + PlotTypeId + ", " + PlotConstrTypeId + ", " + PlotTerritoryTypeId + ", '" + LastIntiqalDate + "',"+MinhayeIntiqalId + "," + fardTokenId + ",'" + fardTokenDate +"'" ;
-                string spWithParam = "WEB_SP_Self_INSERT_Intiqal_Main_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "," + MozaId + ", " + KhanaMalikat + ", " + KhanaKasht + "," + khanakashtmalkiat + " ," + IntiqalNo + ", " + HawalaNo + "," + IntiqalTypeId + ", " + InitiationId + ", '" + AndrajDate + "', " + RapatNo + ",'" + RapatDate + "', '" + AmaldarDate + "'," + LandValue.ToString() + ", '" + IntiqalAttestationDate + "'," + IntiqalReferenceNo + ", " + LandTypeId + ", " + LandValuationTableCost + ", '" + DegreeDate + "', N'" + CourtName + "', " + MisalNo + ",N'" + otherDetails + "', " + userid + ", '" + userName + "', " + TokenId + ", " + PlotTypeId + ", " + PlotConstrTypeId + ", " + PlotTerritoryTypeId + ", '" + LastIntiqalDate + "'," + MinhayeIntiqalId + "," + fardTokenId + ",'" + fardTokenDate + "'" + "," + ReceivngId;
+                string spWithParam = "WEB_SP_Self_INSERT_Intiqal_Main_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "," + MozaId + ", " + KhanaMalikat + ", " + KhanaKasht + "," + khanakashtmalkiat + " ,'" + IntiqalNo + "', " + HawalaNo + "," + IntiqalTypeId + ", " + InitiationId + ", '" + AndrajDate + "', " + RapatNo + ",'" + RapatDate + "', '" + AmaldarDate + "'," + LandValue.ToString() + ", '" + IntiqalAttestationDate + "'," + IntiqalReferenceNo + ", " + LandTypeId + ", " + LandValuationTableCost + ", '" + DegreeDate + "', N'" + CourtName + "', " + MisalNo + ",N'" + otherDetails + "', " + userid + ", '" + userName + "', " + TokenId + ", " + PlotTypeId + ", " + PlotConstrTypeId + ", " + PlotTerritoryTypeId + ", '" + LastIntiqalDate + "'," + MinhayeIntiqalId + "," + fardTokenId + ",'" + fardTokenDate + "'" + "," + ReceivngId;
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
             public string SaveIntiqalMainManual(string IntiqalId, string MozaId, string KhanaMalikat, string KhanaKasht, string khanakashtmalkiat, string IntiqalNo, string HawalaNo, string IntiqalTypeId, string InitiationId, string AndrajDate, string RapatNo, string RapatDate, string AmaldarDate, string LandValue, string IntiqalAttestationDate, string IntiqalReferenceNo, string LandTypeId, string LandValuationTableCost, string DegreeDate, string CourtName, string MisalNo, string otherDetails, string userid, string userName)
@@ -1584,7 +1584,7 @@ namespace SDC_Application.BL
             public string CheckRegAlreadyEntered(string RegNo, int Y, string mozaId)
             {
                 string IntiqalNo = "0";
-                string spWithParam = " Proc_Self_Get_Intiqal_on_Registry " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Y;// +"," + mozaId;
+                string spWithParam = " Proc_Self_Get_Intiqal_on_Registry " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Y+"," + mozaId;
                 IntiqalNo = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return IntiqalNo;
             }
@@ -1597,10 +1597,10 @@ namespace SDC_Application.BL
                 return ReceivingId;
             }
 
-            public string CheckRegAlreadyReceivedForRecvReg(string RegNo, string Id, int Y)
+            public string CheckRegAlreadyReceivedForRecvReg(string RegNo, string Id, int Y, string MozaId)
             {
                 string RegId = "0";
-                string spWithParam = "Proc_Self_Check_Registry_Received_For_RecvReg  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Id + "," + Y;
+                string spWithParam = "Proc_Self_Check_Registry_Received_For_RecvReg  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Id + "," + Y+","+MozaId;
                 RegId = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return RegId;
             }

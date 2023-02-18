@@ -146,7 +146,11 @@ namespace SDC_Application.AL
                 this.dataGridViewPersons.DataSource = datatable;
                 this.dataGridViewPersons.Columns["PersonFullName"].HeaderText = "نام مالک";
                 this.dataGridViewPersons.Columns["PersonId"].Visible = false;
-                this.dataGridViewPersons.Columns["CNIC"].Visible = false;       
+                this.dataGridViewPersons.Columns["CNIC"].Visible = false;
+                this.dataGridViewPersons.Columns["MozaId"].Visible = false;
+                this.dataGridViewPersons.Columns["QoamId"].Visible = false;
+                this.dataGridViewPersons.Columns["PersonName"].Visible = false;
+
             }
         }
 

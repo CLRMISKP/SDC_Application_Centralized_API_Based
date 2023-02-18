@@ -354,26 +354,29 @@ namespace SDC_Application.AL
             }
             if (empty==null)//this.cmbMouza.SelectedIndex != 0 && this.txtFatherHusband.Text != string.Empty && this.txtVisitorName.Text != string.Empty && this.txtTempAddress.Text != string.Empty && cmbPurpose.SelectedIndex != 0 && cmbServiceId.SelectedIndex != 0 && txtCNCI.TextLength == 15)
                 {
-                  
-
-                    if (Submit())
+                    if (cbRelation.Text.Trim().Length > 0)
                     {
-                      
-                        this.labeltimetoken.Visible = true;
-                        label1.Visible = true;
-                        txtStatus.Text = status1.Text.ToString();
-                      //  MessageBox.Show("ریکارڈ محفوظ ھوچکا ہے", "محفوظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        label13.Text = "تصدیق کریں";
-                        this.btnPrint.Enabled = true;
-                        this.chkverified.Enabled = true;
-                        this.chkverified.Checked = false;
-                        this.btnSave.Enabled = true;
-                        chkverified.Visible = true;
-                        btnCancel.Enabled = true;
-                        label13.Visible = true;
-                        chkduplicate.Enabled = true;
-                        loadTokenNo();
+                        if (Submit())
+                        {
+
+                            this.labeltimetoken.Visible = true;
+                            label1.Visible = true;
+                            txtStatus.Text = status1.Text.ToString();
+                            //  MessageBox.Show("ریکارڈ محفوظ ھوچکا ہے", "محفوظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            label13.Text = "تصدیق کریں";
+                            this.btnPrint.Enabled = true;
+                            this.chkverified.Enabled = true;
+                            this.chkverified.Checked = false;
+                            this.btnSave.Enabled = true;
+                            chkverified.Visible = true;
+                            btnCancel.Enabled = true;
+                            label13.Visible = true;
+                            chkduplicate.Enabled = true;
+                            loadTokenNo();
+                        }
                     }
+                    else
+                        MessageBox.Show("درخواست دہندہ کا دلدیت یا زوجیت (رشتہ) منتخب کریں۔", "انتخاب رشتہ",MessageBoxButtons.OK, MessageBoxIcon.Error );
                 }
                 else
                 {
@@ -599,6 +602,7 @@ namespace SDC_Application.AL
             errorChar.Clear();
             label13.Visible = false;
             chkverified.Visible = false;
+            cbRelation.Text = "";
         }
         #endregion      
 

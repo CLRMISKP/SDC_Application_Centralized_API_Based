@@ -915,7 +915,7 @@ namespace SDC_Application.AL
                     frmIK.MdiParent = this.ParentForm;
                     frmIK.AmalDaramad = this.AmalDaramad;
                     frmIK.isAttested = this.Attested;
-                    frmIK.isGardawar = this.GardawarId;
+                    frmIK.isGardawar = this.GardawarUserId;
                     frmIK.Teh_Report = this.Teh_Report;
                     frmIK.isConfirmed = this.isConfirmed;
                     frmIK.MalkiatKashkat = true;

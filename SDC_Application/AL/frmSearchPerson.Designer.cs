@@ -42,6 +42,8 @@
             this.btnAndarajAfrad = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.procGetSearchedAfradListResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSearchByName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).BeginInit();
@@ -60,11 +62,10 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox1.Size = new System.Drawing.Size(444, 117);
+            this.groupBox1.Size = new System.Drawing.Size(444, 127);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افراد کی تلاش کے لئے لکھیں";
-            
             // 
             // label2
             // 
@@ -72,18 +73,18 @@
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(356, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 30);
+            this.label2.Size = new System.Drawing.Size(98, 38);
             this.label2.TabIndex = 3;
             this.label2.Text = "شناختی کارڈ نمبر";
             // 
             // txtCNIC
             // 
             this.txtCNIC.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCNIC.Location = new System.Drawing.Point(89, 74);
+            this.txtCNIC.Location = new System.Drawing.Point(89, 80);
             this.txtCNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtCNIC.MaxLength = 13;
             this.txtCNIC.Name = "txtCNIC";
-            this.txtCNIC.Size = new System.Drawing.Size(261, 30);
+            this.txtCNIC.Size = new System.Drawing.Size(261, 35);
             this.txtCNIC.TabIndex = 4;
             this.txtCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNIC_KeyPress);
@@ -106,7 +107,7 @@
             this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(356, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 30);
+            this.label1.Size = new System.Drawing.Size(64, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "فرد کا نام";
             // 
@@ -116,7 +117,7 @@
             this.txtPersonaName.Location = new System.Drawing.Point(89, 32);
             this.txtPersonaName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtPersonaName.Name = "txtPersonaName";
-            this.txtPersonaName.Size = new System.Drawing.Size(261, 37);
+            this.txtPersonaName.Size = new System.Drawing.Size(261, 45);
             this.txtPersonaName.TabIndex = 1;
             this.txtPersonaName.Enter += new System.EventHandler(this.txtPersonaName_Enter);
             this.txtPersonaName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonaName_KeyPress);
@@ -124,11 +125,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.GridViewPersons);
-            this.groupBox2.Location = new System.Drawing.Point(12, 124);
+            this.groupBox2.Location = new System.Drawing.Point(12, 170);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox2.Size = new System.Drawing.Size(613, 414);
+            this.groupBox2.Size = new System.Drawing.Size(613, 368);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -140,13 +141,13 @@
             this.GridViewPersons.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.GridViewPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewPersons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridViewPersons.Location = new System.Drawing.Point(3, 32);
+            this.GridViewPersons.Location = new System.Drawing.Point(3, 38);
             this.GridViewPersons.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.GridViewPersons.MultiSelect = false;
             this.GridViewPersons.Name = "GridViewPersons";
             this.GridViewPersons.ReadOnly = true;
             this.GridViewPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewPersons.Size = new System.Drawing.Size(607, 376);
+            this.GridViewPersons.Size = new System.Drawing.Size(607, 324);
             this.GridViewPersons.TabIndex = 0;
             this.GridViewPersons.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridViewPersons_CellMouseDoubleClick);
             // 
@@ -183,12 +184,37 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 38);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "تلاش کریں";
+            // 
+            // txtSearchByName
+            // 
+            this.txtSearchByName.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByName.Location = new System.Drawing.Point(109, 138);
+            this.txtSearchByName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtSearchByName.MaxLength = 13;
+            this.txtSearchByName.Name = "txtSearchByName";
+            this.txtSearchByName.Size = new System.Drawing.Size(182, 43);
+            this.txtSearchByName.TabIndex = 7;
+            this.txtSearchByName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchByName.TextChanged += new System.EventHandler(this.txtSearchByName_TextChanged);
+            this.txtSearchByName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonaName_KeyPress);
+            // 
             // frmSearchPerson
             // 
             this.AcceptButton = this.btnAccept;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 546);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtSearchByName);
             this.Controls.Add(this.btnAndarajAfrad);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCancel);
@@ -212,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.procGetSearchedAfradListResultBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,5 +259,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCNIC;
         private System.Windows.Forms.Button btnAndarajAfrad;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtSearchByName;
     }
 }

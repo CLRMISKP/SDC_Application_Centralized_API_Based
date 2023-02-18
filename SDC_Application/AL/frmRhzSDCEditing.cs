@@ -23,6 +23,7 @@ namespace SDC_Application.AL
         Khatoonies Khatooni = new Khatoonies();
         RhzSDC rhz = new RhzSDC();
         CommanFunctions cmnFn = new CommanFunctions();
+        EFardeBadar fardBadarBL = new EFardeBadar();
 
         // Data Tables //----------
         DataTable dtkj = new DataTable();
@@ -37,6 +38,7 @@ namespace SDC_Application.AL
         DataTable dtAfradRegisterEdit = new DataTable();
         Khatoonies khatooni = new Khatoonies();
         DataTable dtRHZchangeDetailsList = new DataTable();
+        DataTable dtKhatooniesEdited = new DataTable();
         DataView dtvKhewatFareeqainByPerson = new DataView();
         DataView viewMF;
         DataView view;
@@ -164,6 +166,7 @@ namespace SDC_Application.AL
             chkIsNewKhata.Checked = false;
             this.txtParentKhata.Clear();
             this.ClearKhatooniControls();
+            txtKhataRecId.Text = "-1";
             foreach (DataRow row in dtkj.Rows)
             {
                 if ((row["RegisterHqDKhataId"].ToString() == cbokhataNo.SelectedValue.ToString()) && cbokhataNo.SelectedValue.ToString() != "0")
@@ -190,27 +193,27 @@ namespace SDC_Application.AL
                     this.LoadKhewatFareeqainMeezan(cbokhataNo.SelectedValue.ToString());
                     tabControlMain.Enabled = true;
                     this.LoadKhataLockDetails(cbokhataNo.SelectedValue.ToString());
-                    dtKhatajatEdit = rhz.GetKhatajatEditByKhataId(cbokhataNo.SelectedValue.ToString());
-                    if (dtKhatajatEdit.Rows.Count > 0)
-                    {
-                        cbKhataEdits.DataSource = dtKhatajatEdit;
-                        cbKhataEdits.DisplayMember = "KhataNoProp";
-                        cbKhataEdits.ValueMember = "KhataRecId";
-                        txtKhataNoProp.Text = dtKhatajatEdit.Rows[0]["KhataNoProp"].ToString();
-                        txtKhataRecId.Text = dtKhatajatEdit.Rows[0]["KhataRecId"].ToString();
-                        txtKhataHissaProp.Text = dtKhatajatEdit.Rows[0]["TotalPartsProp"].ToString();
-                        txtKhataKanalProp.Text = dtKhatajatEdit.Rows[0]["Khata_KanalProp"].ToString();
-                        txtKhataMarlaProp.Text = dtKhatajatEdit.Rows[0]["Khata_MarlaProp"].ToString();
-                        txtKhataSarsaiProp.Text = dtKhatajatEdit.Rows[0]["Khata_SarsaiProp"].ToString();
-                        txtKhataSFTprop.Text = dtKhatajatEdit.Rows[0]["Khata_FeetProp"].ToString();
+                    //dtKhatajatEdit = rhz.GetKhatajatEditByKhataId(cbokhataNo.SelectedValue.ToString());
+                    //if (dtKhatajatEdit.Rows.Count > 0)
+                    //{
+                    //    cbKhataEdits.DataSource = dtKhatajatEdit;
+                    //    cbKhataEdits.DisplayMember = "KhataNoProp";
+                    //    cbKhataEdits.ValueMember = "KhataRecId";
+                    //    txtKhataNoProp.Text = dtKhatajatEdit.Rows[0]["KhataNoProp"].ToString();
+                    //    txtKhataRecId.Text = dtKhatajatEdit.Rows[0]["KhataRecId"].ToString();
+                    //    txtKhataHissaProp.Text = dtKhatajatEdit.Rows[0]["TotalPartsProp"].ToString();
+                    //    txtKhataKanalProp.Text = dtKhatajatEdit.Rows[0]["Khata_KanalProp"].ToString();
+                    //    txtKhataMarlaProp.Text = dtKhatajatEdit.Rows[0]["Khata_MarlaProp"].ToString();
+                    //    txtKhataSarsaiProp.Text = dtKhatajatEdit.Rows[0]["Khata_SarsaiProp"].ToString();
+                    //    txtKhataSFTprop.Text = dtKhatajatEdit.Rows[0]["Khata_FeetProp"].ToString();
 
-                        if (dtKhatajatEdit.Rows.Count > 1)
-                        {
-                            cbKhataEdits.Visible = true;
-                        }
-                        else
-                            cbKhataEdits.Visible = false;
-                    }
+                    //    if (dtKhatajatEdit.Rows.Count > 1)
+                    //    {
+                    //        cbKhataEdits.Visible = true;
+                    //    }
+                    //    else
+                    //        cbKhataEdits.Visible = false;
+                    //}
                     break;
                 }
                 else
@@ -222,6 +225,7 @@ namespace SDC_Application.AL
                     txtKhataSFT.Clear();
                     txtKhataKifiat.Clear();
                     this.KhataId = "0";
+                    txtKhataRecId.Text = "-1";
                     tabControlMain.Enabled = false;
                 }
             }
@@ -413,7 +417,7 @@ namespace SDC_Application.AL
 
                 string KhataId = cbokhataNo.SelectedValue.ToString();
                 // MessageBox.Show(KhataId);
-                KhatooniesByKhata = khatooni.GetKhatooniNosListbyKhataId(KhataId.ToString());
+                KhatooniesByKhata = khatooni.GetKhatooniNosListbyKhataIdforRhzEdit(KhataId.ToString());
                 DataRow row = KhatooniesByKhata.NewRow();
                 row["KhatooniId"] = 0;
                 row["KhatooniNo"] = "- کھتونی کا انتخاب کریں -";
@@ -421,13 +425,46 @@ namespace SDC_Application.AL
                 cboKhatoonies.DataSource = KhatooniesByKhata;
                 cboKhatoonies.DisplayMember = "KhatooniNo";
                 cboKhatoonies.ValueMember = "KhatooniId";
+                dtKhatooniesEdited = Khatooni.GetKhatooniEditedByKhataId(KhataId);
+                fillKhatooniGridView();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        private void fillKhatooniGridView()
+        {
+            dgKhatooniesEdit.DataSource = dtKhatooniesEdited;
+            dgKhatooniesEdit.Columns["KhatooniNo"].HeaderText="کھتونی نمبر";
+            dgKhatooniesEdit.Columns["KhatooniNoProp"].HeaderText = "مجوزہ کھتونی نمبر";
+            dgKhatooniesEdit.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "تفصیل حصہ داران و کاشتکاران";
+            dgKhatooniesEdit.Columns["KhatooniKashtkaranFullDetail_NewProp"].HeaderText = " مجوزہ تفصیل";
+            //dgKhatooniesEdit.Columns["KhatooniLagan"].HeaderText = "کھتونی لگان";
+            //dgKhatooniesEdit.Columns["Wasail_e_Abpashi"].HeaderText="وسائل آبپاشی";
+            dgKhatooniesEdit.Columns["Hissa"].HeaderText = "کل حصص";
+            dgKhatooniesEdit.Columns["HissaProp"].HeaderText = "مجوزہ کل حصص";
+            dgKhatooniesEdit.Columns["AreaProp"].HeaderText = "مجوزہ رقبہ";
+            dgKhatooniesEdit.Columns["Area"].HeaderText = "رقبہ";
+            dgKhatooniesEdit.Columns["Beahshuda"].HeaderText = "بیع شدہ";
+            dgKhatooniesEdit.Columns["BeahShudaProp"].HeaderText = "محوزہ بیع شدہ";
+            dgKhatooniesEdit.Columns["RegisterHqDKhataId"].Visible=false;
+            dgKhatooniesEdit.Columns["KhatooniId"].Visible=false;
+            dgKhatooniesEdit.Columns["KhatooniRecId"].Visible = false;
+            dgKhatooniesEdit.Columns["Kanal"].Visible = false;
+            dgKhatooniesEdit.Columns["Marla"].Visible = false;
+            dgKhatooniesEdit.Columns["Sarsai"].Visible = false;
+            dgKhatooniesEdit.Columns["Feet"].Visible = false;
+            dgKhatooniesEdit.Columns["KanalProp"].Visible = false;
+            dgKhatooniesEdit.Columns["MarlaProp"].Visible = false;
+            dgKhatooniesEdit.Columns["SarsaiProp"].Visible = false;
+            dgKhatooniesEdit.Columns["FeetProp"].Visible = false;
+            dgKhatooniesEdit.Columns["EditingMode"].Visible = false;
+            dgKhatooniesEdit.Columns["KhatooniLagan"].Visible = false;
+            dgKhatooniesEdit.Columns["Wasail_e_Abpashi"].Visible = false;
 
+
+        }
 
         #region MushterFareeqain Gridview Population
         private void PopulateGrid(DataGridView g)
@@ -487,61 +524,76 @@ namespace SDC_Application.AL
                 if (cboKhatoonies.SelectedValue.ToString() != "0")
                 {
                     this.panelKhassra.Enabled = true;
-                    DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
+                    //DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
                     DataTable KhatooniEditingDetails = rhz.GetKhatooniEditingDetailsByKhatooniId(cboKhatoonies.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
-                    foreach (DataRow row in KhatooniDetail.Rows)
+                    foreach (DataRow row in KhatooniesByKhata.Rows)
                     {
-                        //--- Existing Khatooni Fields ----
-                        txtKhatooniLagan.Text = row["KhatooniLagan"].ToString();
-                        txtKhatooniLaganProp.Text = row["KhatooniLagan"].ToString();
-                        txtKhatooniNoProp.Text = row["KhatooniNo"].ToString();
-                        txtWasailAbpashi.Text = row["Wasail_e_Abpashi"].ToString();
-                        txtWasailAbpashiProp.Text = row["Wasail_e_Abpashi"].ToString();
-                        txtKhatooniFullDetails.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
-                        txtKhatooniFullDetailsProp.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
-                        chkBeahShoda.Checked = Convert.ToBoolean(row["BeahShud"].ToString());
-                        //--- Proposed Khatooni Fields ----
-                        if (KhatooniEditingDetails.Rows.Count > 0)
-                        {
-                            txtKhatooniLaganProp.Text = KhatooniEditingDetails.Rows[0]["KhatooniLaganProp"].ToString();
-                            txtKhatooniNoProp.Text = KhatooniEditingDetails.Rows[0]["KhatooniNoProp"].ToString();
-                            txtWasailAbpashiProp.Text = KhatooniEditingDetails.Rows[0]["Wasail_e_AbpashiProp"].ToString();
-                            txtKhatooniFullDetailsProp.Text = KhatooniEditingDetails.Rows[0]["KhatooniKashtkaranFullDetail_NewProp"].ToString();
-                            txtKhatooniRecId.Text = KhatooniEditingDetails.Rows[0]["KhatooniRecId"].ToString();
-                        }
-                        else
-                        {
-                            //txtKhatooniLaganProp.Clear();
-                            //txtKhatooniNoProp.Clear();
-                            //txtWasailAbpashiProp.Clear();
-                            //txtKhatooniFullDetailsProp.Clear();
-                            txtKhatooniRecId.Text = "-1";
-                        }
-
-                        if (chkBeahShoda.Checked)
+                        if (row["KhatooniId"].ToString() == cboKhatoonies.SelectedValue.ToString())
                         {
                             //--- Existing Khatooni Fields ----
-                            txtKhatooniHissa.Text = row["KhatooniHissa"].ToString();
-                            txtKhatooniKanal.Text = row["KhatooniKanal"].ToString();
-                            txtKhatooniMarla.Text = row["KhatooniMarla"].ToString();
-                            txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString();
-                            txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
+                            txtKhatooniLagan.Text = row["KhatooniLagan"].ToString();
+                            txtKhatooniLaganProp.Text = row["KhatooniLagan"].ToString();
+                            txtKhatooniNoProp.Text = row["KhatooniNo"].ToString();
+                            txtWasailAbpashi.Text = row["Wasail_e_Abpashi"].ToString();
+                            txtWasailAbpashiProp.Text = row["Wasail_e_Abpashi"].ToString();
+                            txtKhatooniFullDetails.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                            txtKhatooniFullDetailsProp.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                            chkBeahShoda.Checked = Convert.ToBoolean(row["Beahshuda"].ToString());
+                            chkBeahShudaProp.Checked = Convert.ToBoolean(row["Beahshuda"].ToString());
+                            txtKhatooniHissa.Text = row["Hissa"].ToString();
+                            txtKhatooniHissaProp.Text = row["Hissa"].ToString();
+                            txtKhatooniKanal.Text = row["Kanal"].ToString();
+                            txtKhatooniKanalProp.Text = row["Kanal"].ToString();
+                            txtKhatooniMarla.Text = row["Marla"].ToString();
+                            txtKhatooniMarlaProp.Text = row["Marla"].ToString();
+                            txtKhatooniSarsai.Text = row["Sarsai"].ToString();
+                            txtKhatooniSarsaiProp.Text = row["Sarsai"].ToString();
+                            txtKhatooniFeet.Text = row["Feet"].ToString();
+                            txtKhatooniFeetProp.Text = row["Feet"].ToString();
+                            txtKhatooniRecId.Text = "-1";
                             //--- Proposed Khatooni Fields ----
-                            if (KhatooniEditingDetails.Rows.Count > 0)
-                            {
+                            //if (KhatooniEditingDetails.Rows.Count > 0)
+                            //{
+                            //    txtKhatooniLaganProp.Text = KhatooniEditingDetails.Rows[0]["KhatooniLaganProp"].ToString();
+                            //    txtKhatooniNoProp.Text = KhatooniEditingDetails.Rows[0]["KhatooniNoProp"].ToString();
+                            //    txtWasailAbpashiProp.Text = KhatooniEditingDetails.Rows[0]["Wasail_e_AbpashiProp"].ToString();
+                            //    txtKhatooniFullDetailsProp.Text = KhatooniEditingDetails.Rows[0]["KhatooniKashtkaranFullDetail_NewProp"].ToString();
+                            //    txtKhatooniRecId.Text = KhatooniEditingDetails.Rows[0]["KhatooniRecId"].ToString();
+                            //}
+                            //else
+                            //{
+                                //txtKhatooniLaganProp.Clear();
+                                //txtKhatooniNoProp.Clear();
+                                //txtWasailAbpashiProp.Clear();
+                                //txtKhatooniFullDetailsProp.Clear();
+                               
+                            //}
 
-                                //txtKhatooniHissa.Text = row["KhatooniHissa"].ToString();
-                                //txtKhatooniKanal.Text = row["KhatooniKanal"].ToString();
-                                //txtKhatooniMarla.Text = row["KhatooniMarla"].ToString();
-                                //txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString();
-                                //txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
-                            }
+                            //if (chkBeahShoda.Checked)
+                            //{
+                            //    //--- Existing Khatooni Fields ----
+                            //    txtKhatooniHissa.Text = row["KhatooniHissa"].ToString();
+                            //    txtKhatooniKanal.Text = row["KhatooniKanal"].ToString();
+                            //    txtKhatooniMarla.Text = row["KhatooniMarla"].ToString();
+                            //    txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString();
+                            //    txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
+                            //    //--- Proposed Khatooni Fields ----
+                            //    if (KhatooniEditingDetails.Rows.Count > 0)
+                            //    {
+
+                            //        //txtKhatooniHissa.Text = row["KhatooniHissa"].ToString();
+                            //        //txtKhatooniKanal.Text = row["KhatooniKanal"].ToString();
+                            //        //txtKhatooniMarla.Text = row["KhatooniMarla"].ToString();
+                            //        //txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString();
+                            //        //txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
+                            //    }
+                            //}
                         }
-                    }
 
-                    this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
-                    this.GetKhatooniBayan(cboKhatoonies.SelectedValue.ToString());
-                    btnLoadKhassras_Click(sender, e);
+                        this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
+                        this.GetKhatooniBayan(cboKhatoonies.SelectedValue.ToString());
+                        btnLoadKhassras_Click(sender, e);
+                    }
 
                 }
                 else
@@ -991,6 +1043,22 @@ namespace SDC_Application.AL
         {
             try
             {
+                DataTable dtFardatIntiqalat = fardBadarBL.GetFardatIntiqalatOnKhewatGrpupFareeqId(txtKhewatFreeqainGroupId.Text.Length > 0 ? txtKhewatFreeqainGroupId.Text : "0");
+                bool isProceed = true;
+                if (dtFardatIntiqalat.Rows.Count > 0)
+                {
+                    if (dtFardatIntiqalat.Rows[0][0].ToString() != "0" && dtFardatIntiqalat.Rows[0][0].ToString() != "0")
+                    {
+                        if (DialogResult.Yes == MessageBox.Show("اپکا انتخاب کردہ ریکارڈ " + dtFardatIntiqalat.Rows[0][0].ToString() + "  فردات اور " + dtFardatIntiqalat.Rows[0][1].ToString() + "  انتقالات میں موجود ہیں، کیا اپ اس مالک کی ملکیت تبدیل کرنا چاہتے ہیں؟ ", "تبدیل کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                        {
+                            isProceed = true;
+                        }
+                        else
+                            isProceed = false;
+                    }
+                }
+             if (isProceed)
+             {
                 string retVal = "0";
                 if (txtPersonId.Text.Length > 5 && txtPersonNetHissa.Text.Length > 0 && cboQismMalik.SelectedValue.ToString().Length > 1 && this.KhataId.Length > 5 && txtSeqNo.Text.Trim().Length > 0)
                 {
@@ -1007,7 +1075,7 @@ namespace SDC_Application.AL
                     {
                         string[] ExistingArea; string LastId = "0";
                         string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhataHissa.Text), float.Parse(txtPersonNetHissa.Text), Convert.ToInt32(txtKhataKanal.Text), Convert.ToInt32(txtKhataMarla.Text), float.Parse(txtKhataSarsai.Text != "" ? txtKhataSarsai.Text : "0"), float.Parse(txtKhataSFT.Text != "" ? txtKhataSFT.Text : "0"));
-                        if (dgKhewatFareeqainAll.SelectedRows.Count > 0)
+                        if (dgKhewatFareeqainAll.SelectedRows.Count > 0 && dgKhewatFareeqainAll.SelectedRows[0].Cells["KhewatGroupFareeqId"].Value.ToString() == retVal)
                         {
                             ExistingArea = dgKhewatFareeqainAll.SelectedRows[0].Cells["Khewat_Area"].Value.ToString().Split('-');
                             LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, retVal, txtKhewatGroupId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(), txtPersonId.Text, dgKhewatFareeqainAll.SelectedRows[0].Cells["FardAreaPart"].Value.ToString(),
@@ -1017,7 +1085,7 @@ namespace SDC_Application.AL
                         else
                         {
                             ExistingArea = "0-0-0-0".Split('-');
-                            LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, "0", txtPersonId.Text, "0",
+                            LastId = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit(txtKhewatGroupFareeqRecId.Text, txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, txtPersonId.Text, txtPersonId.Text, "0",
                             txtPersonNetHissa.Text, ExistingArea[0] != null ? ExistingArea[0] : "0", Area[0] != null ? Area[0] : "0", ExistingArea[1] != null ? ExistingArea[1] : "0", Area[1] != null ? Area[1].ToString() : "0", ExistingArea[2] != null ? (Math.Round(float.Parse(ExistingArea[2]) / 30.25, 5)).ToString() : "0", Area[2] != null ? Area[2].ToString() : "0", ExistingArea[2] != null ? ExistingArea[2] : "0", Area[3] != null ? Area[3].ToString() : "0", "0", cboQismMalik.SelectedValue.ToString(), cbokhataNo.SelectedValue.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", txtPersonHissaBata.Text, "Data Entry", txtSeqNo.Text.Trim(), txtRHZ_ChangeId.Text, txtKhewatGroupFareeqId.Text.Length > 5 ? "Modified" : "Inserted");
 
                         }
@@ -1029,6 +1097,7 @@ namespace SDC_Application.AL
                             PopulateGridviewKhewFareeqByPersonId();
                         }
                     }
+                }
                 }
             }
             catch (Exception ex)
@@ -1057,6 +1126,29 @@ namespace SDC_Application.AL
                 if ((row.Cells["seqno"].Value.ToString() != "" ? Convert.ToInt32(row.Cells["seqno"].Value) : 0) > SeqNo)
                 {
                     SeqNo = Convert.ToInt32(row.Cells["seqno"].Value);
+                }
+            }
+            return SeqNo;
+        }
+        private void ResetMushteriEntryFields()
+        {
+            txtMushteriFareeqId.Text = "-1";
+            //txtKhewatGroupId.Text = "-1";
+            txtPersonIdMushteri.Text = "-1";
+            txtMushtriHisaBata.Clear();
+            txtMushteriHisa.Clear();
+            txtMalikNameMushtri.Clear();
+            txtSeqNoMushtri.Text = (GetMushteriSeqNo() + 1).ToString();
+
+        }
+        private int GetMushteriSeqNo()
+        {
+            int SeqNo = 0;
+            foreach (DataGridViewRow row in dgMushteriFareeqainAll.Rows)
+            {
+                if ((row.Cells["SeqNo"].Value.ToString() != "" ? Convert.ToInt32(row.Cells["SeqNo"].Value) : 0) > SeqNo)
+                {
+                    SeqNo = Convert.ToInt32(row.Cells["SeqNo"].Value);
                 }
             }
             return SeqNo;
@@ -1214,7 +1306,7 @@ namespace SDC_Application.AL
         private void btnSaveKhataProp_Click(object sender, EventArgs e)
         {
 
-            if (txtRHZ_ChangeId.Text != "-1" && txtKhataHissaProp.Text.Trim().Length > 0 && txtKhataKanalProp.Text.Trim().Length > 0 && txtKhataMarlaProp.Text.Trim().Length > 0 && txtKhataSarsaiProp.Text.Trim().Length > 0)
+            if (txtRHZ_ChangeId.Text.Length>5 && txtKhataHissaProp.Text.Trim().Length > 0 && txtKhataKanalProp.Text.Trim().Length > 0 && txtKhataMarlaProp.Text.Trim().Length > 0 && txtKhataSarsaiProp.Text.Trim().Length > 0)
             {
                 if (chkIsNewKhata.Checked)
                 {
@@ -1298,54 +1390,61 @@ namespace SDC_Application.AL
 
         private void btnSaveKhatooni_Click(object sender, EventArgs e)
         {
-
-            if (cboKhatoonies.SelectedValue.ToString().Length > 5 && txtKhatooniNoProp.Text.Trim().Length > 0)
+            if (cbokhataNo.SelectedValue.ToString().Length > 5)
             {
-                string KhatooniNo = ""; string KhatooniKashtkarFullDetails = ""; string KhatooniLagan = ""; string WasaileAbpashi = "";
-                foreach (DataRow row in KhatooniesByKhata.Rows)
+                if (cboKhatoonies.SelectedValue.ToString().Length > 5 && txtKhatooniNoProp.Text.Trim().Length > 0)
                 {
-                    if (row["KhatooniId"].ToString() == cboKhatoonies.SelectedValue.ToString())
+                    string KhatooniNo = ""; string KhatooniKashtkarFullDetails = ""; string KhatooniLagan = ""; string WasaileAbpashi = "";
+                    foreach (DataRow row in KhatooniesByKhata.Rows)
                     {
-                        KhatooniNo = row["KhatooniNo"].ToString();
-                        KhatooniKashtkarFullDetails = row["KhatooniKashtkaranFullDetail_New"].ToString();
-                        KhatooniLagan = row["KhatooniLagan"].ToString();
-                        WasaileAbpashi = row["Wasail_e_Abpashi"].ToString();
-                        break;
+                        if (row["KhatooniId"].ToString() == cboKhatoonies.SelectedValue.ToString())
+                        {
+                            KhatooniNo = row["KhatooniNo"].ToString();
+                            KhatooniKashtkarFullDetails = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                            KhatooniLagan = row["KhatooniLagan"].ToString();
+                            WasaileAbpashi = row["Wasail_e_Abpashi"].ToString();
+                            break;
+                        }
+                    }
+                    try
+                    {
+                        string retVal = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, cboKhatoonies.SelectedValue.ToString(), KhatooniNo, txtKhatooniNoProp.Text.Trim(), KhatooniKashtkarFullDetails, txtKhatooniFullDetailsProp.Text.Trim(), cbokhataNo.SelectedValue.ToString(), WasaileAbpashi, txtWasailAbpashiProp.Text, KhatooniLagan, txtKhatooniLaganProp.Text.Trim(), chkBeahShoda.Checked ? "1" : "0", chkBeahShudaProp.Checked ? "1" : "0", txtKhatooniHissa.Text, txtKhatooniHissaProp.Text.Trim(), txtKhatooniKanal.Text, txtKhatooniKanalProp.Text.Trim(), txtKhatooniMarla.Text, txtKhatooniMarlaProp.Text.Trim(), txtKhatooniSarsai.Text, txtKhatooniSarsaiProp.Text.Trim(), txtKhatooniFeet.Text, txtKhatooniFeetProp.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtRHZ_ChangeId.Text, chkIsNewKhatooni.Checked ? "Inserted" : "Updated");
+                        //MessageBox.Show(retVal);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                try
+                else
                 {
-                    string retVal = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, cboKhatoonies.SelectedValue.ToString(), KhatooniNo, txtKhatooniNoProp.Text.Trim(), KhatooniKashtkarFullDetails, txtKhatooniFullDetailsProp.Text.Trim(), cbokhataNo.SelectedValue.ToString(), WasaileAbpashi, txtWasailAbpashiProp.Text, KhatooniLagan, txtKhatooniLaganProp.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtRHZ_ChangeId.Text, chkIsNewKhatooni.Checked ? "Inserted" : "Updated");
-                    MessageBox.Show(retVal);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                if (txtKhatooniFullDetailsProp.Text.Trim().Length > 1 && txtKhatooniNoProp.Text.Trim().Length > 0)
-                {
-                    if (DialogResult.Yes == MessageBox.Show("آپ نے کوئی کھتونی منتخب نہیں کیا، کیا آپ نیئے کھتونی کااندراج کرنا چاہتے ہے؟", "اندراج کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                    if (txtKhatooniFullDetailsProp.Text.Trim().Length > 1 && txtKhatooniNoProp.Text.Trim().Length > 0)
                     {
-                        try
+                        if (DialogResult.Yes == MessageBox.Show("آپ نے کوئی کھتونی منتخب نہیں کیا، کیا آپ نیئے کھتونی کااندراج کرنا چاہتے ہے؟", "اندراج کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                         {
-                            string retVal = rhz.WEB_SP_INSERT_KhatooniRegister("-1", txtKhatooniNoProp.Text.Trim(), txtKhatooniFullDetails.Text.Trim(), cbokhataNo.SelectedValue.ToString(), txtWasailAbpashi.Text.Trim(), txtKhatooniLagan.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
-                            if (retVal.Length > 5)
+                            try
                             {
-                                string lastId = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, retVal, "0", txtKhatooniNoProp.Text.Trim(), "", txtKhatooniFullDetails.Text.Trim(), cbokhataNo.SelectedValue.ToString(), "", txtWasailAbpashi.Text, "", txtKhatooniLagan.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtRHZ_ChangeId.Text, chkIsNewKhatooni.Checked ? "Inserted" : "Updated");
-                                resetKhatooniFields();
-                                FillKhatooniList();
+                                string retVal = rhz.WEB_SP_INSERT_KhatooniRegister("-1", txtKhatooniNoProp.Text.Trim(), txtKhatooniFullDetails.Text.Trim(), cbokhataNo.SelectedValue.ToString(), txtWasailAbpashi.Text.Trim(), txtKhatooniLagan.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                                if (retVal.Length > 5)
+                                {
+                                    string lastId = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, retVal, "0", txtKhatooniNoProp.Text.Trim(), "", txtKhatooniFullDetails.Text.Trim(), cbokhataNo.SelectedValue.ToString(), "", txtWasailAbpashi.Text, "", txtKhatooniLagan.Text.Trim(), chkBeahShoda.Checked ? "1" : "0", chkBeahShudaProp.Checked ? "1" : "0", txtKhatooniHissa.Text, txtKhatooniHissaProp.Text.Trim(), txtKhatooniKanal.Text, txtKhatooniKanalProp.Text.Trim(), txtKhatooniMarla.Text, txtKhatooniMarlaProp.Text.Trim(), txtKhatooniSarsai.Text, txtKhatooniSarsaiProp.Text.Trim(), txtKhatooniFeet.Text, txtKhatooniFeetProp.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtRHZ_ChangeId.Text, chkIsNewKhatooni.Checked ? "Inserted" : "Updated");
+                                    resetKhatooniFields();
+                                    FillKhatooniList();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
                     }
                 }
+                dtKhatooniesEdited = Khatooni.GetKhatooniEditedByKhataId(KhataId);
+                fillKhatooniGridView();
             }
+            else
+                MessageBox.Show("مجوزہ کھتونی محفوظ کرنے سے پہلے کھاتے کا انتخاب کریں۔");
         }
 
         private void btnNewKhatooni_Click(object sender, EventArgs e)
@@ -1359,28 +1458,45 @@ namespace SDC_Application.AL
         {
             if (DialogResult.Yes == MessageBox.Show("آپ نے کوئی کھتونی منتخب نہیں کیا، کیا آپ انتخاب کردہ کھتونی کو حذف کرنا چاہتے ہے؟", "حذف کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
-                try
+                if (txtKhatooniRecId.Text.Length > 5 && dgKhatooniesEdit.SelectedRows.Count>0)
                 {
-                    if (cboKhatoonies.SelectedValue.ToString().Length > 5)
+                    try
                     {
-                        string KhatooniNo = ""; string KhatooniKashtkarFullDetails = ""; string KhatooniLagan = ""; string WasaileAbpashi = "";
-                        foreach (DataRow row in KhatooniesByKhata.Rows)
-                        {
-                            if (row["KhatooniId"].ToString() == cboKhatoonies.SelectedValue.ToString())
-                            {
-                                KhatooniNo = row["KhatooniNo"].ToString();
-                                KhatooniKashtkarFullDetails = row["KhatooniKashtkaranFullDetail_New"].ToString();
-                                KhatooniLagan = row["KhatooniLagan"].ToString();
-                                WasaileAbpashi = row["Wasail_e_Abpashi"].ToString();
-                                break;
-                            }
-                        }
-                        string retVal = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, cboKhatoonies.SelectedValue.ToString(), KhatooniNo, txtKhatooniNoProp.Text.Trim(), KhatooniKashtkarFullDetails, txtKhatooniFullDetailsProp.Text.Trim(), cbokhataNo.SelectedValue.ToString(), WasaileAbpashi, txtWasailAbpashiProp.Text, KhatooniLagan, txtKhatooniLaganProp.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtRHZ_ChangeId.Text, "deleted");
-
+                        string retVal = rhz.DeleteKhatooniEdit(txtKhatooniRecId.Text);
+                        dtKhatooniesEdited = Khatooni.GetKhatooniEditedByKhataId(cbokhataNo.SelectedValue.ToString());
+                        fillKhatooniGridView();
                     }
+                    catch (Exception ex)
+                    { MessageBox.Show(ex.Message); }
+                    
                 }
-                catch (Exception ex)
-                { MessageBox.Show(ex.Message); }
+                else if (txtKhatooniNoProp.Text.Trim() == "0" && txtKhatooniRecId.Text.Length<5)
+                {
+                    try
+                    {
+                        if (cboKhatoonies.SelectedValue.ToString().Length > 5)
+                        {
+                            string KhatooniNo = ""; string KhatooniKashtkarFullDetails = ""; string KhatooniLagan = ""; string WasaileAbpashi = "";
+                            foreach (DataRow row in KhatooniesByKhata.Rows)
+                            {
+                                if (row["KhatooniId"].ToString() == cboKhatoonies.SelectedValue.ToString())
+                                {
+                                    KhatooniNo = row["KhatooniNo"].ToString();
+                                    KhatooniKashtkarFullDetails = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                                    KhatooniLagan = row["KhatooniLagan"].ToString();
+                                    WasaileAbpashi = row["Wasail_e_Abpashi"].ToString();
+                                    break;
+                                }
+                            }
+                            string retVal = rhz.WEB_SP_INSERT_KhatooniRegisterEdit(txtKhatooniRecId.Text, cboKhatoonies.SelectedValue.ToString(), KhatooniNo, txtKhatooniNoProp.Text.Trim(), KhatooniKashtkarFullDetails, txtKhatooniFullDetailsProp.Text.Trim(), cbokhataNo.SelectedValue.ToString(), WasaileAbpashi, txtWasailAbpashiProp.Text, KhatooniLagan, txtKhatooniLaganProp.Text.Trim(), chkBeahShoda.Checked ? "1" : "0", chkBeahShudaProp.Checked ? "1" : "0", txtKhatooniHissa.Text, txtKhatooniHissaProp.Text.Trim(), txtKhatooniKanal.Text, txtKhatooniKanalProp.Text.Trim(), txtKhatooniMarla.Text, txtKhatooniMarlaProp.Text.Trim(), txtKhatooniSarsai.Text, txtKhatooniSarsaiProp.Text.Trim(), txtKhatooniFeet.Text, txtKhatooniFeetProp.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, txtRHZ_ChangeId.Text, "deleted");
+
+                        }
+                    }
+                    catch (Exception ex)
+                    { MessageBox.Show(ex.Message); }
+                }
+                else
+                    MessageBox.Show("کھتونی حذف کرنے کیلئے مجوزہ کھتونی نمبر 0 کریں","کھتونی حذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1663,7 +1779,12 @@ namespace SDC_Application.AL
                         string retVal = rhz.RHZ_ChangeImplementation(txtRHZ_ChangeId.Text);
                         if (retVal.Length > 5)
                             MessageBox.Show("انتخاب کردہ ریکارڈ پر عمل درامد ہو چکا ہے۔");
-                        cbSrNo_SelectionChangeCommitted(sender, e);
+                        //cmbMouza_SelectionChangeCommitted(sender, e);
+                        //cbSrNo_SelectionChangeCommitted(sender, e);
+                        txtSerialNo.Text = getNextSrNoByMoza(cmbMouza.SelectedValue.ToString());
+                        fillSrNoCombo();
+                        cbokhataNo.SelectedValue = 0;
+                        tabControlMain.Enabled = false;
                     }
                     else
                         MessageBox.Show("عملدارمد کرنے کیلئے پہلے ریکارڈ کا انتخاب کریں", "ناقابل عمل", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1727,8 +1848,8 @@ namespace SDC_Application.AL
             txtSerialNo.Text = row[0]["SrNo"].ToString();
             txtRHZ_ChangeId.Text = row[0]["RHZ_ChangeId"].ToString();
             txtDetails.Text = row[0]["ChangeDetails"].ToString();
-            tabControlMain.Enabled = row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false;//ImplemnetedBy
             ImplementedBy = row[0]["ImplemnetedBy"].ToString() == "0" ? false : true;
+            tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false) : false;//ImplemnetedBy
             PopulateDgKhataJatEdited();
             FillDgFBAfrad();
             btnImplementChanges.Enabled = UsersManagments._IsAdmin && !ImplementedBy;
@@ -1773,18 +1894,18 @@ namespace SDC_Application.AL
                         {
                             row.Cells["dgKhataEditColSel"].Value = true;
                             bool KhataStatus = (bool)row.Cells["RecStatus"].Value;
-                            if (KhataStatus)
-                            {
+                            //if (KhataStatus)
+                            //{
                                 cbokhataNo.SelectedValue = row.Cells["RegisterHqDKhataId"].Value;
                                 cbokhataNo.Text = row.Cells["KhataNo"].Value.ToString();
-                                cbokhataNo_SelectionChangeCommitted(sender, e);
-                                cbokhataNo.Enabled = true;
-                            }
-                            else
-                            {
+                                //cbokhataNo_SelectionChangeCommitted(sender, e);
+                                cbokhataNo.Enabled = KhataStatus;
+                            //}
+                            //else
+                            //{
                                 txtKhataNoProp.Text = row.Cells["KhataNoProp"].Value.ToString();
                                 cbokhataNo.Text = row.Cells["KhataNo"].Value.ToString();
-                                cbokhataNo.Enabled = false;
+                                //cbokhataNo.Enabled = false;
                                 this.txtKhataHissa.Text = row.Cells["TotalParts"].Value.ToString();
                                 txtKhataHissaProp.Text = row.Cells["TotalPartsProp"].Value.ToString();
                                 txtKhataMeezanKulHissay.Text = row.Cells["TotalParts"].Value.ToString();
@@ -1801,7 +1922,8 @@ namespace SDC_Application.AL
                                 txtKhataKifiatProp.Text = row.Cells["KyfiatProp"].Value.ToString();
                                 this.KhataId = row.Cells["RegisterHqDKhataId"].Value.ToString();
                                 txtKhataRecId.Text = row.Cells["KhataRecId"].Value.ToString();
-                            }
+                                cbokhataNo_SelectionChangeCommitted(sender, e);
+                            //}
                         }
                         else
                             row.Cells["dgKhataEditColSel"].Value = false;
@@ -1976,6 +2098,83 @@ namespace SDC_Application.AL
                     dgFBAfrad.SelectedRows[0].Cells["ColSelPerson"].Value = false;
                 }
             }
+        }
+
+        private void dgMushteriFareeqainDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgKhatooniesEdit_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach(DataGridViewRow row in dgKhatooniesEdit.Rows)
+            {
+                if (row.Selected)
+                {
+                    row.Cells["ColSelKhatooni"].Value = true;
+                    //txtKhatooniLaganProp.Text = row.Cells["KhatooniLaganProp"].ToString();
+                    txtKhatooniNoProp.Text = row.Cells["KhatooniNoProp"].Value.ToString();
+                    //txtWasailAbpashiProp.Text = row.Cells["Wasail_e_AbpashiProp"].ToString();
+                    txtKhatooniFullDetails.Text = row.Cells["KhatooniKashtkaranFullDetail_New"].Value.ToString();
+                    txtKhatooniFullDetailsProp.Text = row.Cells["KhatooniKashtkaranFullDetail_NewProp"].Value.ToString();
+                    txtKhatooniRecId.Text = row.Cells["KhatooniRecId"].Value.ToString();
+                    chkBeahShoda.Checked = Convert.ToBoolean(row.Cells["Beahshuda"].Value.ToString());
+                    chkBeahShudaProp.Checked = Convert.ToBoolean(row.Cells["BeahShudaProp"].Value.ToString());
+                    txtKhatooniHissa.Text = row.Cells["Hissa"].Value.ToString();
+                    txtKhatooniHissaProp.Text = row.Cells["HissaProp"].Value.ToString();
+                    txtKhatooniKanal.Text = row.Cells["Kanal"].Value.ToString();
+                    txtKhatooniKanalProp.Text = row.Cells["KanalProp"].Value.ToString();
+                    txtKhatooniMarla.Text = row.Cells["Marla"].Value.ToString();
+                    txtKhatooniMarlaProp.Text = row.Cells["MarlaProp"].Value.ToString();
+                    txtKhatooniSarsai.Text = row.Cells["Sarsai"].Value.ToString();
+                    txtKhatooniSarsaiProp.Text = row.Cells["SarsaiProp"].Value.ToString();
+                    txtKhatooniFeet.Text = row.Cells["Feet"].Value.ToString();
+                    txtKhatooniFeetProp.Text = row.Cells["FeetProp"].Value.ToString();
+                }
+                else
+                    row.Cells["ColSelKhatooni"].Value = false;
+            }
+        }
+
+        private void txtKhatooniNoProp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((e.KeyChar != 8 && e.KeyChar != 13) && (e.KeyChar < 45 || e.KeyChar > 58))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNewMushteri_Click(object sender, EventArgs e)
+        {
+            ResetMushteriEntryFields();
+            frmSearchPerson person = new frmSearchPerson();
+            person.MozaId = cmbMouza.SelectedValue.ToString();
+            person.FormClosed -= new FormClosedEventHandler(person_FormClosed);
+            person.FormClosed += new FormClosedEventHandler(person_FormClosed);
+            person.ShowDialog();
+        }
+
+        void person_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmSearchPerson p = sender as frmSearchPerson;
+            txtPersonIdMushteri.Text = p.PersonId.ToString();
+            txtMalikNameMushtri.Text = p.PersonName;
+        }
+
+        private void btnSelectPersonMushteri_Click(object sender, EventArgs e)
+        {
+            frmSearchPerson person = new frmSearchPerson();
+            person.MozaId = cmbMouza.SelectedValue.ToString();
+            person.FormClosed -= new FormClosedEventHandler(person_FormClosed);
+            person.FormClosed += new FormClosedEventHandler(person_FormClosed);
+            person.ShowDialog();
         }
     }
 }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -59,6 +59,7 @@
             this.cboKhassraList = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dtpDateGardawari = new System.Windows.Forms.ComboBox();
             this.btnSaveGardawriMain = new System.Windows.Forms.Button();
             this.txtGardawriId = new System.Windows.Forms.TextBox();
             this.btnPrintGardawriTemplete = new System.Windows.Forms.Button();
@@ -102,7 +103,6 @@
             this.btnAmaldaramad = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dtpDateGardawari = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabKhassraGardawriEntry.SuspendLayout();
@@ -183,8 +183,8 @@
             // 
             this.GridViewKhassraGardawri.AllowUserToAddRows = false;
             this.GridViewKhassraGardawri.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.AliceBlue;
-            this.GridViewKhassraGardawri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.GridViewKhassraGardawri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridViewKhassraGardawri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewKhassraGardawri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewKhassraGardawri.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -194,8 +194,8 @@
             this.GridViewKhassraGardawri.MultiSelect = false;
             this.GridViewKhassraGardawri.Name = "GridViewKhassraGardawri";
             this.GridViewKhassraGardawri.ReadOnly = true;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewKhassraGardawri.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridViewKhassraGardawri.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.GridViewKhassraGardawri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridViewKhassraGardawri.Size = new System.Drawing.Size(1412, 149);
             this.GridViewKhassraGardawri.TabIndex = 1;
@@ -288,11 +288,11 @@
             this.chkChangeInKashtQabza.AutoSize = true;
             this.chkChangeInKashtQabza.Checked = true;
             this.chkChangeInKashtQabza.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkChangeInKashtQabza.Location = new System.Drawing.Point(1135, 128);
+            this.chkChangeInKashtQabza.Location = new System.Drawing.Point(1166, 128);
             this.chkChangeInKashtQabza.Name = "chkChangeInKashtQabza";
-            this.chkChangeInKashtQabza.Size = new System.Drawing.Size(252, 35);
+            this.chkChangeInKashtQabza.Size = new System.Drawing.Size(221, 35);
             this.chkChangeInKashtQabza.TabIndex = 107;
-            this.chkChangeInKashtQabza.Text = "تبدیلی حقوق کاشت وغیرہ میں کوئی تبدیلی نہیں";
+            this.chkChangeInKashtQabza.Text = "حقوق کاشت وغیرہ میں کوئی تبدیلی نہیں";
             this.chkChangeInKashtQabza.UseVisualStyleBackColor = true;
             this.chkChangeInKashtQabza.CheckedChanged += new System.EventHandler(this.chkChangeInKashtQabza_CheckedChanged);
             // 
@@ -447,6 +447,39 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1418, 68);
             this.panel4.TabIndex = 1;
+            // 
+            // dtpDateGardawari
+            // 
+            this.dtpDateGardawari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDateGardawari.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dtpDateGardawari.FormattingEnabled = true;
+            this.dtpDateGardawari.Items.AddRange(new object[] {
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035"});
+            this.dtpDateGardawari.Location = new System.Drawing.Point(740, 13);
+            this.dtpDateGardawari.Name = "dtpDateGardawari";
+            this.dtpDateGardawari.Size = new System.Drawing.Size(86, 39);
+            this.dtpDateGardawari.TabIndex = 207;
+            this.dtpDateGardawari.SelectionChangeCommitted += new System.EventHandler(this.cboHarifRabeah_SelectionChangeCommitted);
             // 
             // btnSaveGardawriMain
             // 
@@ -632,8 +665,8 @@
             // 
             this.dgKhassraDetails.AllowUserToAddRows = false;
             this.dgKhassraDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgKhassraDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgKhassraDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgKhassraDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgKhassraDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKhassraDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -643,8 +676,8 @@
             this.dgKhassraDetails.MultiSelect = false;
             this.dgKhassraDetails.Name = "dgKhassraDetails";
             this.dgKhassraDetails.ReadOnly = true;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgKhassraDetails.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgKhassraDetails.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgKhassraDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhassraDetails.Size = new System.Drawing.Size(1412, 329);
             this.dgKhassraDetails.TabIndex = 121;
@@ -958,39 +991,6 @@
             this.toolTip1.SetToolTip(this.btnConfirm, "آپریٹر خسرہ گرداوری کے اندراج ک بعد مقابلے کیلئے کیلئے فائنل کریں");
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // dtpDateGardawari
-            // 
-            this.dtpDateGardawari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDateGardawari.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dtpDateGardawari.FormattingEnabled = true;
-            this.dtpDateGardawari.Items.AddRange(new object[] {
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035"});
-            this.dtpDateGardawari.Location = new System.Drawing.Point(740, 13);
-            this.dtpDateGardawari.Name = "dtpDateGardawari";
-            this.dtpDateGardawari.Size = new System.Drawing.Size(86, 39);
-            this.dtpDateGardawari.TabIndex = 207;
-            this.dtpDateGardawari.SelectionChangeCommitted += new System.EventHandler(this.cboHarifRabeah_SelectionChangeCommitted);
             // 
             // frmKhassraGardawri
             // 

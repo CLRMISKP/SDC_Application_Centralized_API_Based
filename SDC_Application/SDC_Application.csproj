@@ -34,13 +34,13 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://172.16.100.11/</InstallUrl>
-    <ProductName>Centralized Land Record Management Information Center</ProductName>
+    <ProductName>CLRMIS</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
-    <SuiteName>CLRMIS</SuiteName>
+    <SuiteName>Land Records Management Information System</SuiteName>
     <MinimumRequiredVersion>1.0.0.34</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>40</ApplicationRevision>
+    <ApplicationRevision>43</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -172,6 +172,12 @@
     <Compile Include="AL\frmAdminPendingTaskDashboard.Designer.cs">
       <DependentUpon>frmAdminPendingTaskDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="AL\frmFardManhai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFardManhai.designer.cs">
+      <DependentUpon>frmFardManhai.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqal_TaxBankChallanTTx.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -227,6 +233,18 @@
     </Compile>
     <Compile Include="AL\frmMISC.Designer.cs">
       <DependentUpon>frmMISC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmQabzUlWassol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmQabzUlWassol.designer.cs">
+      <DependentUpon>frmQabzUlWassol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmQabzUlWassolByTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmQabzUlWassolByTypes.designer.cs">
+      <DependentUpon>frmQabzUlWassolByTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmRhzSDCEditing.cs">
       <SubType>Form</SubType>
@@ -1127,6 +1145,9 @@
     <EmbeddedResource Include="AL\frmAdminPendingTaskDashboard.resx">
       <DependentUpon>frmAdminPendingTaskDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmFardManhai.resx">
+      <DependentUpon>frmFardManhai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqal_TaxBankChallanTTx.resx">
       <DependentUpon>frmIntiqal_TaxBankChallanTTx.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1154,6 +1175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmMISC.resx">
       <DependentUpon>frmMISC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmQabzUlWassol.resx">
+      <DependentUpon>frmQabzUlWassol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmQabzUlWassolByTypes.resx">
+      <DependentUpon>frmQabzUlWassolByTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmRhzSDCEditing.resx">
       <DependentUpon>frmRhzSDCEditing.cs</DependentUpon>

@@ -299,7 +299,7 @@ namespace SDC_Application.AL
                     //{
                     // KhanaKasht = true;
                     // }
-                    string intiqalNo = txtIntiqalNo.Text.Trim() != "" ? txtIntiqalNo.Text.ToString() : "NULL";
+                    string intiqalNo = txtIntiqalNo.Text.Trim().Length>0 ? txtIntiqalNo.Text.ToString() : "NULL";
                     string hawalaNo = txtHawalaNo.Text.Trim() != "" ? txtHawalaNo.Text.ToString() : "NULL";
                     string intiqalTypeId = cboIntiqalType.SelectedValue.ToString();
                     string intiqalInitaionId = cboIntiqalInitiation.SelectedValue.ToString();
