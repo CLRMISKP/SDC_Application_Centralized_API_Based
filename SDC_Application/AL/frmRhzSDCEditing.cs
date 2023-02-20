@@ -77,6 +77,7 @@ namespace SDC_Application.AL
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             objauto.FillCombo("Proc_Get_KhewatTypes  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboQismMalik, "KhewatType", "KhewatTypeId");
+            objauto.FillCombo("Proc_Get_KhewatTypes  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cbMushtriKhewatType, "KhewatType", "KhewatTypeId");
             objauto.FillCombo("Proc_Get_Qoam_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cbQoam, "Qoam", "QoamId");
             objauto.FillCombo("Proc_Get_Qoam_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cbQoamExisted, "Qoam", "QoamId");
         }
@@ -591,6 +592,7 @@ namespace SDC_Application.AL
                         }
 
                         this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
+                        FillMushteriFareeqainEdit();
                         this.GetKhatooniBayan(cboKhatoonies.SelectedValue.ToString());
                         btnLoadKhassras_Click(sender, e);
                     }
@@ -878,25 +880,25 @@ namespace SDC_Application.AL
         {
             try
             {
-                dgMushteriFareeqainDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-                dgMushteriFareeqainDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                dgMushteriFareeqainDetails.Columns["PersonName"].HeaderText = "نام مالک";
-                dgMushteriFareeqainDetails.Columns["TransactionType"].HeaderText = "زریعہ";
-                dgMushteriFareeqainDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                dgMushteriFareeqainDetails.Columns["IntiqalId"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-                dgMushteriFareeqainDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
-                dgMushteriFareeqainDetails.Columns["KhewatType"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["FardPart_Bata"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["seqno"].HeaderText = "نمبر شمار";
-                dgMushteriFareeqainDetails.Columns["MushtriFareeqId"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["KhatooniId"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["PersonId"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["KhewatTypeId"].Visible = false;
-                dgMushteriFareeqainDetails.Columns["RecStatus"].HeaderText = "حالت";
-                dgMushteriFareeqainDetails.Columns["PersonName"].DisplayIndex = 2;
-                dgMushteriFareeqainDetails.Columns["TransactionType"].DisplayIndex = 3;
-                dgMushteriFareeqainDetails.Columns["seqno"].DisplayIndex = 1;
+                dgMushteriFareeqainEdit.Columns["FardAreaPart"].HeaderText = "حصہ";
+                dgMushteriFareeqainEdit.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                dgMushteriFareeqainEdit.Columns["PersonName"].HeaderText = "نام مالک";
+                dgMushteriFareeqainEdit.Columns["TransactionType"].HeaderText = "زریعہ";
+                dgMushteriFareeqainEdit.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                dgMushteriFareeqainEdit.Columns["IntiqalId"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                dgMushteriFareeqainEdit.Columns["SellerBuyer"].HeaderText = "حیثیت";
+                dgMushteriFareeqainEdit.Columns["KhewatType"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["FardPart_Bata"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["seqno"].HeaderText = "نمبر شمار";
+                dgMushteriFareeqainEdit.Columns["MushtriFareeqId"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["KhatooniId"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["PersonId"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["KhewatTypeId"].Visible = false;
+                dgMushteriFareeqainEdit.Columns["RecStatus"].HeaderText = "حالت";
+                dgMushteriFareeqainEdit.Columns["PersonName"].DisplayIndex = 2;
+                dgMushteriFareeqainEdit.Columns["TransactionType"].DisplayIndex = 3;
+                dgMushteriFareeqainEdit.Columns["seqno"].DisplayIndex = 1;
 
             }
             catch (Exception ex)
@@ -925,7 +927,7 @@ namespace SDC_Application.AL
                             string KhatooniId = row.Cells["KhatooniId"].Value.ToString();
                             DataTable dtMushteriFareeqainByPerson = new DataTable();
                             dtMushteriFareeqainByPerson = khatooni.MushteriFareeqByKhatooniIdPersonId(KhatooniId, personId);
-                            this.dgMushteriFareeqainDetails.DataSource = dtMushteriFareeqainByPerson;
+                            this.dgMushteriFareeqainEdit.DataSource = dtMushteriFareeqainByPerson;
                             PopulateGridviewMushteriFareeqByPersonId();
 
                         }
@@ -1133,12 +1135,15 @@ namespace SDC_Application.AL
         private void ResetMushteriEntryFields()
         {
             txtMushteriFareeqId.Text = "-1";
+            txtMushteriFareeqRecId.Text = "-1";
             //txtKhewatGroupId.Text = "-1";
             txtPersonIdMushteri.Text = "-1";
             txtMushtriHisaBata.Clear();
             txtMushteriHisa.Clear();
             txtMalikNameMushtri.Clear();
             txtSeqNoMushtri.Text = (GetMushteriSeqNo() + 1).ToString();
+            chkRecStatus.Checked = true;
+            cbMushtriKhewatType.SelectedValue = 0;
 
         }
         private int GetMushteriSeqNo()
@@ -2102,7 +2107,39 @@ namespace SDC_Application.AL
 
         private void dgMushteriFareeqainDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            foreach (DataGridViewRow row in dgMushteriFareeqainAll.Rows)
+            {
+                if (row.Selected)
+                {
+                    ResetMushteriEntryFields();
+                    row.Cells["ColSelMushtri"].Value = true;
+                    //txtKhatooniLaganProp.Text = row.Cells["KhatooniLaganProp"].ToString();
+                    txtMushteriFareeqId.Text = row.Cells["MushtriFareeqId"].Value.ToString();
+                    txtMalikNameMushtri.Text = row.Cells["CompleteName"].Value.ToString();
+                    txtPersonIdMushteri.Text = row.Cells["PersonId"].Value.ToString();
+                    txtMushteriHisa.Text = row.Cells["FardAreaPart"].Value.ToString();
+                    txtMushtriHisaBata.Text = row.Cells["FardPart_Bata"].Value.ToString();
+                    txtSeqNoMushtri.Text = row.Cells["SeqNo"].Value.ToString();
+                    cbMushtriKhewatType.SelectedValue = row.Cells["KhewatTypeId"].Value;
+                    chkRecStatus.Checked = row.Cells["RecStatus"].Value.ToString()=="موجودہ"?true:false;
+                    foreach (DataGridViewRow r in dgMushteriFareeqainEdit.Rows) //ColSelMushtriEdit\
+                    {
+                        if (r.Cells["MushtriFareeqId"].Value.ToString() == row.Cells["MushtriFareeqId"].Value.ToString())
+                        {
+                            txtMushteriFareeqRecId.Text = r.Cells["MushteriFareeqRecId"].Value.ToString();
+                            txtPersonIdMushteri.Text = r.Cells["PersonId_Proposed"].Value.ToString();
+                            txtMalikNameMushtri.Text = r.Cells["NameProp"].Value.ToString();
+                            txtMushteriHisa.Text = r.Cells["FardAreaPart_Proposed"].Value.ToString();
+                            txtMushtriHisaBata.Text = r.Cells["FardPart_Bata_Proposed"].Value.ToString();
+                            cbMushtriKhewatType.SelectedValue = r.Cells["KhewatTypeIdProposed"].Value;
+                            chkRecStatus.Checked = bool.Parse(r.Cells["RecStatusProp"].Value.ToString());
+                            txtSeqNoMushtri.Text = r.Cells["SeqNoProp"].Value.ToString();
+                        }
+                    }
+                }
+                else
+                    row.Cells["ColSelMushtri"].Value = false;
+            }
         }
 
         private void dgKhatooniesEdit_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2175,6 +2212,121 @@ namespace SDC_Application.AL
             person.FormClosed -= new FormClosedEventHandler(person_FormClosed);
             person.FormClosed += new FormClosedEventHandler(person_FormClosed);
             person.ShowDialog();
+        }
+
+        private void btnSaveMushteriFareeq_Click(object sender, EventArgs e)
+        {
+            if (txtPersonIdMushteri.Text.Length > 5 && cboKhatoonies.SelectedValue.ToString().Length > 5 && cbMushtriKhewatType.SelectedValue.ToString().Length > 2 && txtMushteriHisa.Text.Trim().Length > 0 && txtSeqNoMushtri.Text.Length>0)
+            {
+                if(txtKhatooniHissa.Text.Length<1 || txtKhatooniKanal.Text.Length<1 || txtKhatooniMarla.Text.Length<1 || txtKhatooniSarsai.Text.Length<1 )
+                {
+                    MessageBox.Show("کھتونی کے حصے اور رقبہ چیک کریں۔ مشتری محفوظ کرنے سے پہلے کھتونی کے حصص اور رقبہ کا تعین ضروری ہیں۔", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                string[] Area= cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhatooniHissa.Text), float.Parse(txtMushteriHisa.Text), int.Parse(txtKhatooniKanal.Text), int.Parse(txtKhatooniMarla.Text), float.Parse(txtKhatooniSarsai.Text), float.Parse(txtKhatooniFeet.Text));
+                string retVal = "0";
+                if (txtMushteriFareeqId.Text == "-1")
+                {
+                    retVal = khatooni.SaveMushtriFareeqein(txtMushteriFareeqId.Text, "0", "Data Entry", "0", cboKhatoonies.SelectedValue.ToString(), txtSeqNoMushtri.Text, txtPersonIdMushteri.Text, "0", cbMushtriKhewatType.SelectedValue.ToString(), "0", "0", "0", "0", "0", "0", UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    txtMushteriFareeqId.Text = retVal;
+                }
+                if (txtMushteriFareeqId.Text.Length > 5)
+                {
+                    retVal = rhz.SaveMushteriFareeqEdit(txtMushteriFareeqRecId.Text, cbSrNo.SelectedValue.ToString(), txtMushteriFareeqId.Text, txtPersonIdMushteri.Text, cbMushtriKhewatType.SelectedValue.ToString(), txtMushteriHisa.Text, txtMushtriHisaBata.Text, Area[0] != null ? Area[0] : "0", Area[1] != null ? Area[1] : "0", Area[2] != null ? Area[2] : "0", Area[3] != null ? Area[3] : "0", UsersManagments.UserId.ToString(), UsersManagments.UserName, chkRecStatus.Checked ? "1" : "0", txtSeqNoMushtri.Text);
+                    FillMushteriFareeqainEdit();
+                    ResetMushteriEntryFields();
+                }
+                }
+            }
+            else
+                MessageBox.Show("مشتری کے تمام کوائف پر کریں");
+        }
+
+        private void FillMushteriFareeqainEdit()
+        {
+                    DataTable dtMushteriFareeqainEdit = rhz.GetMushteriFareeqainEdit(cboKhatoonies.SelectedValue.ToString());
+                    dgMushteriFareeqainEdit.DataSource = dtMushteriFareeqainEdit;
+                    dgMushteriFareeqainEdit.Columns["CompleteName"].HeaderText = "نام مالک";
+                    dgMushteriFareeqainEdit.Columns["NameProp"].HeaderText = "مجوزہ نام";
+                    dgMushteriFareeqainEdit.Columns["KhewatType"].HeaderText = "قسم ملکیت";
+                    dgMushteriFareeqainEdit.Columns["KhewatTypeProp"].HeaderText = "مجوزہ قسم";
+                    dgMushteriFareeqainEdit.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    dgMushteriFareeqainEdit.Columns["FardAreaPart_Proposed"].HeaderText = "مجوزہ حصہ";
+                    dgMushteriFareeqainEdit.Columns["Area"].HeaderText = "رقبہ";
+                    dgMushteriFareeqainEdit.Columns["AreaProp"].HeaderText = "مجوزہ رقبہ";
+                    dgMushteriFareeqainEdit.Columns["RecStatus"].HeaderText = "حالت";
+                    dgMushteriFareeqainEdit.Columns["SeqNo"].HeaderText = "نمبر شمار";
+                    dgMushteriFareeqainEdit.Columns["SeqNoProp"].HeaderText = "نمبرمجوزہ";
+                    dgMushteriFareeqainEdit.Columns["MushteriFareeqRecId"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["MushtriFareeqId"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["PersonId"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["PersonId_Proposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["KhewatTypeId"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["KhewatTypeIdProposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Farad_Kanal"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Farad_Kanal_Proposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Fard_Marla"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Fard_Marla_Proposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Fard_Sarsai"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Fard_Sarsai_Proposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Fard_Feet"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["Fard_Feet_Proposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["FardPart_Bata"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["FardPart_Bata_Proposed"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["RecStatus"].Visible = false;
+                    dgMushteriFareeqainEdit.Columns["RecStatusProp"].Visible = false;
+               
+        }
+
+        private void dgMushteriFareeqainEdit_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ResetMushteriEntryFields();
+            foreach (DataGridViewRow r in dgMushteriFareeqainEdit.Rows) //ColSelMushtriEdit\
+            {
+                
+                if (r.Selected)
+                {
+                    r.Cells["ColSelMushtriEdit"].Value = true;
+                    txtMushteriFareeqRecId.Text = r.Cells["MushteriFareeqRecId"].Value.ToString();
+                    txtPersonIdMushteri.Text = r.Cells["PersonId_Proposed"].Value.ToString();
+                    txtMalikNameMushtri.Text = r.Cells["NameProp"].Value.ToString();
+                    txtMushteriHisa.Text = r.Cells["FardAreaPart_Proposed"].Value.ToString();
+                    txtMushtriHisaBata.Text = r.Cells["FardPart_Bata_Proposed"].Value.ToString();
+                    cbMushtriKhewatType.SelectedValue = r.Cells["KhewatTypeIdProposed"].Value;
+                    chkRecStatus.Checked = bool.Parse(r.Cells["RecStatusProp"].Value.ToString());
+                }
+                else
+                    r.Cells["ColSelMushtriEdit"].Value=false;
+            }
+        }
+
+        private void txtMushtriHisaBata_Leave(object sender, EventArgs e)
+        {
+            this.txtMushteriHisa.Text = this.calculateNetPart(this.txtMushtriHisaBata.Text.Trim().Length > 0 ? txtMushtriHisaBata.Text.Trim() : "0").ToString();
+        }
+
+        private void btnDelMushteri_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show(" کیا آپ انتخاب کردہ مجوزہ مشتری کو حذف کرنا چاہتے ہے؟", "حذف کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    if (txtMushteriFareeqRecId.Text.Length > 5)
+                    {
+                       string retVal= rhz.DeleteMushtriFareeqEdit(txtMushteriFareeqRecId.Text);
+                       if (retVal.Length > 5)
+                       {
+                           ResetMushteriEntryFields();
+                           FillMushteriFareeqainEdit();
+                       }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

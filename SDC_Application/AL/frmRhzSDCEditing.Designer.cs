@@ -240,11 +240,15 @@
             this.tabMushteryan = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.dgMushteriFareeqainAll = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColSelMushtri = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.dgMushteriFareeqainDetails = new System.Windows.Forms.DataGridView();
-            this.ColSelMushtery = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgMushteriFareeqainEdit = new System.Windows.Forms.DataGridView();
+            this.ColSelMushtriEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.chkRecStatus = new System.Windows.Forms.CheckBox();
+            this.txtMushteriFareeqRecId = new System.Windows.Forms.TextBox();
+            this.txtMushteriFareeqId = new System.Windows.Forms.TextBox();
+            this.txtPersonIdMushteri = new System.Windows.Forms.TextBox();
             this.btnNewMushteri = new System.Windows.Forms.Button();
             this.btnSaveMushteriFareeq = new System.Windows.Forms.Button();
             this.btnDelMushteri = new System.Windows.Forms.Button();
@@ -313,8 +317,6 @@
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.txtPersonIdMushteri = new System.Windows.Forms.TextBox();
-            this.txtMushteriFareeqId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -355,7 +357,7 @@
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainAll)).BeginInit();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainEdit)).BeginInit();
             this.panel12.SuspendLayout();
             this.tabNamChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFBAfrad)).BeginInit();
@@ -1357,6 +1359,8 @@
             // cboQismMalik
             // 
             this.cboQismMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboQismMalik.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboQismMalik.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboQismMalik.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboQismMalik.FormattingEnabled = true;
             this.cboQismMalik.Location = new System.Drawing.Point(590, 53);
@@ -1364,6 +1368,7 @@
             this.cboQismMalik.Size = new System.Drawing.Size(155, 31);
             this.cboQismMalik.TabIndex = 232;
             this.tt.SetToolTip(this.cboQismMalik, "مجوزہ / درست قسم مالکیت");
+            this.cboQismMalik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMouza_KeyPress);
             // 
             // btnSearchPerson
             // 
@@ -2069,7 +2074,7 @@
             this.cboKhatoonies.TabIndex = 25;
             this.tt.SetToolTip(this.cboKhatoonies, "موجودہ کھتونی نمبر");
             this.cboKhatoonies.ValueMember = "KhatooniId";
-            this.cboKhatoonies.SelectedIndexChanged += new System.EventHandler(this.cboKhatoonies_SelectionChangeCommitted);
+            this.cboKhatoonies.SelectionChangeCommitted += new System.EventHandler(this.cboKhatoonies_SelectionChangeCommitted);
             // 
             // label19
             // 
@@ -2348,12 +2353,15 @@
             // cboAreaType
             // 
             this.cboAreaType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboAreaType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboAreaType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboAreaType.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAreaType.FormattingEnabled = true;
             this.cboAreaType.Location = new System.Drawing.Point(778, 16);
             this.cboAreaType.Name = "cboAreaType";
             this.cboAreaType.Size = new System.Drawing.Size(141, 39);
             this.cboAreaType.TabIndex = 402;
+            this.cboAreaType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMouza_KeyPress);
             // 
             // label46
             // 
@@ -2792,7 +2800,7 @@
             this.dgMushteriFareeqainAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMushteriFareeqainAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMushteriFareeqainAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1});
+            this.ColSelMushtri});
             this.dgMushteriFareeqainAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgMushteriFareeqainAll.Location = new System.Drawing.Point(3, 35);
             this.dgMushteriFareeqainAll.Name = "dgMushteriFareeqainAll";
@@ -2802,16 +2810,16 @@
             this.dgMushteriFareeqainAll.TabIndex = 26;
             this.dgMushteriFareeqainAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMushteriFareeqainDetails_CellClick);
             // 
-            // dataGridViewCheckBoxColumn1
+            // ColSelMushtri
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColSelMushtri.HeaderText = "انتخاب کریں";
+            this.ColSelMushtri.Name = "ColSelMushtri";
+            this.ColSelMushtri.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColSelMushtri.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.dgMushteriFareeqainDetails);
+            this.groupBox11.Controls.Add(this.dgMushteriFareeqainEdit);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox11.Location = new System.Drawing.Point(3, 256);
             this.groupBox11.Name = "groupBox11";
@@ -2820,32 +2828,34 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "موجوزہ تفصیل مشتریان";
             // 
-            // dgMushteriFareeqainDetails
+            // dgMushteriFareeqainEdit
             // 
-            this.dgMushteriFareeqainDetails.AllowUserToAddRows = false;
-            this.dgMushteriFareeqainDetails.AllowUserToDeleteRows = false;
-            this.dgMushteriFareeqainDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgMushteriFareeqainDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMushteriFareeqainDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColSelMushtery});
-            this.dgMushteriFareeqainDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgMushteriFareeqainDetails.Location = new System.Drawing.Point(3, 35);
-            this.dgMushteriFareeqainDetails.Name = "dgMushteriFareeqainDetails";
-            this.dgMushteriFareeqainDetails.ReadOnly = true;
-            this.dgMushteriFareeqainDetails.RowHeadersVisible = false;
-            this.dgMushteriFareeqainDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMushteriFareeqainDetails.Size = new System.Drawing.Size(1173, 193);
-            this.dgMushteriFareeqainDetails.TabIndex = 25;
-            this.dgMushteriFareeqainDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMushteriFareeqainDetails_CellClick);
+            this.dgMushteriFareeqainEdit.AllowUserToAddRows = false;
+            this.dgMushteriFareeqainEdit.AllowUserToDeleteRows = false;
+            this.dgMushteriFareeqainEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMushteriFareeqainEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMushteriFareeqainEdit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColSelMushtriEdit});
+            this.dgMushteriFareeqainEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgMushteriFareeqainEdit.Location = new System.Drawing.Point(3, 35);
+            this.dgMushteriFareeqainEdit.Name = "dgMushteriFareeqainEdit";
+            this.dgMushteriFareeqainEdit.ReadOnly = true;
+            this.dgMushteriFareeqainEdit.RowHeadersVisible = false;
+            this.dgMushteriFareeqainEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMushteriFareeqainEdit.Size = new System.Drawing.Size(1173, 193);
+            this.dgMushteriFareeqainEdit.TabIndex = 25;
+            this.dgMushteriFareeqainEdit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMushteriFareeqainEdit_CellClick);
             // 
-            // ColSelMushtery
+            // ColSelMushtriEdit
             // 
-            this.ColSelMushtery.HeaderText = "انتخاب کریں";
-            this.ColSelMushtery.Name = "ColSelMushtery";
-            this.ColSelMushtery.ReadOnly = true;
+            this.ColSelMushtriEdit.HeaderText = "انتخاب کریں";
+            this.ColSelMushtriEdit.Name = "ColSelMushtriEdit";
+            this.ColSelMushtriEdit.ReadOnly = true;
             // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.chkRecStatus);
+            this.panel12.Controls.Add(this.txtMushteriFareeqRecId);
             this.panel12.Controls.Add(this.txtMushteriFareeqId);
             this.panel12.Controls.Add(this.txtPersonIdMushteri);
             this.panel12.Controls.Add(this.btnNewMushteri);
@@ -2870,6 +2880,46 @@
             this.panel12.Size = new System.Drawing.Size(1179, 97);
             this.panel12.TabIndex = 0;
             // 
+            // chkRecStatus
+            // 
+            this.chkRecStatus.AutoSize = true;
+            this.chkRecStatus.Location = new System.Drawing.Point(277, 54);
+            this.chkRecStatus.Name = "chkRecStatus";
+            this.chkRecStatus.Size = new System.Drawing.Size(149, 35);
+            this.chkRecStatus.TabIndex = 313;
+            this.chkRecStatus.Text = "حیثیت( موجودہ/ سابقہ )";
+            this.chkRecStatus.UseVisualStyleBackColor = true;
+            // 
+            // txtMushteriFareeqRecId
+            // 
+            this.txtMushteriFareeqRecId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMushteriFareeqRecId.Location = new System.Drawing.Point(153, 50);
+            this.txtMushteriFareeqRecId.Name = "txtMushteriFareeqRecId";
+            this.txtMushteriFareeqRecId.Size = new System.Drawing.Size(69, 39);
+            this.txtMushteriFareeqRecId.TabIndex = 312;
+            this.txtMushteriFareeqRecId.Text = "-1";
+            this.txtMushteriFareeqRecId.Visible = false;
+            // 
+            // txtMushteriFareeqId
+            // 
+            this.txtMushteriFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMushteriFareeqId.Location = new System.Drawing.Point(3, 50);
+            this.txtMushteriFareeqId.Name = "txtMushteriFareeqId";
+            this.txtMushteriFareeqId.Size = new System.Drawing.Size(69, 39);
+            this.txtMushteriFareeqId.TabIndex = 311;
+            this.txtMushteriFareeqId.Text = "-1";
+            this.txtMushteriFareeqId.Visible = false;
+            // 
+            // txtPersonIdMushteri
+            // 
+            this.txtPersonIdMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonIdMushteri.Location = new System.Drawing.Point(78, 50);
+            this.txtPersonIdMushteri.Name = "txtPersonIdMushteri";
+            this.txtPersonIdMushteri.Size = new System.Drawing.Size(69, 39);
+            this.txtPersonIdMushteri.TabIndex = 310;
+            this.txtPersonIdMushteri.Text = "0";
+            this.txtPersonIdMushteri.Visible = false;
+            // 
             // btnNewMushteri
             // 
             this.btnNewMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2892,6 +2942,7 @@
             this.btnSaveMushteriFareeq.TabIndex = 308;
             this.btnSaveMushteriFareeq.Text = "محفوظ کریں";
             this.btnSaveMushteriFareeq.UseVisualStyleBackColor = true;
+            this.btnSaveMushteriFareeq.Click += new System.EventHandler(this.btnSaveMushteriFareeq_Click);
             // 
             // btnDelMushteri
             // 
@@ -2904,6 +2955,7 @@
             this.btnDelMushteri.TabStop = false;
             this.btnDelMushteri.Text = "خذف کریں";
             this.btnDelMushteri.UseVisualStyleBackColor = true;
+            this.btnDelMushteri.Click += new System.EventHandler(this.btnDelMushteri_Click);
             // 
             // txtSeqNoMushtri
             // 
@@ -2913,6 +2965,7 @@
             this.txtSeqNoMushtri.Name = "txtSeqNoMushtri";
             this.txtSeqNoMushtri.Size = new System.Drawing.Size(54, 30);
             this.txtSeqNoMushtri.TabIndex = 302;
+            this.txtSeqNoMushtri.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeqNo_KeyPress);
             // 
             // label47
             // 
@@ -2973,12 +3026,15 @@
             // cbMushtriKhewatType
             // 
             this.cbMushtriKhewatType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMushtriKhewatType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMushtriKhewatType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbMushtriKhewatType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbMushtriKhewatType.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMushtriKhewatType.FormattingEnabled = true;
             this.cbMushtriKhewatType.Location = new System.Drawing.Point(630, 14);
             this.cbMushtriKhewatType.Name = "cbMushtriKhewatType";
-            this.cbMushtriKhewatType.Size = new System.Drawing.Size(113, 31);
+            this.cbMushtriKhewatType.Size = new System.Drawing.Size(113, 39);
             this.cbMushtriKhewatType.TabIndex = 220;
+            this.cbMushtriKhewatType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMouza_KeyPress);
             // 
             // label44
             // 
@@ -3004,12 +3060,12 @@
             // txtMushtriHisaBata
             // 
             this.txtMushtriHisaBata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMushtriHisaBata.Enabled = false;
             this.txtMushtriHisaBata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushtriHisaBata.Location = new System.Drawing.Point(449, 14);
             this.txtMushtriHisaBata.Name = "txtMushtriHisaBata";
             this.txtMushtriHisaBata.Size = new System.Drawing.Size(120, 30);
             this.txtMushtriHisaBata.TabIndex = 223;
+            this.txtMushtriHisaBata.Leave += new System.EventHandler(this.txtMushtriHisaBata_Leave);
             // 
             // label45
             // 
@@ -3311,6 +3367,8 @@
             // cbQoamExisted
             // 
             this.cbQoamExisted.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbQoamExisted.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbQoamExisted.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbQoamExisted.Enabled = false;
             this.cbQoamExisted.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQoamExisted.FormattingEnabled = true;
@@ -3320,6 +3378,7 @@
             this.cbQoamExisted.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbQoamExisted.Size = new System.Drawing.Size(122, 39);
             this.cbQoamExisted.TabIndex = 60;
+            this.cbQoamExisted.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMouza_KeyPress);
             // 
             // label65
             // 
@@ -3424,6 +3483,8 @@
             // cbQoam
             // 
             this.cbQoam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbQoam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbQoam.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbQoam.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQoam.FormattingEnabled = true;
             this.cbQoam.Location = new System.Drawing.Point(129, 55);
@@ -3432,6 +3493,7 @@
             this.cbQoam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbQoam.Size = new System.Drawing.Size(122, 39);
             this.cbQoam.TabIndex = 50;
+            this.cbQoam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMouza_KeyPress);
             // 
             // label80
             // 
@@ -3690,26 +3752,6 @@
             this.label58.TabIndex = 0;
             this.label58.Text = "نمبر شمار";
             // 
-            // txtPersonIdMushteri
-            // 
-            this.txtPersonIdMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPersonIdMushteri.Location = new System.Drawing.Point(42, 50);
-            this.txtPersonIdMushteri.Name = "txtPersonIdMushteri";
-            this.txtPersonIdMushteri.Size = new System.Drawing.Size(69, 39);
-            this.txtPersonIdMushteri.TabIndex = 310;
-            this.txtPersonIdMushteri.Text = "0";
-            this.txtPersonIdMushteri.Visible = false;
-            // 
-            // txtMushteriFareeqId
-            // 
-            this.txtMushteriFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMushteriFareeqId.Location = new System.Drawing.Point(3, 50);
-            this.txtMushteriFareeqId.Name = "txtMushteriFareeqId";
-            this.txtMushteriFareeqId.Size = new System.Drawing.Size(69, 39);
-            this.txtMushteriFareeqId.TabIndex = 311;
-            this.txtMushteriFareeqId.Text = "-1";
-            this.txtMushteriFareeqId.Visible = false;
-            // 
             // frmRhzSDCEditing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -3774,7 +3816,7 @@
             this.groupBox14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainAll)).EndInit();
             this.groupBox11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainEdit)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.tabNamChange.ResumeLayout(false);
@@ -3932,9 +3974,8 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.DataGridView dgMushteriFareeqainAll;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.DataGridView dgMushteriFareeqainDetails;
+        private System.Windows.Forms.DataGridView dgMushteriFareeqainEdit;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox txtSearchKhanakasht;
         private System.Windows.Forms.Label label10;
@@ -3952,7 +3993,6 @@
         private System.Windows.Forms.Button btnNewMushteri;
         private System.Windows.Forms.Button btnSaveMushteriFareeq;
         private System.Windows.Forms.Button btnDelMushteri;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelMushtery;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnNewKhataProp;
         private System.Windows.Forms.Button btnSaveKhataProp;
@@ -4079,5 +4119,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtPersonIdMushteri;
         private System.Windows.Forms.TextBox txtMushteriFareeqId;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelMushtri;
+        private System.Windows.Forms.TextBox txtMushteriFareeqRecId;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelMushtriEdit;
+        private System.Windows.Forms.CheckBox chkRecStatus;
     }
 }

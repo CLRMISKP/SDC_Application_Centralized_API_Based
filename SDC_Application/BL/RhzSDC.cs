@@ -103,7 +103,11 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_RHZ_Change_List_Pending_All_Mozas  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString();
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
-
+        public DataTable GetMushteriFareeqainEdit(string KhatooniId)
+        {
+            string spWithParam = "Proc_Get_MushteriFareeqain_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+KhatooniId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
         public string SaveNewKhata(string RegisterHqDKhataId, string RegisterHaqdaranId, string KhataNo, string Taraf, string Patai, string TotalParts, string Kanal, string Maral, string Sarsai, string feet, string malia, string kefiat, string insertuserid, string InsertLoginName, string RecStatus)
         {
             string spWithParam = "WEB_SP_INSERT_HaqdaranZameenKhatajat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + RegisterHqDKhataId + ", " + RegisterHaqdaranId + ", '" + KhataNo + "', '" + Taraf + "', '" + Patai + "', " + TotalParts + ", " + Kanal + ", " + Maral + ", " + Sarsai + ", " + feet + ", N'" + malia + "', N'" + kefiat + "', " + insertuserid + ", '" + InsertLoginName + "',"+RecStatus;
@@ -262,9 +266,20 @@ namespace SDC_Application.BL
 			BeahShudProp+","+Khatooni_Hissa+","+Khatooni_HissaProp+","+Khatooni_Kanal+","+Khatooni_KanalProp+","+Khatooni_Marla+","+Khatooni_MarlaProp+","+Khatooni_Sarsai+","+Khatooni_SarsaiProp+","+Khatooni_Feet+","+Khatooni_FeetProp+"," + insertuserid + ",'" + InsertLoginName + "',"+RHZ_ChangeId+",'"+ChangeMode+"'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
+
+        public string SaveMushteriFareeqEdit(string MushtriFareeqRecId,string Rhz_ChangeId,string MushtriFareeqId , string PersonIdProp, string KhewatTypeIdProp, string FardAreaPartProp, string FardPartBataProp, 
+           string KanalProp, string MarlaProp,  string SarsaiProp, string FeetProp, string insertuserid, string InsertLoginName, string RecStatusProp, string SeqNoProp)
+        {
+            string spWithParam = "WEB_SP_INSERT_MushteriFareeqain_Edit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MushtriFareeqRecId +","+Rhz_ChangeId+ ", " + MushtriFareeqId + ", " +  PersonIdProp + ","  + KhewatTypeIdProp + ","   + FardAreaPartProp + ","  + FardAreaPartProp + ","  + KanalProp + ","  + MarlaProp + ","  + SarsaiProp + ","  + FeetProp + "," + insertuserid + ",'" + InsertLoginName + "',"   + RecStatusProp+","+SeqNoProp;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
         public string DeleteKhatooniEdit(string KhatooniRecId)
         {
             return dbobject.ExecInsertUpdateStoredProcedure("WEB_SP_DELETE_KhatooniRegister_Edit "+Classess.UsersManagments._Tehsilid.ToString()+"," + KhatooniRecId);
+        }
+        public string DeleteMushtriFareeqEdit(string MushtriFareeqRecId)
+        {
+            return dbobject.ExecInsertUpdateStoredProcedure("WEB_SP_Delete_MushtriFareeqEdit " + Classess.UsersManagments._Tehsilid.ToString() + "," + MushtriFareeqRecId);
         }
         public string SaveKhassraRegister(string KhassraId, string KhatooniId, string MozaId, string KhassraNo, string insertuserid, string InsertLoginName)
         {
