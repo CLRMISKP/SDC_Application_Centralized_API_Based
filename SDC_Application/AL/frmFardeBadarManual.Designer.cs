@@ -116,6 +116,7 @@
             this.gbKhewatGroupFareeq = new System.Windows.Forms.GroupBox();
             this.txtFbFareeqId = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnHissaRaqba = new System.Windows.Forms.Button();
             this.btnNewFbMalik = new System.Windows.Forms.Button();
             this.btnPersonSave = new System.Windows.Forms.Button();
             this.btnDeleteMalik = new System.Windows.Forms.Button();
@@ -440,7 +441,6 @@
             this.cmbkhatoonisnew = new System.Windows.Forms.ComboBox();
             this.btnMinKhatooniKhassras = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnHissaRaqba = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -643,6 +643,7 @@
             this.btnAmaldaramad.TabIndex = 203;
             this.ttMisal.SetToolTip(this.btnAmaldaramad, "مثل فرد بدر عمل درامد کریں");
             this.btnAmaldaramad.UseVisualStyleBackColor = true;
+            this.btnAmaldaramad.Click += new System.EventHandler(this.btnAmaldaramad_Click);
             // 
             // btnPrintMisalBadar
             // 
@@ -1491,6 +1492,19 @@
             this.groupBox7.Size = new System.Drawing.Size(915, 58);
             this.groupBox7.TabIndex = 239;
             this.groupBox7.TabStop = false;
+            // 
+            // btnHissaRaqba
+            // 
+            this.btnHissaRaqba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHissaRaqba.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHissaRaqba.Location = new System.Drawing.Point(6, 15);
+            this.btnHissaRaqba.Name = "btnHissaRaqba";
+            this.btnHissaRaqba.Size = new System.Drawing.Size(113, 37);
+            this.btnHissaRaqba.TabIndex = 240;
+            this.btnHissaRaqba.TabStop = false;
+            this.btnHissaRaqba.Text = "رقبہ بمطابق حصہ";
+            this.btnHissaRaqba.UseVisualStyleBackColor = true;
+            this.btnHissaRaqba.Click += new System.EventHandler(this.btnHissaRaqba_Click);
             // 
             // btnNewFbMalik
             // 
@@ -5246,19 +5260,6 @@
             this.btnMinKhatooniKhassras.Text = " انتخاب خسرہ جات";
             this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
             this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
-            // 
-            // btnHissaRaqba
-            // 
-            this.btnHissaRaqba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHissaRaqba.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHissaRaqba.Location = new System.Drawing.Point(6, 15);
-            this.btnHissaRaqba.Name = "btnHissaRaqba";
-            this.btnHissaRaqba.Size = new System.Drawing.Size(113, 37);
-            this.btnHissaRaqba.TabIndex = 240;
-            this.btnHissaRaqba.TabStop = false;
-            this.btnHissaRaqba.Text = "رقبہ بمطابق حصہ";
-            this.btnHissaRaqba.UseVisualStyleBackColor = true;
-            this.btnHissaRaqba.Click += new System.EventHandler(this.btnHissaRaqba_Click);
             // 
             // frmFardeBadarManual
             // 

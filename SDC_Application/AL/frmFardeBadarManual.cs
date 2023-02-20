@@ -1920,12 +1920,8 @@ namespace SDC_Application.AL
             {
                 if (txtFbId.Text.Trim() != "")
                 {
-                    frmMisalBadarAttestationByAdmin misalAttestation = new frmMisalBadarAttestationByAdmin();
-                    misalAttestation.FB_Id = txtFbId.Text;
-                    misalAttestation.isE_FB = true;
-                    misalAttestation.FormClosed -= new FormClosedEventHandler(misalAttestation_FormClosed);
-                    misalAttestation.FormClosed += new FormClosedEventHandler(misalAttestation_FormClosed);
-                    misalAttestation.ShowDialog();
+                    misalBL.FardBaderAmaldaramadManualFb(txtFbId.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    btnAmaldaramad.Enabled = false;
                 }
             }
             catch (Exception ex)

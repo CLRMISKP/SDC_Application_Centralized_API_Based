@@ -306,6 +306,11 @@ namespace SDC_Application.BL
             string spWithParms = "WEB_SP_Update_FB_Confirmation_Amaldaramad " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + FB_Id + ", '" + Action + "','" + @ConfirmationLoginName + "','" + AmaldaramadLoginName + "'";
             dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParms);
         }
+        public void FardBaderAmaldaramadManualFb(string FB_Id, string AmalUserId, string AmaldaramadLoginName)
+        {
+            string spWithParms = "Proc_EFB_Amaldaramad_Manual_FB " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + FB_Id + ", " + AmalUserId + ",'" + AmaldaramadLoginName + "'";
+            dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParms);
+        }
 
         #region Get Misal Details by Misal No
 

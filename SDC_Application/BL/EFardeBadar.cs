@@ -239,7 +239,7 @@ namespace SDC_Application.BL
             string KhewatTypeId, string KhewatTypeIdProposed, string FardAreaPart, string FardAreaPart_Proposed, string FardPart_Bata_Proposed, string Farad_Kanal_Proposed, string Fard_Marla_Proposed,
             string Fard_Sarsai_Proposed, string Fard_Feet_Proposed, string InsertUserId, string InsertLoginName)
         {
-            string spWithParam = "WEB_SP_INSERT_FB_MushteriFareeqain  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_MushteriFareeqId + "," + FB_ID + "," + MushtriFareeqId + "," + KhatooniId + "," + PersonId + "," + PersonId_Proposed + "," + KhewatTypeId + "," + KhewatTypeIdProposed + "," + FardAreaPart
+            string spWithParam = "WEB_SP_INSERT_FB_MushteriFareeqain  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_MushteriFareeqId + "," + FB_ID + "," + MushtriFareeqId + "," + KhatooniId + "," + PersonId + "," + PersonId_Proposed + "," + KhewatTypeId + "," + KhewatTypeIdProposed
                                                                     + "," + FardAreaPart_Proposed + ",'" + FardPart_Bata_Proposed + "'," + Farad_Kanal_Proposed + "," + Fard_Marla_Proposed
                                                                     + "," + Fard_Sarsai_Proposed + "," + Fard_Feet_Proposed + "," + InsertUserId + ",'" + InsertLoginName + "'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);

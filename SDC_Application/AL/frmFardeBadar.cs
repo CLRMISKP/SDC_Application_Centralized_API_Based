@@ -2208,6 +2208,14 @@ namespace SDC_Application.AL
         private void txtkashtHisaBata_Pro_Leave(object sender, EventArgs e)
         {
             this.txtKahstHisa_Pro.Text = this.calculateNetPart(this.txtkashtHisaBata_Pro.Text.Trim()).ToString();
+            if (txtKahstHisa_Pro.Text.Length > 0)
+            {
+                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKhatooniHissa.Text.Length > 0 ? txtKhatooniHissa.Text : "0"), float.Parse(txtKahstHisa_Pro.Text), int.Parse(txtKhatooniKanal.Text.Length > 0 ? txtKhatooniKanal.Text : "0"), int.Parse(txtKhatooniMarla.Text.Length > 0 ? txtKhatooniMarla.Text : "0"), float.Parse(txtKhatooniSarsai.Text.Length > 0 ? txtKhatooniSarsai.Text : "0"), float.Parse(txtSFT.Text.Length > 0 ? txtSFT.Text : "0"));
+                txtKashtKanal.Text = Area[0] != null ? Area[0] : "0";
+                txtKashtMarla.Text = Area[1] != null ? Area[1] : "0";
+                txtKashtSarsai.Text = Area[2] != null ? Area[2] : "0";
+                txtKashtFeet.Text = Area[3] != null ? Area[3] : "0";
+            }
         }
 
         #endregion
@@ -2221,19 +2229,27 @@ namespace SDC_Application.AL
                 string FbMushteriFareeqId = txtFbMushteriFareeqId.Text;
                 string kashtHisaBata = txtkashtHisaBata_Pro.Text.Trim() != "" ? txtkashtHisaBata_Pro.Text.Trim() : "0";
                 string kashtHisa = txtKahstHisa_Pro.Text.Trim() != "" ? txtKahstHisa_Pro.Text.Trim() : "0";
+                //string[] Area= cmnFns.CalculatedAreaFromHisa(float.Parse(txtKhatooniHissa.Text.Length > 0 ? txtKhatooniHissa.Text : "0"), float.Parse(kashtHisa),int.Parse(txtKhatooniKanal.Text.Length > 0 ? txtKhatooniKanal.Text : "0"),int.Parse( txtKhatooniMarla.Text.Length > 0 ? txtKhatooniMarla.Text : "0"), float.Parse(txtKhatooniSarsai.Text.Length > 0 ? txtKhatooniSarsai.Text : "0"), float.Parse(txtSFT.Text.Length > 0 ? txtSFT.Text : "0"));
                 string kashtKanal = txtKashtKanal.Text.Trim() != "" ? txtKashtKanal.Text.Trim() : "0";
                 string kashtMarla = txtKashtMarla.Text.Trim() != "" ? txtKashtMarla.Text.Trim() : "0";
                 string kashtSarsai = txtKashtSarsai.Text.Trim() != "" ? txtKashtSarsai.Text.Trim() : "0";
                 string kashtFeet = txtKashtFeet.Text.Trim() != "" ? txtKashtFeet.Text.Trim() : "0";
-                string lastId = fardBadarBL.SaveFbMushteriFareeain(FbMushteriFareeqId, txtFbId.Text, txtMushteriFareeqId.Text, cbKashtKhatooni.SelectedValue.ToString(), txtkashtPersonId.Text, "0", cbKashtKhewatType.SelectedValue.ToString(), cbKashtKhewatTypeProposed.SelectedValue.ToString(), kashtHisa, kashtHisa, kashtHisaBata, kashtKanal, kashtMarla, kashtSarsai, kashtFeet, UsersManagments.UserId.ToString(), UsersManagments.UserName);
-                if (lastId != "0")
+                if (txtMushteriFareeqId.Text.Length < 5 && cbKashtKhewatTypeProposed.SelectedValue.ToString().Length>2 && txtkashtPersonId.Text.Length>5 && cboKhatoni.SelectedValue.ToString().Length>5)
                 {
-                    this.ClearFormControls(gbKashtCurrent);
-                    this.ClearFormControls(gbKashtProposed);
-                    this.txtFbMushteriFareeqId.Text = "-1";
-                    this.txtMushteriFareeqId.Text = "-1";
-                    
-                    this.FillGridviewMushteriFareeqain();
+                   txtMushteriFareeqId.Text=khatooni.SaveMushtriFareeqein(txtMushteriFareeqId.Text, "0","Fard e Badar", "0", cboKhatoni.SelectedValue.ToString(), "0", txtkashtPersonId.Text, "0", cbKashtKhewatTypeProposed.SelectedValue.ToString(), "0","0","0","0","0","0", UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                }
+                if (txtMushteriFareeqId.Text.Length > 5)
+                {
+                    string lastId = fardBadarBL.SaveFbMushteriFareeain(FbMushteriFareeqId, txtFbId.Text, txtMushteriFareeqId.Text, cbKashtKhatooni.SelectedValue.ToString(), txtkashtPersonId.Text, "0", cbKashtKhewatType.SelectedValue.ToString(), cbKashtKhewatTypeProposed.SelectedValue.ToString(), kashtHisa, kashtHisa, kashtHisaBata, kashtKanal, kashtMarla, kashtSarsai, kashtFeet, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    if (lastId != "0")
+                    {
+                        this.ClearFormControls(gbKashtCurrent);
+                        this.ClearFormControls(gbKashtProposed);
+                        this.txtFbMushteriFareeqId.Text = "-1";
+                        this.txtMushteriFareeqId.Text = "-1";
+
+                        this.FillGridviewMushteriFareeqain();
+                    }
                 }
             }
             catch (Exception ex)
@@ -3411,6 +3427,33 @@ namespace SDC_Application.AL
                 txtDrustPersonFeet.Text = Area[3] != null ? Area[3].ToString() : "0";
             }
         }
+
+        private void btnNewMushtri_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                frmSearchPerson searchForMushtri = new frmSearchPerson();
+                searchForMushtri.MozaId = cmbMouza.SelectedValue.ToString();
+                searchForMushtri.FormClosed -= new FormClosedEventHandler(searchForMushtri_FormClosed);
+                searchForMushtri.FormClosed += new FormClosedEventHandler(searchForMushtri_FormClosed);
+                searchForMushtri.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void searchForMushtri_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmSearchPerson searchp = sender as frmSearchPerson;
+            txtMushteriFareeqId.Text = "-1";
+            this.txtkashtPersonId.Text = searchp.PersonId.ToString();
+            this.txtKashtMalikName.Text = searchp.PersonName;
+            this.txtFbMushteriFareeqId.Text = "-1";
+        }
+
 
     }
 }
