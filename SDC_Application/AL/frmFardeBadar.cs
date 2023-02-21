@@ -2234,9 +2234,9 @@ namespace SDC_Application.AL
                 string kashtMarla = txtKashtMarla.Text.Trim() != "" ? txtKashtMarla.Text.Trim() : "0";
                 string kashtSarsai = txtKashtSarsai.Text.Trim() != "" ? txtKashtSarsai.Text.Trim() : "0";
                 string kashtFeet = txtKashtFeet.Text.Trim() != "" ? txtKashtFeet.Text.Trim() : "0";
-                if (txtMushteriFareeqId.Text.Length < 5 && cbKashtKhewatTypeProposed.SelectedValue.ToString().Length>2 && txtkashtPersonId.Text.Length>5 && cboKhatoni.SelectedValue.ToString().Length>5)
+                if (txtMushteriFareeqId.Text.Length < 5 && cbKashtKhewatTypeProposed.SelectedValue.ToString().Length>2 && txtkashtPersonId.Text.Length>5 && cbKashtKhatooni.SelectedValue.ToString().Length>5)
                 {
-                   txtMushteriFareeqId.Text=khatooni.SaveMushtriFareeqein(txtMushteriFareeqId.Text, "0","Fard e Badar", "0", cboKhatoni.SelectedValue.ToString(), "0", txtkashtPersonId.Text, "0", cbKashtKhewatTypeProposed.SelectedValue.ToString(), "0","0","0","0","0","0", UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    txtMushteriFareeqId.Text = khatooni.SaveMushtriFareeqein(txtMushteriFareeqId.Text, "0", "Fard e Badar", "0", cbKashtKhatooni.SelectedValue.ToString(), "0", txtkashtPersonId.Text, "0", cbKashtKhewatTypeProposed.SelectedValue.ToString(), "0", "0", "0", "0", "0", "0", UsersManagments.UserId.ToString(), UsersManagments.UserName, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                 }
                 if (txtMushteriFareeqId.Text.Length > 5)
                 {
@@ -2324,7 +2324,7 @@ namespace SDC_Application.AL
                             txtKashtSarsai.Text = row.Cells["Fard_Sarsai_Proposed"].Value.ToString();
                             txtKashtFeet.Text = row.Cells["Fard_Feet_Proposed"].Value.ToString();
                             cbKashtKhewatType.SelectedValue = row.Cells["KhewatTypeId"].Value.ToString();
-                            cbKashtKhewatTypeProposed.SelectedValue = row.Cells["KhewatTypeIdProposed"].Value.ToString();
+                            cbKashtKhewatTypeProposed.SelectedValue = row.Cells["KhewatTypeIdProposed"].Value.ToString().Length > 3 ? row.Cells["KhewatTypeIdProposed"].Value.ToString() : row.Cells["KhewatTypeId"].Value.ToString();
                             // txtkh.Text = row.Cells["RegisterHqDKhataId"].Value.ToString();
 
                         }
