@@ -2304,6 +2304,14 @@ namespace SDC_Application.AL
         private void txtMushtriHisaBata_Leave(object sender, EventArgs e)
         {
             this.txtMushteriHisa.Text = this.calculateNetPart(this.txtMushtriHisaBata.Text.Trim().Length > 0 ? txtMushtriHisaBata.Text.Trim() : "0").ToString();
+            if (txtMushteriHisa.Text.Length > 0)
+            {
+                string[] Area = cfs.CalculatedAreaFromHisa(float.Parse(txtKhatooniHissa.Text.Length > 0 ? txtKhatooniHissa.Text : "0"), float.Parse(txtMushteriHisa.Text), int.Parse(txtKhatooniKanal.Text.Length > 0 ? txtKhatooniKanal.Text : "0"), int.Parse(txtKhatooniMarla.Text.Length > 0 ? txtKhatooniMarla.Text : "0"), float.Parse(txtKhatooniSarsai.Text.Length > 0 ? txtKhatooniSarsai.Text : "0"), float.Parse(txtKhatooniFeet.Text.Length > 0 ? txtKhatooniFeet.Text : "0"));
+                //txtKashtKanal.Text = Area[0] != null ? Area[0] : "0";
+                //txtKashtMarla.Text = Area[1] != null ? Area[1] : "0";
+                //txtKashtSarsai.Text = Area[2] != null ? Area[2] : "0";
+                //txtKashtFeet.Text = Area[3] != null ? Area[3] : "0";
+            }
         }
 
         private void btnDelMushteri_Click(object sender, EventArgs e)

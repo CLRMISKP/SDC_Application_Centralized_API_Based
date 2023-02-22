@@ -328,7 +328,18 @@ namespace SDC_Application
             this.ToolStripMenuCorrection.Visible = isMenuVisible("frmFardBadar");
             this.mnuKhataLock.Visible = isMenuVisible("frmKhattaLocking");
             this.mnuMalkanSearchandMerging.Visible = isMenuVisible("frmMalkanSearchingMerging");
-            //this.mnuInsertLoginDetails.Visible = isMenuVisible("frmUserLogs");
+            //this.mnuInsertLoginDetails.Visible = isMenuVisible("frmUserLogs");\
+            this.mnuSubDraFardatFee.Visible = isMenuVisible("DRA_FardFee_dem");
+            this.mnuSubDraIntiqalatFee.Visible = isMenuVisible("DRA_IntiqalTax_dem");
+            this.mnuSubDraIntiqalatParthFee.Visible = isMenuVisible("DRA_IntiqalParthFee_dem");
+            this.mnuSubRTSfardat.Visible = isMenuVisible("RTS_Fard_Issueance_dem");
+            this.mnuSubRTSIntiqalat.Visible = isMenuVisible("RTS_Mutation_Entry_dem");
+            this.mnuSubIntiqalatAttested.Visible = isMenuVisible("IntiqalAttestationDateReport");
+            this.mnuSubIntiqalatCancel.Visible = isMenuVisible("IntiqalKharijshudaDetailReport");
+            this.mnuSubIntiqalatAttNotImp.Visible = isMenuVisible("IntiqalAttestedNotImplementedReport");
+            this.mnuSubIntiqalatonRegistry.Visible = isMenuVisible("Registry_Intiqal_Detail_dem");
+            this.mnuSubInitqalatTehsildar.Visible = isMenuVisible("Intiqal_Tehsildar_Report_dem");
+            this.mnuSubIntiqalatPendingRegistry.Visible = isMenuVisible("Registry_Intiqal_Pending_dem");
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
 

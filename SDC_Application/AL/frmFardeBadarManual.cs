@@ -2214,6 +2214,14 @@ namespace SDC_Application.AL
         private void txtkashtHisaBata_Pro_Leave(object sender, EventArgs e)
         {
             this.txtKahstHisa_Pro.Text = this.calculateNetPart(this.txtkashtHisaBata_Pro.Text.Trim()).ToString();
+            if (txtKahstHisa_Pro.Text.Length > 0)
+            {
+                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKhatooniHissa.Text.Length > 0 ? txtKhatooniHissa.Text : "0"), float.Parse(txtKahstHisa_Pro.Text), int.Parse(txtKhatooniKanal.Text.Length > 0 ? txtKhatooniKanal.Text : "0"), int.Parse(txtKhatooniMarla.Text.Length > 0 ? txtKhatooniMarla.Text : "0"), float.Parse(txtKhatooniSarsai.Text.Length > 0 ? txtKhatooniSarsai.Text : "0"), float.Parse(txtSFT.Text.Length > 0 ? txtSFT.Text : "0"));
+                txtKashtKanal.Text = Area[0] != null ? Area[0] : "0";
+                txtKashtMarla.Text = Area[1] != null ? Area[1] : "0";
+                txtKashtSarsai.Text = Area[2] != null ? Area[2] : "0";
+                txtKashtFeet.Text = Area[3] != null ? Area[3] : "0";
+            }
         }
 
         #endregion

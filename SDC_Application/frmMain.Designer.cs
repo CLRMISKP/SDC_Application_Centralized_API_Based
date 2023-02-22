@@ -40,6 +40,7 @@
             this.تفصیلاتبنکیسڈیسیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMDetailedFard = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSearchFardat = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuMalkiatTafseel = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTafseelKhatas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTafseelKhassras = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,6 +117,21 @@
             this.mnuIndrajMisal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardeBadar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMisalManualFb = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuOperatorReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDRA = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubDraIntiqalatFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubDraIntiqalatParthFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubDraFardatFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRTS = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubRTSIntiqalat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubRTSfardat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuIntiqalat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubIntiqalatTehsildar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubIntiqalatPendingRegistry = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubIntiqalatonRegistry = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubIntiqalatAttested = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubIntiqalatCancel = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubIntiqalatAttNotImp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,7 +149,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuSearchFardat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +166,7 @@
             this.mnuSupervisorMain,
             this.mnuReports,
             this.ToolStripMenuCorrection,
+            this.mnuOperatorReports,
             this.mnuRHZ,
             this.ToolStripMenuUsers});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -240,6 +256,13 @@
             this.TSMDetailedFard.Size = new System.Drawing.Size(265, 42);
             this.TSMDetailedFard.Text = "6-تفصیلی فرد";
             this.TSMDetailedFard.Click += new System.EventHandler(this.TSMDetailedFard_Click);
+            // 
+            // mnuSearchFardat
+            // 
+            this.mnuSearchFardat.Name = "mnuSearchFardat";
+            this.mnuSearchFardat.Size = new System.Drawing.Size(265, 42);
+            this.mnuSearchFardat.Text = "7 - تلاش فردات";
+            this.mnuSearchFardat.Click += new System.EventHandler(this.mnuSearchFardat_Click);
             // 
             // ToolStripMenuMalkiatTafseel
             // 
@@ -611,8 +634,8 @@
             this.mnuAntiCurruptionDrive,
             this.mnuOperationalReports});
             this.mnuReports.Name = "mnuReports";
-            this.mnuReports.Size = new System.Drawing.Size(75, 42);
-            this.mnuReports.Text = "رپورٹ";
+            this.mnuReports.Size = new System.Drawing.Size(120, 42);
+            this.mnuReports.Text = "ایڈمن رپورٹس";
             this.mnuReports.Visible = false;
             // 
             // mnuamnualMutReportWithLandTypendValue
@@ -845,6 +868,125 @@
             this.mnuMisalManualFb.Text = "اندراج مثل / دستی فرد بدر";
             this.mnuMisalManualFb.Click += new System.EventHandler(this.mnuMisalManualFb_Click);
             // 
+            // mnuOperatorReports
+            // 
+            this.mnuOperatorReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDRA,
+            this.mnuRTS,
+            this.mnuIntiqalat});
+            this.mnuOperatorReports.Name = "mnuOperatorReports";
+            this.mnuOperatorReports.Size = new System.Drawing.Size(78, 42);
+            this.mnuOperatorReports.Text = "رپورٹس";
+            // 
+            // mnuDRA
+            // 
+            this.mnuDRA.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSubDraIntiqalatFee,
+            this.mnuSubDraIntiqalatParthFee,
+            this.mnuSubDraFardatFee});
+            this.mnuDRA.Name = "mnuDRA";
+            this.mnuDRA.Size = new System.Drawing.Size(197, 42);
+            this.mnuDRA.Text = "ڈی ار اے رپوٹس";
+            // 
+            // mnuSubDraIntiqalatFee
+            // 
+            this.mnuSubDraIntiqalatFee.Name = "mnuSubDraIntiqalatFee";
+            this.mnuSubDraIntiqalatFee.Size = new System.Drawing.Size(196, 42);
+            this.mnuSubDraIntiqalatFee.Text = "انتقال ٹیکسز";
+            this.mnuSubDraIntiqalatFee.Visible = false;
+            // 
+            // mnuSubDraIntiqalatParthFee
+            // 
+            this.mnuSubDraIntiqalatParthFee.Name = "mnuSubDraIntiqalatParthFee";
+            this.mnuSubDraIntiqalatParthFee.Size = new System.Drawing.Size(196, 42);
+            this.mnuSubDraIntiqalatParthFee.Text = "انتقال پرت ٹیکسز";
+            this.mnuSubDraIntiqalatParthFee.Visible = false;
+            // 
+            // mnuSubDraFardatFee
+            // 
+            this.mnuSubDraFardatFee.Name = "mnuSubDraFardatFee";
+            this.mnuSubDraFardatFee.Size = new System.Drawing.Size(196, 42);
+            this.mnuSubDraFardatFee.Text = "فرد ٹیکسز";
+            this.mnuSubDraFardatFee.Visible = false;
+            // 
+            // mnuRTS
+            // 
+            this.mnuRTS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSubRTSIntiqalat,
+            this.mnuSubRTSfardat});
+            this.mnuRTS.Name = "mnuRTS";
+            this.mnuRTS.Size = new System.Drawing.Size(197, 42);
+            this.mnuRTS.Text = "ار ٹی ایس رپورٹس";
+            // 
+            // mnuSubRTSIntiqalat
+            // 
+            this.mnuSubRTSIntiqalat.Name = "mnuSubRTSIntiqalat";
+            this.mnuSubRTSIntiqalat.Size = new System.Drawing.Size(210, 42);
+            this.mnuSubRTSIntiqalat.Text = "تصدیق شدہ انتقلات";
+            this.mnuSubRTSIntiqalat.Visible = false;
+            // 
+            // mnuSubRTSfardat
+            // 
+            this.mnuSubRTSfardat.Name = "mnuSubRTSfardat";
+            this.mnuSubRTSfardat.Size = new System.Drawing.Size(210, 42);
+            this.mnuSubRTSfardat.Text = "فردات";
+            this.mnuSubRTSfardat.Visible = false;
+            // 
+            // mnuIntiqalat
+            // 
+            this.mnuIntiqalat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSubIntiqalatTehsildar,
+            this.mnuSubIntiqalatPendingRegistry,
+            this.mnuSubIntiqalatonRegistry,
+            this.mnuSubIntiqalatAttested,
+            this.mnuSubIntiqalatCancel,
+            this.mnuSubIntiqalatAttNotImp});
+            this.mnuIntiqalat.Name = "mnuIntiqalat";
+            this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
+            this.mnuIntiqalat.Text = "انتقالات رپورٹس";
+            // 
+            // mnuSubIntiqalatTehsildar
+            // 
+            this.mnuSubIntiqalatTehsildar.Name = "mnuSubIntiqalatTehsildar";
+            this.mnuSubIntiqalatTehsildar.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatTehsildar.Text = " - تحصیلدار انتقالات رپورٹ ";
+            this.mnuSubIntiqalatTehsildar.Visible = false;
+            // 
+            // mnuSubIntiqalatPendingRegistry
+            // 
+            this.mnuSubIntiqalatPendingRegistry.Name = "mnuSubIntiqalatPendingRegistry";
+            this.mnuSubIntiqalatPendingRegistry.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatPendingRegistry.Text = " - رجسٹری انتقالات زیر تجویز ";
+            this.mnuSubIntiqalatPendingRegistry.Visible = false;
+            // 
+            // mnuSubIntiqalatonRegistry
+            // 
+            this.mnuSubIntiqalatonRegistry.Name = "mnuSubIntiqalatonRegistry";
+            this.mnuSubIntiqalatonRegistry.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatonRegistry.Text = " -  رجسٹری انتقالات تفصیل";
+            this.mnuSubIntiqalatonRegistry.Visible = false;
+            // 
+            // mnuSubIntiqalatAttested
+            // 
+            this.mnuSubIntiqalatAttested.Name = "mnuSubIntiqalatAttested";
+            this.mnuSubIntiqalatAttested.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatAttested.Text = " - تصدیق شدہ انتقالات";
+            this.mnuSubIntiqalatAttested.Visible = false;
+            // 
+            // mnuSubIntiqalatCancel
+            // 
+            this.mnuSubIntiqalatCancel.Name = "mnuSubIntiqalatCancel";
+            this.mnuSubIntiqalatCancel.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatCancel.Text = " - خارج شدہ انتقالات";
+            this.mnuSubIntiqalatCancel.Visible = false;
+            // 
+            // mnuSubIntiqalatAttNotImp
+            // 
+            this.mnuSubIntiqalatAttNotImp.Name = "mnuSubIntiqalatAttNotImp";
+            this.mnuSubIntiqalatAttNotImp.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatAttNotImp.Text = " - تصدیق شدہ  غیر عمل شدہ انتقلات";
+            this.mnuSubIntiqalatAttNotImp.Visible = false;
+            // 
             // mnuRHZ
             // 
             this.mnuRHZ.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1022,13 +1164,6 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuSearchFardat
-            // 
-            this.mnuSearchFardat.Name = "mnuSearchFardat";
-            this.mnuSearchFardat.Size = new System.Drawing.Size(265, 42);
-            this.mnuSearchFardat.Text = "7 - تلاش فردات";
-            this.mnuSearchFardat.Click += new System.EventHandler(this.mnuSearchFardat_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1171,5 +1306,20 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQabzulWasool;
         private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatAttestedNotImplemented;
         private System.Windows.Forms.ToolStripMenuItem mnuSearchFardat;
+        private System.Windows.Forms.ToolStripMenuItem mnuOperatorReports;
+        private System.Windows.Forms.ToolStripMenuItem mnuDRA;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubDraIntiqalatFee;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubDraIntiqalatParthFee;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubDraFardatFee;
+        private System.Windows.Forms.ToolStripMenuItem mnuRTS;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubRTSIntiqalat;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubRTSfardat;
+        private System.Windows.Forms.ToolStripMenuItem mnuIntiqalat;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatTehsildar;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatPendingRegistry;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatonRegistry;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatAttested;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatCancel;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubIntiqalatAttNotImp;
     }
 }
