@@ -1803,7 +1803,15 @@ namespace SDC_Application.AL
 
         private void btnPrintProposedChanges_Click(object sender, EventArgs e)
         {
-
+            if (cbSrNo.SelectedValue.ToString() != "0")
+            {
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 44;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.FbID = cbSrNo.SelectedValue.ToString();
+                obj.MozaId = cmbMouza.SelectedValue.ToString();
+                obj.ShowDialog();
+            }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

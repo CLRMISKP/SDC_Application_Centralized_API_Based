@@ -3666,7 +3666,6 @@
             this.btnPrintProposedChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrintProposedChanges.BackgroundImage = global::SDC_Application.Resource1.Print3;
             this.btnPrintProposedChanges.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintProposedChanges.Enabled = false;
             this.btnPrintProposedChanges.Location = new System.Drawing.Point(10, 361);
             this.btnPrintProposedChanges.Name = "btnPrintProposedChanges";
             this.btnPrintProposedChanges.Size = new System.Drawing.Size(53, 48);

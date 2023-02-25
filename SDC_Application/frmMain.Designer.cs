@@ -894,6 +894,7 @@
             this.mnuSubDraIntiqalatFee.Size = new System.Drawing.Size(196, 42);
             this.mnuSubDraIntiqalatFee.Text = "انتقال ٹیکسز";
             this.mnuSubDraIntiqalatFee.Visible = false;
+            this.mnuSubDraIntiqalatFee.Click += new System.EventHandler(this.mnuSubDraIntiqalatTaxes_Click);
             // 
             // mnuSubDraIntiqalatParthFee
             // 
@@ -901,6 +902,7 @@
             this.mnuSubDraIntiqalatParthFee.Size = new System.Drawing.Size(196, 42);
             this.mnuSubDraIntiqalatParthFee.Text = "انتقال پرت ٹیکسز";
             this.mnuSubDraIntiqalatParthFee.Visible = false;
+            this.mnuSubDraIntiqalatParthFee.Click += new System.EventHandler(this.mnuSubDraIntiqalPartTaxes_Click);
             // 
             // mnuSubDraFardatFee
             // 
@@ -908,6 +910,7 @@
             this.mnuSubDraFardatFee.Size = new System.Drawing.Size(196, 42);
             this.mnuSubDraFardatFee.Text = "فرد ٹیکسز";
             this.mnuSubDraFardatFee.Visible = false;
+            this.mnuSubDraFardatFee.Click += new System.EventHandler(this.mnuSubDrFardTaxes_Click);
             // 
             // mnuRTS
             // 
@@ -924,6 +927,7 @@
             this.mnuSubRTSIntiqalat.Size = new System.Drawing.Size(210, 42);
             this.mnuSubRTSIntiqalat.Text = "تصدیق شدہ انتقلات";
             this.mnuSubRTSIntiqalat.Visible = false;
+            this.mnuSubRTSIntiqalat.Click += new System.EventHandler(this.MnuSubRtsMutaions_Click);
             // 
             // mnuSubRTSfardat
             // 
@@ -931,6 +935,7 @@
             this.mnuSubRTSfardat.Size = new System.Drawing.Size(210, 42);
             this.mnuSubRTSfardat.Text = "فردات";
             this.mnuSubRTSfardat.Visible = false;
+            this.mnuSubRTSfardat.Click += new System.EventHandler(this.mnuSubRtsFardats_Click);
             // 
             // mnuIntiqalat
             // 
@@ -951,6 +956,7 @@
             this.mnuSubIntiqalatTehsildar.Size = new System.Drawing.Size(301, 42);
             this.mnuSubIntiqalatTehsildar.Text = " - تحصیلدار انتقالات رپورٹ ";
             this.mnuSubIntiqalatTehsildar.Visible = false;
+            this.mnuSubIntiqalatTehsildar.Click += new System.EventHandler(this.mnuSubInitqalatTehsildar_Click);
             // 
             // mnuSubIntiqalatPendingRegistry
             // 
@@ -958,6 +964,7 @@
             this.mnuSubIntiqalatPendingRegistry.Size = new System.Drawing.Size(301, 42);
             this.mnuSubIntiqalatPendingRegistry.Text = " - رجسٹری انتقالات زیر تجویز ";
             this.mnuSubIntiqalatPendingRegistry.Visible = false;
+            this.mnuSubIntiqalatPendingRegistry.Click += new System.EventHandler(this.mnuSubIntiqalRegistryPending_Click);
             // 
             // mnuSubIntiqalatonRegistry
             // 
@@ -965,6 +972,7 @@
             this.mnuSubIntiqalatonRegistry.Size = new System.Drawing.Size(301, 42);
             this.mnuSubIntiqalatonRegistry.Text = " -  رجسٹری انتقالات تفصیل";
             this.mnuSubIntiqalatonRegistry.Visible = false;
+            this.mnuSubIntiqalatonRegistry.Click += new System.EventHandler(this.MnuSubREgistryIntiqalatDaily_Click);
             // 
             // mnuSubIntiqalatAttested
             // 
@@ -972,6 +980,7 @@
             this.mnuSubIntiqalatAttested.Size = new System.Drawing.Size(301, 42);
             this.mnuSubIntiqalatAttested.Text = " - تصدیق شدہ انتقالات";
             this.mnuSubIntiqalatAttested.Visible = false;
+            this.mnuSubIntiqalatAttested.Click += new System.EventHandler(this.mnuSubAttestedMutaions_Click);
             // 
             // mnuSubIntiqalatCancel
             // 
@@ -979,6 +988,7 @@
             this.mnuSubIntiqalatCancel.Size = new System.Drawing.Size(301, 42);
             this.mnuSubIntiqalatCancel.Text = " - خارج شدہ انتقالات";
             this.mnuSubIntiqalatCancel.Visible = false;
+            this.mnuSubIntiqalatCancel.Click += new System.EventHandler(this.mnuSubCancelledInital_Click);
             // 
             // mnuSubIntiqalatAttNotImp
             // 
@@ -986,6 +996,7 @@
             this.mnuSubIntiqalatAttNotImp.Size = new System.Drawing.Size(301, 42);
             this.mnuSubIntiqalatAttNotImp.Text = " - تصدیق شدہ  غیر عمل شدہ انتقلات";
             this.mnuSubIntiqalatAttNotImp.Visible = false;
+            this.mnuSubIntiqalatAttNotImp.Click += new System.EventHandler(this.mnuSubIntiqalatAttestedNotImplemented_Click);
             // 
             // mnuRHZ
             // 

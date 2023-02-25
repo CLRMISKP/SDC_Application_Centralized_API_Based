@@ -44,20 +44,22 @@
             this.dgTasksSummary = new System.Windows.Forms.DataGridView();
             this.dgKhataEditColSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPagePendingMutations = new System.Windows.Forms.TabPage();
-            this.tabPageAllIncompleteTask = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnShowAllPendingTasks = new System.Windows.Forms.Button();
-            this.dgAllPendingTasks = new System.Windows.Forms.DataGridView();
-            this.btnImplementTask = new System.Windows.Forms.Button();
-            this.txtRHZ_ChangeId = new System.Windows.Forms.TextBox();
             this.dgPendingMutations = new System.Windows.Forms.DataGridView();
+            this.ColSelIntiqal = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtMozaId = new System.Windows.Forms.TextBox();
             this.txtIntiqalId = new System.Windows.Forms.TextBox();
             this.btnImplementMutation = new System.Windows.Forms.Button();
             this.btnShowAllPendingMutations = new System.Windows.Forms.Button();
-            this.ColSelIntiqal = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPageAllIncompleteTask = new System.Windows.Forms.TabPage();
+            this.dgAllPendingTasks = new System.Windows.Forms.DataGridView();
             this.ColSelAllPendingTask = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtMozaId = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtRHZ_ChangeId = new System.Windows.Forms.TextBox();
+            this.btnImplementTask = new System.Windows.Forms.Button();
+            this.btnShowAllPendingTasks = new System.Windows.Forms.Button();
+            this.btnPrintProposedChanges = new System.Windows.Forms.Button();
+            this.txtMozaIdAllPendingTask = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageRHZ.SuspendLayout();
@@ -67,11 +69,11 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTasksSummary)).BeginInit();
             this.tabPagePendingMutations.SuspendLayout();
-            this.tabPageAllIncompleteTask.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAllPendingTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPendingMutations)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.tabPageAllIncompleteTask.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAllPendingTasks)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -265,81 +267,6 @@
             this.tabPagePendingMutations.Text = "زیر تجویز دستی انتقالات";
             this.tabPagePendingMutations.UseVisualStyleBackColor = true;
             // 
-            // tabPageAllIncompleteTask
-            // 
-            this.tabPageAllIncompleteTask.Controls.Add(this.dgAllPendingTasks);
-            this.tabPageAllIncompleteTask.Controls.Add(this.groupBox4);
-            this.tabPageAllIncompleteTask.Location = new System.Drawing.Point(4, 40);
-            this.tabPageAllIncompleteTask.Name = "tabPageAllIncompleteTask";
-            this.tabPageAllIncompleteTask.Size = new System.Drawing.Size(1202, 528);
-            this.tabPageAllIncompleteTask.TabIndex = 2;
-            this.tabPageAllIncompleteTask.Text = "تمام نا مکمل ٹاسک";
-            this.tabPageAllIncompleteTask.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtRHZ_ChangeId);
-            this.groupBox4.Controls.Add(this.btnImplementTask);
-            this.groupBox4.Controls.Add(this.btnShowAllPendingTasks);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1202, 98);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "تمام نا مکمل ٹاسک دیکھنے کےلئے بٹن کلک کریں";
-            // 
-            // btnShowAllPendingTasks
-            // 
-            this.btnShowAllPendingTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowAllPendingTasks.Location = new System.Drawing.Point(530, 32);
-            this.btnShowAllPendingTasks.Name = "btnShowAllPendingTasks";
-            this.btnShowAllPendingTasks.Size = new System.Drawing.Size(195, 46);
-            this.btnShowAllPendingTasks.TabIndex = 0;
-            this.btnShowAllPendingTasks.Text = "تمام نا مکمل ٹاسک دیکھیئے";
-            this.btnShowAllPendingTasks.UseVisualStyleBackColor = true;
-            this.btnShowAllPendingTasks.Click += new System.EventHandler(this.btnShowAllPendingTasks_Click);
-            // 
-            // dgAllPendingTasks
-            // 
-            this.dgAllPendingTasks.AllowUserToAddRows = false;
-            this.dgAllPendingTasks.AllowUserToDeleteRows = false;
-            this.dgAllPendingTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgAllPendingTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAllPendingTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColSelAllPendingTask});
-            this.dgAllPendingTasks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgAllPendingTasks.Location = new System.Drawing.Point(0, 98);
-            this.dgAllPendingTasks.Name = "dgAllPendingTasks";
-            this.dgAllPendingTasks.ReadOnly = true;
-            this.dgAllPendingTasks.RowHeadersVisible = false;
-            this.dgAllPendingTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgAllPendingTasks.Size = new System.Drawing.Size(1202, 430);
-            this.dgAllPendingTasks.TabIndex = 4;
-            this.dgAllPendingTasks.TabStop = false;
-            this.dgAllPendingTasks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAllPendingTasks_CellClick);
-            // 
-            // btnImplementTask
-            // 
-            this.btnImplementTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImplementTask.Enabled = false;
-            this.btnImplementTask.Location = new System.Drawing.Point(314, 32);
-            this.btnImplementTask.Name = "btnImplementTask";
-            this.btnImplementTask.Size = new System.Drawing.Size(195, 46);
-            this.btnImplementTask.TabIndex = 1;
-            this.btnImplementTask.Text = "انتخاب کردہ ٹاسک پر عمل کریں";
-            this.btnImplementTask.UseVisualStyleBackColor = true;
-            this.btnImplementTask.Click += new System.EventHandler(this.btnImplementTask_Click);
-            // 
-            // txtRHZ_ChangeId
-            // 
-            this.txtRHZ_ChangeId.Location = new System.Drawing.Point(81, 39);
-            this.txtRHZ_ChangeId.Name = "txtRHZ_ChangeId";
-            this.txtRHZ_ChangeId.Size = new System.Drawing.Size(203, 39);
-            this.txtRHZ_ChangeId.TabIndex = 2;
-            this.txtRHZ_ChangeId.Text = "-1";
-            this.txtRHZ_ChangeId.Visible = false;
-            // 
             // dgPendingMutations
             // 
             this.dgPendingMutations.AllowUserToAddRows = false;
@@ -359,6 +286,12 @@
             this.dgPendingMutations.TabStop = false;
             this.dgPendingMutations.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPendingMutations_CellClick);
             // 
+            // ColSelIntiqal
+            // 
+            this.ColSelIntiqal.HeaderText = "انتخاب کریں";
+            this.ColSelIntiqal.Name = "ColSelIntiqal";
+            this.ColSelIntiqal.ReadOnly = true;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txtMozaId);
@@ -372,6 +305,15 @@
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "تمام غیر عمل شدہ دستی انتقالات دیکھنے کیلئے بٹن کلک کریں";
+            // 
+            // txtMozaId
+            // 
+            this.txtMozaId.Location = new System.Drawing.Point(20, 37);
+            this.txtMozaId.Name = "txtMozaId";
+            this.txtMozaId.Size = new System.Drawing.Size(76, 39);
+            this.txtMozaId.TabIndex = 3;
+            this.txtMozaId.Text = "-1";
+            this.txtMozaId.Visible = false;
             // 
             // txtIntiqalId
             // 
@@ -405,11 +347,35 @@
             this.btnShowAllPendingMutations.UseVisualStyleBackColor = true;
             this.btnShowAllPendingMutations.Click += new System.EventHandler(this.btnShowAllPendingMutations_Click);
             // 
-            // ColSelIntiqal
+            // tabPageAllIncompleteTask
             // 
-            this.ColSelIntiqal.HeaderText = "انتخاب کریں";
-            this.ColSelIntiqal.Name = "ColSelIntiqal";
-            this.ColSelIntiqal.ReadOnly = true;
+            this.tabPageAllIncompleteTask.Controls.Add(this.dgAllPendingTasks);
+            this.tabPageAllIncompleteTask.Controls.Add(this.groupBox4);
+            this.tabPageAllIncompleteTask.Location = new System.Drawing.Point(4, 40);
+            this.tabPageAllIncompleteTask.Name = "tabPageAllIncompleteTask";
+            this.tabPageAllIncompleteTask.Size = new System.Drawing.Size(1202, 528);
+            this.tabPageAllIncompleteTask.TabIndex = 2;
+            this.tabPageAllIncompleteTask.Text = "تمام نا مکمل ٹاسک";
+            this.tabPageAllIncompleteTask.UseVisualStyleBackColor = true;
+            // 
+            // dgAllPendingTasks
+            // 
+            this.dgAllPendingTasks.AllowUserToAddRows = false;
+            this.dgAllPendingTasks.AllowUserToDeleteRows = false;
+            this.dgAllPendingTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgAllPendingTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAllPendingTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColSelAllPendingTask});
+            this.dgAllPendingTasks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgAllPendingTasks.Location = new System.Drawing.Point(0, 98);
+            this.dgAllPendingTasks.Name = "dgAllPendingTasks";
+            this.dgAllPendingTasks.ReadOnly = true;
+            this.dgAllPendingTasks.RowHeadersVisible = false;
+            this.dgAllPendingTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAllPendingTasks.Size = new System.Drawing.Size(1202, 430);
+            this.dgAllPendingTasks.TabIndex = 4;
+            this.dgAllPendingTasks.TabStop = false;
+            this.dgAllPendingTasks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAllPendingTasks_CellClick);
             // 
             // ColSelAllPendingTask
             // 
@@ -417,14 +383,74 @@
             this.ColSelAllPendingTask.Name = "ColSelAllPendingTask";
             this.ColSelAllPendingTask.ReadOnly = true;
             // 
-            // txtMozaId
+            // groupBox4
             // 
-            this.txtMozaId.Location = new System.Drawing.Point(20, 37);
-            this.txtMozaId.Name = "txtMozaId";
-            this.txtMozaId.Size = new System.Drawing.Size(76, 39);
-            this.txtMozaId.TabIndex = 3;
-            this.txtMozaId.Text = "-1";
-            this.txtMozaId.Visible = false;
+            this.groupBox4.Controls.Add(this.txtMozaIdAllPendingTask);
+            this.groupBox4.Controls.Add(this.btnPrintProposedChanges);
+            this.groupBox4.Controls.Add(this.txtRHZ_ChangeId);
+            this.groupBox4.Controls.Add(this.btnImplementTask);
+            this.groupBox4.Controls.Add(this.btnShowAllPendingTasks);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1202, 98);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "تمام نا مکمل ٹاسک دیکھنے کےلئے بٹن کلک کریں";
+            // 
+            // txtRHZ_ChangeId
+            // 
+            this.txtRHZ_ChangeId.Location = new System.Drawing.Point(8, 37);
+            this.txtRHZ_ChangeId.Name = "txtRHZ_ChangeId";
+            this.txtRHZ_ChangeId.Size = new System.Drawing.Size(91, 39);
+            this.txtRHZ_ChangeId.TabIndex = 2;
+            this.txtRHZ_ChangeId.Text = "-1";
+            this.txtRHZ_ChangeId.Visible = false;
+            // 
+            // btnImplementTask
+            // 
+            this.btnImplementTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImplementTask.Enabled = false;
+            this.btnImplementTask.Location = new System.Drawing.Point(374, 32);
+            this.btnImplementTask.Name = "btnImplementTask";
+            this.btnImplementTask.Size = new System.Drawing.Size(195, 46);
+            this.btnImplementTask.TabIndex = 1;
+            this.btnImplementTask.Text = "انتخاب کردہ ٹاسک پر عمل کریں";
+            this.btnImplementTask.UseVisualStyleBackColor = true;
+            this.btnImplementTask.Click += new System.EventHandler(this.btnImplementTask_Click);
+            // 
+            // btnShowAllPendingTasks
+            // 
+            this.btnShowAllPendingTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowAllPendingTasks.Location = new System.Drawing.Point(590, 32);
+            this.btnShowAllPendingTasks.Name = "btnShowAllPendingTasks";
+            this.btnShowAllPendingTasks.Size = new System.Drawing.Size(195, 46);
+            this.btnShowAllPendingTasks.TabIndex = 0;
+            this.btnShowAllPendingTasks.Text = "تمام نا مکمل ٹاسک دیکھیئے";
+            this.btnShowAllPendingTasks.UseVisualStyleBackColor = true;
+            this.btnShowAllPendingTasks.Click += new System.EventHandler(this.btnShowAllPendingTasks_Click);
+            // 
+            // btnPrintProposedChanges
+            // 
+            this.btnPrintProposedChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintProposedChanges.BackgroundImage = global::SDC_Application.Resource1.Print3;
+            this.btnPrintProposedChanges.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintProposedChanges.Enabled = false;
+            this.btnPrintProposedChanges.Location = new System.Drawing.Point(284, 32);
+            this.btnPrintProposedChanges.Name = "btnPrintProposedChanges";
+            this.btnPrintProposedChanges.Size = new System.Drawing.Size(53, 48);
+            this.btnPrintProposedChanges.TabIndex = 205;
+            this.btnPrintProposedChanges.UseVisualStyleBackColor = true;
+            this.btnPrintProposedChanges.Click += new System.EventHandler(this.btnPrintProposedChanges_Click);
+            // 
+            // txtMozaIdAllPendingTask
+            // 
+            this.txtMozaIdAllPendingTask.Location = new System.Drawing.Point(115, 38);
+            this.txtMozaIdAllPendingTask.Name = "txtMozaIdAllPendingTask";
+            this.txtMozaIdAllPendingTask.Size = new System.Drawing.Size(91, 39);
+            this.txtMozaIdAllPendingTask.TabIndex = 206;
+            this.txtMozaIdAllPendingTask.Text = "-1";
+            this.txtMozaIdAllPendingTask.Visible = false;
             // 
             // frmAdminPendingTaskDashboard
             // 
@@ -449,13 +475,13 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgTasksSummary)).EndInit();
             this.tabPagePendingMutations.ResumeLayout(false);
-            this.tabPageAllIncompleteTask.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAllPendingTasks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPendingMutations)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.tabPageAllIncompleteTask.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAllPendingTasks)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -492,5 +518,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelIntiqal;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelAllPendingTask;
         private System.Windows.Forms.TextBox txtMozaId;
+        private System.Windows.Forms.Button btnPrintProposedChanges;
+        private System.Windows.Forms.TextBox txtMozaIdAllPendingTask;
     }
 }

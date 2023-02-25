@@ -140,6 +140,7 @@ namespace SDC_Application.AL
                 dgAllPendingTasks.Columns["InsertLoginName"].HeaderText = "اندراج کنندہ";
                 dgAllPendingTasks.Columns["InsertDate"].HeaderText = "بتاریخ";
                 dgAllPendingTasks.Columns["RHZ_ChangeId"].Visible = false;
+                dgAllPendingTasks.Columns["MozaId"].Visible = false;
             }
         }
 
@@ -148,12 +149,17 @@ namespace SDC_Application.AL
             try
             {
                 txtRHZ_ChangeId.Text=dgAllPendingTasks.SelectedRows[0].Cells["RHZ_ChangeId"].Value.ToString();
+                txtMozaIdAllPendingTask.Text = dgAllPendingTasks.SelectedRows[0].Cells["MozaId"].Value.ToString();
                 if (txtRHZ_ChangeId.Text.Length > 5)
                 {
-                    btnImplementTask.Enabled=true;
+                    btnImplementTask.Enabled = true;
+                    btnPrintProposedChanges.Enabled = true;
                 }
-                    else
-                    btnImplementTask.Enabled=false;
+                else
+                {
+                    btnImplementTask.Enabled = false;
+                    btnPrintProposedChanges.Enabled = false;
+                }
 
                 foreach (DataGridViewRow row in dgAllPendingTasks.Rows)
                 {
@@ -310,6 +316,19 @@ namespace SDC_Application.AL
                 }
 
 
+            }
+        }
+
+        private void btnPrintProposedChanges_Click(object sender, EventArgs e)
+        {
+            if (txtRHZ_ChangeId.Text.Trim().Length > 5)
+            {
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 44;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.FbID = txtRHZ_ChangeId.Text;
+                obj.MozaId = txtMozaIdAllPendingTask.Text;
+                obj.ShowDialog();
             }
         }
 

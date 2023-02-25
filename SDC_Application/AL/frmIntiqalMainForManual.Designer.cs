@@ -58,6 +58,7 @@
             this.dtpTasdiq = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnCancelConfirm = new System.Windows.Forms.Button();
             this.btnIntiqalAmalDaramadByKhata = new System.Windows.Forms.Button();
             this.btnIntiqalAmal = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.cachedFardMalkan_Rzr_Trans2 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.cachedFardMalkan_Rzr_Trans3 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
-            this.btnCancelConfirm = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -245,6 +245,8 @@
             // cboMoza
             // 
             this.cboMoza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboMoza.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboMoza.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboMoza.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMoza.FormattingEnabled = true;
             this.cboMoza.Location = new System.Drawing.Point(1109, 48);
@@ -444,6 +446,20 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "اندراج و تبدیلی انتقال";
             // 
+            // btnCancelConfirm
+            // 
+            this.btnCancelConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelConfirm.Image = global::SDC_Application.Resource1.back_icon;
+            this.btnCancelConfirm.Location = new System.Drawing.Point(1207, 47);
+            this.btnCancelConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelConfirm.Name = "btnCancelConfirm";
+            this.btnCancelConfirm.Size = new System.Drawing.Size(53, 49);
+            this.btnCancelConfirm.TabIndex = 36;
+            this.toolTip.SetToolTip(this.btnCancelConfirm, "فائنل شدہ انتقال دوبارہ ڈیٹا انٹری موڈ میں ولے ائے");
+            this.btnCancelConfirm.UseVisualStyleBackColor = true;
+            this.btnCancelConfirm.Click += new System.EventHandler(this.btnCancelConfirm_Click);
+            // 
             // btnIntiqalAmalDaramadByKhata
             // 
             this.btnIntiqalAmalDaramadByKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -621,20 +637,6 @@
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
-            // 
-            // btnCancelConfirm
-            // 
-            this.btnCancelConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelConfirm.Image = global::SDC_Application.Resource1.back_icon;
-            this.btnCancelConfirm.Location = new System.Drawing.Point(1207, 47);
-            this.btnCancelConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnCancelConfirm.Name = "btnCancelConfirm";
-            this.btnCancelConfirm.Size = new System.Drawing.Size(53, 49);
-            this.btnCancelConfirm.TabIndex = 36;
-            this.toolTip.SetToolTip(this.btnCancelConfirm, "فائنل شدہ انتقال دوبارہ ڈیٹا انٹری موڈ میں ولے ائے");
-            this.btnCancelConfirm.UseVisualStyleBackColor = true;
-            this.btnCancelConfirm.Click += new System.EventHandler(this.btnCancelConfirm_Click);
             // 
             // frmIntiqalMainForManual
             // 

@@ -143,7 +143,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if (UsersManagments.check > 24)
+            if (UsersManagments.check > 24 && UsersManagments.check!=44)
             {
                 ReportParameter param = new ReportParameter();
                 param.Name = "TehsilId";
@@ -151,14 +151,18 @@ namespace SDC_Application.AL
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
-            else if (UsersManagments.check != 7)  
+            else if (UsersManagments.check == 44)
+            {
+                rvIntiqalReport.ServerReport.SetParameters(rp);
+            }
+            else if (UsersManagments.check != 7)
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }
             else
             {
-                ReportParameter param=new   ReportParameter();
-                param.Name="TehsilId";
+                ReportParameter param = new ReportParameter();
+                param.Name = "TehsilId";
                 param.Values.Add(Tehsilid);
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
@@ -482,6 +486,15 @@ namespace SDC_Application.AL
              {
                  ReportParameter[] rp = new ReportParameter[1];
                  this.SetCredentials("IntiqalAttestedNotImplementedReport", rp, false);
+
+             }
+             if (UsersManagments.check == 44)
+             {
+                 ReportParameter[] rp = new ReportParameter[3];
+                 rp[0] = new ReportParameter("MozaId", this.MozaId);
+                 rp[1] = new ReportParameter("fbId", this.FbID);
+                 rp[2] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("Rhz_Change_Details", rp, false);
 
              }
         }

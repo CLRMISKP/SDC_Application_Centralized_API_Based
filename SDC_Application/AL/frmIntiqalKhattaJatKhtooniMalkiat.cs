@@ -431,9 +431,9 @@ namespace SDC_Application.AL
                     tabControl1.TabPages.Remove(tabPageShajra);
                 //}
                 txtParentid.Text = IntiqalId.ToString();///get for newtaqseem tab
-                if (this.FardTokenId != "0")
+                if (this.FardTokenId != null)
                 {
-                    fillRegistryIntiqalkhatajatList(this.FardTokenId.ToString());
+                    //fillRegistryIntiqalkhatajatList(this.FardTokenId.ToString());
 
                 }
                 else
@@ -669,14 +669,14 @@ namespace SDC_Application.AL
                             if (IntiqalKhataId != string.Empty)
                             {
 
-                                if (this.FardTokenId != "0")
+                                if (this.FardTokenId != null)
                                     AutoFillCombo.FillCombo("proc_Self_Get_Khatoonies_of_Khata_for_RegistryIntiqal_By_FardTokenId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalKhataId + "'" + "," + FardTokenId, cmbKhatoniNo, "KhatooniNo", "KhatooniId");
                                 else
                                     AutoFillCombo.FillCombo("dbo.Proc_Get_Khatoonis  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalKhataId + "'", cmbKhatoniNo, "KhatooniNo", "KhatooniId");
                                
                                 
                                 GetKhatoni(txtKhattaRecId.Text);
-                                if (this.FardTokenId != "0")
+                                if (this.FardTokenId != null)
                                     AutoFillCombo.FillCombo("proc_Self_Get_RegistryIntiqal_Khata_Malkan  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalKhataId + "'" + "," + FardTokenId, cboPersonSeller, "personname", "KhewatGroupFareeqId");
                                 else
                                     AutoFillCombo.FillCombo("proc_Get_Intiqal_Khata_Malkan  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalKhataId + "'", cboPersonSeller, "personname", "KhewatGroupFareeqId");
@@ -851,7 +851,7 @@ namespace SDC_Application.AL
                         }
                     }
                     this.IsKhattaMalkan = false;
-                    if (this.FardTokenId != "0")
+                    if (this.FardTokenId != null)
                         AutoFillCombo.FillCombo("proc_Self_Get_RegistryIntiqal_KhanaKashtKhatooni_Malkan  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + Khatoniid + "'" + "," + FardTokenId, cboPersonSeller, "personname", "MushtriFareeqId");
                     else
                         AutoFillCombo.FillCombo("proc_Get_Intiqal_KhanaKashtKhatooni_Malkan  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + Khatoniid + "'", cboPersonSeller, "personname", "MushtriFareeqId");
@@ -965,7 +965,7 @@ namespace SDC_Application.AL
                     txtFrokhtSarsai.Text = "";
                     txtFrokhtFeet.Text = "";
 
-                    if (this.FardTokenId != "0")
+                    if (this.FardTokenId != null)
                     {
                         if (shissay > fhissay)
                         {
@@ -1003,7 +1003,7 @@ namespace SDC_Application.AL
                 }
                 else
                 {
-                    if (this.FardTokenId != "0")
+                    if (this.FardTokenId != null)
                     {
                         txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(khissay, shissay, kkanal, kmarla, ksarsai, ksft, bkanal, bmarla, bsarsai, bsft).ToString();
                         fhissay = txtFardHissay.Text.Trim() != "" ? float.Parse(txtFardHissay.Text.Trim()) : 0;
@@ -1286,7 +1286,7 @@ namespace SDC_Application.AL
 
                                     DataTable dtFareeqain = new DataTable();
                                     DataTable dtFard = new DataTable();
-                                    if (this.FardTokenId != "0")
+                                    if (this.FardTokenId != null)
                                     {
 
                                         dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(row.Cells["KhewatGroupFareeqId"].Value.ToString(), this.FardTokenId);
@@ -1351,7 +1351,7 @@ namespace SDC_Application.AL
                                         txtKulFeet.Text = Math.Round(KulFeet, 0).ToString();
 
                                         //_________________________________Self__________________________
-                                        if (this.FardTokenId != "0")
+                                        if (this.FardTokenId != null)
                                         {
 
                                             double FardHissay = Convert.ToDouble(dtFard.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Hissa"].Value.ToString());
@@ -1436,7 +1436,7 @@ namespace SDC_Application.AL
                                     DataTable dtMushteryan = new DataTable();
                                     DataTable dtFard = new DataTable();
 
-                                    if (this.FardTokenId != "0")
+                                    if (this.FardTokenId != null)
                                     {
                                         String PersonId = Intiqal.GetPersonIdByMushtriFareeqId(cboPersonSeller.SelectedValue.ToString());
                                         dtMushteryan = mnk.GetFardMushtriFareeqainRemainingAreaRegistryIntiqal(row.Cells["MushtriFareeqId"].Value.ToString(), this.FardTokenId);
@@ -1507,7 +1507,7 @@ namespace SDC_Application.AL
                                         txtKulFeet.Text = Math.Round(KulFeet, 0).ToString();
 
                                         //_________________________________Self__________________________
-                                        if (this.FardTokenId != "0")
+                                        if (this.FardTokenId !=null)
                                         {
 
                                             double FardHissay = Convert.ToDouble(dtFard.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Hissa"].Value.ToString());
@@ -1889,7 +1889,7 @@ namespace SDC_Application.AL
                     {
                         if (IsKhattaMalkan)
                         {
-                            if (this.FardTokenId != "0")
+                            if (this.FardTokenId != null)
                             {
                                 dt = Intiqal.GetRegistryIntiqalKhataMalikanByKhataIdByFardTokenId(IntiqalKhataId, this.FardTokenId);
                             }
@@ -1905,7 +1905,7 @@ namespace SDC_Application.AL
                                     {
                                         DataTable dtFareeqain = new DataTable();
                                         DataTable dtFard = new DataTable();
-                                        if (this.FardTokenId != "0")
+                                        if (this.FardTokenId != null)
                                         {
                                             String PersonId = Intiqal.GetPersonIdByKhewatgroupFareeqId(cboPersonSeller.SelectedValue.ToString());
                                             dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(), this.FardTokenId);
@@ -1929,7 +1929,7 @@ namespace SDC_Application.AL
                                             txtHidenMustariFareeqID.Text = "NULL";
 
                                             //Self__________________________
-                                            if (this.FardTokenId != "0")
+                                            if (this.FardTokenId != null)
                                             {
 
                                                 txtFardHissay.Text = dtFard.Rows[0]["Rem_Hissa"].ToString();
@@ -2064,7 +2064,7 @@ namespace SDC_Application.AL
                         }
                         else
                         {
-                            if (this.FardTokenId != "0")
+                            if (this.FardTokenId != null)
                             {
                                 dt = Intiqal.GetRegistryIntiqalKhatooniMalikanByFardTokenId(Khatoniid, this.FardTokenId);
                             }
@@ -2080,7 +2080,7 @@ namespace SDC_Application.AL
                                     DataTable dtMushteryan = new DataTable();
                                     DataTable dtFard = new DataTable();
 
-                                    if (this.FardTokenId != "0")
+                                    if (this.FardTokenId != null)
                                     {
                                         String PersonId = Intiqal.GetPersonIdByMushtriFareeqId(cboPersonSeller.SelectedValue.ToString());
                                         dtMushteryan = mnk.GetFardMushtriFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(), this.FardTokenId);
@@ -2104,7 +2104,7 @@ namespace SDC_Application.AL
                                         txtHidenMustariFareeqID.Text = row["MushtriFareeqId"].ToString();
 
                                         //------------self--------------------------
-                                        if (this.FardTokenId != "0")
+                                        if (this.FardTokenId != null)
                                         {
 
                                             txtFardHissay.Text = dtFard.Rows[0]["Rem_Hissa"].ToString();
@@ -2321,7 +2321,7 @@ namespace SDC_Application.AL
                         {
                             // MessageBox.Show(KhewatGroupFareeqId);
                              string lastid;
-                             if (this.FardTokenId != "0")
+                             if (this.FardTokenId != null)
                              {
                                  lastid = Intiqal.SaveRegistryintiqalSellers(IntiqalSellerRecId,
                                         IntiqalKhataRecId, IntiqalSellerPersonId,
