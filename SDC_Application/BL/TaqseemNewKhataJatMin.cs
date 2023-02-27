@@ -19,6 +19,30 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
+            public DataTable Proc_Self_Get_Khatoonis(string khataid)
+            {
+                string spWithParam = "Proc_Self_Get_Khatoonis " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + khataid;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+            }
+            public DataTable Proc_Self_Get_Khatoonis_Intiqal_Taqseem_by_KhataId(string KhataId)
+            {
+                string spWithParam = "Proc_Self_Get_Khatoonis_Intiqal_Taqseem_by_KhataId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhataId;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+            }
+            public DataTable Proc_Self_Get_KhewatFareeqeinByKhataId(string KhataId)
+            {
+                string spWithParam = "Proc_Get_KhewatFareeqeinGroup_By_Khata_All_RecStatus " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhataId;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+            }
+            public DataTable Zerikar_Proc_Self_Get_KhewatFareeqeinByKhataId(string KhataId)
+            {
+                string spWithParam = "Zerikar_Proc_Get_KhewatFareeqeinGroup_By_Khata "  + KhataId;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+            }
 
             public DataTable GetKhatajatAll(string  MozaId)
             {
@@ -118,13 +142,29 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_KhewatFareeqeinGroup_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
-
-        // Selfff 
-        public DataTable Proc_Self_Get_KhewatFareeqeinByKhataId(string KhataId)
+        public string WEB_SP_Update_MushtriFareeqein(string MushtriFareeqId, string FardAreaPart, string fardkanal, string fardmarla, string fardsarsai, string fardfeet, string InsertUserId, string InsertLoginName)
         {
-            string spWithParam = "Proc_Get_KhewatFareeqeinGroup_By_Khata_All_RecStatus  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            string spWithParam = "WEB_Self_SP_Update_MushtriFareeqein  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + MushtriFareeqId + "'," + FardAreaPart + "," + fardkanal + ",'" + fardmarla + "'," + fardsarsai + "," + fardfeet + "," + InsertUserId + ",'" + InsertLoginName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public DataTable WEB_SP_DELETE_MushtriGroupFareeqein(string mfId, string KhatooniId, string All)
+        {
+
+            string spWithParam = "WEB_Self_SP_DELETE_MushtriFareeqein '" + mfId + "' ," + KhatooniId + "," + All;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
+        }
+        public DataTable Proc_Get_MushtriFareeqeinBy_KhatooniId_Taqseem(string KhatooniId)
+        {
+            string spWithParam = "Proc_Get_MushtriFareeqein_ByKhatooniId_For_Taqseem " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public string WEB_SP_INSERT_KhewatGroupFareeqein_From_Khatooni_Taqseem(string KhewatGroupFareeqId, string KhewatGroupId, string PersonId, string FardAreaPart, string fardkanal, string fardmarla, string fardsarsai, string fardfeet, string KhewatTypeId, string RegisterHaqkhataid, string InsertUserId, string Dar, string TotalDarPart, string PersonDarPart, string OfDarPart, string InsertLoginName, string FardPart_Bata)
+        {
+            string spWithParam = "WEB_SP_INSERT_KhewatGroupFareeqein_From_Khatooni_Taqseem  '" + KhewatGroupFareeqId + "'," + KhewatGroupId + "," + PersonId + ",'" + FardAreaPart + "'," + fardkanal + "," + fardmarla + "," + fardsarsai + "," + fardfeet + "," + KhewatTypeId + "," + RegisterHaqkhataid + "," + InsertUserId + "," + Dar + "," + TotalDarPart + "," + PersonDarPart + "," + OfDarPart + ",'" + InsertLoginName + "','" + FardPart_Bata + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
         //------------------------------
         public DataTable Proc_Get_Taqseem_RegisterHqDKhataId(string RegisterHqDKhataId)
@@ -177,7 +217,11 @@ namespace SDC_Application.BL
             string spWithParam = "WEB_SP_INSERT_KhewatGroupFareeqein   " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhewatGroupFareeqId + "'," + KhewatGroupId + "," + PersonId + ",'" + FardAreaPart + "'," + fardkanal + "," + fardmarla + "," + fardsarsai + "," + fardfeet + "," + KhewatTypeId + "," + RegisterHaqkhataid + "," + InsertUserId + "," + Dar + "," + TotalDarPart + "," + PersonDarPart + "," + OfDarPart + ",'" + InsertLoginName + "','" + FardPart_Bata + "'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
-
+        public string WEB_Self_SP_INSERT_KhatooniRegister_Taqseem(string KhatooniId, string KhatooniNo, string KhatooniKashtkaranFullDetail_New, string RegisterHqDKhataId, string Wasail_e_Abpashi, string KhatooniLagan, float Hissa, int Kanal, int Marla, float Sarsai, float Feet, string insertuserid, string InsertLoginName)
+        {
+            string spWithParam = "WEB_Self_SP_INSERT_KhatooniRegister_Taqseem " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId + ",'" + KhatooniNo + "',N'" + KhatooniKashtkaranFullDetail_New + "'," + RegisterHqDKhataId + ",N'" + Wasail_e_Abpashi + "',N'" + KhatooniLagan + "'," + Hissa + "," + Kanal + "," + Marla + "," + Sarsai + "," + Feet + "," + insertuserid + ",'" + InsertLoginName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
 
         public DataTable WEB_SP_DELETE_KhewatGroupFareeqein(string Kgfid)
         {
@@ -197,6 +241,24 @@ namespace SDC_Application.BL
             //DataContext.WEB_SP_DELETE_Intiqal_Intiqal_KhataJat(IntiqalKhataRecId);
             string spWithParam = "WEB_SP_DELETE_HaqdaranZameenKhatajat_NewKhataTaqseem " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhataId + "";
             dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
+        }
+        public DataTable WEB_SP_DELETE_KhassraRegister_Taqseem(string KhatooniId)
+        {
+            string spWithParam = "WEB_SP_DELETE_KhassraRegister_Taqseem " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public DataTable WEB_SP_DELETE_KhatooniRegister_Taqseem(string khatooniid, string KhataId, string all)
+        {
+            string spWithParam = "WEB_SP_DELETE_KhatooniRegister_Taqseem " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + khatooniid + "," + KhataId + "," + all;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public DataTable WEB_SP_DELETE_KhewatGroupFareeqein_Taqseem(string Kgfid, string KhataId, string All)
+        {
+            string spWithParam = "WEB_SP_DELETE_KhewatGroupFareeqein_Taqseem "+Classess.UsersManagments._Tehsilid.ToString()+", '" + Kgfid + "' ," + KhataId + "," + All;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
         }
     }
 }

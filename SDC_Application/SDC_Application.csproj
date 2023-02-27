@@ -37,11 +37,11 @@
     <ProductName>CLRMIS</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>Land Records Management Information System</SuiteName>
-    <MinimumRequiredVersion>1.0.0.34</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.5.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>51</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -160,6 +160,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmBuyersRahin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmBuyersRahin.designer.cs">
+      <DependentUpon>frmBuyersRahin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmFardeBadarManual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     </Compile>
     <Compile Include="AL\frmFardManhai.designer.cs">
       <DependentUpon>frmFardManhai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJatKhanaKashtToMalkiat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalKhattaJatKhanaKashtToMalkiat.designer.cs">
+      <DependentUpon>frmIntiqalKhattaJatKhanaKashtToMalkiat.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmIntiqal_TaxBankChallanTTx.cs">
       <SubType>Form</SubType>
@@ -228,6 +240,18 @@
     <Compile Include="AL\frmKhassraNewKhassraAreaType.Designer.cs">
       <DependentUpon>frmKhassraNewKhassraAreaType.cs</DependentUpon>
     </Compile>
+    <Compile Include="AL\frmKhattaSearchByPersonForIntiqal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmKhattaSearchByPersonForIntiqal.designer.cs">
+      <DependentUpon>frmKhattaSearchByPersonForIntiqal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmMessageBox.designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmMISC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +269,12 @@
     </Compile>
     <Compile Include="AL\frmQabzUlWassolByTypes.designer.cs">
       <DependentUpon>frmQabzUlWassolByTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRegRecFromIntiqal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRegRecFromIntiqal.designer.cs">
+      <DependentUpon>frmRegRecFromIntiqal.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmRhzSDCEditing.cs">
       <SubType>Form</SubType>
@@ -1138,6 +1168,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmBuyersRahin.resx">
+      <DependentUpon>frmBuyersRahin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmFardeBadarManual.resx">
       <DependentUpon>frmFardeBadarManual.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -1147,6 +1180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmFardManhai.resx">
       <DependentUpon>frmFardManhai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalKhattaJatKhanaKashtToMalkiat.resx">
+      <DependentUpon>frmIntiqalKhattaJatKhanaKashtToMalkiat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqal_TaxBankChallanTTx.resx">
       <DependentUpon>frmIntiqal_TaxBankChallanTTx.cs</DependentUpon>
@@ -1173,6 +1209,12 @@
     <EmbeddedResource Include="AL\frmKhassraNewKhassraAreaType.resx">
       <DependentUpon>frmKhassraNewKhassraAreaType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmKhattaSearchByPersonForIntiqal.resx">
+      <DependentUpon>frmKhattaSearchByPersonForIntiqal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmMISC.resx">
       <DependentUpon>frmMISC.cs</DependentUpon>
     </EmbeddedResource>
@@ -1181,6 +1223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmQabzUlWassolByTypes.resx">
       <DependentUpon>frmQabzUlWassolByTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRegRecFromIntiqal.resx">
+      <DependentUpon>frmRegRecFromIntiqal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmRhzSDCEditing.resx">
       <DependentUpon>frmRhzSDCEditing.cs</DependentUpon>

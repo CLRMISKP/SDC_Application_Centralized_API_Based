@@ -28,7 +28,13 @@ namespace SDC_Application.AL
         public string KhewatGroupId { get; set; }
         public int MozaId { get; set; }
         public int RegisterId { get; set; }
-
+        public int ForKhataKhatooni { get; set; }
+        public string KhataKulHissay { get; set; }
+        public string KhataKanal { get; set; }
+        public string KhataMarla { get; set; }
+        public string KhataSarsai { get; set; }
+        public string KhataFeet { get; set; }
+        Classess.AutoComplete objauto = new Classess.AutoComplete();
         #endregion
 
 
@@ -43,6 +49,16 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
             Fill_Khata_DropDown();
+            if (ForKhataKhatooni == 1)
+            {
+                cbKhatooni.Visible = false;
+                lbKhatooni.Visible = false;
+            }
+            else
+            {
+                cbKhatooni.Visible = true;
+                lbKhatooni.Visible = true;
+            }
         }
 
         #region Fill Grid view method
@@ -65,6 +81,37 @@ namespace SDC_Application.AL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void FillMalikanByKhatooniId()
+        {
+            try
+            {
+
+                this.malikan = null;
+                int khatooniid = cbKhatooni.SelectedValue != null ? Convert.ToInt32(this.cbKhatooni.SelectedValue.ToString()) : 0;
+                malikan = rhz.Proc_Get_MushtriFareeqeinBy_KhatooniId_Taqseem(khatooniid.ToString());
+                this.GridViewMalikan.DataSource = malikan;
+                this.GridViewMalikan.Columns["PersonName"].HeaderText = "نام مالک";
+                this.GridViewMalikan.Columns["FardAreaPart"].HeaderText = "حصہ";
+                this.GridViewMalikan.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                this.GridViewMalikan.Columns["PersonName"].DisplayIndex = 1;
+                this.GridViewMalikan.Columns["PersonId"].Visible = false;
+                this.GridViewMalikan.Columns["KhatooniId"].Visible = false;
+                this.GridViewMalikan.Columns["MushtriFareeqId"].Visible = false;
+                this.GridViewMalikan.Columns["Kanal"].Visible = false;
+                this.GridViewMalikan.Columns["marla"].Visible = false;
+                this.GridViewMalikan.Columns["sarsai"].Visible = false;
+                this.GridViewMalikan.Columns["Feet"].Visible = false;
+                this.GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
+                this.GridViewMalikan.Columns["KhewatType"].Visible = false;
+                //this.GetMalikanbyKhataIdDataSource.DataSource = client.GetKhewatMalikanByKhataId(khataid);
+
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message);
             }
         }
@@ -126,6 +173,10 @@ namespace SDC_Application.AL
         private void btnSelect_Click(object sender, EventArgs e)
         {
             this.getMalikanSelected();
+            for (int k = 0; k <= GridViewMalikan.Rows.Count - 1; k++)
+            {
+                GridViewMalikan.Rows[k].Cells["col1"].Value = 0;
+            }
             this.btnSave.Enabled = true;
         }
 
@@ -148,9 +199,19 @@ namespace SDC_Application.AL
                         {
                              //rowTD = dtrow[11].ToString();
                              //rowGV = row.Cells["KhewatGroupFareeqId"].Value.ToString();
-                            if (dtrow[0].ToString() == row.Cells["KhewatGroupFareeqId"].Value.ToString())
+                            if (ForKhataKhatooni == 1)
                             {
-                                malikanSel.ImportRow(dtrow);
+                                if (dtrow[0].ToString() == row.Cells["KhewatGroupFareeqId"].Value.ToString())
+                                {
+                                    malikanSel.ImportRow(dtrow);
+                                }
+                            }
+                            else
+                            {
+                                if (dtrow[0].ToString() == row.Cells["MushtriFareeqId"].Value.ToString())
+                                {
+                                    malikanSel.ImportRow(dtrow);
+                                }
                             }
                         }
                     }
@@ -171,12 +232,20 @@ namespace SDC_Application.AL
             this.GridViewMalikanSelect.Columns["KhewatTypeId"].Visible = false;
             this.GridViewMalikanSelect.Columns["KhewatType"].Visible = false;
             this.GridViewMalikanSelect.Columns["RegisterHqDKhataId"].Visible = false;
+
         }
         #endregion
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveKhewatGroupFreqein();
+            if (ForKhataKhatooni == 1)
+            {
+                SaveKhewatGroupFreqein();
+            }
+            else
+            {
+                SaveKhewatGroupFreqeinFromKhatooni();
+            }
         }
 
         #region Save Khewat Group Freqein
@@ -207,11 +276,97 @@ namespace SDC_Application.AL
 
             this.Close();
         }
+        private void SaveKhewatGroupFreqeinFromKhatooni()
+        {
+            foreach (DataGridViewRow row in GridViewMalikanSelect.Rows)
+            {
+                string khewatgroupfreeqid = "-1";// Convert.ToInt32(this.txtKhewatFreeqainGroupId.Text.ToString());
+                string khewatgroupid = "0";
+                string personid = row.Cells["PersonId"].Value.ToString();
+                string fardsqft = (Math.Round(((float.Parse(row.Cells["kanal"].Value.ToString()) * 20 * 272.25) + (float.Parse(row.Cells["marla"].Value.ToString()) * 272.25) + (float.Parse(row.Cells["sarsai"].Value.ToString()) * 30.25)), 0).ToString());
+                string Khatasqft = (Math.Round(((float.Parse(KhataKanal.ToString()) * 20 * 272.25) + (float.Parse(KhataMarla.ToString()) * 272.25) + (float.Parse(KhataSarsai.ToString()) * 30.25)), 0).ToString());
+                string fardareapart = Math.Round((float.Parse(KhataKulHissay) / float.Parse(Khatasqft) * float.Parse(fardsqft)), 4).ToString();
+                //string fardareapart = (Math.Round(float.Parse(row.Cells["FardAreaPart"].Value.ToString()) / float.Parse(row.Cells["Khatooni_Hissa"].Value.ToString()) * float.Parse(KhataKulHissay), 5)).ToString();
+                string fardkanal = row.Cells["kanal"].Value.ToString();
+                string fardmarla = row.Cells["marla"].Value.ToString();// following condition get sarsai for the area part
+                string fardsarsai = row.Cells["sarsai"].Value.ToString() != "" ? row.Cells["sarsai"].Value.ToString() : "0";
+                string fardfeet = row.Cells["feet"].Value.ToString() != "" ? row.Cells["feet"].Value.ToString() : "0";
+
+
+                string personPartBata = row.Cells["FardAreaPart"].Value.ToString();
+                string khewattypeid = row.Cells["KhewatTypeId"].Value.ToString();
+                string s = rhz.WEB_SP_INSERT_KhewatGroupFareeqein_From_Khatooni_Taqseem(khewatgroupfreeqid, khewatgroupid, personid, fardareapart, fardkanal, fardmarla, fardsarsai.ToString(), fardfeet.ToString(), khewattypeid, KhataId, UserId.ToString(), "0", "0", "0", "0", " ", "0").ToString();
+                this.txtKhewatFreeqainGroupId.Text = s;
+                //FillKhewatMalikanByKhataId();
+                // KhataTotalRaqbaByKhataId();
+            }
+        }
         #endregion
 
         private void cbKhatas_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            FillKhewatMalikanByKhataId();
+            if (ForKhataKhatooni == 1)
+            {
+                FillKhewatMalikanByKhataId();
+            }
+            else
+            {
+                objauto.FillCombo("Proc_Get_KhatooniNos_List_By_KhataId "+Classess.UsersManagments._Tehsilid.ToString()+"," + cbKhatas.SelectedValue.ToString(), cbKhatooni, "KhatooniNo", "KhatooniId");
+            }
+        }
+        private void txtsearchMalikan_TextChanged(object sender, EventArgs e)
+        {
+            if (this.GridViewMalikan.Rows.Count > 0)
+            {
+
+                for (int i = 0; i <= GridViewMalikan.Rows.Count - 1; i++)
+                {
+
+                    if (GridViewMalikan.Rows[i].Cells["PersonName"].Value.ToString().Contains(txtsearchMalikan.Text.Trim()))
+                    {
+
+                        GridViewMalikan.Rows[i].Visible = true;
+                    }
+                    else
+                    {
+
+                        CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[GridViewMalikan.DataSource];
+                        currencyManager1.SuspendBinding();
+                        GridViewMalikan.Rows[i].Visible = false;
+                        currencyManager1.ResumeBinding();
+                        GridViewMalikan.Rows[i].Visible = false;
+
+
+                    }
+                }
+
+
+            }
+        }
+
+        private void txtsearchMalikan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            {
+                if (e.KeyChar == Convert.ToChar((Keys.Back)))
+                {
+
+                }
+                else
+                {
+                    e.KeyChar = Lang.UrduChar(Convert.ToChar(e.KeyChar));
+                }
+            }
+            else if (e.KeyChar == 1)
+            {
+                TextBox txt = sender as TextBox;
+                txt.SelectAll();
+            }
+        }
+
+        private void cbKhatooni_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            FillMalikanByKhatooniId();
         }
 
 

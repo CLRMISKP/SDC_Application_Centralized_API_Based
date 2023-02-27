@@ -75,6 +75,24 @@ namespace SDC_Application.Classess
            
            
         }
+        public void FillComboWithTopIndex(string query, ComboBox cmb, string DisplayMember, string ValueMember)
+        {
+
+            cmbdt = obj.filldatatable_from_storedProcedure(query);
+            if (cmbdt != null)
+            {
+                //DataRow list = cmbdt.NewRow();
+                //list[ValueMember] = "0";
+                //list[DisplayMember] = "--انتخاب کریں--";
+                //cmbdt.Rows.InsertAt(list, 0);
+                cmb.DataSource = cmbdt;
+                cmb.DisplayMember = DisplayMember;
+                cmb.ValueMember = ValueMember;
+                cmb.SelectedValue = 1;
+            }
+
+
+        }
 
         #endregion
     }

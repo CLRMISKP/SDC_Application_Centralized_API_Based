@@ -48,7 +48,7 @@ namespace SDC_Application.AL
         {
             if (Convert.ToInt32( this.cboIntiqalPendingReasons.SelectedValue )!= 0)
             {
-                client.setIntiqalPendingReason(this.IntiqalId, true, cboIntiqalPendingReasons.SelectedValue.ToString(), txtPendingRemarks.Text.Trim());
+                client.setIntiqalPendingReason(this.IntiqalId, true, cboIntiqalPendingReasons.SelectedValue.ToString(), UsersManagments.UserId.ToString(),txtPendingRemarks.Text.Trim());
                 this.Close();
             }
         }

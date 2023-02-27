@@ -292,7 +292,7 @@ namespace SDC_Application.AL
                     {
                         if (Iq.CheckMalikRemainingHissaCheck(txtIntiqalId.Text) == "1")
                         {
-                            DataTable dtIntiqalaAmal = Iq.IntiqalAmalDaramad(txtMozaId.Text, txtIntiqalId.Text);
+                            DataTable dtIntiqalaAmal = Iq.IntiqalAmalDaramad(txtMozaId.Text, txtIntiqalId.Text,UsersManagments.UserId.ToString(), UsersManagments.UserName);
                             if (dtIntiqalaAmal.Rows.Count > 0)
                             {
                                 if (dtIntiqalaAmal.Rows[0][0].ToString().Length > 5)

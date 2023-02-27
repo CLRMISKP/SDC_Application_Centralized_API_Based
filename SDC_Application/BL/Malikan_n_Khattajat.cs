@@ -504,5 +504,61 @@ namespace SDC_Application.BL
 
         }
         #endregion
+
+        #region Fardat Disptach to Registrar
+        public string SaveRegFardatDispatchDetails(string TokenId, string DispatchId, string InsertUserId, string InsertLoginName)
+        {
+            string spWithParam = "WEB_Self_SP_INSERT_Reg_Fard_Dispatch_Detail "+Classess.UsersManagments._Tehsilid.ToString()+"," + TokenId + "," + DispatchId + "," + InsertUserId + ",'" + InsertLoginName + "'";
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public void DeleteSavedFardat(string TokenId)
+        {
+            string spWithParam = "WEB_Self_SP_DELETE_Reg_Fard_Dispatch " + TokenId;
+            ojbdb.filldatatable_from_storedProcedure(spWithParam);
+        }
+
+        public DataTable GetRegistrarFardatStatus(string DispatchId)
+        {
+
+            string spWithParam = "Proc_Self_Get_SDC_Registrar_Dispatch_Status "+Classess.UsersManagments._Tehsilid.ToString()+"," + DispatchId;
+            return ojbdb.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+
+        public bool ConfirmRegistryFardat(string DispatchId)
+        {
+            string spWithParam = "WEB_Self_SP_Update_Registrar_Fardat_Confirm " + Classess.UsersManagments._Tehsilid.ToString() + "," + DispatchId;
+            return Convert.ToBoolean(ojbdb.ExecInsertUpdateStoredProcedure(spWithParam));
+        }
+
+
+        #endregion
+
+        #region Registries Disptach to Registrar
+
+        public string SaveRegistriesDispatchDetails(string ReceivingId, string DispatchId, string InsertUserId, string InsertLoginName)
+        {
+            string spWithParam = "WEB_Self_SP_INSERT_Registries_Dispatch_Detail " + Classess.UsersManagments._Tehsilid.ToString() + "," + ReceivingId + "," + DispatchId + "," + InsertUserId + ",'" + InsertLoginName + "'";
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        public void DeleteSavedRegistries(string ReceivingId)
+        {
+            string spWithParam = "WEB_Self_SP_DELETE_Registries_Dispatch " + ReceivingId;
+            ojbdb.filldatatable_from_storedProcedure(spWithParam);
+        }
+        #endregion
+
+        #region Insert Registry Fard Dispatch for Registrar
+
+        public string SaveFardDispatchToRegistrar(string FR, string DispatchDate, string InsertUserId, string InsertLoginName)
+        {
+
+            string spWithParam = "WEB_Self_SP_INSERT_Reg_Fard_Dispatch_Main "+Classess.UsersManagments._Tehsilid.ToString()+",'" + FR + "','" + DispatchDate + "'," + InsertUserId + ",'" + InsertLoginName + "'";
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
+        #endregion
     }
 }

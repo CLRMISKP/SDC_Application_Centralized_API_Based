@@ -29,6 +29,12 @@ namespace SDC_Application.Classess
         public static Boolean _IsAdmin;
         public static int _LocationId;
 
+        public static string TransFard { get; set; }
+        public static string Intiqal { get; set; }
+        public static string Registry { get; set; }
+        public static string Misal { get; set; }
+        public static string Implementation { get; set; }
+
         public static int ServiceTypeId
         {
             get { return _ServiceTypeId; }

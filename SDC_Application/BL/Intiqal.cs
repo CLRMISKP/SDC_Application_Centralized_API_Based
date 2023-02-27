@@ -324,14 +324,52 @@ namespace SDC_Application.BL
                 string spWithParam = "proc_Self_Get_Intiqal_Sellers_List_ByKhata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalKhataRecId + "," + IntiqalKhatooniRecid + "," + Malkiat + "";
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
+            public void SetMushtarkaRaqbaMuntiqlaByHissa(string IntiqalKhataId, string KhataMuntaqilaHissa, string MMR_Kanal, string MMR_Marla, string MMR_Sarsai, string MMR_Feet)
+            {
+                string spWithParam = "Proc_Self_Set_Intiqal_Sellers_By_Hissa "+Classess.UsersManagments._Tehsilid.ToString()+",'" + IntiqalKhataId + "',  " + KhataMuntaqilaHissa + ",' " + MMR_Kanal + "','" + MMR_Marla + "', '" + MMR_Sarsai + "', '" + MMR_Feet + "'";
+                dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
+            }
 
+            public string IntiqalWarasathManderjaKhattajatWarisan(string khataid, string IntiqalId)
+            {
+                string spWithParam = "Proc_Self_Intiqal_Warasat_MandarjaKhatajatWarsan " + Classess.UsersManagments._Tehsilid.ToString() + "," + khataid + "," + IntiqalId + "";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public DataTable GetintiqalRahinSellersListByKhataRecId(string IntiqalKhataRecId, string IntiqalKhatooniRecid)
+            {
+
+                string spWithParam = "proc_Self_Get_Intiqal_Rahin_Sellers_List_ByKhata " + IntiqalKhataRecId + "," + IntiqalKhatooniRecid + "";
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
+            public string WEB_Self_SP_INSERT_Fard_KhataJat_and_Malikan(string TokenId, string KhataId, string PersonId, string InsertUserid, string InsertLoginName, string TehsilId)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_Fard_KhataJat_and_Malikan " + TokenId + ", " + KhataId + ", " + PersonId + ", " + InsertUserid + ",'" + InsertLoginName + "'," + TehsilId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+
+            }
+            public string WEB_Self_SP_INSERT_Intiqal_KhataJat_and_Sellers(string IntiqalId, string IntiqalKhataId, string SellerPersonId, string InsertUserid)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_Intiqal_KhataJat_and_Sellers " + Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalKhataId + ", " + SellerPersonId + ", " + InsertUserid + " ";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+
+            }
+            public DataTable GetTransactionalTokenNoListByDateKhata(string KhataId, string dateToken)
+            {
+                string spWithParam = "proc_Self_Get_TokenNo_List_By_Date_KhataId_Transactional " + Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId + ",'" + dateToken + "'";
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
             public DataTable GetintiqalSellersListByKhataRecIdKK(string IntiqalKhataRecId)
             {
                 //string spWithParam = "proc_Get_Intiqal_Sellers_List_ByKhata " + IntiqalKhataRecId + "," + IntiqalKhatooniRecid + "," + Malkiat + "";
                 string spWithParam = "proc_Self_Get_Intiqal_Sellers_List_ByKhata_KK  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalKhataRecId;
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
+            public DataTable Proc_Self_Get_KhassrasTotalArea_By_KhataId(string khataid)//, string IntiqalID, string SeqNo)
+            {
+                string spWithParam = "Proc_Self_Get_KhassrasTotalArea_By_KhataId " + Classess.UsersManagments._Tehsilid.ToString() + "," + khataid;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
+            }
             //Get Intiqal Sellers from Khewat Group Fareqain and MustheriFareeqain after intiqal Amaldaramad
             public DataTable GetintiqalSellersListAfterAmaldaramad(string IntiqalKhataRecId, string IntiqalKhatooniRecid, string Malkiat)
             {
@@ -496,12 +534,12 @@ namespace SDC_Application.BL
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
 
-            public string SaveintiqalMain(string IntiqalId, string MozaId, string KhanaMalikat, string KhanaKasht, string khanakashtmalkiat, string IntiqalNo, string HawalaNo, string IntiqalTypeId, string InitiationId, string AndrajDate, string RapatNo, string RapatDate, string AmaldarDate, string LandValue, string IntiqalAttestationDate, string IntiqalReferenceNo, string LandTypeId, string LandValuationTableCost, string DegreeDate, string CourtName, string MisalNo, string otherDetails, string userid, string userName, string TokenId, string PlotTypeId, string PlotConstrTypeId, string PlotTerritoryTypeId, string LastIntiqalDate, string MinhayeIntiqalId, string fardTokenId, string fardTokenDate, string ReceivngId)
+            public string SaveintiqalMain(string IntiqalId, string MozaId, string KhanaMalikat, string KhanaKasht, string khanakashtmalkiat, string IntiqalNo, string HawalaNo, string IntiqalTypeId, string InitiationId, string AndrajDate, string RapatNo, string RapatDate, string AmaldarDate, string LandValue, string IntiqalAttestationDate, string IntiqalReferenceNo, string LandTypeId, string LandValuationTableCost, string DegreeDate, string CourtName, string MisalNo, string otherDetails, string userid, string userName, string TokenId, string PlotTypeId, string PlotConstrTypeId, string PlotTerritoryTypeId, string LastIntiqalDate, string MinhayeIntiqalId, string fardTokenId, string fardTokenDate, string ReceivngId, string MisalDate)
             {
                 //string KhanaMalikat1=Convert.ToString(KhanaMalikat);
                 // string KhanaMalikat1=Convert.ToString(KhanaKasht);
                 //string spWithParam = "WEB_SP_INSERT_Intiqal_Main_SDC " + IntiqalId + "," + MozaId + ", " + KhanaMalikat + ", " + KhanaKasht + "," + khanakashtmalkiat + " ," + IntiqalNo + ", " + HawalaNo + "," + IntiqalTypeId + ", " + InitiationId + ", '" + AndrajDate + "', " + RapatNo + ",'" + RapatDate + "', '" + AmaldarDate + "'," + LandValue.ToString() + ", '" + IntiqalAttestationDate + "'," + IntiqalReferenceNo + ", " + LandTypeId + ", " + LandValuationTableCost + ", '" + DegreeDate + "', N'" + CourtName + "', " + MisalNo + ",N'" + otherDetails + "', " + userid + ", '" + userName + "', " + TokenId + ", " + PlotTypeId + ", " + PlotConstrTypeId + ", " + PlotTerritoryTypeId + ", '" + LastIntiqalDate + "',"+MinhayeIntiqalId + "," + fardTokenId + ",'" + fardTokenDate +"'" ;
-                string spWithParam = "WEB_SP_Self_INSERT_Intiqal_Main_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "," + MozaId + ", " + KhanaMalikat + ", " + KhanaKasht + "," + khanakashtmalkiat + " ,'" + IntiqalNo + "', " + HawalaNo + "," + IntiqalTypeId + ", " + InitiationId + ", '" + AndrajDate + "', " + RapatNo + ",'" + RapatDate + "', '" + AmaldarDate + "'," + LandValue.ToString() + ", '" + IntiqalAttestationDate + "'," + IntiqalReferenceNo + ", " + LandTypeId + ", " + LandValuationTableCost + ", '" + DegreeDate + "', N'" + CourtName + "', " + MisalNo + ",N'" + otherDetails + "', " + userid + ", '" + userName + "', " + TokenId + ", " + PlotTypeId + ", " + PlotConstrTypeId + ", " + PlotTerritoryTypeId + ", '" + LastIntiqalDate + "'," + MinhayeIntiqalId + "," + fardTokenId + ",'" + fardTokenDate + "'" + "," + ReceivngId;
+                string spWithParam = "WEB_SP_Self_INSERT_Intiqal_Main_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "," + MozaId + ", " + KhanaMalikat + ", " + KhanaKasht + "," + khanakashtmalkiat + " ,'" + IntiqalNo + "', " + HawalaNo + "," + IntiqalTypeId + ", " + InitiationId + ", '" + AndrajDate + "', " + RapatNo + ",'" + RapatDate + "', '" + AmaldarDate + "'," + LandValue.ToString() + ", '" + IntiqalAttestationDate + "'," + IntiqalReferenceNo + ", " + LandTypeId + ", " + LandValuationTableCost + ", '" + DegreeDate + "', N'" + CourtName + "', " + MisalNo + ",N'" + otherDetails + "', " + userid + ", '" + userName + "', " + TokenId + ", " + PlotTypeId + ", " + PlotConstrTypeId + ", " + PlotTerritoryTypeId + ", '" + LastIntiqalDate + "'," + MinhayeIntiqalId + "," + fardTokenId + ",'" + fardTokenDate + "'" + "," + ReceivngId + ", '" + MisalDate + "'";
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
             public string SaveIntiqalMainManual(string IntiqalId, string MozaId, string KhanaMalikat, string KhanaKasht, string khanakashtmalkiat, string IntiqalNo, string HawalaNo, string IntiqalTypeId, string InitiationId, string AndrajDate, string RapatNo, string RapatDate, string AmaldarDate, string LandValue, string IntiqalAttestationDate, string IntiqalReferenceNo, string LandTypeId, string LandValuationTableCost, string DegreeDate, string CourtName, string MisalNo, string otherDetails, string userid, string userName)
@@ -589,13 +627,21 @@ namespace SDC_Application.BL
                  return dbobject.filldatatable_from_storedProcedure(spWithParam);
              
             }
-
-
-            public DataTable IntiqalAmalDaramad(string mozaid,string IntiqalId)
+            public string SaveAllMushtryanofKhatooni(string KhataRecId, string KhatoniRecId, string KhatooniId, string InsertUserId)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_Intiqal_Sellers_AllMushtryanofKhatooni "+Classess.UsersManagments._Tehsilid.ToString()+"," + KhataRecId + "," + KhatoniRecId + "," + KhatooniId + "," + InsertUserId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public string SaveAllMushtryanofAllKhatooni(string KhataRecId, string InsertUserId, string InsertUserName)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_Intiqal_Buyers_AllMushtryanofKhatoonies " + Classess.UsersManagments._Tehsilid.ToString() + "," + KhataRecId + "," + InsertUserId + ",'" + InsertUserName + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public DataTable IntiqalAmalDaramad(string mozaid,string IntiqalId, string userId, string UserName)
             {
                 //string s = DataContext.Proc_Intiqal_Amaldaramad(stringiqalId).FirstOrDefault().ToString();
                 //return s;
-                string spWithParam = "proc_Intiqal_Amaldaramad_Combine_Taqseem  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaid + "," + IntiqalId + "";
+                string spWithParam = "proc_Intiqal_Amaldaramad_Combine_Taqseem  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaid + "," + IntiqalId + ","+userId+",'"+UserName+"'";
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
 
@@ -989,14 +1035,29 @@ namespace SDC_Application.BL
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
 
-            public void setIntiqalPendingReason(string IntiqalId, bool IntiqalPending, string IntiqalPendingReasonId, string IntiqalPendingReasonRemarks)
+            public string setIntiqalPendingReason(string IntiqalId, bool IntiqalPending, string IntiqalPendingReasonId,string UserId, string IntiqalPendingReasonRemarks)
             {
                string IntiqalPend=Convert.ToString(IntiqalPending);
-               string spWithParam = " Proc_Set_IntiqalPending  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalPend + "," + "0" + ",N'" + IntiqalPendingReasonRemarks + "'";
-               dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
+               string spWithParam = " Proc_Set_IntiqalPending  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalPend + "," +IntiqalPendingReasonId+","+UserId + ",N'" + IntiqalPendingReasonRemarks + "'";
+               return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
-
-
+            public string SaveintiqalKhatoniWithKhashtkaranDetail(string IntiqalKhatooniRecId, string intiqalId, string IntiqalKhataRecId, string IntiqalKhataId, string KhatoniId, string KashtkaranDetails, string UserID, string UserName)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_Intiqal_KhanaKasht_Khatooni_WithKhashtkaranDetail "+Classess.UsersManagments._Tehsilid.ToString()+ ",'"+ IntiqalKhatooniRecId + "'," + intiqalId + "," + IntiqalKhataRecId + "," + IntiqalKhataId + "," + KhatoniId + ",N'" + KashtkaranDetails + "'," + UserID + ",'" + UserName + "'," + UserID + ",'" + UserName + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public DataTable GetKhatoniDetailsWithKashtkaran(string IntiqalKhataRecId)
+            {
+                string spWithParam = "proc_Self_Get_Intiqal_Khatoonies_List_By_KhattaRecId_WithKashtkaran "+Classess.UsersManagments._Tehsilid.ToString()+"," + IntiqalKhataRecId;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
+            public string Proc_Self_Get_Registrar_For_Intiqal(string RegNo, int Y, string mozaId)
+            {
+                string RegistrarOffice = "0";
+                string spWithParam = "Proc_Self_Get_Registrar_For_Intiqal '" + RegNo + "'," + Y + "," + mozaId;
+                RegistrarOffice = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+                return RegistrarOffice;
+            }
             public DataTable GetIntiqalPendingReason()
             {
                 string spWithParam = "Proc_Get_IntiqalPendingReasons  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() ;
@@ -1597,14 +1658,20 @@ namespace SDC_Application.BL
                 return ReceivingId;
             }
 
-            public string CheckRegAlreadyReceivedForRecvReg(string RegNo, string Id, int Y, string MozaId)
+            public string CheckRegAlreadyReceivedForRecvReg(string RegNo, string Id, int Y, string MozaId, string SRID)
             {
                 string RegId = "0";
-                string spWithParam = "Proc_Self_Check_Registry_Received_For_RecvReg  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Id + "," + Y+","+MozaId;
+                string spWithParam = "Proc_Self_Check_Registry_Received_For_RecvReg  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Id + "," + Y+","+MozaId+","+SRID;
                 RegId = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return RegId;
             }
-         
+            public string GetLetterNo(string ReceivingId)
+            {
+                string RegId = "0";
+                string spWithParam = "Proc_Self_Get_Letter_No " + ReceivingId;
+                RegId = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+                return RegId;
+            }
 
             #endregion
 

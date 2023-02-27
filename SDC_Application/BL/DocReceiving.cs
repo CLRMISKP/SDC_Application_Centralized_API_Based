@@ -25,10 +25,10 @@ namespace SDC_Application.BL
 
         #region Save Registries
 
-        public string SaveRegReceiving(string RegId, string TehsilId, string MozaId, string RegDate, string RegNo, string JildNo, string Seller, string Buyer, string Kafiyat, string InsertUserId, string InsertLoginName, string ActivityStatus)
+        public string SaveRegReceiving(string RegId, string TehsilId, string MozaId, string RegDate, string RegNo, string JildNo, string Seller, string Buyer, string Kafiyat, string InsertUserId, string InsertLoginName, string ActivityStatus, string SRId)
         {
             string retVal = "";
-            string spWithParms = "WEB_Self_SP_INSERT_RegReceiving " + RegId + "," + TehsilId + "," + MozaId + ",'" + RegDate + "','" + RegNo + "','" + JildNo + "',N'" + Seller + "',N'" + Buyer + "',N'" + Kafiyat + "'," + InsertUserId.ToString() + ",'" + InsertLoginName + "'," + ActivityStatus;
+            string spWithParms = "WEB_Self_SP_INSERT_RegReceiving " + RegId + "," + TehsilId + "," + MozaId + ",'" + RegDate + "','" + RegNo + "','" + JildNo + "',N'" + Seller + "',N'" + Buyer + "',N'" + Kafiyat + "'," + InsertUserId.ToString() + ",'" + InsertLoginName + "'," + ActivityStatus + "," + SRId;
             retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
             return retVal;
         }

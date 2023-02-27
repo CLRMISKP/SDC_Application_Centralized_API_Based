@@ -33,27 +33,37 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCNIC = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPersonaName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.GridViewPersons = new System.Windows.Forms.DataGridView();
+            this.cbgrid = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnAndarajAfrad = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbgrid = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFname = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPersonaName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.GridBuyersList = new System.Windows.Forms.DataGridView();
+            this.chk1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBuyersList)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtFname);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtPersonaName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCNIC);
             this.groupBox1.Controls.Add(this.btnFind);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtPersonaName);
             this.groupBox1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(182, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -70,7 +80,7 @@
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(356, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 30);
+            this.label2.Size = new System.Drawing.Size(98, 38);
             this.label2.TabIndex = 3;
             this.label2.Text = "شناختی کارڈ نمبر";
             // 
@@ -81,7 +91,7 @@
             this.txtCNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtCNIC.MaxLength = 13;
             this.txtCNIC.Name = "txtCNIC";
-            this.txtCNIC.Size = new System.Drawing.Size(261, 30);
+            this.txtCNIC.Size = new System.Drawing.Size(261, 35);
             this.txtCNIC.TabIndex = 4;
             this.txtCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNIC_KeyPress);
@@ -97,27 +107,6 @@
             this.btnFind.TabIndex = 2;
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(356, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "فرد کا نام";
-            // 
-            // txtPersonaName
-            // 
-            this.txtPersonaName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonaName.Location = new System.Drawing.Point(89, 32);
-            this.txtPersonaName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtPersonaName.Name = "txtPersonaName";
-            this.txtPersonaName.Size = new System.Drawing.Size(261, 37);
-            this.txtPersonaName.TabIndex = 1;
-            this.txtPersonaName.Enter += new System.EventHandler(this.txtPersonaName_Enter);
-            this.txtPersonaName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonaName_KeyPress);
             // 
             // groupBox2
             // 
@@ -139,15 +128,21 @@
             this.GridViewPersons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cbgrid});
             this.GridViewPersons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridViewPersons.Location = new System.Drawing.Point(3, 32);
+            this.GridViewPersons.Location = new System.Drawing.Point(3, 38);
             this.GridViewPersons.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.GridViewPersons.Name = "GridViewPersons";
             this.GridViewPersons.ReadOnly = true;
             this.GridViewPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewPersons.Size = new System.Drawing.Size(607, 376);
+            this.GridViewPersons.Size = new System.Drawing.Size(607, 370);
             this.GridViewPersons.TabIndex = 0;
             this.GridViewPersons.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewPersons_CellClick);
             this.GridViewPersons.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridViewPersons_CellMouseDoubleClick);
+            // 
+            // cbgrid
+            // 
+            this.cbgrid.HeaderText = "انتخاب کریں";
+            this.cbgrid.Name = "cbgrid";
+            this.cbgrid.ReadOnly = true;
             // 
             // btnAccept
             // 
@@ -182,18 +177,83 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // cbgrid
+            // label3
             // 
-            this.cbgrid.HeaderText = "انتخاب کریں";
-            this.cbgrid.Name = "cbgrid";
-            this.cbgrid.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(194, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 38);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "ولدیت";
+            // 
+            // txtFname
+            // 
+            this.txtFname.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFname.Location = new System.Drawing.Point(89, 26);
+            this.txtFname.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(99, 45);
+            this.txtFname.TabIndex = 8;
+            this.txtFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFname_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(356, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 38);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "نام";
+            // 
+            // txtPersonaName
+            // 
+            this.txtPersonaName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonaName.Location = new System.Drawing.Point(248, 26);
+            this.txtPersonaName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtPersonaName.Name = "txtPersonaName";
+            this.txtPersonaName.Size = new System.Drawing.Size(102, 45);
+            this.txtPersonaName.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.GridBuyersList);
+            this.panel1.Location = new System.Drawing.Point(7, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(58, 26);
+            this.panel1.TabIndex = 7;
+            // 
+            // GridBuyersList
+            // 
+            this.GridBuyersList.AllowUserToAddRows = false;
+            this.GridBuyersList.AllowUserToDeleteRows = false;
+            this.GridBuyersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridBuyersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridBuyersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chk1});
+            this.GridBuyersList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridBuyersList.Location = new System.Drawing.Point(0, 0);
+            this.GridBuyersList.Name = "GridBuyersList";
+            this.GridBuyersList.ReadOnly = true;
+            this.GridBuyersList.RowTemplate.Height = 30;
+            this.GridBuyersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridBuyersList.Size = new System.Drawing.Size(58, 26);
+            this.GridBuyersList.TabIndex = 3;
+            this.GridBuyersList.Visible = false;
+            // 
+            // chk1
+            // 
+            this.chk1.HeaderText = "انتخاب کریں";
+            this.chk1.Name = "chk1";
+            this.chk1.ReadOnly = true;
             // 
             // frmSearchPersonForNaqalIntiqal
             // 
             this.AcceptButton = this.btnAccept;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 546);
+            this.ClientSize = new System.Drawing.Size(632, 546);
             this.Controls.Add(this.btnAndarajAfrad);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCancel);
@@ -215,6 +275,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridBuyersList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,8 +286,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtPersonaName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView GridViewPersons;
@@ -236,5 +296,12 @@
         private System.Windows.Forms.TextBox txtCNIC;
         private System.Windows.Forms.Button btnAndarajAfrad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn cbgrid;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFname;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPersonaName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView GridBuyersList;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chk1;
     }
 }

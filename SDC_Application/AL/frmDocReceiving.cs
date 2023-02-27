@@ -25,7 +25,13 @@ namespace SDC_Application.AL
         LanguageConverter Lang = new LanguageConverter();
         DocReceiving DocRc = new DocReceiving();
         datagrid_controls objdatagrid = new datagrid_controls();
+        Malikan_n_Khattajat mnk = new Malikan_n_Khattajat();
         Intiqal Iq = new Intiqal();
+        public string DispatchId { get; set; }
+        DataTable dt = new DataTable();
+        BL.Malikan_n_Khattajat obj = new BL.Malikan_n_Khattajat();
+        BL.frmToken objbusines = new BL.frmToken();
+        Intiqal Intiqal = new Intiqal();
         UserMangement a = new UserMangement();
         #endregion
 
@@ -54,6 +60,9 @@ namespace SDC_Application.AL
             objauto.FillCombo("proc_Get_DocumentTypes", cboDocType, "DocumentTypeDescription", "DocumentTypeID");
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboMouzaUpdate, "MozaNameUrdu", "MozaId");
             objauto.FillCombo("proc_Get_DocumentTypes", cboDocTypeUpdate, "DocumentTypeDescription", "DocumentTypeID");
+            objauto.FillCombo("Proc_Self_Get_Letter_List" + "'R'", cbLetterNo, "number", "RegFardDispatchMainId");
+            objauto.FillComboWithTopIndex("Proc_Self_Get_SR_List "+ SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbSR, "SRUrduName", "SRId");
+            objauto.FillComboWithTopIndex("Proc_Self_Get_SR_List "+ SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbRegUpdateSR, "SRUrduName", "SRId");
             this.GetRegReceivedByDate(DateTime.Now.ToShortDateString());
         }
 
@@ -229,21 +238,23 @@ namespace SDC_Application.AL
                 grdvReg.Columns["RegNo"].DisplayIndex = 0;
                 grdvReg.Columns["JildNo"].DisplayIndex = 1;
                 grdvReg.Columns["RegDate"].DisplayIndex = 2;
-                grdvReg.Columns["Seller"].DisplayIndex = 3;
-                grdvReg.Columns["Buyer"].DisplayIndex = 4;
-                grdvReg.Columns["MozaNameUrdu"].DisplayIndex = 5;
-                grdvReg.Columns["status"].DisplayIndex = 6;
-                grdvReg.Columns["Kafiyat"].DisplayIndex = 7;
+                grdvReg.Columns["SRUrduName"].DisplayIndex = 4;
+                grdvReg.Columns["Seller"].DisplayIndex = 5;
+                grdvReg.Columns["Buyer"].DisplayIndex = 6;
+                grdvReg.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                grdvReg.Columns["status"].DisplayIndex = 7;
+                grdvReg.Columns["Kafiyat"].DisplayIndex = 8;
 
                 grdvReg.Columns["RegNo"].HeaderText = "رجسٹری نمبر";
                 grdvReg.Columns["JildNo"].HeaderText = "جلد نمبر";
                 grdvReg.Columns["RegDate"].HeaderText = "رجسٹری تاریخ";
+                grdvReg.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdvReg.Columns["SRUrduName"].HeaderText = "سب رجسٹرار";
                 grdvReg.Columns["Seller"].HeaderText = "بائع";
                 grdvReg.Columns["Buyer"].HeaderText = "مشتری";
-                grdvReg.Columns["MozaNameUrdu"].HeaderText = "موضع";
                 grdvReg.Columns["status"].HeaderText = "حالت";
                 grdvReg.Columns["Kafiyat"].HeaderText = "کیفیت";
-
+                grdvReg.Columns["SRId"].Visible = false;
                 
                 grdvReg.Columns["MozaId"].Visible = false;
                 grdvReg.Columns["ReceivingId"].Visible = false;
@@ -521,7 +532,7 @@ namespace SDC_Application.AL
 
                 if (txtRegId.Text == "-1")
                 {
-                    string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtRegNo.Text.Trim(), "0", dtReg.Value.Year, cboMouza.SelectedValue.ToString());
+                    string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtRegNo.Text.Trim(), "0", dtReg.Value.Year, cboMouza.SelectedValue.ToString(), cmbSR.SelectedValue.ToString());
                     if (Reg != "-1")
                     {
 
@@ -530,7 +541,7 @@ namespace SDC_Application.AL
 
                     }
                 }
-                string retVal = DocRc.SaveRegReceiving(txtRegId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(), dtReg.Value.ToShortDateString(), txtRegNo.Text, txtJildNo.Text.Trim(), txtSeller.Text, txtBuyer.Text, txtKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1");
+                string retVal = DocRc.SaveRegReceiving(txtRegId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(), dtReg.Value.ToShortDateString(), txtRegNo.Text, txtJildNo.Text.Trim(), txtSeller.Text, txtBuyer.Text, txtKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1", cmbSR.SelectedValue.ToString());
                 if (retVal != "" && retVal != "Null")
                 {
                    // MessageBox.Show("دستویز محفوظ ہو گیا۔");
@@ -588,6 +599,7 @@ namespace SDC_Application.AL
                     //cboDocType.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["DocumentTypeId"].Value.ToString());
                     dtReg.Value = DateTime.ParseExact(g.SelectedRows[0].Cells["RegDate"].Value.ToString(), "dd-MM-yyyy", null);
                     cmbRegMoza.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["MozaId"].Value.ToString());
+                    cmbSR.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["SRId"].Value.ToString());
                     txtRegId.Text = g.SelectedRows[0].Cells["ReceivingId"].Value.ToString();
                 }
 
@@ -626,7 +638,7 @@ namespace SDC_Application.AL
                         txtUpdateKafiyat.Text = g.SelectedRows[0].Cells["Kafiyat"].Value.ToString();
                         //cboDocType.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["DocumentTypeId"].Value.ToString());
                         dtUpdateRegDate.Value = DateTime.ParseExact(g.SelectedRows[0].Cells["RegDate"].Value.ToString(), "dd-MM-yyyy", null);
-                       
+                        cmbRegUpdateSR.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["SRId"].Value.ToString());
                         cmbRegUpdateMoza.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["MozaId"].Value.ToString());
                         txtUpdateRecId.Text = g.SelectedRows[0].Cells["ReceivingId"].Value.ToString();
                         if (g.SelectedRows[0].Cells["ActivityStatus"].Value.ToString() == "1")
@@ -641,7 +653,29 @@ namespace SDC_Application.AL
                         {
                             this.rbUpdatePending.Checked = true;
                         }
+                        else if (g.SelectedRows[0].Cells["ActivityStatus"].Value.ToString() == "4")
+                        {
+                            this.rbBackToSR.Checked = true;
 
+                            //Get Letter Number by clickin on the cell content
+                            if (e.RowIndex != -1)
+                            {
+                                if (dgvRegUpdate.Columns.Count > 1)
+                                {
+                                    if (e.ColumnIndex == dgvRegUpdate.CurrentRow.Cells["Status"].ColumnIndex)
+                                    {
+                                        frmMessageBox mb = new frmMessageBox();
+                                        string val = Iq.GetLetterNo(dgvRegUpdate.CurrentRow.Cells["ReceivingId"].Value.ToString());
+                                        mb.Width = 732;
+                                        mb.Height = 170;
+                                        mb.lbMessageBox.Width = 732;
+                                        mb.btnOK.Location = new Point(310, 110);
+                                        mb.lbMessageBox.Text = val;
+                                        mb.ShowDialog();
+                                    }
+                                }
+                            }
+                        }
                         // if intiqal entered against this registry then some of its value can not be changed
                         if (g.SelectedRows[0].Cells["intiqalno"].Value.ToString().Length > 0)
                         {
@@ -698,7 +732,7 @@ namespace SDC_Application.AL
                     if (txtUpdateRecId.Text.ToString() != "-1")
                         
                     {
-                        string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtUpdateRegNo.Text, txtUpdateRecId.Text, dtUpdateRegDate.Value.Year, cmbRegMoza.SelectedValue.ToString());
+                        string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtUpdateRegNo.Text, txtUpdateRecId.Text, dtUpdateRegDate.Value.Year, cmbRegMoza.SelectedValue.ToString(), cmbSR.SelectedValue.ToString());
                         if (Reg != "-1")
                         {
 
@@ -721,7 +755,7 @@ namespace SDC_Application.AL
                         {
                             activityStatus = "2";
                         }
-                        string retVal = DocRc.SaveRegReceiving(txtUpdateRecId.Text, UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza.SelectedValue.ToString(), dtUpdateRegDate.Value.ToShortDateString(), txtUpdateRegNo.Text, txtUpdateJildNo.Text.Trim(), txtUpdateSeller.Text, txtUpdateBuyer1.Text, txtUpdateKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, activityStatus);
+                        string retVal = DocRc.SaveRegReceiving(txtUpdateRecId.Text, UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza.SelectedValue.ToString(), dtUpdateRegDate.Value.ToShortDateString(), txtUpdateRegNo.Text, txtUpdateJildNo.Text.Trim(), txtUpdateSeller.Text, txtUpdateBuyer1.Text, txtUpdateKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, activityStatus, cmbRegUpdateSR.SelectedValue.ToString());
                         if (retVal != "" && retVal != "Null")
                         {
                              MessageBox.Show("دستویز محفوظ ہو گیا۔");
@@ -764,6 +798,7 @@ namespace SDC_Application.AL
                         
                         dgvRegUpdate.Columns["RegNo"].HeaderText = "رجسٹری نمبر";
                         dgvRegUpdate.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                        dgvRegUpdate.Columns["SRUrduName"].HeaderText = "سب رجسٹرار";
                         dgvRegUpdate.Columns["RegDate"].HeaderText = "تاریخ رجسٹری";
                         dgvRegUpdate.Columns["JildNo"].HeaderText = "جلد نمبر";
                         dgvRegUpdate.Columns["Seller"].HeaderText = "بائع";
@@ -772,7 +807,7 @@ namespace SDC_Application.AL
                         dgvRegUpdate.Columns["Status"].HeaderText = "حالت رجسٹری";
                         dgvRegUpdate.Columns["intiqalno"].HeaderText = "انتقال نمبر";
                         dgvRegUpdate.Columns["intiqalstatus"].HeaderText = "حالت انتقال";
-
+                        dgvRegUpdate.Columns["srId"].Visible = false;
                         dgvRegUpdate.Columns["mozaid"].Visible = false;
                         dgvRegUpdate.Columns["ReceivingId"].Visible = false;
                         dgvRegUpdate.Columns["RecStatus"].Visible = false;
@@ -902,7 +937,416 @@ namespace SDC_Application.AL
 
             }
 
-          
-      
+            private void btnNewLetter_Click(object sender, EventArgs e)
+            {
+                if (DialogResult.Yes == MessageBox.Show("آپ رجسٹرار آفس کے لئے نیا ڈاک بنا رہے ہیں؟", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    dtDispatchDate.Enabled = true;
+                    dtDispatchDate.Value = DateTime.Today;
+                    cbLetterNo.SelectedIndex = 0;
+                    btnSaveLetter.Enabled = true;
+                    btnInsert.Enabled = false;
+                    btnRemove.Enabled = false;
+                    btnConfirm.Enabled = false;
+                }
+
+
+            }
+            private void btnSaveLetter_Click(object sender, EventArgs e)
+            {
+                if (DialogResult.Yes == MessageBox.Show("کیا آپ لیٹر محفوظ کرنا چاہتے ہے؟", "محفوظ کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    string dtDispatch = dtDispatchDate.Value.ToShortDateString();
+                    string lastId = mnk.SaveFardDispatchToRegistrar("R", dtDispatch, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    dtDispatchDate.Enabled = false;
+                    objauto.FillCombo("Proc_Self_Get_Letter_List" + "'R'", cbLetterNo, "number", "RegFardDispatchMainId");
+                    cbLetterNo.SelectedValue = lastId;
+                    btnSave.Enabled = false;
+                    btnDel.Enabled = true;
+                }
+            }
+            public void Load_RegistryList_Saved_For_Registrar_Dispatch()
+            {
+                try
+                {
+
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_RegistryList_Registrar_Dispatch " + DispatchId);
+
+                    DataTable outputTable = dt.Clone();
+
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        outputTable.ImportRow(dt.Rows[i]);
+                    }
+                    grdInsertedFardat.DataSource = outputTable;
+                    PopulategridSavedRegistries();
+                    LbFardatNos.Text = grdInsertedFardat.Rows.Count.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+            public void PopulategridSavedRegistries()
+            {
+                grdInsertedFardat.Columns["RegNo"].DisplayIndex = 1;
+                grdInsertedFardat.Columns["RegDate"].DisplayIndex = 2;
+                grdInsertedFardat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                grdInsertedFardat.Columns["Kafiyat"].DisplayIndex = 4;
+
+                grdInsertedFardat.Columns["RegNo"].HeaderText = "رجسٹری نمبر";
+                grdInsertedFardat.Columns["RegDate"].HeaderText = "تاریخ رجسٹری";
+                grdInsertedFardat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdInsertedFardat.Columns["Kafiyat"].HeaderText = "کیفیت";
+                grdInsertedFardat.Columns["RegDispatchId"].Visible = false;
+                grdInsertedFardat.Columns["ReceivingId"].Visible = false;
+
+
+
+            }
+            private void cbLetterNo_SelectionChangeCommitted(object sender, EventArgs e)
+            {
+                if (cbLetterNo.SelectedIndex > 0)
+                {
+                    DispatchId = cbLetterNo.SelectedValue.ToString();
+                    Load_RegistryList_Saved_For_Registrar_Dispatch();
+                    Proc_Get_Registries_List_For_Registrar();
+
+
+                    dt = obj.GetRegistrarFardatStatus(DispatchId);
+                    if (dt != null)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            dtDispatchDate.Value = Convert.ToDateTime(row["DispatchDate"]);
+                            if (row["status"].ToString() == "0")
+                            {
+
+                                btnConfirm.Enabled = true;
+                                btnInsert.Enabled = true;
+                                btnRemove.Enabled = true;
+                            }
+                            else
+                            {
+
+                                btnConfirm.Enabled = false;
+                                btnInsert.Enabled = false;
+                                btnRemove.Enabled = false;
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    DispatchId = cbLetterNo.SelectedValue.ToString();
+                    Load_RegistryList_Saved_For_Registrar_Dispatch();
+                    btnInsert.Enabled = false;
+                    btnRemove.Enabled = false;
+                    btnConfirm.Enabled = false;
+
+                }
+            }
+
+            private void chkAllToSave_CheckedChanged(object sender, EventArgs e)
+            {
+                if (this.grdFardToInsert.Rows.Count > 0)
+                {
+
+                    for (int i = 0; i <= grdFardToInsert.Rows.Count - 1; i++)
+                    {
+
+                        if (chkAllToSave.Checked)
+                        {
+
+                            grdFardToInsert.Rows[i].Cells["colCheckInsert"].Value = true;
+
+                        }
+                        else
+                        {
+
+                            grdFardToInsert.Rows[i].Cells["colCheckInsert"].Value = false;
+                        }
+                    }
+
+
+                }
+            }
+            private void chkAllDetails_CheckedChanged(object sender, EventArgs e)
+            {
+                if (this.grdInsertedFardat.Rows.Count > 0)
+                {
+
+                    for (int i = 0; i <= grdInsertedFardat.Rows.Count - 1; i++)
+                    {
+
+                        if (chkAllDetails.Checked)
+                        {
+
+                            grdInsertedFardat.Rows[i].Cells["colCheckInserted"].Value = true;
+
+                        }
+                        else
+                        {
+
+                            grdInsertedFardat.Rows[i].Cells["colCheckInserted"].Value = false;
+                        }
+                    }
+
+
+                }
+            }
+            private void txtRegToInsert_TextChanged(object sender, EventArgs e)
+            {
+                if (this.grdFardToInsert.Rows.Count > 0)
+                {
+
+                    for (int i = 0; i <= grdFardToInsert.Rows.Count - 1; i++)
+                    {
+
+                        if (grdFardToInsert.Rows[i].Cells["RegNo"].Value.ToString().Contains(txtRegToInsert.Text.Trim()))
+                        {
+
+                            grdFardToInsert.Rows[i].Visible = true;
+                        }
+                        else
+                        {
+
+                            CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[grdFardToInsert.DataSource];
+                            currencyManager1.SuspendBinding();
+                            grdFardToInsert.Rows[i].Visible = false;
+                            currencyManager1.ResumeBinding();
+                            grdFardToInsert.Rows[i].Visible = false;
+
+
+                        }
+                    }
+
+
+                }
+            }
+            private void txtRegistryInserted_TextChanged(object sender, EventArgs e)
+            {
+                if (this.grdInsertedFardat.Rows.Count > 0)
+                {
+
+                    for (int i = 0; i <= grdInsertedFardat.Rows.Count - 1; i++)
+                    {
+
+                        if (grdInsertedFardat.Rows[i].Cells["RegNo"].Value.ToString().Contains(txtRegistryInserted.Text.Trim()))
+                        {
+
+                            grdInsertedFardat.Rows[i].Visible = true;
+                        }
+                        else
+                        {
+
+                            CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[grdInsertedFardat.DataSource];
+                            currencyManager1.SuspendBinding();
+                            grdInsertedFardat.Rows[i].Visible = false;
+                            currencyManager1.ResumeBinding();
+                            grdInsertedFardat.Rows[i].Visible = false;
+
+
+                        }
+                    }
+
+
+                }
+
+            }
+            private void btnInsert_Click(object sender, EventArgs e)
+            {
+
+
+                for (int i = 0; i <= this.grdFardToInsert.Rows.Count - 1; i++)
+                {
+                    int b = Convert.ToInt32(grdFardToInsert.Rows[i].Cells["colCheckInsert"].Value);
+                    if (b == 1)
+                    {
+                        bool isExists = false;
+
+
+                        string ReceivingId = grdFardToInsert.Rows[i].Cells["ReceivingId"].Value.ToString();
+
+                        //string retVal = Intiqal.GetRegistriesDispatchStatus(ReceivingId, DispatchId);
+                        //if (retVal != "1")
+                        //{
+                        //    MessageBox.Show(retVal, "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+                        //}
+
+                        //else
+                        //{
+
+                        try
+                        {
+                            if (this.grdInsertedFardat.Rows.Count > 0)
+                            {
+                                foreach (DataGridViewRow row in grdInsertedFardat.Rows)
+                                {
+
+                                    if (row.Cells["ReceivingId"].Value.ToString() == grdFardToInsert.Rows[i].Cells["ReceivingId"].Value.ToString())
+                                    {
+                                        isExists = true;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        isExists = false;
+                                    }
+                                }
+
+                            }
+
+                            if (!isExists)
+                            {
+
+                                string s = obj.SaveRegistriesDispatchDetails(ReceivingId, DispatchId, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+
+
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                        //}
+
+                    }
+
+                }
+                for (int k = 0; k <= grdFardToInsert.Rows.Count - 1; k++)
+                {
+                    grdFardToInsert.Rows[k].Cells["colCheckInsert"].Value = 0;
+                }
+
+                this.chkAllToSave.Checked = false;
+                Load_RegistryList_Saved_For_Registrar_Dispatch();
+                Proc_Get_Registries_List_For_Registrar();
+            }
+            public void Proc_Get_Registries_List_For_Registrar()
+            {
+                try
+                {
+
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Registries_List_For_Registrar");
+
+                    DataTable outputTable = dt.Clone();
+
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        outputTable.ImportRow(dt.Rows[i]);
+                    }
+                    grdFardToInsert.DataSource = outputTable;
+
+
+                    Populategrid();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+            public void Populategrid()
+            {
+                grdFardToInsert.Columns["RegNo"].DisplayIndex = 1;
+                grdFardToInsert.Columns["Regdate"].DisplayIndex = 2;
+                grdFardToInsert.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                grdFardToInsert.Columns["Kafiyat"].DisplayIndex = 4;
+
+                grdFardToInsert.Columns["RegNo"].HeaderText = "رجسٹری نمبر";
+                grdFardToInsert.Columns["Regdate"].HeaderText = "تاریخ رجسٹری";
+                grdFardToInsert.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdFardToInsert.Columns["Kafiyat"].HeaderText = "کیفیت";
+
+                grdFardToInsert.Columns["ReceivingId"].Visible = false;
+
+            }
+            private void grdFardToInsert_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+                DataGridView g = sender as DataGridView;
+
+                if (e.RowIndex != -1)
+                {
+
+                    if (e.ColumnIndex == this.grdFardToInsert.CurrentRow.Cells["colCheckInsert"].ColumnIndex)
+                    {
+                        if (Convert.ToInt32(this.grdFardToInsert.CurrentRow.Cells["colCheckInsert"].Value) == 1)
+                        {
+                            this.grdFardToInsert.CurrentRow.Cells["colCheckInsert"].Value = 0;
+                        }
+                        else
+                        {
+                            this.grdFardToInsert.CurrentRow.Cells["colCheckInsert"].Value = 1;
+                        }
+                    }
+                }
+            }
+            private void grdInsertedFardat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+                DataGridView g = sender as DataGridView;
+
+                if (e.RowIndex != -1)
+                {
+
+                    if (e.ColumnIndex == this.grdInsertedFardat.CurrentRow.Cells["colCheckInserted"].ColumnIndex)
+                    {
+                        if (Convert.ToInt32(this.grdInsertedFardat.CurrentRow.Cells["colCheckInserted"].Value) == 1)
+                        {
+                            this.grdInsertedFardat.CurrentRow.Cells["colCheckInserted"].Value = 0;
+                        }
+                        else
+                        {
+                            this.grdInsertedFardat.CurrentRow.Cells["colCheckInserted"].Value = 1;
+                        }
+                    }
+                }
+            }
+            private void btnRemove_Click(object sender, EventArgs e)
+            {
+                DataGridView g = sender as DataGridView;
+
+
+                if (this.grdInsertedFardat.Rows.Count > 0)
+                {
+                    for (int i = 0; i < grdInsertedFardat.Rows.Count; i++)
+                    {
+                        int rowvalue = Convert.ToInt32(grdInsertedFardat.Rows[i].Cells["colCheckInserted"].Value);
+
+                        if (rowvalue == 1)
+                        {
+                            string ReceivingId = grdInsertedFardat.Rows[i].Cells["ReceivingId"].Value.ToString();
+
+                            obj.DeleteSavedRegistries(ReceivingId);
+
+                        }
+                    }
+
+                }
+
+
+                this.chkAllDetails.Checked = false;
+                Load_RegistryList_Saved_For_Registrar_Dispatch();
+                Proc_Get_Registries_List_For_Registrar();
+
+
+            }
+            private void btnPrint_Click(object sender, EventArgs e)
+            {
+                if (this.grdInsertedFardat.Rows.Count > 0)
+                {
+                    frmSDCReportingMain TokenReport = new frmSDCReportingMain();
+                    TokenReport.RegFardDispatchMainId = this.DispatchId;
+                    TokenReport.userId = UsersManagments.UserId.ToString();
+
+                    UsersManagments.check = 46;
+
+                    TokenReport.ShowDialog();
+                }
+            }
     }
 }

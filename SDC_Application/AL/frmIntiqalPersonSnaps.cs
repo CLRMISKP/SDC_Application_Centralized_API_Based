@@ -46,6 +46,7 @@ namespace SDC_Application.AL
         public string IntiqalId { get; set; }
         public bool Attested { get; set; }
         public bool Amaldaramad { get; set; }
+        public bool Cancelled  { get; set; }
         BL.frmToken objbusines = new BL.frmToken();
 
         private FilterInfoCollection captureDevices;

@@ -35,6 +35,7 @@ namespace SDC_Application
 
         public int NewKhatooniId { get; set; }
         public string MozaId { get; set; }
+        public string IntiqalId { get; set; }
         #endregion
 
         #region Default Constructor
@@ -62,14 +63,20 @@ namespace SDC_Application
 
             try
             {
-                this.KhatajatByMoza = Intiqal.GetKhataJatForintiqalByMozaId(this.MozaId);
+                //this.KhatajatByMoza = Intiqal.GetKhataJatForintiqalByMozaId(this.MozaId);
+                this.KhatajatByMoza = Intiqal.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
                 DataRow row = this.KhatajatByMoza.NewRow();
-                row["RegisterHqDKhataId"] = 0;
-                row["KhataNo"] = "- کھاتے کا انتخاب کریں -";
+                row["IntiqalKhataId"] = 0;
+                row["KhataNo"] = "- انتخاب کریں -";
                 this.KhatajatByMoza.Rows.InsertAt(row, 0);
                 cbokhataNo.DataSource = this.KhatajatByMoza;
                 cbokhataNo.DisplayMember = "KhataNo";
-                cbokhataNo.ValueMember = "RegisterHqDKhataId";
+                cbokhataNo.ValueMember = "IntiqalKhataId";
+
+                this.MushteryanByKhatooniNew = khatooni.Get_MushtriFareeqein_By_KhatooniId(NewKhatooniId.ToString());
+                this.gridviewNewKhatooniMushteryan.DataSource = this.MushteryanByKhatooniNew;
+                this.PopulateGrid(this.gridviewNewKhatooniMushteryan);
+               
                
             }
             catch (Exception ex)
@@ -114,7 +121,7 @@ namespace SDC_Application
                 this.KhatooniesByKhata = khatooni.GetKhatooniNosListbyKhataId(KhataId.ToString());
                 DataRow row = this.KhatooniesByKhata.NewRow();
                 row["KhatooniId"] = 0;
-                row["KhatooniNo"] = "- کھتونی کا انتخاب کریں -";
+                row["KhatooniNo"] = "- انتخاب کریں -";
                 this.KhatooniesByKhata.Rows.InsertAt(row, 0);
                 cboKhatoonies.DataSource = this.KhatooniesByKhata;
                 cboKhatoonies.DisplayMember = "KhatooniNo";
@@ -173,7 +180,7 @@ namespace SDC_Application
                 if (g.SelectedRows.Count > 0)
                 {
                     string mushterifareeqid = g.SelectedRows[0].Cells["MushtriFareeqId"].Value.ToString();
-                    if (DialogResult.Yes == MessageBox.Show("آپ " + g.SelectedRows[0].Cells["CompleteName"].Value.ToString() + "حذف کرنا چاہتے ہے۔ ؟", "Confirmation of Fard e Badar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                    if (DialogResult.Yes == MessageBox.Show("کیا آپ " + g.SelectedRows[0].Cells["CompleteName"].Value.ToString() + "حذف کرنا چاہتے ہے۔ ؟", "Confirmation ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                     {
                         khatooni.DELETE_MushtriFareeqein(mushterifareeqid);
                         this.MushteryanByKhatooniNew.Clear();
@@ -182,13 +189,23 @@ namespace SDC_Application
                         this.PopulateGrid(this.gridviewNewKhatooniMushteryan);
                     }
                 }
-                MessageBox.Show("مطلوبہ مشتری کا ڈبل کلک پر انتخاب کریں۔ ");
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void btnDelMushteri_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("کیا آپ موجودہ کھتونی کے تمام مشتریان حذف کرنا چاہتے ہے۔ ؟", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                khatooni.DELETE_MushtriFareeqein_By_KhatooniId(NewKhatooniId.ToString());
+                this.MushteryanByKhatooniNew.Clear();
+                this.MushteryanByKhatooniNew = khatooni.Get_MushtriFareeqein_By_KhatooniId(NewKhatooniId.ToString());
+                this.gridviewNewKhatooniMushteryan.DataSource = this.MushteryanByKhatooniNew;
+                this.PopulateGrid(this.gridviewNewKhatooniMushteryan);
+            }
+        }
     }
 }

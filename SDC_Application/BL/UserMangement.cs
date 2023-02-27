@@ -48,7 +48,11 @@ namespace SDC_Application.BL
                             UsersManagments._Ver = row["ver"].ToString();
                             UsersManagments._RoleName = row["RoleName"].ToString();
                             UsersManagments._IsAdmin = Convert.ToBoolean(row["IsAdmin"]);
-
+                            UsersManagments.TransFard = row["TransFard"].ToString();
+                            UsersManagments.Intiqal = row["Intiqal"].ToString();
+                            UsersManagments.Registry = row["Registry"].ToString();
+                            UsersManagments.Misal = row["Misal"].ToString();
+                            UsersManagments.Implementation = row["Implementation"].ToString();
                             //UsersManagments = row["DistrictNameUrdu"];
                             // = row["tehsilNameUrdu"];
                             //CurrentUser.UserName =  row["username"];

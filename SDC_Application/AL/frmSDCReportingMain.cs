@@ -77,6 +77,7 @@ namespace SDC_Application.AL
         }
         public string FbID { get; set; }
         public string TokenDate { get; set; }
+        public string RegFardDispatchMainId { get; set; }
         
         public frmSDCReportingMain()
         {
@@ -143,7 +144,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if (UsersManagments.check > 24 && UsersManagments.check!=44)
+            if (UsersManagments.check > 24 && UsersManagments.check<44)
             {
                 ReportParameter param = new ReportParameter();
                 param.Name = "TehsilId";
@@ -151,7 +152,7 @@ namespace SDC_Application.AL
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
-            else if (UsersManagments.check == 44)
+            else if (UsersManagments.check >= 44)
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }
@@ -496,6 +497,20 @@ namespace SDC_Application.AL
                  rp[2] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                  this.SetCredentials("Rhz_Change_Details", rp, false);
 
+             }
+             if (UsersManagments.check == 45)
+             {
+                 ReportParameter[] rp = new ReportParameter[3];
+                 rp[0] = new ReportParameter("IntiqalId", this.IntiqalId);
+                 rp[1] = new ReportParameter("userId", this.userId);
+                 rp[2] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("IntiqalMainPart_Baeh_ADC_KhanaKasht_To_Malkiat", rp, false);
+             }
+             if (UsersManagments.check == 46)
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("RegFardDispatchMainId", this.RegFardDispatchMainId);
+                 this.SetCredentials("RegistriesDispatchMain", rp, false);
              }
         }
 

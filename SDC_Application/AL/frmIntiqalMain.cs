@@ -32,6 +32,8 @@ namespace SDC_Application.AL
         string GardawarUserId = "0";
         int Teh_Report = 0;
         string datetoken;
+        public string RegStatus { get; set; }
+        public string SRName { get; set; }
         DataTable dt = new DataTable();
 
         #region Properties
@@ -327,8 +329,8 @@ namespace SDC_Application.AL
            // Labels.Add(lbl9.Text);
             Labels.Add(lbl10.Text);
             Labels.Add(lbl13.Text);
-            Labels.Add(lbl14.Text);
-            Labels.Add(lbl15.Text);
+            //Labels.Add(lbl14.Text);
+            Labels.Add(lblSR.Text);
             Labels.Add(lbl16.Text);
             Labels.Add(lbl17.Text);
             Labels.Add(lbl19.Text);
@@ -385,6 +387,7 @@ namespace SDC_Application.AL
                     //        return;
                     //    }
                     //}
+                   
                     string RegIntiqal = Iq.CheckRegAlreadyEntered(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
                     if (RegIntiqal != "-1")
                     {
@@ -484,19 +487,29 @@ namespace SDC_Application.AL
                     string usrName = UsersManagments.UserName.ToString();
                     string MinhayeIntiqalId = cmbIntialListForMinhayeIntiqal.SelectedValue.ToString();
                     string txtRegNo = txtRegisteryNo.Text.Trim()!=""?txtRegisteryNo.Text.Trim():"0";
+                    string MisalDate = dtMisal.Checked ? dtMisal.Value.ToShortDateString() : "NULL";
                     string RegDate = dtRegisteryDate.Checked ? dtRegisteryDate.Value.ToShortDateString() : "NULL";
-                    //string TrialSubject = txtTrialSubject.Text;
+                    string TrialSubject = txtTrialSubject.Text;
                     string FardTokenDate = dtFardToken.Checked ? dtFardToken.Value.ToShortDateString() : "";
                     string FardTokenIdSelected = cmbFardTokenNo.SelectedIndex != 0 ? cmbFardTokenNo.SelectedValue.ToString() : "0";
                     
                     if (mozaId != "-1" && mozaId != "0")
                     {
 
-                        string LastId = Iq.SaveintiqalMain(intiqalId, mozaId, radKhanaMalkiat.Checked.ToString(), radKhanaKasht.Checked.ToString(), this.radkhanakashtmalkiat.Checked.ToString(), intiqalNo, txtRegNo, intiqalTypeId, intiqalInitaionId, IndrajDate, rapatNo, rapatDate, amalDaramadDate, landValue, AttestDate, "1", landTypeId, LandValutionTablVal, DegreeDate, courtname, misalNo, tafseel, usrId, usrName, TokenId, PlotTypeId, PlotConstType, PlotTerritType, LastIntiqalDate, MinhayeIntiqalId, FardTokenIdSelected, FardTokenDate,ReceivngId);
-                        MessageBox.Show("انتقال کا اندراج  ہو گیا ہے۔");
-                        this.ClearFormControls(groupBox6);
-                        this.ClearFormControls(groupBox5);
-                        this.ClearFormControls(groupBoxRapat);
+                        string LastId = Iq.SaveintiqalMain(intiqalId, mozaId, radKhanaMalkiat.Checked.ToString(), radKhanaKasht.Checked.ToString(), this.radkhanakashtmalkiat.Checked.ToString(), intiqalNo, txtRegNo, intiqalTypeId, intiqalInitaionId, IndrajDate, rapatNo, rapatDate, amalDaramadDate, landValue, AttestDate, "1", landTypeId, LandValutionTablVal, DegreeDate, courtname, misalNo, tafseel, usrId, usrName, TokenId, PlotTypeId, PlotConstType, PlotTerritType, LastIntiqalDate, MinhayeIntiqalId, FardTokenIdSelected, FardTokenDate,ReceivngId,MisalDate);
+                        if (LastId == "1")
+                        {
+                            MessageBox.Show("آج کے لئے آپ کے انتقالات کی تعداد پوری ہو چکی ہے", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("انتقال کا اندراج  ہو گیا ہے۔");
+                            this.ClearFormControls(groupBox6);
+                            this.ClearFormControls(groupBox5);
+                            this.ClearFormControls(groupBoxRapat);
+                            this.cboMoza.SelectedValue = mozaId;
+                            this.txtIntiqalNo.Text = intiqalNo.ToString();
+                        }
                     }
                     else
                     {
@@ -532,6 +545,10 @@ namespace SDC_Application.AL
                     radKhanaMalkiat.Checked = (bool)(data["IntiqalKhanaMalkiat"]!=""?data["IntiqalKhanaMalkiat"]:false);
                     radKhanaKasht.Checked = (bool)(data["IntiqalKhanaKasht"]!=""?data["IntiqalKhanaKasht"]:false);
                     this.radkhanakashtmalkiat.Checked = (bool)(data["IntiqalKhanaMalkiatKasht"]!=""?data["IntiqalKhanaMalkiatKasht"]:false);
+                    if ((bool)(data["IntiqalKhanaMalkiatKasht"]) == false && (bool)(data["IntiqalKhanaMalkiat"]) == false && (bool)(data["IntiqalKhanaKasht"]) == false)
+                    {
+                        radkhanakashtToMalkiat.Checked = true;
+                    }
                     dtpIntiqalAndrajDate.Value = Convert.ToDateTime(data["IntiqalAndrajDate"]);
                     dtpIntiqalAmaldramadDate.Value = Convert.ToDateTime(data["IntiqalAmaldramadDate"]); 
                     dtpTasdiq.Value = Convert.ToDateTime(data["IntiqalAttestationDate"]);
@@ -546,6 +563,8 @@ namespace SDC_Application.AL
                     dtpIntiqalRapatDate.Value = Convert.ToDateTime(data["IntiqalRapatDate"]);
                     txtTafsil.Text = data["OtherDetail"].ToString();
                     this.Teh_Report = data["Teh_Report"].ToString().Length;
+                    this.RegStatus = data["RegStatus"].ToString();
+                    this.cboMoza.Enabled = false;
                     // dtpTasdiq.Value = data.IntiqalAttestationDate;
                     if (cboIntiqalInitiation.SelectedValue.ToString() == "2") // Not registery
                     {
@@ -636,10 +655,12 @@ namespace SDC_Application.AL
                     if(AmalDaramad)
                     {
                         btnIntiqalRevert.Enabled = true;
+                        this.btnSave.Enabled = false;
                     }
                     else
                     {
                         btnIntiqalRevert.Enabled = false;
+                        this.btnSave.Enabled = true;
                     }
                     
                     if (Attested)
@@ -652,8 +673,16 @@ namespace SDC_Application.AL
                     else
                     {
                         this.btnROattestation.Enabled = true;
-                        this.btnIntiqalCancel.Enabled = true;
-                        this.btnSave.Enabled = true;
+                        //this.btnIntiqalCancel.Enabled = true;
+                        //this.btnSave.Enabled = true;
+                        if (AmalDaramad)
+                        {
+                            this.btnSave.Enabled = false;
+                        }
+                        else
+                        {
+                            this.btnSave.Enabled = true;
+                        }
                         if(this.intiqalIId=="2")
                         {
                             this.btnIntiqalTasdiqDate.Enabled = false;
@@ -667,18 +696,18 @@ namespace SDC_Application.AL
                     if (this.GardawarUserId == "0")
                     {
                         this.btnGirdawar.Enabled = true;
-                        if(!Attested)
-                        {
-                            //this.btnROattestation.Enabled = false;
-                            //this.btnIntiqalCancel.Enabled = false;
-                            this.btnSave.Enabled = true;
-                        }
+                        //if(!Attested)
+                        //{
+                        //    //this.btnROattestation.Enabled = false;
+                        //    //this.btnIntiqalCancel.Enabled = false;
+                        //    this.btnSave.Enabled = true;
+                        //}
                       
                     }
                     else
                     {
                         this.btnGirdawar.Enabled = false;
-                        this.btnSave.Enabled = false;
+                        //this.btnSave.Enabled = false;
                         //if (!Attested)
                         //{
                         //    this.btnROattestation.Enabled = true;
@@ -688,19 +717,55 @@ namespace SDC_Application.AL
                     }
                     if (Cancelled)
                     {
-                        this.groupBox1.Enabled = false;
-                        this.groupBox7.Enabled = false;
+                        //this.groupBox1.Enabled = false;
+                        //this.groupBox7.Enabled = false;
+                        btnSave.Enabled = false;
+                        btnConfirm.Enabled = false;
+                        btnEdit.Enabled = false;
+                        btnIntiqalRevert.Enabled = false;
+                        btnIntiqalCancel.Enabled = false;
+                        btnROattestation.Enabled = false;
+                        btnGirdawar.Enabled = false;
+                        btnIntiqalAmalDaramadByKhata.Enabled = false;
+                        btnIntiqalTasdiqDate.Enabled = false;
+                        btnTaqseem.Enabled = false;
+                        btnIntiqalWitness.Enabled = false;
+                        btnIntiqalDoc.Enabled = true;
+                        btnRoznamcha.Enabled = false;
+                        btnIntiqalPersonSnaps.Enabled = false;
+                        btnChkGainTax.Enabled = false;
                     }
                     else
                     {
-                        this.groupBox1.Enabled = true;
-                        this.groupBox7.Enabled = true;
+                        //this.groupBox1.Enabled = true;
+                        //this.groupBox7.Enabled = true;
+                        btnIntiqalAmalDaramadByKhata.Enabled = true;
+                        if (cboIntiqalInitiation.SelectedValue.ToString() != "2")
+                        {
+                            btnIntiqalPersonSnaps.Enabled = true;
+                            btnChkGainTax.Enabled = true;
+                            btnIntiqalWitness.Enabled = true;
+                            btnIntiqalTasdiqDate.Enabled = true;
+                        }
                     }
                     if (data["IntiqalPending"].ToString()=="True")
                     {
                         this.chkPendingIntiqal.Checked = true;
-                        this.groupBox7.Enabled = false;
-                        this.groupBox1.Enabled = false;
+                        //this.groupBox7.Enabled = false;
+                        //this.groupBox1.Enabled = false;
+                        btnSave.Enabled = false;
+                        btnConfirm.Enabled = false;
+                        btnEdit.Enabled = false;
+                        btnIntiqalRevert.Enabled = false;
+                        btnIntiqalCancel.Enabled = false;
+                        btnROattestation.Enabled = false;
+                        btnGirdawar.Enabled = false;
+                        btnIntiqalAmalDaramadByKhata.Enabled = false;
+                        btnIntiqalTasdiqDate.Enabled = false;
+                        btnTaqseem.Enabled = false;
+                        btnIntiqalWitness.Enabled = false;
+                        btnIntiqalDoc.Enabled = true;
+                        btnRoznamcha.Enabled = false;
                         //this.gbAmalDaramad.Height = 150;
                         this.lblIntiqalPending.Text = data["IntiqalPendingReason_Urdu"].ToString();
                         //this.IntiqalRemarks = data.IntiqalPendingRemakrs;
@@ -710,8 +775,16 @@ namespace SDC_Application.AL
                     {
                         this.chkPendingIntiqal.Checked = false;
                         //this.gbAmalDaramad.Height = 80;
-                        this.groupBox7.Enabled = true;
-                        this.groupBox1.Enabled = true;
+                        //this.groupBox7.Enabled = true;
+                        //this.groupBox1.Enabled = true;
+                        btnIntiqalAmalDaramadByKhata.Enabled = true;
+                        if (cboIntiqalInitiation.SelectedValue.ToString() != "2")
+                        {
+                            btnIntiqalPersonSnaps.Enabled = true;
+                            btnChkGainTax.Enabled = true;
+                            btnIntiqalWitness.Enabled = true;
+                            btnIntiqalTasdiqDate.Enabled = true;
+                        }
                         this.lblIntiqalPending.Text = "";
                         this.intiqalPending = false;
                         this.lblIntiqalPending.Text = "";
@@ -722,7 +795,7 @@ namespace SDC_Application.AL
                     panelCurrentStatus.Visible = true;
                 if(Cancelled)
                 {
-                    lbCurrentStatus.Text = "کینسل شدہ";
+                    lbCurrentStatus.Text = "خارج شدہ";
                     lbCurrentStatus.ForeColor = Color.Red;
                 }
                 else if (intiqalPending)
@@ -863,6 +936,8 @@ namespace SDC_Application.AL
                     btnNewInteqal.Enabled = true;                   
                     this.btnDelMain.Enabled = true;
                     this.fillIntiqalListForMinhayeIntiqal(mozaId);
+                    frmIntiqalKhattaJat ik = new frmIntiqalKhattaJat();
+                    ik.Close();
 
                     
                 }
@@ -882,6 +957,8 @@ namespace SDC_Application.AL
         private void btnNewInteqal_Click(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
+            cboIntiqalInitiation.Enabled = true;
+            cboIntiqalType.Enabled = true;
             radKhanaKasht.Enabled = true;
             radKhanaMalkiat.Enabled = true;
             radkhanakashtmalkiat.Enabled = true;
@@ -904,7 +981,27 @@ namespace SDC_Application.AL
         {
             if (IntiqalId != "-1")
             {
-               
+                if (radkhanakashtToMalkiat.Checked)
+                {
+                    frmIntiqalKhattaJatKhanaKashtToMalkiat frmIK = new frmIntiqalKhattaJatKhanaKashtToMalkiat();
+                    frmIK.IntiqalId = this.IntiqalId;
+                    frmIK.MozaId = this.MozaId;
+                    frmIK.isAttested = this.Attested;
+                    frmIK.isGardawar = this.GardawarId;
+                    frmIK.Teh_Report = this.Teh_Report;
+                    frmIK.isConfirmed = this.isConfirmed;
+                    frmIK.AmalDaramad = this.AmalDaramad;
+                    frmIK.MdiParent = this.ParentForm;
+                    frmIK.MalkiatKashkat = true;
+                    frmIK.MinhayeIntiqalId = this.MinhayeIntiqalId;
+
+                    frmIK.IntiqalTypeId = this.intiqalTypeId;
+                    frmIK.FardTokenId = this.fardTokenId;
+                    frmIK.intiqalIId = this.intiqalIId;
+                    frmIK.RegStatus = this.RegStatus;
+
+                    frmIK.Show();
+                }
                 //bool MalkyatType;
                 if (radKhanaMalkiat.Checked)
                 {
@@ -914,7 +1011,17 @@ namespace SDC_Application.AL
                     frmIK.MozaId = this.MozaId;
                     frmIK.MdiParent = this.ParentForm;
                     frmIK.AmalDaramad = this.AmalDaramad;
-                    frmIK.isAttested = this.Attested;
+                    frmIK.RegStatus = this.RegStatus;
+                    if (Cancelled || intiqalPending)
+                    {
+                        frmIK.isAttested = true;
+                    }
+                    else
+                    {
+                        frmIK.isAttested = this.Attested;
+                    }
+                   
+                    //frmIK.isAttested = this.Attested;
                     frmIK.isGardawar = this.GardawarUserId;
                     frmIK.Teh_Report = this.Teh_Report;
                     frmIK.isConfirmed = this.isConfirmed;
@@ -944,7 +1051,7 @@ namespace SDC_Application.AL
                     frmIK.IntiqalTypeId = this.intiqalTypeId;
                     frmIK.FardTokenId = this.fardTokenId;
                     frmIK.intiqalIId = this.intiqalIId;
-
+                    frmIK.RegStatus = this.RegStatus;
                     frmIK.Show();
                 }
                 else if (radkhanakashtmalkiat.Checked)
@@ -960,7 +1067,7 @@ namespace SDC_Application.AL
                     frmIK.MdiParent = this.ParentForm;
                     frmIK.MalkiatKashkat = true;
                     frmIK.MinhayeIntiqalId = this.MinhayeIntiqalId;
-
+                    frmIK.RegStatus = this.RegStatus;
                     frmIK.IntiqalTypeId = this.intiqalTypeId;
                     frmIK.FardTokenId = this.fardTokenId;
                     frmIK.intiqalIId = this.intiqalIId;
@@ -1164,7 +1271,7 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
                    //     MessageBox.Show("مقرر کردہ تاریخ سے پہلے دورہ نہیں ہو سکتا۔ ایڈمنسٹریٹر سے رابطہ کریں", "دورہ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    // }
                    //else 
-                  if (this.intiqalIId == "1" && (this.intiqalTypeId == "5" || this.intiqalTypeId == "37" || this.intiqalTypeId == "38" || this.intiqalTypeId == "35") && Iq.GetIntiqalWitnessYesNo(this.IntiqalId) == "-1")
+                if (this.intiqalIId == "1" && (this.intiqalTypeId == "5" || this.intiqalTypeId == "37" || this.intiqalTypeId == "38" || this.intiqalTypeId == "35") && Iq.GetIntiqalWitnessYesNo(this.IntiqalId) == "-1" && !Cancelled)
                    {
                        MessageBox.Show("پہلے گواہان کا اندراج کریں", "گواہان", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    }
@@ -1174,6 +1281,7 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
                         psnap.IntiqalId = this.IntiqalId;
                         psnap.Attested = this.Attested;
                         psnap.Amaldaramad = this.AmalDaramad;
+                        psnap.Cancelled = this.Cancelled;
                         psnap.ShowDialog();
                     }
             }
@@ -1209,6 +1317,8 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
             if (IntiqalId != "-1")
             {
                 frmDucomentRecievedForScan frmDucomentRecievedForScan = new frmDucomentRecievedForScan();
+                frmDucomentRecievedForScan.Cancelled = this.Cancelled;
+                frmDucomentRecievedForScan.Pending = this.intiqalPending;
                 frmDucomentRecievedForScan.FormClosed -= new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
                 frmDucomentRecievedForScan.FormClosed += new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
                 frmDucomentRecievedForScan.IntiqalId = IntiqalId;
@@ -1289,39 +1399,39 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
                
                 //else
                 //{
-                    if (this.intiqalTypeId == "5" && this.intiqalIId == "1")
-                    {
-                        this.dtGainTax = Iq.GetIntiqalGainTaxStatus(this.IntiqalId);
-                        this.dtTaxesReceived = Iq.ChecIntiqalEnteredTaxReceived(this.TokenId);
+                    //if (this.intiqalTypeId == "5" && this.intiqalIId == "1")
+                    //{
+                    //    this.dtGainTax = Iq.GetIntiqalGainTaxStatus(this.IntiqalId);
+                    //    this.dtTaxesReceived = Iq.ChecIntiqalEnteredTaxReceived(this.TokenId);
 
-                        if (this.dtGainTax == "0")
-                        {
-                            MessageBox.Show("اس انتقال پر گین ٹیکس لاگو ہے- پہلے گین ٹیکس جمع کریں");
-                        }
-                        else if (dtTaxesReceived != "1")
-                        {
-                             MessageBox.Show("پہلے تمام درج شدہ ٹیکسز وصول کریں۔");
-                        }
-                        else
-                        {
+                    //    if (this.dtGainTax == "0")
+                    //    {
+                    //        MessageBox.Show("اس انتقال پر گین ٹیکس لاگو ہے- پہلے گین ٹیکس جمع کریں");
+                    //    }
+                    //    else if (dtTaxesReceived != "1")
+                    //    {
+                    //         MessageBox.Show("پہلے تمام درج شدہ ٹیکسز وصول کریں۔");
+                    //    }
+                    //    else
+                    //    {
                             frmInteqalWitness intWit = new frmInteqalWitness();
                             intWit.IntiqalId = this.IntiqalId;
                             intWit.MozaID = this.MozaId.ToString();
                             intWit.Attested = this.Attested;
                             intWit.Amaldaramad = this.AmalDaramad;
                             intWit.ShowDialog();
-                        }
-                    }
-                    else
-                    {
-                        frmInteqalWitness intWit = new frmInteqalWitness();
-                        intWit.IntiqalId = this.IntiqalId;
-                        intWit.MozaID = this.MozaId.ToString();
-                        intWit.Attested = this.Attested;
-                        intWit.Amaldaramad = this.AmalDaramad;
-                        intWit.ShowDialog();
-                    }
-                //}
+                //        }
+                //    }
+                //    else
+                //    {
+                //        frmInteqalWitness intWit = new frmInteqalWitness();
+                //        intWit.IntiqalId = this.IntiqalId;
+                //        intWit.MozaID = this.MozaId.ToString();
+                //        intWit.Attested = this.Attested;
+                //        intWit.Amaldaramad = this.AmalDaramad;
+                //        intWit.ShowDialog();
+                //    }
+                ////}
             }
             else
             {
@@ -1439,6 +1549,7 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
            this.cboMoza.SelectedValue = (Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0";
            string lastNo= Iq.GetNextIntiqalNoForMoza((Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0", Populate.TokenID);
            this.fillIntiqalListForMinhayeIntiqal(cboMoza.SelectedValue!=null?cboMoza.SelectedValue.ToString():"0");
+           this.cboMoza.Enabled = false;
            long MaxNo=0;
            if (long.TryParse(lastNo, out MaxNo))
            {
@@ -1447,6 +1558,9 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
            else
            {
                MessageBox.Show("سسٹم اگلے انتقال نمبر پیدا کرنے میں ناکام راہا۔ خود سے نیا انتقال نمبر کا اندراج کریں-", "انتقال نمبر غلطی", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               cboMoza.Enabled = true;
+               cboMoza.SelectedIndex = 0;
+               txtIntiqalNo.Enabled = false;
            }
            panelCurrentStatus.Visible = false;
         }
@@ -1482,6 +1596,8 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
                     UsersManagments.check = 16;
                 else if (radkhanakashtmalkiat.Checked)
                     UsersManagments.check = 17;
+                else if (radkhanakashtToMalkiat.Checked)
+                    UsersManagments.check = 45;
                 else if(radKhanaMalkiat.Checked)
                 UsersManagments.check = 4;
                 TokenReport.ShowDialog();     
@@ -1638,7 +1754,12 @@ txtLandValue.Enabled = false;
             {
                 if (DialogResult.Yes == MessageBox.Show("کیا آپ اس انتقال کے زیر التواء حئثیت ختم کرنا چاہتے ہیں", "", MessageBoxButtons.YesNo))
                 {
-                    Iq.setIntiqalPendingReason(this.IntiqalId.ToString(), false, "", "");
+                    string val;
+                    val = Iq.setIntiqalPendingReason(this.IntiqalId.ToString(), false, "", UsersManagments.UserId.ToString(),"");
+                    if (val != "1")
+                    {
+                        MessageBox.Show(" صرف " + val.ToString() + " زیر التوا ختم کر سکتا ہے۔", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     this.btnSearchInteqal_Click(sender, e);
                 }
             }
@@ -1672,7 +1793,7 @@ txtLandValue.Enabled = false;
             IntiqalKhataAmal.isAttested = this.Attested;
             IntiqalKhataAmal.isGardawar = this.GardawarId;
             IntiqalKhataAmal.Teh_Report = this.Teh_Report;
-
+            IntiqalKhataAmal.RegStatus = this.RegStatus;
             IntiqalKhataAmal.MdiParent = this.ParentForm;
             IntiqalKhataAmal.IntiqalPending = this.intiqalPending;
             IntiqalKhataAmal.Show();
@@ -1948,8 +2069,8 @@ txtLandValue.Enabled = false;
         {
             if (IntiqalId != "-1")
             {
-                if(this.intiqalTypeId=="5" && this.intiqalIId=="1")
-                {
+                //if(this.intiqalTypeId=="5" && this.intiqalIId=="1")
+                //{
                 this.dtChkGainTax = Iq.CheckIntiqalGainTax(this.IntiqalId);
 
                 if (this.dtChkGainTax.ToString() == "0")
@@ -1963,11 +2084,11 @@ txtLandValue.Enabled = false;
                     MessageBox.Show(this.dtChkGainTax.ToString(), "گین ٹیکس", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
                 
                 }
-                }
-                else
-                {
-                    MessageBox.Show("گین ٹیکس صرف بیع کے انتقالات پر لاگو ہے", "گین ٹیکس", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("گین ٹیکس صرف بیع کے انتقالات پر لاگو ہے", "گین ٹیکس", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
             else
             {
@@ -2018,10 +2139,12 @@ txtLandValue.Enabled = false;
                 cmbFardTokenNo.Enabled = true;
                 dtpDateOfDec.Checked = true;
                 dtpDateOfDec.Enabled = true;
-                if(txtCourt.Text.Trim()=="")
-                {
-                    txtCourt.Text = " سب رجسٹرار" + UsersManagments.TehsilNameUrdu;
-                }
+                lblSR.Text = "سب رجسٹرار:";
+                lbDtRegistry.Text = "تاریخ رجسٹری:";
+                //if(txtCourt.Text.Trim()=="")
+                //{
+                //    txtCourt.Text = " سب رجسٹرار" + UsersManagments.TehsilNameUrdu;
+                //}
                 if (dtpDateOfDec.Value < DateTime.ParseExact("1925-01-01", "yyyy-MM-dd", null))
                 {
                     dtpDateOfDec.Value = DateTime.Now;
@@ -2029,7 +2152,7 @@ txtLandValue.Enabled = false;
 
                 if (cboMoza.SelectedIndex != -1 && txtIntiqalNo.Text.Trim().Length > 0)
                 {
-                    chkkhata = Iq.GetRegistryIntiqalKhataCheck(cboMoza.SelectedValue.ToString(), txtIntiqalNo.Text.Trim());
+                    //chkkhata = Iq.GetRegistryIntiqalKhataCheck(cboMoza.SelectedValue.ToString(), txtIntiqalNo.Text.Trim());
                     if (this.chkkhata == "1")
                     {
                         cmbFardTokenNo.Enabled = false;
@@ -2045,7 +2168,10 @@ txtLandValue.Enabled = false;
             }
             else
             {
+                lblSR.Text = "نام عدالت:";
+                lbDtRegistry.Text = "تاریخ فیصلہ:";
                 txtRegisteryNo.Text = "0";
+                txtCourt.Enabled = true;
                 if(txtCourt.Text.Contains("رجسٹرار"))
                 {
                     txtCourt.Clear();
@@ -2098,6 +2224,82 @@ txtLandValue.Enabled = false;
                 MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void txtIntiqalNo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIntiqalNo.Text.Trim().Length == 0)
+            {
+                cboMoza.Enabled = true;
+                this.btnNewInteqal_Click(sender, e);
+
+            }
+        }
+
+        private void dtpDateOfDec_ValueChanged(object sender, EventArgs e)
+        {
+            
+                if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+                {
+                    string SRName = Iq.Proc_Self_Get_Registrar_For_Intiqal(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
+                    if (SRName == "-1")
+                    {
+                        txtCourt.Clear();
+                    }
+                    else
+                    {
+                        txtCourt.Text = "سب رجسٹرار " + SRName;
+                    }
+
+                }
+        }
+
+        private void txtRegisteryNo_Leave(object sender, EventArgs e)
+        {
+            
+                if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+                {
+                    string SRName = Iq.Proc_Self_Get_Registrar_For_Intiqal(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
+                    if (SRName == "-1")
+                    {
+                        txtCourt.Clear();
+                    }
+                    else
+                    {
+                        txtCourt.Text = "سب رجسٹرار " + SRName;
+                    }
+
+                }
+        }
+
+        private void btnRegReciev_Click(object sender, EventArgs e)
+        {
+            txtRegisteryNo.Clear();
+            try
+            {
+
+                frmRegRecFromIntiqal RegRec = new frmRegRecFromIntiqal();
+                RegRec.MozaId = this.MozaId.ToString();
+
+                RegRec.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void radkhanakashtToMalkiat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radkhanakashtToMalkiat.Checked)
+            {
+                radKhanaKasht.Checked = false;
+                radkhanakashtmalkiat.Checked = false;
+                radKhanaMalkiat.Checked = false;
+            }
+            else
+                radkhanakashtToMalkiat.Checked = false;
         }
 
       

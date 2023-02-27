@@ -43,6 +43,7 @@ namespace SDC_Application.AL
         public bool isAttested { get; set; }
         public int Teh_Report;
         public string isGardawar { get; set; }
+        public string RegStatus { get; set; }
 
         LanguageConverter lang = new LanguageConverter();
 

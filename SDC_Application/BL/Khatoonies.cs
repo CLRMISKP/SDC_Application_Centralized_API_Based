@@ -34,6 +34,23 @@ namespace SDC_Application.BL
             dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
 
         }
+        public DataTable Proc_Self_Get_Khata_Malkan_Area_Hissa(string KhataId)
+        {
+            string spWithParam = "Proc_Self_Get_Khata_Malkan_Area_Hissa " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public DataTable Proc_Self_Get_Khatooni_Mushtryan_Area_Hissa(string KhatooniId)
+        {
+            string spWithParam = "Proc_Self_Get_Khatooni_Mushtryan_Area_Hissa " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+        public string DELETE_MushtriFareeqein_By_KhatooniId(string KhatooniId)
+        {
+            string spWithParam = "WEB_Self_SP_DELETE_All_MushtriFareeqein " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
         public DataTable Get_Moza_HaqdaranRegisterNos(string MozaId)
         {
             string spWithParam = "Proc_Get_Moza_HaqdaranRegisterNos  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId;

@@ -23,6 +23,57 @@ namespace SDC_Application.BL
         }
 
         #endregion
+        # region Check khata No and Khassra No in moza
+        public string CheckKhataInMoza(string MozaId, string KhataNo, string KhataId)
+        {
+            string ret = "0";
+            string spWithParam = "Proc_Self_Check_KhatNo_in_Moza "+Classess.UsersManagments._Tehsilid.ToString()+"," + MozaId + ",'" + KhataNo + "'," + KhataId;
+            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return ret;
+        }
+
+
+        public string CheckKhasraNoInMoza(string MozaId, string KhasraNo)
+        {
+            string ret = "0";
+            string spWithParam = "Proc_Self_Check_KhasraNo_in_Moza " + Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + KhasraNo + "'";
+            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return ret;
+        }
+
+        public string CheckKhasraNoInMozaKhatooni(string MozaId, string KhatooniId, string KhasraNo, string AreaType)
+        {
+            string ret = "0";
+            string spWithParam = "Proc_Self_Check_KhasraNo_in_Moza_Khatooni " + Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + "," + KhatooniId + ",'" + KhasraNo + "'," + AreaType;
+            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return ret;
+        }
+
+        public string CheckKhasraDetailsInMoza(string MozaId, string KhasraNo, string KhassraDetailId, string AreaType)
+        {
+            string ret = "0";
+            string spWithParam = "Proc_Self_Check_KhasraDetail_in_Moza " + Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + KhasraNo + "'," + KhassraDetailId + "," + AreaType;
+            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return ret;
+        }
+
+        public string CheckFBKhataUsed(string Fbid, string KhataId)
+        {
+            string ret = "0";
+            string spWithParam = "Proc_Self_Check_FB_Khata_Used " + Classess.UsersManagments._Tehsilid.ToString() + "," + Fbid + "," + KhataId;
+            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return ret;
+        }
+
+        public string CheckParentKhata(string IntiqalId, string ParentKhataId)
+        {
+            string ret = "0";
+            string spWithParam = "Proc_Self_Check_Khata_As_Parent " + Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "," + ParentKhataId;
+            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return ret;
+        }
+
+        #endregion
 
         #region Save Misal Khata
 
@@ -45,6 +96,8 @@ namespace SDC_Application.BL
             string spWithParms = "Proc_Get_FardBadar_Main_By_DocumentNo  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + FB_DocumentNo + "'," + MozaId.ToString();
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
+
+
         #endregion
 
         #region Get Misal Details by Khata Id

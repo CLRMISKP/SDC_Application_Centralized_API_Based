@@ -37,7 +37,8 @@ namespace SDC_Application.AL
         ArrayList list = new ArrayList();
         string ToSaveFileTo = "";
         public string FileType { get; set; }
-        
+        public bool Cancelled { get; set; }
+        public bool Pending { get; set; }
 
         public string IntiqalId
         {

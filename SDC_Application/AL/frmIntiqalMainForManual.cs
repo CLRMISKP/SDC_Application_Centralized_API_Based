@@ -1201,7 +1201,7 @@ namespace SDC_Application.AL
             {
                 if (DialogResult.Yes == MessageBox.Show("کیا آپ اس انتقال کے زیر التواء حئثیت ختم کرنا چاہتے ہیں", "", MessageBoxButtons.YesNo))
                 {
-                    Iq.setIntiqalPendingReason(this.IntiqalId.ToString(), false, "", "");
+                    Iq.setIntiqalPendingReason(this.IntiqalId.ToString(), false, "0",UsersManagments.UserId.ToString(), "");
                     this.btnSearchInteqal_Click(sender, e);
                 }
             }
@@ -1541,7 +1541,7 @@ namespace SDC_Application.AL
                         {
                             if (Iq.CheckMalikRemainingHissaCheck(this.IntiqalId) == "1")
                             {
-                                DataTable dtIntiqalaAmal=Iq.IntiqalAmalDaramad(this.MozaId.ToString(), this.IntiqalId);
+                                DataTable dtIntiqalaAmal=Iq.IntiqalAmalDaramad(this.MozaId.ToString(), this.IntiqalId, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                                 if (dtIntiqalaAmal.Rows.Count > 0)
                                 {
                                     if (dtIntiqalaAmal.Rows[0][0].ToString().Length > 5)
