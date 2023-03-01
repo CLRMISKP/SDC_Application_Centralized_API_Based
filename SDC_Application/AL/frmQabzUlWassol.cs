@@ -102,17 +102,17 @@ namespace SDC_Application.AL
         private void SetCredentials(string report, ReportParameter[] r, bool isSdcReports)
         {
             this.rvIntiqalReport.RefreshReport();
-            string Server = "http://"+System.Configuration.ConfigurationSettings.AppSettings["rptserver"] +"/ReportServer";//ReportServerTextBox.Text;
-            string reportProject ="/"+ System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"]+"/";
+            string Server = "http://" + SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["rptserver"]) + UsersManagments._rptPort + "/ReportServer";//ReportServerTextBox.Text;
+            string reportProject = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"] + "/";
             string reportProjectLand = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"] + "/";
             string reportName = report; //"IntiqalMainPart_Baeh_ADC";
             rvIntiqalReport.ProcessingMode = ProcessingMode.Remote;
             ServerReport serverReport;
             serverReport = rvIntiqalReport.ServerReport;
 
-            string usr = System.Configuration.ConfigurationSettings.AppSettings["usr"];
-            string password = System.Configuration.ConfigurationSettings.AppSettings["adpsreport"];
-            string domain = System.Configuration.ConfigurationSettings.AppSettings["domain"];
+            string usr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["usr"]);
+            string password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["adpsreport"]);
+            string domain = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["domain"]);
             this.ReportingFolder = System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"];
             this.ReportinFolderLand = System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"];
             //
@@ -133,11 +133,12 @@ namespace SDC_Application.AL
             }
 
              //You can add Parameter if need
-            ReportParameter[] rp = new ReportParameter[1];
-            rp = r;
+            //ReportParameter[] rp = new ReportParameter[1];
+            //rp[0]= new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
             if (UsersManagments.check != 7)
             {
-                rvIntiqalReport.ServerReport.SetParameters(rp);
+                rvIntiqalReport.ServerReport.SetParameters(r);
+                rvIntiqalReport.ShowParameterPrompts = true;
             }
             else
             {
@@ -150,7 +151,7 @@ namespace SDC_Application.AL
         {
             this.IntiqalId = "-1";
             this.MozaId = "-1";
-            objauto.FillCombo("Proc_Get_Moza_List", cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
            
           
 
@@ -232,11 +233,12 @@ namespace SDC_Application.AL
             if (this.IntiqalId != string.Empty && this.IntiqalId != "-1" && this.MozaId!= string.Empty && this.MozaId!="-1")
             {
                
-                 ReportParameter[] rp = new ReportParameter[4];
+                 ReportParameter[] rp = new ReportParameter[5];
                 rp[0] = new ReportParameter("MozaId", this.MozaId);
                 rp[1] = new ReportParameter("IntiqalId", this.IntiqalId);
                 rp[2] = new ReportParameter("TotalCost", txtAmount.Text);
                 rp[3] = new ReportParameter("Note", txtNote.Text);
+                rp[4] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
 
                 this.SetCredentials("QabzulWasool", rp, false);
                

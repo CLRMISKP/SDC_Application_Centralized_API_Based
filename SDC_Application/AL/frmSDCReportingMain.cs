@@ -21,6 +21,8 @@ namespace SDC_Application.AL
         public string ReportingFolder { get; set; }
         public string ReportinFolderLand { get; set; }
         public string  FardPersonId { get; set; }
+        public string ReceiptVerified { get; set; }
+        public string UserName { get; set; }
 
 
         public int check
@@ -511,6 +513,15 @@ namespace SDC_Application.AL
                  ReportParameter[] rp = new ReportParameter[1];
                  rp[0] = new ReportParameter("RegFardDispatchMainId", this.RegFardDispatchMainId);
                  this.SetCredentials("RegistriesDispatchMain", rp, false);
+             }
+             if (UsersManagments.check == 47)
+             {
+                 ReportParameter[] rp = new ReportParameter[4];
+                 rp[0] = new ReportParameter("MozaId", this.MozaId);
+                 rp[1] = new ReportParameter("TokenId", this.TokenID);
+                 rp[2] = new ReportParameter("UserName", UsersManagments.UserName);
+                 rp[3] = new ReportParameter("ReceiptVerified", this.ReceiptVerified);
+                 this.SetCredentials("ShortFardForPersonalRecord", rp, false);
              }
         }
 

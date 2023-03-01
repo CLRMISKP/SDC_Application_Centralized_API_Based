@@ -18,6 +18,7 @@ namespace SDC_Application
         //public string TotalPages { get; set; }
         // Pages = new UsersManagments();
         public bool isTrans { get; set; }
+        public string ReceiptVerified { get; set; }
         
         
         public FardMalikan_Report()

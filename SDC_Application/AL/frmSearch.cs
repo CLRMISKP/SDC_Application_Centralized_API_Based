@@ -44,7 +44,11 @@ namespace SDC_Application.AL
         public string sequenceid { get; set; }
         public string pvddetailslastid { get; set; }
         public string fromform { get; set; }
-        public DateTime tokenDate { get; set; }
+        public DateTime tokenDate = DateTime.Now; //{ get; set; }
+        public string IntiqalId { get; set; }
+        public string IntiqalTypeId { get; set; }
+        public string PV_Verified { get; set; }
+        public string KKM { get; set; }
 
 
         public frmSearch()
@@ -57,7 +61,7 @@ namespace SDC_Application.AL
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
-
+            tokenID = "-1";
             Proc_Get_SDC_TokenList_For_PaymentVoucher();
             btnSearch.Visible = false;
         }
@@ -66,15 +70,18 @@ namespace SDC_Application.AL
         {
         try
             {
-                if (fromform == "1" || fromform == "2")
+                if (fromform == "1" || fromform == "2" || fromform == "4")
                 {
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard "+UsersManagments._Tehsilid.ToString()+",'" + dateTime.Value.ToShortDateString() + "','" + fromform + "'");
+                }
 
-
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + String.Format("{0:dd MMM yyyy}", dateTime.Value) + "','" + fromform + "'");
+                else if (fromform == "3")
+                {
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Naqal_Intiqal " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToShortDateString() + "','" + fromform + "'");
                 }
                 else
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToShortDateString() + "' ");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToShortDateString() + "' ");
                 }
                 DataTable outputTable = dt.Clone();
 
@@ -120,9 +127,21 @@ namespace SDC_Application.AL
             grdTokenData.Columns["ServiceTypeId"].Visible = false;
             grdTokenData.Columns["TokenId"].Visible = false;
 
-            if (fromform == "1" || fromform == "2")
+            if (fromform == "1" || fromform == "2" || fromform == "3" || fromform == "4")
             {
                 grdTokenData.Columns["TokenPurposeId"].Visible = false;
+            }
+
+            if (fromform == "3")
+            {
+                grdTokenData.Columns["IntiqalId"].Visible = false;
+                grdTokenData.Columns["IntiqalTypeId"].Visible = false;
+                grdTokenData.Columns["KKM"].Visible = false;
+                grdTokenData.Columns["PV_Verified_Status"].Visible = false;
+            }
+            if (fromform == "4")
+            {
+                grdTokenData.Columns["pvstatus"].Visible = false;
             }
             objdatagrid.colorrbackgrid(grdTokenData);
             objdatagrid.gridControls(grdTokenData);
@@ -205,7 +224,18 @@ namespace SDC_Application.AL
             {
                 this.tokenPurposeId = grdTokenData.CurrentRow.Cells["TokenPurposeId"].Value.ToString();
             }
-          
+            if (fromform == "3")
+            {
+                this.IntiqalId = grdTokenData.CurrentRow.Cells["IntiqalId"].Value.ToString();
+                this.IntiqalTypeId = grdTokenData.CurrentRow.Cells["IntiqalTypeId"].Value.ToString();
+                this.KKM = grdTokenData.CurrentRow.Cells["KKM"].Value.ToString();
+                this.PV_Verified = grdTokenData.CurrentRow.Cells["PV_Verified_Status"].Value.ToString();
+            }
+
+            if (fromform == "4")
+            {
+                this.PV_Verified = grdTokenData.CurrentRow.Cells["pvstatus"].Value.ToString();
+            }
            
             btn = true;
             this.Close();

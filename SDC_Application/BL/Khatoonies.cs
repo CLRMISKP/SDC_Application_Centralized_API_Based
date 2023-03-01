@@ -182,7 +182,7 @@ namespace SDC_Application.BL
 
         public DataTable Get_Self_MushtriFareeqein_By_KhatooniId(string KhatooniId)
         {
-            string spWithParam = "Proc_Self_Get_MushtriFareeqein_By_KhatooniId " + KhatooniId;// --NOT_IMPLEMENTED_ not in db
+            string spWithParam = "Proc_Self_Get_MushtriFareeqein_By_KhatooniId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId;// --NOT_IMPLEMENTED_ not in db
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }

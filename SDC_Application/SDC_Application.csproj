@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>2.0.5.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,6 +79,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>SDC_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge">
@@ -142,9 +148,11 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -183,6 +191,12 @@
     </Compile>
     <Compile Include="AL\frmFardManhai.designer.cs">
       <DependentUpon>frmFardManhai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmIntiqalatInKhata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalatInKhata.designer.cs">
+      <DependentUpon>frmIntiqalatInKhata.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmIntiqalKhattaJatKhanaKashtToMalkiat.cs">
       <SubType>Form</SubType>
@@ -269,6 +283,12 @@
     </Compile>
     <Compile Include="AL\frmQabzUlWassolByTypes.designer.cs">
       <DependentUpon>frmQabzUlWassolByTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmRegFardDispatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRegFardDispatch.designer.cs">
+      <DependentUpon>frmRegFardDispatch.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmRegRecFromIntiqal.cs">
       <SubType>Form</SubType>
@@ -593,6 +613,12 @@
     </Compile>
     <Compile Include="AL\frmSetPath.designer.cs">
       <DependentUpon>frmSetPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmShortFard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmShortFard.designer.cs">
+      <DependentUpon>frmShortFard.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmStayOrder.cs">
       <SubType>Form</SubType>
@@ -978,6 +1004,12 @@
     <Compile Include="AL\frmUsersTokenRole.Designer.cs">
       <DependentUpon>frmUsersTokenRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="AL\frmUsersVisibility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmUsersVisibility.designer.cs">
+      <DependentUpon>frmUsersVisibility.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmVerificationFinger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1181,6 +1213,9 @@
     <EmbeddedResource Include="AL\frmFardManhai.resx">
       <DependentUpon>frmFardManhai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmIntiqalatInKhata.resx">
+      <DependentUpon>frmIntiqalatInKhata.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalKhattaJatKhanaKashtToMalkiat.resx">
       <DependentUpon>frmIntiqalKhattaJatKhanaKashtToMalkiat.cs</DependentUpon>
     </EmbeddedResource>
@@ -1223,6 +1258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmQabzUlWassolByTypes.resx">
       <DependentUpon>frmQabzUlWassolByTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmRegFardDispatch.resx">
+      <DependentUpon>frmRegFardDispatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmRegRecFromIntiqal.resx">
       <DependentUpon>frmRegRecFromIntiqal.cs</DependentUpon>
@@ -1390,6 +1428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmSetPath.resx">
       <DependentUpon>frmSetPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmShortFard.resx">
+      <DependentUpon>frmShortFard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmStayOrder.resx">
       <DependentUpon>frmStayOrder.cs</DependentUpon>
@@ -1595,6 +1636,9 @@
     <EmbeddedResource Include="AL\frmUsersTokenRole.resx">
       <DependentUpon>frmUsersTokenRole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmUsersVisibility.resx">
+      <DependentUpon>frmUsersVisibility.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmVerificationFinger.resx">
       <DependentUpon>frmVerificationFinger.cs</DependentUpon>
     </EmbeddedResource>
@@ -1667,6 +1711,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -93,7 +93,7 @@ namespace SDC_Application.BL
         }
         public DataTable GetSearchAfradListSelf(string MozaId, string Type, string PersonName, string FName)
         {
-            string spWithParam = "Proc_Self_Get_Searched_Afrad_List "+UsersManagments._Tehsilid.ToString() + MozaId + "," + Type + ",N'" + PersonName + "' ,N'" + FName + "'";
+            string spWithParam = "Proc_Self_Get_Searched_Afrad_List "+UsersManagments._Tehsilid.ToString()+"," + MozaId + "," + Type + ",N'" + PersonName + "' ,N'" + FName + "'";
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
         }
         public DataTable GetSearchAfradListByCNICSelf(string MozaId, string Type, string CNIC)

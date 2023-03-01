@@ -373,6 +373,11 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
         #endregion
+        public DataTable GetAllKhatajatByMoza(int mozaId)
+        {
+            string spWithParms = "Proc_Self_Get_Moza_Register_KhataJat_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaId.ToString() + "," + "0";
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
 
         #region Get Admin User for Misal/Badar Attestation
 

@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.GridBuyersList = new System.Windows.Forms.DataGridView();
+            this.chk1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFname = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPersonaName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCNIC = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
@@ -40,18 +47,11 @@
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnAndarajAfrad = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPersonaName = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.GridBuyersList = new System.Windows.Forms.DataGridView();
-            this.chk1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridBuyersList)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -73,6 +73,78 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افراد کی تلاش کے لئے لکھیں";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.GridBuyersList);
+            this.panel1.Location = new System.Drawing.Point(7, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(58, 26);
+            this.panel1.TabIndex = 7;
+            // 
+            // GridBuyersList
+            // 
+            this.GridBuyersList.AllowUserToAddRows = false;
+            this.GridBuyersList.AllowUserToDeleteRows = false;
+            this.GridBuyersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridBuyersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridBuyersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chk1});
+            this.GridBuyersList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridBuyersList.Location = new System.Drawing.Point(0, 0);
+            this.GridBuyersList.Name = "GridBuyersList";
+            this.GridBuyersList.ReadOnly = true;
+            this.GridBuyersList.RowTemplate.Height = 30;
+            this.GridBuyersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridBuyersList.Size = new System.Drawing.Size(58, 26);
+            this.GridBuyersList.TabIndex = 3;
+            this.GridBuyersList.Visible = false;
+            // 
+            // chk1
+            // 
+            this.chk1.HeaderText = "انتخاب کریں";
+            this.chk1.Name = "chk1";
+            this.chk1.ReadOnly = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(194, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 38);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "ولدیت";
+            // 
+            // txtFname
+            // 
+            this.txtFname.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFname.Location = new System.Drawing.Point(89, 26);
+            this.txtFname.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(99, 45);
+            this.txtFname.TabIndex = 8;
+            this.txtFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFname_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(356, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 38);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "نام";
+            // 
+            // txtPersonaName
+            // 
+            this.txtPersonaName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonaName.Location = new System.Drawing.Point(248, 26);
+            this.txtPersonaName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtPersonaName.Name = "txtPersonaName";
+            this.txtPersonaName.Size = new System.Drawing.Size(102, 45);
+            this.txtPersonaName.TabIndex = 6;
+            this.txtPersonaName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFname_KeyPress);
             // 
             // label2
             // 
@@ -177,77 +249,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 38);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "ولدیت";
-            // 
-            // txtFname
-            // 
-            this.txtFname.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFname.Location = new System.Drawing.Point(89, 26);
-            this.txtFname.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(99, 45);
-            this.txtFname.TabIndex = 8;
-            this.txtFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFname_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(356, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 38);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "نام";
-            // 
-            // txtPersonaName
-            // 
-            this.txtPersonaName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonaName.Location = new System.Drawing.Point(248, 26);
-            this.txtPersonaName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtPersonaName.Name = "txtPersonaName";
-            this.txtPersonaName.Size = new System.Drawing.Size(102, 45);
-            this.txtPersonaName.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.GridBuyersList);
-            this.panel1.Location = new System.Drawing.Point(7, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(58, 26);
-            this.panel1.TabIndex = 7;
-            // 
-            // GridBuyersList
-            // 
-            this.GridBuyersList.AllowUserToAddRows = false;
-            this.GridBuyersList.AllowUserToDeleteRows = false;
-            this.GridBuyersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridBuyersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridBuyersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chk1});
-            this.GridBuyersList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridBuyersList.Location = new System.Drawing.Point(0, 0);
-            this.GridBuyersList.Name = "GridBuyersList";
-            this.GridBuyersList.ReadOnly = true;
-            this.GridBuyersList.RowTemplate.Height = 30;
-            this.GridBuyersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridBuyersList.Size = new System.Drawing.Size(58, 26);
-            this.GridBuyersList.TabIndex = 3;
-            this.GridBuyersList.Visible = false;
-            // 
-            // chk1
-            // 
-            this.chk1.HeaderText = "انتخاب کریں";
-            this.chk1.Name = "chk1";
-            this.chk1.ReadOnly = true;
-            // 
             // frmSearchPersonForNaqalIntiqal
             // 
             this.AcceptButton = this.btnAccept;
@@ -273,10 +274,10 @@
             this.Load += new System.EventHandler(this.frmSearchPerson_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridBuyersList)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewPersons)).EndInit();
             this.ResumeLayout(false);
 
         }

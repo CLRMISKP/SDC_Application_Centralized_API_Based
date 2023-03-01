@@ -73,6 +73,10 @@ namespace SDC_Application
                 GridViewPersons.Columns["PersonFullName"].HeaderText = "نام افراد";
                 GridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ نمبر";
                 GridViewPersons.Columns["PersonId"].Visible = false;
+                this.GridViewPersons.Columns["MozaId"].Visible = false;
+                this.GridViewPersons.Columns["QoamId"].Visible = false;
+                this.GridViewPersons.Columns["PersonName"].Visible = false;
+                this.GridViewPersons.Columns["FatherName"].Visible = false;
    }
         #endregion
 

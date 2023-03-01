@@ -459,7 +459,7 @@ namespace SDC_Application.AL
                     lbTokenNo.Visible = false;
                     dtFardToken.Visible = false;
                     cmbFardTokenNo.Visible = false;
-                    groupBox15.Visible = false;
+                    //groupBox15.Visible = false;
                     cboPersonSeller.Location = new Point(13, 53);
                     groupBox9.Size = new Size(358, 126);
                     groupBox9.Location = new Point(896, 30);
@@ -1006,13 +1006,13 @@ namespace SDC_Application.AL
 
                     if (this.FardTokenId != "0")
                     {
-                        if (Math.Round(shissay,6) > Math.Round(fhissay,6))
+                        if (Math.Round(shissay,4) > Math.Round(fhissay,4))
                         {
                             MessageBox.Show("مالک اس فرد کے بقایا حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtFrokhtHisay.Clear();
                             txtFrokhtHisay.Focus();
                         }
-                        else if (Math.Round(shissay, 6) > Math.Round(khissayWOTM, 6) || Math.Round(shissay, 6) > Math.Round(khissay, 6))
+                        else if (Math.Round(shissay, 4) > Math.Round(khissayWOTM, 4) || Math.Round(shissay, 4) > Math.Round(khissay, 4))
                         {
                             MessageBox.Show("مالک کل حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtFrokhtHisay.Clear();
@@ -1031,7 +1031,7 @@ namespace SDC_Application.AL
                     }
                     else
                     {
-                        if (Math.Round(shissay, 6) > Math.Round(khissayWOTM, 6) || Math.Round(shissay, 6) > Math.Round(khissay, 6))
+                        if (Math.Round(shissay, 4) > Math.Round(khissayWOTM, 4) || Math.Round(shissay, 4) > Math.Round(khissay, 4))
                         {
                             MessageBox.Show("مالک کل حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtFrokhtHisay.Clear();
@@ -6423,7 +6423,14 @@ namespace SDC_Application.AL
 
         private void btnLoadKhatajat_Click(object sender, EventArgs e)
         {
+            frmKhattaSearchByPersonForIntiqal SPI = new frmKhattaSearchByPersonForIntiqal();
+            SPI.MozaID = this.MozaId.ToString();
+            SPI.IntiqalId = this.IntiqalId.ToString();
+            SPI.FM = "M";
 
+            SPI.FormClosed -= new FormClosedEventHandler(SPI_FormClosed);
+            SPI.FormClosed += new FormClosedEventHandler(SPI_FormClosed);
+            SPI.ShowDialog();
         }
 
 
@@ -6623,19 +6630,6 @@ namespace SDC_Application.AL
         {
 
         }
-
-        private void btnLoadKhatajat_Click_1(object sender, EventArgs e)
-        {
-            frmKhattaSearchByPersonForIntiqal SPI = new frmKhattaSearchByPersonForIntiqal();
-            SPI.MozaID = this.MozaId.ToString();
-            SPI.IntiqalId = this.IntiqalId.ToString();
-            SPI.FM = "M";
-
-            SPI.FormClosed -= new FormClosedEventHandler(SPI_FormClosed);
-            SPI.FormClosed += new FormClosedEventHandler(SPI_FormClosed);
-            SPI.ShowDialog();
-        }
-
        
 
 

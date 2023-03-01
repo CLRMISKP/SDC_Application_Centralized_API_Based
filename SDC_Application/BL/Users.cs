@@ -159,5 +159,16 @@ namespace SDC_Application.BL
             }
             return lastId;
         }
+        public DataTable getUserVisibility(string TehsilId)
+        {
+            string spWithParam = "Proc_Self_Get_UserVisibility  " + TehsilId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+        public string WEB_Self_SP_Update_Users_Visibility(string UserIdMain,string UserId, string TransFard,string  intiqal, string Registry, string  misal, string  Implementation)
+        {
+            string spWithParam = "WEB_Self_SP_Update_Users_Visibility  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + UserIdMain + "," + UserId + "," + TransFard + "," + intiqal + "," + Registry + "," + misal + "," + Implementation;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+
+        }
     }
 }

@@ -550,14 +550,14 @@ namespace SDC_Application.BL
 
             public string SaveintiqalSellers(string SellerRecId, string KhataRecId, string SellerPersonId, string isDead, string DeathDate, string TotalHissa, string TotalKanal, string TotalMarla, string TotalSarsai, string TotalFeet, string SoldHissa, string SoldKanal, string SoldMarla, string SoldSarsai, string SoldFeet, string khewatgroupfareeqid, string MustriFareeq, string KhatoniRecid, string InsertUserid)
             {
-                string spWithParam = "WEB_SP_INSERT_Intiqal_Sellers  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + Convert.ToInt32(SellerRecId) + ", " + KhataRecId + ", " + SellerPersonId + ", " + isDead + ", '" + DeathDate + "', " + TotalHissa + ", " + TotalKanal + ", " + TotalMarla + ", " + TotalSarsai + ", " + TotalFeet + ", " + SoldHissa + ", " + SoldKanal + ", " + SoldMarla + ", " + SoldSarsai + ", " + SoldFeet + ", " + khewatgroupfareeqid + "," + MustriFareeq + "," + KhatoniRecid + "," + InsertUserid + " ";
+                string spWithParam = "WEB_SP_INSERT_Intiqal_Sellers  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SellerRecId + ", " + KhataRecId + ", " + SellerPersonId + ", " + isDead + ", '" + DeathDate + "', " + TotalHissa + ", " + TotalKanal + ", " + TotalMarla + ", " + TotalSarsai + ", " + TotalFeet + ", " + SoldHissa + ", " + SoldKanal + ", " + SoldMarla + ", " + SoldSarsai + ", " + SoldFeet + ", " + khewatgroupfareeqid + "," + MustriFareeq + "," + KhatoniRecid + "," + InsertUserid + " ";
              return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
             }
 
             public string SaveRegistryintiqalSellers(string SellerRecId, string KhataRecId, string SellerPersonId, string isDead, string DeathDate, string TotalHissa, string TotalKanal, string TotalMarla, string TotalSarsai, string TotalFeet, string SoldHissa, string SoldKanal, string SoldMarla, string SoldSarsai, string SoldFeet, string khewatgroupfareeqid, string MustriFareeq, string KhatoniRecid, string fardTokenId, string InsertUserid)
             {
-                string spWithParam = "WEB_Self_SP_INSERT_RegistryIntiqal_Sellers  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + Convert.ToInt32(SellerRecId) + ", " + KhataRecId + ", " + SellerPersonId + ", " + isDead + ", '" + DeathDate + "', " + TotalHissa + ", " + TotalKanal + ", " + TotalMarla + ", " + TotalSarsai + ", " + TotalFeet + ", " + SoldHissa + ", " + SoldKanal + ", " + SoldMarla + ", " + SoldSarsai + ", " + SoldFeet + ", " + khewatgroupfareeqid + "," + MustriFareeq + "," + KhatoniRecid + "," + fardTokenId + "," + InsertUserid + " ";
+                string spWithParam = "WEB_Self_SP_INSERT_RegistryIntiqal_Sellers  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SellerRecId + ", " + KhataRecId + ", " + SellerPersonId + ", " + isDead + ", '" + DeathDate + "', " + TotalHissa + ", " + TotalKanal + ", " + TotalMarla + ", " + TotalSarsai + ", " + TotalFeet + ", " + SoldHissa + ", " + SoldKanal + ", " + SoldMarla + ", " + SoldSarsai + ", " + SoldFeet + ", " + khewatgroupfareeqid + "," + MustriFareeq + "," + KhatoniRecid + "," + fardTokenId + "," + InsertUserid + " ";
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
             }
@@ -1054,7 +1054,7 @@ namespace SDC_Application.BL
             public string Proc_Self_Get_Registrar_For_Intiqal(string RegNo, int Y, string mozaId)
             {
                 string RegistrarOffice = "0";
-                string spWithParam = "Proc_Self_Get_Registrar_For_Intiqal '" + RegNo + "'," + Y + "," + mozaId;
+                string spWithParam = "Proc_Self_Get_Registrar_For_Intiqal "+SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + RegNo + "'," + Y + "," + mozaId;
                 RegistrarOffice = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return RegistrarOffice;
             }
@@ -1748,6 +1748,43 @@ namespace SDC_Application.BL
             public string IntiqalRevertByKhata(string IntiqalId, string IntiqalKhataRecId, string Comments)
             {
                 string spWithParam = "Proc_Intiqal_Revert_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + " ," + IntiqalKhataRecId + ",N'" + Comments + "'," + Classess.UsersManagments.UserId.ToString() + ",'" + Classess.UsersManagments.UserName + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public string GetRegFardDispatchStatus(string tokenId, string DispatchId)
+            {
+
+                string spWithParam = "Proc_Self_Check_RegFard_Sent_YesNo " + tokenId + "," + DispatchId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public string CheckShortFardReceiptVerified(string TokenId, string UserId)
+            {
+                string spWithParam = "Proc_Self_Check_ShortFard_Receipt_Verified_YesNo " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + TokenId + "," + UserId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public string CheckFardReceiptVerified(string TokenId, string UserId)
+            {
+                string spWithParam = "Proc_Self_Check_Fard_Receipt_Verified_YesNo " + TokenId + "," + UserId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public DataTable GetNonTransactionalFard(string TokenNo, string dt)
+            {
+                string spWithParam = "Proc_Self_Get_Non_Transactional_Fard " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + TokenNo + ", '" + dt + "'";
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
+            public string WEB_Self_SP_INSERT_ShortFard_Khattajat_KhewatGroupFareeqein(string fardpersonrecid, string fardKhataRecid, string TokenId, string RegisterHqDKhataId, string TotalParts, string Khata_kanal, string Khata_marla, string Khata_sarsai, string Khata_feet, string @PersonId, string @KhewatGroupFareeqId, string Hissa, string kanal, string marla, string sarsai, string feet, string KhewatTypeId, string UserID, string UserName)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_ShortFard_Khattajat_KhewatGroupFareeqein " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + fardpersonrecid + "','" + fardKhataRecid + "','" + TokenId + "'," + RegisterHqDKhataId + "," + TotalParts + "," + Khata_kanal + "," + Khata_marla + "," + Khata_sarsai + "," + Khata_feet + "," + @PersonId + "," + @KhewatGroupFareeqId + "," + Hissa + "," + kanal + "," + marla + "," + sarsai + "," + feet + "," + KhewatTypeId + "," + UserID + ",'" + UserName + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+
+            public string WEB_Self_SP_INSERT_ShortFard_Khattajat_Khatoonies_MushtriFareeqein(string fardMushtriRecid, string fardKhatoonirecId, string fardKhataRecid, string TokenId, string RegisterHqDKhataId, string TotalParts, string Khata_kanal, string Khata_marla, string Khata_sarsai, string Khata_feet, string KhatooniId, string Khatooni_Hissa, string Khatooni_kanal, string Khatooni_marla, string Khatooni_sarsai, string Khatooni_feet, string @PersonId, string @MushtriFareeqId, string Hissa, string kanal, string marla, string sarsai, string feet, string KhewatTypeId, string UserID, string UserName)
+            {
+                string spWithParam = "WEB_Self_SP_INSERT_ShortFard_Khattajat_Khatoonies_MushtriFareeqein  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + fardMushtriRecid + "','" + fardKhatoonirecId + "','" + fardKhataRecid + "','" + TokenId + "'," + RegisterHqDKhataId + "," + TotalParts + "," + Khata_kanal + "," + Khata_marla + "," + Khata_sarsai + "," + Khata_feet + "," + KhatooniId + "," + Khatooni_Hissa + "," + Khatooni_kanal + "," + Khatooni_marla + "," + Khatooni_sarsai + "," + Khatooni_feet + "," + @PersonId + "," + @MushtriFareeqId + "," + Hissa + "," + kanal + "," + marla + "," + sarsai + "," + feet + "," + KhewatTypeId + "," + UserID + ",'" + UserName + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public string WEB_Self_SP_DELETE_ShortFard_Record(string fardpersonrecId, string FardMushteriRecId, string fardKhataRecId, string FardKhatooniRecId)
+            {
+                string spWithParam = "WEB_Self_SP_DELETE_ShortFard_Record " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + fardpersonrecId + "," + FardMushteriRecId + "," + fardKhataRecId + "," + FardKhatooniRecId;
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
 

@@ -1641,6 +1641,60 @@ namespace SDC_Application
                 obj.Show();
             }
         }
+
+        private void mnuIntiqalatInKhata_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmIntiqalatInKhata");
+            if (!isOpen)
+            {
+
+                frmIntiqalatInKhata intiqal = new frmIntiqalatInKhata();
+                intiqal.MdiParent = this;
+                intiqal.WindowState = this.WindowState;
+                intiqal.Show();
+                string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Intiqalat In Khata'");
+            }
+        }
+
+        private void TSMFardatForSR_Click(object sender, EventArgs e)
+        {
+            bool isopen = IsFrmOpen("frmRegFardDispatch");
+            if (!isopen)
+            {
+                UsersManagments.check = 1;
+                frmRegFardDispatch tk = new frmRegFardDispatch();
+                tk.MdiParent = this;
+                tk.WindowState = this.WindowState;
+                //tk.WindowState =
+                tk.Show();
+                string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Fardat For Sub Regisrar Form'");
+
+            }
+        }
+
+        private void TSMShortFard_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmShortFard");
+
+            if (!isOpen)
+            {
+                frmShortFard fard = new frmShortFard();
+                fard.MdiParent = this;
+                fard.Show();
+            }
+        }
+
+        private void mnuUserVisibility_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmShortFard");
+
+            if (!isOpen)
+            {
+                frmUsersVisibility fard = new frmUsersVisibility();
+                fard.MdiParent = this;
+                fard.Show();
+            }
+        }
      
     }
 }

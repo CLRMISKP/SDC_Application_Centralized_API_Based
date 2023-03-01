@@ -131,7 +131,11 @@ namespace SDC_Application.AL
                 this.dataGridViewPersons.DataSource = datatable;
                 this.dataGridViewPersons.Columns["PersonFullName"].HeaderText = "نام مالک";
                 this.dataGridViewPersons.Columns["PersonId"].Visible = false;
-                this.dataGridViewPersons.Columns["CNIC"].Visible = false;       
+                this.dataGridViewPersons.Columns["CNIC"].Visible = false;       //MozaId, QoamId, PersonName, FatherName
+                this.dataGridViewPersons.Columns["MozaId"].Visible = false;
+                this.dataGridViewPersons.Columns["QoamId"].Visible = false;
+                this.dataGridViewPersons.Columns["PersonName"].Visible = false;
+                this.dataGridViewPersons.Columns["FatherName"].Visible = false;
             }
         }
 
@@ -220,7 +224,7 @@ namespace SDC_Application.AL
              
               DataTable PersonTotalArea = new DataTable();
               //PersonTotalArea = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId " + this.MozaID + "," + PersonId);
-              PersonTotalArea = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId_For_Intiqal " + this.MozaID + "," + PersonId);
+              PersonTotalArea = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId_For_Intiqal "+UsersManagments._Tehsilid.ToString()+"," + this.MozaID + "," + PersonId);
              
                 foreach (DataRow row in PersonTotalArea.Rows)
               {
