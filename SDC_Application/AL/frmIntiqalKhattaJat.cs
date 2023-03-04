@@ -996,6 +996,7 @@ namespace SDC_Application.AL
                 int fmarla = txtFardMarla.Text.Trim() != "" ? Convert.ToInt32(txtFardMarla.Text.Trim()) : 0;
                 float fsarsai = txtFardSarsai.Text.Trim() != "" ? float.Parse(txtFardSarsai.Text.Trim()) : 0;
                 float fsft = txtFardFeet.Text.Trim() != "" ? float.Parse(txtFardFeet.Text.Trim()) : 0;
+                int mkhDecimal = shissay.ToString().Length - (((int)shissay).ToString().Length + 1); //CommanFunctions.GetDecimalPlaces(shissay); 
 
                 if (txtFrokhtHisay.Text.Trim() != "" && txtFrokhtHisay.Text != "0")
                 {
@@ -1004,15 +1005,15 @@ namespace SDC_Application.AL
                     txtFrokhtSarsai.Text = "";
                     txtFrokhtFeet.Text = "";
 
-                    if (this.FardTokenId != "0")
+                    if (this.FardTokenId!=null && this.FardTokenId != "0")
                     {
-                        if (Math.Round(shissay,4) > Math.Round(fhissay,4))
+                        if (Math.Round(shissay, mkhDecimal) > Math.Round(fhissay, mkhDecimal))
                         {
                             MessageBox.Show("مالک اس فرد کے بقایا حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtFrokhtHisay.Clear();
                             txtFrokhtHisay.Focus();
                         }
-                        else if (Math.Round(shissay, 4) > Math.Round(khissayWOTM, 4) || Math.Round(shissay, 4) > Math.Round(khissay, 4))
+                        else if (Math.Round(shissay, mkhDecimal) > Math.Round(khissayWOTM, mkhDecimal) || Math.Round(shissay, mkhDecimal) > Math.Round(khissay, mkhDecimal))
                         {
                             MessageBox.Show("مالک کل حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtFrokhtHisay.Clear();
@@ -1031,7 +1032,8 @@ namespace SDC_Application.AL
                     }
                     else
                     {
-                        if (Math.Round(shissay, 4) > Math.Round(khissayWOTM, 4) || Math.Round(shissay, 4) > Math.Round(khissay, 4))
+                        decimal val = Math.Round(decimal.Parse(khissayWOTM.ToString()), mkhDecimal);
+                        if (Math.Round(shissay, mkhDecimal) > Math.Round(khissayWOTM, mkhDecimal) || Math.Round(shissay, mkhDecimal) > Math.Round(khissay, mkhDecimal))
                         {
                             MessageBox.Show("مالک کل حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             txtFrokhtHisay.Clear();
@@ -1086,6 +1088,8 @@ namespace SDC_Application.AL
                 MessageBox.Show(ex.Message);
             }
         }
+        
+
         #endregion
 
         #region Save,FillGrid Of Seller
@@ -6615,24 +6619,6 @@ namespace SDC_Application.AL
 
             }
         }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-       
-
-
     }
 }
 

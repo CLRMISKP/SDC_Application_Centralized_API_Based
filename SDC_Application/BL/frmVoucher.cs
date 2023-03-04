@@ -29,10 +29,20 @@ namespace SDC_Application.BL
             string spam = "WEB_SP_INSERT_SDC_PaymentVoucherDetail " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + VocherDetailId + "','" + PVID + "','" + SeqNo + "'," + FGPId + "," + IntiqalId + "," + Notificationunitid + "," + costunitid + "," + Rsperpage + "," + txtquntity + "," + totalamount + ",N'" + PVdetails + "'," + UserId + ",'" + UserName + "'," + UserId1 + ",'" + UserName2 + "'";
             return ojbdb. filldatatable_from_storedProcedure(spam);
         }
+        public DataTable SaveVocherDetailsForOtherDistTehsils(string TehsilId, string VocherDetailId, string PVID, string SeqNo, string FGPId, string IntiqalId, string Notificationunitid, string costunitid, string Rsperpage, string txtquntity, string totalamount, string PVdetails, string UserId, string UserName, string UserId1, string UserName2)
+        {
+            string spam = "WEB_SP_INSERT_SDC_PaymentVoucherDetail " + TehsilId + ",'" + VocherDetailId + "','" + PVID + "','" + SeqNo + "'," + FGPId + "," + IntiqalId + "," + Notificationunitid + "," + costunitid + "," + Rsperpage + "," + txtquntity + "," + totalamount + ",N'" + PVdetails + "'," + UserId + ",'" + UserName + "'," + UserId1 + ",'" + UserName2 + "'";
+            return ojbdb.filldatatable_from_storedProcedure(spam);
+        }
 
         public DataTable SaveVocherDetailsSelf(string VocherDetailId, string PVID, string SeqNo, string FGPId, string IntiqalId, string Notificationunitid, string costunitid, string Rsperpage, string txtquntity, string totalamount, string PVdetails, string UserId, string UserName, string UserId1, string UserName2,string TaxId)
         {
             string spam = "WEB_SP_INSERT_SDC_PaymentVoucherDetail " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + VocherDetailId + "','" + PVID + "','" + SeqNo + "'," + FGPId + "," + IntiqalId + "," + Notificationunitid + "," + costunitid + "," + Rsperpage + "," + txtquntity + "," + totalamount + ",N'" + PVdetails + "'," + UserId + ",'" + UserName + "'," + UserId1 + ",'" + UserName2 + "','" + TaxId + "'";
+            return ojbdb.filldatatable_from_storedProcedure(spam);
+        }
+        public DataTable SaveVocherDetailsSelfForOtherDistTehsils(string TehsilId, string VocherDetailId, string PVID, string SeqNo, string FGPId, string IntiqalId, string Notificationunitid, string costunitid, string Rsperpage, string txtquntity, string totalamount, string PVdetails, string UserId, string UserName, string UserId1, string UserName2, string TaxId)
+        {
+            string spam = "WEB_SP_INSERT_SDC_PaymentVoucherDetail " + TehsilId + ",'" + VocherDetailId + "','" + PVID + "','" + SeqNo + "'," + FGPId + "," + IntiqalId + "," + Notificationunitid + "," + costunitid + "," + Rsperpage + "," + txtquntity + "," + totalamount + ",N'" + PVdetails + "'," + UserId + ",'" + UserName + "'," + UserId1 + ",'" + UserName2 + "','" + TaxId + "'";
             return ojbdb.filldatatable_from_storedProcedure(spam);
         }
         public DataTable filldatatable_from_storedProcedure(string Query)

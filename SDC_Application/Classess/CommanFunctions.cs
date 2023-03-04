@@ -125,6 +125,22 @@ namespace SDC_Application.Classess
          }
          return raqba;
         }
+        #region Get Decimal Places in number
+
+        public  int GetDecimalPlaces(float n)
+        {
+            n = Math.Abs(n); //make sure it is positive.
+            n =n- Convert.ToInt32(n);     //remove the integer part of the number.
+            var decimalPlaces = 0;
+            while (n > 0)
+            {
+                decimalPlaces++;
+                n *= 10;
+                n -= (int)n;
+            }
+            return decimalPlaces;
+        }
+        #endregion
 
        
     }

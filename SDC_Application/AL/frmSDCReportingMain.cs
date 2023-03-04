@@ -516,12 +516,27 @@ namespace SDC_Application.AL
              }
              if (UsersManagments.check == 47)
              {
-                 ReportParameter[] rp = new ReportParameter[4];
+                 ReportParameter[] rp = new ReportParameter[5];
                  rp[0] = new ReportParameter("MozaId", this.MozaId);
                  rp[1] = new ReportParameter("TokenId", this.TokenID);
                  rp[2] = new ReportParameter("UserName", UsersManagments.UserName);
                  rp[3] = new ReportParameter("ReceiptVerified", this.ReceiptVerified);
+                 rp[4] = new ReportParameter("TehsilId", this.Tehsilid);
                  this.SetCredentials("ShortFardForPersonalRecord", rp, false);
+             }
+             if (UsersManagments.check == 48)
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
+                 this.SetCredentials("IntiqalBoimetricCapturedNotAttestedReport", rp, false);
+
+             }
+             if (UsersManagments.check == 49)
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
+                 this.SetCredentials("StateLandDataReport", rp, false);
+
              }
         }
 

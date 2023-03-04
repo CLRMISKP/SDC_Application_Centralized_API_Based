@@ -1,6 +1,6 @@
 ﻿namespace SDC_Application.AL
     {
-    partial class frmShortFard
+    partial class frmShortFardForOtherDistTehsil
         {
         /// <summary>
         /// Required designer variable.
@@ -388,7 +388,7 @@
                 // 
                 this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
                 this.btnSelect.Image = global::SDC_Application.Resource1.LeftImage;
-                this.btnSelect.Location = new System.Drawing.Point(6, 214);
+                this.btnSelect.Location = new System.Drawing.Point(6, 212);
                 this.btnSelect.Name = "btnSelect";
                 this.btnSelect.Size = new System.Drawing.Size(50, 50);
                 this.btnSelect.TabIndex = 2;
@@ -1848,6 +1848,7 @@
                 this.btnNewSearch.Size = new System.Drawing.Size(48, 40);
                 this.btnNewSearch.TabIndex = 221;
                 this.btnNewSearch.UseVisualStyleBackColor = true;
+                this.btnNewSearch.Visible = false;
                 this.btnNewSearch.Click += new System.EventHandler(this.btnNewSearch_Click);
                 // 
                 // dtTokenAndrajDate
@@ -1902,6 +1903,7 @@
                 this.btnSearchToken.Size = new System.Drawing.Size(49, 41);
                 this.btnSearchToken.TabIndex = 217;
                 this.btnSearchToken.UseVisualStyleBackColor = true;
+                this.btnSearchToken.Visible = false;
                 this.btnSearchToken.Click += new System.EventHandler(this.btnSearchToken_Click_1);
                 // 
                 // txtReciptTokenID
@@ -2168,14 +2170,14 @@
                 this.txtRService.TabIndex = 3;
                 this.txtRService.Visible = false;
                 // 
-                // frmShortFard
+                // frmShortFardForOtherDistTehsil
                 // 
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
                 this.ClientSize = new System.Drawing.Size(1276, 733);
                 this.Controls.Add(this.groupBox4);
                 this.Controls.Add(this.groupBox2);
                 this.Controls.Add(this.groupBox3);
-                this.Name = "frmShortFard";
+                this.Name = "frmShortFardForOtherDistTehsil";
                 this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
                 this.Text = "فرد";
                 this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -2353,9 +2355,7 @@
         private System.Windows.Forms.DateTimePicker dtReciptDate;
         private System.Windows.Forms.TextBox txtRName;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtMoza;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox txtFardType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNewSearch;
         private System.Windows.Forms.DateTimePicker dtTokenAndrajDate;
@@ -2399,6 +2399,8 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnPrintVoucher;
+        private System.Windows.Forms.TextBox txtMoza;
+        private System.Windows.Forms.TextBox txtFardType;
 
         }
     }

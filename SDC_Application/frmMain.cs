@@ -1680,6 +1680,7 @@ namespace SDC_Application
             {
                 frmShortFard fard = new frmShortFard();
                 fard.MdiParent = this;
+                fard.WindowState = this.WindowState;
                 fard.Show();
             }
         }
@@ -1692,7 +1693,55 @@ namespace SDC_Application
             {
                 frmUsersVisibility fard = new frmUsersVisibility();
                 fard.MdiParent = this;
+                fard.WindowState = this.WindowState;
                 fard.Show();
+            }
+        }
+
+        private void mnuOtherDistrictTehsilFard_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmTokenOtherTehsil");
+
+            if (!isOpen)
+            {
+                frmTokenOtherTehsil fard = new frmTokenOtherTehsil();
+                fard.MdiParent = this;
+                fard.WindowState = this.WindowState;
+                fard.Show();
+            }
+        }
+
+        private void mnuSubBiometricCapturedNotAttestIntiqalat_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 48;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuSubStateLandReport_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 49;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
             }
         }
      

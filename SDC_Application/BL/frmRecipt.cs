@@ -27,9 +27,20 @@ namespace SDC_Application.BL
             return ojbdb.filldatatable_from_storedProcedure(spam);
         }
 
+        public DataTable SaveRecptDetailsForOtherDistTehsils(string TehsilId,string @RVDetailId, string @RVId, string @PVDetailId, string @RVDetailSeqNo, string @TaxNotificationDetailId, string @NetPayableAmount, string @PaymentTypeId, string @ReceivedAmountv, string @ChallanNo, string @ChallanDate, string @BankAccountNo, string @BankName, string @BankBranchName, string @InsertUserId, string @InsertLoginName, string @UpdateUserId, string @UpdateLoginName)
+        {
+            string spam = "WEB_SP_INSERT_SDC_ReceiptVoucherDetail  " + TehsilId + ",'" + @RVDetailId + "','" + @RVId + "','" + @PVDetailId + "'," + @RVDetailSeqNo + "," + @TaxNotificationDetailId + "," + @NetPayableAmount + ",'" + @PaymentTypeId + "'," + @ReceivedAmountv + ",'" + @ChallanNo + "','" + @ChallanDate + "','" + @BankAccountNo + "','" + @BankName + "','" + @BankBranchName + "'," + @InsertUserId + ",'" + @InsertLoginName + "'," + @UpdateUserId + ",'" + @UpdateLoginName + "'";
+            return ojbdb.filldatatable_from_storedProcedure(spam);
+        }
+
         public DataTable SaveRecptDetailsSelf(string @RVDetailId, string @RVId, string @PVDetailId, string @RVDetailSeqNo, string @TaxNotificationDetailId, string @NetPayableAmount, string @PaymentTypeId, string @ReceivedAmountv, string @ChallanNo, string @ChallanDate, string @BankAccountNo, string @BankName, string @BankBranchName, string @InsertUserId, string @InsertLoginName, string @UpdateUserId, string @UpdateLoginName, string TaxId)
         {
             string spam = "WEB_SP_INSERT_SDC_ReceiptVoucherDetail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + @RVDetailId + "','" + @RVId + "','" + @PVDetailId + "'," + @RVDetailSeqNo + "," + @TaxNotificationDetailId + "," + @NetPayableAmount + ",'" + @PaymentTypeId + "'," + @ReceivedAmountv + ",'" + @ChallanNo + "','" + @ChallanDate + "','" + @BankAccountNo + "','" + @BankName + "','" + @BankBranchName + "'," + @InsertUserId + ",'" + @InsertLoginName + "'," + @UpdateUserId + ",'" + @UpdateLoginName + "','" + TaxId + "'";
+            return ojbdb.filldatatable_from_storedProcedure(spam);
+        }
+        public DataTable SaveRecptDetailsSelfForOtherDistTehsils(string TehsilId,string @RVDetailId, string @RVId, string @PVDetailId, string @RVDetailSeqNo, string @TaxNotificationDetailId, string @NetPayableAmount, string @PaymentTypeId, string @ReceivedAmountv, string @ChallanNo, string @ChallanDate, string @BankAccountNo, string @BankName, string @BankBranchName, string @InsertUserId, string @InsertLoginName, string @UpdateUserId, string @UpdateLoginName, string TaxId)
+        {
+            string spam = "WEB_SP_INSERT_SDC_ReceiptVoucherDetail  " + TehsilId + ",'" + @RVDetailId + "','" + @RVId + "','" + @PVDetailId + "'," + @RVDetailSeqNo + "," + @TaxNotificationDetailId + "," + @NetPayableAmount + ",'" + @PaymentTypeId + "'," + @ReceivedAmountv + ",'" + @ChallanNo + "','" + @ChallanDate + "','" + @BankAccountNo + "','" + @BankName + "','" + @BankBranchName + "'," + @InsertUserId + ",'" + @InsertLoginName + "'," + @UpdateUserId + ",'" + @UpdateLoginName + "','" + TaxId + "'";
             return ojbdb.filldatatable_from_storedProcedure(spam);
         }
         public DataTable filldatatable_from_storedProcedure(string Query)

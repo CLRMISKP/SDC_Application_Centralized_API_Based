@@ -112,7 +112,12 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
+        public string UpdateKhatooniStatus(string KhatooniId, string Status)
+        {
+            string spWithParam = "Web_Sp_Update_Khatooni_Beah_Status  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ","  +KhatooniId+","+Status;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
+        }
         public DataTable GetKhewatFareeqainMeezan(string KhataId)
         {
             string spWithParam = "Proc_Get_KhewatFareeqain_TotalHisa_ByKhataId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
@@ -196,6 +201,12 @@ namespace SDC_Application.BL
         {
 
             string spWithParam = "Proc_Get_MushteriFareeqein_By_Khatooni_By_PersonId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniId + "," + PersonId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+        public DataTable MushteriFareeqByKhatooniIdPersonIdForOtherDistTehsil(string TehsilId, string KhatooniId, string PersonId)
+        {
+
+            string spWithParam = "Proc_Get_MushteriFareeqein_By_Khatooni_By_PersonId  " + TehsilId + "," + KhatooniId + "," + PersonId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
         public string UPDATE_SDC_khatooniregister_BeahShud(string KhatooniId, string KhatooniKashtkaranFullDetail_New, string NameBaya, string BeahShud, string Khatooni_Hissa, string Khatooni_Kanal, string Khatooni_Marla, string Khatooni_Sarsai, string Khatooni_Feet)

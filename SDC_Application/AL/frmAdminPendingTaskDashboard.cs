@@ -18,6 +18,11 @@ namespace SDC_Application.AL
         DataTable dtRHZ_ChangeList_details = new DataTable();
         DataView dvRHZ_ChangeList_details;
         Intiqal Iq = new Intiqal();
+        DataTable dtMouzas = new DataTable();
+        AutoComplete auto = new AutoComplete();
+        Khatoonies khatooni = new Khatoonies();
+        DataTable dtkj= new DataTable();
+        Misal misal=new Misal();
 
         public frmAdminPendingTaskDashboard()
         {
@@ -332,5 +337,149 @@ namespace SDC_Application.AL
             }
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+
+                case 3:
+                    {
+                        if (cmbMouza.DataSource == null)
+                        {
+                            auto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+                        }
+                        break;
+                    }
+                case 0:
+                    {
+                        break;
+                    }
+            }
+
+        }
+
+        private void cmbMouza_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+           // auto.FillCombo("Proc_Self_Get_Moza_Register_KhataJat_All  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + cmbMouza.SelectedValue.ToString() + "," + "0", cbKhattajatAll, "KhataNo", "RegisterHqDKhataId");
+            Fill_Khata_DropDown();
+            auto.FillCombo("Proc_Get_Moza_Register_KhataJat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + cmbMouza.SelectedValue.ToString() + "," + "0", cbokhataNo, "KhataNo", "RegisterHqDKhataId");
+        }
+        public void Fill_Khata_DropDown()
+        {
+            try
+            {
+
+                dtkj = misal.GetAllKhatajatByMoza(Convert.ToInt32(cmbMouza.SelectedValue.ToString()));
+                DataRow inteqKj = dtkj.NewRow();
+                inteqKj["RegisterHqDKhataId"] = "0";
+                inteqKj["KhataNo"] = " - انتخاب کرِیں - ";
+                dtkj.Rows.InsertAt(inteqKj, 0);
+                cbKhattajatAll.DataSource = dtkj;
+                cbKhattajatAll.DisplayMember = "KhataNo";
+                cbKhattajatAll.ValueMember = "RegisterHqDKhataId";
+                cbKhattajatAll.SelectedValue = 0;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void cbokhataNo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            auto.FillCombo("Proc_Get_Khatoonis  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + cbokhataNo.SelectedValue.ToString(), cboKhatoonies, "KhatooniNo", "KhatooniId");
+            
+        }
+
+        private void cboKhatoonies_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboKhatoonies.SelectedValue.ToString() != "0")
+            {
+                DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
+                foreach (DataRow row in KhatooniDetail.Rows)
+                {
+                        chkBeahShoda.Checked =Convert.ToBoolean( row["BeahShud"]);
+                    txtKhatooniHissa.Text = row["KhatooniHissa"].ToString().Length>0?row["KhatooniHissa"].ToString():"0";
+                    txtKhatooniKanal.Text = row["KhatooniKanal"].ToString().Length>0?row["KhatooniKanal"].ToString():"0";
+                    txtKhatooniMarla.Text = row["KhatooniMarla"].ToString().Length>0?row["KhatooniMarla"].ToString():"0";
+                    txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString().Length>0? row["KhatooniSarsai"].ToString():"0";
+                    txtKhatooniFeet.Text = row["KhatooniFeet"].ToString().Length>0?row["KhatooniFeet"].ToString():"0";
+                }
+            }
+        }
+
+        private void chkBeahShoda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBeahShoda.Checked)
+            {
+                if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ کھتونی کا حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    try
+                    {
+                        string Status = khatooni.UpdateKhatooniStatus(cboKhatoonies.SelectedValue.ToString(), "1");
+                        MessageBox.Show("حیثیت تبدیل ہو چکا ہے۔");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ کھتونی کا حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    try
+                    {
+                        string Status = khatooni.UpdateKhatooniStatus(cboKhatoonies.SelectedValue.ToString(), "0");
+                        MessageBox.Show("حیثیت تبدیل ہو چکا ہے۔");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void cbKhattajatAll_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            foreach (DataRow row in dtkj.Rows)
+            {
+                if (cbokhataNo.SelectedValue != null)
+                {
+                    if ((row["RegisterHqDKhataId"].ToString() == cbKhattajatAll.SelectedValue.ToString()) && cbKhattajatAll.SelectedValue.ToString() != "0")
+                    {
+                        rbCurrentKhata.Checked = row["KhataNo"].ToString().Contains("سابقہ") ? false : true;
+                        rbPreviousKhata.Checked = row["KhataNo"].ToString().Contains("سابقہ") ? true : false;
+                    }
+                }
+            }
+        }
+
+        private void rbCurrentKhata_Click(object sender, EventArgs e)
+        {
+             if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ کھاتے کا حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    try
+                    {
+            if (rbCurrentKhata.Checked)
+            {
+               string status= rhz.UpdateKhataRecStatus(cbKhattajatAll.SelectedValue.ToString(), rbCurrentKhata.Checked ? "1" : "0");
+               MessageBox.Show("انتخاب کردہ کھاتے کا حیثیت تبدیل ہو چکا ہے۔");
+            }
+            else if (rbPreviousKhata.Checked)
+            {
+                string status = rhz.UpdateKhataRecStatus(cbKhattajatAll.SelectedValue.ToString(), rbCurrentKhata.Checked ? "1" : "0");
+                MessageBox.Show("انتخاب کردہ کھاتے کا حیثیت تبدیل ہو چکا ہے۔");
+            }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+        }
     }
 }

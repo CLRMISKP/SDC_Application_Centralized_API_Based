@@ -14,7 +14,7 @@ using System.Collections;
 
 namespace SDC_Application.AL
     {
-    public partial class frmShortFard : Form
+    public partial class frmShortFardForOtherDistTehsil : Form
     {
         #region Calss Variables
 
@@ -56,7 +56,7 @@ namespace SDC_Application.AL
         public bool isConfirm { get; set; }
         public string Khatoniid {get;set; }
         public DateTime tokenDate { get; set; }
-
+        public string TehsilId { get; set; }
         public string ReportingFolder { get; set; }
         public string ReportinFolderLand { get; set; }
           public string PersonName { get; set; }
@@ -68,7 +68,7 @@ namespace SDC_Application.AL
 
         #region Default Construction
 
-        public frmShortFard()
+        public frmShortFardForOtherDistTehsil()
             {
 
             InitializeComponent();
@@ -145,7 +145,7 @@ namespace SDC_Application.AL
 
         private void frmFard_Load(object sender, EventArgs e)
         {
-
+            btnSearchToken_Click_1(sender, e);
         }
 
         #endregion
@@ -182,13 +182,13 @@ namespace SDC_Application.AL
         public void Proc_Get_SDC_Services_For_PaymentVoucher()
         {
 
-            objauto.FillCombo("Proc_Get_SDC_Services_For_PaymentVoucher "+UsersManagments._Tehsilid.ToString()+",'" + txtHiddenServiceTypeId.Text + "'", txtServiceName, "SDCServiceName_Urdu", "TaxNotificationDetailId");
+            objauto.FillCombo("Proc_Get_SDC_Services_For_PaymentVoucher "+TehsilId+",'" + txtHiddenServiceTypeId.Text + "'", txtServiceName, "SDCServiceName_Urdu", "TaxNotificationDetailId");
 
         }
 
         public void Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_ServiceTypeId()
         {
-            objauto.FillCombo("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId "+UsersManagments._Tehsilid.ToString()+",'"
+            objauto.FillCombo("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId "+TehsilId+",'"
                                 + this.txtRPVID.Text.ToString() + "'", cmbRServices, "SDCServiceName_Urdu", "TaxNotificationDetailId");
 
             txtRAmounttoPay.Text = "";
@@ -198,7 +198,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                dtGrd = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherDetail_By_RVId "+UsersManagments._Tehsilid.ToString()+",'" + this.txtRVID.Text + "'");
+                dtGrd = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherDetail_By_RVId "+TehsilId+",'" + this.txtRVID.Text + "'");
 
                 grdRecipt.DataSource = dtGrd;
                 //======= fill grid=============
@@ -266,7 +266,7 @@ namespace SDC_Application.AL
 
         public void Proc_Get_SDC_PaymentVoucherDetail_BY_VoucherId()
         {
-            objauto.FillCombo("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId "+UsersManagments._Tehsilid.ToString()+",'"
+            objauto.FillCombo("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId "+TehsilId+",'"
             + this.txtRPVID.Text.ToString() + "'", cmbRServices, "SDCServiceName_Urdu", "TaxNotificationDetailId");
 
             txtRAmounttoPay.Clear();
@@ -357,7 +357,7 @@ namespace SDC_Application.AL
                             {
                                 txtServiceName.DataSource = null;
                                 txtServiceName.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId "+UsersManagments._Tehsilid.ToString()+", '" + this.SelectedTokenId.ToString() + "' ");
+                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId '" + this.SelectedTokenId.ToString() + "' ");
 
                                 if (dtPayment.Rows.Count > 0)
                                 {
@@ -435,8 +435,8 @@ namespace SDC_Application.AL
 
 
 
-                            objauto.FillCombo("Proc_Get_SDC_PaymentTypes_List "+UsersManagments._Tehsilid.ToString(), cmbRPaymentofSource, "PaymentType_Urdu", "PaymentTypeId");
-                            dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId "+UsersManagments._Tehsilid.ToString()+",'" + this.SelectedTokenId.ToString() + "' ");
+                            objauto.FillCombo("Proc_Get_SDC_PaymentTypes_List "+TehsilId, cmbRPaymentofSource, "PaymentType_Urdu", "PaymentTypeId");
+                            dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId "+TehsilId+",'" + this.SelectedTokenId.ToString() + "' ");
 
 
                             if (dtReceipt.Rows.Count > 0)
@@ -560,7 +560,7 @@ namespace SDC_Application.AL
             //{
                 dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_PaymentVoucherMaster '"
                 + "-1" + "','"
-                + UsersManagments._Tehsilid.ToString() + "','"
+                + TehsilId + "','"
                 + "-1" + "','"
                 + this.dtChallan.Value.ToShortDateString() + "','"
                 + this.SelectedTokenId.ToString() + "','"
@@ -701,12 +701,12 @@ namespace SDC_Application.AL
             if (txtVoucherDetailsLastID.Text.ToString() == "-1")
             {
 
-                dt = objVoucher.SaveVocherDetails("-1", PVID, "-1", "NULL", "NULL", Notificationunitid, costunitid, "75.00", txtquntity, totalamount, PVdetails, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+                dt = objVoucher.SaveVocherDetailsForOtherDistTehsils(TehsilId,"-1", PVID, "-1", "NULL", "NULL", Notificationunitid, costunitid, "75.00", txtquntity, totalamount, PVdetails, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
 
             }
             else
             {
-                dt = objVoucher.SaveVocherDetails(VocherDetailId, PVID, SeqNo, "NULL", "NULL", Notificationunitid, costunitid, "75.00", txtquntity, totalamount, PVdetails, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+                dt = objVoucher.SaveVocherDetailsForOtherDistTehsils(TehsilId,VocherDetailId, PVID, SeqNo, "NULL", "NULL", Notificationunitid, costunitid, "75.00", txtquntity, totalamount, PVdetails, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
             }
 
             objtoken.errorNumeric.SetError(txtTotalRs, "");
@@ -723,7 +723,7 @@ namespace SDC_Application.AL
             try
             {
 
-                dtPayment = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId "+UsersManagments._Tehsilid.ToString()+",'" + this.txtPVID.Text + "'");
+                dtPayment = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId "+TehsilId+",'" + this.txtPVID.Text + "'");
 
                 grdVoucherDetails.DataSource = dtPayment;
                 objVoucher.VoucherGridSelf(grdVoucherDetails);
@@ -761,7 +761,7 @@ namespace SDC_Application.AL
                 sdcReports.PVID = this.txtPVID.Text;
                 sdcReports.MozaId = this.SelectedMozaId;
                 sdcReports.TokenID = this.SelectedTokenId;
-                sdcReports.Tehsilid = UsersManagments._Tehsilid.ToString();
+                sdcReports.Tehsilid = TehsilId;
                 sdcReports.ShowDialog();
 
             }
@@ -800,7 +800,7 @@ namespace SDC_Application.AL
                     string @UpdateUserId = UsersManagments.UserId.ToString();
                     string @UpdateLoginName = UsersManagments.UserName.ToString();
 
-                    dt = objfrmRecipt.SaveRecptDetails(@RVDetailId, @RVId, @PVDetailId, @RVDetailSeqNo, @TaxNotificationDetailId, @NetPayableAmount, @PaymentTypeId, @ReceivedAmountv, @ChallanNo, @ChallanDate, @BankAccountNo, @BankName, @BankBranchName, @InsertUserId, @InsertLoginName, @UpdateUserId, @UpdateLoginName);
+                    dt = objfrmRecipt.SaveRecptDetailsForOtherDistTehsils(TehsilId,@RVDetailId, @RVId, @PVDetailId, @RVDetailSeqNo, @TaxNotificationDetailId, @NetPayableAmount, @PaymentTypeId, @ReceivedAmountv, @ChallanNo, @ChallanDate, @BankAccountNo, @BankName, @BankBranchName, @InsertUserId, @InsertLoginName, @UpdateUserId, @UpdateLoginName);
                     if (dt != null)
                     {
 
@@ -833,18 +833,14 @@ namespace SDC_Application.AL
             txtName.Clear();
             txtFName.Clear();
             
-            if (txtReciptTokenID.Enabled)
-            {
-                if (txtReciptTokenID.Text.Trim().Length > 0)
-                {
-                    this.TokenRetrieve = Intiq.GetNonTransactionalFard(this.txtReciptTokenID.Text, dtTokenAndrajDate.Value.ToShortDateString());
+             this.TokenRetrieve = Intiq.GetNonTransactionalFardForOtherDistTehsil(this.TehsilId, this.SelectedTokenId);
 
                     if (TokenRetrieve.Rows.Count > 0)
                     {
                         foreach (DataRow data in TokenRetrieve.Rows)
                         {
                             this.SelectedMozaId = data["MozaId"].ToString();
-                            this.SelectedTokenId = data["TokenId"].ToString();
+                            //this.SelectedTokenId = data["TokenId"].ToString();
                             this.SelectedTokenNo = data["TokenNo"].ToString(); 
                             this.tokenDate = Convert.ToDateTime(data["TokenDate"]);
                             pvstatus = Convert.ToBoolean(data["pvstatus"].ToString());
@@ -881,20 +877,8 @@ namespace SDC_Application.AL
                     {
                         MessageBox.Show("فردات میں مطلوبہ ٹوکن کا ریکارڈ نہیں مل سکا", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("ٹوکن نمبر درج کریں", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                frmSearch searchToken = new frmSearch();
-                searchToken.fromform = "4";
-                searchToken.FormClosed -= new FormClosedEventHandler(searchToken_FormClosed);
-                searchToken.FormClosed += new FormClosedEventHandler(searchToken_FormClosed);
-                searchToken.ShowDialog();
-            }
+             
+           
         }
         #endregion
 
@@ -963,7 +947,7 @@ namespace SDC_Application.AL
                 this.PersonName = txtName.Text.Trim();
                 this.FatherName = txtFName.Text.Trim();
                 this.Persons = null;
-                this.Persons = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Searched_Afrad_List "+UsersManagments._Tehsilid.ToString()+"," + this.SelectedMozaId + ",1, N'" + PersonName + "',N'" + FatherName + "'");
+                this.Persons = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Searched_Afrad_List "+TehsilId+"," + this.SelectedMozaId + ",1, N'" + PersonName + "',N'" + FatherName + "'");
                 if (this.Persons != null)
                 {
                     this.FillPersonGridview(Persons);
@@ -1388,11 +1372,11 @@ namespace SDC_Application.AL
 
                         if(MushtriFareeqId=="-1")
                         {
-                            string lastId = Intiq.WEB_Self_SP_INSERT_ShortFard_Khattajat_KhewatGroupFareeqein(fardpersonrecId, fardKhataRecId ,this.SelectedTokenId.ToString(), RegisterHqDKhataId.ToString(), TotalParts, Khata_Kanal, Khata_Marla, Khata_Sarsai, Khata_Feet, PersonId.ToString(), KhewatGroupFareeqId, Hissa, Kanal, Marla, Sarsai, Feet, KhewatTypeId, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+                            string lastId = Intiq.WEB_Self_SP_INSERT_ShortFard_Khattajat_KhewatGroupFareeqeinForOtherDistTehsil(TehsilId,fardpersonrecId, fardKhataRecId ,this.SelectedTokenId.ToString(), RegisterHqDKhataId.ToString(), TotalParts, Khata_Kanal, Khata_Marla, Khata_Sarsai, Khata_Feet, PersonId.ToString(), KhewatGroupFareeqId, Hissa, Kanal, Marla, Sarsai, Feet, KhewatTypeId, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
                         }
                         else
                         {
-                           string lastId = Intiq.WEB_Self_SP_INSERT_ShortFard_Khattajat_Khatoonies_MushtriFareeqein(FardMushteriRecId, FardKhatooniRecId, fardKhataRecId, this.SelectedTokenId.ToString(), RegisterHqDKhataId.ToString(), TotalParts, Khata_Kanal, Khata_Marla, Khata_Sarsai, Khata_Feet,khatoonid,Khatooni_Hissa, Khatooni_Kanal, Khatooni_Marla, Khatooni_Sarsai, Khatooni_Feet , PersonId.ToString(), MushtriFareeqId, Hissa, Kanal, Marla, Sarsai, Feet, KhewatTypeId, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+                           string lastId = Intiq.WEB_Self_SP_INSERT_ShortFard_Khattajat_Khatoonies_MushtriFareeqeinForOtherDistTehsils(TehsilId,FardMushteriRecId, FardKhatooniRecId, fardKhataRecId, this.SelectedTokenId.ToString(), RegisterHqDKhataId.ToString(), TotalParts, Khata_Kanal, Khata_Marla, Khata_Sarsai, Khata_Feet,khatoonid,Khatooni_Hissa, Khatooni_Kanal, Khatooni_Marla, Khatooni_Sarsai, Khatooni_Feet , PersonId.ToString(), MushtriFareeqId, Hissa, Kanal, Marla, Sarsai, Feet, KhewatTypeId, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
                         
                         }
                         GetPersonSavedRecord(SelectedTokenId);
@@ -1612,7 +1596,7 @@ namespace SDC_Application.AL
                             txtTotalCostVoucher.Clear();
 
                             grdVoucherDetails.DataSource = null;
-                            dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId "+UsersManagments._Tehsilid.ToString()+",'" + this.SelectedTokenId.ToString() + "'," + "P");
+                            dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId "+TehsilId+",'" + this.SelectedTokenId.ToString() + "'," + "P");
 
 
                             if (dtPayment.Rows.Count > 0)
@@ -1665,7 +1649,7 @@ namespace SDC_Application.AL
                             {
                                 txtServiceName.DataSource = null;
                                 txtServiceName.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId '" + this.SelectedTokenId.ToString() + "' ");
+                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId "+this.TehsilId+",'" + this.SelectedTokenId.ToString() + "' ");
 
                                 if (dtPayment.Rows.Count > 0)
                                 {
@@ -1740,8 +1724,8 @@ namespace SDC_Application.AL
 
 
 
-                            objauto.FillCombo("Proc_Get_SDC_PaymentTypes_List "+UsersManagments._Tehsilid.ToString(), cmbRPaymentofSource, "PaymentType_Urdu", "PaymentTypeId");
-                            dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId "+UsersManagments._Tehsilid.ToString()+",'" + this.SelectedTokenId.ToString() + "' ");
+                            objauto.FillCombo("Proc_Get_SDC_PaymentTypes_List "+TehsilId, cmbRPaymentofSource, "PaymentType_Urdu", "PaymentTypeId");
+                            dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId " + TehsilId + ",'" + this.SelectedTokenId.ToString() + "' ");
 
 
                             if (dtReceipt.Rows.Count > 0)
@@ -1801,7 +1785,7 @@ namespace SDC_Application.AL
                             {
                                 cmbRServices.DataSource = null;
                                 cmbRServices.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId "+UsersManagments._Tehsilid.ToString()+",'" + this.SelectedTokenId.ToString() + "'," + "R");
+                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId "+TehsilId+",'" + this.SelectedTokenId.ToString() + "'," + "R");
 
                                 if (dtPayment.Rows.Count > 0)
                                 {
@@ -1860,7 +1844,7 @@ namespace SDC_Application.AL
         {
             dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_PaymentVoucherMaster '"
              + "-1" + "','"
-             + UsersManagments._Tehsilid.ToString() + "','"
+             + TehsilId + "','"
              + "-1" + "','"
              + this.dtChallan.Value.ToShortDateString() + "','"
              + this.SelectedTokenId.ToString() + "','"
@@ -1973,7 +1957,7 @@ namespace SDC_Application.AL
             else
             {
 
-                dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Service_Detail "+UsersManagments._Tehsilid.ToString()+",'" + this.txtServiceName.SelectedValue.ToString() + "'");
+                dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Service_Detail "+TehsilId+",'" + this.txtServiceName.SelectedValue.ToString() + "'");
                 foreach (DataRow dr in dt.Rows)
                 {
 
@@ -1996,7 +1980,7 @@ namespace SDC_Application.AL
                 {
                     if (MessageBox.Show("کیا آپ تصدیق کرنا چاہتے ہیں:::::", "تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (objbusines.filldatatable_from_storedProcedure("WEB_SP_UPDATE_SDC_PaymentVoucherMaster "+UsersManagments._Tehsilid.ToString()+",'" + this.txtPVID.Text + "','" + chkMasterVoucherUpdate.Checked + "','" + this.txtTotalCostVoucher.Text.ToString() + "'") != null)
+                        if (objbusines.filldatatable_from_storedProcedure("WEB_SP_UPDATE_SDC_PaymentVoucherMaster "+TehsilId+",'" + this.txtPVID.Text + "','" + chkMasterVoucherUpdate.Checked + "','" + this.txtTotalCostVoucher.Text.ToString() + "'") != null)
                         {
 
                             chkMasterVoucherUpdate.Enabled = false;
@@ -2054,7 +2038,7 @@ namespace SDC_Application.AL
 
                     //if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     //{
-                    dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_ReceiptVoucherMaster '" + this.txtRVID.Text.ToString() + "','" + this.txtRNo.Text.ToString() + "','" + UsersManagments._Tehsilid.ToString() + "','" + this.SelectedMozaId.ToString() + "','" + this.dtReciptDate.Value.ToShortDateString() + "','" + this.SelectedTokenId.ToString() + "',N'" + txtMasterRemarks.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
+                    dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_ReceiptVoucherMaster '" + this.txtRVID.Text.ToString() + "','" + this.txtRNo.Text.ToString() + "','" + TehsilId + "','" + this.SelectedMozaId.ToString() + "','" + this.dtReciptDate.Value.ToShortDateString() + "','" + this.SelectedTokenId.ToString() + "',N'" + txtMasterRemarks.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
                     if (dt != null)
                     {
 
@@ -2124,7 +2108,7 @@ namespace SDC_Application.AL
                 {
                     txtRPVID.Text = "-1";
                 }
-                dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_For_Recipt "+UsersManagments._Tehsilid.ToString()+",'" + this.txtRPVID.Text + "','" + cmbRServiceSelectedValue + "'");
+                dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_For_Recipt "+TehsilId+",'" + this.txtRPVID.Text + "','" + cmbRServiceSelectedValue + "'");
                 foreach (DataRow dr in dt.Rows)
                 {
                     this.txtRAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
@@ -2243,7 +2227,7 @@ namespace SDC_Application.AL
                 frmSDCReportingMain TokenReport = new frmSDCReportingMain();
 
                 TokenReport.RVID = this.txtRVID.Text.ToString();
-                TokenReport.Tehsilid = UsersManagments._Tehsilid.ToString();
+                TokenReport.Tehsilid = TehsilId;
                 TokenReport.ShowDialog();
             }
         }
@@ -2256,7 +2240,7 @@ namespace SDC_Application.AL
                 {
                     if (MessageBox.Show("کیا آپ تصدیق کرنا چاہتے ہیں:::::", "تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_UPDATE_SDC_ReceiptVoucherMaster "+UsersManagments._Tehsilid.ToString()+",'" + txtRVID.Text + "','" + chkVerfiedReciptMaster.Checked + "',''");
+                        dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_UPDATE_SDC_ReceiptVoucherMaster "+TehsilId+",'" + txtRVID.Text + "','" + chkVerfiedReciptMaster.Checked + "',''");
 
                         this.chkVerfiedReciptMaster.Enabled = false;
                         this.btnDelReceipt.Enabled = false;
@@ -2310,7 +2294,7 @@ namespace SDC_Application.AL
             {
                 if(txtOperatorReport.Text.Trim().Length>3)
                 {
-                    mnk.InsertDetailedFardOperatorReport(this.SelectedTokenId, txtOperatorReport.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    mnk.InsertDetailedFardOperatorReportForOtherDistTehsils(TehsilId,this.SelectedTokenId, txtOperatorReport.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
 
                     MessageBox.Show("اپریٹر رپورٹ محفوظ ہو گیا ہے۔");
                 }
@@ -2358,7 +2342,7 @@ namespace SDC_Application.AL
                 sdcReports.PVID = this.txtPVID.Text;
                 sdcReports.MozaId = this.SelectedMozaId;
                 sdcReports.TokenID = this.SelectedTokenId.ToString();
-                sdcReports.Tehsilid = UsersManagments._Tehsilid.ToString();
+                sdcReports.Tehsilid = TehsilId;
                 sdcReports.ReceiptVerified = ReceiptVerified;
                 sdcReports.ShowDialog();
             }
@@ -2406,15 +2390,11 @@ namespace SDC_Application.AL
                 sdcReports.PVID = this.txtPVID.Text;
                 sdcReports.MozaId = this.SelectedMozaId.ToString();
                 sdcReports.TokenID = this.SelectedTokenId.ToString();
-                sdcReports.Tehsilid = UsersManagments._Tehsilid.ToString();
+                sdcReports.Tehsilid = TehsilId;
                 sdcReports.ShowDialog();
 
             }
-        }
-
-     
-
-     
+        }    
 
     }
 }

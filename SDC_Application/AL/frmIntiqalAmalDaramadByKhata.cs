@@ -60,7 +60,10 @@ namespace SDC_Application.AL
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
-
+            if (UsersManagments.Implementation == "0")
+            {
+                this.btnAmaldaramad.Visible = false;
+            }
             // Get Intiqal Khatajat and Fill Grid view
             if (this.IntiqalAmalDaramad)
             {
@@ -664,11 +667,11 @@ namespace SDC_Application.AL
 
          private void btnAmaldaramad_Click(object sender, EventArgs e)
          {
-             if(dgBuyersBeforeAmal.RowCount==0 || dgSellersBeforeAmal.RowCount==0)
-             {
-                 MessageBox.Show(" بائع / مشتری موجود نہیں ہے:::::", "کھاتہ عمل درامد" , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }
+             //if(dgBuyersBeforeAmal.RowCount==0 || dgSellersBeforeAmal.RowCount==0)
+             //{
+             //    MessageBox.Show(" بائع / مشتری موجود نہیں ہے:::::", "کھاتہ عمل درامد" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+             //    return;
+             //}
              if (MessageBox.Show(" کیا آپ انتخاب کردہ کھاتے پر عملدرامد کرنا چاہتے ہیں:::::", "کھاتہ عمل درامد", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
              {
                  string AmalMessage = intiqal.IntiqalAmalDaramadByKhataIdSingle(this.IntiqalId, this.IntiqalKhataId, UsersManagments.UserId.ToString(), UsersManagments.UserName);

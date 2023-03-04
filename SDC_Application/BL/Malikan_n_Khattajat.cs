@@ -349,6 +349,13 @@ namespace SDC_Application.BL
             return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
             //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
         }
+        public string InsertDetailedFardOperatorReportForOtherDistTehsils(string TehsilId,string TokenId, string OperatorReport, string UpdateUserId, string UpdateLoginName)
+        {
+
+            string spWithParam = "WEB_Self_SP_INSERT_SDC_DetailedFard_Operator_Report  " + TehsilId + "," + TokenId + ",N'" + OperatorReport + "'," + UpdateUserId + ",'" + UpdateLoginName + "'";
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+            //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
+        }
         #endregion
 
         #region Get Methods for Transactional Fard

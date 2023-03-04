@@ -35,9 +35,9 @@ namespace SDC_Application.BL
 
         public string CheckKhasraNoInMoza(string MozaId, string KhasraNo)
         {
-            string ret = "0";
-            string spWithParam = "Proc_Self_Check_KhasraNo_in_Moza " + Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + KhasraNo + "'";
-            ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            string ret = "-1";
+            //string spWithParam = "Proc_Self_Check_KhasraNo_in_Moza " + Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + KhasraNo + "'";
+            //ret = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             return ret;
         }
 
@@ -160,7 +160,7 @@ namespace SDC_Application.BL
         #region Get Register Haqdaran zameen Khattajat by Moza Id
         public DataTable GetKhatajatByMoza(int mozaId)
         {
-            string spWithParms = "Proc_Get_Moza_Register_KhataJat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaId.ToString() + "," + "0";
+            string spWithParms = "Proc_Self_Get_Moza_Register_KhataJat_All  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mozaId.ToString() + "," + "0";
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
 

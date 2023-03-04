@@ -56,6 +56,8 @@
             this.dgKhatajatProposed = new System.Windows.Forms.DataGridView();
             this.dgKhataEditColSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbPreviousKhata = new System.Windows.Forms.RadioButton();
+            this.rbCurrentKhata = new System.Windows.Forms.RadioButton();
             this.btnDelProposedKhata = new System.Windows.Forms.Button();
             this.chkIsNewKhata = new System.Windows.Forms.CheckBox();
             this.cbKhataEdits = new System.Windows.Forms.ComboBox();
@@ -666,6 +668,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.rbPreviousKhata);
+            this.groupBox3.Controls.Add(this.rbCurrentKhata);
             this.groupBox3.Controls.Add(this.btnDelProposedKhata);
             this.groupBox3.Controls.Add(this.chkIsNewKhata);
             this.groupBox3.Controls.Add(this.cbKhataEdits);
@@ -695,11 +699,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "مجوزہ تفصیل کھاتہ";
             // 
+            // rbPreviousKhata
+            // 
+            this.rbPreviousKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbPreviousKhata.AutoSize = true;
+            this.rbPreviousKhata.Location = new System.Drawing.Point(679, 95);
+            this.rbPreviousKhata.Name = "rbPreviousKhata";
+            this.rbPreviousKhata.Size = new System.Drawing.Size(60, 35);
+            this.rbPreviousKhata.TabIndex = 317;
+            this.rbPreviousKhata.TabStop = true;
+            this.rbPreviousKhata.Text = "سابقہ";
+            this.rbPreviousKhata.UseVisualStyleBackColor = true;
+            // 
+            // rbCurrentKhata
+            // 
+            this.rbCurrentKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbCurrentKhata.AutoSize = true;
+            this.rbCurrentKhata.Location = new System.Drawing.Point(669, 64);
+            this.rbCurrentKhata.Name = "rbCurrentKhata";
+            this.rbCurrentKhata.Size = new System.Drawing.Size(70, 35);
+            this.rbCurrentKhata.TabIndex = 316;
+            this.rbCurrentKhata.TabStop = true;
+            this.rbCurrentKhata.Text = "موجودہ";
+            this.rbCurrentKhata.UseVisualStyleBackColor = true;
+            // 
             // btnDelProposedKhata
             // 
             this.btnDelProposedKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelProposedKhata.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelProposedKhata.Location = new System.Drawing.Point(249, 79);
+            this.btnDelProposedKhata.Location = new System.Drawing.Point(169, 79);
             this.btnDelProposedKhata.Name = "btnDelProposedKhata";
             this.btnDelProposedKhata.Size = new System.Drawing.Size(156, 39);
             this.btnDelProposedKhata.TabIndex = 315;
@@ -772,7 +800,7 @@
             // 
             this.btnNewKhataProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewKhataProp.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewKhataProp.Location = new System.Drawing.Point(564, 79);
+            this.btnNewKhataProp.Location = new System.Drawing.Point(484, 79);
             this.btnNewKhataProp.Name = "btnNewKhataProp";
             this.btnNewKhataProp.Size = new System.Drawing.Size(74, 39);
             this.btnNewKhataProp.TabIndex = 309;
@@ -803,7 +831,7 @@
             // 
             this.btnSaveKhataProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveKhataProp.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveKhataProp.Location = new System.Drawing.Point(645, 79);
+            this.btnSaveKhataProp.Location = new System.Drawing.Point(565, 79);
             this.btnSaveKhataProp.Name = "btnSaveKhataProp";
             this.btnSaveKhataProp.Size = new System.Drawing.Size(84, 39);
             this.btnSaveKhataProp.TabIndex = 308;
@@ -826,7 +854,7 @@
             // 
             this.btnDelKhataProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelKhataProp.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelKhataProp.Location = new System.Drawing.Point(415, 79);
+            this.btnDelKhataProp.Location = new System.Drawing.Point(335, 79);
             this.btnDelKhataProp.Name = "btnDelKhataProp";
             this.btnDelKhataProp.Size = new System.Drawing.Size(142, 39);
             this.btnDelKhataProp.TabIndex = 307;
@@ -1239,9 +1267,9 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(-47, 50);
+            this.button1.Location = new System.Drawing.Point(5, 49);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 37);
+            this.button1.Size = new System.Drawing.Size(113, 37);
             this.button1.TabIndex = 244;
             this.button1.TabStop = false;
             this.button1.Text = "رقبہ بمطابق حصہ";
@@ -1252,7 +1280,7 @@
             // 
             this.btnNewMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMalik.Location = new System.Drawing.Point(182, 50);
+            this.btnNewMalik.Location = new System.Drawing.Point(193, 50);
             this.btnNewMalik.Name = "btnNewMalik";
             this.btnNewMalik.Size = new System.Drawing.Size(68, 37);
             this.btnNewMalik.TabIndex = 306;
@@ -1266,7 +1294,7 @@
             // 
             this.btnPersonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPersonSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonSave.Location = new System.Drawing.Point(265, 50);
+            this.btnPersonSave.Location = new System.Drawing.Point(268, 50);
             this.btnPersonSave.Name = "btnPersonSave";
             this.btnPersonSave.Size = new System.Drawing.Size(68, 37);
             this.btnPersonSave.TabIndex = 305;
@@ -1279,7 +1307,7 @@
             // 
             this.btnDeleteMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMalik.Location = new System.Drawing.Point(100, 50);
+            this.btnDeleteMalik.Location = new System.Drawing.Point(119, 50);
             this.btnDeleteMalik.Name = "btnDeleteMalik";
             this.btnDeleteMalik.Size = new System.Drawing.Size(68, 37);
             this.btnDeleteMalik.TabIndex = 243;
@@ -2924,7 +2952,7 @@
             // 
             this.btnNewMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewMushteri.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMushteri.Location = new System.Drawing.Point(134, 11);
+            this.btnNewMushteri.Location = new System.Drawing.Point(131, 11);
             this.btnNewMushteri.Name = "btnNewMushteri";
             this.btnNewMushteri.Size = new System.Drawing.Size(67, 37);
             this.btnNewMushteri.TabIndex = 309;
@@ -2936,7 +2964,7 @@
             // 
             this.btnSaveMushteriFareeq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveMushteriFareeq.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveMushteriFareeq.Location = new System.Drawing.Point(205, 11);
+            this.btnSaveMushteriFareeq.Location = new System.Drawing.Point(202, 11);
             this.btnSaveMushteriFareeq.Name = "btnSaveMushteriFareeq";
             this.btnSaveMushteriFareeq.Size = new System.Drawing.Size(67, 37);
             this.btnSaveMushteriFareeq.TabIndex = 308;
@@ -2948,7 +2976,7 @@
             // 
             this.btnDelMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelMushteri.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelMushteri.Location = new System.Drawing.Point(61, 11);
+            this.btnDelMushteri.Location = new System.Drawing.Point(58, 11);
             this.btnDelMushteri.Name = "btnDelMushteri";
             this.btnDelMushteri.Size = new System.Drawing.Size(67, 37);
             this.btnDelMushteri.TabIndex = 307;
@@ -3030,7 +3058,7 @@
             this.cbMushtriKhewatType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbMushtriKhewatType.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMushtriKhewatType.FormattingEnabled = true;
-            this.cbMushtriKhewatType.Location = new System.Drawing.Point(630, 14);
+            this.cbMushtriKhewatType.Location = new System.Drawing.Point(627, 10);
             this.cbMushtriKhewatType.Name = "cbMushtriKhewatType";
             this.cbMushtriKhewatType.Size = new System.Drawing.Size(113, 39);
             this.cbMushtriKhewatType.TabIndex = 220;
@@ -3041,7 +3069,7 @@
             this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(569, 14);
+            this.label44.Location = new System.Drawing.Point(566, 14);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(58, 31);
             this.label44.TabIndex = 224;
@@ -3051,7 +3079,7 @@
             // 
             this.txtMushteriHisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMushteriHisa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMushteriHisa.Location = new System.Drawing.Point(277, 14);
+            this.txtMushteriHisa.Location = new System.Drawing.Point(274, 14);
             this.txtMushteriHisa.Name = "txtMushteriHisa";
             this.txtMushteriHisa.ReadOnly = true;
             this.txtMushteriHisa.Size = new System.Drawing.Size(95, 30);
@@ -3061,7 +3089,7 @@
             // 
             this.txtMushtriHisaBata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMushtriHisaBata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMushtriHisaBata.Location = new System.Drawing.Point(449, 14);
+            this.txtMushtriHisaBata.Location = new System.Drawing.Point(446, 14);
             this.txtMushtriHisaBata.Name = "txtMushtriHisaBata";
             this.txtMushtriHisaBata.Size = new System.Drawing.Size(120, 30);
             this.txtMushtriHisaBata.TabIndex = 223;
@@ -3072,7 +3100,7 @@
             this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(377, 14);
+            this.label45.Location = new System.Drawing.Point(374, 14);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(69, 31);
             this.label45.TabIndex = 226;
@@ -4122,5 +4150,7 @@
         private System.Windows.Forms.TextBox txtMushteriFareeqRecId;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelMushtriEdit;
         private System.Windows.Forms.CheckBox chkRecStatus;
+        private System.Windows.Forms.RadioButton rbPreviousKhata;
+        private System.Windows.Forms.RadioButton rbCurrentKhata;
     }
 }

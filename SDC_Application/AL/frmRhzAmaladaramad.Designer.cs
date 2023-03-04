@@ -702,7 +702,7 @@
             this.tabKhataIntiqalFardbadar.Location = new System.Drawing.Point(4, 40);
             this.tabKhataIntiqalFardbadar.Name = "tabKhataIntiqalFardbadar";
             this.tabKhataIntiqalFardbadar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhataIntiqalFardbadar.Size = new System.Drawing.Size(1226, 383);
+            this.tabKhataIntiqalFardbadar.Size = new System.Drawing.Size(1226, 377);
             this.tabKhataIntiqalFardbadar.TabIndex = 1;
             this.tabKhataIntiqalFardbadar.Text = "عمل فرد بدرات،مثل و انتقلات";
             this.tabKhataIntiqalFardbadar.UseVisualStyleBackColor = true;
@@ -714,7 +714,7 @@
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox13.Location = new System.Drawing.Point(99, 3);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(347, 377);
+            this.groupBox13.Size = new System.Drawing.Size(347, 371);
             this.groupBox13.TabIndex = 5;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "زیر التوا/منیوال عمل شدہ/خارج شدہ وغیرہ انتقالات";
@@ -731,7 +731,7 @@
             this.dgKhataIntiqalPenginKharej.Name = "dgKhataIntiqalPenginKharej";
             this.dgKhataIntiqalPenginKharej.ReadOnly = true;
             this.dgKhataIntiqalPenginKharej.RowHeadersVisible = false;
-            this.dgKhataIntiqalPenginKharej.Size = new System.Drawing.Size(341, 304);
+            this.dgKhataIntiqalPenginKharej.Size = new System.Drawing.Size(341, 298);
             this.dgKhataIntiqalPenginKharej.TabIndex = 3;
             // 
             // panel10
@@ -768,7 +768,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox3.Location = new System.Drawing.Point(446, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(270, 377);
+            this.groupBox3.Size = new System.Drawing.Size(270, 371);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "عملدرامد شدہ فرد بدرات/مثل";
@@ -785,7 +785,7 @@
             this.dgkhataFardbadar.Name = "dgkhataFardbadar";
             this.dgkhataFardbadar.ReadOnly = true;
             this.dgkhataFardbadar.RowHeadersVisible = false;
-            this.dgkhataFardbadar.Size = new System.Drawing.Size(264, 304);
+            this.dgkhataFardbadar.Size = new System.Drawing.Size(264, 298);
             this.dgkhataFardbadar.TabIndex = 0;
             // 
             // panel9
@@ -822,7 +822,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox4.Location = new System.Drawing.Point(716, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(249, 377);
+            this.groupBox4.Size = new System.Drawing.Size(249, 371);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "زیر تجویز انتقالات";
@@ -839,7 +839,7 @@
             this.dgKhataIntiqalPending.Name = "dgKhataIntiqalPending";
             this.dgKhataIntiqalPending.ReadOnly = true;
             this.dgKhataIntiqalPending.RowHeadersVisible = false;
-            this.dgKhataIntiqalPending.Size = new System.Drawing.Size(243, 304);
+            this.dgKhataIntiqalPending.Size = new System.Drawing.Size(243, 298);
             this.dgKhataIntiqalPending.TabIndex = 1;
             // 
             // panel8
@@ -876,7 +876,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Location = new System.Drawing.Point(965, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(258, 377);
+            this.groupBox2.Size = new System.Drawing.Size(258, 371);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "عملدرامد شدہ انتقالات";
@@ -887,7 +887,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 70);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(252, 304);
+            this.panel7.Size = new System.Drawing.Size(252, 298);
             this.panel7.TabIndex = 1;
             // 
             // dgKhataIntiqalAmaldaramad
@@ -902,7 +902,7 @@
             this.dgKhataIntiqalAmaldaramad.Name = "dgKhataIntiqalAmaldaramad";
             this.dgKhataIntiqalAmaldaramad.ReadOnly = true;
             this.dgKhataIntiqalAmaldaramad.RowHeadersVisible = false;
-            this.dgKhataIntiqalAmaldaramad.Size = new System.Drawing.Size(252, 304);
+            this.dgKhataIntiqalAmaldaramad.Size = new System.Drawing.Size(252, 298);
             this.dgKhataIntiqalAmaldaramad.TabIndex = 1;
             // 
             // panel6
@@ -984,7 +984,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox8);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainer1.Size = new System.Drawing.Size(1220, 371);
-            this.splitContainer1.SplitterDistance = 194;
+            this.splitContainer1.SplitterDistance = 193;
             this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -995,7 +995,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1220, 194);
+            this.groupBox7.Size = new System.Drawing.Size(1220, 193);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "موجودہ  و سابقہ ملکان";
@@ -1013,7 +1013,7 @@
             this.dgKhewatFareeqainAll.Name = "dgKhewatFareeqainAll";
             this.dgKhewatFareeqainAll.RowHeadersVisible = false;
             this.dgKhewatFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKhewatFareeqainAll.Size = new System.Drawing.Size(1214, 114);
+            this.dgKhewatFareeqainAll.Size = new System.Drawing.Size(1214, 113);
             this.dgKhewatFareeqainAll.TabIndex = 1;
             this.dgKhewatFareeqainAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhewatFareeqainAll_CellClick);
             // 
@@ -1070,7 +1070,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1220, 167);
+            this.groupBox8.Size = new System.Drawing.Size(1220, 168);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "تاریخ و تفصیل انتخاب کردہ مالک";
@@ -1087,7 +1087,7 @@
             this.dgKhewatFreeqDetails.ReadOnly = true;
             this.dgKhewatFreeqDetails.RowHeadersVisible = false;
             this.dgKhewatFreeqDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKhewatFreeqDetails.Size = new System.Drawing.Size(1214, 129);
+            this.dgKhewatFreeqDetails.Size = new System.Drawing.Size(1214, 130);
             this.dgKhewatFreeqDetails.TabIndex = 2;
             // 
             // panel5
@@ -1103,7 +1103,7 @@
             this.tabKhewatFareeqLock.Location = new System.Drawing.Point(4, 40);
             this.tabKhewatFareeqLock.Name = "tabKhewatFareeqLock";
             this.tabKhewatFareeqLock.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhewatFareeqLock.Size = new System.Drawing.Size(1226, 383);
+            this.tabKhewatFareeqLock.Size = new System.Drawing.Size(1226, 377);
             this.tabKhewatFareeqLock.TabIndex = 1;
             this.tabKhewatFareeqLock.Text = "مالک لاک و تفصیل";
             this.tabKhewatFareeqLock.UseVisualStyleBackColor = true;
@@ -1114,7 +1114,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(3, 3);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1220, 377);
+            this.panel11.Size = new System.Drawing.Size(1220, 371);
             this.panel11.TabIndex = 1;
             // 
             // splitContainer3
@@ -1138,7 +1138,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtKhewatGroupFareeqId);
             this.splitContainer3.Panel2.Controls.Add(this.chkKhewatFareeqLock);
             this.splitContainer3.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer3.Size = new System.Drawing.Size(1220, 377);
+            this.splitContainer3.Size = new System.Drawing.Size(1220, 371);
             this.splitContainer3.SplitterDistance = 964;
             this.splitContainer3.SplitterWidth = 10;
             this.splitContainer3.TabIndex = 0;
@@ -1149,7 +1149,7 @@
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox12.Location = new System.Drawing.Point(0, 69);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(964, 308);
+            this.groupBox12.Size = new System.Drawing.Size(964, 302);
             this.groupBox12.TabIndex = 1;
             this.groupBox12.TabStop = false;
             // 
@@ -1167,7 +1167,7 @@
             this.dgKhewatGroupFareeqainForLocking.ReadOnly = true;
             this.dgKhewatGroupFareeqainForLocking.RowHeadersVisible = false;
             this.dgKhewatGroupFareeqainForLocking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKhewatGroupFareeqainForLocking.Size = new System.Drawing.Size(958, 270);
+            this.dgKhewatGroupFareeqainForLocking.Size = new System.Drawing.Size(958, 264);
             this.dgKhewatGroupFareeqainForLocking.TabIndex = 2;
             this.dgKhewatGroupFareeqainForLocking.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhewatGroupFareeqainForLocking_CellClick);
             // 
@@ -1225,7 +1225,7 @@
             // txtKhewatFareeqLockDetails
             // 
             this.txtKhewatFareeqLockDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhewatFareeqLockDetails.Location = new System.Drawing.Point(-114, 159);
+            this.txtKhewatFareeqLockDetails.Location = new System.Drawing.Point(-120, 159);
             this.txtKhewatFareeqLockDetails.Multiline = true;
             this.txtKhewatFareeqLockDetails.Name = "txtKhewatFareeqLockDetails";
             this.txtKhewatFareeqLockDetails.Size = new System.Drawing.Size(201, 122);
@@ -1236,7 +1236,7 @@
             // 
             this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(11, 122);
+            this.label31.Location = new System.Drawing.Point(5, 122);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(71, 31);
             this.label31.TabIndex = 16;
@@ -1246,7 +1246,7 @@
             // 
             this.lblKhewatMalikName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblKhewatMalikName.AutoSize = true;
-            this.lblKhewatMalikName.Location = new System.Drawing.Point(-64, 27);
+            this.lblKhewatMalikName.Location = new System.Drawing.Point(-70, 27);
             this.lblKhewatMalikName.Name = "lblKhewatMalikName";
             this.lblKhewatMalikName.Size = new System.Drawing.Size(22, 31);
             this.lblKhewatMalikName.TabIndex = 17;
@@ -1255,7 +1255,7 @@
             // txtKhewatGroupFareeqId
             // 
             this.txtKhewatGroupFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(-109, 339);
+            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(-115, 339);
             this.txtKhewatGroupFareeqId.Name = "txtKhewatGroupFareeqId";
             this.txtKhewatGroupFareeqId.Size = new System.Drawing.Size(119, 39);
             this.txtKhewatGroupFareeqId.TabIndex = 18;
@@ -1265,7 +1265,7 @@
             // 
             this.chkKhewatFareeqLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkKhewatFareeqLock.AutoSize = true;
-            this.chkKhewatFareeqLock.Location = new System.Drawing.Point(-12, 73);
+            this.chkKhewatFareeqLock.Location = new System.Drawing.Point(-18, 73);
             this.chkKhewatFareeqLock.Name = "chkKhewatFareeqLock";
             this.chkKhewatFareeqLock.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chkKhewatFareeqLock.Size = new System.Drawing.Size(88, 35);
@@ -1606,7 +1606,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.groupBox14);
             this.splitContainer4.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainer4.Size = new System.Drawing.Size(693, 321);
-            this.splitContainer4.SplitterDistance = 161;
+            this.splitContainer4.SplitterDistance = 160;
             this.splitContainer4.TabIndex = 0;
             // 
             // dgMushteriFareeqainAll
@@ -1622,7 +1622,7 @@
             this.dgMushteriFareeqainAll.Name = "dgMushteriFareeqainAll";
             this.dgMushteriFareeqainAll.RowHeadersVisible = false;
             this.dgMushteriFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMushteriFareeqainAll.Size = new System.Drawing.Size(693, 119);
+            this.dgMushteriFareeqainAll.Size = new System.Drawing.Size(693, 118);
             this.dgMushteriFareeqainAll.TabIndex = 3;
             this.dgMushteriFareeqainAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMushteriFareeqainAll_CellClick);
             // 
@@ -1667,7 +1667,7 @@
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(693, 156);
+            this.groupBox14.Size = new System.Drawing.Size(693, 157);
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "تاریخ و تفصیل انتخاب کردہ مالک بخانہ کاشت";
@@ -1684,7 +1684,7 @@
             this.dgMushteriFareeqainDetails.ReadOnly = true;
             this.dgMushteriFareeqainDetails.RowHeadersVisible = false;
             this.dgMushteriFareeqainDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMushteriFareeqainDetails.Size = new System.Drawing.Size(687, 118);
+            this.dgMushteriFareeqainDetails.Size = new System.Drawing.Size(687, 119);
             this.dgMushteriFareeqainDetails.TabIndex = 3;
             // 
             // tabBayan

@@ -46,6 +46,7 @@ namespace SDC_Application.AL
         public string DuplicatePRint { get; set; }
         public string tokentime { get; set; }
         public string fromform { get; set; }
+        public string otherTehsilId { get; set; }
 
         public string ServiceTypeId { get; set; } // for filtering Token on basis of Service generated for
 
@@ -138,15 +139,22 @@ namespace SDC_Application.AL
                 //}
                 //else
                 //{
-            if (fromform=="1")
-            {
-                //dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal '" + datetoken + "'," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
-                dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "'");
-            }
-            else
-            {                
-                dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'");
-            }
+                if (otherTehsilId.Length > 1)
+                {
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_OtherDistric_Tehsils " + otherTehsilId + ",'" + datetoken + "',"+UsersManagments._LocationId.ToString());
+                }
+                else
+                {
+                    if (fromform == "1")
+                    {
+                        //dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal '" + datetoken + "'," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "'");
+                    }
+                    else
+                    {
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'");
+                    }
+                }
                  
                // }
                 DataTable outputTable = dt.Clone();
