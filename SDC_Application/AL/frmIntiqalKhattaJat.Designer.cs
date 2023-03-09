@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -208,6 +208,7 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.PanelBuyersControl = new System.Windows.Forms.Panel();
+            this.btnBuyerFamilySel = new System.Windows.Forms.Button();
             this.txtSearchBuyers = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnMushtrianIshtirak = new System.Windows.Forms.Button();
@@ -856,14 +857,14 @@
             this.GridviewSaveSalamJuzviKhassra.AllowUserToAddRows = false;
             this.GridviewSaveSalamJuzviKhassra.AllowUserToDeleteRows = false;
             this.GridviewSaveSalamJuzviKhassra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridviewSaveSalamJuzviKhassra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridviewSaveSalamJuzviKhassra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.GridviewSaveSalamJuzviKhassra.ColumnHeadersHeight = 38;
             this.GridviewSaveSalamJuzviKhassra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn2});
@@ -873,8 +874,8 @@
             this.GridviewSaveSalamJuzviKhassra.ReadOnly = true;
             this.GridviewSaveSalamJuzviKhassra.RowHeadersVisible = false;
             this.GridviewSaveSalamJuzviKhassra.RowHeadersWidth = 30;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridviewSaveSalamJuzviKhassra.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridviewSaveSalamJuzviKhassra.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.GridviewSaveSalamJuzviKhassra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridviewSaveSalamJuzviKhassra.Size = new System.Drawing.Size(522, 207);
             this.GridviewSaveSalamJuzviKhassra.TabIndex = 1;
@@ -983,14 +984,14 @@
             this.gridviewSalamjuzviKhassraList.AllowUserToAddRows = false;
             this.gridviewSalamjuzviKhassraList.AllowUserToDeleteRows = false;
             this.gridviewSalamjuzviKhassraList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridviewSalamjuzviKhassraList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridviewSalamjuzviKhassraList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.gridviewSalamjuzviKhassraList.ColumnHeadersHeight = 38;
             this.gridviewSalamjuzviKhassraList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColSelKhassra});
@@ -1000,8 +1001,8 @@
             this.gridviewSalamjuzviKhassraList.ReadOnly = true;
             this.gridviewSalamjuzviKhassraList.RowHeadersVisible = false;
             this.gridviewSalamjuzviKhassraList.RowHeadersWidth = 30;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridviewSalamjuzviKhassraList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridviewSalamjuzviKhassraList.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.gridviewSalamjuzviKhassraList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridviewSalamjuzviKhassraList.Size = new System.Drawing.Size(494, 139);
             this.gridviewSalamjuzviKhassraList.TabIndex = 1;
@@ -1311,14 +1312,14 @@
             this.grdKhatoniDetails.AllowUserToAddRows = false;
             this.grdKhatoniDetails.AllowUserToDeleteRows = false;
             this.grdKhatoniDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKhatoniDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKhatoniDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.grdKhatoniDetails.ColumnHeadersHeight = 38;
             this.grdKhatoniDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkkhatoni});
@@ -1327,8 +1328,8 @@
             this.grdKhatoniDetails.ReadOnly = true;
             this.grdKhatoniDetails.RowHeadersVisible = false;
             this.grdKhatoniDetails.RowHeadersWidth = 30;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdKhatoniDetails.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdKhatoniDetails.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.grdKhatoniDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdKhatoniDetails.Size = new System.Drawing.Size(248, 404);
             this.grdKhatoniDetails.TabIndex = 0;
@@ -1818,7 +1819,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1128, 28);
+            this.label12.Location = new System.Drawing.Point(1316, 19);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(123, 38);
             this.label12.TabIndex = 1042;
@@ -1938,11 +1939,11 @@
             // 
             // groupBox24
             // 
-            this.groupBox24.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBox24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox24.Controls.Add(this.label10);
             this.groupBox24.Controls.Add(this.dateDeath);
             this.groupBox24.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox24.Location = new System.Drawing.Point(917, 35);
+            this.groupBox24.Location = new System.Drawing.Point(1007, 28);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox24.Size = new System.Drawing.Size(247, 71);
@@ -1966,7 +1967,7 @@
             this.dateDeath.CustomFormat = "dd/MM/yyyy";
             this.dateDeath.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDeath.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDeath.Location = new System.Drawing.Point(17, 32);
+            this.dateDeath.Location = new System.Drawing.Point(9, 28);
             this.dateDeath.Name = "dateDeath";
             this.dateDeath.Size = new System.Drawing.Size(125, 30);
             this.dateDeath.TabIndex = 1033;
@@ -1975,7 +1976,7 @@
             // 
             this.chkDeath.AutoSize = true;
             this.chkDeath.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDeath.Location = new System.Drawing.Point(1037, 11);
+            this.chkDeath.Location = new System.Drawing.Point(1127, 4);
             this.chkDeath.Name = "chkDeath";
             this.chkDeath.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chkDeath.Size = new System.Drawing.Size(75, 42);
@@ -1998,10 +1999,10 @@
             // 
             // txtSearchSeller
             // 
-            this.txtSearchSeller.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSearchSeller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchSeller.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchSeller.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchSeller.Location = new System.Drawing.Point(1180, 67);
+            this.txtSearchSeller.Location = new System.Drawing.Point(1270, 60);
             this.txtSearchSeller.Name = "txtSearchSeller";
             this.txtSearchSeller.Size = new System.Drawing.Size(173, 44);
             this.txtSearchSeller.TabIndex = 1020;
@@ -2730,6 +2731,7 @@
             // PanelBuyersControl
             // 
             this.PanelBuyersControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelBuyersControl.Controls.Add(this.btnBuyerFamilySel);
             this.PanelBuyersControl.Controls.Add(this.txtSearchBuyers);
             this.PanelBuyersControl.Controls.Add(this.button3);
             this.PanelBuyersControl.Controls.Add(this.btnMushtrianIshtirak);
@@ -2746,9 +2748,22 @@
             this.PanelBuyersControl.Size = new System.Drawing.Size(1441, 64);
             this.PanelBuyersControl.TabIndex = 225;
             // 
+            // btnBuyerFamilySel
+            // 
+            this.btnBuyerFamilySel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuyerFamilySel.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuyerFamilySel.Image = global::SDC_Application.Resource1.family_icon2;
+            this.btnBuyerFamilySel.Location = new System.Drawing.Point(1286, 7);
+            this.btnBuyerFamilySel.Name = "btnBuyerFamilySel";
+            this.btnBuyerFamilySel.Size = new System.Drawing.Size(54, 50);
+            this.btnBuyerFamilySel.TabIndex = 1045;
+            this.toolTipIntiqalKhatta.SetToolTip(this.btnBuyerFamilySel, "وراثت کی صورت میں متوفی/متوفیہ کے خاندان کا انتخاب کریں");
+            this.btnBuyerFamilySel.UseVisualStyleBackColor = true;
+            this.btnBuyerFamilySel.Click += new System.EventHandler(this.btnBuyerFamilySel_Click);
+            // 
             // txtSearchBuyers
             // 
-            this.txtSearchBuyers.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtSearchBuyers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchBuyers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchBuyers.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBuyers.Location = new System.Drawing.Point(1028, 8);
@@ -2773,6 +2788,7 @@
             // 
             // btnMushtrianIshtirak
             // 
+            this.btnMushtrianIshtirak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMushtrianIshtirak.Location = new System.Drawing.Point(133, 8);
             this.btnMushtrianIshtirak.Name = "btnMushtrianIshtirak";
             this.btnMushtrianIshtirak.Size = new System.Drawing.Size(159, 46);
@@ -2783,6 +2799,7 @@
             // 
             // btnGetMushtrian
             // 
+            this.btnGetMushtrian.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGetMushtrian.Location = new System.Drawing.Point(298, 15);
             this.btnGetMushtrian.Name = "btnGetMushtrian";
             this.btnGetMushtrian.Size = new System.Drawing.Size(36, 32);
@@ -2795,12 +2812,12 @@
             // 
             this.btnFamilySelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFamilySelection.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFamilySelection.Image = global::SDC_Application.Resource1.family_icon2;
+            this.btnFamilySelection.Image = global::SDC_Application.Resource1.user_group_icon;
             this.btnFamilySelection.Location = new System.Drawing.Point(1361, 6);
             this.btnFamilySelection.Name = "btnFamilySelection";
             this.btnFamilySelection.Size = new System.Drawing.Size(54, 50);
             this.btnFamilySelection.TabIndex = 33;
-            this.toolTipIntiqalKhatta.SetToolTip(this.btnFamilySelection, "وراثت کی صورت میں متوفی/متوفیہ کے خاندان کا انتخاب کریں");
+            this.toolTipIntiqalKhatta.SetToolTip(this.btnFamilySelection, "مالکان  کا انتخاب کریں");
             this.btnFamilySelection.UseVisualStyleBackColor = true;
             this.btnFamilySelection.Click += new System.EventHandler(this.btnFamilySelection_Click);
             // 
@@ -2922,10 +2939,11 @@
             // lbRishta
             // 
             this.lbRishta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbRishta.AutoSize = true;
             this.lbRishta.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRishta.Location = new System.Drawing.Point(437, 43);
+            this.lbRishta.Location = new System.Drawing.Point(424, 45);
             this.lbRishta.Name = "lbRishta";
-            this.lbRishta.Size = new System.Drawing.Size(37, 42);
+            this.lbRishta.Size = new System.Drawing.Size(46, 38);
             this.lbRishta.TabIndex = 1022;
             this.lbRishta.Text = "رشتہ";
             this.lbRishta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -7586,5 +7604,6 @@
         private System.Windows.Forms.TextBox txtSearchBuyers;
         private System.Windows.Forms.Button btnLoadKhatajat;
         private System.Windows.Forms.CheckBox cbAllKhatajat;
+        private System.Windows.Forms.Button btnBuyerFamilySel;
     }
 }

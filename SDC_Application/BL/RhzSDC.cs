@@ -301,6 +301,11 @@ namespace SDC_Application.BL
             string spWithParam = "WEB_SP_INSERT_KhassraRegisterDetail " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhassraDetailId + ", " + KhassraId + ", " + AreaTypeId + ", " + Kanal + ", " + Marla + ", " + Sarsai + ", " + Feet+ "," + insertuserid ;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
+        public string DeleteKhassraRegisterDetail(string KhassraDetailId,string RHZ_ChangeId, string UserId, string UserName)
+        {
+            string spWithParam = "WEB_SP_DELETE_KhassraRegisterDetail " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhassraDetailId +","+RHZ_ChangeId+ "," + UserId + ",'" + UserName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
 
         public DataTable Proc_Get_KhassraJatByIntiqalId(string khataid)
         {

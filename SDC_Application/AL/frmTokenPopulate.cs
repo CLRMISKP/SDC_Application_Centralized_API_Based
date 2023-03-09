@@ -131,7 +131,7 @@ namespace SDC_Application.AL
                 string day = date.Day.ToString();
                 string year = date.Year.ToString();
                 datetoken = month + "/" + day + "/" + year;
-
+                otherTehsilId = otherTehsilId == null ? "0" : otherTehsilId;
                 datetoken = date.ToString("dd MMM yyyy");
                 //if (this.ServiceTypeId != null && this.ServiceTypeId != "0")
                 //{

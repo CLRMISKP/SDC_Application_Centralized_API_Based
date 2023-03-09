@@ -551,7 +551,7 @@ namespace SDC_Application.AL
             {
                 try
                 {
-                    inteq.DeleteIntiqalKhattajat(Convert.ToInt32(this.txtKhattaRecId.Text));
+                    inteq.DeleteIntiqalKhattajat(this.txtKhattaRecId.Text);
                     txtKhattaRecId.Text = "-1";
                     cbokhataNo.SelectedIndex = 0;
                     Fill_InteqalKhataGrid();
@@ -1071,6 +1071,8 @@ namespace SDC_Application.AL
                 GridSellerList1.Columns["Seller_Sold_Feet"].Visible = false;
                 GridSellerList1.Columns["KhewatTypeId"].Visible = false;
                 GridSellerList1.Columns["KhewatGroupFareeqId"].Visible = false;
+                GridSellerList1.Columns["FardTokenId"].Visible = false;
+                GridSellerList1.Columns["FardTokenDate"].Visible = false;
                 datacontrols.colorrbackgrid(GridSellerList1);
                 datacontrols.gridControls(GridSellerList1);
             }

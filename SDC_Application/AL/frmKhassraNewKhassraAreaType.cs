@@ -14,11 +14,12 @@ namespace SDC_Application.AL
     public partial class frmKhassraNewKhassraAreaType : Form
     {
         #region Class Variables
-
+        LanguageManager.LanguageConverter lang = new LanguageManager.LanguageConverter();
         public string KhataNo { get; set; }
         public string KhatooniNo { get; set; }
         public string  KhatooniId { get; set; }
         public string MozaId { get; set; }
+        public string RHZ_ChangeId { get; set; }
         AutoComplete objAuto = new AutoComplete();
         DataTable dtKhassra = new DataTable();
         DataTable dtKhassraDetails = new DataTable();
@@ -161,7 +162,20 @@ namespace SDC_Application.AL
 
         private void btnDelKhassraArea_Click(object sender, EventArgs e)
         {
-
+            if (DialogResult.Yes == MessageBox.Show(" کیا آپ انتخاب کردہ قسم زمین خسرہ  حذف کرنا چاہتے ہے؟", "حذف کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                   string retVal= rhz.DeleteKhassraRegisterDetail(txtKhassraDetailId.Text, RHZ_ChangeId, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                   if (retVal.Length > 5)
+                       FillKhassraDetailsGridview();
+                   resetKhassraDetailFields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void resetKhassraDetailFields()
         {
@@ -172,5 +186,43 @@ namespace SDC_Application.AL
             cboAreaType.SelectedValue = 0;
         }
         #endregion
+
+        private void cboAreaType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            {
+                if (e.KeyChar == Convert.ToChar((Keys.Back)))
+                {
+
+                }
+                else
+                {
+                    e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
+                }
+            }
+            else if (e.KeyChar == 1)
+            {
+                TextBox txt = sender as TextBox;
+                txt.SelectAll();
+            }
+        }
+
+        private void dgKhassraDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView g = sender as DataGridView;
+                foreach(DataGridViewRow row in g.Rows)
+                {
+                    if (row.Selected)
+                    {
+                        
+                        txtKhassraKanal.Text= row .Cells["Kanal"].Value.ToString();
+                        txtKhassraMarla.Text = row.Cells["Marla"].Value.ToString();//dgKhassraDetails.Columns["Marla"].HeaderText = "مرلہ";
+                        txtKhassraSarsai.Text = row.Cells["Sarsai"].Value.ToString();//dgKhassraDetails.Columns["Sarsai"].HeaderText = "سرسائی";
+                        txtKhassraDetailId.Text = row.Cells["KhassraDetailId"].Value.ToString();//dgKhassraDetails.Columns["Feet"].HeaderText = "فٹ";
+                        cboAreaType.SelectedValue = row.Cells["AreaTypeId"].Value;//dgKhassraDetails.Columns["AreaType"].HeaderText = "قسم زمین";
+                    }
+                
+            }
+        }
     }
 }

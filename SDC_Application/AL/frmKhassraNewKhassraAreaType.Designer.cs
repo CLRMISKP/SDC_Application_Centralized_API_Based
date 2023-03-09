@@ -247,6 +247,7 @@
             this.dgKhassraDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhassraDetails.Size = new System.Drawing.Size(1190, 293);
             this.dgKhassraDetails.TabIndex = 3;
+            this.dgKhassraDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhassraDetails_CellClick);
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -395,12 +396,15 @@
             // cboAreaType
             // 
             this.cboAreaType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboAreaType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboAreaType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboAreaType.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAreaType.FormattingEnabled = true;
             this.cboAreaType.Location = new System.Drawing.Point(771, 16);
             this.cboAreaType.Name = "cboAreaType";
             this.cboAreaType.Size = new System.Drawing.Size(141, 39);
             this.cboAreaType.TabIndex = 402;
+            this.cboAreaType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboAreaType_KeyPress);
             // 
             // label46
             // 

@@ -20,6 +20,11 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
 
+        public DataTable GetAllIntiqalByPersonId(string PersonId)
+        {
+            string spWithParam = "Proc_Get_Person_Intiqalat_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
         public DataTable GetIntiqalPenginKharijByKhata(string KhataId)
         {
             string spWithParam = "Proc_Get_Intiqal_PendingKharij_By_Khatta " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
@@ -1222,7 +1227,7 @@ namespace SDC_Application.BL
             /// Deletes Intiqal khattajat
             /// </summary>
             /// <param name="IntiqalKhataRecId"></param>
-            public void DeleteIntiqalKhattajat(int IntiqalKhataRecId)
+            public void DeleteIntiqalKhattajat(string IntiqalKhataRecId)
             {
                 //DataContext.WEB_SP_DELETE_Intiqal_Intiqal_KhataJat(IntiqalKhataRecId);
                 string spWithParam = "WEB_SP_DELETE_Intiqal_Intiqal_KhataJat  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalKhataRecId + "";

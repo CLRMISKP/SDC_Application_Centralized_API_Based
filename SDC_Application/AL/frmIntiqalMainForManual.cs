@@ -1570,8 +1570,7 @@ namespace SDC_Application.AL
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال کو ترمیم کیلئے فعال کرنا چاہتے ہے؟", "ترمیم انتقال", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
-            {
+            
                 try
                 {
                     frmIntiqalRevertEnable ire = new frmIntiqalRevertEnable();
@@ -1584,10 +1583,10 @@ namespace SDC_Application.AL
                     ire.ShowDialog();
                 }
                 catch (Exception ex)
-                { 
-
+                {
+                    MessageBox.Show(ex.Message);
                 }
-            }
+          
         }
 
         void ire_FormClosed(object sender, FormClosedEventArgs e)

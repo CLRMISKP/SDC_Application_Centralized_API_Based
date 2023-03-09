@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnafradlist = new System.Windows.Forms.Button();
             this.rbMurtahin = new System.Windows.Forms.RadioButton();
             this.rbOrg = new System.Windows.Forms.RadioButton();
@@ -221,6 +222,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.btnafradlist);
             this.panel1.Controls.Add(this.rbMurtahin);
             this.panel1.Controls.Add(this.rbOrg);
@@ -235,12 +237,24 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1192, 11);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 31);
+            this.label13.TabIndex = 105;
+            this.label13.Text = "موضع";
+            // 
             // btnafradlist
             // 
+            this.btnafradlist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnafradlist.BackgroundImage = global::SDC_Application.Resource1.family_icon2;
             this.btnafradlist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnafradlist.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnafradlist.Location = new System.Drawing.Point(735, 10);
+            this.btnafradlist.Location = new System.Drawing.Point(785, 10);
             this.btnafradlist.Name = "btnafradlist";
             this.btnafradlist.Size = new System.Drawing.Size(48, 39);
             this.btnafradlist.TabIndex = 3;
@@ -295,19 +309,22 @@
             // 
             // cboFardMauza
             // 
-            this.cboFardMauza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFardMauza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboFardMauza.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboFardMauza.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboFardMauza.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Bold);
             this.cboFardMauza.FormattingEnabled = true;
             this.cboFardMauza.Items.AddRange(new object[] {
             "مرد",
             "عورت"});
-            this.cboFardMauza.Location = new System.Drawing.Point(792, 11);
+            this.cboFardMauza.Location = new System.Drawing.Point(842, 11);
             this.cboFardMauza.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFardMauza.Name = "cboFardMauza";
             this.cboFardMauza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cboFardMauza.Size = new System.Drawing.Size(337, 31);
             this.cboFardMauza.TabIndex = 100;
             this.cboFardMauza.SelectedIndexChanged += new System.EventHandler(this.cboFardMauza_SelectedIndexChanged);
+            this.cboFardMauza.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
             // label1
             // 
@@ -561,7 +578,7 @@
             // 
             this.txtSrNoParent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSrNoParent.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSrNoParent.Location = new System.Drawing.Point(425, 96);
+            this.txtSrNoParent.Location = new System.Drawing.Point(425, 95);
             this.txtSrNoParent.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txtSrNoParent.Name = "txtSrNoParent";
             this.txtSrNoParent.Size = new System.Drawing.Size(47, 44);
@@ -574,7 +591,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(474, 99);
+            this.label11.Location = new System.Drawing.Point(474, 98);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 38);
             this.label11.TabIndex = 124;
@@ -629,7 +646,7 @@
             this.rbFHDeadYes.AutoSize = true;
             this.rbFHDeadYes.Checked = true;
             this.rbFHDeadYes.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFHDeadYes.Location = new System.Drawing.Point(244, 65);
+            this.rbFHDeadYes.Location = new System.Drawing.Point(103, 37);
             this.rbFHDeadYes.Name = "rbFHDeadYes";
             this.rbFHDeadYes.Size = new System.Drawing.Size(58, 42);
             this.rbFHDeadYes.TabIndex = 8;
@@ -643,7 +660,7 @@
             this.rbFHDeadNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbFHDeadNo.AutoSize = true;
             this.rbFHDeadNo.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFHDeadNo.Location = new System.Drawing.Point(183, 65);
+            this.rbFHDeadNo.Location = new System.Drawing.Point(42, 43);
             this.rbFHDeadNo.Name = "rbFHDeadNo";
             this.rbFHDeadNo.Size = new System.Drawing.Size(66, 42);
             this.rbFHDeadNo.TabIndex = 9;
@@ -656,7 +673,7 @@
             // 
             this.txtFamilyHeadFatherName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFamilyHeadFatherName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFamilyHeadFatherName.Location = new System.Drawing.Point(640, 26);
+            this.txtFamilyHeadFatherName.Location = new System.Drawing.Point(640, 36);
             this.txtFamilyHeadFatherName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtFamilyHeadFatherName.Name = "txtFamilyHeadFatherName";
             this.txtFamilyHeadFatherName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -670,7 +687,7 @@
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(1244, 29);
+            this.lbl1.Location = new System.Drawing.Point(1244, 39);
             this.lbl1.Name = "lbl1";
             this.lbl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl1.Size = new System.Drawing.Size(82, 38);
@@ -683,7 +700,7 @@
             this.lbl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl10.AutoSize = true;
             this.lbl10.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl10.Location = new System.Drawing.Point(812, 102);
+            this.lbl10.Location = new System.Drawing.Point(812, 98);
             this.lbl10.Name = "lbl10";
             this.lbl10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl10.Size = new System.Drawing.Size(69, 38);
@@ -695,7 +712,7 @@
             // 
             this.txtFamilyHeadSakna.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFamilyHeadSakna.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFamilyHeadSakna.Location = new System.Drawing.Point(908, 94);
+            this.txtFamilyHeadSakna.Location = new System.Drawing.Point(908, 99);
             this.txtFamilyHeadSakna.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtFamilyHeadSakna.Multiline = true;
             this.txtFamilyHeadSakna.Name = "txtFamilyHeadSakna";
@@ -708,7 +725,7 @@
             // 
             this.txtFamilyHeadFullAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFamilyHeadFullAddress.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFamilyHeadFullAddress.Location = new System.Drawing.Point(554, 97);
+            this.txtFamilyHeadFullAddress.Location = new System.Drawing.Point(554, 99);
             this.txtFamilyHeadFullAddress.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtFamilyHeadFullAddress.Multiline = true;
             this.txtFamilyHeadFullAddress.Name = "txtFamilyHeadFullAddress";
@@ -722,7 +739,7 @@
             this.lbl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl8.AutoSize = true;
             this.lbl8.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl8.Location = new System.Drawing.Point(1244, 99);
+            this.lbl8.Location = new System.Drawing.Point(1244, 98);
             this.lbl8.Name = "lbl8";
             this.lbl8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl8.Size = new System.Drawing.Size(47, 38);
@@ -735,7 +752,7 @@
             this.lbl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl9.AutoSize = true;
             this.lbl9.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl9.Location = new System.Drawing.Point(1016, 96);
+            this.lbl9.Location = new System.Drawing.Point(1016, 98);
             this.lbl9.Name = "lbl9";
             this.lbl9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl9.Size = new System.Drawing.Size(50, 38);
@@ -747,7 +764,7 @@
             // 
             this.txtFamilyHeadName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFamilyHeadName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFamilyHeadName.Location = new System.Drawing.Point(1076, 26);
+            this.txtFamilyHeadName.Location = new System.Drawing.Point(1076, 36);
             this.txtFamilyHeadName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtFamilyHeadName.Name = "txtFamilyHeadName";
             this.txtFamilyHeadName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -761,7 +778,7 @@
             this.lbl2.AutoSize = true;
             this.lbl2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(1016, 29);
+            this.lbl2.Location = new System.Drawing.Point(1016, 39);
             this.lbl2.Name = "lbl2";
             this.lbl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl2.Size = new System.Drawing.Size(53, 38);
@@ -774,7 +791,7 @@
             this.cboFamilyHeadCaste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboFamilyHeadCaste.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFamilyHeadCaste.FormattingEnabled = true;
-            this.cboFamilyHeadCaste.Location = new System.Drawing.Point(1076, 96);
+            this.cboFamilyHeadCaste.Location = new System.Drawing.Point(1076, 95);
             this.cboFamilyHeadCaste.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFamilyHeadCaste.Name = "cboFamilyHeadCaste";
             this.cboFamilyHeadCaste.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -786,7 +803,7 @@
             // 
             this.txtFamilyHeadCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFamilyHeadCNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFamilyHeadCNIC.Location = new System.Drawing.Point(144, 34);
+            this.txtFamilyHeadCNIC.Location = new System.Drawing.Point(144, 43);
             this.txtFamilyHeadCNIC.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtFamilyHeadCNIC.MaxLength = 13;
             this.txtFamilyHeadCNIC.Name = "txtFamilyHeadCNIC";
@@ -801,7 +818,7 @@
             this.cboFamilyHeadPersonCategroy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFamilyHeadPersonCategroy.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFamilyHeadPersonCategroy.FormattingEnabled = true;
-            this.cboFamilyHeadPersonCategroy.Location = new System.Drawing.Point(435, 26);
+            this.cboFamilyHeadPersonCategroy.Location = new System.Drawing.Point(435, 36);
             this.cboFamilyHeadPersonCategroy.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFamilyHeadPersonCategroy.Name = "cboFamilyHeadPersonCategroy";
             this.cboFamilyHeadPersonCategroy.Size = new System.Drawing.Size(114, 44);
@@ -812,7 +829,7 @@
             this.lbl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl6.AutoSize = true;
             this.lbl6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl6.Location = new System.Drawing.Point(554, 29);
+            this.lbl6.Location = new System.Drawing.Point(554, 39);
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(73, 38);
             this.lbl6.TabIndex = 113;
@@ -825,7 +842,7 @@
             this.lbl7.AutoSize = true;
             this.lbl7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl7.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl7.Location = new System.Drawing.Point(316, 28);
+            this.lbl7.Location = new System.Drawing.Point(316, 39);
             this.lbl7.Name = "lbl7";
             this.lbl7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl7.Size = new System.Drawing.Size(106, 38);
@@ -849,7 +866,7 @@
             "شوہر",
             "ہمشیرہ",
             "برادر"});
-            this.cboFamilyHeadRelation.Location = new System.Drawing.Point(910, 25);
+            this.cboFamilyHeadRelation.Location = new System.Drawing.Point(910, 36);
             this.cboFamilyHeadRelation.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFamilyHeadRelation.Name = "cboFamilyHeadRelation";
             this.cboFamilyHeadRelation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -863,7 +880,7 @@
             this.lbl3.AutoSize = true;
             this.lbl3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(812, 29);
+            this.lbl3.Location = new System.Drawing.Point(812, 39);
             this.lbl3.Name = "lbl3";
             this.lbl3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl3.Size = new System.Drawing.Size(101, 38);
@@ -877,7 +894,7 @@
             this.lbl5.AutoSize = true;
             this.lbl5.BackColor = System.Drawing.Color.Transparent;
             this.lbl5.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(200, 130);
+            this.lbl5.Location = new System.Drawing.Point(59, 108);
             this.lbl5.Name = "lbl5";
             this.lbl5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl5.Size = new System.Drawing.Size(93, 38);
@@ -890,7 +907,7 @@
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(183, 40);
+            this.label22.Location = new System.Drawing.Point(183, 42);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 32);
             this.label22.TabIndex = 110;
@@ -902,7 +919,7 @@
             // 
             this.txtFamilyHeadMotherName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFamilyHeadMotherName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFamilyHeadMotherName.Location = new System.Drawing.Point(149, 96);
+            this.txtFamilyHeadMotherName.Location = new System.Drawing.Point(8, 74);
             this.txtFamilyHeadMotherName.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txtFamilyHeadMotherName.Name = "txtFamilyHeadMotherName";
             this.txtFamilyHeadMotherName.Size = new System.Drawing.Size(77, 44);
@@ -915,7 +932,7 @@
             this.lbl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl4.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(224, 102);
+            this.lbl4.Location = new System.Drawing.Point(83, 80);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(77, 30);
             this.lbl4.TabIndex = 111;
@@ -932,7 +949,7 @@
             this.cboFamilyHeadGender.Items.AddRange(new object[] {
             "مرد",
             "عورت"});
-            this.cboFamilyHeadGender.Location = new System.Drawing.Point(134, 127);
+            this.cboFamilyHeadGender.Location = new System.Drawing.Point(59, 119);
             this.cboFamilyHeadGender.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cboFamilyHeadGender.Name = "cboFamilyHeadGender";
             this.cboFamilyHeadGender.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2449,5 +2466,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtSearchFamilyFardName;
+        public System.Windows.Forms.Label label13;
     }
 }

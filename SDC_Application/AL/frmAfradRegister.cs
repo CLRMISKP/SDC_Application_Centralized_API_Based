@@ -226,7 +226,7 @@ namespace SDC_Application.AL
 
             if (empty == null)
             {
-                if (txtFamilyHeadCNIC.Text.Trim().Length == 13 || txtFamilyHeadCNIC.Text.Trim().Length == 0 || txtFamilyHeadCNIC.Text.Trim().Length == 1)
+                if ((txtFamilyHeadCNIC.Text.Trim().Length == 13 || txtFamilyHeadCNIC.Text.Trim().Length == 0 || txtFamilyHeadCNIC.Text.Trim().Length == 1 ) && cboFamilyHeadCaste.SelectedValue.ToString().Length>3)
                 {
                 
                     string PersonId = txtFamilyHeadId.Text.ToString();
@@ -276,7 +276,7 @@ namespace SDC_Application.AL
                 }
                   else
                   {
-                      MessageBox.Show(empty + "-  درست شناختی کارڈ نمبر کا اندراج کریں", " شناختی کارڈ نمبر  ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                      MessageBox.Show(empty + "-   درست شناختی کارڈ نمبر کا اندراج کریں یا قوم کا انتخاب کریں", " شناختی کارڈ نمبر اور قوم  ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                   }
                
             }
@@ -405,6 +405,7 @@ namespace SDC_Application.AL
                     grdFamilyHead.Columns["FamilyName"].HeaderText = "نام";
                     grdFamilyHead.Columns["Address"].HeaderText = "پتہ ";
                     grdFamilyHead.Columns["SeqNo"].HeaderText = "نمبر شمار ";
+                    grdFamilyHead.Columns["FamilyNo"].HeaderText = "خاندان نمبر ";
                 }
             }
             }
@@ -686,7 +687,8 @@ namespace SDC_Application.AL
                 grdOrganization.Columns["familytypeId"].Visible = false;
                 grdOrganization.Columns["PersonName"].Visible = false;
                 grdOrganization.Columns["Address"].Visible = false;
-                grdOrganization.Columns["FamilyName"].HeaderText = "نام";              
+                grdOrganization.Columns["FamilyName"].HeaderText = "نام";
+                grdOrganization.Columns["FamilyNo"].Visible = false;
             
             }
                 }
@@ -806,7 +808,7 @@ namespace SDC_Application.AL
         private void btnSaveFard_Click(object sender, EventArgs e)
         {
             if ((txtFardCNIC.Text.Trim().Length == 13 || txtFardCNIC.Text.Trim().Length == 0 || txtFardCNIC.Text.Trim().Length == 1) && txtFardName.Text.Trim().Length > 0 && cboFardParent.SelectedValue.ToString().Length > 2 &&
-                cboFardRelation.Text.Length > 2 && cboFardGender.Text.Length > 2 && cboFardAfradType.SelectedValue.ToString() != "0" && cboFardCaste.SelectedValue.ToString() != "0" && txtSrNoChild.Text.Length > 0)
+                cboFardRelation.Text.Length > 2 && cboFardGender.Text.Length > 2 && cboFardAfradType.SelectedValue.ToString() != "0" && cboFardCaste.SelectedValue.ToString() != "0" && txtSrNoChild.Text.Length > 0 && cboFardCaste.SelectedValue.ToString().Length>3)
             {
                 SaveFard();
                 FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
@@ -921,8 +923,9 @@ namespace SDC_Application.AL
                     grdFardForFH.Columns["familytypeId"].Visible = false;
                     grdFardForFH.Columns["PersonName"].Visible = false;
                     grdFardForFH.Columns["FamilyName"].HeaderText = "نام";
-                    grdFardForFH.Columns["Address"].HeaderText = "پتہ ";
-                    grdFardForFH.Columns["SeqNo"].HeaderText = "نمبر شمار ";
+                    grdFardForFH.Columns["Address"].Visible = false;
+                    grdFardForFH.Columns["SeqNo"].Visible = false;
+                    grdFardForFH.Columns["FamilyNo"].HeaderText = "خاندان نمبر ";
                 }
             }
              }
@@ -970,7 +973,7 @@ namespace SDC_Application.AL
                     grdFard.Columns["PersonName"].Visible = false;
                     grdFard.Columns["FamilyName"].HeaderText = "فرد کا نام";
                     grdFard.Columns["Address"].HeaderText = "پتہ ";
-                    grdFard.Columns["SeqNo"].HeaderText = "نمبر شمار "; 
+                    grdFard.Columns["SeqNo"].HeaderText = "نمبر شمار ";
             }
                 }
             catch (Exception ex)
@@ -1307,6 +1310,7 @@ namespace SDC_Application.AL
                 grdMurtahin.Columns["PersonName"].Visible = false;
                 grdMurtahin.Columns["Address"].Visible = false;
                 grdMurtahin.Columns["FamilyName"].HeaderText = "نام";
+                grdMurtahin.Columns["FamilyNo"].Visible = false;
 
             }
             }

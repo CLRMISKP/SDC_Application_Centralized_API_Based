@@ -1100,6 +1100,108 @@ namespace SDC_Application.AL
                 }
             }
         }
+
+        private void btnRaqbaBamutabiqHissa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dgKhewatFareeqainAll.Rows)
+                {
+                    if (row.Cells["RecStatus"].Value.ToString() == "موجودہ")
+                    {
+                        string kgf_id = row.Cells["KhewatGroupFareeqId"].Value != null ? row.Cells["KhewatGroupFareeqId"].Value.ToString() : "0";
+                        float netpart = float.Parse(row.Cells["FardAreaPart"].Value != null ? row.Cells["FardAreaPart"].Value.ToString() : "0");  //Convert.ToInt32(PersonNetparts.Where(p => p.khewatgroupfareeqid == kgf_id).Count() > 0 ? PersonNetparts.Where(p => p.khewatgroupfareeqid == kgf_id).FirstOrDefault().FardAreaPart : 0);
+                        string raqba = this.PersonRaqba(netpart);
+                        int kanal = raqba.Split('-').ElementAt(0) != "" ? Convert.ToInt32(raqba.Split('-').ElementAt(0)) : 0;
+                        int marla = raqba.Split('-').ElementAt(1) != "" ? Convert.ToInt32(raqba.Split('-').ElementAt(1)) : 0;
+                        float sarsai = raqba.Split('-').ElementAt(2) != "" ? float.Parse(raqba.Split('-').ElementAt(2)) : 0;
+                        float sft = Convert.ToInt32(raqba.Split('-').ElementAt(3) != "" ? float.Parse(raqba.Split('-').ElementAt(3)) : 0);
+                        intiqal.UpdateMalakRaqbaByHissa(kgf_id, "0", kanal.ToString(), marla.ToString(), sarsai.ToString(), sft.ToString()); // netpart updation disabled in SP because no need of updating fard parts
+                    }
+                    }
+                btnShowCurrent_Click(sender, e);
+                //MessageBox.Show("Under development");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #region Calculates Person Raqba on basis of person area parts
+
+        private string PersonRaqba(float hissa)
+        {
+            //Previous Calculation
+            //int totalHissay = txtKulHisay.Text.Trim() != "" ? Convert.ToInt32(txtKulHisay.Text.Trim()) : 0;
+
+            //textBox1 is Sum of fareeqain total parts after calculation
+            float totalHissay = txtKhataHissa.Text.Trim() != "" ? float.Parse(txtKhataHissa.Text.Trim()) : 0; //Modified by Yousaf
+            //MessageBox.Show(textBox1.Text);
+            int tkanal = txtKhataKanal.Text != "" ? Convert.ToInt32(txtKhataKanal.Text) : 0;
+            int tmarla = txtKhataMarla.Text != "" ? Convert.ToInt32(txtKhataMarla.Text) : 0;
+            float tsarsai = txtKhataSarsai.Text != "" ? float.Parse(txtKhataSarsai.Text) : 0;
+            if (hissa != totalHissay)
+            {
+                double totalRaqba = Convert.ToDouble(Math.Round((((((20 * tkanal) + tmarla) * 9) + tsarsai) * 30.25), 3, MidpointRounding.AwayFromZero).ToString()); //in square feet
+                double PersonRaqba = 0;
+                if (totalHissay != 0)
+                {
+                    PersonRaqba = Convert.ToDouble(Math.Round(((hissa / totalHissay) * totalRaqba), 3, MidpointRounding.AwayFromZero).ToString());
+                }
+                //MessageBox.Show("Hissa " +hissa.ToString() + " total Hissay "+ totalHissay.ToString()+ " Kul Raqba "+ totalRaqba.ToString());
+
+
+                int marla = 0;
+                int kanal = 0;
+                float sarsai = 0;
+                double sft = 0;
+                sft = PersonRaqba;
+                if (PersonRaqba >= 272.25)
+                {
+                    sft = PersonRaqba % (double)272.25;
+                    marla = Convert.ToInt32((float)(PersonRaqba - sft) / (float)272.25);
+
+                    if (marla >= 20)
+                    {
+                        kanal = (marla - (marla % 20)) / 20;
+                        marla = marla % 20;
+                        //if (sft >= 31)
+                        //{
+                        //    sarsai = Convert.ToInt32((sft - (sft % 30.25)) / 30.25);
+                        //    sft = Convert.ToInt32(sft % 30.25);
+                        //}
+
+                    }
+                    else
+                    {
+                        kanal = 0;
+                    }
+
+                }
+                else
+                {
+                    marla = 0;
+                    kanal = 0;
+                    //if (sft >= 31)
+                    //{
+                    //    sarsai = Convert.ToInt32((sft - (sft % 30.25)) / 30.25);
+                    //    sft = Convert.ToInt32(sft % 30.25);
+                    //}
+                }
+                if (sft > 0)
+                {
+                    sarsai = float.Parse((sft / (double)30.25).ToString());
+                }
+                return kanal.ToString() + "-" + marla.ToString() + "-" + Math.Round(sarsai, 4, MidpointRounding.AwayFromZero).ToString() + "-" + Math.Round(sft, 4, MidpointRounding.AwayFromZero).ToString();
+
+            }
+            else
+            {
+                return tkanal.ToString() + "-" + tmarla.ToString() + "-" + tsarsai.ToString() + "-0.0";
+            }
+        }
+
+        #endregion
        
     }
 }

@@ -669,7 +669,7 @@ namespace SDC_Application.AL
             {
                 try
                 {
-                    inteq.DeleteIntiqalKhattajat(Convert.ToInt32(this.txtKhattaRecId.Text));
+                    inteq.DeleteIntiqalKhattajat(this.txtKhattaRecId.Text);
                     txtKhattaRecId.Text = "-1";
                     txtparentKhataId.Text = "-1";
                     cbokhataNo.SelectedIndex = 0;
@@ -997,7 +997,7 @@ namespace SDC_Application.AL
                 float fsarsai = txtFardSarsai.Text.Trim() != "" ? float.Parse(txtFardSarsai.Text.Trim()) : 0;
                 float fsft = txtFardFeet.Text.Trim() != "" ? float.Parse(txtFardFeet.Text.Trim()) : 0;
                 int mkhDecimal = shissay.ToString().Length - (((int)shissay).ToString().Length + 1); //CommanFunctions.GetDecimalPlaces(shissay); 
-
+                mkhDecimal = mkhDecimal > 0 ? mkhDecimal : 0;
                 if (txtFrokhtHisay.Text.Trim() != "" && txtFrokhtHisay.Text != "0")
                 {
                     txtFrokhtKanal.Text = "";
@@ -2818,22 +2818,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                //if (cboKhewatType.SelectedIndex > 0)
-                //{
-                //    frmTestMalkanSelcIntiqalWirasath frmTMSIW = new frmTestMalkanSelcIntiqalWirasath();
-                //    frmTMSIW.khewatTypeId = cboKhewatType.SelectedValue.ToString();
-                //    frmTMSIW.IntiqalBuyerRecId = txthiddenBuyerRecId.Text;
-                //    frmTMSIW.MozaId = this.MozaId.ToString();
-                //    frmTMSIW.FormClosed -= new FormClosedEventHandler(frmTMSIW_closed);
-                //    frmTMSIW.FormClosed += new FormClosedEventHandler(frmTMSIW_closed);
-                //    frmTMSIW.KhatoniRecid = KhatoniRecid;
-                //    frmTMSIW.IntiqalKhataRecId = this.IntiqalKhataRecId;
-                //    frmTMSIW.ShowDialog();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("قسم ملکیت کا انتخاب کریں", "", MessageBoxButtons.OK);
-                //}
+               
                 if (cboKhewatType.SelectedIndex > 0)
                 {
 
@@ -2964,15 +2949,18 @@ namespace SDC_Application.AL
 
                 //dt = inteq.GetIntiqalMinFareeqain(IntiqalId, v_IntiqalMinGroupId);
                 dt = inteq.GetIntiqalMinFareeqain(IntiqalId, cboMinGroups.SelectedValue.ToString());
-                gridmalikan.DataSource = dt;
-                gridmalikan.Columns["CompleteName"].HeaderText = "نام مالک";
-                gridmalikan.Columns["Intiqal_Min_Hissa"].HeaderText = "انتقال من حصہ";
-                gridmalikan.Columns["IntiqalMinArea"].HeaderText = "انتقال من رقبہ";
-                gridmalikan.Columns["KhewatType"].HeaderText = "قسم ملکیت";
-                gridmalikan.Columns["IntiqalMinKhewatFareeqId"].Visible = false;
-                gridmalikan.Columns["SeqNo"].Visible = false;
-                gridmalikan.Columns["IntiqalMinPersonId"].Visible = false;
-                gridmalikan.Columns["MushtriFareeqId"].Visible = false;
+                if (dt != null)
+                {
+                    gridmalikan.DataSource = dt;
+                    gridmalikan.Columns["CompleteName"].HeaderText = "نام مالک";
+                    gridmalikan.Columns["Intiqal_Min_Hissa"].HeaderText = "انتقال من حصہ";
+                    gridmalikan.Columns["IntiqalMinArea"].HeaderText = "انتقال من رقبہ";
+                    gridmalikan.Columns["KhewatType"].HeaderText = "قسم ملکیت";
+                    gridmalikan.Columns["IntiqalMinKhewatFareeqId"].Visible = false;
+                    gridmalikan.Columns["SeqNo"].Visible = false;
+                    gridmalikan.Columns["IntiqalMinPersonId"].Visible = false;
+                    gridmalikan.Columns["MushtriFareeqId"].Visible = false;
+                }
             }
             else
             {
@@ -6618,6 +6606,30 @@ namespace SDC_Application.AL
                 e.Handled = true;
 
             }
+        }
+
+        private void btnBuyerFamilySel_Click(object sender, EventArgs e)
+        {
+            if (cboKhewatType.SelectedIndex > 0)
+            {
+                frmTestMalkanSelcIntiqalWirasath frmTMSIW = new frmTestMalkanSelcIntiqalWirasath();
+                frmTMSIW.khewatTypeId = cboKhewatType.SelectedValue.ToString();
+                frmTMSIW.IntiqalBuyerRecId = txthiddenBuyerRecId.Text;
+                frmTMSIW.MozaId = this.MozaId.ToString();
+                frmTMSIW.FormClosed -= new FormClosedEventHandler(frmTMSIW_closed);
+                frmTMSIW.FormClosed += new FormClosedEventHandler(frmTMSIW_closed);
+                frmTMSIW.KhatoniRecid = KhatoniRecid;
+                frmTMSIW.IntiqalKhataRecId = this.IntiqalKhataRecId;
+                frmTMSIW.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("قسم ملکیت کا انتخاب کریں", "", MessageBoxButtons.OK);
+            }
+        }
+        void frmTMSIW_closed(object sender, FormClosedEventArgs e)
+        {
+            FillgridByBuyerList();
         }
     }
 }

@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>2.0.5.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -168,6 +168,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmIntiqalAllByPersonId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalAllByPersonId.Designer.cs">
+      <DependentUpon>frmIntiqalAllByPersonId.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmShortFardForOtherDistTehsil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1218,6 +1224,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmIntiqalAllByPersonId.resx">
+      <DependentUpon>frmIntiqalAllByPersonId.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmShortFardForOtherDistTehsil.resx">
       <DependentUpon>frmShortFardForOtherDistTehsil.cs</DependentUpon>
     </EmbeddedResource>
@@ -1967,62 +1976,62 @@
   <ItemGroup>
     <PublishFile Include="EDSDK.dll">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="EDSDKLib">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="EDSDKLib.dll">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="FlashControlV71">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="ShockwaveFlashObjects">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="txtChangesTrack.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

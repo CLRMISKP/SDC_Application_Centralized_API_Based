@@ -636,7 +636,7 @@ namespace SDC_Application.AL
             {
                 try
                 {
-                    inteq.DeleteIntiqalKhattajat(Convert.ToInt32(this.txtKhattaRecId.Text));
+                    inteq.DeleteIntiqalKhattajat(this.txtKhattaRecId.Text);
                     txtKhattaRecId.Text = "-1";
                     txtparentKhataId.Text = "-1";
                     cbokhataNo.SelectedIndex = 0;

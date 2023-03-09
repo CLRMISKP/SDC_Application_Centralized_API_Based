@@ -1613,6 +1613,7 @@ namespace SDC_Application.AL
                     frmKhassras.KhataNo = cbokhataNo.Text;
                     frmKhassras.KhatooniNo = cboKhatoonies.Text;
                     frmKhassras.MozaId = cmbMouza.SelectedValue.ToString();
+                    frmKhassras.RHZ_ChangeId = cbSrNo.SelectedValue.ToString();
                     frmKhassras.ShowDialog();
                 }
                 else

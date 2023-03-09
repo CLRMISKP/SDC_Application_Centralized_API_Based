@@ -84,6 +84,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMouza = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabKhewatFareeqain = new System.Windows.Forms.TabPage();
+            this.tabMushtriFareeqain = new System.Windows.Forms.TabPage();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageRHZ.SuspendLayout();
@@ -101,6 +104,7 @@
             this.tabKhanakasht.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -483,6 +487,7 @@
             // 
             // tabKhanakasht
             // 
+            this.tabKhanakasht.Controls.Add(this.tabControl2);
             this.tabKhanakasht.Controls.Add(this.groupBox7);
             this.tabKhanakasht.Controls.Add(this.groupBox6);
             this.tabKhanakasht.Location = new System.Drawing.Point(4, 40);
@@ -490,7 +495,7 @@
             this.tabKhanakasht.Padding = new System.Windows.Forms.Padding(3);
             this.tabKhanakasht.Size = new System.Drawing.Size(1202, 528);
             this.tabKhanakasht.TabIndex = 3;
-            this.tabKhanakasht.Text = "خانہ کاشت";
+            this.tabKhanakasht.Text = "کھاتہ، کھتونی حیثیت";
             this.tabKhanakasht.UseVisualStyleBackColor = true;
             // 
             // groupBox7
@@ -774,6 +779,39 @@
             this.lbl1.TabIndex = 60;
             this.lbl1.Text = "موضع";
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabKhewatFareeqain);
+            this.tabControl2.Controls.Add(this.tabMushtriFareeqain);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 239);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.RightToLeftLayout = true;
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1196, 286);
+            this.tabControl2.TabIndex = 2;
+            this.tabControl2.Visible = false;
+            // 
+            // tabKhewatFareeqain
+            // 
+            this.tabKhewatFareeqain.Location = new System.Drawing.Point(4, 40);
+            this.tabKhewatFareeqain.Name = "tabKhewatFareeqain";
+            this.tabKhewatFareeqain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKhewatFareeqain.Size = new System.Drawing.Size(1188, 242);
+            this.tabKhewatFareeqain.TabIndex = 0;
+            this.tabKhewatFareeqain.Text = "کھاتہ مالکان";
+            this.tabKhewatFareeqain.UseVisualStyleBackColor = true;
+            // 
+            // tabMushtriFareeqain
+            // 
+            this.tabMushtriFareeqain.Location = new System.Drawing.Point(4, 40);
+            this.tabMushtriFareeqain.Name = "tabMushtriFareeqain";
+            this.tabMushtriFareeqain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMushtriFareeqain.Size = new System.Drawing.Size(1188, 242);
+            this.tabMushtriFareeqain.TabIndex = 1;
+            this.tabMushtriFareeqain.Text = "کھتونی مشتریان";
+            this.tabMushtriFareeqain.UseVisualStyleBackColor = true;
+            // 
             // frmAdminPendingTaskDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -809,6 +847,7 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -871,5 +910,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rbPreviousKhata;
         private System.Windows.Forms.RadioButton rbCurrentKhata;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabKhewatFareeqain;
+        private System.Windows.Forms.TabPage tabMushtriFareeqain;
     }
 }
