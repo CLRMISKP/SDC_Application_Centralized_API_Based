@@ -62,7 +62,10 @@ namespace SDC_Application.AL
           public string PersonName { get; set; }
         public string FatherName { get; set; }
         bool pvstatus = false;
-
+        public string fardpersonrecId { get; set; }
+        public string FardMushteriRecId { get; set; }
+        public string Kulhissa { get; set; }
+        public string KulAreaInSFT { get; set; }
 
         #endregion
 
@@ -1408,6 +1411,23 @@ namespace SDC_Application.AL
 
         private void gridviewSavedRecord_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView g = sender as DataGridView;
+            if (g.DataSource != null)
+            {
+                if (g.SelectedRows.Count > 0)
+                {
+                    txtHissaMuntaqla.Text = g.SelectedRows[0].Cells["FardAreaPart"].Value.ToString();
+                    Kulhissa = g.SelectedRows[0].Cells["FardAreaPart"].Value.ToString();
+                    string[] MalikArea = g.SelectedRows[0].Cells["Malik_Area"].Value.ToString().Split('-') ;//Malik_Area
+                    txtKanalMuntaqal.Text =MalikArea[0]!=null?MalikArea[0]:"0";
+                    txtMarlaMuntaqla.Text =MalikArea[1]!=null?MalikArea[1]:"0";
+                    txtSFTmuntaqla.Text =MalikArea[2]!=null?MalikArea[2]:"0";
+                    txtSarsaiMuntaqla.Text = Math.Round((float.Parse(txtSFTmuntaqla.Text) / 30.25), 4).ToString();
+                    fardpersonrecId =  g.SelectedRows[0].Cells["fardpersonrecId"].Value.ToString();
+                    FardMushteriRecId =  g.SelectedRows[0].Cells["FardMushteriRecId"].Value.ToString();
+                    KulAreaInSFT = (int.Parse(txtKanalMuntaqal.Text.Trim()) * 20 * 272.25) + int.Parse(txtMarlaMuntaqla.Text.Trim()) * 272.25 + int.Parse(txtSFTmuntaqla.Text.Trim()).ToString();
+                }
+            }
             if (e.RowIndex != -1)
             {
                 gridviewSavedRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -2412,9 +2432,80 @@ namespace SDC_Application.AL
             }
         }
 
-     
+        private void btnSaveKhewatFareeq_Click(object sender, EventArgs e)
+        {
+            if ((fardpersonrecId.Length > 5 || FardMushteriRecId.Length > 5) && txtHissaMuntaqla.Text.Trim().Length > 0 && txtKanalMuntaqal.Text.Trim().Length > 0 && txtMarlaMuntaqla.Text.Trim().Length > 0 && txtSarsaiMuntaqla.Text.Trim().Length > 0 && txtSFTmuntaqla.Text.Trim().Length > 0)
+            {
+               string lastId= Intiq.WEB_Self_SP_INSERT_ShortFard_Fareeqain_Hissa_Raqba_Muntaqla_Update(fardpersonrecId, FardMushteriRecId, txtHissaMuntaqla.Text.Trim(), txtKanalMuntaqal.Text.Trim(), txtMarlaMuntaqla.Text.Trim(), txtSarsaiMuntaqla.Text.Trim(), txtSFTmuntaqla.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
+               if (lastId.Length > 5)
+               {
+                   txtSFTmuntaqla.Clear();
+                   txtHissaMuntaqla.Clear();
+                   txtKanalMuntaqal.Clear();
+                   txtMarlaMuntaqla.Clear();
+                   txtSFTmuntaqla.Clear();
+                   fardpersonrecId = "-1";
+                   FardMushteriRecId="-1";
+                   KulAreaInSFT = "0";
+                   Kulhissa = "0";
+                   GetPersonSavedRecord(SelectedTokenId);
+               }
+            }
+        }
 
-     
+        private void txtHissaMuntaqla_Leave(object sender, EventArgs e)
+        {
+            if (txtHissaMuntaqla.Text.Length > 0)
+            {
+                if(float.Parse(txtHissaMuntaqla.Text)<=float.Parse(Kulhissa))
+                {
+                    Kulhissa = Kulhissa != null ? Kulhissa : "0";
+                    KulAreaInSFT = KulAreaInSFT != null ? KulAreaInSFT : "0";
+                    //string areaInSft =( (int.Parse(KulAreaInSFT) / float.Parse(Kulhissa)) * float.Parse(txtHissaMuntaqla.Text)).ToString();
+                    string[] MalikArea = gridviewSavedRecord.SelectedRows[0].Cells["Malik_Area"].Value.ToString().Split('-') ;//Malik_Area
+                   string[] area= common.CalculatedAreaFromHisa(float.Parse(Kulhissa), float.Parse(txtHissaMuntaqla.Text), int.Parse(MalikArea[0] != null ? MalikArea[0] : "0"), int.Parse(MalikArea[1] != null ? MalikArea[1] : "0"), float.Parse(MalikArea[2] != null ? MalikArea[2] : "0")/(float)30.25, float.Parse(MalikArea[2] != null ? MalikArea[2] : "0"));
+                   txtKanalMuntaqal.Text = area[0];
+                   txtMarlaMuntaqla.Text = area[1];
+                   txtSarsaiMuntaqla.Text = area[2];
+                   txtSFTmuntaqla.Text = area[3];
+
+                }
+            }
+        }
+
+        private void txtHissaMuntaqla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.' && e.KeyChar != 13)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtKanalMuntaqal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 13)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtSFTmuntaqla_Leave(object sender, EventArgs e)
+        {
+            if (txtHissaMuntaqla.Text.Length == 0 || txtHissaMuntaqla.Text == "0" ) 
+            {
+                Kulhissa = Kulhissa != null ? Kulhissa : "0";
+                    KulAreaInSFT = KulAreaInSFT != null ? KulAreaInSFT : "0";
+                string[] MalikArea = gridviewSavedRecord.SelectedRows[0].Cells["Malik_Area"].Value.ToString().Split('-') ;
+                int kanalMuntaqla=txtKanalMuntaqal.Text.Length>0? int.Parse(txtKanalMuntaqal.Text):0;
+                int marlaMuntaqla=txtMarlaMuntaqla.Text.Length>0? int.Parse(txtMarlaMuntaqla.Text):0;
+                float sarsaiMuntaqla=txtSFTmuntaqla.Text.Length>0? float.Parse(txtSarsaiMuntaqla.Text):0;
+                float sftMutaqla=txtSFTmuntaqla.Text.Length>0? float.Parse(txtSFTmuntaqla.Text):0;
+                txtHissaMuntaqla.Text= common.CalculatedHisaFromArea(float.Parse(Kulhissa), 0, int.Parse(MalikArea[0] != null ? MalikArea[0] : "0"), int.Parse(MalikArea[1] != null ? MalikArea[1] : "0"), float.Parse(MalikArea[2] != null ? MalikArea[2] : "0")/(float)30.25, float.Parse(MalikArea[2] != null ? MalikArea[2] : "0"), kanalMuntaqla, marlaMuntaqla, sarsaiMuntaqla, sftMutaqla).ToString();
+            }
+
+        }    
 
     }
 }

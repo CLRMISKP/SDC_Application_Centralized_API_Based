@@ -165,10 +165,10 @@ namespace SDC_Application.BL
         }
 
         //WEB_SP_UPDATE_SDC_SDC_Fard_Status_Trans
-        public string SaveFardKhassras(string KhassraRecId, string PgId, string TokenId, string SeqNo, string KhassraId,string Kanal, string Marla, string Sarsai, string Feet, string UserId, string UserLoginName)
+        public string SaveFardKhassras(string KhassraRecId, string KhataId, string KhatooniId, string TokenId, string SeqNo, string KhassraId,string Kanal, string Marla, string Sarsai, string Feet, string UserId, string UserLoginName)
         {
 
-            string spWithParam = "WEB_SP_INSERT_SDC_FardKhassrasDetail  "+KhassraRecId+","+PgId+","+TokenId+"," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SeqNo + "," + KhassraId+","+Kanal+","+Marla+","+Sarsai+","+Feet + "," + UserId + ",'" + UserLoginName + "'";
+            string spWithParam = "WEB_SP_INSERT_SDC_FardKhassrasDetail  "+KhassraRecId+","+KhataId+","+KhatooniId+","+TokenId+"," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SeqNo + "," + KhassraId+","+Kanal+","+Marla+","+Sarsai+","+Feet + "," + UserId + ",'" + UserLoginName + "'";
              return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
             //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
         }
@@ -267,6 +267,13 @@ namespace SDC_Application.BL
         {
 
             string spWithParam = "Proc_Get_SDC_FardKhatasDetail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonRecId;
+            return ojbdb.filldatatable_from_storedProcedure(spWithParam);
+            //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
+        }
+        public DataTable GetFardKhassrajat(string TokenId, string KhataId)
+        {
+
+            string spWithParam = "Proc_Get_SDC_FardKhassrasDetail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + TokenId+","+KhataId;
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
             //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
         }

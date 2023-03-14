@@ -29,8 +29,8 @@
         /// </summary>
         private void InitializeComponent()
             {
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
                 this.groupBox4 = new System.Windows.Forms.GroupBox();
                 this.tabControl1 = new System.Windows.Forms.TabControl();
                 this.tbMalkiat = new System.Windows.Forms.TabPage();
@@ -49,9 +49,22 @@
                 this.cbgrid = new System.Windows.Forms.DataGridViewCheckBoxColumn();
                 this.chkAll = new System.Windows.Forms.CheckBox();
                 this.groupBox6 = new System.Windows.Forms.GroupBox();
-                this.chkAllSaved = new System.Windows.Forms.CheckBox();
+                this.panel4 = new System.Windows.Forms.Panel();
                 this.gridviewSavedRecord = new System.Windows.Forms.DataGridView();
                 this.colChkSaved = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+                this.panel3 = new System.Windows.Forms.Panel();
+                this.btnSaveKhewatFareeq = new System.Windows.Forms.Button();
+                this.label2 = new System.Windows.Forms.Label();
+                this.label11 = new System.Windows.Forms.Label();
+                this.txtHissaMuntaqla = new System.Windows.Forms.TextBox();
+                this.txtSFTmuntaqla = new System.Windows.Forms.TextBox();
+                this.txtKanalMuntaqal = new System.Windows.Forms.TextBox();
+                this.label10 = new System.Windows.Forms.Label();
+                this.label3 = new System.Windows.Forms.Label();
+                this.txtSarsaiMuntaqla = new System.Windows.Forms.TextBox();
+                this.txtMarlaMuntaqla = new System.Windows.Forms.TextBox();
+                this.label8 = new System.Windows.Forms.Label();
+                this.chkAllSaved = new System.Windows.Forms.CheckBox();
                 this.tabOpNote = new System.Windows.Forms.TabPage();
                 this.groupBox8 = new System.Windows.Forms.GroupBox();
                 this.txtOperatorReport = new System.Windows.Forms.TextBox();
@@ -137,6 +150,7 @@
                 this.txtTotPaymentRecived = new System.Windows.Forms.TextBox();
                 this.lbReceiptTasdeeq = new System.Windows.Forms.Label();
                 this.chkVerfiedReciptMaster = new System.Windows.Forms.CheckBox();
+                this.tabFardRaqba = new System.Windows.Forms.TabPage();
                 this.txtRAccountNo = new System.Windows.Forms.TextBox();
                 this.txtRBankBranch = new System.Windows.Forms.TextBox();
                 this.txtRBankName = new System.Windows.Forms.TextBox();
@@ -193,7 +207,9 @@
                 this.groupBox1.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.grdPersonKatajats)).BeginInit();
                 this.groupBox6.SuspendLayout();
+                this.panel4.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.gridviewSavedRecord)).BeginInit();
+                this.panel3.SuspendLayout();
                 this.tabOpNote.SuspendLayout();
                 this.groupBox8.SuspendLayout();
                 this.tabChallan.SuspendLayout();
@@ -251,6 +267,7 @@
                 this.tabControl1.Controls.Add(this.tabOpNote);
                 this.tabControl1.Controls.Add(this.tabChallan);
                 this.tabControl1.Controls.Add(this.tabRecipt);
+                this.tabControl1.Controls.Add(this.tabFardRaqba);
                 this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.tabControl1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.tabControl1.Location = new System.Drawing.Point(3, 35);
@@ -388,7 +405,7 @@
                 // 
                 this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
                 this.btnSelect.Image = global::SDC_Application.Resource1.LeftImage;
-                this.btnSelect.Location = new System.Drawing.Point(6, 214);
+                this.btnSelect.Location = new System.Drawing.Point(6, 210);
                 this.btnSelect.Name = "btnSelect";
                 this.btnSelect.Size = new System.Drawing.Size(50, 50);
                 this.btnSelect.TabIndex = 2;
@@ -471,8 +488,9 @@
                 // 
                 // groupBox6
                 // 
+                this.groupBox6.Controls.Add(this.panel4);
+                this.groupBox6.Controls.Add(this.panel3);
                 this.groupBox6.Controls.Add(this.chkAllSaved);
-                this.groupBox6.Controls.Add(this.gridviewSavedRecord);
                 this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.groupBox6.Location = new System.Drawing.Point(0, 0);
                 this.groupBox6.Name = "groupBox6";
@@ -480,6 +498,208 @@
                 this.groupBox6.TabIndex = 1;
                 this.groupBox6.TabStop = false;
                 this.groupBox6.Text = "محفوظ شدہ";
+                // 
+                // panel4
+                // 
+                this.panel4.Controls.Add(this.gridviewSavedRecord);
+                this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.panel4.Location = new System.Drawing.Point(3, 123);
+                this.panel4.Name = "panel4";
+                this.panel4.Size = new System.Drawing.Size(448, 357);
+                this.panel4.TabIndex = 229;
+                // 
+                // gridviewSavedRecord
+                // 
+                this.gridviewSavedRecord.AllowUserToAddRows = false;
+                this.gridviewSavedRecord.AllowUserToDeleteRows = false;
+                this.gridviewSavedRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+                this.gridviewSavedRecord.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+                this.gridviewSavedRecord.ColumnHeadersHeight = 40;
+                this.gridviewSavedRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colChkSaved});
+                this.gridviewSavedRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.gridviewSavedRecord.Location = new System.Drawing.Point(0, 0);
+                this.gridviewSavedRecord.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+                this.gridviewSavedRecord.Name = "gridviewSavedRecord";
+                this.gridviewSavedRecord.ReadOnly = true;
+                this.gridviewSavedRecord.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                this.gridviewSavedRecord.RowHeadersVisible = false;
+                this.gridviewSavedRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+                this.gridviewSavedRecord.Size = new System.Drawing.Size(448, 357);
+                this.gridviewSavedRecord.TabIndex = 9;
+                this.gridviewSavedRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewSavedRecord_CellClick);
+                // 
+                // colChkSaved
+                // 
+                this.colChkSaved.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+                this.colChkSaved.HeaderText = "انتخاب کریں";
+                this.colChkSaved.Name = "colChkSaved";
+                this.colChkSaved.ReadOnly = true;
+                this.colChkSaved.Width = 80;
+                // 
+                // panel3
+                // 
+                this.panel3.Controls.Add(this.btnSaveKhewatFareeq);
+                this.panel3.Controls.Add(this.label2);
+                this.panel3.Controls.Add(this.label11);
+                this.panel3.Controls.Add(this.txtHissaMuntaqla);
+                this.panel3.Controls.Add(this.txtSFTmuntaqla);
+                this.panel3.Controls.Add(this.txtKanalMuntaqal);
+                this.panel3.Controls.Add(this.label10);
+                this.panel3.Controls.Add(this.label3);
+                this.panel3.Controls.Add(this.txtSarsaiMuntaqla);
+                this.panel3.Controls.Add(this.txtMarlaMuntaqla);
+                this.panel3.Controls.Add(this.label8);
+                this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+                this.panel3.Location = new System.Drawing.Point(3, 35);
+                this.panel3.Name = "panel3";
+                this.panel3.Size = new System.Drawing.Size(448, 88);
+                this.panel3.TabIndex = 228;
+                // 
+                // btnSaveKhewatFareeq
+                // 
+                this.btnSaveKhewatFareeq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnSaveKhewatFareeq.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.btnSaveKhewatFareeq.Image = global::SDC_Application.Resource1.Save_icon;
+                this.btnSaveKhewatFareeq.Location = new System.Drawing.Point(10, 28);
+                this.btnSaveKhewatFareeq.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+                this.btnSaveKhewatFareeq.Name = "btnSaveKhewatFareeq";
+                this.btnSaveKhewatFareeq.Size = new System.Drawing.Size(53, 48);
+                this.btnSaveKhewatFareeq.TabIndex = 228;
+                this.btnSaveKhewatFareeq.UseVisualStyleBackColor = true;
+                this.btnSaveKhewatFareeq.Click += new System.EventHandler(this.btnSaveKhewatFareeq_Click);
+                // 
+                // label2
+                // 
+                this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label2.AutoSize = true;
+                this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label2.Location = new System.Drawing.Point(364, 5);
+                this.label2.Name = "label2";
+                this.label2.Size = new System.Drawing.Size(67, 34);
+                this.label2.TabIndex = 219;
+                this.label2.Text = "حصہ منتقلہ";
+                this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                // 
+                // label11
+                // 
+                this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label11.AutoSize = true;
+                this.label11.Font = new System.Drawing.Font("Alvi Nastaleeq", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label11.Location = new System.Drawing.Point(85, 5);
+                this.label11.Name = "label11";
+                this.label11.Size = new System.Drawing.Size(67, 34);
+                this.label11.TabIndex = 227;
+                this.label11.Text = "مربع فٹ";
+                this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                // 
+                // txtHissaMuntaqla
+                // 
+                this.txtHissaMuntaqla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtHissaMuntaqla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtHissaMuntaqla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtHissaMuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtHissaMuntaqla.Location = new System.Drawing.Point(350, 45);
+                this.txtHissaMuntaqla.Margin = new System.Windows.Forms.Padding(4);
+                this.txtHissaMuntaqla.Name = "txtHissaMuntaqla";
+                this.txtHissaMuntaqla.Size = new System.Drawing.Size(93, 30);
+                this.txtHissaMuntaqla.TabIndex = 218;
+                this.txtHissaMuntaqla.Text = "0";
+                this.txtHissaMuntaqla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHissaMuntaqla_KeyPress);
+                this.txtHissaMuntaqla.Leave += new System.EventHandler(this.txtHissaMuntaqla_Leave);
+                // 
+                // txtSFTmuntaqla
+                // 
+                this.txtSFTmuntaqla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtSFTmuntaqla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtSFTmuntaqla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtSFTmuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtSFTmuntaqla.Location = new System.Drawing.Point(76, 45);
+                this.txtSFTmuntaqla.Margin = new System.Windows.Forms.Padding(4);
+                this.txtSFTmuntaqla.Name = "txtSFTmuntaqla";
+                this.txtSFTmuntaqla.Size = new System.Drawing.Size(72, 30);
+                this.txtSFTmuntaqla.TabIndex = 226;
+                this.txtSFTmuntaqla.Text = "0";
+                this.txtSFTmuntaqla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKanalMuntaqal_KeyPress);
+                this.txtSFTmuntaqla.Leave += new System.EventHandler(this.txtSFTmuntaqla_Leave);
+                // 
+                // txtKanalMuntaqal
+                // 
+                this.txtKanalMuntaqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtKanalMuntaqal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtKanalMuntaqal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtKanalMuntaqal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtKanalMuntaqal.Location = new System.Drawing.Point(284, 45);
+                this.txtKanalMuntaqal.Margin = new System.Windows.Forms.Padding(4);
+                this.txtKanalMuntaqal.Name = "txtKanalMuntaqal";
+                this.txtKanalMuntaqal.Size = new System.Drawing.Size(60, 30);
+                this.txtKanalMuntaqal.TabIndex = 220;
+                this.txtKanalMuntaqal.Text = "0";
+                this.txtKanalMuntaqal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKanalMuntaqal_KeyPress);
+                // 
+                // label10
+                // 
+                this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label10.AutoSize = true;
+                this.label10.Font = new System.Drawing.Font("Alvi Nastaleeq", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label10.Location = new System.Drawing.Point(176, 5);
+                this.label10.Name = "label10";
+                this.label10.Size = new System.Drawing.Size(53, 34);
+                this.label10.TabIndex = 225;
+                this.label10.Text = "سرسائی";
+                this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                // 
+                // label3
+                // 
+                this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label3.AutoSize = true;
+                this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label3.Location = new System.Drawing.Point(299, 5);
+                this.label3.Name = "label3";
+                this.label3.Size = new System.Drawing.Size(42, 34);
+                this.label3.TabIndex = 221;
+                this.label3.Text = "کنال";
+                this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                // 
+                // txtSarsaiMuntaqla
+                // 
+                this.txtSarsaiMuntaqla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtSarsaiMuntaqla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtSarsaiMuntaqla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtSarsaiMuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtSarsaiMuntaqla.Location = new System.Drawing.Point(156, 45);
+                this.txtSarsaiMuntaqla.Margin = new System.Windows.Forms.Padding(4);
+                this.txtSarsaiMuntaqla.Name = "txtSarsaiMuntaqla";
+                this.txtSarsaiMuntaqla.Size = new System.Drawing.Size(72, 30);
+                this.txtSarsaiMuntaqla.TabIndex = 224;
+                this.txtSarsaiMuntaqla.Text = "0";
+                this.txtSarsaiMuntaqla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHissaMuntaqla_KeyPress);
+                // 
+                // txtMarlaMuntaqla
+                // 
+                this.txtMarlaMuntaqla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtMarlaMuntaqla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtMarlaMuntaqla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtMarlaMuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtMarlaMuntaqla.Location = new System.Drawing.Point(236, 45);
+                this.txtMarlaMuntaqla.Margin = new System.Windows.Forms.Padding(4);
+                this.txtMarlaMuntaqla.Name = "txtMarlaMuntaqla";
+                this.txtMarlaMuntaqla.Size = new System.Drawing.Size(42, 30);
+                this.txtMarlaMuntaqla.TabIndex = 222;
+                this.txtMarlaMuntaqla.Text = "0";
+                this.txtMarlaMuntaqla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKanalMuntaqal_KeyPress);
+                // 
+                // label8
+                // 
+                this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label8.AutoSize = true;
+                this.label8.Font = new System.Drawing.Font("Alvi Nastaleeq", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label8.Location = new System.Drawing.Point(239, 5);
+                this.label8.Name = "label8";
+                this.label8.Size = new System.Drawing.Size(41, 34);
+                this.label8.TabIndex = 223;
+                this.label8.Text = "مرلہ";
+                this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 // 
                 // chkAllSaved
                 // 
@@ -493,35 +713,6 @@
                 this.chkAllSaved.Text = "تمام منتخب کریں";
                 this.chkAllSaved.UseVisualStyleBackColor = true;
                 this.chkAllSaved.Click += new System.EventHandler(this.chkAllSaved_Click);
-                // 
-                // gridviewSavedRecord
-                // 
-                this.gridviewSavedRecord.AllowUserToAddRows = false;
-                this.gridviewSavedRecord.AllowUserToDeleteRows = false;
-                this.gridviewSavedRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-                this.gridviewSavedRecord.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-                this.gridviewSavedRecord.ColumnHeadersHeight = 40;
-                this.gridviewSavedRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colChkSaved});
-                this.gridviewSavedRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-                this.gridviewSavedRecord.Location = new System.Drawing.Point(3, 35);
-                this.gridviewSavedRecord.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-                this.gridviewSavedRecord.Name = "gridviewSavedRecord";
-                this.gridviewSavedRecord.ReadOnly = true;
-                this.gridviewSavedRecord.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                this.gridviewSavedRecord.RowHeadersVisible = false;
-                this.gridviewSavedRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-                this.gridviewSavedRecord.Size = new System.Drawing.Size(448, 445);
-                this.gridviewSavedRecord.TabIndex = 9;
-                this.gridviewSavedRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewSavedRecord_CellClick);
-                // 
-                // colChkSaved
-                // 
-                this.colChkSaved.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-                this.colChkSaved.HeaderText = "انتخاب کریں";
-                this.colChkSaved.Name = "colChkSaved";
-                this.colChkSaved.ReadOnly = true;
-                this.colChkSaved.Width = 80;
                 // 
                 // tabOpNote
                 // 
@@ -1592,16 +1783,16 @@
                 this.grdRecipt.Location = new System.Drawing.Point(0, 0);
                 this.grdRecipt.Name = "grdRecipt";
                 this.grdRecipt.ReadOnly = true;
-                dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-                dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-                dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-                dataGridViewCellStyle2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle2;
+                dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+                dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle19.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+                dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+                dataGridViewCellStyle20.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle20;
                 this.grdRecipt.Size = new System.Drawing.Size(1262, 199);
                 this.grdRecipt.TabIndex = 71;
                 this.grdRecipt.DoubleClick += new System.EventHandler(this.grdRecipt_DoubleClick);
@@ -1711,6 +1902,15 @@
                 this.chkVerfiedReciptMaster.TabIndex = 0;
                 this.chkVerfiedReciptMaster.UseVisualStyleBackColor = true;
                 this.chkVerfiedReciptMaster.Click += new System.EventHandler(this.chkVerfiedReciptMaster_Click);
+                // 
+                // tabFardRaqba
+                // 
+                this.tabFardRaqba.Location = new System.Drawing.Point(4, 40);
+                this.tabFardRaqba.Name = "tabFardRaqba";
+                this.tabFardRaqba.Size = new System.Drawing.Size(1262, 501);
+                this.tabFardRaqba.TabIndex = 4;
+                this.tabFardRaqba.Text = "فرد رقبہ";
+                this.tabFardRaqba.UseVisualStyleBackColor = true;
                 // 
                 // txtRAccountNo
                 // 
@@ -2205,7 +2405,10 @@
                 ((System.ComponentModel.ISupportInitialize)(this.grdPersonKatajats)).EndInit();
                 this.groupBox6.ResumeLayout(false);
                 this.groupBox6.PerformLayout();
+                this.panel4.ResumeLayout(false);
                 ((System.ComponentModel.ISupportInitialize)(this.gridviewSavedRecord)).EndInit();
+                this.panel3.ResumeLayout(false);
+                this.panel3.PerformLayout();
                 this.tabOpNote.ResumeLayout(false);
                 this.groupBox8.ResumeLayout(false);
                 this.groupBox8.PerformLayout();
@@ -2399,6 +2602,20 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnPrintVoucher;
+        private System.Windows.Forms.TabPage tabFardRaqba;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtHissaMuntaqla;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtKanalMuntaqal;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtMarlaMuntaqla;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtSarsaiMuntaqla;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtSFTmuntaqla;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnSaveKhewatFareeq;
 
         }
     }

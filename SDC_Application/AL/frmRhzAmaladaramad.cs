@@ -1202,6 +1202,54 @@ namespace SDC_Application.AL
         }
 
         #endregion
+
+        private void btnSearchAllMutations_Click(object sender, EventArgs e)
+        {
+            if (dgKhewatFareeqainAll.DataSource != null)
+            {
+                if (dgKhewatFareeqainAll.SelectedRows.Count > 0)
+                {
+                    frmIntiqalAllByPersonId frmIAP = new frmIntiqalAllByPersonId();
+                    frmIAP.PersonId = dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(); //PersonName
+                    frmIAP.PersonName = dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonName"].Value.ToString();
+                    frmIAP.ShowDialog();
+                }
+            }
+        }
+
+        private void btnViewAllMutFromMushtri_Click(object sender, EventArgs e)
+        {
+            if (dgMushteriFareeqainAll.DataSource != null)
+            {
+                if (dgMushteriFareeqainAll.SelectedRows.Count > 0)
+                {
+                    frmIntiqalAllByPersonId frmIAP = new frmIntiqalAllByPersonId();
+                    frmIAP.PersonId = dgMushteriFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString(); //PersonName
+                    frmIAP.PersonName = dgMushteriFareeqainAll.SelectedRows[0].Cells["CompleteName"].Value.ToString();
+                    frmIAP.ShowDialog();
+                }
+            }
+        }
+
+        private void btnGoshwaraMalkiat_Click(object sender, EventArgs e)
+        {
+            if (dgKhewatFareeqainAll.DataSource != null)
+            {
+                if (dgKhewatFareeqainAll.SelectedRows.Count > 0 && cmbMouza.SelectedValue.ToString().Length > 3)
+                {
+                    //frmIntiqalAllByPersonId frmIAP = new frmIntiqalAllByPersonId();
+                    //frmIAP.PersonId = dataGridViewPersons.SelectedRows[0].Cells["PersonId"].Value.ToString(); //PersonName
+                    //frmIAP.PersonName = dataGridViewPersons.SelectedRows[0].Cells["PersonFullName"].Value.ToString();
+                    //frmIAP.ShowDialog();
+                    frmSDCReportingMain frmRpt = new frmSDCReportingMain();
+                    frmRpt.MozaId = cmbMouza.SelectedValue.ToString();
+                    frmRpt.PersonName = dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonName"].Value.ToString();
+                    frmRpt.FardPersonId = dgKhewatFareeqainAll.SelectedRows[0].Cells["PersonId"].Value.ToString();
+                    UsersManagments.check = 50;
+                    frmRpt.ShowDialog();
+                }
+            }
+        }
        
     }
 }

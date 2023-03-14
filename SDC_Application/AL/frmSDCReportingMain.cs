@@ -80,6 +80,7 @@ namespace SDC_Application.AL
         public string FbID { get; set; }
         public string TokenDate { get; set; }
         public string RegFardDispatchMainId { get; set; }
+        public string PersonName { get; set; }
         
         public frmSDCReportingMain()
         {
@@ -536,6 +537,15 @@ namespace SDC_Application.AL
                  ReportParameter[] rp = new ReportParameter[1];
                  rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
                  this.SetCredentials("StateLandDataReport", rp, false);
+
+             }
+             if (UsersManagments.check == 50)
+             {
+                 ReportParameter[] rp = new ReportParameter[3];
+                 rp[0] = new ReportParameter("PersonId", this.FardPersonId);
+                 rp[1] = new ReportParameter("Person_Name", this.PersonName);
+                 rp[2] = new ReportParameter("MozaId", this.MozaId);
+                 this.SetCredentials("PersonMalkiatMain", rp, false);
 
              }
         }

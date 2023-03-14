@@ -630,10 +630,11 @@ namespace SDC_Application.AL
                             GridFardKhatoonies.DataSource = null;
                             auto.FillCombo("proc_Self_Get_Fard_Khata_On_Selection  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId + "," + this.SelectedTokenId, cboKhataNoSaved, "KhataNo", "FardKhataId");
                             //auto.FillCombo("Proc_Get_KhassraJatByKhataId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId, cbKhassras, "KhassraNo", "KhassraId");
-                            FillKhassrasByKhataId(KhataId);
+                           // FillKhassrasByKhataId(KhataId);
                             savedKhataId = KhataId;
                             DataTable dtKK = mnk.GetFardKhatooniesByTokenIdByKhataId(this.SelectedTokenId != null ? this.SelectedTokenId : "0", KhataId);
                             this.fillGridviewFardKhatoonies(dtKK);
+                           
                               
                         }
                         else
@@ -3002,6 +3003,19 @@ namespace SDC_Application.AL
                         }
                         break;
                     }
+                case 8:
+                    {
+                        if (GridViewFardKhatajat.DataSource != null)
+                        {
+                            if (GridViewFardKhatajat.SelectedRows.Count > 0)
+                            {
+                                FillKhassrasByKhataId(GridViewFardKhatajat.SelectedRows[0].Cells["FardKhataId"].Value.ToString());
+                                fillDgKhassrajat();
+                                //auto.FillCombo("Proc_Get_KhassraJatByKhataId " + UsersManagments._Tehsilid.ToString() + "," + GridViewFardKhatajat.SelectedRows[0].Cells["FardKhataId"].Value.ToString(), cbKhassras, "KhassraNo", "KhassraId");
+                            }
+                        }
+                        break;
+                    }
             }
         }
 
@@ -3413,6 +3427,7 @@ namespace SDC_Application.AL
                         Marla=Marla+ int.Parse( Area[1]);
                         Sarsai=Sarsai+ float.Parse( Area[2]);
                         KhatooniNo=row["KhatooniNo"].ToString();
+                        txtKhatooniId.Text = row["KhatooniId"].ToString();
                     }
                 }
             }
@@ -3427,22 +3442,96 @@ namespace SDC_Application.AL
         {
             try
             {
-               string retVal= mnk.SaveFardKhassras(txtKhassraRecId.Text, "NULL", SelectedTokenId, "0", cbKhassras.SelectedValue.ToString(),  txtKhassraKanal.Text, txtKhassraMarla.Text, txtKhassraSarsai.Text, txtKhassraFeet.Text,  UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                string khataId=GridViewFardKhatajat.SelectedRows[0].Cells["FardKhataId"].Value.ToString();
+               string retVal= mnk.SaveFardKhassras(txtKhassraRecId.Text,khataId, txtKhatooniId.Text , SelectedTokenId, "0", cbKhassras.SelectedValue.ToString(),  txtKhassraKanal.Text, txtKhassraMarla.Text, txtKhassraSarsai.Text, txtKhassraFeet.Text,  UsersManagments.UserId.ToString(), UsersManagments.UserName);
                if (retVal.Length > 5)
                {
-                   MessageBox.Show("انتخاب کردہ خسرہ ریکارڈ محفوظ ہو گیا");
+                   //MessageBox.Show("انتخاب کردہ خسرہ ریکارڈ محفوظ ہو گیا");
                    txtKhassraRecId.Text = "-1";
                    txtKhassraKanal.Clear();
                    txtKhassraMarla.Clear();
                    txtKhassraSarsai.Clear();
                    txtKhassraFeet.Clear();
                    cbKhassras.SelectedValue = 0;
+                   filldgFardKhatas();
+                   btnNewKhassra_Click(sender, e);
                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void fillDgKhassrajat()
+        {
+            if (GridViewFardKhatajat.DataSource != null)
+            {
+                if (GridViewFardKhatajat.SelectedRows.Count > 0)
+                {
+                    DataTable dtFardKhassras = mnk.GetFardKhassrajat(SelectedTokenId, GridViewFardKhatajat.SelectedRows[0].Cells["FardKhataId"].Value.ToString());
+                    dgKhassrajat.DataSource = dtFardKhassras;
+                    if (dtFardKhassras != null)
+                    {
+                        dgKhassrajat.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
+                        dgKhassrajat.Columns["Area"].HeaderText = "رقبہ";
+                        dgKhassrajat.Columns["PVKhassraRecId"].Visible = false;
+                        dgKhassrajat.Columns["KhataId"].Visible = false;
+                        dgKhassrajat.Columns["TokenId"].Visible = false;
+                        dgKhassrajat.Columns["KhatooniId"].Visible = false;
+                        dgKhassrajat.Columns["PVKhassraSeqNo"].Visible = false;
+                        dgKhassrajat.Columns["PVKhassraId"].Visible = false;
+                        dgKhassrajat.Columns["Kanal"].Visible = false;
+                        dgKhassrajat.Columns["Marla"].Visible = false;
+                        dgKhassrajat.Columns["Sarsai"].Visible = false;
+                        dgKhassrajat.Columns["Feet"].Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void dgKhassrajat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView g = sender as DataGridView;
+            
+            try
+            {
+                if (dgKhassrajat.DataSource != null)
+                {
+                    if (dgKhassrajat.SelectedRows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in g.Rows)
+                        {
+                            if (row.Selected)
+                            {
+                                row.Cells["ColSelKhassra"].Value = true;
+                                cbKhassras.SelectedValue = row.Cells["PVKhassraId"].Value;
+                                txtKhassraId.Text = row.Cells["PVKhassraId"].Value.ToString();
+                                txtKhassraRecId.Text = row.Cells["PVKhassraRecId"].Value.ToString();
+                                txtKhatooniId.Text = row.Cells["KhatooniId"].Value.ToString();
+                            }
+                            else
+                                row.Cells["ColSelKhassra"].Value = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNewKhassra_Click(object sender, EventArgs e)
+        {
+            cbKhassras.SelectedValue = 0;
+            txtKhassraId.Text = "-1";
+            txtKhassraRecId.Text = "-1";
+            txtKhatooniId.Text = "-1";
+            txtKhatooniNo.Text = "0";
+            txtKhassraKanal.Clear();
+            txtKhassraMarla.Clear();
+            txtKhassraSarsai.Clear();
+            txtKhassraFeet.Clear();
         }
 
 

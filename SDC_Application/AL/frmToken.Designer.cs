@@ -34,17 +34,6 @@
             this.errorNumeric = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dgPersonTokenDetails = new System.Windows.Forms.DataGridView();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtToken = new System.Windows.Forms.TextBox();
-            this.txttokenid = new System.Windows.Forms.TextBox();
-            this.status1 = new System.Windows.Forms.TextBox();
-            this.txtLoad = new System.Windows.Forms.TextBox();
-            this.status2 = new System.Windows.Forms.TextBox();
-            this.status3 = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -96,12 +85,20 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dgPersonTokenDetails = new System.Windows.Forms.DataGridView();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.status3 = new System.Windows.Forms.TextBox();
+            this.status2 = new System.Windows.Forms.TextBox();
+            this.txtLoad = new System.Windows.Forms.TextBox();
+            this.status1 = new System.Windows.Forms.TextBox();
+            this.txttokenid = new System.Windows.Forms.TextBox();
+            this.txtToken = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorChar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumeric)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPersonTokenDetails)).BeginInit();
-            this.groupBox7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,6 +106,8 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPersonTokenDetails)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorChar
@@ -141,7 +140,6 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.dgPersonTokenDetails);
-            this.groupBox8.Controls.Add(this.groupBox7);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(3, 26);
@@ -151,176 +149,12 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "سابقہ سروس کی تفصیل";
             // 
-            // dgPersonTokenDetails
-            // 
-            this.dgPersonTokenDetails.AllowUserToAddRows = false;
-            this.dgPersonTokenDetails.AllowUserToDeleteRows = false;
-            this.dgPersonTokenDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgPersonTokenDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPersonTokenDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgPersonTokenDetails.Location = new System.Drawing.Point(3, 35);
-            this.dgPersonTokenDetails.Name = "dgPersonTokenDetails";
-            this.dgPersonTokenDetails.ReadOnly = true;
-            this.dgPersonTokenDetails.RowHeadersVisible = false;
-            this.dgPersonTokenDetails.Size = new System.Drawing.Size(579, 705);
-            this.dgPersonTokenDetails.TabIndex = 55;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBox1);
-            this.groupBox7.Controls.Add(this.txtToken);
-            this.groupBox7.Controls.Add(this.txttokenid);
-            this.groupBox7.Controls.Add(this.status1);
-            this.groupBox7.Controls.Add(this.txtLoad);
-            this.groupBox7.Controls.Add(this.status2);
-            this.groupBox7.Controls.Add(this.status3);
-            this.groupBox7.Controls.Add(this.txtStatus);
-            this.groupBox7.Controls.Add(this.crystalReportViewer1);
-            this.groupBox7.Location = new System.Drawing.Point(6, 450);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(559, 109);
-            this.groupBox7.TabIndex = 54;
-            this.groupBox7.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(98, 14);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(63, 22);
-            this.textBox1.TabIndex = 52;
-            this.textBox1.TabStop = false;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.Visible = false;
-            // 
-            // txtToken
-            // 
-            this.txtToken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtToken.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtToken.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToken.Location = new System.Drawing.Point(80, 46);
-            this.txtToken.Multiline = true;
-            this.txtToken.Name = "txtToken";
-            this.txtToken.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtToken.Size = new System.Drawing.Size(186, 22);
-            this.txtToken.TabIndex = 48;
-            this.txtToken.Text = "-1";
-            this.txtToken.Visible = false;
-            // 
-            // txttokenid
-            // 
-            this.txttokenid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttokenid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txttokenid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttokenid.Location = new System.Drawing.Point(80, 74);
-            this.txttokenid.Multiline = true;
-            this.txttokenid.Name = "txttokenid";
-            this.txttokenid.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txttokenid.Size = new System.Drawing.Size(186, 22);
-            this.txttokenid.TabIndex = 0;
-            this.txttokenid.TabStop = false;
-            this.txttokenid.Text = "-1";
-            this.txttokenid.Visible = false;
-            // 
-            // status1
-            // 
-            this.status1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.status1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.status1.Enabled = false;
-            this.status1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status1.Location = new System.Drawing.Point(321, 14);
-            this.status1.Name = "status1";
-            this.status1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.status1.Size = new System.Drawing.Size(67, 30);
-            this.status1.TabIndex = 49;
-            this.status1.TabStop = false;
-            this.status1.Text = "محفوظ شدہ";
-            this.status1.Visible = false;
-            // 
-            // txtLoad
-            // 
-            this.txtLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLoad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoad.Enabled = false;
-            this.txtLoad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoad.Location = new System.Drawing.Point(167, 21);
-            this.txtLoad.Multiline = true;
-            this.txtLoad.Name = "txtLoad";
-            this.txtLoad.Size = new System.Drawing.Size(63, 15);
-            this.txtLoad.TabIndex = 53;
-            this.txtLoad.TabStop = false;
-            this.txtLoad.Visible = false;
-            // 
-            // status2
-            // 
-            this.status2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.status2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.status2.Enabled = false;
-            this.status2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status2.Location = new System.Drawing.Point(394, 15);
-            this.status2.Name = "status2";
-            this.status2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.status2.Size = new System.Drawing.Size(67, 30);
-            this.status2.TabIndex = 50;
-            this.status2.TabStop = false;
-            this.status2.Text = "تصدیق شدہ";
-            this.status2.Visible = false;
-            // 
-            // status3
-            // 
-            this.status3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.status3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.status3.Enabled = false;
-            this.status3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status3.Location = new System.Drawing.Point(467, 14);
-            this.status3.Name = "status3";
-            this.status3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.status3.Size = new System.Drawing.Size(67, 30);
-            this.status3.TabIndex = 51;
-            this.status3.TabStop = false;
-            this.status3.Text = "منسوخ شدہ";
-            this.status3.Visible = false;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStatus.Enabled = false;
-            this.txtStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(248, 15);
-            this.txtStatus.Multiline = true;
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(63, 26);
-            this.txtStatus.TabIndex = 52;
-            this.txtStatus.TabStop = false;
-            this.txtStatus.Visible = false;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.DisplayStatusBar = false;
-            this.crystalReportViewer1.DisplayToolbar = false;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(205, 47);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(327, 49);
-            this.crystalReportViewer1.TabIndex = 43;
-            this.crystalReportViewer1.TabStop = false;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.crystalReportViewer1.Visible = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.groupBox2);
+            this.panel3.Controls.Add(this.groupBox7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(588, 26);
             this.panel3.Name = "panel3";
@@ -886,7 +720,7 @@
             this.label6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(322, 292);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 38);
+            this.label6.Size = new System.Drawing.Size(78, 38);
             this.label6.TabIndex = 27;
             this.label6.Text = " مستقل پتہ";
             // 
@@ -976,6 +810,154 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // dgPersonTokenDetails
+            // 
+            this.dgPersonTokenDetails.AllowUserToAddRows = false;
+            this.dgPersonTokenDetails.AllowUserToDeleteRows = false;
+            this.dgPersonTokenDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgPersonTokenDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPersonTokenDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPersonTokenDetails.Location = new System.Drawing.Point(3, 35);
+            this.dgPersonTokenDetails.Name = "dgPersonTokenDetails";
+            this.dgPersonTokenDetails.ReadOnly = true;
+            this.dgPersonTokenDetails.RowHeadersVisible = false;
+            this.dgPersonTokenDetails.Size = new System.Drawing.Size(579, 705);
+            this.dgPersonTokenDetails.TabIndex = 55;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(248, 15);
+            this.txtStatus.Multiline = true;
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(63, 26);
+            this.txtStatus.TabIndex = 52;
+            this.txtStatus.TabStop = false;
+            this.txtStatus.Visible = false;
+            // 
+            // status3
+            // 
+            this.status3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.status3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.status3.Enabled = false;
+            this.status3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status3.Location = new System.Drawing.Point(467, 14);
+            this.status3.Name = "status3";
+            this.status3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.status3.Size = new System.Drawing.Size(67, 30);
+            this.status3.TabIndex = 51;
+            this.status3.TabStop = false;
+            this.status3.Text = "منسوخ شدہ";
+            this.status3.Visible = false;
+            // 
+            // status2
+            // 
+            this.status2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.status2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.status2.Enabled = false;
+            this.status2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status2.Location = new System.Drawing.Point(394, 15);
+            this.status2.Name = "status2";
+            this.status2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.status2.Size = new System.Drawing.Size(67, 30);
+            this.status2.TabIndex = 50;
+            this.status2.TabStop = false;
+            this.status2.Text = "تصدیق شدہ";
+            this.status2.Visible = false;
+            // 
+            // txtLoad
+            // 
+            this.txtLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLoad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLoad.Enabled = false;
+            this.txtLoad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoad.Location = new System.Drawing.Point(167, 21);
+            this.txtLoad.Multiline = true;
+            this.txtLoad.Name = "txtLoad";
+            this.txtLoad.Size = new System.Drawing.Size(63, 15);
+            this.txtLoad.TabIndex = 53;
+            this.txtLoad.TabStop = false;
+            this.txtLoad.Visible = false;
+            // 
+            // status1
+            // 
+            this.status1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.status1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.status1.Enabled = false;
+            this.status1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status1.Location = new System.Drawing.Point(321, 14);
+            this.status1.Name = "status1";
+            this.status1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.status1.Size = new System.Drawing.Size(67, 30);
+            this.status1.TabIndex = 49;
+            this.status1.TabStop = false;
+            this.status1.Text = "محفوظ شدہ";
+            this.status1.Visible = false;
+            // 
+            // txttokenid
+            // 
+            this.txttokenid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttokenid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txttokenid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttokenid.Location = new System.Drawing.Point(80, 74);
+            this.txttokenid.Multiline = true;
+            this.txttokenid.Name = "txttokenid";
+            this.txttokenid.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txttokenid.Size = new System.Drawing.Size(186, 22);
+            this.txttokenid.TabIndex = 0;
+            this.txttokenid.TabStop = false;
+            this.txttokenid.Text = "-1";
+            this.txttokenid.Visible = false;
+            // 
+            // txtToken
+            // 
+            this.txtToken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtToken.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtToken.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtToken.Location = new System.Drawing.Point(80, 46);
+            this.txtToken.Multiline = true;
+            this.txtToken.Name = "txtToken";
+            this.txtToken.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtToken.Size = new System.Drawing.Size(186, 22);
+            this.txtToken.TabIndex = 48;
+            this.txtToken.Text = "-1";
+            this.txtToken.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(98, 14);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox1.Size = new System.Drawing.Size(63, 22);
+            this.textBox1.TabIndex = 52;
+            this.textBox1.TabStop = false;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Visible = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.txtToken);
+            this.groupBox7.Controls.Add(this.txttokenid);
+            this.groupBox7.Controls.Add(this.status1);
+            this.groupBox7.Controls.Add(this.txtLoad);
+            this.groupBox7.Controls.Add(this.status2);
+            this.groupBox7.Controls.Add(this.status3);
+            this.groupBox7.Controls.Add(this.txtStatus);
+            this.groupBox7.Location = new System.Drawing.Point(40, 579);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(559, 109);
+            this.groupBox7.TabIndex = 54;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Visible = false;
+            // 
             // frmToken
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -989,9 +971,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorNumeric)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgPersonTokenDetails)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1003,6 +982,9 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPersonTokenDetails)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1042,19 +1024,10 @@
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblTimer;
         public System.Windows.Forms.DateTimePicker txtDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private System.Windows.Forms.TextBox txtToken;
-        private System.Windows.Forms.TextBox status1;
-        private System.Windows.Forms.TextBox status2;
-        public System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox status3;
-        public System.Windows.Forms.TextBox txtLoad;
-        private System.Windows.Forms.TextBox txttokenid;
         private System.Windows.Forms.Button btnPopulate;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Button btnNewToken;
@@ -1072,9 +1045,17 @@
         private System.Windows.Forms.TextBox txtVisitorContactNo;
         private System.Windows.Forms.Button btnSearchByNIC;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dgPersonTokenDetails;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbRelation;
+        private System.Windows.Forms.DataGridView dgPersonTokenDetails;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtToken;
+        private System.Windows.Forms.TextBox txttokenid;
+        private System.Windows.Forms.TextBox status1;
+        public System.Windows.Forms.TextBox txtLoad;
+        private System.Windows.Forms.TextBox status2;
+        private System.Windows.Forms.TextBox status3;
+        public System.Windows.Forms.TextBox txtStatus;
     }
 }

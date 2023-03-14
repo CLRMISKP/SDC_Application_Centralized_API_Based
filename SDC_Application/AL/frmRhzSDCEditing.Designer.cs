@@ -101,6 +101,7 @@
             this.dgKhewatFareeqainAll = new System.Windows.Forms.DataGridView();
             this.ColSelection = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSearchAllMutations = new System.Windows.Forms.Button();
             this.txtKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
             this.txtKhewatGroupFareeqRecId = new System.Windows.Forms.TextBox();
             this.txtKhewatGroupId = new System.Windows.Forms.TextBox();
@@ -247,6 +248,7 @@
             this.dgMushteriFareeqainEdit = new System.Windows.Forms.DataGridView();
             this.ColSelMushtriEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnViewAllMushtry = new System.Windows.Forms.Button();
             this.chkRecStatus = new System.Windows.Forms.CheckBox();
             this.txtMushteriFareeqRecId = new System.Windows.Forms.TextBox();
             this.txtMushteriFareeqId = new System.Windows.Forms.TextBox();
@@ -1189,6 +1191,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnSearchAllMutations);
             this.panel4.Controls.Add(this.txtKhewatGroupFareeqId);
             this.panel4.Controls.Add(this.txtKhewatGroupFareeqRecId);
             this.panel4.Controls.Add(this.txtKhewatGroupId);
@@ -1218,9 +1221,20 @@
             this.panel4.Size = new System.Drawing.Size(1193, 96);
             this.panel4.TabIndex = 0;
             // 
+            // btnSearchAllMutations
+            // 
+            this.btnSearchAllMutations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchAllMutations.Location = new System.Drawing.Point(160, 6);
+            this.btnSearchAllMutations.Name = "btnSearchAllMutations";
+            this.btnSearchAllMutations.Size = new System.Drawing.Size(157, 33);
+            this.btnSearchAllMutations.TabIndex = 313;
+            this.btnSearchAllMutations.Text = "مالک کے تمام انتقالات دیکھیئے";
+            this.btnSearchAllMutations.UseVisualStyleBackColor = true;
+            this.btnSearchAllMutations.Click += new System.EventHandler(this.btnSearchAllMutations_Click);
+            // 
             // txtKhewatGroupFareeqId
             // 
-            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(78, 6);
+            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(5, 9);
             this.txtKhewatGroupFareeqId.Name = "txtKhewatGroupFareeqId";
             this.txtKhewatGroupFareeqId.Size = new System.Drawing.Size(38, 39);
             this.txtKhewatGroupFareeqId.TabIndex = 312;
@@ -1229,7 +1243,7 @@
             // 
             // txtKhewatGroupFareeqRecId
             // 
-            this.txtKhewatGroupFareeqRecId.Location = new System.Drawing.Point(257, 9);
+            this.txtKhewatGroupFareeqRecId.Location = new System.Drawing.Point(108, 8);
             this.txtKhewatGroupFareeqRecId.Name = "txtKhewatGroupFareeqRecId";
             this.txtKhewatGroupFareeqRecId.Size = new System.Drawing.Size(35, 39);
             this.txtKhewatGroupFareeqRecId.TabIndex = 311;
@@ -1238,7 +1252,7 @@
             // 
             // txtKhewatGroupId
             // 
-            this.txtKhewatGroupId.Location = new System.Drawing.Point(216, 8);
+            this.txtKhewatGroupId.Location = new System.Drawing.Point(83, 9);
             this.txtKhewatGroupId.Name = "txtKhewatGroupId";
             this.txtKhewatGroupId.Size = new System.Drawing.Size(35, 39);
             this.txtKhewatGroupId.TabIndex = 310;
@@ -1247,7 +1261,7 @@
             // 
             // txtPersonId
             // 
-            this.txtPersonId.Location = new System.Drawing.Point(171, 8);
+            this.txtPersonId.Location = new System.Drawing.Point(63, 8);
             this.txtPersonId.Name = "txtPersonId";
             this.txtPersonId.Size = new System.Drawing.Size(39, 39);
             this.txtPersonId.TabIndex = 309;
@@ -1256,7 +1270,7 @@
             // 
             // txtKhewatFreeqainGroupId
             // 
-            this.txtKhewatFreeqainGroupId.Location = new System.Drawing.Point(122, 7);
+            this.txtKhewatFreeqainGroupId.Location = new System.Drawing.Point(28, 9);
             this.txtKhewatFreeqainGroupId.Name = "txtKhewatFreeqainGroupId";
             this.txtKhewatFreeqainGroupId.Size = new System.Drawing.Size(43, 39);
             this.txtKhewatFreeqainGroupId.TabIndex = 308;
@@ -2882,6 +2896,7 @@
             // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.btnViewAllMushtry);
             this.panel12.Controls.Add(this.chkRecStatus);
             this.panel12.Controls.Add(this.txtMushteriFareeqRecId);
             this.panel12.Controls.Add(this.txtMushteriFareeqId);
@@ -2907,6 +2922,17 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1179, 97);
             this.panel12.TabIndex = 0;
+            // 
+            // btnViewAllMushtry
+            // 
+            this.btnViewAllMushtry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViewAllMushtry.Location = new System.Drawing.Point(838, 58);
+            this.btnViewAllMushtry.Name = "btnViewAllMushtry";
+            this.btnViewAllMushtry.Size = new System.Drawing.Size(161, 33);
+            this.btnViewAllMushtry.TabIndex = 314;
+            this.btnViewAllMushtry.Text = "مالک کے تمام انتقالات دیکھیئے";
+            this.btnViewAllMushtry.UseVisualStyleBackColor = true;
+            this.btnViewAllMushtry.Click += new System.EventHandler(this.btnViewAllMushtry_Click);
             // 
             // chkRecStatus
             // 
@@ -4152,5 +4178,7 @@
         private System.Windows.Forms.CheckBox chkRecStatus;
         private System.Windows.Forms.RadioButton rbPreviousKhata;
         private System.Windows.Forms.RadioButton rbCurrentKhata;
+        private System.Windows.Forms.Button btnSearchAllMutations;
+        private System.Windows.Forms.Button btnViewAllMushtry;
     }
 }

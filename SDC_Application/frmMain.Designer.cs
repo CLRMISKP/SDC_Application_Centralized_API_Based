@@ -91,6 +91,10 @@
             this.mnuRhz_ChangeAdminDashboard = new System.Windows.Forms.ToolStripMenuItem();
             this.ایمآئاسسیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUserVisibility = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuCorrection = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuIndrajMisal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardeBadar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMisalManualFb = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuamnualMutReportWithLandTypendValue = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportsRTS_RTI = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,10 +123,7 @@
             this.mnuSubAntiCurFardat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOperationalReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubInitqalEntryByOperator = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuCorrection = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuIndrajMisal = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFardeBadar = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMisalManualFb = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubStateLandReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOperatorReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDRA = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubDraIntiqalatFee = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,7 +156,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuSubStateLandReport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -263,7 +263,7 @@
             // 
             this.فردToolStripMenuItem.Name = "فردToolStripMenuItem";
             this.فردToolStripMenuItem.Size = new System.Drawing.Size(319, 42);
-            this.فردToolStripMenuItem.Text = "6- فرد";
+            this.فردToolStripMenuItem.Text = "6- ٹرانزیکشنل فرد";
             this.فردToolStripMenuItem.Click += new System.EventHandler(this.فردToolStripMenuItem_Click);
             // 
             // TSMDetailedFard
@@ -667,6 +667,38 @@
             this.mnuUserVisibility.Text = " - صارفین کو انتقال عمل، مثل وغیرہ شو یا ہائد کریں";
             this.mnuUserVisibility.Click += new System.EventHandler(this.mnuUserVisibility_Click);
             // 
+            // ToolStripMenuCorrection
+            // 
+            this.ToolStripMenuCorrection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuIndrajMisal,
+            this.mnuFardeBadar,
+            this.mnuMisalManualFb});
+            this.ToolStripMenuCorrection.Name = "ToolStripMenuCorrection";
+            this.ToolStripMenuCorrection.Size = new System.Drawing.Size(65, 42);
+            this.ToolStripMenuCorrection.Text = "درستگی";
+            // 
+            // mnuIndrajMisal
+            // 
+            this.mnuIndrajMisal.Name = "mnuIndrajMisal";
+            this.mnuIndrajMisal.Size = new System.Drawing.Size(239, 42);
+            this.mnuIndrajMisal.Text = "اندراج مثل ";
+            this.mnuIndrajMisal.Visible = false;
+            this.mnuIndrajMisal.Click += new System.EventHandler(this.mnuIndrajMisal_Click);
+            // 
+            // mnuFardeBadar
+            // 
+            this.mnuFardeBadar.Name = "mnuFardeBadar";
+            this.mnuFardeBadar.Size = new System.Drawing.Size(239, 42);
+            this.mnuFardeBadar.Text = "فرد بدر";
+            this.mnuFardeBadar.Click += new System.EventHandler(this.mnuFardeBadar_Click);
+            // 
+            // mnuMisalManualFb
+            // 
+            this.mnuMisalManualFb.Name = "mnuMisalManualFb";
+            this.mnuMisalManualFb.Size = new System.Drawing.Size(239, 42);
+            this.mnuMisalManualFb.Text = "اندراج مثل / دستی فرد بدر";
+            this.mnuMisalManualFb.Click += new System.EventHandler(this.mnuMisalManualFb_Click);
+            // 
             // mnuReports
             // 
             this.mnuReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -891,37 +923,12 @@
             this.mnuSubInitqalEntryByOperator.Text = " - انتقال اندراج رپورٹ";
             this.mnuSubInitqalEntryByOperator.Click += new System.EventHandler(this.mnuSubInitqalEntryByOperator_Click);
             // 
-            // ToolStripMenuCorrection
+            // mnuSubStateLandReport
             // 
-            this.ToolStripMenuCorrection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuIndrajMisal,
-            this.mnuFardeBadar,
-            this.mnuMisalManualFb});
-            this.ToolStripMenuCorrection.Name = "ToolStripMenuCorrection";
-            this.ToolStripMenuCorrection.Size = new System.Drawing.Size(65, 42);
-            this.ToolStripMenuCorrection.Text = "درستگی";
-            // 
-            // mnuIndrajMisal
-            // 
-            this.mnuIndrajMisal.Name = "mnuIndrajMisal";
-            this.mnuIndrajMisal.Size = new System.Drawing.Size(239, 42);
-            this.mnuIndrajMisal.Text = "اندراج مثل ";
-            this.mnuIndrajMisal.Visible = false;
-            this.mnuIndrajMisal.Click += new System.EventHandler(this.mnuIndrajMisal_Click);
-            // 
-            // mnuFardeBadar
-            // 
-            this.mnuFardeBadar.Name = "mnuFardeBadar";
-            this.mnuFardeBadar.Size = new System.Drawing.Size(239, 42);
-            this.mnuFardeBadar.Text = "فرد بدر";
-            this.mnuFardeBadar.Click += new System.EventHandler(this.mnuFardeBadar_Click);
-            // 
-            // mnuMisalManualFb
-            // 
-            this.mnuMisalManualFb.Name = "mnuMisalManualFb";
-            this.mnuMisalManualFb.Size = new System.Drawing.Size(239, 42);
-            this.mnuMisalManualFb.Text = "اندراج مثل / دستی فرد بدر";
-            this.mnuMisalManualFb.Click += new System.EventHandler(this.mnuMisalManualFb_Click);
+            this.mnuSubStateLandReport.Name = "mnuSubStateLandReport";
+            this.mnuSubStateLandReport.Size = new System.Drawing.Size(343, 42);
+            this.mnuSubStateLandReport.Text = " - سٹیٹ لینڈ رپورٹ";
+            this.mnuSubStateLandReport.Click += new System.EventHandler(this.mnuSubStateLandReport_Click);
             // 
             // mnuOperatorReports
             // 
@@ -1229,13 +1236,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
-            // 
-            // mnuSubStateLandReport
-            // 
-            this.mnuSubStateLandReport.Name = "mnuSubStateLandReport";
-            this.mnuSubStateLandReport.Size = new System.Drawing.Size(343, 42);
-            this.mnuSubStateLandReport.Text = " - سٹیٹ لینڈ رپورٹ";
-            this.mnuSubStateLandReport.Click += new System.EventHandler(this.mnuSubStateLandReport_Click);
             // 
             // frmMain
             // 

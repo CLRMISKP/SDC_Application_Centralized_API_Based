@@ -2365,5 +2365,27 @@ namespace SDC_Application.AL
                 }
             }
         }
+
+        private void btnViewAllMushtry_Click(object sender, EventArgs e)
+        {
+            if (txtPersonIdMushteri.Text.Length > 5)
+            {
+                frmIntiqalAllByPersonId frmIAP = new frmIntiqalAllByPersonId();
+                frmIAP.PersonId = txtPersonIdMushteri.Text;
+                frmIAP.PersonName = txtMalikNameMushtri.Text;
+                frmIAP.ShowDialog();
+            }
+        }
+
+        private void btnSearchAllMutations_Click(object sender, EventArgs e)
+        {
+            if (txtPersonId.Text.Length > 5)
+            {
+                frmIntiqalAllByPersonId frmIAP = new frmIntiqalAllByPersonId();
+                frmIAP.PersonId = txtPersonId.Text;
+                frmIAP.PersonName = txtPersonName.Text;
+                frmIAP.ShowDialog();
+            }
+        }
     }
 }

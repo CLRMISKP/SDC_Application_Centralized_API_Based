@@ -493,6 +493,26 @@ namespace SDC_Application.AL
 
         }
 
+        private void btnGoshwaraMalkiat_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewPersons.DataSource != null)
+            {
+                if (dataGridViewPersons.SelectedRows.Count > 0 && cmbMouza.SelectedValue.ToString().Length>3)
+                {
+                    //frmIntiqalAllByPersonId frmIAP = new frmIntiqalAllByPersonId();
+                    //frmIAP.PersonId = dataGridViewPersons.SelectedRows[0].Cells["PersonId"].Value.ToString(); //PersonName
+                    //frmIAP.PersonName = dataGridViewPersons.SelectedRows[0].Cells["PersonFullName"].Value.ToString();
+                    //frmIAP.ShowDialog();
+                    frmSDCReportingMain frmRpt = new frmSDCReportingMain();
+                    frmRpt.MozaId = cmbMouza.SelectedValue.ToString();
+                    frmRpt.PersonName = dataGridViewPersons.SelectedRows[0].Cells["PersonFullName"].Value.ToString();
+                    frmRpt.FardPersonId = dataGridViewPersons.SelectedRows[0].Cells["PersonId"].Value.ToString();
+                    UsersManagments.check = 50;
+                    frmRpt.ShowDialog();
+                }
+            }
+        }
+
 
         //}
     }
