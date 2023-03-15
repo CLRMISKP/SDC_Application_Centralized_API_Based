@@ -329,6 +329,7 @@
                 this.dgKhassrajat = new System.Windows.Forms.DataGridView();
                 this.ColSelKhassra = new System.Windows.Forms.DataGridViewCheckBoxColumn();
                 this.groupBox28 = new System.Windows.Forms.GroupBox();
+                this.txtKhatooniId = new System.Windows.Forms.TextBox();
                 this.txtKhassraRecId = new System.Windows.Forms.TextBox();
                 this.txtKhassraId = new System.Windows.Forms.TextBox();
                 this.btnNewKhassra = new System.Windows.Forms.Button();
@@ -355,7 +356,7 @@
                 this.label1 = new System.Windows.Forms.Label();
                 this.btnSearchToken = new System.Windows.Forms.Button();
                 this.tt = new System.Windows.Forms.ToolTip(this.components);
-                this.txtKhatooniId = new System.Windows.Forms.TextBox();
+                this.btnEnableFard = new System.Windows.Forms.Button();
                 this.tabControl1.SuspendLayout();
                 this.tbMalkiat.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -2153,6 +2154,7 @@
                 // 
                 // groupBox17
                 // 
+                this.groupBox17.Controls.Add(this.btnEnableFard);
                 this.groupBox17.Controls.Add(this.btnUnConfirm);
                 this.groupBox17.Location = new System.Drawing.Point(195, 18);
                 this.groupBox17.Name = "groupBox17";
@@ -4209,6 +4211,21 @@
                 this.groupBox28.TabIndex = 7;
                 this.groupBox28.TabStop = false;
                 // 
+                // txtKhatooniId
+                // 
+                this.txtKhatooniId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtKhatooniId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtKhatooniId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtKhatooniId.Enabled = false;
+                this.txtKhatooniId.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtKhatooniId.Location = new System.Drawing.Point(7, 24);
+                this.txtKhatooniId.Margin = new System.Windows.Forms.Padding(4);
+                this.txtKhatooniId.Name = "txtKhatooniId";
+                this.txtKhatooniId.Size = new System.Drawing.Size(44, 27);
+                this.txtKhatooniId.TabIndex = 509;
+                this.txtKhatooniId.Text = "-1";
+                this.txtKhatooniId.Visible = false;
+                // 
                 // txtKhassraRecId
                 // 
                 this.txtKhassraRecId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -4554,20 +4571,18 @@
                 // 
                 this.tt.IsBalloon = true;
                 // 
-                // txtKhatooniId
+                // btnEnableFard
                 // 
-                this.txtKhatooniId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.txtKhatooniId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-                this.txtKhatooniId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.txtKhatooniId.Enabled = false;
-                this.txtKhatooniId.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.txtKhatooniId.Location = new System.Drawing.Point(7, 24);
-                this.txtKhatooniId.Margin = new System.Windows.Forms.Padding(4);
-                this.txtKhatooniId.Name = "txtKhatooniId";
-                this.txtKhatooniId.Size = new System.Drawing.Size(44, 27);
-                this.txtKhatooniId.TabIndex = 509;
-                this.txtKhatooniId.Text = "-1";
-                this.txtKhatooniId.Visible = false;
+                this.btnEnableFard.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.btnEnableFard.Image = global::SDC_Application.Resource1.back_icon;
+                this.btnEnableFard.Location = new System.Drawing.Point(79, 91);
+                this.btnEnableFard.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+                this.btnEnableFard.Name = "btnEnableFard";
+                this.btnEnableFard.Size = new System.Drawing.Size(53, 48);
+                this.btnEnableFard.TabIndex = 207;
+                this.tt.SetToolTip(this.btnEnableFard, "فرد فعال کرنے کے لئے کلک کریں");
+                this.btnEnableFard.UseVisualStyleBackColor = true;
+                this.btnEnableFard.Click += new System.EventHandler(this.btnEnableFard_Click);
                 // 
                 // frmFard
                 // 
@@ -5008,5 +5023,6 @@
         private System.Windows.Forms.TextBox txtKhatooniNo;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TextBox txtKhatooniId;
+        private System.Windows.Forms.Button btnEnableFard;
     }
     }

@@ -179,12 +179,19 @@ namespace SDC_Application.AL
                 getIntiqalat("M");
                
             }
-            else
+            else if(rbRegistry.Checked)
             {
 
                 getIntiqalat("R");
                
                
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+
+                getIntiqalat("C");
+
+
             }
         }
 
@@ -198,10 +205,17 @@ namespace SDC_Application.AL
 
                 getIntiqalat("M");
             }
-            else
+            else if (rbRegistry.Checked)
             {
 
                 getIntiqalat("R");
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+
+                getIntiqalat("C");
+
+
             }
         }
 
@@ -418,6 +432,31 @@ namespace SDC_Application.AL
             {
                 MessageBox.Show("Finger Print Matched to the Selected Gardawar Finger Print, Click Ok to Proceed to Intiqal verification Process.", "Finger Print is Valid...", MessageBoxButtons.OK); //MakeReport("The fingerprint was VERIFIED.\n" + dt.Rows[x][0].ToString());
                 btnSave.Enabled = true;
+            }
+        }
+
+        private void rbCourtDecrees_CheckedChanged(object sender, EventArgs e)
+        {
+            GridViewIntiqalat.DataSource = null;
+            chkAll.Checked = false;
+            if (rbIntiqal.Checked)
+            {
+                getIntiqalat("M");
+
+            }
+            else if (rbRegistry.Checked)
+            {
+
+                getIntiqalat("R");
+
+
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+
+                getIntiqalat("C");
+
+
             }
         }
 

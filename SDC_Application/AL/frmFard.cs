@@ -174,7 +174,12 @@ namespace SDC_Application.AL
                         }
                     }
                     //================ end  =========================================================
-                
+                    if (isConfirm && UsersManagments._IsAdmin)
+                    {
+                        btnEnableFard.Visible = true;
+                    }
+                    else
+                        btnEnableFard.Visible = false;
             this.tabControl1.SelectedIndex = 0;
 
             }
@@ -3532,6 +3537,18 @@ namespace SDC_Application.AL
             txtKhassraMarla.Clear();
             txtKhassraSarsai.Clear();
             txtKhassraFeet.Clear();
+        }
+
+        private void btnEnableFard_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ مطلوبہ فرد فعال کرنا چاہتے ہے؟", "فرد کی فعالی برائے تبدیلی", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                if (this.SelectedTokenId != null && this.SelectedTokenId != "0" && SelectedTokenId != "")
+                {
+                    mnk.SaveFarddStatus(this.SelectedTokenId, "unconfirmation", "0", UsersManagments.UserId.ToString(), UsersManagments.UserName, txtOperatorReport.Text.Trim());
+                    this.GetFardConfDetails(this.SelectedTokenId);
+                }
+            }
         }
 
 

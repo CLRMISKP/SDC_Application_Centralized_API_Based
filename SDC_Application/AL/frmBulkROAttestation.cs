@@ -152,7 +152,7 @@ namespace SDC_Application.AL
                 lbDawraDt.Visible = true;
                
             }
-            else
+            else if(rbRegistry.Checked)
             {
                 lbDawraDt.Visible = false;
                 cmbDawraDt.Visible = false;
@@ -179,6 +179,37 @@ namespace SDC_Application.AL
                
                 GridViewIntiqalat.Columns[0].Width = 80;
                 GridViewIntiqalat.Columns[1].Width = 80;
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetIntiqalatForAttestation("3");
+
+
+                GridViewIntiqalat.DataSource = dtIntiqal;
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+
+                    GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
+
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
+
             }
         }
 
@@ -221,7 +252,7 @@ namespace SDC_Application.AL
                 cmbDawraDt.SelectedIndex = 0;
 
             }
-            else
+            else if (rbRegistry.Checked)
             {
                 lbDawraDt.Visible = false;
                 cmbDawraDt.Visible = false;
@@ -248,6 +279,37 @@ namespace SDC_Application.AL
 
                 GridViewIntiqalat.Columns[0].Width = 80;
                 GridViewIntiqalat.Columns[1].Width = 80;
+
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetIntiqalatForAttestation("3");
+
+
+                GridViewIntiqalat.DataSource = dtIntiqal;
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+
+                    GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
+
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
 
             }
         }
@@ -454,6 +516,78 @@ namespace SDC_Application.AL
             {
                 MessageBox.Show("Finger Print Matched to the Selected RO Finger Print, Click Ok to Proceed to Intiqal Attestation Process.", "Finger Print is Valid...", MessageBoxButtons.OK); //MakeReport("The fingerprint was VERIFIED.\n" + dt.Rows[x][0].ToString());
                 btnSave.Enabled = true;
+            }
+        }
+
+        private void rbCourtDecrees_CheckedChanged(object sender, EventArgs e)
+        {
+            GridViewIntiqalat.DataSource = null;
+            if (rbIntiqal.Checked)
+            {
+                cmbDawraDt.Visible = true;
+                lbDawraDt.Visible = true;
+                cmbDawraDt.SelectedIndex = 0;
+
+            }
+            else if (rbRegistry.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetIntiqalatForAttestation("-1");
+
+
+                GridViewIntiqalat.DataSource = dtIntiqal;
+
+                GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+
+                GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+
+                GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
+
+                GridViewIntiqalat.Columns[0].Width = 80;
+                GridViewIntiqalat.Columns[1].Width = 80;
+
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetIntiqalatForAttestation("3");
+
+
+                GridViewIntiqalat.DataSource = dtIntiqal;
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+
+                    GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
+
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
+
             }
         }
 
