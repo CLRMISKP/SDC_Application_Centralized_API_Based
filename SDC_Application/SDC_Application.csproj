@@ -168,6 +168,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\FardForPersonalRecord_Cr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\FardForPersonalRecord_Cr.designer.cs">
+      <DependentUpon>FardForPersonalRecord_Cr.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalAllByPersonId.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1224,6 +1230,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\FardForPersonalRecord_Cr.resx">
+      <DependentUpon>FardForPersonalRecord_Cr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalAllByPersonId.resx">
       <DependentUpon>frmIntiqalAllByPersonId.cs</DependentUpon>
     </EmbeddedResource>
