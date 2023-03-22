@@ -105,6 +105,14 @@ namespace SDC_Application.AL
                 dgInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
                 dgInteqalKhattas.Columns["AmaldaramadStatus"].Visible = false;
                 dgInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
+                //dgInteqalKhattas.Columns["Khata_Area"].Visible = false;
+                //dgInteqalKhattas.Columns["Khata_TotalParts"].Visible = false;
+                dgInteqalKhattas.Columns["IsJuzviKhatta"].Visible = false;
+                dgInteqalKhattas.Columns["TotalParts"].Visible = false;
+                dgInteqalKhattas.Columns["Kanal"].Visible = false;
+                dgInteqalKhattas.Columns["Marla"].Visible = false;
+                dgInteqalKhattas.Columns["Sarsai"].Visible = false;
+                dgInteqalKhattas.Columns["Feet"].Visible = false;
             }
             catch (Exception ex)
             {

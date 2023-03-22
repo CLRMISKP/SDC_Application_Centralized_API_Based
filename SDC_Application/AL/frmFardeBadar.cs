@@ -2858,6 +2858,7 @@ namespace SDC_Application.AL
             malkan.FormClosed -= new FormClosedEventHandler(malkan_FormClosed);
             malkan.FormClosed += new FormClosedEventHandler(malkan_FormClosed);
             malkan.KhataId = txtMinKhataId.Text;
+            malkan.ForKhataKhatooni = 1;
             malkan.MozaId = Convert.ToInt32(cmbMouza.SelectedValue);
             malkan.ShowDialog();
         }
@@ -2942,9 +2943,9 @@ namespace SDC_Application.AL
                 {
                     string khewatgroupid = "0";
                     string personid = txtMinMalikPersonId.Text;
-                    string fardsarsai = txtMinKhataSarsai.Text.Trim() == "" ? "0" : txtMinKhataSarsai.Text.Trim();// row.Cells["FardAreaPart"].Value.ToString() != "" ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
+                    string fardsarsai = txtMinMalikSarsai.Text.Trim() == "" ? "0" : txtMinMalikSarsai.Text.Trim();// row.Cells["FardAreaPart"].Value.ToString() != "" ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
                     //MessageBox.Show(float.Parse("3.25"));
-                    float fardfeet = txtMinKhataSFT.Text.Trim() == "" ? float.Parse(fardsarsai) * float.Parse("30.25") : float.Parse(txtMinKhataSFT.Text);// fardsarsai > 0 ? fardsarsai * float.Parse("30.25") : float.Parse("0.0");
+                    float fardfeet = txtMinMalikSFT.Text.Trim() == "" ? float.Parse(fardsarsai) * float.Parse("30.25") : float.Parse(txtMinMalikSFT.Text);// fardsarsai > 0 ? fardsarsai * float.Parse("30.25") : float.Parse("0.0");
                     string s = MinKhataMethods.WEB_SP_INSERT_KhewatGroupFareeqein(txtKhewatGroupFareeqId.Text, khewatgroupid, personid, txtMinMalikHissa.Text, txtMinMalikkanal.Text, txtMinMalikMarla.Text, fardsarsai, fardfeet.ToString(), cboKhewatType.SelectedValue.ToString(), txtMinKhataId.Text, UsersManagments.UserId.ToString(), "0", "0", "0", "0", " ", "0").ToString();
                     if (s.Length>1)
                     {
@@ -3452,6 +3453,76 @@ namespace SDC_Application.AL
             this.txtkashtPersonId.Text = searchp.PersonId.ToString();
             this.txtKashtMalikName.Text = searchp.PersonName;
             this.txtFbMushteriFareeqId.Text = "-1";
+        }
+
+        private void btnishtarakhisabamutabiq_Click(object sender, EventArgs e)
+        {
+            if (txtMinMalikHissa.Text.Trim().Length == 0 || txtMinMalikHissa.Text.Trim() == "0")
+            {
+               float Hissa= cmnFns.CalculatedHisaFromArea(float.Parse(txtMinKhataKulHisa.Text.Trim()), 0,int.Parse( txtMinKhataKanal.Text.Trim()), int.Parse(txtMinKhataMarla.Text.Trim()),float.Parse( txtMinKhataSarsai.Text.Trim()),
+                    float.Parse( txtMinKhataSFT.Text.Trim()), txtMinMalikkanal.Text.Trim().Length > 0 ? int.Parse(txtMinMalikkanal.Text.Trim()) : 0, txtMinMalikMarla.Text.Trim().Length > 0 ? int.Parse(txtMinMalikMarla.Text.Trim()) : 0,
+                    txtMinMalikSarsai.Text.Trim().Length>0 ? float.Parse(txtMinMalikSarsai.Text.Trim()) : 0, txtMinMalikSFT.Text.Trim().Length>0 ? float.Parse(txtMinMalikSFT.Text.Trim()) : 0);
+               txtMinMalikHissa.Text = Hissa.ToString();
+            }
+            if (txtMinMalikHissa.Text.Trim().Length > 0 && txtMinMalikHissa.Text.Trim() != "0")
+            {
+                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtMinKhataKulHisa.Text.Trim()), float.Parse( txtMinMalikHissa.Text.Trim()), int.Parse(txtMinKhataKanal.Text.Trim()), int.Parse(txtMinKhataMarla.Text.Trim()), float.Parse(txtMinKhataSarsai.Text.Trim()),
+                     float.Parse(txtMinKhataSFT.Text.Trim()));
+                txtMinMalikkanal.Text = Area[0] != null ? Area[0].ToString() : "0";
+                txtMinMalikMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
+                txtMinMalikSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
+                txtMinMalikSFT.Text = Area[3] != null ? Area[3].ToString() : "0";
+            }
+        }
+
+        private void txtMinMalikHissa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((e.KeyChar != 8 && e.KeyChar != 13) && (e.KeyChar < 45 || e.KeyChar > 58))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtMinMalikkanal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((e.KeyChar != 8 && e.KeyChar != 13) && (e.KeyChar < 45 || e.KeyChar > 58))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtMinMalikHissa_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtMinMalikHissa.Text.Trim().Length > 0)
+                {
+                    string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtMinKhataKulHisa.Text.Trim()), float.Parse(txtMinMalikHissa.Text.Trim()), int.Parse(txtMinKhataKanal.Text.Trim()), int.Parse(txtMinKhataMarla.Text.Trim()), float.Parse(txtMinKhataSarsai.Text.Trim()),
+                         float.Parse(txtMinKhataSFT.Text.Trim()));
+                    txtMinMalikkanal.Text = Area[0] != null ? Area[0].ToString() : "0";
+                    txtMinMalikMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
+                    txtMinMalikSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
+                    txtMinMalikSFT.Text = Area[3] != null ? Area[3].ToString() : "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
