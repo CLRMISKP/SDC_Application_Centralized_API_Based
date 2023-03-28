@@ -973,11 +973,11 @@ namespace SDC_Application.AL
 
         private void grdVoucherDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FardForPersonalRecord_Cr mFardForPersonalRecord_Cr = new FardForPersonalRecord_Cr();
-            mFardForPersonalRecord_Cr.tehsilid = UsersManagments._Tehsilid.ToString();
-            mFardForPersonalRecord_Cr.TokenId = this.txtTokenID.Text;
-            mFardForPersonalRecord_Cr.MozaId = this.txtMozaID.Text;
-            mFardForPersonalRecord_Cr.ShowDialog();
+            //FardForPersonalRecord_Cr mFardForPersonalRecord_Cr = new FardForPersonalRecord_Cr();
+            //mFardForPersonalRecord_Cr.tehsilid = UsersManagments._Tehsilid.ToString();
+            //mFardForPersonalRecord_Cr.TokenId = this.txtTokenID.Text;
+            //mFardForPersonalRecord_Cr.MozaId = this.txtMozaID.Text;
+            //mFardForPersonalRecord_Cr.ShowDialog();
         }
 
     }

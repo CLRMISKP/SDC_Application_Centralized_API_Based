@@ -58,7 +58,48 @@ namespace SDC_Application.Classess
           return retKanal.ToString()+"-"+retMarla.ToString()+"-"+Math.Round(sft).ToString();
         }
 
+        public string FeetToKMF(decimal Feet)
+        {
+            string[] raqba = new string[3];
+            int retKanal = 0;
+            int retMarla = 0;
+            decimal sft = 0;
+            decimal retSarsai = 0;
 
+            decimal PersonRaqba = Feet;
+            if (PersonRaqba >= (decimal)272.25)
+            {
+                sft = PersonRaqba % (decimal)272.25;
+                retMarla = Convert.ToInt32((PersonRaqba - sft) / (decimal)272.25);
+
+                if (retMarla >= 20)
+                {
+                    retKanal = (retMarla - (retMarla % 20)) / 20;
+                    retMarla = retMarla % 20;
+                }
+                else
+                {
+                    retKanal = 0;
+                }
+
+            }
+            else
+            {
+                retMarla = 0;
+                retKanal = 0;
+
+            }
+            if (sft > 0)
+            {
+                if (sft >= 272)
+                {
+                    retMarla = retMarla + 1;
+                    sft = sft - 272;
+                }
+                retSarsai = Math.Round(sft / (decimal)30.25, 4);
+            }
+            return retKanal.ToString() + "-" + retMarla.ToString() + "-" + Math.Round(sft).ToString();
+        }
         public float CalculatedHisaFromArea(float KulHissay, float FarokhtHissay, int Kulkanal, int KulMarla, float KulSarsai, float KulFeet, int FarokhKanal, int FarokhMarla, float FarokhSarsasi, float FarokhFeet)
         {
             //float raqbainSft = (Kulkanal * 20 * (float)272.25) + (KulMarla * (float)272.25) + KulFeet; //+ ((ksarsai / 9) * 272)

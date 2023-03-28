@@ -250,7 +250,7 @@ namespace SDC_Application.AL
                  string retVal = intiqal.IntiqalEnableDisable(this.IntiqalId, "Disable", "amal", txtCommentsAmal.Text);
                  if (retVal == "1")
                  {
-                     MessageBox.Show("مطلوبہ انتقال فعال ہو چکا ہے۔");
+                     MessageBox.Show("مطلوبہ انتقال غیر فعال ہو چکا ہے۔");
                      btnIntiqalAmal.Enabled = false;
                  }
              }

@@ -639,7 +639,7 @@ namespace SDC_Application.AL
                             savedKhataId = KhataId;
                             DataTable dtKK = mnk.GetFardKhatooniesByTokenIdByKhataId(this.SelectedTokenId != null ? this.SelectedTokenId : "0", KhataId);
                             this.fillGridviewFardKhatoonies(dtKK);
-                           
+                            fillDgKhassrajat();
                               
                         }
                         else
@@ -776,18 +776,50 @@ namespace SDC_Application.AL
                         //txtKFfeet.Text= row["Fard_Feet"].ToString(); 
                         if (dtFareeqain.Rows.Count > 0)
                         {
-                            txtKhewatFareeqRaqba.Text = dtFareeqain.Rows[0]["FardArea"].ToString();
-                            txtKhewatFareeqHissa.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
-                            txtHissaMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
-                            txtKanalMuntaqal.Text = dtFareeqain.Rows[0]["Rem_Kanal"].ToString();
-                            txtMarlaMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Marla"].ToString();
-                            txtSarsaiMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Sarsai"].ToString();
-                            txtSFTmuntaqla.Text = dtFareeqain.Rows[0]["Rem_Feet"].ToString();
-                            txtKFkanal.Text = dtFareeqain.Rows[0]["Rem_Kanal"].ToString();
-                            txtKFmarla.Text = dtFareeqain.Rows[0]["Rem_Marla"].ToString();
-                            txtKFsarsai.Text = dtFareeqain.Rows[0]["Rem_Sarsai"].ToString();
-                            txtKFfeet.Text = dtFareeqain.Rows[0]["Rem_Feet"].ToString();
+                            if (dgKhassrajat.Rows.Count > 0)
+                            {
+                                int Kanal = 0, Marla = 0; float Sarsai = 0, Feet = 0, FardFeet = 0, KhataHissa = 0, FardHissa = 0;
+                                KhataHissa = float.Parse(GridViewFardKhatajat.SelectedRows[0].Cells["TotalParts"].Value.ToString());
+                                FardHissa = float.Parse(dtFareeqain.Rows[0]["Rem_Hissa"].ToString());
+                                foreach (DataGridViewRow r in dgKhassrajat.Rows)
+                                {
+                                    Kanal = Kanal + Convert.ToInt32(r.Cells["Kanal"].Value);
+                                    Marla = Marla + Convert.ToInt32(r.Cells["Marla"].Value);
+                                    Sarsai = Sarsai + Convert.ToInt32(r.Cells["Sarsai"].Value);
+                                }
+                                Marla = Marla + (Kanal * 20);
+                                Sarsai = Sarsai + (Marla * 9);
+                                Feet = Sarsai * (float)30.25;
+                                FardFeet = (Feet / KhataHissa) * FardHissa;
+                                txtKhewatFareeqRaqba.Text = common.FeetToKMF((decimal)FardFeet);
+                                string[] FardArea = common.FeetToKMF((decimal)FardFeet).Split('-');
+                                txtKhewatFareeqHissa.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
+                                txtHissaMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
+                                txtKanalMuntaqal.Text = FardArea[0] != null ? FardArea[0] : "0";
+                                txtMarlaMuntaqla.Text = FardArea[1] != null ? FardArea[1] : "0";
+                                txtSarsaiMuntaqla.Text = FardArea[2] != null ? Math.Round((float.Parse(FardArea[2]) / 30.25), 5).ToString() : "0";
+                                txtSFTmuntaqla.Text = FardArea[2] != null ? FardArea[2] : "0";
+                                txtKFkanal.Text = FardArea[0] != null ? FardArea[0] : "0";
+                                txtKFmarla.Text = FardArea[1] != null ? FardArea[1] : "0";
+                                txtKFsarsai.Text = FardArea[2] != null ? Math.Round((float.Parse(FardArea[2]) / 30.25), 5).ToString() : "0";
+                                txtKFfeet.Text = FardArea[2] != null ? FardArea[2] : "0";
 
+                            }
+                            else
+                            {
+                                txtKhewatFareeqRaqba.Text = dtFareeqain.Rows[0]["FardArea"].ToString();
+                                txtKhewatFareeqHissa.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
+                                txtHissaMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
+                                txtKanalMuntaqal.Text = dtFareeqain.Rows[0]["Rem_Kanal"].ToString();
+                                txtMarlaMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Marla"].ToString();
+                                txtSarsaiMuntaqla.Text = dtFareeqain.Rows[0]["Rem_Sarsai"].ToString();
+                                txtSFTmuntaqla.Text = dtFareeqain.Rows[0]["Rem_Feet"].ToString();
+                                txtKFkanal.Text = dtFareeqain.Rows[0]["Rem_Kanal"].ToString();
+                                txtKFmarla.Text = dtFareeqain.Rows[0]["Rem_Marla"].ToString();
+                                txtKFsarsai.Text = dtFareeqain.Rows[0]["Rem_Sarsai"].ToString();
+                                txtKFfeet.Text = dtFareeqain.Rows[0]["Rem_Feet"].ToString();
+
+                            }
                             DataTable dt = mnk.GetFardKhewatFareeqainFardNew(txtFardKhataRecId.Text);
                             this.FillGridviewMalkan(dt);
                             
@@ -3447,20 +3479,27 @@ namespace SDC_Application.AL
         {
             try
             {
-                string khataId=GridViewFardKhatajat.SelectedRows[0].Cells["FardKhataId"].Value.ToString();
-               string retVal= mnk.SaveFardKhassras(txtKhassraRecId.Text,khataId, txtKhatooniId.Text , SelectedTokenId, "0", cbKhassras.SelectedValue.ToString(),  txtKhassraKanal.Text, txtKhassraMarla.Text, txtKhassraSarsai.Text, txtKhassraFeet.Text,  UsersManagments.UserId.ToString(), UsersManagments.UserName);
-               if (retVal.Length > 5)
-               {
-                   //MessageBox.Show("انتخاب کردہ خسرہ ریکارڈ محفوظ ہو گیا");
-                   txtKhassraRecId.Text = "-1";
-                   txtKhassraKanal.Clear();
-                   txtKhassraMarla.Clear();
-                   txtKhassraSarsai.Clear();
-                   txtKhassraFeet.Clear();
-                   cbKhassras.SelectedValue = 0;
-                   filldgFardKhatas();
-                   btnNewKhassra_Click(sender, e);
-               }
+                if (GridViewKhewatMalikaan.Rows.Count > 0)
+                {
+                    MessageBox.Show("انتخاب خسرہ سے پہلے مالکان محفوظ نہ کریں۔ محفوظ شدہ مالکان خذف کریں اور خسرہ محفوظ کرنے کے بعد مالکان محفوظ کریں۔ ", "انتخاب خسرہ و مالکان", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string khataId = GridViewFardKhatajat.SelectedRows[0].Cells["FardKhataId"].Value.ToString();
+                    string retVal = mnk.SaveFardKhassras(txtKhassraRecId.Text, khataId, txtKhatooniId.Text, SelectedTokenId, "0", cbKhassras.SelectedValue.ToString(), txtKhassraKanal.Text, txtKhassraMarla.Text, txtKhassraSarsai.Text, txtKhassraFeet.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    if (retVal.Length > 5)
+                    {
+                        //MessageBox.Show("انتخاب کردہ خسرہ ریکارڈ محفوظ ہو گیا");
+                        txtKhassraRecId.Text = "-1";
+                        txtKhassraKanal.Clear();
+                        txtKhassraMarla.Clear();
+                        txtKhassraSarsai.Clear();
+                        txtKhassraFeet.Clear();
+                        cbKhassras.SelectedValue = 0;
+                        fillDgKhassrajat();
+                        btnNewKhassra_Click(sender, e);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -3548,6 +3587,25 @@ namespace SDC_Application.AL
                     mnk.SaveFarddStatus(this.SelectedTokenId, "unconfirmation", "0", UsersManagments.UserId.ToString(), UsersManagments.UserName, txtOperatorReport.Text.Trim());
                     this.GetFardConfDetails(this.SelectedTokenId);
                 }
+            }
+        }
+
+        private void btnDeleteKhassra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DialogResult.Yes == MessageBox.Show("آپ مطلوبہ خسرہ خذف کرنا چاہتے ہے؟", "خذف کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                if (this.SelectedTokenId.Length>5 && txtKhassraRecId.Text.Length>5)
+                {
+                   string RetVal= mnk.DeleteFardKhassra(txtKhassraRecId.Text);
+                   fillDgKhassrajat();
+                }
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

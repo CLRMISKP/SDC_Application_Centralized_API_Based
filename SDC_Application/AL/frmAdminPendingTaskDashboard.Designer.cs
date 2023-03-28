@@ -61,6 +61,9 @@
             this.btnImplementTask = new System.Windows.Forms.Button();
             this.btnShowAllPendingTasks = new System.Windows.Forms.Button();
             this.tabKhanakasht = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabKhewatFareeqain = new System.Windows.Forms.TabPage();
+            this.tabMushtriFareeqain = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtKhatooniFeet = new System.Windows.Forms.TextBox();
             this.cbokhataNo = new System.Windows.Forms.ComboBox();
@@ -84,9 +87,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMouza = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabKhewatFareeqain = new System.Windows.Forms.TabPage();
-            this.tabMushtriFareeqain = new System.Windows.Forms.TabPage();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageRHZ.SuspendLayout();
@@ -102,9 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgAllPendingTasks)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tabKhanakasht.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -363,16 +363,16 @@
             this.btnImplementMutation.Enabled = false;
             this.btnImplementMutation.Location = new System.Drawing.Point(308, 32);
             this.btnImplementMutation.Name = "btnImplementMutation";
-            this.btnImplementMutation.Size = new System.Drawing.Size(195, 46);
+            this.btnImplementMutation.Size = new System.Drawing.Size(207, 46);
             this.btnImplementMutation.TabIndex = 1;
-            this.btnImplementMutation.Text = "انتخاب کردہ انتقال پر عمل کریں";
+            this.btnImplementMutation.Text = "انتخاب کردہ انتقال عمل کیلئے فعال کریں";
             this.btnImplementMutation.UseVisualStyleBackColor = true;
             this.btnImplementMutation.Click += new System.EventHandler(this.btnImplementMutation_Click);
             // 
             // btnShowAllPendingMutations
             // 
             this.btnShowAllPendingMutations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowAllPendingMutations.Location = new System.Drawing.Point(524, 32);
+            this.btnShowAllPendingMutations.Location = new System.Drawing.Point(533, 32);
             this.btnShowAllPendingMutations.Name = "btnShowAllPendingMutations";
             this.btnShowAllPendingMutations.Size = new System.Drawing.Size(212, 46);
             this.btnShowAllPendingMutations.TabIndex = 0;
@@ -497,6 +497,39 @@
             this.tabKhanakasht.TabIndex = 3;
             this.tabKhanakasht.Text = "کھاتہ، کھتونی حیثیت";
             this.tabKhanakasht.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabKhewatFareeqain);
+            this.tabControl2.Controls.Add(this.tabMushtriFareeqain);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 239);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.RightToLeftLayout = true;
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1196, 286);
+            this.tabControl2.TabIndex = 2;
+            this.tabControl2.Visible = false;
+            // 
+            // tabKhewatFareeqain
+            // 
+            this.tabKhewatFareeqain.Location = new System.Drawing.Point(4, 40);
+            this.tabKhewatFareeqain.Name = "tabKhewatFareeqain";
+            this.tabKhewatFareeqain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKhewatFareeqain.Size = new System.Drawing.Size(1188, 242);
+            this.tabKhewatFareeqain.TabIndex = 0;
+            this.tabKhewatFareeqain.Text = "کھاتہ مالکان";
+            this.tabKhewatFareeqain.UseVisualStyleBackColor = true;
+            // 
+            // tabMushtriFareeqain
+            // 
+            this.tabMushtriFareeqain.Location = new System.Drawing.Point(4, 40);
+            this.tabMushtriFareeqain.Name = "tabMushtriFareeqain";
+            this.tabMushtriFareeqain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMushtriFareeqain.Size = new System.Drawing.Size(1188, 242);
+            this.tabMushtriFareeqain.TabIndex = 1;
+            this.tabMushtriFareeqain.Text = "کھتونی مشتریان";
+            this.tabMushtriFareeqain.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -779,39 +812,6 @@
             this.lbl1.TabIndex = 60;
             this.lbl1.Text = "موضع";
             // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabKhewatFareeqain);
-            this.tabControl2.Controls.Add(this.tabMushtriFareeqain);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(3, 239);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.RightToLeftLayout = true;
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1196, 286);
-            this.tabControl2.TabIndex = 2;
-            this.tabControl2.Visible = false;
-            // 
-            // tabKhewatFareeqain
-            // 
-            this.tabKhewatFareeqain.Location = new System.Drawing.Point(4, 40);
-            this.tabKhewatFareeqain.Name = "tabKhewatFareeqain";
-            this.tabKhewatFareeqain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhewatFareeqain.Size = new System.Drawing.Size(1188, 242);
-            this.tabKhewatFareeqain.TabIndex = 0;
-            this.tabKhewatFareeqain.Text = "کھاتہ مالکان";
-            this.tabKhewatFareeqain.UseVisualStyleBackColor = true;
-            // 
-            // tabMushtriFareeqain
-            // 
-            this.tabMushtriFareeqain.Location = new System.Drawing.Point(4, 40);
-            this.tabMushtriFareeqain.Name = "tabMushtriFareeqain";
-            this.tabMushtriFareeqain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMushtriFareeqain.Size = new System.Drawing.Size(1188, 242);
-            this.tabMushtriFareeqain.TabIndex = 1;
-            this.tabMushtriFareeqain.Text = "کھتونی مشتریان";
-            this.tabMushtriFareeqain.UseVisualStyleBackColor = true;
-            // 
             // frmAdminPendingTaskDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -843,11 +843,11 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabKhanakasht.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

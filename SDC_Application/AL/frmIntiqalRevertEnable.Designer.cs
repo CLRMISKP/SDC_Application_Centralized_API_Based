@@ -154,6 +154,7 @@
             this.btnIntiqalDisableAttested.TabIndex = 35;
             this.ttIntiqalRevert.SetToolTip(this.btnIntiqalDisableAttested, "انتقال کو غیر فعال کریں");
             this.btnIntiqalDisableAttested.UseVisualStyleBackColor = true;
+            this.btnIntiqalDisableAttested.Click += new System.EventHandler(this.btnIntiqalDisableAttested_Click);
             // 
             // btnIntiqalEnableAttested
             // 
@@ -205,6 +206,7 @@
             this.btnIntiqalAmal.TabIndex = 35;
             this.ttIntiqalRevert.SetToolTip(this.btnIntiqalAmal, "انتقال کو غیر فعال کریں");
             this.btnIntiqalAmal.UseVisualStyleBackColor = true;
+            this.btnIntiqalAmal.Click += new System.EventHandler(this.btnIntiqalAmal_Click);
             // 
             // txtCommentsAmal
             // 

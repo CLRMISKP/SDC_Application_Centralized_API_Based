@@ -548,6 +548,15 @@ namespace SDC_Application.AL
                  this.SetCredentials("PersonMalkiatMain", rp, false);
 
              }
+             if (UsersManagments.check == 51)
+             {
+                 ReportParameter[] rp = new ReportParameter[3];
+                 rp[0] = new ReportParameter("MozaId", this.MozaId);
+                 rp[1] = new ReportParameter("fbId", this.FbID);
+                 rp[2] = new ReportParameter("tehsilid", this.Tehsilid);
+                 this.SetCredentials("eFard_e_Bader_Min_Khatajat", rp, false);
+
+             }
         }
 
     }

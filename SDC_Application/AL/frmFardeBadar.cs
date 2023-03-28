@@ -1935,12 +1935,25 @@ namespace SDC_Application.AL
     
         private void btnPrintMisalBadar_Click(object sender, EventArgs e)
         {
-            int MozaId = Convert.ToInt32(cmbMouza.SelectedValue);
-            frmSDCReportingMain rptMain = new frmSDCReportingMain();
-            rptMain.FbID = txtFbId.Text;
-            rptMain.MozaId = MozaId.ToString();
-            UsersManagments.check = 12;
-            rptMain.ShowDialog();
+            if (chkMinKhataFb.Checked)
+            {
+                int MozaId = Convert.ToInt32(cmbMouza.SelectedValue);
+                frmSDCReportingMain rptMain = new frmSDCReportingMain();
+                rptMain.FbID = txtFbId.Text;
+                rptMain.MozaId = MozaId.ToString();
+                rptMain.Tehsilid = UsersManagments._Tehsilid.ToString();
+                UsersManagments.check = 51;
+                rptMain.ShowDialog();
+            }
+            else
+            {
+                int MozaId = Convert.ToInt32(cmbMouza.SelectedValue);
+                frmSDCReportingMain rptMain = new frmSDCReportingMain();
+                rptMain.FbID = txtFbId.Text;
+                rptMain.MozaId = MozaId.ToString();
+                UsersManagments.check = 12;
+                rptMain.ShowDialog();
+            }
         }
 
         #endregion

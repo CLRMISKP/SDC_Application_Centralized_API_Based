@@ -279,41 +279,47 @@ namespace SDC_Application.AL
 
         private void btnImplementMutation_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال پر عمل درامد کرنا چاہتے ہے؟", "عمل درامد کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال  عمل درامد کیلئے فعال کرنا چاہتے ہے؟", "عمل درامد فعال کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
                 try
                 {
                     this.btnImplementMutation.Enabled = false;
-                    //MessageBox.Show("Yes");
-                    //check whether seller and buyer raqba and hissa are same
-
-                    string BS_AreaHissa = Iq.GetIntiqalSellerBuyerAreaCheck(txtIntiqalId.Text);
-                    if (BS_AreaHissa != "-1")
+                    string retVal= Iq.IntiqalEnableDisable(txtIntiqalId.Text, "enableAmal", "", "");
+                    if (retVal == "1")
                     {
-                        MessageBox.Show(BS_AreaHissa, "ناقابل عمل درامد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("انتقال عمل درامد فعال ہو گیا");
+                        btnImplementMutation.Enabled = false;
+                        btnShowAllPendingMutations_Click(sender, e);
                     }
+                        //check whether seller and buyer raqba and hissa are same
 
-                    else
-                    {
-                        if (Iq.CheckMalikRemainingHissaCheck(txtIntiqalId.Text) == "1")
-                        {
-                            DataTable dtIntiqalaAmal = Iq.IntiqalAmalDaramad(txtMozaId.Text, txtIntiqalId.Text,UsersManagments.UserId.ToString(), UsersManagments.UserName);
-                            if (dtIntiqalaAmal.Rows.Count > 0)
-                            {
-                                if (dtIntiqalaAmal.Rows[0][0].ToString().Length > 5)
-                                {
-                                    MessageBox.Show("عمل درامد ہو گیا");
-                                    btnImplementMutation.Enabled = false;
-                                    btnShowAllPendingMutations_Click(sender, e);
-                                    //this.SetAmalDaramadStatus(this.AmalDaramad);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("بایع / دہندہ کے محفوظ شدہ حصہ و رقبہ اور اصل ملکییتی حصہ و رقبہ برابر نہیں ہے۔", "ناقابل عمل درامد", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                    //string BS_AreaHissa = Iq.GetIntiqalSellerBuyerAreaCheck(txtIntiqalId.Text);
+                    //if (BS_AreaHissa != "-1")
+                    //{
+                    //    MessageBox.Show(BS_AreaHissa, "ناقابل عمل درامد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
+
+                    //else
+                    //{
+                    //    if (Iq.CheckMalikRemainingHissaCheck(txtIntiqalId.Text) == "1")
+                    //    {
+                    //        DataTable dtIntiqalaAmal = Iq.IntiqalAmalDaramad(txtMozaId.Text, txtIntiqalId.Text,UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    //        if (dtIntiqalaAmal.Rows.Count > 0)
+                    //        {
+                    //            if (dtIntiqalaAmal.Rows[0][0].ToString().Length > 5)
+                    //            {
+                    //                MessageBox.Show("عمل درامد ہو گیا");
+                    //                btnImplementMutation.Enabled = false;
+                    //                btnShowAllPendingMutations_Click(sender, e);
+                    //                //this.SetAmalDaramadStatus(this.AmalDaramad);
+                    //            }
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        MessageBox.Show("بایع / دہندہ کے محفوظ شدہ حصہ و رقبہ اور اصل ملکییتی حصہ و رقبہ برابر نہیں ہے۔", "ناقابل عمل درامد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    }
+                    //}
                 }
                 catch (Exception ex)
                 {

@@ -172,6 +172,13 @@ namespace SDC_Application.BL
              return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
             //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
         }
+        public string DeleteFardKhassra(string KhassraRecId)
+        {
+
+            string spWithParam = "WEB_SP_DELETE_SDC_FardKhassra  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhassraRecId;
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+            //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
+        }
         #endregion
 
         #region Get Fard Person Group Details

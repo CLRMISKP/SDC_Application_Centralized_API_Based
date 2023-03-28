@@ -377,12 +377,13 @@ namespace SDC_Application.AL
                     // dtpTasdiq.Value = data.IntiqalAttestationDate;
                 isConfirmed=Convert.ToBoolean(data["isConfirm"].ToString());
                     btnConfirm.Enabled = !isConfirmed;
+                    bool enableAmal = Convert.ToBoolean(data["enableAmal"].ToString());
                    
                 //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 
 
-                    if (!AmalDaramad && isConfirmed && UsersManagments._IsAdmin)
+                    if (!AmalDaramad && isConfirmed && enableAmal)
                     {
                         btnIntiqalAmal.Enabled = true;
                         btnCancelConfirm.Enabled = true;
@@ -1521,8 +1522,7 @@ namespace SDC_Application.AL
 
         private void btnIntiqalAmal_Click(object sender, EventArgs e)
         {
-            if (UsersManagments._IsAdmin)
-            {
+         
                 if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال پر عمل درامد کرنا چاہتے ہے؟", "عمل درامد کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                 {
                     try
@@ -1565,7 +1565,6 @@ namespace SDC_Application.AL
 
 
                 }
-            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
