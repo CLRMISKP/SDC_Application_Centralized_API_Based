@@ -58,6 +58,7 @@
                 this.cboROs = new System.Windows.Forms.ComboBox();
                 this.lbl5 = new System.Windows.Forms.Label();
                 this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+                this.verificationControl2 = new DPFP.Gui.Verification.VerificationControl();
                 this.tabControl1.SuspendLayout();
                 this.tbGardawarVerification.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -291,6 +292,7 @@
                 // 
                 // groupBox2
                 // 
+                this.groupBox2.Controls.Add(this.verificationControl2);
                 this.groupBox2.Controls.Add(this.groupBox3);
                 this.groupBox2.Controls.Add(this.pictureBox1);
                 this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -410,6 +412,19 @@
                 // 
                 this.toolTip.IsBalloon = true;
                 // 
+                // verificationControl2
+                // 
+                this.verificationControl2.Active = true;
+                this.verificationControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.verificationControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+                this.verificationControl2.Location = new System.Drawing.Point(294, 34);
+                this.verificationControl2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+                this.verificationControl2.Name = "verificationControl2";
+                this.verificationControl2.ReaderSerialNumber = "00000000-0000-0000-0000-000000000000";
+                this.verificationControl2.Size = new System.Drawing.Size(56, 64);
+                this.verificationControl2.TabIndex = 24;
+                this.verificationControl2.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.verificationControl1_OnComplete);
+                // 
                 // frmBulkGardawarVerification
                 // 
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -474,5 +489,6 @@
         private System.Windows.Forms.CheckBox chkAll;
         private System.Windows.Forms.Button btnFingerHysoon;
         private System.Windows.Forms.RadioButton rbCourtDecrees;
+        private DPFP.Gui.Verification.VerificationControl verificationControl2;
     }
     }

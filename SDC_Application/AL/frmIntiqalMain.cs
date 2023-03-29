@@ -788,7 +788,7 @@ namespace SDC_Application.AL
                         this.lblIntiqalPending.Text = "";
                         this.intiqalPending = false;
                         this.lblIntiqalPending.Text = "";
-                        lblOperatorNote.Text = data["IntiqalPendingReason_Urdu"].ToString() == "" ? "آپریٹر نوٹ لکھنے کیلئے کلک کریں" : data["IntiqalPendingReason_Urdu"].ToString();
+                        lblOperatorNote.Text = data["IntiqalPendingReason_Urdu"].ToString().Length<2? "آپریٹر نوٹ لکھنے کیلئے کلک کریں" : data["IntiqalPendingReason_Urdu"].ToString();
                     }
 
                 //========== for current status ============================
@@ -967,6 +967,7 @@ namespace SDC_Application.AL
             this.ClearFormControls(groupBox6);
             this.ClearFormControls(groupBoxRapat);
             panelCurrentStatus.Visible = false;
+            cmbFardTokenNo.DataSource = null;
         }
 
         private void checkBoxRaptEntry_CheckedChanged(object sender, EventArgs e)
