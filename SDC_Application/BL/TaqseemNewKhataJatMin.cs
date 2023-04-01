@@ -74,6 +74,11 @@ namespace SDC_Application.BL
             string spWithParam = "WEB_SP_INSERT_KhassraRegisterDetail  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhassraDetailId + "," + KhassraId + "," + AreaTypeId + "," + Kanal + "," + Marla + "," + Sarsai + "," + Feet + "," + InsertUserId + "";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
+        public string SaveAutoKhatooniesInKhassraIntiqal(string IntiqalKhataRecId, string RegisterHqDKhataIdNew, string KhataNoNew, string InsertUserId, string InsertLoginName)
+        {
+            string spWithParam = "WEB_SP_Insert_Khatooni_New_Khata_Khassra_Intiqal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalKhataRecId + "," + RegisterHqDKhataIdNew + ",'" + KhataNoNew+ "'," + InsertUserId + ",'"+InsertLoginName+"'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
 
         public string WEB_SP_INSERT_KhassraRegister_Intiqal_Taqseem(string khasraid,string khatoniid,string userid,string loginname)
         {

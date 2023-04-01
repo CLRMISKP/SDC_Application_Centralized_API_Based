@@ -573,7 +573,12 @@ namespace SDC_Application.BL
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
             }
+            public string SaveAutoKhatajatForKhassraIntiqal(string IntiqalKhataRecId, string UserId, string LoginName)
+            {
+                string spWithParam = "WEB_SP_Insert_Khatajat_New_Khassra_Intiqal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + IntiqalKhataRecId + ", " + UserId + ",'" + LoginName + "' ";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
+            }
             public string SaveIntiqalOperatorNote(string IntiqalId, string OperatorNote)
             {
                 string spWithParam = "WEB_SP_UPDATE_Intiqal_Main_OperatorReport  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", N'" + OperatorNote + "'";

@@ -1041,8 +1041,27 @@ namespace SDC_Application.AL
                         }
                         else
                         {
-                            //string[] raqba = CommanFunctions.CalculatedAreaFromHisa(khissay, shissay, kkanal, kmarla, ksarsai, ksft);
-                            string[] raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
+                            string[] raqba;
+                            if (cbJuzviKhata.Checked)
+                            {
+                                int Khassra_Kanal = 0; int Khassra_Marla = 0; float Khassra_Sarsai = 0; float Khassra_Feet = 0;
+                                if (GridviewSaveSalamJuzviKhassra.DataSource != null)
+                                {
+                                    if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0)
+                                    {
+                                        foreach (DataGridViewRow row in GridviewSaveSalamJuzviKhassra.Rows)
+                                        {
+                                            Khassra_Kanal = Khassra_Kanal + int.Parse(row.Cells["Min_Kanal"].Value.ToString());
+                                            Khassra_Marla = Khassra_Marla + int.Parse(row.Cells["Min_Marla"].Value.ToString());
+                                            Khassra_Sarsai = Khassra_Sarsai + float.Parse(row.Cells["Min_Sarsai"].Value.ToString());
+                                            Khassra_Feet = Khassra_Feet + float.Parse(row.Cells["Min_Feet"].Value.ToString());
+                                        }
+                                    }
+                                }
+                                raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, Khassra_Kanal, Khassra_Marla, Khassra_Sarsai, Khassra_Feet);
+                            }
+                            else
+                                raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
                             txtFrokhtKanal.Text = raqba[0];
                             txtFrokhtMarla.Text = raqba[1];
                             txtFrokhtSarsai.Text = raqba[2];
@@ -1067,8 +1086,25 @@ namespace SDC_Application.AL
                     }
                     else
                     {
-
-                        //txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(khissay, shissay, kkanal, kmarla, ksarsai, ksft, bkanal, bmarla, bsarsai, bsft).ToString();
+                        if (cbJuzviKhata.Checked)
+                        {
+                            int Khassra_Kanal = 0; int Khassra_Marla = 0; float Khassra_Sarsai = 0; float Khassra_Feet = 0;
+                            if (GridviewSaveSalamJuzviKhassra.DataSource != null)
+                            {
+                                if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0)
+                                {
+                                    foreach (DataGridViewRow row in GridviewSaveSalamJuzviKhassra.Rows)
+                                    {
+                                        Khassra_Kanal = Khassra_Kanal + int.Parse(row.Cells["Min_Kanal"].Value.ToString());
+                                        Khassra_Marla = Khassra_Marla + int.Parse(row.Cells["Min_Marla"].Value.ToString());
+                                        Khassra_Sarsai = Khassra_Sarsai + float.Parse(row.Cells["Min_Sarsai"].Value.ToString());
+                                        Khassra_Feet = Khassra_Feet + float.Parse(row.Cells["Min_Feet"].Value.ToString());
+                                    }
+                                }
+                            }
+                            txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(float.Parse( GridViewInteqalKhattas.SelectedRows[0].Cells["TotalParts"].Value.ToString()), shissay, Khassra_Kanal, Khassra_Marla, Khassra_Sarsai, Khassra_Feet, bkanal, bmarla, bsarsai, bsft).ToString();
+                        }
+                        else
                         txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet, bkanal, bmarla, bsarsai, bsft).ToString();
 
                         khissayWOTM = txtKulHissayWOTminhay.Text.Trim() != "" ? float.Parse(txtKulHissayWOTminhay.Text.Trim()) : 0;
@@ -1738,12 +1774,23 @@ namespace SDC_Application.AL
         {
             try
             {
+                int Khassra_Kanal = 0; int Khassra_Marla = 0; float Khassra_Sarsai = 0; float Khassra_Feet = 0;
+                if (GridviewSaveSalamJuzviKhassra.DataSource != null)
+                {
+                    if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in GridviewSaveSalamJuzviKhassra.Rows)
+                        {
+                            Khassra_Kanal = Khassra_Kanal + int.Parse(row.Cells["Min_Kanal"].Value.ToString());
+                            Khassra_Marla = Khassra_Marla + int.Parse(row.Cells["Min_Marla"].Value.ToString());
+                            Khassra_Sarsai = Khassra_Sarsai + float.Parse(row.Cells["Min_Sarsai"].Value.ToString());
+                            Khassra_Feet = Khassra_Feet + float.Parse(row.Cells["Min_Feet"].Value.ToString());
+                        }
+                    }
+                }
                 txtSellerID.Text = "-1";
                 if (cboPersonSeller.SelectedIndex == 0)
                 { ClearAll(); }
-
-
-
                 else
                 {
                     if (chkMushtharaqa.Checked == true) { }
@@ -1816,10 +1863,22 @@ namespace SDC_Application.AL
                                             else
                                             {
                                                 txtFrokhtHisay.Text = dtFareeqain.Rows[0]["Rem_Hissa"].ToString();
-                                                txtFrokhtKanal.Text = dtFareeqain.Rows[0]["Rem_Kanal"].ToString();
-                                                txtFrokhtMarla.Text = dtFareeqain.Rows[0]["Rem_Marla"].ToString();
-                                                txtFrokhtSarsai.Text = dtFareeqain.Rows[0]["Rem_Sarsai"].ToString();
-                                                txtFrokhtFeet.Text = dtFareeqain.Rows[0]["Rem_Feet"].ToString();
+                                                if (cbJuzviKhata.Checked)
+                                                {
+                                                    string[] area = CommanFunctions.CalculatedAreaFromHisa(float.Parse(GridViewInteqalKhattas.SelectedRows[0].Cells["TotalParts"].Value.ToString()), float.Parse(txtFrokhtHisay.Text),
+                                                        Khassra_Kanal, Khassra_Marla, Khassra_Sarsai, Khassra_Feet);
+                                                    txtFrokhtKanal.Text = area[0]!=null?area[0]:"0";
+                                                    txtFrokhtMarla.Text = area[1] != null ? area[1] : "0";
+                                                    txtFrokhtSarsai.Text = area[2] != null ? area[2] : "0";
+                                                    txtFrokhtFeet.Text = area[3] != null ? area[3] : "0";
+                                                }
+                                                else
+                                                {
+                                                    txtFrokhtKanal.Text = dtFareeqain.Rows[0]["Rem_Kanal"].ToString();
+                                                    txtFrokhtMarla.Text = dtFareeqain.Rows[0]["Rem_Marla"].ToString();
+                                                    txtFrokhtSarsai.Text = dtFareeqain.Rows[0]["Rem_Sarsai"].ToString();
+                                                    txtFrokhtFeet.Text = dtFareeqain.Rows[0]["Rem_Feet"].ToString();
+                                                }
                                             }
                                             //end Self_________________________
                                            
@@ -6630,6 +6689,75 @@ namespace SDC_Application.AL
         void frmTMSIW_closed(object sender, FormClosedEventArgs e)
         {
             FillgridByBuyerList();
+        }
+
+        #region button Auto Khata Creation 
+
+        private void btnAutoKhataCreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (GridviewSaveSalamJuzviKhassra.DataSource != null)
+                {
+                    if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0)
+                    {
+                        string KhataRecId = txtKhattaRecId.Text;
+                        string retVal= Intiqal.SaveAutoKhatajatForKhassraIntiqal(KhataRecId, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                        if(retVal.Length>5)
+                            {
+                                AutoComplete on = new AutoComplete();
+                                //on.FillCombo("Proc_Get_Moza_Register_KhataJat_ParentKhataID  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + "," + txtparentKhataId.Text + "", cmbtaqseemChangeKhata, "KhataNo", "RegisterHqDKhataId");
+                                on.FillCombo("Proc_Self_Get_Moza_Register_KhataJat_ParentKhataID " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + "," + IntiqalId + "," + txtparentKhataId.Text + "", cmbtaqseemChangeKhata, "KhataNo", "RegisterHqDKhataId");
+                                cmbtaqseemChangeKhata.SelectedValue = RegisterHqDKhataId;
+                                Get_TaqseemRegHadkhataid(RegisterHqDKhataId);
+                                getkhasrajattotalarea();
+                            }
+                    }
+                    else
+                        MessageBox.Show("یہ سہولت صرف جزوی کھاتہ کیلئے  کار امد ہے۔ پہلے جزوی کھاتہ میں نمبر خسرہ محفوظ کریں۔");
+                }
+                else
+                    MessageBox.Show("یہ سہولت صرف جزوی کھاتہ کیلئے  کار امد ہے۔ پہلے جزوی کھاتہ میں نمبر خسرہ محفوظ کریں۔");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        #endregion
+
+        private void btnAutoSaveKhatooniKhassras_Click(object sender, EventArgs e)
+        {
+            try 
+	            {
+                    string KhataNoNew = "0";
+                    string KhataNo = GridViewInteqalKhattas.SelectedRows[0].Cells["KhataNo"].Value.ToString();
+                    KhataNoNew = khatoniNo == cmbtaqseemChangeKhata.Text ? "0" : cmbtaqseemChangeKhata.Text;
+                    if (cmbtaqseemChangeKhata.SelectedValue.ToString().Length > 2)
+                    {
+                        if (grdGetkhatonichange.DataSource == null || grdGetkhatonichange.Rows.Count == 0)
+                        {
+                           string retVal= taqseemnewkhata.SaveAutoKhatooniesInKhassraIntiqal(txtKhattaRecId.Text, cmbtaqseemChangeKhata.SelectedValue.ToString(), KhataNoNew, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                           if (retVal.Length > 5)
+                           {
+                               FillGridKhatooniChange();
+                               Fillkhatoniforkhasra();
+                               ClearKhatooni();
+                           }
+                        }
+                        else
+                            MessageBox.Show("کھتونی ریکارڈ پہلے سے موجود ہے۔");
+                    }
+                    else
+                        MessageBox.Show("کھاتے کا انتخاب کریں۔");
+	            }
+	       catch (Exception ex)
+	            {
+		            MessageBox.Show(ex.Message);
+	            }
+            
         }
     }
 }
