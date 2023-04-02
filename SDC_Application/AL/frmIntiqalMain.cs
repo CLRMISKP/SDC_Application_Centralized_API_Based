@@ -491,7 +491,7 @@ namespace SDC_Application.AL
                     string RegDate = dtRegisteryDate.Checked ? dtRegisteryDate.Value.ToShortDateString() : "NULL";
                     string TrialSubject = txtTrialSubject.Text;
                     string FardTokenDate = dtFardToken.Checked ? dtFardToken.Value.ToShortDateString() : "";
-                    string FardTokenIdSelected = cmbFardTokenNo.SelectedIndex != 0 ? cmbFardTokenNo.SelectedValue.ToString() : "0";
+                    string FardTokenIdSelected = cmbFardTokenNo.SelectedIndex != 0 && cmbFardTokenNo.DataSource!=null ? cmbFardTokenNo.SelectedValue.ToString() : "0";
                     
                     if (mozaId != "-1" && mozaId != "0")
                     {

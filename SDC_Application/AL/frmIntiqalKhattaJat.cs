@@ -6699,11 +6699,13 @@ namespace SDC_Application.AL
             {
                 if (GridviewSaveSalamJuzviKhassra.DataSource != null)
                 {
-                    if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0)
+                    if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0 )
                     {
-                        string KhataRecId = txtKhattaRecId.Text;
-                        string retVal= Intiqal.SaveAutoKhatajatForKhassraIntiqal(KhataRecId, UsersManagments.UserId.ToString(), UsersManagments.UserName);
-                        if(retVal.Length>5)
+                        if (cmbtaqseemChangeKhata.Items.Count < 2)
+                        {
+                            string KhataRecId = txtKhattaRecId.Text;
+                            string retVal = Intiqal.SaveAutoKhatajatForKhassraIntiqal(KhataRecId, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                            if (retVal.Length > 5)
                             {
                                 AutoComplete on = new AutoComplete();
                                 //on.FillCombo("Proc_Get_Moza_Register_KhataJat_ParentKhataID  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + "," + txtparentKhataId.Text + "", cmbtaqseemChangeKhata, "KhataNo", "RegisterHqDKhataId");
@@ -6712,6 +6714,9 @@ namespace SDC_Application.AL
                                 Get_TaqseemRegHadkhataid(RegisterHqDKhataId);
                                 getkhasrajattotalarea();
                             }
+                        }
+                        else
+                            MessageBox.Show("کھاتہ پہلے سے موجود ہیں۔");
                     }
                     else
                         MessageBox.Show("یہ سہولت صرف جزوی کھاتہ کیلئے  کار امد ہے۔ پہلے جزوی کھاتہ میں نمبر خسرہ محفوظ کریں۔");
@@ -6734,7 +6739,7 @@ namespace SDC_Application.AL
 	            {
                     string KhataNoNew = "0";
                     string KhataNo = GridViewInteqalKhattas.SelectedRows[0].Cells["KhataNo"].Value.ToString();
-                    KhataNoNew = khatoniNo == cmbtaqseemChangeKhata.Text ? "0" : cmbtaqseemChangeKhata.Text;
+                    KhataNoNew = KhataNo == cmbtaqseemChangeKhata.Text ? "0" : cmbtaqseemChangeKhata.Text;
                     if (cmbtaqseemChangeKhata.SelectedValue.ToString().Length > 2)
                     {
                         if (grdGetkhatonichange.DataSource == null || grdGetkhatonichange.Rows.Count == 0)
