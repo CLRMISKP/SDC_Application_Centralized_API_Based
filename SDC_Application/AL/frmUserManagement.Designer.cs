@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.grp = new System.Windows.Forms.GroupBox();
+            this.txtUserRoleId = new System.Windows.Forms.TextBox();
+            this.txtRole = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -60,15 +63,12 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.grdUserRoles = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.cbUserRoles = new System.Windows.Forms.ComboBox();
             this.lblCycleRoles = new System.Windows.Forms.Label();
+            this.btnAssignRole = new System.Windows.Forms.Button();
             this.btnInsRole = new System.Windows.Forms.Button();
             this.btnDelRole = new System.Windows.Forms.Button();
             this.lbl7 = new System.Windows.Forms.Label();
-            this.btnAssignRole = new System.Windows.Forms.Button();
-            this.txtRole = new System.Windows.Forms.TextBox();
-            this.cbUserRoles = new System.Windows.Forms.ComboBox();
-            this.txtUserRoleId = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grp.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -93,6 +93,35 @@
             this.grp.Size = new System.Drawing.Size(1290, 53);
             this.grp.TabIndex = 0;
             this.grp.TabStop = false;
+            // 
+            // txtUserRoleId
+            // 
+            this.txtUserRoleId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserRoleId.Location = new System.Drawing.Point(1213, 16);
+            this.txtUserRoleId.Name = "txtUserRoleId";
+            this.txtUserRoleId.Size = new System.Drawing.Size(37, 30);
+            this.txtUserRoleId.TabIndex = 13;
+            this.txtUserRoleId.Text = "-1";
+            this.txtUserRoleId.Visible = false;
+            // 
+            // txtRole
+            // 
+            this.txtRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRole.Location = new System.Drawing.Point(968, 21);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.Size = new System.Drawing.Size(130, 30);
+            this.txtRole.TabIndex = 3;
+            this.txtRole.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(1136, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(37, 30);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.Text = "-1";
+            this.textBox1.Visible = false;
             // 
             // label1
             // 
@@ -455,6 +484,15 @@
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             // 
+            // cbUserRoles
+            // 
+            this.cbUserRoles.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUserRoles.FormattingEnabled = true;
+            this.cbUserRoles.Location = new System.Drawing.Point(108, 23);
+            this.cbUserRoles.Name = "cbUserRoles";
+            this.cbUserRoles.Size = new System.Drawing.Size(206, 30);
+            this.cbUserRoles.TabIndex = 11;
+            // 
             // lblCycleRoles
             // 
             this.lblCycleRoles.AutoSize = true;
@@ -463,7 +501,19 @@
             this.lblCycleRoles.Size = new System.Drawing.Size(21, 17);
             this.lblCycleRoles.TabIndex = 10;
             this.lblCycleRoles.Text = "->";
+            this.lblCycleRoles.Visible = false;
             this.lblCycleRoles.Click += new System.EventHandler(this.lblCycleRoles_Click);
+            // 
+            // btnAssignRole
+            // 
+            this.btnAssignRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignRole.Location = new System.Drawing.Point(317, 24);
+            this.btnAssignRole.Name = "btnAssignRole";
+            this.btnAssignRole.Size = new System.Drawing.Size(155, 29);
+            this.btnAssignRole.TabIndex = 4;
+            this.btnAssignRole.Text = "Click to Assign Role";
+            this.btnAssignRole.UseVisualStyleBackColor = true;
+            this.btnAssignRole.Click += new System.EventHandler(this.btnAssignRole_Click);
             // 
             // btnInsRole
             // 
@@ -473,6 +523,7 @@
             this.btnInsRole.TabIndex = 9;
             this.btnInsRole.Text = "+";
             this.btnInsRole.UseVisualStyleBackColor = true;
+            this.btnInsRole.Visible = false;
             this.btnInsRole.Click += new System.EventHandler(this.btnInsRole_Click);
             // 
             // btnDelRole
@@ -483,6 +534,7 @@
             this.btnDelRole.TabIndex = 9;
             this.btnDelRole.Text = "-";
             this.btnDelRole.UseVisualStyleBackColor = true;
+            this.btnDelRole.Visible = false;
             this.btnDelRole.Click += new System.EventHandler(this.btnDelRole_Click);
             // 
             // lbl7
@@ -494,55 +546,6 @@
             this.lbl7.Size = new System.Drawing.Size(96, 22);
             this.lbl7.TabIndex = 8;
             this.lbl7.Text = "User Role:";
-            // 
-            // btnAssignRole
-            // 
-            this.btnAssignRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignRole.Location = new System.Drawing.Point(317, 24);
-            this.btnAssignRole.Name = "btnAssignRole";
-            this.btnAssignRole.Size = new System.Drawing.Size(128, 29);
-            this.btnAssignRole.TabIndex = 4;
-            this.btnAssignRole.Text = "Assign Role";
-            this.btnAssignRole.UseVisualStyleBackColor = true;
-            this.btnAssignRole.Click += new System.EventHandler(this.btnAssignRole_Click);
-            // 
-            // txtRole
-            // 
-            this.txtRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.Location = new System.Drawing.Point(968, 21);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(130, 30);
-            this.txtRole.TabIndex = 3;
-            this.txtRole.Visible = false;
-            // 
-            // cbUserRoles
-            // 
-            this.cbUserRoles.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUserRoles.FormattingEnabled = true;
-            this.cbUserRoles.Location = new System.Drawing.Point(108, 23);
-            this.cbUserRoles.Name = "cbUserRoles";
-            this.cbUserRoles.Size = new System.Drawing.Size(206, 30);
-            this.cbUserRoles.TabIndex = 11;
-            // 
-            // txtUserRoleId
-            // 
-            this.txtUserRoleId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserRoleId.Location = new System.Drawing.Point(1213, 16);
-            this.txtUserRoleId.Name = "txtUserRoleId";
-            this.txtUserRoleId.Size = new System.Drawing.Size(37, 30);
-            this.txtUserRoleId.TabIndex = 13;
-            this.txtUserRoleId.Text = "-1";
-            this.txtUserRoleId.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1136, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 30);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "-1";
-            this.textBox1.Visible = false;
             // 
             // frmUserManagement
             // 

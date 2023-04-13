@@ -1744,6 +1744,19 @@ namespace SDC_Application
                 obj.Show();
             }
         }
+
+        private void mnuTutorial_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmVidTut obj = new frmVidTut();
+                obj.Show();
+            }
+        }
      
     }
 }

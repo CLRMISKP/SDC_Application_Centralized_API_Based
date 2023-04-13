@@ -251,6 +251,13 @@ namespace SDC_Application.AL
             {
                 this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
                 this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
+                this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
+                this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
+                if (Math.Round(decimal.Parse(this.txtKhataMeezanKhewatFareeqainHissay.Text), 2) != Math.Round(decimal.Parse(this.txtKhataMeezanKulHissay.Text), 2))
+                {
+                    txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.Red;
+                }
+                else { txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White; }
             }
 
             txtKhataMeezanKhassraRaqba.Text = intiqal.GetKhassraTotalRaqbaByKhattaId(KhataId);
@@ -1122,6 +1129,7 @@ namespace SDC_Application.AL
         private void ResetMalakEntryFields()
         {
             txtKhewatGroupFareeqId.Text = "-1";
+            txtKhewatGroupFareeqRecId.Text = "-1";
             txtKhewatGroupId.Text = "-1";
             txtPersonId.Text = "-1";
             txtPersonNetHissa.Clear();

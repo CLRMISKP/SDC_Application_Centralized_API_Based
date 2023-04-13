@@ -1075,39 +1075,7 @@ namespace SDC_Application.AL
 
         private void print_Click(object sender, EventArgs e)
         {
-            
-            if(this.IntiqalId!=string.Empty && this.IntiqalId!="-1" )
-            {
-                //SDCReports TokenReport = new SDCReports();
-                frmSDCReportingMain TokenReport = new frmSDCReportingMain();
-                TokenReport.FormClosed -= new FormClosedEventHandler(TokenReport_FormClosed);
-                TokenReport.FormClosed += new FormClosedEventHandler(TokenReport_FormClosed);
-                TokenReport.IntiqalId = this.IntiqalId;
-                TokenReport.userId = UsersManagments.UserId.ToString();
-                if(this.intiqalTypeId=="37")
-                    UsersManagments.check = 18;
-                else if(this.intiqalTypeId=="15")
-                    UsersManagments.check = 19;
-                else if(radKhanaKasht.Checked)
-                    UsersManagments.check = 16;
-                else if (radkhanakashtmalkiat.Checked)
-                    UsersManagments.check = 17;
-                else if(radKhanaMalkiat.Checked)
-                UsersManagments.check = 4;
-                TokenReport.ShowDialog();     
-         
-                // Above Code replaced by the following new code - using DotNet reortviewer instead of using builtin web browser control.
 
-                //frmReportViewer frmRpt = new frmReportViewer();
-                //frmRpt.IntiqalId = this.IntiqalId;
-                //frmRpt.ShowDialog();
-
-               }
-            else
-            {
-                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
         }
 
         private void TokenReport_FormClosed(object sender, FormClosedEventArgs e)
@@ -1648,6 +1616,32 @@ namespace SDC_Application.AL
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void print_Click_1(object sender, EventArgs e)
+        {
+            if (this.IntiqalId != string.Empty && this.IntiqalId != "-1")
+            {
+                //SDCReports TokenReport = new SDCReports();
+                frmSDCReportingMain TokenReport = new frmSDCReportingMain();
+                TokenReport.FormClosed -= new FormClosedEventHandler(TokenReport_FormClosed);
+                TokenReport.FormClosed += new FormClosedEventHandler(TokenReport_FormClosed);
+                TokenReport.IntiqalId = this.IntiqalId;
+                TokenReport.userId = UsersManagments.UserId.ToString();
+                if (this.cboIntiqalType.Text.Contains("ثت"))
+                    UsersManagments.check = 18;
+                else if (this.cboIntiqalType.Text.Contains("تقسیم"))
+                    UsersManagments.check = 19;
+                else if (radKhanaKasht.Checked)
+                    UsersManagments.check = 16;
+                else if (radkhanakashtmalkiat.Checked)
+                    UsersManagments.check = 17;
+                //else if (radkhanakashtToMalkiat.Checked)
+                //    UsersManagments.check = 45;
+                else if (radKhanaMalkiat.Checked)
+                    UsersManagments.check = 4;
+                TokenReport.ShowDialog();
             }
         }
     }

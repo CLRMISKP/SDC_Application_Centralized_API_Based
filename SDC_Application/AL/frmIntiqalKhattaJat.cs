@@ -1775,7 +1775,7 @@ namespace SDC_Application.AL
             try
             {
                 int Khassra_Kanal = 0; int Khassra_Marla = 0; float Khassra_Sarsai = 0; float Khassra_Feet = 0;
-                if (GridviewSaveSalamJuzviKhassra.DataSource != null)
+                if (GridviewSaveSalamJuzviKhassra.DataSource != null && gridviewSalamjuzviKhassraList.Rows.Count>0)
                 {
                     if (GridviewSaveSalamJuzviKhassra.Rows.Count > 0)
                     {

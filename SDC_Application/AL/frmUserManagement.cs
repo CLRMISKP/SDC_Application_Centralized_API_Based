@@ -136,6 +136,8 @@ namespace SDC_Application.AL
                 last = ObjUser.SaveUserRole(txtUserRoleId.Text, UsersManagments._Tehsilid.ToString(), txtUserId.Text, Roleid, userinsertedid, txtLoginId.Text, "0");
                 LoadRoleid(Roleid);
             }
+            else
+                MessageBox.Show(" پہلے رول کا انتخاب کریں۔");
             //frmAssignRole Populatee = new frmAssignRole();
             //Populatee.FormClosed -= new FormClosedEventHandler(Populatee_FormClosed);
             //Populatee.FormClosed += new FormClosedEventHandler(Populatee_FormClosed);

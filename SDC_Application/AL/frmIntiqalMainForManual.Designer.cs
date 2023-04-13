@@ -73,9 +73,7 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
-            this.cachedFardMalkan_Rzr_Trans2 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
-            this.cachedFardMalkan_Rzr_Trans3 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            this.print = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -424,6 +422,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.print);
             this.groupBox7.Controls.Add(this.btnCancelConfirm);
             this.groupBox7.Controls.Add(this.btnIntiqalAmalDaramadByKhata);
             this.groupBox7.Controls.Add(this.btnIntiqalAmal);
@@ -451,7 +450,7 @@
             this.btnCancelConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelConfirm.Image = global::SDC_Application.Resource1.back_icon;
-            this.btnCancelConfirm.Location = new System.Drawing.Point(1207, 47);
+            this.btnCancelConfirm.Location = new System.Drawing.Point(1231, 47);
             this.btnCancelConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCancelConfirm.Name = "btnCancelConfirm";
             this.btnCancelConfirm.Size = new System.Drawing.Size(53, 49);
@@ -464,7 +463,7 @@
             // 
             this.btnIntiqalAmalDaramadByKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalAmalDaramadByKhata.Image = global::SDC_Application.Resource1.partitions_icon;
-            this.btnIntiqalAmalDaramadByKhata.Location = new System.Drawing.Point(705, 46);
+            this.btnIntiqalAmalDaramadByKhata.Location = new System.Drawing.Point(749, 47);
             this.btnIntiqalAmalDaramadByKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalAmalDaramadByKhata.Name = "btnIntiqalAmalDaramadByKhata";
             this.btnIntiqalAmalDaramadByKhata.Size = new System.Drawing.Size(59, 50);
@@ -480,7 +479,7 @@
             this.btnIntiqalAmal.Enabled = false;
             this.btnIntiqalAmal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIntiqalAmal.Image = global::SDC_Application.Resource1.Approve_icon2;
-            this.btnIntiqalAmal.Location = new System.Drawing.Point(783, 46);
+            this.btnIntiqalAmal.Location = new System.Drawing.Point(823, 47);
             this.btnIntiqalAmal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnIntiqalAmal.Name = "btnIntiqalAmal";
             this.btnIntiqalAmal.Size = new System.Drawing.Size(53, 49);
@@ -494,7 +493,7 @@
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(1268, 49);
+            this.btnEdit.Location = new System.Drawing.Point(1299, 47);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(53, 49);
@@ -509,7 +508,7 @@
             this.btnConfirm.Enabled = false;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
-            this.btnConfirm.Location = new System.Drawing.Point(1143, 46);
+            this.btnConfirm.Location = new System.Drawing.Point(1163, 47);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(53, 49);
@@ -523,7 +522,7 @@
             this.lblIntiqalPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIntiqalPending.Location = new System.Drawing.Point(10, 22);
             this.lblIntiqalPending.Name = "lblIntiqalPending";
-            this.lblIntiqalPending.Size = new System.Drawing.Size(573, 85);
+            this.lblIntiqalPending.Size = new System.Drawing.Size(526, 85);
             this.lblIntiqalPending.TabIndex = 32;
             this.lblIntiqalPending.TabStop = true;
             this.lblIntiqalPending.Text = "\'";
@@ -532,7 +531,7 @@
             // 
             this.chkPendingIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPendingIntiqal.AutoSize = true;
-            this.chkPendingIntiqal.Location = new System.Drawing.Point(597, 39);
+            this.chkPendingIntiqal.Location = new System.Drawing.Point(543, 45);
             this.chkPendingIntiqal.Name = "chkPendingIntiqal";
             this.chkPendingIntiqal.Size = new System.Drawing.Size(94, 42);
             this.chkPendingIntiqal.TabIndex = 5;
@@ -544,7 +543,7 @@
             // 
             this.btnKhataJat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKhataJat.Image = global::SDC_Application.Resource1.Document_icon;
-            this.btnKhataJat.Location = new System.Drawing.Point(855, 45);
+            this.btnKhataJat.Location = new System.Drawing.Point(891, 47);
             this.btnKhataJat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnKhataJat.Name = "btnKhataJat";
             this.btnKhataJat.Size = new System.Drawing.Size(53, 49);
@@ -560,7 +559,7 @@
             this.btnDelMain.Enabled = false;
             this.btnDelMain.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelMain.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMain.Location = new System.Drawing.Point(927, 45);
+            this.btnDelMain.Location = new System.Drawing.Point(959, 47);
             this.btnDelMain.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnDelMain.Name = "btnDelMain";
             this.btnDelMain.Size = new System.Drawing.Size(53, 49);
@@ -575,7 +574,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSave.Location = new System.Drawing.Point(999, 45);
+            this.btnSave.Location = new System.Drawing.Point(1027, 47);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(53, 49);
@@ -588,7 +587,7 @@
             // 
             this.btnNewInteqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewInteqal.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewInteqal.Location = new System.Drawing.Point(1071, 45);
+            this.btnNewInteqal.Location = new System.Drawing.Point(1095, 47);
             this.btnNewInteqal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnNewInteqal.Name = "btnNewInteqal";
             this.btnNewInteqal.Size = new System.Drawing.Size(53, 49);
@@ -637,6 +636,18 @@
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
+            // 
+            // print
+            // 
+            this.print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.print.BackgroundImage = global::SDC_Application.Resource1.Print31;
+            this.print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.print.Location = new System.Drawing.Point(675, 47);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(59, 50);
+            this.print.TabIndex = 37;
+            this.print.UseVisualStyleBackColor = true;
+            this.print.Click += new System.EventHandler(this.print_Click_1);
             // 
             // frmIntiqalMainForManual
             // 
@@ -712,10 +723,8 @@
         private System.Windows.Forms.DateTimePicker dtpIntiqalAndrajDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnIntiqalAmal;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans2;
         private System.Windows.Forms.Button btnIntiqalAmalDaramadByKhata;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans3;
         private System.Windows.Forms.Button btnCancelConfirm;
+        private System.Windows.Forms.Button print;
     }
 }

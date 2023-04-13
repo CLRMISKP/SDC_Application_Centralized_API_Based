@@ -147,6 +147,7 @@
             this.mnuKhassraGardawri = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTutorial = new System.Windows.Forms.ToolStripMenuItem();
             this.labelUser = new System.Windows.Forms.Label();
             this.txtUserRoleId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -1110,7 +1111,8 @@
             // ToolStripMenuUsers
             // 
             this.ToolStripMenuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuChangePassword});
+            this.mnuChangePassword,
+            this.mnuTutorial});
             this.ToolStripMenuUsers.Name = "ToolStripMenuUsers";
             this.ToolStripMenuUsers.Size = new System.Drawing.Size(77, 42);
             this.ToolStripMenuUsers.Text = "صارفین";
@@ -1121,6 +1123,14 @@
             this.mnuChangePassword.Size = new System.Drawing.Size(207, 42);
             this.mnuChangePassword.Text = "پاسوارڈ تبدیل کریں";
             this.mnuChangePassword.Click += new System.EventHandler(this.mnuChangePassword_Click);
+            // 
+            // mnuTutorial
+            // 
+            this.mnuTutorial.Name = "mnuTutorial";
+            this.mnuTutorial.Size = new System.Drawing.Size(207, 42);
+            this.mnuTutorial.Text = "ٹیوٹوریئل";
+            this.mnuTutorial.Visible = false;
+            this.mnuTutorial.Click += new System.EventHandler(this.mnuTutorial_Click);
             // 
             // labelUser
             // 
@@ -1401,5 +1411,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOtherDistrictTehsilFard;
         private System.Windows.Forms.ToolStripMenuItem mnuSubBiometricCapturedNotAttestIntiqalat;
         private System.Windows.Forms.ToolStripMenuItem mnuSubStateLandReport;
+        private System.Windows.Forms.ToolStripMenuItem mnuTutorial;
     }
 }

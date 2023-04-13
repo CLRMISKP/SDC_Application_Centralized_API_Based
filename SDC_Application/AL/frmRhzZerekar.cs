@@ -140,6 +140,11 @@ namespace SDC_Application.AL
             {
                 this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
                 this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
+                if (Math.Round(decimal.Parse(this.txtKhataMeezanKhewatFareeqainHissay.Text), 4) != Math.Round(decimal.Parse(this.txtKhataMeezanKulHissay.Text), 4))
+                {
+                    txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.Red;
+                }
+                else { txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White; }
             }
 
             txtKhataMeezanKhassraRaqba.Text=intiqal.GetKhassraTotalRaqbaByKhattaId(KhataId);

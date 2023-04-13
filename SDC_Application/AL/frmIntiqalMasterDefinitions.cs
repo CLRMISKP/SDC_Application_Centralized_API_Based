@@ -344,7 +344,7 @@ namespace SDC_Application.AL
                     string ConstructionTypeNameUrdu = this.txtUrdPlot.Text.ToString();
                     string PlotTypeId = this.txtUrduPlot.SelectedValue.ToString();
                     string ConstructionTypeNameEng = this.txtEngPlot.Text.Trim().ToString();
-                    string dt = Master.SaveIntiqalPlotConstructionTypes(ConstructionTypeId, TehsilId, PlotTypeId,ConstructionTypeNameUrdu, ConstructionTypeNameEng, UserId, UserName, UserId, UserName);
+                    string dt = Master.SaveIntiqalPlotConstructionTypes(ConstructionTypeId, UsersManagments._Tehsilid.ToString(), PlotTypeId,ConstructionTypeNameUrdu, ConstructionTypeNameEng, UserId, UserName, UserId, UserName);
                     this.txtHiddenPlotConsId.Text = dt;
                     Call_grdPlotType_Constructions();
                 }
