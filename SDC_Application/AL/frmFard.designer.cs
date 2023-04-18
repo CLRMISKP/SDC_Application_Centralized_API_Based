@@ -31,19 +31,19 @@
         private void InitializeComponent()
             {
                 this.components = new System.ComponentModel.Container();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
                 System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFard));
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
                 this.label4 = new System.Windows.Forms.Label();
                 this.txtReciptTokenID = new System.Windows.Forms.TextBox();
                 this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -156,6 +156,11 @@
                 this.grfIntiqalPersonSanps = new System.Windows.Forms.DataGridView();
                 this.Selection = new System.Windows.Forms.DataGridViewCheckBoxColumn();
                 this.groupBox2 = new System.Windows.Forms.GroupBox();
+                this.btnPicture = new System.Windows.Forms.Button();
+                this.btnLoadPicturefromFile = new System.Windows.Forms.Button();
+                this.pboxPicture = new System.Windows.Forms.PictureBox();
+                this.btnPictureReset = new System.Windows.Forms.Button();
+                this.label61 = new System.Windows.Forms.Label();
                 this.btnFingerHysoon = new System.Windows.Forms.Button();
                 this.textBox1 = new System.Windows.Forms.TextBox();
                 this.gbFingerSave = new System.Windows.Forms.GroupBox();
@@ -357,6 +362,22 @@
                 this.label1 = new System.Windows.Forms.Label();
                 this.btnSearchToken = new System.Windows.Forms.Button();
                 this.tt = new System.Windows.Forms.ToolTip(this.components);
+                this.tabCam = new System.Windows.Forms.TabPage();
+                this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+                this.label62 = new System.Windows.Forms.Label();
+                this.cmbCamera = new System.Windows.Forms.ComboBox();
+                this.bntCapture = new System.Windows.Forms.Button();
+                this.pictureBox1 = new System.Windows.Forms.PictureBox();
+                this.btnRepDel = new System.Windows.Forms.Button();
+                this.txtRepRecId = new System.Windows.Forms.TextBox();
+                this.tbnRepSave = new System.Windows.Forms.Button();
+                this.btnRepReset = new System.Windows.Forms.Button();
+                this.txtRepCNIC = new System.Windows.Forms.TextBox();
+                this.label63 = new System.Windows.Forms.Label();
+                this.txtRepFName = new System.Windows.Forms.TextBox();
+                this.label64 = new System.Windows.Forms.Label();
+                this.txtRepName = new System.Windows.Forms.TextBox();
+                this.label65 = new System.Windows.Forms.Label();
                 this.tabControl1.SuspendLayout();
                 this.tbMalkiat.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -395,6 +416,7 @@
                 this.tabFingerPrint.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.grfIntiqalPersonSanps)).BeginInit();
                 this.groupBox2.SuspendLayout();
+                ((System.ComponentModel.ISupportInitialize)(this.pboxPicture)).BeginInit();
                 this.gbFingerSave.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.pboxFingerPrint)).BeginInit();
                 this.tabOperatorReport.SuspendLayout();
@@ -444,6 +466,12 @@
                 this.groupBox28.SuspendLayout();
                 this.groupBox27.SuspendLayout();
                 this.groupBox3.SuspendLayout();
+                this.tabCam.SuspendLayout();
+                ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+                this.splitContainer6.Panel1.SuspendLayout();
+                this.splitContainer6.Panel2.SuspendLayout();
+                this.splitContainer6.SuspendLayout();
+                ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
                 this.SuspendLayout();
                 // 
                 // label4
@@ -484,6 +512,7 @@
                 this.tabControl1.Controls.Add(this.tabReceipt);
                 this.tabControl1.Controls.Add(this.tabCancel);
                 this.tabControl1.Controls.Add(this.tbKhassras);
+                this.tabControl1.Controls.Add(this.tabCam);
                 this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.tabControl1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.tabControl1.Location = new System.Drawing.Point(0, 63);
@@ -575,8 +604,8 @@
                 // 
                 this.GridViewFardKhatajat.AllowUserToAddRows = false;
                 this.GridViewFardKhatajat.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewFardKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+                dataGridViewCellStyle73.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewFardKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle73;
                 this.GridViewFardKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewFardKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewFardKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -731,8 +760,8 @@
                 // 
                 this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
                 this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+                dataGridViewCellStyle74.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle74;
                 this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1269,8 +1298,8 @@
                 // 
                 this.GridFardKhatoonies.AllowUserToAddRows = false;
                 this.GridFardKhatoonies.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridFardKhatoonies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+                dataGridViewCellStyle75.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridFardKhatoonies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle75;
                 this.GridFardKhatoonies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridFardKhatoonies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridFardKhatoonies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1456,8 +1485,8 @@
                 // 
                 this.GridViewFardMushteri.AllowUserToAddRows = false;
                 this.GridViewFardMushteri.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewFardMushteri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+                dataGridViewCellStyle76.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewFardMushteri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
                 this.GridViewFardMushteri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewFardMushteri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewFardMushteri.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1933,6 +1962,12 @@
                 // 
                 // groupBox2
                 // 
+                this.groupBox2.Controls.Add(this.btnSaveImage);
+                this.groupBox2.Controls.Add(this.btnPicture);
+                this.groupBox2.Controls.Add(this.btnLoadPicturefromFile);
+                this.groupBox2.Controls.Add(this.pboxPicture);
+                this.groupBox2.Controls.Add(this.btnPictureReset);
+                this.groupBox2.Controls.Add(this.label61);
                 this.groupBox2.Controls.Add(this.btnFingerHysoon);
                 this.groupBox2.Controls.Add(this.textBox1);
                 this.groupBox2.Controls.Add(this.gbFingerSave);
@@ -1952,6 +1987,59 @@
                 this.groupBox2.TabIndex = 3;
                 this.groupBox2.TabStop = false;
                 // 
+                // btnPicture
+                // 
+                this.btnPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnPicture.Image = global::SDC_Application.Resource1.capture_icon;
+                this.btnPicture.Location = new System.Drawing.Point(702, 117);
+                this.btnPicture.Name = "btnPicture";
+                this.btnPicture.Size = new System.Drawing.Size(56, 51);
+                this.btnPicture.TabIndex = 30;
+                this.btnPicture.UseVisualStyleBackColor = true;
+                this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
+                // 
+                // btnLoadPicturefromFile
+                // 
+                this.btnLoadPicturefromFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnLoadPicturefromFile.Image = global::SDC_Application.Resource1.open_file_icon;
+                this.btnLoadPicturefromFile.Location = new System.Drawing.Point(922, 113);
+                this.btnLoadPicturefromFile.Name = "btnLoadPicturefromFile";
+                this.btnLoadPicturefromFile.Size = new System.Drawing.Size(56, 53);
+                this.btnLoadPicturefromFile.TabIndex = 29;
+                this.btnLoadPicturefromFile.UseVisualStyleBackColor = true;
+                this.btnLoadPicturefromFile.Click += new System.EventHandler(this.btnLoadPicturefromFile_Click);
+                // 
+                // pboxPicture
+                // 
+                this.pboxPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.pboxPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.pboxPicture.Location = new System.Drawing.Point(764, 56);
+                this.pboxPicture.Name = "pboxPicture";
+                this.pboxPicture.Size = new System.Drawing.Size(152, 112);
+                this.pboxPicture.TabIndex = 26;
+                this.pboxPicture.TabStop = false;
+                // 
+                // btnPictureReset
+                // 
+                this.btnPictureReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnPictureReset.Image = global::SDC_Application.Resource1.icon_refresh;
+                this.btnPictureReset.Location = new System.Drawing.Point(702, 59);
+                this.btnPictureReset.Name = "btnPictureReset";
+                this.btnPictureReset.Size = new System.Drawing.Size(56, 53);
+                this.btnPictureReset.TabIndex = 27;
+                this.btnPictureReset.UseVisualStyleBackColor = true;
+                this.btnPictureReset.Click += new System.EventHandler(this.btnPictureReset_Click);
+                // 
+                // label61
+                // 
+                this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label61.AutoSize = true;
+                this.label61.Location = new System.Drawing.Point(844, 24);
+                this.label61.Name = "label61";
+                this.label61.Size = new System.Drawing.Size(42, 31);
+                this.label61.TabIndex = 28;
+                this.label61.Text = " تصویر";
+                // 
                 // btnFingerHysoon
                 // 
                 this.btnFingerHysoon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1959,7 +2047,7 @@
                 this.btnFingerHysoon.ForeColor = System.Drawing.Color.White;
                 this.btnFingerHysoon.Image = global::SDC_Application.Resource1.fingerPrint1;
                 this.btnFingerHysoon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-                this.btnFingerHysoon.Location = new System.Drawing.Point(656, 114);
+                this.btnFingerHysoon.Location = new System.Drawing.Point(386, 119);
                 this.btnFingerHysoon.Name = "btnFingerHysoon";
                 this.btnFingerHysoon.Size = new System.Drawing.Size(56, 50);
                 this.btnFingerHysoon.TabIndex = 25;
@@ -1977,7 +2065,16 @@
                 // 
                 // gbFingerSave
                 // 
-                this.gbFingerSave.Controls.Add(this.btnSaveImage);
+                this.gbFingerSave.Controls.Add(this.btnRepDel);
+                this.gbFingerSave.Controls.Add(this.txtRepRecId);
+                this.gbFingerSave.Controls.Add(this.tbnRepSave);
+                this.gbFingerSave.Controls.Add(this.btnRepReset);
+                this.gbFingerSave.Controls.Add(this.txtRepCNIC);
+                this.gbFingerSave.Controls.Add(this.label63);
+                this.gbFingerSave.Controls.Add(this.txtRepFName);
+                this.gbFingerSave.Controls.Add(this.label64);
+                this.gbFingerSave.Controls.Add(this.txtRepName);
+                this.gbFingerSave.Controls.Add(this.label65);
                 this.gbFingerSave.Dock = System.Windows.Forms.DockStyle.Bottom;
                 this.gbFingerSave.Location = new System.Drawing.Point(3, 167);
                 this.gbFingerSave.Name = "gbFingerSave";
@@ -1989,7 +2086,7 @@
                 // 
                 this.btnSaveImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
                 this.btnSaveImage.Image = global::SDC_Application.Resource1.Save_icon;
-                this.btnSaveImage.Location = new System.Drawing.Point(824, 19);
+                this.btnSaveImage.Location = new System.Drawing.Point(223, 74);
                 this.btnSaveImage.Name = "btnSaveImage";
                 this.btnSaveImage.Size = new System.Drawing.Size(57, 58);
                 this.btnSaveImage.TabIndex = 5;
@@ -2037,7 +2134,7 @@
                 // 
                 this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.label23.AutoSize = true;
-                this.label23.Location = new System.Drawing.Point(827, 14);
+                this.label23.Location = new System.Drawing.Point(557, 21);
                 this.label23.Name = "label23";
                 this.label23.Size = new System.Drawing.Size(81, 31);
                 this.label23.TabIndex = 5;
@@ -2047,7 +2144,7 @@
                 // 
                 this.btnVerifyFingerPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.btnVerifyFingerPrint.Image = global::SDC_Application.Resource1.fingrPrint;
-                this.btnVerifyFingerPrint.Location = new System.Drawing.Point(656, 40);
+                this.btnVerifyFingerPrint.Location = new System.Drawing.Point(386, 51);
                 this.btnVerifyFingerPrint.Name = "btnVerifyFingerPrint";
                 this.btnVerifyFingerPrint.Size = new System.Drawing.Size(56, 53);
                 this.btnVerifyFingerPrint.TabIndex = 12;
@@ -2058,7 +2155,7 @@
                 // 
                 this.btnFingerPrintReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.btnFingerPrintReset.Image = global::SDC_Application.Resource1.icon_refresh;
-                this.btnFingerPrintReset.Location = new System.Drawing.Point(718, 40);
+                this.btnFingerPrintReset.Location = new System.Drawing.Point(448, 51);
                 this.btnFingerPrintReset.Name = "btnFingerPrintReset";
                 this.btnFingerPrintReset.Size = new System.Drawing.Size(56, 53);
                 this.btnFingerPrintReset.TabIndex = 4;
@@ -2068,7 +2165,7 @@
                 // 
                 this.pboxFingerPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.pboxFingerPrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.pboxFingerPrint.Location = new System.Drawing.Point(791, 45);
+                this.pboxFingerPrint.Location = new System.Drawing.Point(521, 56);
                 this.pboxFingerPrint.Name = "pboxFingerPrint";
                 this.pboxFingerPrint.Size = new System.Drawing.Size(152, 112);
                 this.pboxFingerPrint.TabIndex = 1;
@@ -2078,7 +2175,7 @@
                 // 
                 this.btnFingerPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.btnFingerPrint.Image = global::SDC_Application.Resource1.fingerPrint1;
-                this.btnFingerPrint.Location = new System.Drawing.Point(718, 114);
+                this.btnFingerPrint.Location = new System.Drawing.Point(448, 119);
                 this.btnFingerPrint.Name = "btnFingerPrint";
                 this.btnFingerPrint.Size = new System.Drawing.Size(56, 50);
                 this.btnFingerPrint.TabIndex = 3;
@@ -3067,16 +3164,16 @@
                 this.grdRecipt.Location = new System.Drawing.Point(0, 271);
                 this.grdRecipt.Name = "grdRecipt";
                 this.grdRecipt.ReadOnly = true;
-                dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-                dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle5.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-                dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-                dataGridViewCellStyle6.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle6;
+                dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+                dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle77.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+                dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle77;
+                dataGridViewCellStyle78.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle78;
                 this.grdRecipt.Size = new System.Drawing.Size(1279, 314);
                 this.grdRecipt.TabIndex = 67;
                 this.grdRecipt.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRecipt_CellDoubleClick);
@@ -3874,14 +3971,14 @@
                 this.grdScanedDocStatus.AllowUserToAddRows = false;
                 this.grdScanedDocStatus.AllowUserToDeleteRows = false;
                 this.grdScanedDocStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle7.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-                dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdScanedDocStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+                dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewCellStyle79.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle79.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+                dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdScanedDocStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle79;
                 this.grdScanedDocStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.grdScanedDocStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PageNo,
@@ -3895,14 +3992,14 @@
             this.Delete,
             this.replace,
             this.replaceImage});
-                dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-                dataGridViewCellStyle8.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-                dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-                dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-                this.grdScanedDocStatus.DefaultCellStyle = dataGridViewCellStyle8;
+                dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewCellStyle80.BackColor = System.Drawing.SystemColors.Window;
+                dataGridViewCellStyle80.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle80.ForeColor = System.Drawing.SystemColors.ControlText;
+                dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+                dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+                this.grdScanedDocStatus.DefaultCellStyle = dataGridViewCellStyle80;
                 this.grdScanedDocStatus.Dock = System.Windows.Forms.DockStyle.Left;
                 this.grdScanedDocStatus.Location = new System.Drawing.Point(3, 35);
                 this.grdScanedDocStatus.Name = "grdScanedDocStatus";
@@ -4062,8 +4159,8 @@
                 // 
                 this.dgvIntiqalatDetails.AllowUserToAddRows = false;
                 this.dgvIntiqalatDetails.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvIntiqalatDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+                dataGridViewCellStyle81.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvIntiqalatDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
                 this.dgvIntiqalatDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvIntiqalatDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvIntiqalatDetails.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4109,8 +4206,8 @@
                 // 
                 this.dgvCancel.AllowUserToAddRows = false;
                 this.dgvCancel.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle10.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvCancel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+                dataGridViewCellStyle82.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvCancel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle82;
                 this.dgvCancel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvCancel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvCancel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4138,8 +4235,8 @@
                 // 
                 this.dgvRemaining.AllowUserToAddRows = false;
                 this.dgvRemaining.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvRemaining.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+                dataGridViewCellStyle83.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvRemaining.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle83;
                 this.dgvRemaining.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvRemaining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvRemaining.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4188,8 +4285,8 @@
                 // 
                 this.dgKhassrajat.AllowUserToAddRows = false;
                 this.dgKhassrajat.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgKhassrajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+                dataGridViewCellStyle84.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgKhassrajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle84;
                 this.dgKhassrajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgKhassrajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgKhassrajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -4585,6 +4682,210 @@
                 // 
                 this.tt.IsBalloon = true;
                 // 
+                // tabCam
+                // 
+                this.tabCam.Controls.Add(this.splitContainer6);
+                this.tabCam.Location = new System.Drawing.Point(4, 40);
+                this.tabCam.Name = "tabCam";
+                this.tabCam.Padding = new System.Windows.Forms.Padding(3);
+                this.tabCam.Size = new System.Drawing.Size(1279, 585);
+                this.tabCam.TabIndex = 9;
+                this.tabCam.Text = "کیمرہ";
+                this.tabCam.UseVisualStyleBackColor = true;
+                // 
+                // splitContainer6
+                // 
+                this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.splitContainer6.Location = new System.Drawing.Point(3, 3);
+                this.splitContainer6.Name = "splitContainer6";
+                // 
+                // splitContainer6.Panel1
+                // 
+                this.splitContainer6.Panel1.Controls.Add(this.label62);
+                this.splitContainer6.Panel1.Controls.Add(this.cmbCamera);
+                this.splitContainer6.Panel1.Controls.Add(this.bntCapture);
+                this.splitContainer6.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                // 
+                // splitContainer6.Panel2
+                // 
+                this.splitContainer6.Panel2.Controls.Add(this.pictureBox1);
+                this.splitContainer6.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                this.splitContainer6.Size = new System.Drawing.Size(1273, 579);
+                this.splitContainer6.SplitterDistance = 275;
+                this.splitContainer6.TabIndex = 1;
+                // 
+                // label62
+                // 
+                this.label62.Anchor = System.Windows.Forms.AnchorStyles.Top;
+                this.label62.AutoSize = true;
+                this.label62.Location = new System.Drawing.Point(187, 6);
+                this.label62.Name = "label62";
+                this.label62.Size = new System.Drawing.Size(93, 31);
+                this.label62.TabIndex = 12;
+                this.label62.Text = "کیمرہ منتخب کریں";
+                // 
+                // cmbCamera
+                // 
+                this.cmbCamera.FormattingEnabled = true;
+                this.cmbCamera.Location = new System.Drawing.Point(18, 3);
+                this.cmbCamera.Name = "cmbCamera";
+                this.cmbCamera.Size = new System.Drawing.Size(153, 39);
+                this.cmbCamera.TabIndex = 11;
+                this.cmbCamera.SelectionChangeCommitted += new System.EventHandler(this.cmbCamera_SelectionChangeCommitted);
+                // 
+                // bntCapture
+                // 
+                this.bntCapture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bntCapture.BackgroundImage")));
+                this.bntCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.bntCapture.Location = new System.Drawing.Point(43, 102);
+                this.bntCapture.Name = "bntCapture";
+                this.bntCapture.Size = new System.Drawing.Size(85, 87);
+                this.bntCapture.TabIndex = 10;
+                this.bntCapture.Text = "Capture";
+                this.bntCapture.UseVisualStyleBackColor = true;
+                this.bntCapture.Click += new System.EventHandler(this.bntCapture_Click);
+                // 
+                // pictureBox1
+                // 
+                this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+                this.pictureBox1.Name = "pictureBox1";
+                this.pictureBox1.Size = new System.Drawing.Size(994, 579);
+                this.pictureBox1.TabIndex = 8;
+                this.pictureBox1.TabStop = false;
+                // 
+                // btnRepDel
+                // 
+                this.btnRepDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnRepDel.Enabled = false;
+                this.btnRepDel.Image = global::SDC_Application.Resource1.edit_delete1;
+                this.btnRepDel.Location = new System.Drawing.Point(164, 26);
+                this.btnRepDel.Name = "btnRepDel";
+                this.btnRepDel.Size = new System.Drawing.Size(48, 48);
+                this.btnRepDel.TabIndex = 220;
+                this.btnRepDel.UseVisualStyleBackColor = true;
+                this.btnRepDel.Click += new System.EventHandler(this.btnRepDel_Click);
+                // 
+                // txtRepRecId
+                // 
+                this.txtRepRecId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepRecId.Location = new System.Drawing.Point(32, 31);
+                this.txtRepRecId.Name = "txtRepRecId";
+                this.txtRepRecId.Size = new System.Drawing.Size(51, 39);
+                this.txtRepRecId.TabIndex = 219;
+                this.txtRepRecId.Text = "-1";
+                this.txtRepRecId.Visible = false;
+                // 
+                // tbnRepSave
+                // 
+                this.tbnRepSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.tbnRepSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.tbnRepSave.Image = global::SDC_Application.Resource1.Save_icon;
+                this.tbnRepSave.Location = new System.Drawing.Point(271, 26);
+                this.tbnRepSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+                this.tbnRepSave.Name = "tbnRepSave";
+                this.tbnRepSave.Size = new System.Drawing.Size(48, 48);
+                this.tbnRepSave.TabIndex = 218;
+                this.tbnRepSave.UseVisualStyleBackColor = true;
+                this.tbnRepSave.Click += new System.EventHandler(this.tbnRepSave_Click);
+                // 
+                // btnRepReset
+                // 
+                this.btnRepReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnRepReset.Image = global::SDC_Application.Resource1.New_icon1_res;
+                this.btnRepReset.Location = new System.Drawing.Point(218, 26);
+                this.btnRepReset.Name = "btnRepReset";
+                this.btnRepReset.Size = new System.Drawing.Size(48, 48);
+                this.btnRepReset.TabIndex = 217;
+                this.btnRepReset.UseVisualStyleBackColor = true;
+                this.btnRepReset.Click += new System.EventHandler(this.btnRepReset_Click);
+                // 
+                // txtRepCNIC
+                // 
+                this.txtRepCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepCNIC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtRepCNIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtRepCNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtRepCNIC.Location = new System.Drawing.Point(374, 35);
+                this.txtRepCNIC.Margin = new System.Windows.Forms.Padding(4);
+                this.txtRepCNIC.MaxLength = 13;
+                this.txtRepCNIC.Name = "txtRepCNIC";
+                this.txtRepCNIC.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                this.txtRepCNIC.Size = new System.Drawing.Size(216, 30);
+                this.txtRepCNIC.TabIndex = 215;
+                this.txtRepCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                this.txtRepCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
+                // 
+                // label63
+                // 
+                this.label63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label63.AutoSize = true;
+                this.label63.BackColor = System.Drawing.Color.White;
+                this.label63.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label63.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+                this.label63.Location = new System.Drawing.Point(593, 31);
+                this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                this.label63.Name = "label63";
+                this.label63.Size = new System.Drawing.Size(98, 38);
+                this.label63.TabIndex = 216;
+                this.label63.Text = "شناختی کارڈ نمبر";
+                // 
+                // txtRepFName
+                // 
+                this.txtRepFName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepFName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtRepFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtRepFName.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtRepFName.Location = new System.Drawing.Point(699, 31);
+                this.txtRepFName.Margin = new System.Windows.Forms.Padding(4);
+                this.txtRepFName.Name = "txtRepFName";
+                this.txtRepFName.Size = new System.Drawing.Size(192, 39);
+                this.txtRepFName.TabIndex = 213;
+                this.txtRepFName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMalikName_KeyPress);
+                // 
+                // label64
+                // 
+                this.label64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label64.AutoSize = true;
+                this.label64.BackColor = System.Drawing.Color.White;
+                this.label64.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label64.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+                this.label64.Location = new System.Drawing.Point(895, 31);
+                this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                this.label64.Name = "label64";
+                this.label64.Size = new System.Drawing.Size(112, 38);
+                this.label64.TabIndex = 214;
+                this.label64.Text = "ولدیت/زوجیت";
+                // 
+                // txtRepName
+                // 
+                this.txtRepName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtRepName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtRepName.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtRepName.Location = new System.Drawing.Point(1022, 31);
+                this.txtRepName.Margin = new System.Windows.Forms.Padding(4);
+                this.txtRepName.Name = "txtRepName";
+                this.txtRepName.Size = new System.Drawing.Size(202, 39);
+                this.txtRepName.TabIndex = 211;
+                this.txtRepName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMalikName_KeyPress);
+                // 
+                // label65
+                // 
+                this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label65.AutoSize = true;
+                this.label65.BackColor = System.Drawing.Color.White;
+                this.label65.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label65.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+                this.label65.Location = new System.Drawing.Point(1232, 31);
+                this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                this.label65.Name = "label65";
+                this.label65.Size = new System.Drawing.Size(36, 38);
+                this.label65.TabIndex = 212;
+                this.label65.Text = "نام";
+                // 
                 // frmFard
                 // 
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -4644,7 +4945,9 @@
                 ((System.ComponentModel.ISupportInitialize)(this.grfIntiqalPersonSanps)).EndInit();
                 this.groupBox2.ResumeLayout(false);
                 this.groupBox2.PerformLayout();
+                ((System.ComponentModel.ISupportInitialize)(this.pboxPicture)).EndInit();
                 this.gbFingerSave.ResumeLayout(false);
+                this.gbFingerSave.PerformLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.pboxFingerPrint)).EndInit();
                 this.tabOperatorReport.ResumeLayout(false);
                 this.groupBox15.ResumeLayout(false);
@@ -4706,6 +5009,13 @@
                 this.groupBox27.PerformLayout();
                 this.groupBox3.ResumeLayout(false);
                 this.groupBox3.PerformLayout();
+                this.tabCam.ResumeLayout(false);
+                this.splitContainer6.Panel1.ResumeLayout(false);
+                this.splitContainer6.Panel1.PerformLayout();
+                this.splitContainer6.Panel2.ResumeLayout(false);
+                ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+                this.splitContainer6.ResumeLayout(false);
+                ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
                 this.ResumeLayout(false);
 
             }
@@ -5025,5 +5335,26 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TextBox txtKhatooniId;
         private System.Windows.Forms.Button btnEnableFard;
+        private System.Windows.Forms.Button btnPicture;
+        private System.Windows.Forms.Button btnLoadPicturefromFile;
+        private System.Windows.Forms.PictureBox pboxPicture;
+        private System.Windows.Forms.Button btnPictureReset;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TabPage tabCam;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.ComboBox cmbCamera;
+        private System.Windows.Forms.Button bntCapture;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRepDel;
+        private System.Windows.Forms.TextBox txtRepRecId;
+        private System.Windows.Forms.Button tbnRepSave;
+        private System.Windows.Forms.Button btnRepReset;
+        private System.Windows.Forms.TextBox txtRepCNIC;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox txtRepFName;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox txtRepName;
+        private System.Windows.Forms.Label label65;
     }
     }

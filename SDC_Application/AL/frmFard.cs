@@ -16,6 +16,12 @@ using System.Configuration;
 using System.Drawing.Drawing2D;
 using System.Collections;
 
+using System.Dynamic;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Permissions;
+using AForge.Video;
+using AForge.Video.DirectShow;
 
 using System.Drawing.Imaging;
 using SDC_Application.DL;
@@ -29,7 +35,8 @@ namespace SDC_Application.AL
     public partial class frmFard : Form
     {
         #region Calss Variables
-
+        private FilterInfoCollection captureDevices;
+        private VideoCaptureDevice videoSource;
         Malikan_n_Khattajat MalikanKatajat = new Malikan_n_Khattajat();
         Search search = new Search();
         Persons person = new Persons();
@@ -45,6 +52,7 @@ namespace SDC_Application.AL
         BL.frmToken objbusines = new BL.frmToken();
         BL.frmRecipt objfrmRecipt = new BL.frmRecipt();
         public byte[] imgDataFinger = null;
+        public byte[] imgDataPerson = null;
         Persons Pr = new Persons();
         fileIndexing fi = new fileIndexing();
         DataTable dt = new DataTable();
@@ -1727,6 +1735,22 @@ namespace SDC_Application.AL
         }
 
         #endregion
+        #region saved Images
+        public Image MStream(byte[] img)
+        {
+            MemoryStream stream = new MemoryStream(img);
+
+            return Image.FromStream(stream);
+
+        }
+        public byte[] imageToByteArray(Image imageIn)
+        {
+
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
+        #endregion
 
 
         #region selection from Grid for Finger Capture
@@ -1750,9 +1774,21 @@ namespace SDC_Application.AL
                             }
                             this.txtName.Text = row.Cells["CompleteName"].Value.ToString();
                             this.txtpersonID.Text = row.Cells["PersonID"].Value.ToString();
+                            if (row.Cells["FardRepRecId"].Value.ToString() != "0")
+                            {
+                                this.txtRepRecId.Text = row.Cells["FardRepRecId"].Value.ToString();
+                                this.txtRepName.Text = row.Cells["Name"].Value.ToString();
+                                this.txtRepFName.Text = row.Cells["FatherName"].Value.ToString();
+                                this.txtRepCNIC.Text = row.Cells["CNIC"].Value.ToString();
+                                this.btnRepDel.Enabled = true;
+                            }
+                            else
+                            {
+                                btnRepReset_Click(sender, e);
+                            }
                             txtIntPersonImageid.Text = "-1";
                             // Get and Load if Person Pics are already saved... 
-                            GetPersonFingerPrint(this.txtpersonID.Text);
+                            GetPersonFingerPrint(this.txtpersonID.Text, this.txtRepRecId.Text);
 
 
 
@@ -1771,11 +1807,11 @@ namespace SDC_Application.AL
 
         #region Get Person Finger Print and Image if Already saved..
 
-        private void GetPersonFingerPrint(string PersonId)
+        private void GetPersonFingerPrint(string PersonId, string FardRepRecId)
         {
            
             DataTable PersonPics = new System.Data.DataTable();
-            PersonPics = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_Fard_PersonFingerPrint_By_PersonId "+SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+ this.SelectedTokenId+",'" + PersonId + "'" );
+            PersonPics = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_Fard_PersonFingerPrint_By_PersonId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.SelectedTokenId + ",'" + PersonId + "','" + FardRepRecId + "'");
           
             if (PersonPics != null)
             {
@@ -1788,6 +1824,7 @@ namespace SDC_Application.AL
                         pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
                         imgDataFinger = (byte[])dr["PersonFingerPrint"];
                         txtIntPersonImageid.Text = dr["FardPersonFingerId"].ToString();
+                        pboxPicture.Image = dr["PersonPic"] != DBNull.Value ? MStream((byte[])dr["PersonPic"]) : null;
 
                     }
                 }
@@ -1814,12 +1851,14 @@ namespace SDC_Application.AL
                 grfIntiqalPersonSanps.Columns["Selection"].DisplayIndex = 0;
                 grfIntiqalPersonSanps.Columns["CompleteName"].DisplayIndex = 1;
                 grfIntiqalPersonSanps.Columns["MType"].DisplayIndex = 2;
-               // grfIntiqalPersonSanps.Columns["PersonFingerPrint"].DisplayIndex = 2;
+                // grfIntiqalPersonSanps.Columns["PersonFingerPrint"].DisplayIndex = 2;
                 grfIntiqalPersonSanps.Columns["CompleteName"].HeaderText = "فرد تفصیل";
+                grfIntiqalPersonSanps.Columns["cnic"].HeaderText = "شناختی کارڈ";
                 grfIntiqalPersonSanps.Columns["MType"].HeaderText = "قسم ملکیت";
                 grfIntiqalPersonSanps.Columns["PersonID"].Visible = false;
-                //((DataGridViewImageColumn)this.grfIntiqalPersonSanps.Columns["PersonPic"]).DefaultCellStyle.NullValue = null;
-                //((DataGridViewImageColumn)this.grfIntiqalPersonSanps.Columns["PersonFingerPrint"]).DefaultCellStyle.NullValue = null;
+                grfIntiqalPersonSanps.Columns["Name"].Visible = false;
+                grfIntiqalPersonSanps.Columns["FatherName"].Visible = false;
+                grfIntiqalPersonSanps.Columns["FardRepRecId"].Visible = false;
             }
              
              }
@@ -1907,16 +1946,23 @@ namespace SDC_Application.AL
         {
             bool InsertionSuccesfull = false;
 
-            if (txtName.Text != "" && imgDataFinger != null)
+            if (txtName.Text != "")
             {
                 string PersonFingerPrintId = this.txtIntPersonImageid.Text.Trim();
                 string tokenId = this.SelectedTokenId;
                 string PersonId = this.txtpersonID.Text;
-
-
-
+                string FardRepRecId = null;
+                if (txtRepRecId.Text.Trim() != "-1")
+                {
+                    FardRepRecId = this.txtRepRecId.Text;
+                }
                 Image imgfinger = pboxFingerPrint.Image;
+                Image imgPerson = pboxPicture.Image;
 
+                if (pboxPicture.Image != null)
+                {
+                    imgDataPerson = imageToByteArray(imgPerson);
+                }
 
 
                 try
@@ -1937,7 +1983,7 @@ namespace SDC_Application.AL
                          }
                          else
                          {
-                             string DI = fi.saveFingerImageSelf(PersonFingerPrintId, tokenId, PersonId, imgDataFinger, InsertUserId, InsertLoginName, UpdateUserId, UpdateLoginName).ToString();
+                             string DI = fi.saveFingerImageSelf(PersonFingerPrintId, tokenId, PersonId,FardRepRecId, imgDataPerson, imgDataFinger, InsertUserId, InsertLoginName, UpdateUserId, UpdateLoginName).ToString();
 
                              if (DI != null)
                              {
@@ -1954,6 +2000,15 @@ namespace SDC_Application.AL
                                  txtIntPersonImageid.Text = DI;
                                  InsertionSuccesfull = true;
                                  btnSaveImage.Enabled = false;
+
+                                 pboxFingerPrint.Image = null;
+                                 txtIntPersonImageid.Text = "-1";
+                                 pboxPicture.Image = null;
+
+                                 this.txtName.Clear();
+                                 this.txtpersonID.Clear();
+
+                                 btnRepReset_Click(sender, e);
 
                              }
                          }
@@ -1976,6 +2031,14 @@ namespace SDC_Application.AL
             }
 
 
+        }
+        private void btnRepReset_Click(object sender, EventArgs e)
+        {
+            txtRepName.Clear();
+            txtRepFName.Clear();
+            txtRepCNIC.Clear();
+            txtRepRecId.Text = "-1";
+            btnRepDel.Enabled = false;
         }
         #endregion
 
@@ -2584,7 +2647,10 @@ namespace SDC_Application.AL
         }
 
         #endregion
-
+        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
+        }
         #region Form Load
         private void frmFard_Load(object sender, EventArgs e)
         {
@@ -2599,6 +2665,40 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
             tooltip();
+            try
+            {
+                
+                captureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                if (captureDevices.Count > 0)
+                {
+                    //cmbCamera.Items.Add("انتخاب کریں");
+                    foreach (FilterInfo Device in captureDevices)
+                    {
+                        cmbCamera.Items.Add(Device.Name);
+                    }
+
+                    if (frmMain.cameraindex != -1)
+                    {
+                        cmbCamera.SelectedIndex = frmMain.cameraindex;
+                        videoSource = new VideoCaptureDevice();
+                        videoSource = new VideoCaptureDevice(captureDevices[frmMain.cameraindex].MonikerString);
+                        videoSource.NewFrame += VideoSource_NewFrame;
+                        videoSource.Start();
+                        cmbCamera.Enabled = false;
+
+                    }
+                }
+
+                else
+                {
+                    frmMain.cameraindex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
 
@@ -3606,6 +3706,252 @@ namespace SDC_Application.AL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLoadPicturefromFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog dlg = new OpenFileDialog())
+                {
+                    dlg.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF,*.PNG,*.TIFF,*.TIF)|*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG;*.TIFF;*.TIF;";
+                    dlg.Multiselect = false;
+
+                    dlg.Title = "تصویر کا انتخاب کریں";
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+
+                        pboxPicture.Visible = true;
+                        string path = dlg.FileName;
+                        byte[] image = System.IO.File.ReadAllBytes(path);
+                        DateTime createdTime = System.IO.File.GetCreationTime(path);
+                        //if(createdTime.Date <DateTime.Now.Date)
+                        //{
+                        //    MessageBox.Show("آج کی تصویر سیلیکٹ کریں");
+                        //    this.pboxPicture.Image = null;
+                        //}
+                        //else
+                        //{
+                        MemoryStream stream = new MemoryStream(image);
+                        Image img = Image.FromStream(stream);
+                        this.pboxPicture.Image = ResizeImages.ResizeImagePerson(img, img.Width, img.Height, false);
+                        //}
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btnPictureReset_Click(object sender, EventArgs e)
+        {
+            this.pboxPicture.Image = null;
+            // this.imgVideo.Visible = true;
+            try
+            {
+
+                //cam.Stop();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnPicture_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text.Trim() != "")
+            {
+                if (cmbCamera.Items.Count > 0)
+                {
+                    this.tabControl1.SelectedIndex = 9;
+                }
+                else
+                {
+                    MessageBox.Show("کیمرہ موجود نہیں ہے۔", "کیمرہ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("نام انتخاب کیجیئے", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbnRepSave_Click(object sender, EventArgs e)
+        {
+            if (txtRepCNIC.Text.Trim() == string.Empty || txtRepCNIC.Text.Trim().Length < 13)
+            {
+                MessageBox.Show("درست شناختی کارڈ نمبر درج کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRepCNIC.Focus();
+                return;
+
+            }
+            else if (txtRepName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("نام درج کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRepName.Focus();
+                return;
+
+            }
+            else if (txtRepFName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("والد کا نام درج کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRepFName.Focus();
+                return;
+
+            }
+
+
+            bool isExists = false;
+            if (grfIntiqalPersonSanps.Rows.Count > 0)
+            {
+
+                foreach (DataGridViewRow row in grfIntiqalPersonSanps.Rows)
+                {
+
+                    if (txtRepCNIC.Text.Replace("-", "") == row.Cells["cnic"].Value.ToString())
+                    {
+                        if (txtRepRecId.Text != row.Cells["FardRepRecId"].Value.ToString())
+                        {
+                            isExists = true;
+                            MessageBox.Show("شناختی کارڈ نمبر " + row.Cells["cnic"].Value.ToString() + " کا ریکارڈ پہلے سے موجود ہے۔", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+
+                    }
+
+
+                }
+
+            }
+            if (isExists)
+            {
+
+                return;
+            }
+
+
+            //==================  End =========================================================
+
+
+            string FardRepRecid = txtRepRecId.Text.ToString();
+            string TokenId = this.SelectedTokenId;
+            string usrId = UsersManagments.UserId.ToString();
+            string UsrName = UsersManagments.UserName.ToString();
+            string PersonName = txtRepName.Text.ToString();
+            string FatherName = txtRepFName.Text.ToString();
+            string CNIC = txtRepCNIC.Text.ToString();
+
+
+            string LastId = mnk.SaveFardRepresentative(FardRepRecid, TokenId, PersonName, FatherName, CNIC, usrId, UsrName);
+            txtRepRecId.Text = LastId;
+
+            DataTable dt = new DataTable();
+            dt = intiqal.GetIntiqalPersonsListFardSelf(this.SelectedTokenId);
+            grfIntiqalPersonSanps.DataSource = dt;
+            grfFardPersonSanps();
+            objdatagird.gridControls(grfIntiqalPersonSanps);
+            objdatagird.colorrbackgrid(grfIntiqalPersonSanps);
+            btnRepReset_Click(sender, e);
+
+
+            btnSaveImage.Enabled = false;
+
+
+            pboxFingerPrint.Image = null;
+            txtIntPersonImageid.Text = "-1";
+            pboxPicture.Image = null;
+
+            this.txtName.Clear();
+            this.txtpersonID.Clear();
+
+        }
+
+        private void btnRepDel_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ واقعی ریکارڈ خذف کرنا چاہتے ہے؟", "خذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    this.dtTokenInIntiqalSeller = Iq.GetFardinIntiqalSellerStatus(this.SelectedTokenId);
+
+                    if (this.dtTokenInIntiqalSeller != "0")
+                    {
+                        MessageBox.Show("یہ فرد انتقال نمبر " + dtTokenInIntiqalSeller.ToString() + " میں استعمال ہو چکا ہے لھٰذا تبدیل نہیں ہو سکتا");
+                    }
+                    else
+                    {
+                        string CancelCheck = intiqal.FardCancelCheck(this.SelectedTokenId);
+                        if (CancelCheck == "0")
+                        {
+                            MessageBox.Show("یہ فرد کینسل ہو چکا ہے لھٰذا تبدیل نہیں ہو سکتا");
+                        }
+                        else
+                        {
+                            mnk.DeleteFarRepresentative(txtRepRecId.Text);
+                            this.txtRepRecId.Text = "-1";
+
+
+                            DataTable dt = new DataTable();
+                            dt = intiqal.GetIntiqalPersonsListFardSelf(this.SelectedTokenId);
+                            grfIntiqalPersonSanps.DataSource = dt;
+                            grfFardPersonSanps();
+                            objdatagird.gridControls(grfIntiqalPersonSanps);
+                            objdatagird.colorrbackgrid(grfIntiqalPersonSanps);
+                            btnRepReset_Click(sender, e);
+
+
+                            btnSaveImage.Enabled = false;
+
+
+                            pboxFingerPrint.Image = null;
+                            txtIntPersonImageid.Text = "-1";
+                            pboxPicture.Image = null;
+
+                            this.txtName.Clear();
+                            this.txtpersonID.Clear();
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void bntCapture_Click(object sender, EventArgs e)
+        {
+            Image imm = (Bitmap)pictureBox1.Image.Clone();
+            pboxPicture.Image = ResizeImages.ResizeImagePerson(imm, imm.Width, imm.Height, false); //imm; 
+            videoSource.Stop();
+            this.tabControl1.SelectedIndex = 2;
+        }
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 9)
+            {
+                this.tabControl1.SelectedIndex = 2;
+            }
+        }
+
+        private void cmbCamera_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cmbCamera.Items.Count > 0)
+            {
+                frmMain.cameraindex = cmbCamera.SelectedIndex;
+                videoSource = new VideoCaptureDevice();
+                videoSource = new VideoCaptureDevice(captureDevices[frmMain.cameraindex].MonikerString);
+                videoSource.NewFrame += VideoSource_NewFrame;
+                videoSource.Start();
+                cmbCamera.Enabled = false;
             }
         }
 

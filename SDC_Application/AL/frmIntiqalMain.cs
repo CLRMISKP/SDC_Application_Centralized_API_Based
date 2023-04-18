@@ -2298,6 +2298,7 @@ txtLandValue.Enabled = false;
                 radKhanaKasht.Checked = false;
                 radkhanakashtmalkiat.Checked = false;
                 radKhanaMalkiat.Checked = false;
+                btnSave.Enabled = true;
             }
             else
                 radkhanakashtToMalkiat.Checked = false;

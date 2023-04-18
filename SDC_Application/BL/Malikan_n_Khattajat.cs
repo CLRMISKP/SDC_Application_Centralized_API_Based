@@ -179,6 +179,20 @@ namespace SDC_Application.BL
             return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
             //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
         }
+        public string SaveFardRepresentative(string FardRepRecid, string TokenId, string Name, string FatherName, string CNIC, string InsertUserId, string InsertLoginName)
+        {
+
+            string spWithParam = "WEB_Self_SP_INSERT_Fard_Representative "+Classess.UsersManagments._Tehsilid.ToString()+"," + FardRepRecid + "," + TokenId + ",N'" + Name + "',N'" + FatherName + "'," + CNIC + "," + InsertUserId + ",'" + InsertLoginName + "'";
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+            //objauto.value("Proc_Get_SDC_TokenList_For_PaymentVoucher", "TokenId", txtTokenID);
+        }
+        public string DeleteFarRepresentative(string FardRepRecId)
+        {
+
+            string spWithParam = "WEB_Self_SP_DELETE_SDC_Fard_Representative " + FardRepRecId;
+            return ojbdb.ExecInsertUpdateStoredProcedure(spWithParam);
+
+        }
         #endregion
 
         #region Get Fard Person Group Details

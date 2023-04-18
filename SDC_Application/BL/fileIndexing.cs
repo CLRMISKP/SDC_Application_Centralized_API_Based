@@ -194,7 +194,7 @@ namespace SDC_Application.BL
             return lastId;
         }
 
-        public string saveFingerImageSelf(string FardPersonFingerId, string tokenId, string PersonId, byte[] imgDataFinger, string InsertUserId, string InsertLoginName, string UpdateUserId, string UpdateLoginName)
+        public string saveFingerImageSelf(string FardPersonFingerId, string tokenId, string PersonId, string FardRepRecId, byte[] imgDataPerson, byte[] imgDataFinger, string InsertUserId, string InsertLoginName, string UpdateUserId, string UpdateLoginName)
         {
             string lastId = "";
             SqlCommand mycomm = new SqlCommand();
@@ -202,6 +202,8 @@ namespace SDC_Application.BL
             mycomm.Parameters.AddWithValue("@PersonFingerPrintId", FardPersonFingerId);
             mycomm.Parameters.AddWithValue("@tokenId", tokenId);
             mycomm.Parameters.AddWithValue("@PersonId", PersonId);
+            mycomm.Parameters.AddWithValue("@FardRepRecId", FardRepRecId);
+            mycomm.Parameters.AddWithValue("@PersonPic", imgDataPerson);
             mycomm.Parameters.AddWithValue("@PersonFingerPrint", imgDataFinger);
             mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
             mycomm.Parameters.AddWithValue("@InsertLoginName", InsertLoginName);

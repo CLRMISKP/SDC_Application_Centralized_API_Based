@@ -3989,18 +3989,18 @@ namespace SDC_Application.AL
                         else
                         {
                            
-                                if (Intiqal.CheckMalikRemainingHissaCheck(this.IntiqalId) == "1")
-                                {
+                                //if (Intiqal.CheckMalikRemainingHissaCheck(this.IntiqalId) == "1")
+                                //{
                                     Intiqal.IntiqalAmalDaramad(this.MozaId.ToString(), this.IntiqalId, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
                                     //client.IntiqalAmalDaramadCombined(CurrentUser.MozaId.ToString(), this.IntiqalId.ToString());
                                     MessageBox.Show("عمل درامد ہو گیا");
                                     this.AmalDaramad = true;
                                     this.SetAmalDaramadStatus(this.AmalDaramad);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("بایع / دہندہ کے محفوظ شدہ حصہ و رقبہ اور اصل ملکییتی حصہ و رقبہ برابر نہیں ہے۔", "ناقابل عمل درامد", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                                //}
+                                //else
+                                //{
+                                //    MessageBox.Show("بایع / دہندہ کے محفوظ شدہ حصہ و رقبہ اور اصل ملکییتی حصہ و رقبہ برابر نہیں ہے۔", "ناقابل عمل درامد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                //}
                             
                          
                         }
