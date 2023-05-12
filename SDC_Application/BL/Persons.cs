@@ -23,8 +23,6 @@ namespace SDC_Application.BL
         #endregion
 
         #region Save Inteqal Witness Method
-
-
         public string SaveInteqalAfradRegister(string PersonId, string PersonTypeId, string FamilyId, string QoamId, string FamilyHead, string FamilyLevel, string ParentId, string PersonName, string Relation, string Fathername, string MotherName, string Gender, string MozaId, string CNIC, string DateOfBirth, string Sakna, string Address, string PersonDied, string PersonCategoryId, string InsertUserId, string personfamilystatusid, string InserUserName, string SerialNo)
         {
             string SpwithPara = "WEB_SP_INSERT_AfradRegister_SDC " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + PersonId + "," + PersonTypeId + "," + FamilyId + "," + QoamId + "," + FamilyHead + "," + FamilyLevel + "," + ParentId + ",N'" + PersonName + "',N'" + Relation + "',N'" + Fathername + "',N'" + MotherName + "',N'" + Gender + "'," + MozaId + "," + CNIC + "," + DateOfBirth + ",N'" + Sakna + "',N'" + Address + "'," + PersonDied + "," + PersonCategoryId + "," + InsertUserId + "," + personfamilystatusid + ",'" + InserUserName + "'," + SerialNo;
@@ -32,6 +30,7 @@ namespace SDC_Application.BL
 
         }
         #endregion
+
         #region Check for CNIC already Entered
 
         public string CheckCNICAlreadyEntered(string PersonId, String Mozaid, String CNIC)

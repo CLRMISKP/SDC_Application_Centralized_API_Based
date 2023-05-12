@@ -31,19 +31,19 @@
         private void InitializeComponent()
             {
                 this.components = new System.ComponentModel.Container();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
                 System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFard));
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
                 this.label4 = new System.Windows.Forms.Label();
                 this.txtReciptTokenID = new System.Windows.Forms.TextBox();
                 this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -156,6 +156,7 @@
                 this.grfIntiqalPersonSanps = new System.Windows.Forms.DataGridView();
                 this.Selection = new System.Windows.Forms.DataGridViewCheckBoxColumn();
                 this.groupBox2 = new System.Windows.Forms.GroupBox();
+                this.btnSaveImage = new System.Windows.Forms.Button();
                 this.btnPicture = new System.Windows.Forms.Button();
                 this.btnLoadPicturefromFile = new System.Windows.Forms.Button();
                 this.pboxPicture = new System.Windows.Forms.PictureBox();
@@ -164,7 +165,16 @@
                 this.btnFingerHysoon = new System.Windows.Forms.Button();
                 this.textBox1 = new System.Windows.Forms.TextBox();
                 this.gbFingerSave = new System.Windows.Forms.GroupBox();
-                this.btnSaveImage = new System.Windows.Forms.Button();
+                this.btnRepDel = new System.Windows.Forms.Button();
+                this.txtRepRecId = new System.Windows.Forms.TextBox();
+                this.tbnRepSave = new System.Windows.Forms.Button();
+                this.btnRepReset = new System.Windows.Forms.Button();
+                this.txtRepCNIC = new System.Windows.Forms.TextBox();
+                this.label63 = new System.Windows.Forms.Label();
+                this.txtRepFName = new System.Windows.Forms.TextBox();
+                this.label64 = new System.Windows.Forms.Label();
+                this.txtRepName = new System.Windows.Forms.TextBox();
+                this.label65 = new System.Windows.Forms.Label();
                 this.txtpersonID = new System.Windows.Forms.TextBox();
                 this.txtIntPersonImageid = new System.Windows.Forms.TextBox();
                 this.label22 = new System.Windows.Forms.Label();
@@ -354,6 +364,12 @@
                 this.cbKhassras = new System.Windows.Forms.ComboBox();
                 this.label56 = new System.Windows.Forms.Label();
                 this.label52 = new System.Windows.Forms.Label();
+                this.tabCam = new System.Windows.Forms.TabPage();
+                this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+                this.label62 = new System.Windows.Forms.Label();
+                this.cmbCamera = new System.Windows.Forms.ComboBox();
+                this.bntCapture = new System.Windows.Forms.Button();
+                this.pictureBox1 = new System.Windows.Forms.PictureBox();
                 this.groupBox3 = new System.Windows.Forms.GroupBox();
                 this.txtMoza = new System.Windows.Forms.TextBox();
                 this.label35 = new System.Windows.Forms.Label();
@@ -362,22 +378,6 @@
                 this.label1 = new System.Windows.Forms.Label();
                 this.btnSearchToken = new System.Windows.Forms.Button();
                 this.tt = new System.Windows.Forms.ToolTip(this.components);
-                this.tabCam = new System.Windows.Forms.TabPage();
-                this.splitContainer6 = new System.Windows.Forms.SplitContainer();
-                this.label62 = new System.Windows.Forms.Label();
-                this.cmbCamera = new System.Windows.Forms.ComboBox();
-                this.bntCapture = new System.Windows.Forms.Button();
-                this.pictureBox1 = new System.Windows.Forms.PictureBox();
-                this.btnRepDel = new System.Windows.Forms.Button();
-                this.txtRepRecId = new System.Windows.Forms.TextBox();
-                this.tbnRepSave = new System.Windows.Forms.Button();
-                this.btnRepReset = new System.Windows.Forms.Button();
-                this.txtRepCNIC = new System.Windows.Forms.TextBox();
-                this.label63 = new System.Windows.Forms.Label();
-                this.txtRepFName = new System.Windows.Forms.TextBox();
-                this.label64 = new System.Windows.Forms.Label();
-                this.txtRepName = new System.Windows.Forms.TextBox();
-                this.label65 = new System.Windows.Forms.Label();
                 this.tabControl1.SuspendLayout();
                 this.tbMalkiat.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -465,13 +465,13 @@
                 ((System.ComponentModel.ISupportInitialize)(this.dgKhassrajat)).BeginInit();
                 this.groupBox28.SuspendLayout();
                 this.groupBox27.SuspendLayout();
-                this.groupBox3.SuspendLayout();
                 this.tabCam.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
                 this.splitContainer6.Panel1.SuspendLayout();
                 this.splitContainer6.Panel2.SuspendLayout();
                 this.splitContainer6.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+                this.groupBox3.SuspendLayout();
                 this.SuspendLayout();
                 // 
                 // label4
@@ -604,8 +604,8 @@
                 // 
                 this.GridViewFardKhatajat.AllowUserToAddRows = false;
                 this.GridViewFardKhatajat.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle73.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewFardKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle73;
+                dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewFardKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
                 this.GridViewFardKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewFardKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewFardKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -760,8 +760,8 @@
                 // 
                 this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
                 this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle74.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle74;
+                dataGridViewCellStyle26.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
                 this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1298,8 +1298,8 @@
                 // 
                 this.GridFardKhatoonies.AllowUserToAddRows = false;
                 this.GridFardKhatoonies.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle75.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridFardKhatoonies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle75;
+                dataGridViewCellStyle27.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridFardKhatoonies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
                 this.GridFardKhatoonies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridFardKhatoonies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridFardKhatoonies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1485,8 +1485,8 @@
                 // 
                 this.GridViewFardMushteri.AllowUserToAddRows = false;
                 this.GridViewFardMushteri.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle76.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewFardMushteri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
+                dataGridViewCellStyle28.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewFardMushteri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
                 this.GridViewFardMushteri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewFardMushteri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewFardMushteri.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1987,6 +1987,18 @@
                 this.groupBox2.TabIndex = 3;
                 this.groupBox2.TabStop = false;
                 // 
+                // btnSaveImage
+                // 
+                this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnSaveImage.Image = global::SDC_Application.Resource1.Save_icon;
+                this.btnSaveImage.Location = new System.Drawing.Point(284, 83);
+                this.btnSaveImage.Name = "btnSaveImage";
+                this.btnSaveImage.Size = new System.Drawing.Size(57, 58);
+                this.btnSaveImage.TabIndex = 5;
+                this.tt.SetToolTip(this.btnSaveImage, "انتخاب کردہ مالک/نمائندہ کے بئو مٹرک اور تصویر محفوظ کریں");
+                this.btnSaveImage.UseVisualStyleBackColor = true;
+                this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
+                // 
                 // btnPicture
                 // 
                 this.btnPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2036,7 +2048,7 @@
                 this.label61.AutoSize = true;
                 this.label61.Location = new System.Drawing.Point(844, 24);
                 this.label61.Name = "label61";
-                this.label61.Size = new System.Drawing.Size(42, 31);
+                this.label61.Size = new System.Drawing.Size(44, 31);
                 this.label61.TabIndex = 28;
                 this.label61.Text = " تصویر";
                 // 
@@ -2082,16 +2094,135 @@
                 this.gbFingerSave.TabIndex = 9;
                 this.gbFingerSave.TabStop = false;
                 // 
-                // btnSaveImage
+                // btnRepDel
                 // 
-                this.btnSaveImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-                this.btnSaveImage.Image = global::SDC_Application.Resource1.Save_icon;
-                this.btnSaveImage.Location = new System.Drawing.Point(223, 74);
-                this.btnSaveImage.Name = "btnSaveImage";
-                this.btnSaveImage.Size = new System.Drawing.Size(57, 58);
-                this.btnSaveImage.TabIndex = 5;
-                this.btnSaveImage.UseVisualStyleBackColor = true;
-                this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
+                this.btnRepDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnRepDel.Enabled = false;
+                this.btnRepDel.Location = new System.Drawing.Point(94, 31);
+                this.btnRepDel.Name = "btnRepDel";
+                this.btnRepDel.Size = new System.Drawing.Size(83, 44);
+                this.btnRepDel.TabIndex = 220;
+                this.btnRepDel.Text = "خذف کریں";
+                this.btnRepDel.UseVisualStyleBackColor = true;
+                this.btnRepDel.Click += new System.EventHandler(this.btnRepDel_Click);
+                // 
+                // txtRepRecId
+                // 
+                this.txtRepRecId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepRecId.Location = new System.Drawing.Point(6, 31);
+                this.txtRepRecId.Name = "txtRepRecId";
+                this.txtRepRecId.Size = new System.Drawing.Size(51, 39);
+                this.txtRepRecId.TabIndex = 219;
+                this.txtRepRecId.Text = "-1";
+                this.txtRepRecId.Visible = false;
+                // 
+                // tbnRepSave
+                // 
+                this.tbnRepSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.tbnRepSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.tbnRepSave.Location = new System.Drawing.Point(255, 31);
+                this.tbnRepSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+                this.tbnRepSave.Name = "tbnRepSave";
+                this.tbnRepSave.Size = new System.Drawing.Size(113, 44);
+                this.tbnRepSave.TabIndex = 218;
+                this.tbnRepSave.Text = "نمائندہ محفوظ کریں";
+                this.tbnRepSave.UseVisualStyleBackColor = true;
+                this.tbnRepSave.Click += new System.EventHandler(this.tbnRepSave_Click);
+                // 
+                // btnRepReset
+                // 
+                this.btnRepReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnRepReset.Location = new System.Drawing.Point(183, 31);
+                this.btnRepReset.Name = "btnRepReset";
+                this.btnRepReset.Size = new System.Drawing.Size(69, 44);
+                this.btnRepReset.TabIndex = 217;
+                this.btnRepReset.Text = "نیا نمائندہ";
+                this.btnRepReset.UseVisualStyleBackColor = true;
+                this.btnRepReset.Click += new System.EventHandler(this.btnRepReset_Click);
+                // 
+                // txtRepCNIC
+                // 
+                this.txtRepCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepCNIC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtRepCNIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtRepCNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtRepCNIC.Location = new System.Drawing.Point(374, 35);
+                this.txtRepCNIC.Margin = new System.Windows.Forms.Padding(4);
+                this.txtRepCNIC.MaxLength = 13;
+                this.txtRepCNIC.Name = "txtRepCNIC";
+                this.txtRepCNIC.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                this.txtRepCNIC.Size = new System.Drawing.Size(216, 30);
+                this.txtRepCNIC.TabIndex = 215;
+                this.txtRepCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                this.txtRepCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
+                // 
+                // label63
+                // 
+                this.label63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label63.AutoSize = true;
+                this.label63.BackColor = System.Drawing.Color.White;
+                this.label63.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label63.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+                this.label63.Location = new System.Drawing.Point(593, 31);
+                this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                this.label63.Name = "label63";
+                this.label63.Size = new System.Drawing.Size(98, 38);
+                this.label63.TabIndex = 216;
+                this.label63.Text = "شناختی کارڈ نمبر";
+                // 
+                // txtRepFName
+                // 
+                this.txtRepFName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepFName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtRepFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtRepFName.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtRepFName.Location = new System.Drawing.Point(699, 31);
+                this.txtRepFName.Margin = new System.Windows.Forms.Padding(4);
+                this.txtRepFName.Name = "txtRepFName";
+                this.txtRepFName.Size = new System.Drawing.Size(192, 39);
+                this.txtRepFName.TabIndex = 213;
+                this.txtRepFName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMalikName_KeyPress);
+                // 
+                // label64
+                // 
+                this.label64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label64.AutoSize = true;
+                this.label64.BackColor = System.Drawing.Color.White;
+                this.label64.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label64.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+                this.label64.Location = new System.Drawing.Point(895, 31);
+                this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                this.label64.Name = "label64";
+                this.label64.Size = new System.Drawing.Size(112, 38);
+                this.label64.TabIndex = 214;
+                this.label64.Text = "ولدیت/زوجیت";
+                // 
+                // txtRepName
+                // 
+                this.txtRepName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtRepName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+                this.txtRepName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.txtRepName.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.txtRepName.Location = new System.Drawing.Point(1022, 31);
+                this.txtRepName.Margin = new System.Windows.Forms.Padding(4);
+                this.txtRepName.Name = "txtRepName";
+                this.txtRepName.Size = new System.Drawing.Size(202, 39);
+                this.txtRepName.TabIndex = 211;
+                this.txtRepName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMalikName_KeyPress);
+                // 
+                // label65
+                // 
+                this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label65.AutoSize = true;
+                this.label65.BackColor = System.Drawing.Color.White;
+                this.label65.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label65.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+                this.label65.Location = new System.Drawing.Point(1232, 31);
+                this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                this.label65.Name = "label65";
+                this.label65.Size = new System.Drawing.Size(36, 38);
+                this.label65.TabIndex = 212;
+                this.label65.Text = "نام";
                 // 
                 // txtpersonID
                 // 
@@ -3164,16 +3295,16 @@
                 this.grdRecipt.Location = new System.Drawing.Point(0, 271);
                 this.grdRecipt.Name = "grdRecipt";
                 this.grdRecipt.ReadOnly = true;
-                dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-                dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle77.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-                dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle77;
-                dataGridViewCellStyle78.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle78;
+                dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+                dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle29.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+                dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+                dataGridViewCellStyle30.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle30;
                 this.grdRecipt.Size = new System.Drawing.Size(1279, 314);
                 this.grdRecipt.TabIndex = 67;
                 this.grdRecipt.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRecipt_CellDoubleClick);
@@ -3971,14 +4102,14 @@
                 this.grdScanedDocStatus.AllowUserToAddRows = false;
                 this.grdScanedDocStatus.AllowUserToDeleteRows = false;
                 this.grdScanedDocStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewCellStyle79.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle79.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-                dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdScanedDocStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle79;
+                dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle31.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+                dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdScanedDocStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
                 this.grdScanedDocStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.grdScanedDocStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PageNo,
@@ -3992,14 +4123,14 @@
             this.Delete,
             this.replace,
             this.replaceImage});
-                dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewCellStyle80.BackColor = System.Drawing.SystemColors.Window;
-                dataGridViewCellStyle80.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle80.ForeColor = System.Drawing.SystemColors.ControlText;
-                dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-                dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-                this.grdScanedDocStatus.DefaultCellStyle = dataGridViewCellStyle80;
+                dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+                dataGridViewCellStyle32.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+                dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+                dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+                this.grdScanedDocStatus.DefaultCellStyle = dataGridViewCellStyle32;
                 this.grdScanedDocStatus.Dock = System.Windows.Forms.DockStyle.Left;
                 this.grdScanedDocStatus.Location = new System.Drawing.Point(3, 35);
                 this.grdScanedDocStatus.Name = "grdScanedDocStatus";
@@ -4159,8 +4290,8 @@
                 // 
                 this.dgvIntiqalatDetails.AllowUserToAddRows = false;
                 this.dgvIntiqalatDetails.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle81.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvIntiqalatDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
+                dataGridViewCellStyle33.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvIntiqalatDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
                 this.dgvIntiqalatDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvIntiqalatDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvIntiqalatDetails.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4206,8 +4337,8 @@
                 // 
                 this.dgvCancel.AllowUserToAddRows = false;
                 this.dgvCancel.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle82.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvCancel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle82;
+                dataGridViewCellStyle34.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvCancel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
                 this.dgvCancel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvCancel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvCancel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4235,8 +4366,8 @@
                 // 
                 this.dgvRemaining.AllowUserToAddRows = false;
                 this.dgvRemaining.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle83.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvRemaining.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle83;
+                dataGridViewCellStyle35.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvRemaining.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
                 this.dgvRemaining.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvRemaining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvRemaining.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4285,8 +4416,8 @@
                 // 
                 this.dgKhassrajat.AllowUserToAddRows = false;
                 this.dgKhassrajat.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle84.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgKhassrajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle84;
+                dataGridViewCellStyle36.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgKhassrajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
                 this.dgKhassrajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgKhassrajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgKhassrajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -4579,6 +4710,80 @@
                 this.label52.Text = "کھتونی نمبر";
                 this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 // 
+                // tabCam
+                // 
+                this.tabCam.Controls.Add(this.splitContainer6);
+                this.tabCam.Location = new System.Drawing.Point(4, 40);
+                this.tabCam.Name = "tabCam";
+                this.tabCam.Padding = new System.Windows.Forms.Padding(3);
+                this.tabCam.Size = new System.Drawing.Size(1279, 585);
+                this.tabCam.TabIndex = 9;
+                this.tabCam.Text = "کیمرہ";
+                this.tabCam.UseVisualStyleBackColor = true;
+                // 
+                // splitContainer6
+                // 
+                this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.splitContainer6.Location = new System.Drawing.Point(3, 3);
+                this.splitContainer6.Name = "splitContainer6";
+                // 
+                // splitContainer6.Panel1
+                // 
+                this.splitContainer6.Panel1.Controls.Add(this.label62);
+                this.splitContainer6.Panel1.Controls.Add(this.cmbCamera);
+                this.splitContainer6.Panel1.Controls.Add(this.bntCapture);
+                this.splitContainer6.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                // 
+                // splitContainer6.Panel2
+                // 
+                this.splitContainer6.Panel2.Controls.Add(this.pictureBox1);
+                this.splitContainer6.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                this.splitContainer6.Size = new System.Drawing.Size(1273, 579);
+                this.splitContainer6.SplitterDistance = 275;
+                this.splitContainer6.TabIndex = 1;
+                // 
+                // label62
+                // 
+                this.label62.Anchor = System.Windows.Forms.AnchorStyles.Top;
+                this.label62.AutoSize = true;
+                this.label62.Location = new System.Drawing.Point(187, 6);
+                this.label62.Name = "label62";
+                this.label62.Size = new System.Drawing.Size(93, 31);
+                this.label62.TabIndex = 12;
+                this.label62.Text = "کیمرہ منتخب کریں";
+                // 
+                // cmbCamera
+                // 
+                this.cmbCamera.FormattingEnabled = true;
+                this.cmbCamera.Location = new System.Drawing.Point(18, 3);
+                this.cmbCamera.Name = "cmbCamera";
+                this.cmbCamera.Size = new System.Drawing.Size(153, 39);
+                this.cmbCamera.TabIndex = 11;
+                this.cmbCamera.SelectionChangeCommitted += new System.EventHandler(this.cmbCamera_SelectionChangeCommitted);
+                // 
+                // bntCapture
+                // 
+                this.bntCapture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bntCapture.BackgroundImage")));
+                this.bntCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.bntCapture.Location = new System.Drawing.Point(43, 102);
+                this.bntCapture.Name = "bntCapture";
+                this.bntCapture.Size = new System.Drawing.Size(85, 87);
+                this.bntCapture.TabIndex = 10;
+                this.bntCapture.Text = "Capture";
+                this.bntCapture.UseVisualStyleBackColor = true;
+                this.bntCapture.Click += new System.EventHandler(this.bntCapture_Click);
+                // 
+                // pictureBox1
+                // 
+                this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+                this.pictureBox1.Name = "pictureBox1";
+                this.pictureBox1.Size = new System.Drawing.Size(994, 579);
+                this.pictureBox1.TabIndex = 8;
+                this.pictureBox1.TabStop = false;
+                // 
                 // groupBox3
                 // 
                 this.groupBox3.Controls.Add(this.txtMoza);
@@ -4681,210 +4886,6 @@
                 // tt
                 // 
                 this.tt.IsBalloon = true;
-                // 
-                // tabCam
-                // 
-                this.tabCam.Controls.Add(this.splitContainer6);
-                this.tabCam.Location = new System.Drawing.Point(4, 40);
-                this.tabCam.Name = "tabCam";
-                this.tabCam.Padding = new System.Windows.Forms.Padding(3);
-                this.tabCam.Size = new System.Drawing.Size(1279, 585);
-                this.tabCam.TabIndex = 9;
-                this.tabCam.Text = "کیمرہ";
-                this.tabCam.UseVisualStyleBackColor = true;
-                // 
-                // splitContainer6
-                // 
-                this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
-                this.splitContainer6.Location = new System.Drawing.Point(3, 3);
-                this.splitContainer6.Name = "splitContainer6";
-                // 
-                // splitContainer6.Panel1
-                // 
-                this.splitContainer6.Panel1.Controls.Add(this.label62);
-                this.splitContainer6.Panel1.Controls.Add(this.cmbCamera);
-                this.splitContainer6.Panel1.Controls.Add(this.bntCapture);
-                this.splitContainer6.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                // 
-                // splitContainer6.Panel2
-                // 
-                this.splitContainer6.Panel2.Controls.Add(this.pictureBox1);
-                this.splitContainer6.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                this.splitContainer6.Size = new System.Drawing.Size(1273, 579);
-                this.splitContainer6.SplitterDistance = 275;
-                this.splitContainer6.TabIndex = 1;
-                // 
-                // label62
-                // 
-                this.label62.Anchor = System.Windows.Forms.AnchorStyles.Top;
-                this.label62.AutoSize = true;
-                this.label62.Location = new System.Drawing.Point(187, 6);
-                this.label62.Name = "label62";
-                this.label62.Size = new System.Drawing.Size(93, 31);
-                this.label62.TabIndex = 12;
-                this.label62.Text = "کیمرہ منتخب کریں";
-                // 
-                // cmbCamera
-                // 
-                this.cmbCamera.FormattingEnabled = true;
-                this.cmbCamera.Location = new System.Drawing.Point(18, 3);
-                this.cmbCamera.Name = "cmbCamera";
-                this.cmbCamera.Size = new System.Drawing.Size(153, 39);
-                this.cmbCamera.TabIndex = 11;
-                this.cmbCamera.SelectionChangeCommitted += new System.EventHandler(this.cmbCamera_SelectionChangeCommitted);
-                // 
-                // bntCapture
-                // 
-                this.bntCapture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bntCapture.BackgroundImage")));
-                this.bntCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                this.bntCapture.Location = new System.Drawing.Point(43, 102);
-                this.bntCapture.Name = "bntCapture";
-                this.bntCapture.Size = new System.Drawing.Size(85, 87);
-                this.bntCapture.TabIndex = 10;
-                this.bntCapture.Text = "Capture";
-                this.bntCapture.UseVisualStyleBackColor = true;
-                this.bntCapture.Click += new System.EventHandler(this.bntCapture_Click);
-                // 
-                // pictureBox1
-                // 
-                this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-                this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-                this.pictureBox1.Name = "pictureBox1";
-                this.pictureBox1.Size = new System.Drawing.Size(994, 579);
-                this.pictureBox1.TabIndex = 8;
-                this.pictureBox1.TabStop = false;
-                // 
-                // btnRepDel
-                // 
-                this.btnRepDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.btnRepDel.Enabled = false;
-                this.btnRepDel.Image = global::SDC_Application.Resource1.edit_delete1;
-                this.btnRepDel.Location = new System.Drawing.Point(164, 26);
-                this.btnRepDel.Name = "btnRepDel";
-                this.btnRepDel.Size = new System.Drawing.Size(48, 48);
-                this.btnRepDel.TabIndex = 220;
-                this.btnRepDel.UseVisualStyleBackColor = true;
-                this.btnRepDel.Click += new System.EventHandler(this.btnRepDel_Click);
-                // 
-                // txtRepRecId
-                // 
-                this.txtRepRecId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.txtRepRecId.Location = new System.Drawing.Point(32, 31);
-                this.txtRepRecId.Name = "txtRepRecId";
-                this.txtRepRecId.Size = new System.Drawing.Size(51, 39);
-                this.txtRepRecId.TabIndex = 219;
-                this.txtRepRecId.Text = "-1";
-                this.txtRepRecId.Visible = false;
-                // 
-                // tbnRepSave
-                // 
-                this.tbnRepSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.tbnRepSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.tbnRepSave.Image = global::SDC_Application.Resource1.Save_icon;
-                this.tbnRepSave.Location = new System.Drawing.Point(271, 26);
-                this.tbnRepSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-                this.tbnRepSave.Name = "tbnRepSave";
-                this.tbnRepSave.Size = new System.Drawing.Size(48, 48);
-                this.tbnRepSave.TabIndex = 218;
-                this.tbnRepSave.UseVisualStyleBackColor = true;
-                this.tbnRepSave.Click += new System.EventHandler(this.tbnRepSave_Click);
-                // 
-                // btnRepReset
-                // 
-                this.btnRepReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.btnRepReset.Image = global::SDC_Application.Resource1.New_icon1_res;
-                this.btnRepReset.Location = new System.Drawing.Point(218, 26);
-                this.btnRepReset.Name = "btnRepReset";
-                this.btnRepReset.Size = new System.Drawing.Size(48, 48);
-                this.btnRepReset.TabIndex = 217;
-                this.btnRepReset.UseVisualStyleBackColor = true;
-                this.btnRepReset.Click += new System.EventHandler(this.btnRepReset_Click);
-                // 
-                // txtRepCNIC
-                // 
-                this.txtRepCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.txtRepCNIC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-                this.txtRepCNIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.txtRepCNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.txtRepCNIC.Location = new System.Drawing.Point(374, 35);
-                this.txtRepCNIC.Margin = new System.Windows.Forms.Padding(4);
-                this.txtRepCNIC.MaxLength = 13;
-                this.txtRepCNIC.Name = "txtRepCNIC";
-                this.txtRepCNIC.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                this.txtRepCNIC.Size = new System.Drawing.Size(216, 30);
-                this.txtRepCNIC.TabIndex = 215;
-                this.txtRepCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-                this.txtRepCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
-                // 
-                // label63
-                // 
-                this.label63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.label63.AutoSize = true;
-                this.label63.BackColor = System.Drawing.Color.White;
-                this.label63.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.label63.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-                this.label63.Location = new System.Drawing.Point(593, 31);
-                this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                this.label63.Name = "label63";
-                this.label63.Size = new System.Drawing.Size(98, 38);
-                this.label63.TabIndex = 216;
-                this.label63.Text = "شناختی کارڈ نمبر";
-                // 
-                // txtRepFName
-                // 
-                this.txtRepFName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.txtRepFName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-                this.txtRepFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.txtRepFName.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.txtRepFName.Location = new System.Drawing.Point(699, 31);
-                this.txtRepFName.Margin = new System.Windows.Forms.Padding(4);
-                this.txtRepFName.Name = "txtRepFName";
-                this.txtRepFName.Size = new System.Drawing.Size(192, 39);
-                this.txtRepFName.TabIndex = 213;
-                this.txtRepFName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMalikName_KeyPress);
-                // 
-                // label64
-                // 
-                this.label64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.label64.AutoSize = true;
-                this.label64.BackColor = System.Drawing.Color.White;
-                this.label64.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.label64.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-                this.label64.Location = new System.Drawing.Point(895, 31);
-                this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                this.label64.Name = "label64";
-                this.label64.Size = new System.Drawing.Size(112, 38);
-                this.label64.TabIndex = 214;
-                this.label64.Text = "ولدیت/زوجیت";
-                // 
-                // txtRepName
-                // 
-                this.txtRepName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.txtRepName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-                this.txtRepName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.txtRepName.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.txtRepName.Location = new System.Drawing.Point(1022, 31);
-                this.txtRepName.Margin = new System.Windows.Forms.Padding(4);
-                this.txtRepName.Name = "txtRepName";
-                this.txtRepName.Size = new System.Drawing.Size(202, 39);
-                this.txtRepName.TabIndex = 211;
-                this.txtRepName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMalikName_KeyPress);
-                // 
-                // label65
-                // 
-                this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.label65.AutoSize = true;
-                this.label65.BackColor = System.Drawing.Color.White;
-                this.label65.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.label65.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-                this.label65.Location = new System.Drawing.Point(1232, 31);
-                this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                this.label65.Name = "label65";
-                this.label65.Size = new System.Drawing.Size(36, 38);
-                this.label65.TabIndex = 212;
-                this.label65.Text = "نام";
                 // 
                 // frmFard
                 // 
@@ -5007,8 +5008,6 @@
                 this.groupBox28.PerformLayout();
                 this.groupBox27.ResumeLayout(false);
                 this.groupBox27.PerformLayout();
-                this.groupBox3.ResumeLayout(false);
-                this.groupBox3.PerformLayout();
                 this.tabCam.ResumeLayout(false);
                 this.splitContainer6.Panel1.ResumeLayout(false);
                 this.splitContainer6.Panel1.PerformLayout();
@@ -5016,6 +5015,8 @@
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
                 this.splitContainer6.ResumeLayout(false);
                 ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+                this.groupBox3.ResumeLayout(false);
+                this.groupBox3.PerformLayout();
                 this.ResumeLayout(false);
 
             }

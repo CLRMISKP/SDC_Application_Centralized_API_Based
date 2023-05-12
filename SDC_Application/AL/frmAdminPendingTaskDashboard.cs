@@ -94,25 +94,28 @@ namespace SDC_Application.AL
 
         private void rbPending_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbPending.Checked)
+            if (dtRHZ_ChangeList_details.Rows.Count > 0)
             {
-                dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                dvRHZ_ChangeList_details.RowFilter = "ImplementedBY =0";
-                dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
-                fillDgTaskDetails();
-            }
-            else if (rbCompleted.Checked)
-            {
-                dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                dvRHZ_ChangeList_details.RowFilter = "ImplementedBY <>0";
-                dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
-                fillDgTaskDetails();
-            }
-            else if (rbAllTasks.Checked)
-            {
-                dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
-                fillDgTaskDetails();
+                if (rbPending.Checked)
+                {
+                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                    dvRHZ_ChangeList_details.RowFilter = "ImplementedBY =0";
+                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
+                    fillDgTaskDetails();
+                }
+                else if (rbCompleted.Checked)
+                {
+                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                    dvRHZ_ChangeList_details.RowFilter = "ImplementedBY <>0";
+                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
+                    fillDgTaskDetails();
+                }
+                else if (rbAllTasks.Checked)
+                {
+                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
+                    fillDgTaskDetails();
+                }
             }
         }
 

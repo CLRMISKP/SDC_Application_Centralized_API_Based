@@ -1872,6 +1872,7 @@ namespace SDC_Application.AL
             txtDetails.Clear();
             txtRHZ_ChangeId.Text = "-1";
             tabControlMain.Enabled = true;
+            tabControlMain.Enabled = false;
         }
 
         private void cbSrNo_SelectionChangeCommitted(object sender, EventArgs e)
