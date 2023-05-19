@@ -155,11 +155,11 @@ namespace SDC_Application.AL
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
-            else if (UsersManagments.check >= 44)
+            else if (UsersManagments.check >= 44 && UsersManagments.check!=52)
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }
-            else if (UsersManagments.check != 7)
+            else if (UsersManagments.check != 7 && UsersManagments.check != 52)
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }
@@ -555,6 +555,13 @@ namespace SDC_Application.AL
                  rp[1] = new ReportParameter("fbId", this.FbID);
                  rp[2] = new ReportParameter("tehsilid", this.Tehsilid);
                  this.SetCredentials("eFard_e_Bader_Min_Khatajat", rp, false);
+
+             }
+             if (UsersManagments.check == 52)
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
+                 this.SetCredentials("Mutation_UnAttested_dem", rp, false);
 
              }
         }

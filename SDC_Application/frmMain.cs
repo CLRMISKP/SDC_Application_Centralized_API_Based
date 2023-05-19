@@ -340,6 +340,7 @@ namespace SDC_Application
             this.mnuSubIntiqalatonRegistry.Visible = isMenuVisible("Registry_Intiqal_Detail_dem");
             this.mnuSubIntiqalatTehsildar.Visible = isMenuVisible("Intiqal_Tehsildar_Report_dem");
             this.mnuSubIntiqalatPendingRegistry.Visible = isMenuVisible("Registry_Intiqal_Pending_dem");
+            this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
 
@@ -1754,6 +1755,40 @@ namespace SDC_Application
 
                 //UsersManagments.check = 2;
                 frmVidTut obj = new frmVidTut();
+                obj.Show();
+            }
+        }
+
+        private void mnuSubNotAttestedMut_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 52;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuSubUnAttestedMutOPM_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 52;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
                 obj.Show();
             }
         }

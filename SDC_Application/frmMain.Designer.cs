@@ -157,6 +157,8 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuSubNotAttestedMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubUnAttestedMutOPM = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -802,7 +804,8 @@
             this.mnuSubAttestedMutaions,
             this.mnuSubCancelledInital,
             this.mnuSubIntiqalatAttestedNotImplemented,
-            this.mnuSubBiometricCapturedNotAttestIntiqalat});
+            this.mnuSubBiometricCapturedNotAttestIntiqalat,
+            this.mnuSubNotAttestedMut});
             this.mnuIntiqalReport.Name = "mnuIntiqalReport";
             this.mnuIntiqalReport.Size = new System.Drawing.Size(343, 42);
             this.mnuIntiqalReport.Text = " - انتقالا ت رپورٹس";
@@ -1008,7 +1011,8 @@
             this.mnuSubIntiqalatonRegistry,
             this.mnuSubIntiqalatAttested,
             this.mnuSubIntiqalatCancel,
-            this.mnuSubIntiqalatAttNotImp});
+            this.mnuSubIntiqalatAttNotImp,
+            this.mnuSubUnAttestedMutOPM});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
             this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
@@ -1247,6 +1251,20 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // mnuSubNotAttestedMut
+            // 
+            this.mnuSubNotAttestedMut.Name = "mnuSubNotAttestedMut";
+            this.mnuSubNotAttestedMut.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubNotAttestedMut.Text = " - غیر تصدیق شدہ انتقالات";
+            this.mnuSubNotAttestedMut.Click += new System.EventHandler(this.mnuSubNotAttestedMut_Click);
+            // 
+            // mnuSubUnAttestedMutOPM
+            // 
+            this.mnuSubUnAttestedMutOPM.Name = "mnuSubUnAttestedMutOPM";
+            this.mnuSubUnAttestedMutOPM.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubUnAttestedMutOPM.Text = " - غیر تصدیق شدہ انتقالات";
+            this.mnuSubUnAttestedMutOPM.Click += new System.EventHandler(this.mnuSubUnAttestedMutOPM_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1412,5 +1430,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSubBiometricCapturedNotAttestIntiqalat;
         private System.Windows.Forms.ToolStripMenuItem mnuSubStateLandReport;
         private System.Windows.Forms.ToolStripMenuItem mnuTutorial;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubNotAttestedMut;
+        private System.Windows.Forms.ToolStripMenuItem mnuSubUnAttestedMutOPM;
     }
 }
