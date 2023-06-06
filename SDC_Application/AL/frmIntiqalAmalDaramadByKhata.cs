@@ -44,6 +44,7 @@ namespace SDC_Application.AL
         public int Teh_Report;
         public string isGardawar { get; set; }
         public string RegStatus { get; set; }
+        public bool isManualMutation { get; set; }
 
         LanguageConverter lang = new LanguageConverter();
 
@@ -63,6 +64,10 @@ namespace SDC_Application.AL
             if (UsersManagments.Implementation == "0")
             {
                 this.btnAmaldaramad.Visible = false;
+            }
+            if (UsersManagments._IsAdmin)
+            {
+                this.btnAmaldaramad.Visible = true;
             }
             // Get Intiqal Khatajat and Fill Grid view
             if (this.IntiqalAmalDaramad)
@@ -612,6 +617,18 @@ namespace SDC_Application.AL
 
                                         this.lblMutStatus.Text = "زیر تجویز۔";
                                         this.lblMutStatus.ForeColor = Color.Red;
+                                        if (isManualMutation)
+                                        {
+                                            if (UsersManagments._IsAdmin)
+                                            {
+                                                btnAmaldaramad.Enabled = true;
+                                            }
+                                            else
+                                            {
+                                                btnAmaldaramad.Enabled = false;
+                                            }
+                                        }
+                                        else
                                         if (this.isAttested && this.isGardawar.ToString() != "0" && this.Teh_Report > 10)
                                         {
                                             btnAmaldaramad.Enabled = true;
@@ -643,6 +660,18 @@ namespace SDC_Application.AL
                                         
                                         this.lblMutStatus.Text = "زیر تجویز۔" ;
                                         this.lblMutStatus.ForeColor = Color.Red;
+                                        if (isManualMutation)
+                                        {
+                                            if (UsersManagments._IsAdmin)
+                                            {
+                                                btnAmaldaramad.Enabled = true;
+                                            }
+                                            else
+                                            {
+                                                btnAmaldaramad.Enabled = false;
+                                            }
+                                        }
+                                        else
                                         if (this.isAttested && this.isGardawar.ToString() != "0" && this.Teh_Report > 10)
                                         {
                                             btnAmaldaramad.Enabled = true;

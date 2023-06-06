@@ -1790,7 +1790,7 @@ txtLandValue.Enabled = false;
             IntiqalKhataAmal.KhanaMalkiat = this.radKhanaMalkiat.Checked;
             IntiqalKhataAmal.Khanakasht = this.radKhanaKasht.Checked;
             IntiqalKhataAmal.IntiqalAmalDaramad = this.AmalDaramad;
-
+            IntiqalKhataAmal.isManualMutation = false;
             IntiqalKhataAmal.isAttested = this.Attested;
             IntiqalKhataAmal.isGardawar = this.GardawarId;
             IntiqalKhataAmal.Teh_Report = this.Teh_Report;

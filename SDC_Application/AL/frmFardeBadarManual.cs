@@ -997,7 +997,7 @@ namespace SDC_Application.AL
             long FbFareeqId =long.Parse(txtFbFareeqId.Text!=""?txtFbFareeqId.Text:"-1");
             string fbExistsKGF = txtFbExistsKGF.Text;
             int sqNo = Convert.ToInt32(txtSeqNo.Text!=""?txtSeqNo.Text:"1");
-            if (pid != "0" && khewatTypeId != 0 && KhattaId!=0)
+            if (pid != "0" && khewatTypeId != 0 && KhattaId!=0 && cboQismMalikProp.SelectedValue.ToString().Length>2)
             {
                 try
                 {
@@ -2230,25 +2230,34 @@ namespace SDC_Application.AL
 
         private void btnSaveKashtMalik_Click(object sender, EventArgs e)
         {
-            try
+            try 
             {
-                string FbMushteriFareeqId = txtFbMushteriFareeqId.Text;
-                string kashtHisaBata = txtkashtHisaBata_Pro.Text.Trim() != "" ? txtkashtHisaBata_Pro.Text.Trim() : "0";
-                string kashtHisa = txtKahstHisa_Pro.Text.Trim() != "" ? txtKahstHisa_Pro.Text.Trim() : "0";
-                string kashtKanal = txtKashtKanal.Text.Trim() != "" ? txtKashtKanal.Text.Trim() : "0";
-                string kashtMarla = txtKashtMarla.Text.Trim() != "" ? txtKashtMarla.Text.Trim() : "0";
-                string kashtSarsai = txtKashtSarsai.Text.Trim() != "" ? txtKashtSarsai.Text.Trim() : "0";
-                string kashtFeet = txtKashtFeet.Text.Trim() != "" ? txtKashtFeet.Text.Trim() : "0";
-                string lastId = fardBadarBL.SaveFbMushteriFareeain(FbMushteriFareeqId, txtFbId.Text, txtMushteriFareeqId.Text, cbKashtKhatooni.SelectedValue.ToString(), txtkashtPersonId.Text, "0", cbKashtKhewatType.SelectedValue.ToString(), cbKashtKhewatTypeProposed.SelectedValue.ToString(), kashtHisa, kashtHisa, kashtHisaBata, kashtKanal, kashtMarla, kashtSarsai, kashtFeet, UsersManagments.UserId.ToString(), UsersManagments.UserName);
-                if (lastId != "0")
+                if (txtkashtPersonId.Text.Length > 5 && cbKashtKhewatType.SelectedValue.ToString().Length > 2 && cbKashtKhatooni.SelectedValue.ToString().Length > 5)
                 {
-                    this.ClearFormControls(gbKashtCurrent);
-                    this.ClearFormControls(gbKashtProposed);
-                    this.txtFbMushteriFareeqId.Text = "-1";
-                    this.txtMushteriFareeqId.Text = "-1";
-                    
-                    this.FillGridviewMushteriFareeqain();
+                    string FbMushteriFareeqId = txtFbMushteriFareeqId.Text;
+                    string kashtHisaBata = txtkashtHisaBata_Pro.Text.Trim() != "" ? txtkashtHisaBata_Pro.Text.Trim() : "0";
+                    string kashtHisa = txtKahstHisa_Pro.Text.Trim() != "" ? txtKahstHisa_Pro.Text.Trim() : "0";
+                    string kashtKanal = txtKashtKanal.Text.Trim() != "" ? txtKashtKanal.Text.Trim() : "0";
+                    string kashtMarla = txtKashtMarla.Text.Trim() != "" ? txtKashtMarla.Text.Trim() : "0";
+                    string kashtSarsai = txtKashtSarsai.Text.Trim() != "" ? txtKashtSarsai.Text.Trim() : "0";
+                    string kashtFeet = txtKashtFeet.Text.Trim() != "" ? txtKashtFeet.Text.Trim() : "0";
+                    if (txtMushteriFareeqId.Text.Length < 5)
+                    {
+                        txtMushteriFareeqId.Text = rhz.SaveMushteriFareeq(txtMushteriFareeqId.Text, "Fard e Badar", cbKashtKhatooni.SelectedValue.ToString(), txtkashtPersonId.Text, cbKashtKhewatType.SelectedValue.ToString(), kashtHisa, kashtHisaBata, kashtKanal, kashtMarla, kashtSarsai, kashtFeet, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    }
+                    string lastId = fardBadarBL.SaveFbMushteriFareeain(FbMushteriFareeqId, txtFbId.Text, txtMushteriFareeqId.Text, cbKashtKhatooni.SelectedValue.ToString(), txtkashtPersonId.Text, "0", cbKashtKhewatType.SelectedValue.ToString(), cbKashtKhewatTypeProposed.SelectedValue.ToString(), kashtHisa, kashtHisa, kashtHisaBata, kashtKanal, kashtMarla, kashtSarsai, kashtFeet, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    if (lastId != "0")
+                    {
+                        this.ClearFormControls(gbKashtCurrent);
+                        this.ClearFormControls(gbKashtProposed);
+                        this.txtFbMushteriFareeqId.Text = "-1";
+                        this.txtMushteriFareeqId.Text = "-1";
+
+                        this.FillGridviewMushteriFareeqain();
+                    }
                 }
+                else
+                    MessageBox.Show("مشتری کے تمام کوائف پر کریں");
             }
             catch (Exception ex)
             {
@@ -2322,7 +2331,7 @@ namespace SDC_Application.AL
                             txtKashtSarsai.Text = row.Cells["Fard_Sarsai_Proposed"].Value.ToString();
                             txtKashtFeet.Text = row.Cells["Fard_Feet_Proposed"].Value.ToString();
                             cbKashtKhewatType.SelectedValue = row.Cells["KhewatTypeId"].Value.ToString();
-                            cbKashtKhewatTypeProposed.SelectedValue = row.Cells["KhewatTypeIdProposed"].Value.ToString();
+                            cbKashtKhewatTypeProposed.SelectedValue = row.Cells["KhewatTypeIdProposed"].Value.ToString().Length>2?row.Cells["KhewatTypeIdProposed"].Value:0;
                             // txtkh.Text = row.Cells["RegisterHqDKhataId"].Value.ToString();
 
                         }
@@ -3362,6 +3371,33 @@ namespace SDC_Application.AL
                 txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
                 txtDrustPersonFeet.Text = Area[3] != null ? Area[3].ToString() : "0";
             }
+        }
+
+        private void btnNewMushteri_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmSearchPerson searchMushteri = new frmSearchPerson();
+                searchMushteri.MozaId = cmbMouza.SelectedValue.ToString();
+                searchMushteri.FormClosed -= new FormClosedEventHandler(searchMushteri_FormClosed);
+                searchMushteri.FormClosed += new FormClosedEventHandler(searchMushteri_FormClosed);
+                searchMushteri.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void searchMushteri_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmSearchPerson searchp = sender as frmSearchPerson;
+            this.txtkashtPersonId.Text = searchp.PersonId.ToString();
+            //this.txtPersonIdProposed.Text = txtPersonId.Text;
+            this.txtKashtMalikName.Text = searchp.PersonName;
+            this.txtFbMushteriFareeqId.Text = "-1";
+            this.txtMushteriFareeqId.Text = "-1";
+
+
         }
 
     }

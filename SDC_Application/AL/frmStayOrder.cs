@@ -37,6 +37,7 @@ namespace SDC_Application.AL
         int countSelectedKhata = 0;
         public byte[] ReceivedImage { get; set; }
         int countLockedKhata = 0;
+        DataView dvKhatajat = new DataView();
       
         Intiqal Iq = new Intiqal();
         string ToSaveFileTo = "";
@@ -82,8 +83,8 @@ namespace SDC_Application.AL
 
                dt = Iq.GetKhatJatForStayOrder(cmbMouza.SelectedValue.ToString());
 
-
-               GridViewKhataJat.DataSource = dt;
+               dvKhatajat = dt.AsDataView();
+               GridViewKhataJat.DataSource = dvKhatajat;
               
                GridViewKhataJat.Columns["RegisterHqDKhataId"].Visible = false;
                GridViewKhataJat.Columns[0].Width = 120;
@@ -668,6 +669,68 @@ namespace SDC_Application.AL
             }
         }
         #endregion
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Khatas = "";
+                if (txtNoKhassras.Text.Length > 0)
+                {
+                    DataTable dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_KhataJat_By_KhassraNos " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+','+cmbMouza.SelectedValue.ToString() + ",'" + txtNoKhassras.Text + "'");
+                    if (dt != null)
+                    {
+                        if (dt.Rows.Count > 0)
+                        {
+                            foreach (DataRow row in dt.Rows)
+                            {
+                                foreach (DataGridViewRow dgr in GridViewKhataJat.Rows)
+                                {
+                                    if (row["RegisterHqDKhataId"].ToString() == dgr.Cells["RegisterHqDKhataId"].Value.ToString())
+                                    {
+                                        dgr.Cells["cbgrid"].Value = true;
+                                        Khatas = Khatas + row["RegisterHqDKhataId"].ToString() + ",";
+                                        
+                                    }
+                                }
+                            }
+                            if(Khatas.Length>1)
+                            Khatas = Khatas.Remove(Khatas.Length-1, 1);
+                            dvKhatajat.RowFilter = string.Format("RegisterHqDKhataId IN "+"("+ Khatas+")");
+                            //foreach (DataGridViewRow dgr in GridViewKhataJat.Rows)
+                            //{
+                            //    if (Convert.ToBoolean(dgr.Cells["cbgrid"].Value))
+                            //    {
+                            //        dgr.Visible = true;
+                            //    }
+                            //    else
+                            //    {
+                            //        dgr.Visible = false;
+                            //    }
+                            //}
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnResetKhataList_Click(object sender, EventArgs e)
+        {
+            dvKhatajat.RowFilter = string.Empty;
+        }
+
+        private void txtNoKhassras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != ',' && e.KeyChar != 13)
+            {
+                e.Handled = true;
+
+            }
+        }
 
       
     }

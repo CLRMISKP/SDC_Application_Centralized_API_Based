@@ -441,6 +441,7 @@
             this.cmbkhatoonisnew = new System.Windows.Forms.ComboBox();
             this.btnMinKhatooniKhassras = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
+            this.btnNewMushteri = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -3118,6 +3119,7 @@
             // groupBox11
             // 
             this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.btnNewMushteri);
             this.groupBox11.Controls.Add(this.textBox7);
             this.groupBox11.Controls.Add(this.btnDelKashtMalik);
             this.groupBox11.Controls.Add(this.btnSaveKashtMalik);
@@ -3146,7 +3148,7 @@
             // 
             this.btnDelKashtMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelKashtMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelKashtMalik.Location = new System.Drawing.Point(374, 18);
+            this.btnDelKashtMalik.Location = new System.Drawing.Point(303, 17);
             this.btnDelKashtMalik.Name = "btnDelKashtMalik";
             this.btnDelKashtMalik.Size = new System.Drawing.Size(83, 32);
             this.btnDelKashtMalik.TabIndex = 9;
@@ -3159,7 +3161,7 @@
             // 
             this.btnSaveKashtMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveKashtMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveKashtMalik.Location = new System.Drawing.Point(485, 18);
+            this.btnSaveKashtMalik.Location = new System.Drawing.Point(493, 17);
             this.btnSaveKashtMalik.Name = "btnSaveKashtMalik";
             this.btnSaveKashtMalik.Size = new System.Drawing.Size(83, 32);
             this.btnSaveKashtMalik.TabIndex = 8;
@@ -5261,6 +5263,18 @@
             this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
             this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
             // 
+            // btnNewMushteri
+            // 
+            this.btnNewMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMushteri.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewMushteri.Location = new System.Drawing.Point(398, 17);
+            this.btnNewMushteri.Name = "btnNewMushteri";
+            this.btnNewMushteri.Size = new System.Drawing.Size(83, 37);
+            this.btnNewMushteri.TabIndex = 238;
+            this.btnNewMushteri.Text = "نیا مالک";
+            this.btnNewMushteri.UseVisualStyleBackColor = true;
+            this.btnNewMushteri.Click += new System.EventHandler(this.btnNewMushteri_Click);
+            // 
             // frmFardeBadarManual
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -5784,5 +5798,6 @@
         private System.Windows.Forms.RadioButton rbManualFb;
         private System.Windows.Forms.RadioButton rbMisal;
         private System.Windows.Forms.Button btnHissaRaqba;
+        private System.Windows.Forms.Button btnNewMushteri;
     }
 }
