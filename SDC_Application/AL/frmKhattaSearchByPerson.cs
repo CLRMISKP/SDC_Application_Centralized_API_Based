@@ -145,11 +145,13 @@ namespace SDC_Application.AL
             {
                 this.dataGridViewPersons.DataSource = datatable;
                 this.dataGridViewPersons.Columns["PersonFullName"].HeaderText = "نام مالک";
+                //this.dataGridViewPersons.Columns["FatherName"].HeaderText = "نام والد / شوہر";
                 this.dataGridViewPersons.Columns["PersonId"].Visible = false;
                 this.dataGridViewPersons.Columns["CNIC"].Visible = false;
                 this.dataGridViewPersons.Columns["MozaId"].Visible = false;
                 this.dataGridViewPersons.Columns["QoamId"].Visible = false;
                 this.dataGridViewPersons.Columns["PersonName"].Visible = false;
+                this.dataGridViewPersons.Columns["FatherName"].Visible = false;
 
             }
         }
@@ -230,6 +232,7 @@ namespace SDC_Application.AL
                 grdPersonKatajats.Columns["HissaDifference"].HeaderText = "حصص فرق";
                 grdPersonKatajats.Columns["RegisterHaqdaranId"].Visible = false;
                 grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
+                grdPersonKatajats.Columns["RecordLockedCon"].Visible = false;
                 grdPersonKatajats.Columns["Kanal"].Visible = false;
                 grdPersonKatajats.Columns["Marla"].Visible = false;
                 grdPersonKatajats.Columns["sarsai"].Visible = false;
@@ -511,6 +514,79 @@ namespace SDC_Application.AL
                     frmRpt.ShowDialog();
                 }
             }
+        }
+
+        private void grdPersonKatajats_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView g = sender as DataGridView;
+            try
+            {
+                if (rbKhatta.Checked)
+                {
+
+
+                    if (e.RowIndex != -1)
+                    {
+                        if (grdPersonKatajats.Columns.Count > 1 && rbKhatta.Checked)
+                        {
+
+
+                            if (e.ColumnIndex == grdPersonKatajats.CurrentRow.Cells["خانہ کاشت"].ColumnIndex)
+                            {
+                                frmMessageBox mb = new frmMessageBox();
+                                string val = intiqal.CheckKKinKhata(grdPersonKatajats.CurrentRow.Cells["RegisterHqDKhataId"].Value.ToString());
+                                if (val == "1")
+                                {
+                                    mb.lbMessageBox.ForeColor = Color.White;
+                                    mb.lbMessageBox.Text = "کھاتے میں خانہ کاشت موجود ہے";
+                                    // mb.btnOK.ForeColor = System.Drawing.Color.Red;
+                                    mb.BackColor = Color.Red;
+                                }
+
+                                else
+                                {
+                                    mb.lbMessageBox.ForeColor = Color.DarkGreen;
+                                    mb.lbMessageBox.Text = "کھاتے میں خانہ کاشت موجو دنہیں ہے";
+                                    mb.btnOK.ForeColor = Color.DarkGreen;
+                                }
+                                mb.ShowDialog();
+                            }
+
+                            if (e.ColumnIndex == grdPersonKatajats.CurrentRow.Cells["رقبہ بعد از منہائے"].ColumnIndex)
+                            {
+                                frmMessageBox mb = new frmMessageBox();
+                                string val = intiqal.RemAreaofPersonByKhata(dataGridViewPersons.CurrentRow.Cells["PersonId"].Value.ToString(), grdPersonKatajats.CurrentRow.Cells["RegisterHqDKhataId"].Value.ToString());
+                                if (val != grdPersonKatajats.CurrentRow.Cells["Malik_Area"].Value.ToString())
+                                {
+                                    mb.lbMessageBox.ForeColor = Color.White;
+                                    mb.lbAfterMenhay.ForeColor = Color.White;
+                                    mb.lbAfterMenhay.Text = "رقبہ بعد از منہائے";
+                                    mb.lbMessageBox.Text = val;
+                                    // mb.btnOK.ForeColor = System.Drawing.Color.Red;
+                                    mb.BackColor = Color.Red;
+                                }
+
+                                else
+                                {
+                                    mb.lbMessageBox.ForeColor = Color.DarkGreen;
+                                    mb.lbAfterMenhay.ForeColor = Color.DarkGreen;
+                                    mb.lbAfterMenhay.Text = "رقبہ بعد از منہائے";
+                                    mb.lbMessageBox.Text = val;
+                                    mb.btnOK.ForeColor = Color.DarkGreen;
+                                }
+                                mb.ShowDialog();
+
+                            }
+
+                        }
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
         }
 
 

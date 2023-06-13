@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>2.0.5.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>47</ApplicationRevision>
     <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -179,6 +179,12 @@
     </Compile>
     <Compile Include="AL\frmIntiqalAllByPersonId.Designer.cs">
       <DependentUpon>frmIntiqalAllByPersonId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmPersonUpdateCNIC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmPersonUpdateCNIC.Designer.cs">
+      <DependentUpon>frmPersonUpdateCNIC.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmShortFardForOtherDistTehsil.cs">
       <SubType>Form</SubType>
@@ -1241,6 +1247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalAllByPersonId.resx">
       <DependentUpon>frmIntiqalAllByPersonId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmPersonUpdateCNIC.resx">
+      <DependentUpon>frmPersonUpdateCNIC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmShortFardForOtherDistTehsil.resx">
       <DependentUpon>frmShortFardForOtherDistTehsil.cs</DependentUpon>

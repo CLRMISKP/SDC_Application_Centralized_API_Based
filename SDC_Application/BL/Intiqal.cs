@@ -668,7 +668,16 @@ namespace SDC_Application.BL
                 string spWithParam = "Proc_Self_Insert_Fard_Cancel  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + fardTokenid + "," + PicId + "," + userId + ",'" + userName + "'";
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
-
+            public string CheckKKinKhata(string KhataId)
+            {
+                string spWithParam = "Proc_Self_Check_KK_in_Khata_YesNo " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
+            public string RemAreaofPersonByKhata(string personId, string KhataId)
+            {
+                string spWithParam = "Proc_Self_Get_SDC_Remaining_Area_By_PersonId_KhataId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + personId + "," + KhataId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
             public string FardCancelCheck(string fardTokenid)
             {
 

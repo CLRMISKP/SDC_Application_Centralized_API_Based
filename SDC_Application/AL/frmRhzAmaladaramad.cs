@@ -99,6 +99,7 @@ namespace SDC_Application.AL
         {
             this.txtParentKhata.Clear();
             this.ClearKhatooniControls();
+            this.dgKhewatFareeqainAll.DataSource = null;
             foreach (DataRow row in dtkj.Rows)
             {
                 if ((row["RegisterHqDKhataId"].ToString() == cbokhataNo.SelectedValue.ToString()) && cbokhataNo.SelectedValue.ToString() != "0")
@@ -320,6 +321,7 @@ namespace SDC_Application.AL
             try
             {
                 this.dtKhewatFareeqain = khatas.Proc_Self_Get_KhewatFareeqeinByKhataId(this.KhataId);
+                this.dgKhewatFareeqainAll.DataSource = null;
                 this.dgKhewatFareeqainAll.DataSource = dtKhewatFareeqain;
                 view = new DataView(dtKhewatFareeqain);
                 this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
@@ -336,6 +338,7 @@ namespace SDC_Application.AL
             try
             {
                 this.dtKhewatFareeqainAll = intiqal.GetKhewatFareeqeinGroupByKhataPrevious(this.KhataId);
+                this.dgKhewatFreeqDetails.DataSource = null;
                 this.dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainAll;
                 viewAll = new DataView(dtKhewatFareeqainAll);
                 this.PopulateGridViewKhewatMalkanAll(dgKhewatFreeqDetails, false);
@@ -370,6 +373,27 @@ namespace SDC_Application.AL
                 g.Columns["PersonName"].DisplayIndex = 2;
                 g.Columns["KhewatType"].DisplayIndex = 3;
                 g.Columns["seqno"].DisplayIndex = 1;
+                if (!g.Columns.Contains("ColCnicUpdate"))
+                {
+                    DataGridViewLinkColumn col = new DataGridViewLinkColumn();
+                    col.Name = "ColCnicUpdate";
+                    g.Columns.Add(col);
+                    g.Columns["ColCnicUpdate"].HeaderText = "اندراج شناختی کارڈ";
+                    
+                }
+                g.Columns["ColCnicUpdate"].DisplayIndex = g.Columns.Count - 1;
+
+                foreach (DataGridViewRow row in g.Rows)
+                {
+                    if (row.Cells["CNIC"].Value.ToString().Length > 5)
+                    {
+                        
+                    }
+                    else
+                    {
+                        row.Cells["ColCnicUpdate"].Value = "اندراج شناختی کارڈ";
+                    }
+                }
 
             }
 
@@ -940,8 +964,19 @@ namespace SDC_Application.AL
                             string khataId = cbokhataNo.SelectedValue.ToString();
                             DataTable dtKhewatFareeqainByPerson = new DataTable();
                             dtKhewatFareeqainByPerson = intiqal.KhewatGroupFareeqByKhataIdPersonId(khataId, personId);
+                            this.dgKhewatFreeqDetails.DataSource = null;
                             this.dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainByPerson;
                             PopulateGridviewKhewFareeqByPersonId();
+                            if (e.ColumnIndex == row.Cells["ColCnicUpdate"].ColumnIndex && row.Cells["ColCnicUpdate"].Value!=null)
+                            {
+                                frmPersonUpdateCNIC ucnic = new frmPersonUpdateCNIC();
+                                ucnic.lblPersonName.Text = row.Cells["PersonName"].Value.ToString();
+                                ucnic.PersonId = row.Cells["PersonId"].Value.ToString();
+                                ucnic.MozaId = cmbMouza.SelectedValue.ToString();
+                                ucnic.FormClosed -= new FormClosedEventHandler(ucnic_FormClosed);
+                                ucnic.FormClosed += new FormClosedEventHandler(ucnic_FormClosed);
+                                ucnic.ShowDialog();
+                            }
 
                         }
                         else
@@ -956,6 +991,16 @@ namespace SDC_Application.AL
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        void ucnic_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmPersonUpdateCNIC ucnic = sender as frmPersonUpdateCNIC;
+            if(ucnic.retVal!=null)
+                if (ucnic.retVal.Length > 5)
+                {
+                    btnShowCurrent_Click(sender, e);
+                }
         }
 
         #endregion

@@ -881,7 +881,7 @@ namespace SDC_Application.AL
              return;
              }
 
-         if (txtPersonId.Text != "-1" && txtPersonId.Text != "")
+         if (txtPersonId.Text != "-1" && txtPersonId.Text != "" && cboQismMalik.SelectedValue.ToString().Length>2)
             {
                 string  fbId =txtFbId.Text != "" ? txtFbId.Text : "0";
                 string fbExistsKGF = txtFbExistsKGF.Text;
@@ -915,6 +915,8 @@ namespace SDC_Application.AL
                      this.txtSeqNo.Text = (idx + 1).ToString();
                  }
              }
+             else
+                 MessageBox.Show("مالک کے تمام کوئف کا اندراج کریں۔");
             }
         }
         		 
@@ -987,6 +989,8 @@ namespace SDC_Application.AL
 
             int khewatTypeId = Convert.ToInt32(cboQismMalik.SelectedValue);
             int khewatTypeIdProposed = Convert.ToInt32(cboQismMalikProp.SelectedValue);
+            if (khewatTypeIdProposed.ToString().Length < 3)
+                khewatTypeIdProposed = khewatTypeId;
 
             string netPart = this.txtPersonNetHissa.Text;
             string netPartProposed = this.txtDrustHissa.Text;

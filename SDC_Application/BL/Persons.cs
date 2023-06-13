@@ -134,6 +134,12 @@ namespace SDC_Application.BL
             return objdatabase.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
+        public string UpdatePersonCnic(string MozaId, string PersonId, string CNIC, string UserId)
+        {
+            string spWithParam = "WEB_SP_UPDATE_Person_CNIC " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId+","+PersonId+","+CNIC+","+UserId;
+            return objdatabase.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+
         public DataTable GetFamilyNo(string ParentId)
         {
             string spWithParam = "Proc_Get_FamilyNo  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + ParentId;
