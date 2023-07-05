@@ -72,16 +72,16 @@ namespace SDC_Application.AL
             {
                 if (fromform == "1" || fromform == "2" || fromform == "4")
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard "+UsersManagments._Tehsilid.ToString()+",'" + dateTime.Value.ToShortDateString() + "','" + fromform + "'");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + fromform + "'");
                 }
 
                 else if (fromform == "3")
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Naqal_Intiqal " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToShortDateString() + "','" + fromform + "'");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Naqal_Intiqal " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + fromform + "'");
                 }
                 else
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToShortDateString() + "' ");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "' ");
                 }
                 DataTable outputTable = dt.Clone();
 

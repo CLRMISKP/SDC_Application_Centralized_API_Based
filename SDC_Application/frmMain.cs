@@ -17,6 +17,15 @@ namespace SDC_Application
     public partial class frmMain : Form
     {
         
+        public static string getDateFormateString(){
+            return "dd MMM yyyy hh:mm:ss tt";
+        }
+
+        public static string getShortDateFormateString()
+        {
+            return "dd MMM yyyy";
+        }
+
         #region Class Variables
        // public int Check { get; set; }
         public int MozaIDforRep { get; set; }

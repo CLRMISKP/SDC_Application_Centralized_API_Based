@@ -44,7 +44,7 @@ namespace SDC_Application.AL
           
            // dtToken.Value = DateTime.Now.AddDays(1);
             dtToken.Value = Convert.ToDateTime(DateTime.Now);
-            this.GetBookingByDate(dtToken.Value.ToShortDateString());
+            this.GetBookingByDate(dtToken.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
             
         }
 
@@ -208,20 +208,20 @@ namespace SDC_Application.AL
                     return;
                 }
                 
-                if (txtBookingId.Text=="-1" &&  DocRc.CheckBookingCovid19(dtToken.Value.ToShortDateString(), cmbServiceId.SelectedValue.ToString()) == "-1")
+                if (txtBookingId.Text=="-1" &&  DocRc.CheckBookingCovid19(dtToken.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), cmbServiceId.SelectedValue.ToString()) == "-1")
                 {
                     MessageBox.Show(" مطلوبہ سروس کی بکنگ پوری ہو چکی ہے۔ ", "   ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     
                     return;
                 }
-                string retVal = DocRc.SaveCovid19Booking(txtBookingId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(),  cmbServiceId.SelectedValue.ToString(), cmbPurpose.SelectedValue.ToString(), txtName.Text, txtFatherName.Text, txtCNIC.Text, txtContactNo.Text,txtKafiyat.Text,dtToken.Value.ToShortDateString(), TokenTime.Value.ToShortTimeString(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                string retVal = DocRc.SaveCovid19Booking(txtBookingId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(),  cmbServiceId.SelectedValue.ToString(), cmbPurpose.SelectedValue.ToString(), txtName.Text, txtFatherName.Text, txtCNIC.Text, txtContactNo.Text,txtKafiyat.Text,dtToken.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), TokenTime.Value.ToShortTimeString(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
                 if (retVal != "" && retVal != "Null")
                 {
                     MessageBox.Show("ٹوکن محفوظ ہو گیا۔");
                    
                     txtBookingId.Text = "-1";
                     btnRegNew_Click(sender, e);
-                    this.GetBookingByDate(dtToken.Value.ToShortDateString());
+                    this.GetBookingByDate(dtToken.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
                 }
                    
                 }
@@ -329,7 +329,7 @@ namespace SDC_Application.AL
           
             private void btnSearchBookingForUpdate_Click(object sender, EventArgs e)
             {
-                this.GetBookingByDate(dtToken.Value.ToShortDateString());
+                this.GetBookingByDate(dtToken.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
             }
 
             private void grdvBooking_DoubleClick(object sender, EventArgs e)

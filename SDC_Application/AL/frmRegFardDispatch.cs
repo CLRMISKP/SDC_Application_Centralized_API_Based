@@ -127,7 +127,7 @@ namespace SDC_Application.AL
         {
             if (DialogResult.Yes == MessageBox.Show("کیا آپ لیٹر محفوظ کرنا چاہتے ہے؟", "محفوظ کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
-                string dtDispatch = dtDispatchDate.Value.ToShortDateString();
+                string dtDispatch = dtDispatchDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                 string lastId = mnk.SaveFardDispatchToRegistrar("F", dtDispatch, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                 dtDispatchDate.Enabled = false;
                 objauto.FillCombo("Proc_Self_Get_Letter_List" + "'F'", cbLetterNo, "number", "RegFardDispatchMainId");
@@ -150,7 +150,7 @@ namespace SDC_Application.AL
             try
             {
                 
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard '" + dateTime.Value.ToShortDateString() + "','" + "1" + "'");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard '" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + "1" + "'");
                
                 DataTable outputTable = dt.Clone();
 

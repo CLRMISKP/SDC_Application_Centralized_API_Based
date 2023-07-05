@@ -136,7 +136,35 @@ namespace SDC_Application.AL
         {
             this.PVId = grdPaymentMaster.CurrentRow.Cells["PVId"].Value.ToString();
             this.PVNo = grdPaymentMaster.CurrentRow.Cells["PV_No"].Value.ToString();
-            this.PVdate = grdPaymentMaster.CurrentRow.Cells["PV_Date"].Value.ToString();
+            
+            //this.PVdate = grdPaymentMaster.CurrentRow.Cells["PV_Date"].Value.ToString();
+            object pvDateObj = grdPaymentMaster.CurrentRow.Cells["PV_Date"].Value;
+
+            if (pvDateObj is DateTime)
+            {
+                DateTime pvDate = (DateTime)pvDateObj;
+                this.PVdate = pvDate.ToString("dd MMM yyyy");
+            }
+            else if (pvDateObj is string)
+            {
+                string pvDateStr = (string)pvDateObj;
+                DateTime pvDate;
+                if (DateTime.TryParse(pvDateStr, out pvDate))
+                {
+                    this.PVdate = pvDate.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    this.PVdate = string.Empty; // or handle the case when parsing fails
+                }
+            }
+            else
+            {
+                this.PVdate = string.Empty; // or handle the case when the value is not a DateTime or string
+            }
+
+
+
             this.TokenNo = grdPaymentMaster.CurrentRow.Cells["TokenNo"].Value.ToString();
             this.Name = grdPaymentMaster.CurrentRow.Cells["Visitor_Name"].Value.ToString();
             this.CNIC = grdPaymentMaster.CurrentRow.Cells["Visitor_CNIC"].Value.ToString();

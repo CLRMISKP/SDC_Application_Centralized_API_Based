@@ -300,7 +300,7 @@ namespace SDC_Application.AL
 
                         if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_ReceiptVoucherMaster '" + this.txtRIV.Text.ToString() + "','" + this.txtRNo.Text.ToString() + "','" + UsersManagments._Tehsilid.ToString() + "','" + this.txtHidenMouzaID.Text.ToString() + "','" + this.txtReciptDate.Value.ToShortDateString() + "','" + this.txtHiddenTokenID.Text + "',N'" + txtMasterRemarks.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
+                            dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_ReceiptVoucherMaster '" + this.txtRIV.Text.ToString() + "','" + this.txtRNo.Text.ToString() + "','" + UsersManagments._Tehsilid.ToString() + "','" + this.txtHidenMouzaID.Text.ToString() + "','" + this.txtReciptDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + this.txtHiddenTokenID.Text + "',N'" + txtMasterRemarks.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
                             if (dt != null)
                             {
 
@@ -454,7 +454,7 @@ namespace SDC_Application.AL
                  if (cmbPaymentofSource.SelectedIndex == 1)
                     {
                            // txtChalanFormNum.Text = txtChalanFormNo1.Text.ToString();
-                            txtchalanFormDate.Text=txtTokenDate.Value.ToShortDateString();
+                            txtchalanFormDate.Text=txtTokenDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     }
                  if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                  {
@@ -467,7 +467,7 @@ namespace SDC_Application.AL
                             string  @PaymentTypeId=     cmbPaymentofSource.SelectedValue.ToString();                            
                             string  @ReceivedAmountv =   this.txtAmountRecieve.Text.ToString();                                  
                             string  @ChallanNo=      txtChalanFormNum.Text.ToString() ;                               
-                            string  @ChallanDate=   txtchalanFormDate.Value.ToShortDateString();                                   
+                            string  @ChallanDate=   txtchalanFormDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());                                   
                             string  @BankAccountNo=  txtAccountNo.Text.ToString();
                             string  @BankName = txtBankName.Text.ToString();                                 
                             string  @BankBranchName=   txtBankBranch.Text.ToString();                          
@@ -486,7 +486,7 @@ namespace SDC_Application.AL
                      //+ this.cmbPaymentofSource.SelectedValue.ToString() + "','"
                      //+ this.txtAmountRecieve.Text.ToString() + "','"
                      //+ this.txtChalanFormNum.Text.ToString() + "','"
-                     //+ txtchalanFormDate.Value.ToShortDateString() + "','"
+                     //+ txtchalanFormDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','"
                      //+ this.txtAccountNo.Text.ToString() + "','"
                      //+ this.txtBankName.Text.ToString() + "','"
                      //+ this.txtBankBranch.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
@@ -576,7 +576,33 @@ namespace SDC_Application.AL
             this.txtBankName.Text = grdRecipt.CurrentRow.Cells["BankName"].Value.ToString();
             this.txtAccountNo.Text = grdRecipt.CurrentRow.Cells["BankAccountNo"].Value.ToString();
             this.txtChalanFormNum.Text = grdRecipt.CurrentRow.Cells["ChallanNo"].Value.ToString();
-            this.txtchalanFormDate.Text = grdRecipt.CurrentRow.Cells["ChallanDate"].Value.ToString();
+
+           // this.txtchalanFormDate.Text = grdRecipt.CurrentRow.Cells["ChallanDate"].Value.ToString();
+            object challanDateObj = grdRecipt.CurrentRow.Cells["ChallanDate"].Value;
+            DateTime challanDate;
+
+            if (challanDateObj is DateTime)
+            {
+                challanDate = (DateTime)challanDateObj;
+            }
+            else if (challanDateObj is string)
+            {
+                string challanDateStr = (string)challanDateObj;
+                if (DateTime.TryParse(challanDateStr, out challanDate))
+                {
+                    this.txtchalanFormDate.Text = challanDate.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    this.txtchalanFormDate.Text = DateTime.Now.ToString("dd MMM yyyy");
+                }
+            }
+            else
+            {
+                this.txtchalanFormDate.Text = DateTime.Now.ToString("dd MMM yyyy");
+            }
+
+
             objtoken.errorNumeric.SetError(txtAmountRecieve, "Ok");
             //objtoken.errorNumeric.SetError(txtTotalRs, "Ok");
 

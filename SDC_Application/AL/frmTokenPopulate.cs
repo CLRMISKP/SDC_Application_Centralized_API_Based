@@ -203,7 +203,34 @@ namespace SDC_Application.AL
                 this.CNIC = grdToken.CurrentRow.Cells["Visitor_CNIC"].Value.ToString();
                 this.VisitorContactNo = grdToken.CurrentRow.Cells["VisitorContactNo"].Value.ToString();
                 this.FatherName = grdToken.CurrentRow.Cells["Visitor_FatherName"].Value.ToString();
+                
                 this.Tokendate = grdToken.CurrentRow.Cells["Token_ShortDate"].Value.ToString();
+                object tokenDateObj = grdToken.CurrentRow.Cells["Token_ShortDate"].Value;
+                DateTime tokenDate;
+
+                if (tokenDateObj is DateTime)
+                {
+                    tokenDate = (DateTime)tokenDateObj;
+                    this.Tokendate = tokenDate.ToString("dd MMM yyyy");
+                }
+                else if (tokenDateObj is string)
+                {
+                    string tokenDateStr = (string)tokenDateObj;
+                    if (DateTime.TryParse(tokenDateStr, out tokenDate))
+                    {
+                        this.Tokendate = tokenDate.ToString("dd MMM yyyy");
+                    }
+                    else
+                    {
+                        this.Tokendate = string.Empty;  // or handle the case when parsing fails
+                    }
+                }
+                else
+                {
+                    this.Tokendate = string.Empty;  // or handle the case when the value is not a DateTime or string
+                }
+
+
                 this.ServiceName = grdToken.CurrentRow.Cells["ServiceTypeName_Urdu"].Value.ToString();
                 this.ServiceType = grdToken.CurrentRow.Cells["ServiceTypeId"].Value.ToString();
                 this.PurposeID = grdToken.CurrentRow.Cells["TokenPurposeId"].Value.ToString();
@@ -230,7 +257,36 @@ namespace SDC_Application.AL
             this.CNIC = grdToken.CurrentRow.Cells["Visitor_CNIC"].Value.ToString();
             this.VisitorContactNo = grdToken.CurrentRow.Cells["VisitorContactNo"].Value.ToString();
             this.FatherName = grdToken.CurrentRow.Cells["Visitor_FatherName"].Value.ToString();
-            this.Tokendate = grdToken.CurrentRow.Cells["Token_ShortDate"].Value.ToString();
+            
+           // this.Tokendate = grdToken.CurrentRow.Cells["Token_ShortDate"].Value.ToString();
+            object tokenDateObj3 = grdToken.CurrentRow.Cells["Token_ShortDate"].Value;
+            DateTime tokenDate3;
+
+            if (tokenDateObj3 is DateTime)
+            {
+                tokenDate3 = (DateTime)tokenDateObj3;
+                this.Tokendate = tokenDate3.ToString("dd MMM yyyy");
+            }
+            else if (tokenDateObj3 is string)
+            {
+                string tokenDateStr = (string)tokenDateObj3;
+                if (DateTime.TryParse(tokenDateStr, out tokenDate3))
+                {
+                    this.Tokendate = tokenDate3.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    this.Tokendate = string.Empty;  // or handle the case when parsing fails
+                }
+            }
+            else
+            {
+                this.Tokendate = string.Empty;  // or handle the case when the value is not a DateTime or string
+            }
+
+
+
+
             this.ServiceName = grdToken.CurrentRow.Cells["ServiceTypeName_Urdu"].Value.ToString();
             this.ServiceType = grdToken.CurrentRow.Cells["ServiceTypeId"].Value.ToString();
             this.PurposeID = grdToken.CurrentRow.Cells["TokenPurposeId"].Value.ToString();

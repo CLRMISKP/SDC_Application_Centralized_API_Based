@@ -47,8 +47,8 @@ namespace SDC_Application.AL
                 MessageBox.Show("your not in raspass and radslip");
                 if (chkRange.Checked == true)
                 {
-                    DateTime dt = Convert.ToDateTime(this.t1.Value.ToShortDateString());
-                    DateTime dt2 = Convert.ToDateTime(this.t2.Value.ToShortDateString());
+                    DateTime dt = Convert.ToDateTime(this.t1.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
+                    DateTime dt2 = Convert.ToDateTime(this.t2.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
                     DateTime dt3 = Convert.ToDateTime(DateTime.Now.Date.ToShortDateString());
                     // MessageBox.Show(""+dt3);
                     if (dt > dt2 || dt > dt3)
@@ -57,14 +57,14 @@ namespace SDC_Application.AL
                     }
                     else
                     {
-                        datefrom = this.t1.Value.ToShortDateString();
-                        dateto = this.t2.Value.ToShortDateString();
+                        datefrom = this.t1.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+                        dateto = this.t2.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                         Report();
                     }
                 }
                 else
                 {
-                    datefrom = this.t1.Value.ToShortDateString();
+                    datefrom = this.t1.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     dateto = datefrom;
                     Report();
                 }
@@ -76,8 +76,8 @@ namespace SDC_Application.AL
             else if(radbankslip.Checked==true)
             {
                 
-                DateTime dt = Convert.ToDateTime(this.dt1.Value.ToShortDateString());
-                DateTime dt2 = Convert.ToDateTime(this.dt2.Value.ToShortDateString());
+                DateTime dt = Convert.ToDateTime(this.dt1.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
+                DateTime dt2 = Convert.ToDateTime(this.dt2.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
                 DateTime dt3 = Convert.ToDateTime(DateTime.Now.Date.ToShortDateString());
                 // MessageBox.Show(""+dt3);
                 if (dt > dt2 || dt > dt3)
@@ -86,8 +86,8 @@ namespace SDC_Application.AL
                 }
                 else
                 {
-                    from = this.dt1.Value.ToShortDateString();
-                    to = this.dt2.Value.ToShortDateString();
+                    from = this.dt1.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+                    to = this.dt2.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     Report();
                 }
                // Report();

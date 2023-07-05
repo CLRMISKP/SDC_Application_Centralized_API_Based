@@ -63,9 +63,9 @@ namespace SDC_Application.AL
                 string Token_CurrentStatus = "منظور";
                 //string Token_CurrentStatus_Timestamp = row.Cells["Token_CurrentStatus_Timestamp"].Value.ToString();
                 docApp.UpdateDocumentApprovalStatusGardawar(TokenId, Token_CurrentStatus, "", UsersManagments.UserId.ToString());
-                string datefrom = dtpFrom.Value.ToShortDateString();
-                string dateTo = dtpTo.Value.ToShortDateString();
-               // string dateTo = dtpTo.Value.ToShortDateString();
+                string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+                string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+               // string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                // string abc = Convert.ToString(dateExact.Text);
                 if (cbprev.Checked && cbApprove.Checked)
                 {
@@ -225,8 +225,8 @@ namespace SDC_Application.AL
         
         void DisApprove_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string datefrom = dtpFrom.Value.ToShortDateString();
-            string dateTo = dtpTo.Value.ToShortDateString();
+            string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+            string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
             if (cbprev.Checked && cbApprove.Checked)
             {
                 this.FillDocAppGrid("Token_CurrentStatus='منظور' and (TokenDate >= '" + datefrom + "' and TokenDate <='" + dateTo + "')");
@@ -254,8 +254,8 @@ namespace SDC_Application.AL
        
         private void cbprev_CheckedChanged(object sender, EventArgs e)
         {
-            string datefrom = dtpFrom.Value.ToShortDateString();
-            string dateTo = dtpTo.Value.ToShortDateString();
+            string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+            string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
             
             
             if (cbprev.Checked )
@@ -325,8 +325,8 @@ namespace SDC_Application.AL
         private void cbdisAprove_CheckedChanged(object sender, EventArgs e)
         {
 
-            string datefrom = dtpFrom.Value.ToShortDateString();
-            string dateTo = dtpTo.Value.ToShortDateString();
+            string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+            string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
 
             
             if (cbdisAprove.Checked && cbApprove.Checked )
@@ -359,8 +359,8 @@ namespace SDC_Application.AL
         {
             try
             {
-                string datefrom = dtpFrom.Value.ToShortDateString();
-                string dateTo = dtpTo.Value.ToShortDateString();
+                string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+                string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
 
                 if (cbApprove.Checked && cbdisAprove.Checked)
                 {
@@ -395,8 +395,8 @@ namespace SDC_Application.AL
        
         private void dtpFrom_ValueChanged(object sender, EventArgs e)
         {
-            string datefrom = dtpFrom.Value.ToShortDateString();
-            string dateTo = dtpTo.Value.ToShortDateString();
+            string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+            string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
             if(cbApprove.Checked)
             {
                
@@ -420,8 +420,8 @@ namespace SDC_Application.AL
        
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-            string datefrom = dtpFrom.Value.ToShortDateString();
-            string dateTo = dtpTo.Value.ToShortDateString();
+            string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+            string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
             if (cbApprove.Checked)
             {
 
@@ -482,8 +482,8 @@ namespace SDC_Application.AL
         private void btnsearch_Click(object sender, EventArgs e)
         {
             string Name = this.txtsearch.Text;
-            string datefrom = dtpFrom.Value.ToShortDateString();
-            string dateTo = dtpTo.Value.ToShortDateString();
+            string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+            string dateTo = dtpTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
             string abc = Convert.ToString(dateExact.Text);
             if(cbprev.Checked && !cbdisAprove.Checked && !cbApprove.Checked)
             {
@@ -566,7 +566,7 @@ namespace SDC_Application.AL
                 {
                     this.txtsearch.Text=this.gridViewDocments.CurrentRow.Cells["TokenNo"].Value.ToString();
                     dateExact.Value=Convert.ToDateTime(this.gridViewDocments.CurrentRow.Cells["TokenDate"].Value);
-                    dateExact.Value.ToShortDateString();
+                    dateExact.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     cbprev.Checked = false;
                     Approved();
                     

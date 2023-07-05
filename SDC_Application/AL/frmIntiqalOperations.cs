@@ -301,9 +301,9 @@ namespace SDC_Application.AL
                     string hawalaNo = txtHawalaNo.Text.Trim() != "" ? txtHawalaNo.Text.ToString() : "NULL";
                     string intiqalTypeId = cboIntiqalType.SelectedValue.ToString();
                     string intiqalInitaionId = cboIntiqalInitiation.SelectedValue.ToString();
-                    string IndrajDate = dtpIntiqalAndrajDate.Checked ? dtpIntiqalAndrajDate.Value.ToShortDateString() : "NULL";
+                    string IndrajDate = dtpIntiqalAndrajDate.Checked ? dtpIntiqalAndrajDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "NULL";
                     string landValue = txtLandValue.Text.Trim() != "" ? txtLandValue.Text.ToString() : "0";
-                    string AttestDate = dtpTasdiq.Checked ? dtpTasdiq.Value.ToShortDateString() : "";
+                    string AttestDate = dtpTasdiq.Checked ? dtpTasdiq.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "";
 
                     string misalNo = txtMisalNo.Text.Trim() != "" ? txtMisalNo.Text.Trim().ToString() : "NULL";
                     

@@ -1371,7 +1371,7 @@ namespace SDC_Application.AL
                try 
 	                {	        
 		                string fbId=txtFbId.Text.Trim()!=""?txtFbId.Text.Trim():"-1";
-                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToShortDateString(), dtpDateTehsilDar.Value.ToShortDateString(), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName);
+                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName);
                         txtFbId.Text = LastId;
                         MessageBox.Show("فرد بدر اندراج ہو گیا ہے۔", "");
                         this.txtFardBadarDocNO.Clear();

@@ -49,7 +49,7 @@ namespace SDC_Application.AL
 
         private void btnMasterSave_Click(object sender, EventArgs e)
         {
-            string vDateTime1 = dtpVdateTime.Value.ToShortDateString();
+            string vDateTime1 = dtpVdateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
             this.dtVisitingPlan = Iq.GetIntiqalDawraDateValidity(this.IntiqalId, vDateTime1);
 
             if (this.dtVisitingPlan == "0")
@@ -57,7 +57,7 @@ namespace SDC_Application.AL
                
                 MessageBox.Show("دورہ کے لئے کم از کم 03 دن آگے کی تاریخ دیں۔", "دورہ تاریخ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (dtpVdateTime.Value.ToShortDateString()!=dt.Value.ToShortDateString() && Iq.GetIntiqalVisitingPlanNos(vDateTime1)=="-1")
+            else if (dtpVdateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString())!=dt.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) && Iq.GetIntiqalVisitingPlanNos(vDateTime1)=="-1")
             {
 
                 MessageBox.Show("مورخہ " + dtpVdateTime.Value.ToString("dd/MM/yyyy") + " کو دورہ کے انتقالات کی مطلوبہ تعداد پوری ہو چکی ہے۔ اگلے دورہ کی تاریخ درج کریں۔", "دورہ تاریخ", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
@@ -161,7 +161,7 @@ namespace SDC_Application.AL
             string TehsilId = UsersManagments._Tehsilid.ToString();
             string TokenId = txthdnTokenId.Text.Trim();
             string UserId = cmbRO.SelectedValue.ToString();
-            string vDateTime = dtpVdateTime.Value.ToString();
+            string vDateTime = dtpVdateTime.Value.ToString("dd MMM yyyy");
             string vStatus = chbStatus.Checked.ToString();
             string Remarks = txtRemarks.Text;
             string IntiqalId = txthdnIntiqalId.Text;
@@ -222,7 +222,7 @@ namespace SDC_Application.AL
             
             if (isDate)
             {
-                dtRecords = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Intiqal_VisitingPlan_by_Date " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + dtpDateFilter.Value.ToShortDateString() + "'");
+                dtRecords = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Intiqal_VisitingPlan_by_Date " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + dtpDateFilter.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "'");
                 isLoadByDate = true;
             }
             else
@@ -415,8 +415,63 @@ namespace SDC_Application.AL
             txthdnIntiqalId.Text = g.Rows[e.RowIndex].Cells["IntiqalId"].Value.ToString();
             this.IntiqalId = g.Rows[e.RowIndex].Cells["IntiqalId"].Value.ToString();
             txthdnMozaId.Text = g.Rows[e.RowIndex].Cells["MozaId"].Value.ToString();
-            dtpVdateTime.Value =Convert.ToDateTime( g.Rows[e.RowIndex].Cells["VisitingDateTime"].Value.ToString());
-            dt.Value = Convert.ToDateTime(g.Rows[e.RowIndex].Cells["VisitingDateTime"].Value.ToString());
+
+            //dtpVdateTime.Value =Convert.ToDateTime( g.Rows[e.RowIndex].Cells["VisitingDateTime"].Value.ToString());
+            object visitingDateTimeObj2 = g.Rows[e.RowIndex].Cells["VisitingDateTime"].Value;
+            DateTime visitingDateTime2;
+            if (visitingDateTimeObj2 is DateTime)
+            {
+                visitingDateTime2 = (DateTime)visitingDateTimeObj2;
+            }
+            else if (visitingDateTimeObj2 is string)
+            {
+                string visitingDateTimeStr = (string)visitingDateTimeObj2;
+                if (DateTime.TryParse(visitingDateTimeStr, out visitingDateTime2))
+                {
+                    dtpVdateTime.Value = visitingDateTime2;
+                }
+                else
+                {
+                    dtpVdateTime.Value = DateTime.Now;
+                }
+            }
+            else
+            {
+                dtpVdateTime.Value = DateTime.Now;
+            }
+
+
+
+
+
+           // dt.Value = Convert.ToDateTime(g.Rows[e.RowIndex].Cells["VisitingDateTime"].Value.ToString());
+            object visitingDateTimeObj = g.Rows[e.RowIndex].Cells["VisitingDateTime"].Value;
+            DateTime visitingDateTime;
+
+            if (visitingDateTimeObj is DateTime)
+            {
+                visitingDateTime = (DateTime)visitingDateTimeObj;
+            }
+            else if (visitingDateTimeObj is string)
+            {
+                string visitingDateTimeStr = (string)visitingDateTimeObj;
+                if (DateTime.TryParse(visitingDateTimeStr, out visitingDateTime))
+                {
+                    dt.Value = visitingDateTime;
+                }
+                else
+                {
+                    dt.Value = DateTime.Now;
+                }
+            }
+            else
+            {
+                dt.Value = DateTime.Now;
+            }
+
+
+
+
             chbStatus.Checked =Convert.ToBoolean( g.Rows[e.RowIndex].Cells["VisitingStatus"].Value.ToString());
             txtRemarks.Text = g.Rows[e.RowIndex].Cells["Remarks"].Value.ToString();
             txtIntiqalNoNew.Text = g.Rows[e.RowIndex].Cells["IntiqalNo"].Value.ToString();

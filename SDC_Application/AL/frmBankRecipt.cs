@@ -130,8 +130,8 @@ namespace SDC_Application.AL
                 {
                     type = 19002;
                 }
-               string depositDate = this.dtarival.Value.ToShortDateString();
-               string depostibankdate = this.strecipt.Value.ToShortDateString();
+               string depositDate = this.dtarival.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+               string depostibankdate = this.strecipt.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                string Recipt = txtRecipt.Text.ToString();
                string amount = txtAmount.Text.ToString();
                string dipositname = txtdepositor.Text.ToString();

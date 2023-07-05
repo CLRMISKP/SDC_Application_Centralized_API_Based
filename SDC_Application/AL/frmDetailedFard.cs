@@ -768,7 +768,7 @@ namespace SDC_Application.AL
                 + "-1" + "','"
                 + UsersManagments._Tehsilid.ToString() + "','"
                 + "-1" + "','"
-                + this.dtChallan.Value.ToShortDateString() + "','"
+                + this.dtChallan.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','"
                 + this.SelectedTokenId.ToString() + "','"
                 + this.MozaId + "','"
                  + "Generated" + "',N'" + this.txtMasterRemarks.Text.ToString() + "','"
@@ -1093,7 +1093,7 @@ namespace SDC_Application.AL
 
                     if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_ReceiptVoucherMaster " + "'" + this.txtRVID.Text.ToString() + "','" + this.txtRNo.Text.ToString() + "','" + UsersManagments._Tehsilid.ToString() + "','" + this.SelectedMozaId.ToString() + "','" + this.dtReciptDate.Value.ToShortDateString() + "','" + this.SelectedTokenId.ToString() + "',N'" + txtMasterRemarks.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
+                        dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_ReceiptVoucherMaster " + "'" + this.txtRVID.Text.ToString() + "','" + this.txtRNo.Text.ToString() + "','" + UsersManagments._Tehsilid.ToString() + "','" + this.SelectedMozaId.ToString() + "','" + this.dtReciptDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + this.SelectedTokenId.ToString() + "',N'" + txtMasterRemarks.Text.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "','" + UsersManagments.UserId.ToString() + "','" + UsersManagments.UserName.ToString() + "'");
                         if (dt != null)
                         {
 
@@ -1262,7 +1262,7 @@ namespace SDC_Application.AL
                 if (cmbRPaymentofSource.SelectedIndex == 1)
                 {
 
-                    dtRChalanFormDate.Text = dtRTokenDate.Value.ToShortDateString();
+                    dtRChalanFormDate.Text = dtRTokenDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                 }
                 if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -1275,7 +1275,7 @@ namespace SDC_Application.AL
                     string @PaymentTypeId = cmbRPaymentofSource.SelectedValue.ToString();
                     string @ReceivedAmountv = this.txtRAmountRecieve.Text.ToString();
                     string @ChallanNo = txtRChalanFormNum.Text.ToString();
-                    string @ChallanDate = dtRChalanFormDate.Value.ToShortDateString();
+                    string @ChallanDate = dtRChalanFormDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     string @BankAccountNo = txtRAccountNo.Text.ToString();
                     string @BankName = txtRBankName.Text.ToString();
                     string @BankBranchName = txtRBankBranch.Text.ToString();
@@ -1364,7 +1364,25 @@ namespace SDC_Application.AL
             this.txtRBankName.Text = grdRecipt.CurrentRow.Cells["BankName"].Value.ToString();
             this.txtRAccountNo.Text = grdRecipt.CurrentRow.Cells["BankAccountNo"].Value.ToString();
             this.txtRChalanFormNum.Text = grdRecipt.CurrentRow.Cells["ChallanNo"].Value.ToString();
-            this.dtRChalanFormDate.Text = grdRecipt.CurrentRow.Cells["ChallanDate"].Value.ToString();
+            
+           // this.dtRChalanFormDate.Text = grdRecipt.CurrentRow.Cells["ChallanDate"].Value.ToString();
+            string challanDateStr = grdRecipt.CurrentRow.Cells["ChallanDate"].Value.ToString();
+            DateTime challanDate;
+            bool isValidDate = DateTime.TryParse(challanDateStr, out challanDate);
+
+            if (isValidDate)
+            {
+                string formattedDate = challanDate.ToString("dd MMM yyyy");
+                this.dtRChalanFormDate.Text = formattedDate;
+            }
+            else
+            {
+                // Handle the case where the date value is not in a valid format
+                this.dtRChalanFormDate.Text = "Invalid date";
+            }
+
+
+
             objtoken.errorNumeric.SetError(txtRAmountRecieve, "Ok");
             if (this.txtRVDetailid.Text.Trim().Length > 5)
             {

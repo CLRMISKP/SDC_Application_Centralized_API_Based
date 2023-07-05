@@ -464,14 +464,14 @@ namespace SDC_Application.AL
                     string hawalaNo = txtHawalaNo.Text.Trim() != "" ? txtHawalaNo.Text.ToString() : "NULL";
                     string intiqalTypeId = cboIntiqalType.SelectedValue.ToString();
                     string intiqalInitaionId = cboIntiqalInitiation.SelectedValue.ToString();
-                    string IndrajDate = dtpIntiqalAndrajDate.Checked ? dtpIntiqalAndrajDate.Value.ToShortDateString() : "NULL";
+                    string IndrajDate = dtpIntiqalAndrajDate.Checked ? dtpIntiqalAndrajDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "NULL";
                     string rapatNo = txtIntiqalRapatNo.Text.Trim() != "" ? txtIntiqalRapatNo.Text.ToString() : "NULL";
-                    string rapatDate = dtpIntiqalRapatDate.Checked ? dtpIntiqalRapatDate.Value.ToShortDateString() : "";
-                    string amalDaramadDate = dtpIntiqalAmaldramadDate.Checked ? dtpIntiqalAmaldramadDate.Value.ToShortDateString() : "";
+                    string rapatDate = dtpIntiqalRapatDate.Checked ? dtpIntiqalRapatDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "";
+                    string amalDaramadDate = dtpIntiqalAmaldramadDate.Checked ? dtpIntiqalAmaldramadDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "";
                     string landValue = txtLandValue.Text.Trim() != "" ? txtLandValue.Text.ToString() : "0";
-                    string AttestDate = dtpTasdiq.Checked ? dtpTasdiq.Value.ToShortDateString() : "";
+                    string AttestDate = dtpTasdiq.Checked ? dtpTasdiq.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "";
                     string landTypeId = cboQismArazi.SelectedIndex != -1 ? cboQismArazi.SelectedValue.ToString() : "1";
-                    string DegreeDate = dtpDateOfDec.Checked ? dtpDateOfDec.Value.ToShortDateString() : "";
+                    string DegreeDate = dtpDateOfDec.Checked ? dtpDateOfDec.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "";
                    
                     string courtname = txtCourt.Text.Trim() != "" ? txtCourt.Text.ToString() : "";
                     string misalNo = txtMisalNo.Text.Trim() != "" ? txtMisalNo.Text.Trim().ToString() : "NULL";
@@ -487,10 +487,10 @@ namespace SDC_Application.AL
                     string usrName = UsersManagments.UserName.ToString();
                     string MinhayeIntiqalId = cmbIntialListForMinhayeIntiqal.SelectedValue.ToString();
                     string txtRegNo = txtRegisteryNo.Text.Trim()!=""?txtRegisteryNo.Text.Trim():"0";
-                    string MisalDate = dtMisal.Checked ? dtMisal.Value.ToShortDateString() : "NULL";
-                    string RegDate = dtRegisteryDate.Checked ? dtRegisteryDate.Value.ToShortDateString() : "NULL";
+                    string MisalDate = dtMisal.Checked ? dtMisal.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "NULL";
+                    string RegDate = dtRegisteryDate.Checked ? dtRegisteryDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "NULL";
                     string TrialSubject = txtTrialSubject.Text;
-                    string FardTokenDate = dtFardToken.Checked ? dtFardToken.Value.ToShortDateString() : "";
+                    string FardTokenDate = dtFardToken.Checked ? dtFardToken.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "";
                     string FardTokenIdSelected = cmbFardTokenNo.SelectedIndex != 0 && cmbFardTokenNo.DataSource!=null ? cmbFardTokenNo.SelectedValue.ToString() : "0";
                     
                     if (mozaId != "-1" && mozaId != "0")
@@ -2200,7 +2200,7 @@ txtLandValue.Enabled = false;
                 frmRoz.IntiqalNo = this.txtIntiqalNo.Text;
                 frmRoz.Attested = this.Attested;
                 frmRoz.tokenId = this.TokenId;
-                frmRoz.dtRoznamcha = dtpIntiqalAndrajDate.Value.ToShortDateString();
+                frmRoz.dtRoznamcha = dtpIntiqalAndrajDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                 frmRoz.MozaId = MozaId.ToString();
                 frmRoz.Show();
             }
