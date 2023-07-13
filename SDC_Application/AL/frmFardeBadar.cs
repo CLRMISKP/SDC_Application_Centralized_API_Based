@@ -1681,9 +1681,24 @@ namespace SDC_Application.AL
 
         private void cbFBDocuments_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            this.txtFardBadarDocNO.Text = cbFBDocuments.Text;
-            btnSearchFB_Click(sender, e);
+            if (cbFBDocuments.SelectedItem != null)
+            {
+                if (cbFBDocuments.SelectedItem is DataRowView)
+                {
+                    DataRowView dv = (DataRowView)cbFBDocuments.SelectedItem;
+                    // Assuming you want to access the first column (index 0)
+                    this.txtFardBadarDocNO.Text = dv[1].ToString();
+                   // this.txtFardBadarDocNO.Text = dv["ColumnName"].ToString();
+                }
+                else
+                {
+                    this.txtFardBadarDocNO.Text = cbFBDocuments.SelectedItem.ToString();
+                }
+
+                btnSearchFB_Click(sender, e);
+            }
         }
+
 
         #endregion
 
