@@ -422,7 +422,7 @@ namespace SDC_Application.AL
                         + this.txtPVID.Text + "','"
                         + UsersManagments._Tehsilid.ToString() + "','"
                         + this.txtPVNo.Text + "','"
-                        + this.txtMaster_Details_Date.Value.ToShortDateString() + "','"
+                        + this.txtMaster_Details_Date.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','"
                         + this.txtTokenID.Text + "','"
                         + this.txtMozaID.Text.ToString() + "','"
                         + this.txtMasterStatus.Text + "',N'" + this.txtMasterRemarks.Text.ToString() + "','"

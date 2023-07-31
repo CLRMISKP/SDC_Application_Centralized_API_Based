@@ -25,7 +25,13 @@ namespace SDC_Application
 
             //Application.Run(new frmIntiqal_TaxBankChallanTTx());
             //Application.Run(new FardMalikan_Report_TTx());
-            
+
+            DateTime test = DateTime.Now;
+/*
+            string s1 = test.ToString();
+            string s2 = test.ToString("dd MMM yyyy hh:mm:ss tt");
+            DateTime converTed = new DateTime(s2);
+    */
             Application.Run(new Login());// MessageBox.Show("Null");
             //Application.Run(new frmMISC());
 

@@ -1055,9 +1055,9 @@ namespace SDC_Application.AL
 
                 TaxNotificatActive = false;
             }       
-            string TaxNotificatDate = dtpTaxNotifdate.Value.ToString();
-            string TaxNotificatExpDate = dtpTaxNotifExpirdate.Value.ToString();
-            string TaxNotificatActiveDate = dtpTaxNotifActivedate.Value.ToString();
+            string TaxNotificatDate = dtpTaxNotifdate.Value.ToString("dd MMM yyyy");
+            string TaxNotificatExpDate = dtpTaxNotifExpirdate.Value.ToString("dd MMM yyyy");
+            string TaxNotificatActiveDate = dtpTaxNotifActivedate.Value.ToString("dd MMM yyyy");
             string TaxNotificatNo = txtTaxNotificationNo.Text;
             string TaxNotificatRemarks = txtTaxNotificationRemarks.Text;
             string TaxNotificatID = txtTaxNotificationidhide.Text;
@@ -1283,7 +1283,11 @@ namespace SDC_Application.AL
                     txtTaxNotificationidhide.Text = row.Cells["TaxNotificationId"].Value.ToString();
                     txtTaxNotificationNo.Text = row.Cells["TaxNotificationNo"].Value.ToString();
                     txtTaxNotificationRemarks.Text = row.Cells["TaxNotificationRemarks"].Value.ToString();
-                    dtpTaxNotifActivedate.Value = Convert.ToDateTime(row.Cells["TaxNotificationActiveDate"].Value.ToString());
+                    //dtpTaxNotifActivedate.Value = Convert.ToDateTime(row.Cells["TaxNotificationActiveDate"].Value.ToString());
+                    DateTime taxNotifActiveDate = (DateTime)row.Cells["TaxNotificationActiveDate"].Value;
+                    dtpTaxNotifActivedate.Value = taxNotifActiveDate;
+
+
                     dtpTaxNotifdate.Value = Convert.ToDateTime(row.Cells["TaxNotificationDate"].Value);
                     if (!row.Cells["TaxNotificationExpiryDate"].Value.ToString().Equals(string.Empty))
                     {

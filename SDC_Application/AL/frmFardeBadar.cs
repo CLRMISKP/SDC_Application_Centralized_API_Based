@@ -881,7 +881,17 @@ namespace SDC_Application.AL
              return;
              }
 
-         if (txtPersonId.Text != "-1" && txtPersonId.Text != "" && cboQismMalik.SelectedValue.ToString().Length>2)
+
+            string cboQismMalik_StrVal = "";
+            if (cboQismMalik.SelectedValue.GetType() == typeof(System.Data.DataRowView))
+            {
+                System.Data.DataRowView v = (System.Data.DataRowView)((cmbkhatoonisnew.SelectedValue!=null)?cmbkhatoonisnew.SelectedValue:"");
+                cboQismMalik_StrVal = v.Row[0].ToString();
+            }
+            else cboQismMalik_StrVal = (cmbkhatoonisnew.SelectedValue!=null)?cmbkhatoonisnew.SelectedValue.ToString():"";
+
+
+         if (txtPersonId.Text != "-1" && txtPersonId.Text != "" && cboQismMalik_StrVal.Length > 2)
             {
                 string  fbId =txtFbId.Text != "" ? txtFbId.Text : "0";
                 string fbExistsKGF = txtFbExistsKGF.Text;
@@ -1319,7 +1329,16 @@ namespace SDC_Application.AL
                                 txtKhewatFreeqainGroupId.Text = row.Cells["KhewatGroupFareeqId"].Value.ToString();
                                 txtKhewatGroupId.Text = row.Cells["KhewatGroupId"].Value.ToString();
                                 txtKhewatKhataId.Text = row.Cells["RegisterHqDKhataId"].Value.ToString();
-                                cboQismMalik.SelectedValue = row.Cells["KhewatTypeId"].Value.ToString();
+                                try
+                                {
+                                    cboQismMalik.SelectedValue = row.Cells["KhewatTypeId"].Value.ToString();
+                                }
+                                catch (Exception)
+                                {
+                                    
+                                    
+                                }
+                                
                                 txtPersonNetHissa.Text = row.Cells["KhewatGroupId"].Value.ToString();
                                 txtNetHissa.Text = row.Cells["FardAreaPart"].Value.ToString();
                                 txtPersonId.Text = row.Cells["PersonId"].Value.ToString();
@@ -1371,7 +1390,7 @@ namespace SDC_Application.AL
                try 
 	                {	        
 		                string fbId=txtFbId.Text.Trim()!=""?txtFbId.Text.Trim():"-1";
-                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToShortDateString(), dtpDateTehsilDar.Value.ToShortDateString(), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName);
+                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName);
                         txtFbId.Text = LastId;
                         MessageBox.Show("فرد بدر اندراج ہو گیا ہے۔", "");
                         this.txtFardBadarDocNO.Clear();
@@ -1681,9 +1700,24 @@ namespace SDC_Application.AL
 
         private void cbFBDocuments_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            this.txtFardBadarDocNO.Text = cbFBDocuments.Text;
-            btnSearchFB_Click(sender, e);
+            if (cbFBDocuments.SelectedItem != null)
+            {
+                if (cbFBDocuments.SelectedItem is DataRowView)
+                {
+                    DataRowView dv = (DataRowView)cbFBDocuments.SelectedItem;
+                    // Assuming you want to access the first column (index 0)
+                    this.txtFardBadarDocNO.Text = dv[1].ToString();
+                   // this.txtFardBadarDocNO.Text = dv["ColumnName"].ToString();
+                }
+                else
+                {
+                    this.txtFardBadarDocNO.Text = cbFBDocuments.SelectedItem.ToString();
+                }
+
+                btnSearchFB_Click(sender, e);
+            }
         }
+
 
         #endregion
 

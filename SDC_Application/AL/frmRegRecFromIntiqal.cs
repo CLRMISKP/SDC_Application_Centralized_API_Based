@@ -147,7 +147,7 @@ namespace SDC_Application.AL
 
                 else
                 {
-                    string retVal = DocRc.SaveRegReceiving(txtRegId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(), dtReg.Value.ToShortDateString(), txtRegNo.Text, txtJildNo.Text.Trim(), txtSeller.Text, txtBuyer.Text, txtKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1", cmbSR.SelectedValue.ToString());
+                    string retVal = DocRc.SaveRegReceiving(txtRegId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(), dtReg.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtRegNo.Text, txtJildNo.Text.Trim(), txtSeller.Text, txtBuyer.Text, txtKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1", cmbSR.SelectedValue.ToString());
                     if (retVal != "" && retVal != "Null")
                     {
                         // MessageBox.Show("دستویز محفوظ ہو گیا۔");

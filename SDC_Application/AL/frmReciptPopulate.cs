@@ -62,7 +62,7 @@ namespace SDC_Application.AL
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
-            dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherMaster_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.dateTime.Value.ToShortDateString() + "'");
+            dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherMaster_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "'");
             bs.DataSource = dt;
             grdReciptMaster.DataSource = bs;
             DataTable outputTable = dt.Clone();
@@ -127,7 +127,35 @@ namespace SDC_Application.AL
             this.RVNo = grdReciptMaster.CurrentRow.Cells["RVNo"].Value.ToString();
             this.PVId = grdReciptMaster.CurrentRow.Cells["PVId"].Value.ToString();
             this.PVNo = grdReciptMaster.CurrentRow.Cells["PV_No"].Value.ToString();
-            this.PVdate = grdReciptMaster.CurrentRow.Cells["PV_Date"].Value.ToString();
+            
+            //this.PVdate = grdReciptMaster.CurrentRow.Cells["PV_Date"].Value.ToString();
+            object pvDateObj = grdReciptMaster.CurrentRow.Cells["PV_Date"].Value;
+            DateTime pvDate;
+
+            if (pvDateObj is DateTime)
+            {
+                pvDate = (DateTime)pvDateObj;
+                this.PVdate = pvDate.ToString("dd MMM yyyy");
+            }
+            else if (pvDateObj is string)
+            {
+                string pvDateStr = (string)pvDateObj;
+                if (DateTime.TryParse(pvDateStr, out pvDate))
+                {
+                    this.PVdate = pvDate.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    this.PVdate = DateTime.Now.ToString("dd MMM yyyy");
+                }
+            }
+            else
+            {
+                this.PVdate = DateTime.Now.ToString("dd MMM yyyy");
+            }
+
+
+
             this.TokenNo = grdReciptMaster.CurrentRow.Cells["TokenNo"].Value.ToString();
             this.Name = grdReciptMaster.CurrentRow.Cells["Visitor_Name"].Value.ToString();
             this.CNIC = grdReciptMaster.CurrentRow.Cells["Visitor_CNIC"].Value.ToString();
@@ -139,7 +167,34 @@ namespace SDC_Application.AL
             this.Remarks = grdReciptMaster.CurrentRow.Cells["RVRemarks"].Value.ToString();
             this.ServiceType = grdReciptMaster.CurrentRow.Cells["ServiceTypeId"].Value.ToString();
             this.Rvstatus = grdReciptMaster.CurrentRow.Cells["RV_VerifiedStatus"].Value.ToString();
-            this.RVdate = grdReciptMaster.CurrentRow.Cells["RVDate"].Value.ToString();
+
+           // this.RVdate = grdReciptMaster.CurrentRow.Cells["RVDate"].Value.ToString();
+            object rvDateObj = grdReciptMaster.CurrentRow.Cells["RVDate"].Value;
+            DateTime rvDate;
+
+            if (rvDateObj is DateTime)
+            {
+                rvDate = (DateTime)rvDateObj;
+                this.RVdate = rvDate.ToString("dd MMM yyyy");
+            }
+            else if (rvDateObj is string)
+            {
+                string rvDateStr = (string)rvDateObj;
+                if (DateTime.TryParse(rvDateStr, out rvDate))
+                {
+                    this.RVdate = rvDate.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    this.RVdate = DateTime.Now.ToString("dd MMM yyyy");
+                }
+            }
+            else
+            {
+                this.RVdate = DateTime.Now.ToString("dd MMM yyyy");
+            }
+
+
 
             if (Rvstatus == "")
             {

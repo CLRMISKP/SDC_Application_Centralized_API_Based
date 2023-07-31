@@ -188,7 +188,35 @@ namespace SDC_Application.AL
             this.tokennum = grdTokenData.CurrentRow.Cells["TokenNo"].Value.ToString();
             this.name = grdTokenData.CurrentRow.Cells["Visitor_Name"].Value.ToString();
             this.father_name = grdTokenData.CurrentRow.Cells["Visitor_FatherName"].Value.ToString();
-            this.pvdate = grdTokenData.CurrentRow.Cells["PV_Date"].Value.ToString();
+            
+            
+            //this.pvdate = grdTokenData.CurrentRow.Cells["PV_Date"].Value.ToString();
+            object pvDateObj = grdTokenData.CurrentRow.Cells["PV_Date"].Value;
+            DateTime pvDate;
+
+            if (pvDateObj is DateTime)
+            {
+                pvDate = (DateTime)pvDateObj;
+                this.pvdate = pvDate.ToString("dd MMM yyyy");
+            }
+            else if (pvDateObj is string)
+            {
+                string pvDateStr = (string)pvDateObj;
+                if (DateTime.TryParse(pvDateStr, out pvDate))
+                {
+                    this.pvdate = pvDate.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    this.pvdate = DateTime.Now.ToString("dd MMM yyyy");
+                }
+            }
+            else
+            {
+                this.pvdate = DateTime.Now.ToString("dd MMM yyyy");
+            }
+
+
                 this.cnic = grdTokenData.CurrentRow.Cells["Visitor_CNIC"].Value.ToString();
                 this.mouzaid = grdTokenData.CurrentRow.Cells["TokenService_For_MozaId"].Value.ToString();
                 this.mouzaname = grdTokenData.CurrentRow.Cells["MozaNameUrdu"].Value.ToString();

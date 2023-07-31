@@ -2358,7 +2358,7 @@ namespace SDC_Application.AL
                     if (chkDeath.Checked)
                     {
                         SellerPersonDied = chkDeath.Checked.ToString();
-                        SellerPersonDeathDate = dateDeath.Value.ToShortDateString();
+                        SellerPersonDeathDate = dateDeath.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     }
                     else
                     {

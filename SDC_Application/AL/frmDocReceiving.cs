@@ -137,12 +137,12 @@ namespace SDC_Application.AL
                     dtpReceivingDate.Focus();
                     return;
                 }
-                string retVal=DocRc.SaveDocReceiving(txtRcId.Text, UsersManagments._Tehsilid.ToString(), cboMouza.SelectedValue.ToString(), dtpReceivingDate.Value.ToShortDateString(), txtDocNo.Text.Trim(), cboDocType.SelectedValue.ToString(), txtTitle.Text.Trim(), txtNoOfPages.Text.Trim(), txtDocDetails.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1");
+                string retVal=DocRc.SaveDocReceiving(txtRcId.Text, UsersManagments._Tehsilid.ToString(), cboMouza.SelectedValue.ToString(), dtpReceivingDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtDocNo.Text.Trim(), cboDocType.SelectedValue.ToString(), txtTitle.Text.Trim(), txtNoOfPages.Text.Trim(), txtDocDetails.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1");
                 if (retVal != "" && retVal != "Null")
                 {
                     MessageBox.Show("دستویز محفوظ ہو گیا۔");
                     ResetEntryControles();
-                    this.GetDocRecByDate(dtpReceivingDate.Value.ToShortDateString());
+                    this.GetDocRecByDate(dtpReceivingDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
                 }
             }
             catch (Exception ex)
@@ -192,7 +192,7 @@ namespace SDC_Application.AL
 
         private void dtpReceivingDate_ValueChanged(object sender, EventArgs e)
         {
-            GetDocRecByDate(dtpReceivingDate.Value.ToShortDateString());
+            GetDocRecByDate(dtpReceivingDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
         }
 
         #endregion
@@ -316,8 +316,8 @@ namespace SDC_Application.AL
                 ResetUpdateControles();
                 string DocNo = txtDocNoSearch.Text.Trim();
                 string Title = txtTitleSearch.Text.Trim();
-                string sDate =dtpDateStart.Checked?dtpDateStart.Value.ToShortDateString():"0";
-                string eDate = dtpDateEnd.Checked? dtpDateEnd.Value.ToShortDateString():"0";
+                string sDate =dtpDateStart.Checked?dtpDateStart.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()):"0";
+                string eDate = dtpDateEnd.Checked? dtpDateEnd.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()):"0";
                 string MouzaId = cboMouzaSearch.SelectedValue.ToString();
                 DataTable dt = DocRc.GetDocReceivedByDateMozaDocNo(DocNo, sDate, eDate, MouzaId,Title);
                 gridveiwDocs.DataSource = dt;
@@ -358,7 +358,10 @@ namespace SDC_Application.AL
                 DataGridView g = sender as DataGridView;
                 string status = gridveiwDocs.SelectedRows[0].Cells["ActivityStatus"].Value.ToString();
                 txtReceivingIdForUpdate.Text = gridveiwDocs.SelectedRows[0].Cells["ReceivingId"].Value.ToString();
+                
                 dtpReceivingDateUpdate.Value = DateTime.ParseExact(g.SelectedRows[0].Cells["ReceivingDate"].Value.ToString(), "dd-MM-yyyy", null);
+                //string receivingDateStr = g.SelectedRows[0].Cells["ReceivingDate"].Value.ToString();
+
                 txtTitleUpdate.Text = gridveiwDocs.SelectedRows[0].Cells["Title"].Value.ToString();
                 txtDocNoUpdate.Text = gridveiwDocs.SelectedRows[0].Cells["DocumentNo"].Value.ToString();
                 cboMouzaUpdate.SelectedValue = gridveiwDocs.SelectedRows[0].Cells["MozaId"].Value.ToString();
@@ -453,8 +456,8 @@ namespace SDC_Application.AL
                         dtpReceivingDateUpdate.Focus();
                         return;
                     }
-                    //string retVal = DocRc.SaveRegReceiving(txtUpdateRecId.Text, UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza.SelectedValue.ToString(), dtUpdateRegDate.Value.ToShortDateString(), txtUpdateRegNo.Text, txtUpdateJildNo.Text.Trim(), txtUpdateSeller.Text, txtUpdateBuyer1.Text, txtUpdateKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, activityStatus);
-                    string retVal=DocRc.UpdateDocStatus(txtReceivingIdForUpdate.Text, cboMouzaUpdate.SelectedValue.ToString() , dtpReceivingDateUpdate.Value.ToShortDateString() , txtDocNoUpdate.Text , cboDocTypeUpdate.SelectedValue.ToString() ,txtTitleUpdate.Text.Trim() , txtNoOfPagesUpdate.Text.Trim(), txtKafiyatUpdate.Text.Trim(), UsersManagments.UserId.ToString(),   activityStatus, intiqalNo);
+                    //string retVal = DocRc.SaveRegReceiving(txtUpdateRecId.Text, UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza.SelectedValue.ToString(), dtUpdateRegDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtUpdateRegNo.Text, txtUpdateJildNo.Text.Trim(), txtUpdateSeller.Text, txtUpdateBuyer1.Text, txtUpdateKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, activityStatus);
+                    string retVal=DocRc.UpdateDocStatus(txtReceivingIdForUpdate.Text, cboMouzaUpdate.SelectedValue.ToString() , dtpReceivingDateUpdate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) , txtDocNoUpdate.Text , cboDocTypeUpdate.SelectedValue.ToString() ,txtTitleUpdate.Text.Trim() , txtNoOfPagesUpdate.Text.Trim(), txtKafiyatUpdate.Text.Trim(), UsersManagments.UserId.ToString(),   activityStatus, intiqalNo);
                     if (retVal != "" && retVal != "Null")
                     {
                         MessageBox.Show("دستویز محفوظ ہو گیا۔");
@@ -541,7 +544,7 @@ namespace SDC_Application.AL
 
                     }
                 }
-                string retVal = DocRc.SaveRegReceiving(txtRegId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(), dtReg.Value.ToShortDateString(), txtRegNo.Text, txtJildNo.Text.Trim(), txtSeller.Text, txtBuyer.Text, txtKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1", cmbSR.SelectedValue.ToString());
+                string retVal = DocRc.SaveRegReceiving(txtRegId.Text, UsersManagments._Tehsilid.ToString(), cmbRegMoza.SelectedValue.ToString(), dtReg.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtRegNo.Text, txtJildNo.Text.Trim(), txtSeller.Text, txtBuyer.Text, txtKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "1", cmbSR.SelectedValue.ToString());
                 if (retVal != "" && retVal != "Null")
                 {
                    // MessageBox.Show("دستویز محفوظ ہو گیا۔");
@@ -571,8 +574,8 @@ namespace SDC_Application.AL
             try
             {
                 string SearchRegNo = txtSearchRegNo.Text.Trim();
-                string sDate = dtRegFrom.Checked ? dtRegFrom.Value.ToShortDateString() : "0";
-                string eDate = dtRegTo.Checked ? dtRegTo.Value.ToShortDateString() : "0";
+                string sDate = dtRegFrom.Checked ? dtRegFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "0";
+                string eDate = dtRegTo.Checked ? dtRegTo.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) : "0";
                 string SearchMouzaId = cmbRegSearchMoza.SelectedValue.ToString();
                 this.GetRegReceivedByDateMozaDocNo(SearchRegNo, sDate, eDate, SearchMouzaId);
                
@@ -598,6 +601,7 @@ namespace SDC_Application.AL
                     txtKafiyat.Text = g.SelectedRows[0].Cells["Kafiyat"].Value.ToString();
                     //cboDocType.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["DocumentTypeId"].Value.ToString());
                     dtReg.Value = DateTime.ParseExact(g.SelectedRows[0].Cells["RegDate"].Value.ToString(), "dd-MM-yyyy", null);
+
                     cmbRegMoza.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["MozaId"].Value.ToString());
                     cmbSR.SelectedValue = Convert.ToInt32(g.SelectedRows[0].Cells["SRId"].Value.ToString());
                     txtRegId.Text = g.SelectedRows[0].Cells["ReceivingId"].Value.ToString();
@@ -755,7 +759,7 @@ namespace SDC_Application.AL
                         {
                             activityStatus = "2";
                         }
-                        string retVal = DocRc.SaveRegReceiving(txtUpdateRecId.Text, UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza.SelectedValue.ToString(), dtUpdateRegDate.Value.ToShortDateString(), txtUpdateRegNo.Text, txtUpdateJildNo.Text.Trim(), txtUpdateSeller.Text, txtUpdateBuyer1.Text, txtUpdateKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, activityStatus, cmbRegUpdateSR.SelectedValue.ToString());
+                        string retVal = DocRc.SaveRegReceiving(txtUpdateRecId.Text, UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza.SelectedValue.ToString(), dtUpdateRegDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtUpdateRegNo.Text, txtUpdateJildNo.Text.Trim(), txtUpdateSeller.Text, txtUpdateBuyer1.Text, txtUpdateKafiyat.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, activityStatus, cmbRegUpdateSR.SelectedValue.ToString());
                         if (retVal != "" && retVal != "Null")
                         {
                              MessageBox.Show("دستویز محفوظ ہو گیا۔");
@@ -956,7 +960,7 @@ namespace SDC_Application.AL
             {
                 if (DialogResult.Yes == MessageBox.Show("کیا آپ لیٹر محفوظ کرنا چاہتے ہے؟", "محفوظ کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                 {
-                    string dtDispatch = dtDispatchDate.Value.ToShortDateString();
+                    string dtDispatch = dtDispatchDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                     string lastId = mnk.SaveFardDispatchToRegistrar("R", dtDispatch, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                     dtDispatchDate.Enabled = false;
                     objauto.FillCombo("Proc_Self_Get_Letter_List" + "'R'", cbLetterNo, "number", "RegFardDispatchMainId");

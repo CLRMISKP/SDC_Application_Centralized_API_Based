@@ -693,7 +693,7 @@ namespace SDC_Application.AL
                     if (chkFardDateFilter.Checked)
                     {
                         DataTable dtFardRecord = new DataTable();
-                        dtFardRecord = khatooni.GetFardDetailsByKhataIdByTokenPurposeId(cbokhataNo.SelectedValue.ToString(), cboTokenPurpose.SelectedValue.ToString(), dtpStartDate.Value.ToShortDateString(), dtpEndDate.Value.ToShortDateString());
+                        dtFardRecord = khatooni.GetFardDetailsByKhataIdByTokenPurposeId(cbokhataNo.SelectedValue.ToString(), cboTokenPurpose.SelectedValue.ToString(), dtpStartDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpEndDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
                         dgFardDetails.DataSource = dtFardRecord;
                         dgFardDetails.Columns["VisitorName"].HeaderText = "درخوست دہندہ";
                         dgFardDetails.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";

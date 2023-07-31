@@ -1374,7 +1374,7 @@ namespace SDC_Application.AL
                    {
                    string fbId=txtFbId.Text.Trim()!=""?txtFbId.Text.Trim():"-1";
                         int isManualFb=rbManualFb.Checked?1:0;
-                        string LastId = misalBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToShortDateString(), dtpDateTehsilDar.Value.ToShortDateString(), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, isManualFb);
+                        string LastId = misalBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, isManualFb);
                         txtFbId.Text = LastId;
                         if (txtFbId.Text.Length > 5)
                         {

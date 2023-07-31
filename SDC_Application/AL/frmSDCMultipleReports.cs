@@ -41,8 +41,8 @@ namespace SDC_Application.AL
 
             if (radToken.Checked = true)
             {
-                string date1 = dateTimePicker1.Value.ToShortDateString();
-                string date2 = dateTimePicker2.Value.ToShortDateString();
+                string date1 = dateTimePicker1.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
+                string date2 = dateTimePicker2.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
                 webBrowser1.Navigate(String.Format("http://{0}:{1}@mrd_sdc_svrlive:8080/ReportServer/Pages/ReportViewer.aspx?%2f" + ReportingFolder + "%2fReport_Token_DateToDate&rs:Command=Render&rc:Parameters=Collapsed&TehsilId=" + TehsilId + "&TokenDate1=" + date1 + "&TokenDate2=" + date2, username, password), null, null, hdr);
                
             }
