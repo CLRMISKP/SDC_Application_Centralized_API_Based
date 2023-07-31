@@ -341,6 +341,7 @@ namespace SDC_Application
             this.mnuSubIntiqalatTehsildar.Visible = isMenuVisible("Intiqal_Tehsildar_Report_dem");
             this.mnuSubIntiqalatPendingRegistry.Visible = isMenuVisible("Registry_Intiqal_Pending_dem");
             this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
+            //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
 
@@ -1482,19 +1483,19 @@ namespace SDC_Application
 
         private void mnuSubAttestedMutaions_Click(object sender, EventArgs e)
         {
-            //bool isOpen = IsFrmOpen("frmSDCReportingMain");
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
 
-            //if (!isOpen)
-            //{
+            if (!isOpen)
+            {
 
-            //    //UsersManagments.check = 2;
-            //    frmSDCReportingMain obj = new frmSDCReportingMain();
-            //    UsersManagments.check = 39;
-            //    obj.Tehsilid = UsersManagments._Tehsilid.ToString();
-            //    obj.MdiParent = this;
-            //    obj.WindowState = this.WindowState;
-            //    obj.Show();
-            //}
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 54;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
         }
 
         private void mnuSubCancelledInital_Click(object sender, EventArgs e)
@@ -1786,6 +1787,23 @@ namespace SDC_Application
                 //UsersManagments.check = 2;
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 52;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuSubMutAttNotImpl_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 53;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;

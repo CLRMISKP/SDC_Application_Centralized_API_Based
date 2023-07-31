@@ -147,7 +147,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if (UsersManagments.check > 24 && UsersManagments.check<44)
+            if (UsersManagments.check > 24 && UsersManagments.check<60 && UsersManagments.check!=51)
             {
                 ReportParameter param = new ReportParameter();
                 param.Name = "TehsilId";
@@ -155,7 +155,7 @@ namespace SDC_Application.AL
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
-            else if (UsersManagments.check >= 44 && UsersManagments.check!=52)
+            else if (UsersManagments.check >= 44 && (UsersManagments.check != 52 || UsersManagments.check != 50))
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }
@@ -424,7 +424,7 @@ namespace SDC_Application.AL
             if (UsersManagments.check == 32)
             {
                 ReportParameter[] rp = new ReportParameter[1];
-                this.SetCredentials("Registry_Intiqal_Detail_dem", rp, false);
+                this.SetCredentials("Registry_Intiqal_Detail_dem", rp, false); //Registry_Intiqal_Pending_dem
 
             }
             if (UsersManagments.check == 33)
@@ -528,14 +528,14 @@ namespace SDC_Application.AL
              if (UsersManagments.check == 48)
              {
                  ReportParameter[] rp = new ReportParameter[1];
-                 rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                  this.SetCredentials("IntiqalBoimetricCapturedNotAttestedReport", rp, false);
 
              }
              if (UsersManagments.check == 49)
              {
                  ReportParameter[] rp = new ReportParameter[1];
-                 rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                  this.SetCredentials("StateLandDataReport", rp, false);
 
              }
@@ -560,8 +560,22 @@ namespace SDC_Application.AL
              if (UsersManagments.check == 52)
              {
                  ReportParameter[] rp = new ReportParameter[1];
-                 rp[0] = new ReportParameter("TehsilId", this.Tehsilid);
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                  this.SetCredentials("Mutation_UnAttested_dem", rp, false);
+
+             }
+             if (UsersManagments.check == 53) //IntiqalAttestationDateReport
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("IntiqalAttestedNotImplementedReport", rp, false);
+
+             }
+             if (UsersManagments.check == 54) //IntiqalAttestationDateReport
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("IntiqalAttestationDateReport", rp, false);
 
              }
         }

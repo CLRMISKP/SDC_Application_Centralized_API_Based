@@ -115,6 +115,7 @@
             this.mnuSubCancelledInital = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubIntiqalatAttestedNotImplemented = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubBiometricCapturedNotAttestIntiqalat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubNotAttestedMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuYearlyIntiqalatReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalaQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalMakhloot = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,6 +140,7 @@
             this.mnuSubIntiqalatAttested = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubIntiqalatCancel = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubIntiqalatAttNotImp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubUnAttestedMutOPM = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,8 +159,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuSubNotAttestedMut = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSubUnAttestedMutOPM = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -866,6 +866,13 @@
             this.mnuSubBiometricCapturedNotAttestIntiqalat.Text = " - بائیو مٹرک شدہ، غیر تصدیق شدہ انتقالات";
             this.mnuSubBiometricCapturedNotAttestIntiqalat.Click += new System.EventHandler(this.mnuSubBiometricCapturedNotAttestIntiqalat_Click);
             // 
+            // mnuSubNotAttestedMut
+            // 
+            this.mnuSubNotAttestedMut.Name = "mnuSubNotAttestedMut";
+            this.mnuSubNotAttestedMut.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubNotAttestedMut.Text = " - غیر تصدیق شدہ انتقالات";
+            this.mnuSubNotAttestedMut.Click += new System.EventHandler(this.mnuSubNotAttestedMut_Click);
+            // 
             // mnuYearlyIntiqalatReports
             // 
             this.mnuYearlyIntiqalatReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1020,7 +1027,7 @@
             // mnuSubIntiqalatTehsildar
             // 
             this.mnuSubIntiqalatTehsildar.Name = "mnuSubIntiqalatTehsildar";
-            this.mnuSubIntiqalatTehsildar.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatTehsildar.Size = new System.Drawing.Size(307, 42);
             this.mnuSubIntiqalatTehsildar.Text = " - تحصیلدار انتقالات رپورٹ ";
             this.mnuSubIntiqalatTehsildar.Visible = false;
             this.mnuSubIntiqalatTehsildar.Click += new System.EventHandler(this.mnuSubInitqalatTehsildar_Click);
@@ -1028,7 +1035,7 @@
             // mnuSubIntiqalatPendingRegistry
             // 
             this.mnuSubIntiqalatPendingRegistry.Name = "mnuSubIntiqalatPendingRegistry";
-            this.mnuSubIntiqalatPendingRegistry.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatPendingRegistry.Size = new System.Drawing.Size(307, 42);
             this.mnuSubIntiqalatPendingRegistry.Text = " - رجسٹری انتقالات زیر تجویز ";
             this.mnuSubIntiqalatPendingRegistry.Visible = false;
             this.mnuSubIntiqalatPendingRegistry.Click += new System.EventHandler(this.mnuSubIntiqalRegistryPending_Click);
@@ -1036,7 +1043,7 @@
             // mnuSubIntiqalatonRegistry
             // 
             this.mnuSubIntiqalatonRegistry.Name = "mnuSubIntiqalatonRegistry";
-            this.mnuSubIntiqalatonRegistry.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatonRegistry.Size = new System.Drawing.Size(307, 42);
             this.mnuSubIntiqalatonRegistry.Text = " -  رجسٹری انتقالات تفصیل";
             this.mnuSubIntiqalatonRegistry.Visible = false;
             this.mnuSubIntiqalatonRegistry.Click += new System.EventHandler(this.MnuSubREgistryIntiqalatDaily_Click);
@@ -1044,7 +1051,7 @@
             // mnuSubIntiqalatAttested
             // 
             this.mnuSubIntiqalatAttested.Name = "mnuSubIntiqalatAttested";
-            this.mnuSubIntiqalatAttested.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatAttested.Size = new System.Drawing.Size(307, 42);
             this.mnuSubIntiqalatAttested.Text = " - تصدیق شدہ انتقالات";
             this.mnuSubIntiqalatAttested.Visible = false;
             this.mnuSubIntiqalatAttested.Click += new System.EventHandler(this.mnuSubAttestedMutaions_Click);
@@ -1052,7 +1059,7 @@
             // mnuSubIntiqalatCancel
             // 
             this.mnuSubIntiqalatCancel.Name = "mnuSubIntiqalatCancel";
-            this.mnuSubIntiqalatCancel.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatCancel.Size = new System.Drawing.Size(307, 42);
             this.mnuSubIntiqalatCancel.Text = " - خارج شدہ انتقالات";
             this.mnuSubIntiqalatCancel.Visible = false;
             this.mnuSubIntiqalatCancel.Click += new System.EventHandler(this.mnuSubCancelledInital_Click);
@@ -1060,10 +1067,17 @@
             // mnuSubIntiqalatAttNotImp
             // 
             this.mnuSubIntiqalatAttNotImp.Name = "mnuSubIntiqalatAttNotImp";
-            this.mnuSubIntiqalatAttNotImp.Size = new System.Drawing.Size(301, 42);
+            this.mnuSubIntiqalatAttNotImp.Size = new System.Drawing.Size(307, 42);
             this.mnuSubIntiqalatAttNotImp.Text = " - تصدیق شدہ  غیر عمل شدہ انتقلات";
             this.mnuSubIntiqalatAttNotImp.Visible = false;
             this.mnuSubIntiqalatAttNotImp.Click += new System.EventHandler(this.mnuSubIntiqalatAttestedNotImplemented_Click);
+            // 
+            // mnuSubUnAttestedMutOPM
+            // 
+            this.mnuSubUnAttestedMutOPM.Name = "mnuSubUnAttestedMutOPM";
+            this.mnuSubUnAttestedMutOPM.Size = new System.Drawing.Size(307, 42);
+            this.mnuSubUnAttestedMutOPM.Text = " - غیر تصدیق شدہ انتقالات";
+            this.mnuSubUnAttestedMutOPM.Click += new System.EventHandler(this.mnuSubUnAttestedMutOPM_Click);
             // 
             // mnuRHZ
             // 
@@ -1250,20 +1264,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
-            // 
-            // mnuSubNotAttestedMut
-            // 
-            this.mnuSubNotAttestedMut.Name = "mnuSubNotAttestedMut";
-            this.mnuSubNotAttestedMut.Size = new System.Drawing.Size(348, 42);
-            this.mnuSubNotAttestedMut.Text = " - غیر تصدیق شدہ انتقالات";
-            this.mnuSubNotAttestedMut.Click += new System.EventHandler(this.mnuSubNotAttestedMut_Click);
-            // 
-            // mnuSubUnAttestedMutOPM
-            // 
-            this.mnuSubUnAttestedMutOPM.Name = "mnuSubUnAttestedMutOPM";
-            this.mnuSubUnAttestedMutOPM.Size = new System.Drawing.Size(301, 42);
-            this.mnuSubUnAttestedMutOPM.Text = " - غیر تصدیق شدہ انتقالات";
-            this.mnuSubUnAttestedMutOPM.Click += new System.EventHandler(this.mnuSubUnAttestedMutOPM_Click);
             // 
             // frmMain
             // 
