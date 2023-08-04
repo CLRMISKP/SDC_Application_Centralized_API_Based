@@ -1661,23 +1661,23 @@ namespace SDC_Application.AL
                     }
                     else
                     {
-                        //string KhassraNo = "0", AreaTypeId = "0", KhassraKanal = "0", KhassraMarla = "0", KhassraSarsai = "0";
-                        //foreach (DataGridViewRow row in dgKhatooniKhassras.Rows)
-                        //{
-                        //    if (row.Cells["KhassraDetailId"].Value.ToString() == txtKhassraDetailId.Text)
-                        //    {
-                        //        KhassraNo = row.Cells["KhassraNo"].Value.ToString();
-                        //        AreaTypeId = row.Cells["AreaTypeId"].Value.ToString();
-                        //        KhassraKanal = row.Cells["Kanal"].Value.ToString();
-                        //        KhassraMarla = row.Cells["Marla"].Value.ToString();
-                        //        KhassraSarsai = row.Cells["Sarsai"].Value.ToString();
-                        //        break;
-                        //    }
-                        //}
-                        //string retVal = rhz.SaveKhassraRegisterEdit(txtKhassraRecId.Text, txtKhassraDetailRecId.Text, txtKhassraId.Text, cmbMouza.SelectedValue.ToString(), KhassraNo, txtKhassraNo.Text.Trim(), txtKhassraDetailId.Text, cboKhatoonies.SelectedValue.ToString(),
-                        //   AreaTypeId, cboAreaType.SelectedValue.ToString(), KhassraKanal, txtKhassraKanal.Text.Trim(), KhassraMarla, txtKhassraMarla.Text.Trim(), KhassraSarsai, txtKhassraSarsai.Text.Trim(), Math.Round(float.Parse(KhassraSarsai) * 30.25, 0).ToString(), Math.Round(float.Parse(txtKhassraSarsai.Text.Trim()) * 30.25, 0).ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "CompleteDeleted", txtRHZ_ChangeId.Text);
-                        string retVal = rhz.DeleteKhassraRegisterEdit(txtKhassraDetailRecId.Text);
-                        if (retVal.Length > 5)
+                        string KhassraNo = "0", AreaTypeId = "0", KhassraKanal = "0", KhassraMarla = "0", KhassraSarsai = "0";
+                        foreach (DataGridViewRow row in dgKhatooniKhassras.Rows)
+                        {
+                            if (row.Cells["KhassraDetailId"].Value.ToString() == txtKhassraDetailId.Text)
+                            {
+                                KhassraNo = row.Cells["KhassraNo"].Value.ToString();
+                                AreaTypeId = row.Cells["AreaTypeId"].Value.ToString();
+                                KhassraKanal = row.Cells["Kanal"].Value.ToString();
+                                KhassraMarla = row.Cells["Marla"].Value.ToString();
+                                KhassraSarsai = row.Cells["Sarsai"].Value.ToString();
+                                break;
+                            }
+                        }
+                        string retVal = rhz.SaveKhassraRegisterEdit(txtKhassraRecId.Text, txtKhassraDetailRecId.Text, txtKhassraId.Text, cmbMouza.SelectedValue.ToString(), KhassraNo, txtKhassraNo.Text.Trim(), txtKhassraDetailId.Text, cboKhatoonies.SelectedValue.ToString(),
+                           AreaTypeId, cboAreaType.SelectedValue.ToString(), KhassraKanal, txtKhassraKanal.Text.Trim(), KhassraMarla, txtKhassraMarla.Text.Trim(), KhassraSarsai, txtKhassraSarsai.Text.Trim(), Math.Round(float.Parse(KhassraSarsai) * 30.25, 0).ToString(), Math.Round(float.Parse(txtKhassraSarsai.Text.Trim()) * 30.25, 0).ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "CompleteDeleted", txtRHZ_ChangeId.Text);
+                        string retVal1 = rhz.DeleteKhassraRegisterEdit(txtKhassraDetailRecId.Text);
+                        if (retVal1.Length > 5)
                         {
                             resetKhassraFields();
                             btnLoadKhassras_Click(sender, e);
@@ -1888,7 +1888,9 @@ namespace SDC_Application.AL
             txtRHZ_ChangeId.Text = row[0]["RHZ_ChangeId"].ToString();
             txtDetails.Text = row[0]["ChangeDetails"].ToString();
             ImplementedBy = row[0]["ImplemnetedBy"].ToString() == "0" ? false : true;
+            btnConfirm.Enabled = row[0]["ConfirmedBy"].ToString() == "0" ? true : false;
             tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false) : false;//ImplemnetedBy
+            tabControlMain.Enabled=UsersManagments.UserId.ToString()=="111111"?true:false;
             PopulateDgKhataJatEdited();
             FillDgFBAfrad();
             btnImplementChanges.Enabled = UsersManagments._IsAdmin && !ImplementedBy;

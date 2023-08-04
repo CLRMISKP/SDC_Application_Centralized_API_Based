@@ -147,7 +147,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if (UsersManagments.check > 24 && UsersManagments.check<60 && UsersManagments.check!=51)
+            if (UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check!=44)
             {
                 ReportParameter param = new ReportParameter();
                 param.Name = "TehsilId";
@@ -155,7 +155,7 @@ namespace SDC_Application.AL
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }
-            else if (UsersManagments.check >= 44 && (UsersManagments.check != 52 || UsersManagments.check != 50))
+            else if (UsersManagments.check >= 44 && UsersManagments.check != 52 )
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }

@@ -69,7 +69,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgFBKhatajat = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhattaControls = new System.Windows.Forms.GroupBox();
             this.btnDelKhatta = new System.Windows.Forms.Button();
             this.btnSaveKhata = new System.Windows.Forms.Button();
@@ -135,6 +134,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDrustHissa = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnSaveAll = new System.Windows.Forms.Button();
             this.label63 = new System.Windows.Forms.Label();
             this.txtPersonName = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
@@ -454,7 +454,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnSaveAll = new System.Windows.Forms.Button();
+            this.ColKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -906,7 +906,7 @@
             this.dgFBKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFBKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFBKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1});
+            this.ColKhataSel});
             this.dgFBKhatajat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgFBKhatajat.Location = new System.Drawing.Point(3, 35);
             this.dgFBKhatajat.MultiSelect = false;
@@ -919,12 +919,6 @@
             this.dgFBKhatajat.TabIndex = 1;
             this.dgFBKhatajat.TabStop = false;
             this.dgFBKhatajat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFBKhatajat_CellClick);
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // gbKhattaControls
             // 
@@ -1740,6 +1734,18 @@
             this.groupBox5.TabIndex = 237;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "موجودہ حیثیت";
+            // 
+            // btnSaveAll
+            // 
+            this.btnSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveAll.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveAll.Location = new System.Drawing.Point(18, 21);
+            this.btnSaveAll.Name = "btnSaveAll";
+            this.btnSaveAll.Size = new System.Drawing.Size(92, 62);
+            this.btnSaveAll.TabIndex = 238;
+            this.btnSaveAll.Text = "کھاتہ کے تمام مالکان محفوظ کریں";
+            this.btnSaveAll.UseVisualStyleBackColor = true;
+            this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
             // 
             // label63
             // 
@@ -5427,17 +5433,11 @@
             this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
             this.txtTehsildarRpt.TabIndex = 56;
             // 
-            // btnSaveAll
+            // ColKhataSel
             // 
-            this.btnSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveAll.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAll.Location = new System.Drawing.Point(18, 21);
-            this.btnSaveAll.Name = "btnSaveAll";
-            this.btnSaveAll.Size = new System.Drawing.Size(92, 62);
-            this.btnSaveAll.TabIndex = 238;
-            this.btnSaveAll.Text = "کھاتہ کے تمام مالکان محفوظ کریں";
-            this.btnSaveAll.UseVisualStyleBackColor = true;
-            this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
+            this.ColKhataSel.HeaderText = "انتخاب کریں";
+            this.ColKhataSel.Name = "ColKhataSel";
+            this.ColKhataSel.ReadOnly = true;
             // 
             // frmFardeBadar
             // 
@@ -5821,7 +5821,6 @@
         private System.Windows.Forms.GroupBox gbKhattaControls;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.DataGridView dgFBKhatajat;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabKhatooniMeezan;
         private System.Windows.Forms.TabPage tabKhanakashtMalkan;
@@ -5986,5 +5985,6 @@
         private System.Windows.Forms.Button btnNewMushtri;
         private System.Windows.Forms.CheckBox chkMinKhataFb;
         private System.Windows.Forms.Button btnSaveAll;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColKhataSel;
     }
 }

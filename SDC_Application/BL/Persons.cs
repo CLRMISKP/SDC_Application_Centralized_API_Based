@@ -197,7 +197,7 @@ namespace SDC_Application.BL
         {
 
             objdatabase.ExecUpdateStoredProcedureWithNoRet(
-                    String.Format("UPDATE AfradRegister  SET FamilyNo = {0},FamilyId = {1},ParentId = {2} WHERE PersonId = {3} AND MozaId = {4} where Tehsilid={5} "
+                    String.Format("UPDATE AfradRegister  SET FamilyNo = {0},FamilyId = {1},ParentId = {2} WHERE PersonId = {3} AND MozaId = {4} and Tehsilid={5} "
                      ,FamilyNo, FamilyId, ParentId, PersonId,MozaID , SDC_Application.Classess.UsersManagments._Tehsilid
                     )
                 );

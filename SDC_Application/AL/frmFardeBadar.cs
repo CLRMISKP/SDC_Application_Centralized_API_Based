@@ -885,10 +885,10 @@ namespace SDC_Application.AL
             string cboQismMalik_StrVal = "";
             if (cboQismMalik.SelectedValue.GetType() == typeof(System.Data.DataRowView))
             {
-                System.Data.DataRowView v = (System.Data.DataRowView)((cmbkhatoonisnew.SelectedValue!=null)?cmbkhatoonisnew.SelectedValue:"");
+                System.Data.DataRowView v = (System.Data.DataRowView)((cboQismMalik.SelectedValue != null) ? cboQismMalik.SelectedValue : "");
                 cboQismMalik_StrVal = v.Row[0].ToString();
             }
-            else cboQismMalik_StrVal = (cmbkhatoonisnew.SelectedValue!=null)?cmbkhatoonisnew.SelectedValue.ToString():"";
+            else cboQismMalik_StrVal = (cboQismMalik.SelectedValue != null) ? cboQismMalik.SelectedValue.ToString() : "";
 
 
          if (txtPersonId.Text != "-1" && txtPersonId.Text != "" && cboQismMalik_StrVal.Length > 2)
@@ -2752,7 +2752,13 @@ namespace SDC_Application.AL
 
                 //// Load Khatoonies By Khata
                 //FillKhatoniListbyKhattaId();
-
+                foreach (DataGridViewRow row in dg.Rows)
+                {
+                    if (row.Selected)
+                        row.Cells["ColKhataSel"].Value = 1;
+                    else
+                        row.Cells["ColKhataSel"].Value = 0;
+                }
                 loadFbData(txtFbId.Text);
                 FillGridviewMinKhatas();
 
