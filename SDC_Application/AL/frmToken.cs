@@ -257,6 +257,8 @@ namespace SDC_Application.AL
                 TextBox txt = sender as TextBox;
                 txt.SelectAll();
             }
+            else if (e.KeyChar == 13)
+                e.Handled = true;
 
         }
         private void txtVisitorName_KeyPress(object sender, KeyPressEventArgs e)
@@ -280,6 +282,8 @@ namespace SDC_Application.AL
                 TextBox txt = sender as TextBox;
                 txt.SelectAll();
             }
+            else if (e.KeyChar == 13)
+                e.Handled = true;
 
 
         }

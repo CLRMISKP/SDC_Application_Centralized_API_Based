@@ -234,6 +234,12 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
+        public DataTable GetKhataHissasArea(string KhataId)
+        {
+            string spWithParam = "select TotalParts, Khata_Kanal, Khata_Marla,Khata_Sarsai, Khata_Feet from HaqdaranZameenKhatajat where RegisterHqDKhataId=  " + KhataId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
         public DataTable DeleteKhatooniRegister(string KhatooniId)
         {
             string spWithParam = "WEB_SP_DELETE_KhatooniRegister  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhatooniId + "'";

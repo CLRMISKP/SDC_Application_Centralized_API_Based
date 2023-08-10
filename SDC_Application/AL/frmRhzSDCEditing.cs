@@ -1890,7 +1890,7 @@ namespace SDC_Application.AL
             ImplementedBy = row[0]["ImplemnetedBy"].ToString() == "0" ? false : true;
             btnConfirm.Enabled = row[0]["ConfirmedBy"].ToString() == "0" ? true : false;
             tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false) : false;//ImplemnetedBy
-            tabControlMain.Enabled=UsersManagments.UserId.ToString()=="111111"?true:false;
+            //tabControlMain.Enabled=UsersManagments.UserId.ToString()=="111111"?true:false;
             PopulateDgKhataJatEdited();
             FillDgFBAfrad();
             btnImplementChanges.Enabled = UsersManagments._IsAdmin && !ImplementedBy;

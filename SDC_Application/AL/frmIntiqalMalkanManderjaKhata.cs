@@ -35,6 +35,7 @@ namespace SDC_Application.AL
         public string KhataSarsai { get; set; }
         public string KhataFeet { get; set; }
         Classess.AutoComplete objauto = new Classess.AutoComplete();
+        Classess.CommanFunctions cmnFns = new Classess.CommanFunctions();
         #endregion
 
 
@@ -254,17 +255,19 @@ namespace SDC_Application.AL
         /// </summary>
         private void SaveKhewatGroupFreqein()
         {
+            DataTable KhataHissasArea = rhz.GetKhataHissasArea(KhataId);
             foreach (DataGridViewRow row in GridViewMalikanSelect.Rows)
             {
                 string khewatgroupfreeqid = "-1";// Convert.ToInt32(this.txtKhewatFreeqainGroupId.Text.ToString());
                 string khewatgroupid = "0";
                 string personid =row.Cells["PersonId"].Value.ToString();
-                string fardareapart = "0";// row.Cells["FardAreaPart"].Value.ToString();// txtFardHissa.Text.Trim() != "" ? float.Parse(this.txtFardHissa.Text.ToString()) : 0;
-                string fardkanal = "0";// row.Cells["FardAreaPart"].Value.ToString();
-                string fardmarla = "0";// row.Cells["FardAreaPart"].Value.ToString();// following condition get sarsai for the area part
-                float fardsarsai = 0;// row.Cells["FardAreaPart"].Value.ToString() != "" ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
+                string fardareapart =  row.Cells["FardAreaPart"].Value.ToString();// txtFardHissa.Text.Trim() != "" ? float.Parse(this.txtFardHissa.Text.ToString()) : 0;
+                string[] area = cmnFns.CalculatedAreaFromHisa(float.Parse(KhataHissasArea.Rows[0]["TotalParts"].ToString()), float.Parse(fardareapart), Convert.ToInt32(KhataHissasArea.Rows[0]["Khata_Kanal"].ToString()), Convert.ToInt32(KhataHissasArea.Rows[0]["Khata_Marla"].ToString()), float.Parse(KhataHissasArea.Rows[0]["Khata_Sarsai"].ToString()), float.Parse(KhataHissasArea.Rows[0]["Khata_Feet"].ToString()));
+                string fardkanal = area[0];// row.Cells["FardAreaPart"].Value.ToString();
+                string fardmarla = area[1];// row.Cells["FardAreaPart"].Value.ToString();// following condition get sarsai for the area part
+                float fardsarsai =float.Parse( area[2]);// row.Cells["FardAreaPart"].Value.ToString() != "" ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
                 //MessageBox.Show(float.Parse("3.25"));
-                float fardfeet = 0;// fardsarsai > 0 ? fardsarsai * float.Parse("30.25") : float.Parse("0.0");
+                float fardfeet = float.Parse(area[3]);// fardsarsai > 0 ? fardsarsai * float.Parse("30.25") : float.Parse("0.0");
                
                 string personPartBata=row.Cells["FardAreaPart"].Value.ToString();
                 string khewattypeid = row.Cells["KhewatTypeId"].Value.ToString() ;
