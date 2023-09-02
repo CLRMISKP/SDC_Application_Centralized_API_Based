@@ -115,7 +115,7 @@
             this.ColCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhewatGroupFareeq = new System.Windows.Forms.GroupBox();
             this.txtFbFareeqId = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gbKhataMalikan = new System.Windows.Forms.GroupBox();
             this.btnHissaRaqba = new System.Windows.Forms.Button();
             this.btnNewFbMalik = new System.Windows.Forms.Button();
             this.btnPersonSave = new System.Windows.Forms.Button();
@@ -169,7 +169,7 @@
             this.ColCheckKhassra = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelControlsKhassra = new System.Windows.Forms.Panel();
             this.gBKhassraContols = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.gbKhassra = new System.Windows.Forms.GroupBox();
             this.btnKhassraDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.gbKhassraProposed = new System.Windows.Forms.GroupBox();
@@ -213,7 +213,7 @@
             this.colSelKhatooni = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhatooniMeezan = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.gbKhatooniMain = new System.Windows.Forms.GroupBox();
             this.btnDelKhatooniMeezan = new System.Windows.Forms.Button();
             this.btnSaveKhatooniMeezan = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
@@ -259,7 +259,8 @@
             this.dgMushteriFareeqain = new System.Windows.Forms.DataGridView();
             this.ColSelMushteri = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhanaKasht = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.gbKasht = new System.Windows.Forms.GroupBox();
+            this.btnNewMushteri = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.btnDelKashtMalik = new System.Windows.Forms.Button();
             this.btnSaveKashtMalik = new System.Windows.Forms.Button();
@@ -370,7 +371,7 @@
             this.chkselectallchangemalikan = new System.Windows.Forms.CheckBox();
             this.txtSearchMalik = new System.Windows.Forms.TextBox();
             this.label114 = new System.Windows.Forms.Label();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.gbMinMalikan = new System.Windows.Forms.GroupBox();
             this.txtMinMalikPersonId = new System.Windows.Forms.TextBox();
             this.txtKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
             this.btnNewMinMalik = new System.Windows.Forms.Button();
@@ -397,7 +398,7 @@
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.grdGetkhatonichange = new System.Windows.Forms.DataGridView();
             this.chkkk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.gbMinKhataKhatooni = new System.Windows.Forms.GroupBox();
             this.btnNewMinKhatooni = new System.Windows.Forms.Button();
             this.btnDeleteKhatoonichange = new System.Windows.Forms.Button();
             this.btnSaveKhatonichagne = new System.Windows.Forms.Button();
@@ -417,7 +418,7 @@
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.dgMinKhataKhassraJat = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.gbMinKhassras = new System.Windows.Forms.GroupBox();
             this.gbMinKhataKhassras = new System.Windows.Forms.GroupBox();
             this.cmbMinKhewattypes = new System.Windows.Forms.ComboBox();
             this.label101 = new System.Windows.Forms.Label();
@@ -441,7 +442,6 @@
             this.cmbkhatoonisnew = new System.Windows.Forms.ComboBox();
             this.btnMinKhatooniKhassras = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnNewMushteri = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -461,7 +461,7 @@
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewKhewatMalikaan)).BeginInit();
             this.gbKhewatGroupFareeq.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.gbKhataMalikan.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.khassraTab.SuspendLayout();
@@ -470,7 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewKhassraAreaDetails)).BeginInit();
             this.panelControlsKhassra.SuspendLayout();
             this.gBKhassraContols.SuspendLayout();
-            this.groupBox9.SuspendLayout();
+            this.gbKhassra.SuspendLayout();
             this.gbKhassraProposed.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelKhatoniKhassra.SuspendLayout();
@@ -481,7 +481,7 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewKhatooniMeezan)).BeginInit();
             this.gbKhatooniMeezan.SuspendLayout();
-            this.groupBox14.SuspendLayout();
+            this.gbKhatooniMain.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.tabKhanakashtMalkan.SuspendLayout();
@@ -489,7 +489,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqain)).BeginInit();
             this.gbKhanaKasht.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.gbKasht.SuspendLayout();
             this.gbKashtCurrent.SuspendLayout();
             this.gbKashtProposed.SuspendLayout();
             this.ShajraTab.SuspendLayout();
@@ -509,17 +509,17 @@
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMinKhataMalkan)).BeginInit();
             this.panel9.SuspendLayout();
-            this.groupBox18.SuspendLayout();
+            this.gbMinMalikan.SuspendLayout();
             this.gbMinKhataMalkan.SuspendLayout();
             this.MinKhatoonies.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGetkhatonichange)).BeginInit();
-            this.groupBox20.SuspendLayout();
+            this.gbMinKhataKhatooni.SuspendLayout();
             this.gbMinKhatooni.SuspendLayout();
             this.MinKhassras.SuspendLayout();
             this.groupBox23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMinKhataKhassraJat)).BeginInit();
-            this.groupBox22.SuspendLayout();
+            this.gbMinKhassras.SuspendLayout();
             this.gbMinKhataKhassras.SuspendLayout();
             this.gbMinKhatoniKhassraSelec.SuspendLayout();
             this.SuspendLayout();
@@ -1445,7 +1445,7 @@
             // 
             this.gbKhewatGroupFareeq.BackColor = System.Drawing.SystemColors.Control;
             this.gbKhewatGroupFareeq.Controls.Add(this.txtFbFareeqId);
-            this.gbKhewatGroupFareeq.Controls.Add(this.groupBox7);
+            this.gbKhewatGroupFareeq.Controls.Add(this.gbKhataMalikan);
             this.gbKhewatGroupFareeq.Controls.Add(this.groupBox6);
             this.gbKhewatGroupFareeq.Controls.Add(this.groupBox5);
             this.gbKhewatGroupFareeq.Controls.Add(this.txtPersonIdProposed);
@@ -1481,18 +1481,18 @@
             this.txtFbFareeqId.Text = "-1";
             this.txtFbFareeqId.Visible = false;
             // 
-            // groupBox7
+            // gbKhataMalikan
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox7.Controls.Add(this.btnHissaRaqba);
-            this.groupBox7.Controls.Add(this.btnNewFbMalik);
-            this.groupBox7.Controls.Add(this.btnPersonSave);
-            this.groupBox7.Controls.Add(this.btnDeleteMalik);
-            this.groupBox7.Location = new System.Drawing.Point(40, 172);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(915, 58);
-            this.groupBox7.TabIndex = 239;
-            this.groupBox7.TabStop = false;
+            this.gbKhataMalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbKhataMalikan.Controls.Add(this.btnHissaRaqba);
+            this.gbKhataMalikan.Controls.Add(this.btnNewFbMalik);
+            this.gbKhataMalikan.Controls.Add(this.btnPersonSave);
+            this.gbKhataMalikan.Controls.Add(this.btnDeleteMalik);
+            this.gbKhataMalikan.Location = new System.Drawing.Point(40, 172);
+            this.gbKhataMalikan.Name = "gbKhataMalikan";
+            this.gbKhataMalikan.Size = new System.Drawing.Size(915, 58);
+            this.gbKhataMalikan.TabIndex = 239;
+            this.gbKhataMalikan.TabStop = false;
             // 
             // btnHissaRaqba
             // 
@@ -2076,7 +2076,7 @@
             // gBKhassraContols
             // 
             this.gBKhassraContols.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gBKhassraContols.Controls.Add(this.groupBox9);
+            this.gBKhassraContols.Controls.Add(this.gbKhassra);
             this.gBKhassraContols.Controls.Add(this.gbKhassraProposed);
             this.gBKhassraContols.Controls.Add(this.groupBox3);
             this.gBKhassraContols.Location = new System.Drawing.Point(23, 0);
@@ -2085,16 +2085,16 @@
             this.gBKhassraContols.TabIndex = 22;
             this.gBKhassraContols.TabStop = false;
             // 
-            // groupBox9
+            // gbKhassra
             // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox9.Controls.Add(this.btnKhassraDelete);
-            this.groupBox9.Controls.Add(this.btnSave);
-            this.groupBox9.Location = new System.Drawing.Point(6, 144);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(913, 57);
-            this.groupBox9.TabIndex = 29;
-            this.groupBox9.TabStop = false;
+            this.gbKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbKhassra.Controls.Add(this.btnKhassraDelete);
+            this.gbKhassra.Controls.Add(this.btnSave);
+            this.gbKhassra.Location = new System.Drawing.Point(6, 144);
+            this.gbKhassra.Name = "gbKhassra";
+            this.gbKhassra.Size = new System.Drawing.Size(913, 57);
+            this.gbKhassra.TabIndex = 29;
+            this.gbKhassra.TabStop = false;
             // 
             // btnKhassraDelete
             // 
@@ -2554,7 +2554,7 @@
             // 
             this.gbKhatooniMeezan.BackColor = System.Drawing.SystemColors.Control;
             this.gbKhatooniMeezan.Controls.Add(this.textBox1);
-            this.gbKhatooniMeezan.Controls.Add(this.groupBox14);
+            this.gbKhatooniMeezan.Controls.Add(this.gbKhatooniMain);
             this.gbKhatooniMeezan.Controls.Add(this.groupBox16);
             this.gbKhatooniMeezan.Controls.Add(this.groupBox17);
             this.gbKhatooniMeezan.Controls.Add(this.textBox13);
@@ -2588,16 +2588,16 @@
             this.textBox1.TabIndex = 224;
             this.textBox1.Visible = false;
             // 
-            // groupBox14
+            // gbKhatooniMain
             // 
-            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox14.Controls.Add(this.btnDelKhatooniMeezan);
-            this.groupBox14.Controls.Add(this.btnSaveKhatooniMeezan);
-            this.groupBox14.Location = new System.Drawing.Point(79, 153);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(855, 58);
-            this.groupBox14.TabIndex = 240;
-            this.groupBox14.TabStop = false;
+            this.gbKhatooniMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbKhatooniMain.Controls.Add(this.btnDelKhatooniMeezan);
+            this.gbKhatooniMain.Controls.Add(this.btnSaveKhatooniMeezan);
+            this.gbKhatooniMain.Location = new System.Drawing.Point(79, 153);
+            this.gbKhatooniMain.Name = "gbKhatooniMain";
+            this.gbKhatooniMain.Size = new System.Drawing.Size(855, 58);
+            this.gbKhatooniMain.TabIndex = 240;
+            this.gbKhatooniMain.TabStop = false;
             // 
             // btnDelKhatooniMeezan
             // 
@@ -3097,7 +3097,7 @@
             // gbKhanaKasht
             // 
             this.gbKhanaKasht.BackColor = System.Drawing.SystemColors.Control;
-            this.gbKhanaKasht.Controls.Add(this.groupBox11);
+            this.gbKhanaKasht.Controls.Add(this.gbKasht);
             this.gbKhanaKasht.Controls.Add(this.gbKashtCurrent);
             this.gbKhanaKasht.Controls.Add(this.gbKashtProposed);
             this.gbKhanaKasht.Controls.Add(this.button2);
@@ -3116,24 +3116,36 @@
             this.gbKhanaKasht.TabIndex = 58;
             this.gbKhanaKasht.TabStop = false;
             // 
-            // groupBox11
+            // gbKasht
             // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox11.Controls.Add(this.btnNewMushteri);
-            this.groupBox11.Controls.Add(this.textBox7);
-            this.groupBox11.Controls.Add(this.btnDelKashtMalik);
-            this.groupBox11.Controls.Add(this.btnSaveKashtMalik);
-            this.groupBox11.Controls.Add(this.txtKashtRaqba);
-            this.groupBox11.Controls.Add(this.txtkashtPersonId);
-            this.groupBox11.Controls.Add(this.textBox9);
-            this.groupBox11.Controls.Add(this.txtMushteriFareeqId);
-            this.groupBox11.Controls.Add(this.txtKashtPersonId_Proposed);
-            this.groupBox11.Controls.Add(this.txtFbMushteriFareeqId);
-            this.groupBox11.Location = new System.Drawing.Point(8, 162);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(926, 58);
-            this.groupBox11.TabIndex = 240;
-            this.groupBox11.TabStop = false;
+            this.gbKasht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbKasht.Controls.Add(this.btnNewMushteri);
+            this.gbKasht.Controls.Add(this.textBox7);
+            this.gbKasht.Controls.Add(this.btnDelKashtMalik);
+            this.gbKasht.Controls.Add(this.btnSaveKashtMalik);
+            this.gbKasht.Controls.Add(this.txtKashtRaqba);
+            this.gbKasht.Controls.Add(this.txtkashtPersonId);
+            this.gbKasht.Controls.Add(this.textBox9);
+            this.gbKasht.Controls.Add(this.txtMushteriFareeqId);
+            this.gbKasht.Controls.Add(this.txtKashtPersonId_Proposed);
+            this.gbKasht.Controls.Add(this.txtFbMushteriFareeqId);
+            this.gbKasht.Location = new System.Drawing.Point(8, 162);
+            this.gbKasht.Name = "gbKasht";
+            this.gbKasht.Size = new System.Drawing.Size(926, 58);
+            this.gbKasht.TabIndex = 240;
+            this.gbKasht.TabStop = false;
+            // 
+            // btnNewMushteri
+            // 
+            this.btnNewMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMushteri.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewMushteri.Location = new System.Drawing.Point(398, 17);
+            this.btnNewMushteri.Name = "btnNewMushteri";
+            this.btnNewMushteri.Size = new System.Drawing.Size(83, 37);
+            this.btnNewMushteri.TabIndex = 238;
+            this.btnNewMushteri.Text = "نیا مالک";
+            this.btnNewMushteri.UseVisualStyleBackColor = true;
+            this.btnNewMushteri.Click += new System.EventHandler(this.btnNewMushteri_Click);
             // 
             // textBox7
             // 
@@ -4359,7 +4371,7 @@
             // 
             this.MinMalkan.Controls.Add(this.panel10);
             this.MinMalkan.Controls.Add(this.panel9);
-            this.MinMalkan.Controls.Add(this.groupBox18);
+            this.MinMalkan.Controls.Add(this.gbMinMalikan);
             this.MinMalkan.Controls.Add(this.gbMinKhataMalkan);
             this.MinMalkan.Location = new System.Drawing.Point(4, 40);
             this.MinMalkan.Name = "MinMalkan";
@@ -4464,20 +4476,20 @@
             this.label114.TabIndex = 1034;
             this.label114.Text = "تلاش کریں";
             // 
-            // groupBox18
+            // gbMinMalikan
             // 
-            this.groupBox18.Controls.Add(this.txtMinMalikPersonId);
-            this.groupBox18.Controls.Add(this.txtKhewatGroupFareeqId);
-            this.groupBox18.Controls.Add(this.btnNewMinMalik);
-            this.groupBox18.Controls.Add(this.btnSaveMinMalik);
-            this.groupBox18.Controls.Add(this.btnDelMalik);
-            this.groupBox18.Controls.Add(this.btnMalkanFromCurrentKhata);
-            this.groupBox18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox18.Location = new System.Drawing.Point(3, 116);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(940, 85);
-            this.groupBox18.TabIndex = 1036;
-            this.groupBox18.TabStop = false;
+            this.gbMinMalikan.Controls.Add(this.txtMinMalikPersonId);
+            this.gbMinMalikan.Controls.Add(this.txtKhewatGroupFareeqId);
+            this.gbMinMalikan.Controls.Add(this.btnNewMinMalik);
+            this.gbMinMalikan.Controls.Add(this.btnSaveMinMalik);
+            this.gbMinMalikan.Controls.Add(this.btnDelMalik);
+            this.gbMinMalikan.Controls.Add(this.btnMalkanFromCurrentKhata);
+            this.gbMinMalikan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinMalikan.Location = new System.Drawing.Point(3, 116);
+            this.gbMinMalikan.Name = "gbMinMalikan";
+            this.gbMinMalikan.Size = new System.Drawing.Size(940, 85);
+            this.gbMinMalikan.TabIndex = 1036;
+            this.gbMinMalikan.TabStop = false;
             // 
             // txtMinMalikPersonId
             // 
@@ -4728,7 +4740,7 @@
             // MinKhatoonies
             // 
             this.MinKhatoonies.Controls.Add(this.groupBox21);
-            this.MinKhatoonies.Controls.Add(this.groupBox20);
+            this.MinKhatoonies.Controls.Add(this.gbMinKhataKhatooni);
             this.MinKhatoonies.Controls.Add(this.gbMinKhatooni);
             this.MinKhatoonies.Location = new System.Drawing.Point(4, 40);
             this.MinKhatoonies.Name = "MinKhatoonies";
@@ -4771,17 +4783,17 @@
             this.chkkk.Name = "chkkk";
             this.chkkk.ReadOnly = true;
             // 
-            // groupBox20
+            // gbMinKhataKhatooni
             // 
-            this.groupBox20.Controls.Add(this.btnNewMinKhatooni);
-            this.groupBox20.Controls.Add(this.btnDeleteKhatoonichange);
-            this.groupBox20.Controls.Add(this.btnSaveKhatonichagne);
-            this.groupBox20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox20.Location = new System.Drawing.Point(0, 188);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(946, 83);
-            this.groupBox20.TabIndex = 1017;
-            this.groupBox20.TabStop = false;
+            this.gbMinKhataKhatooni.Controls.Add(this.btnNewMinKhatooni);
+            this.gbMinKhataKhatooni.Controls.Add(this.btnDeleteKhatoonichange);
+            this.gbMinKhataKhatooni.Controls.Add(this.btnSaveKhatonichagne);
+            this.gbMinKhataKhatooni.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhataKhatooni.Location = new System.Drawing.Point(0, 188);
+            this.gbMinKhataKhatooni.Name = "gbMinKhataKhatooni";
+            this.gbMinKhataKhatooni.Size = new System.Drawing.Size(946, 83);
+            this.gbMinKhataKhatooni.TabIndex = 1017;
+            this.gbMinKhataKhatooni.TabStop = false;
             // 
             // btnNewMinKhatooni
             // 
@@ -4957,7 +4969,7 @@
             // MinKhassras
             // 
             this.MinKhassras.Controls.Add(this.groupBox23);
-            this.MinKhassras.Controls.Add(this.groupBox22);
+            this.MinKhassras.Controls.Add(this.gbMinKhassras);
             this.MinKhassras.Controls.Add(this.gbMinKhatoniKhassraSelec);
             this.MinKhassras.Location = new System.Drawing.Point(4, 40);
             this.MinKhassras.Name = "MinKhassras";
@@ -5000,18 +5012,18 @@
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.ReadOnly = true;
             // 
-            // groupBox22
+            // gbMinKhassras
             // 
-            this.groupBox22.Controls.Add(this.gbMinKhataKhassras);
-            this.groupBox22.Controls.Add(this.btnNewMinKhassra);
-            this.groupBox22.Controls.Add(this.btnDelMinKhassra);
-            this.groupBox22.Controls.Add(this.btnSaveMinKhassra);
-            this.groupBox22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox22.Location = new System.Drawing.Point(0, 69);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(946, 169);
-            this.groupBox22.TabIndex = 10008;
-            this.groupBox22.TabStop = false;
+            this.gbMinKhassras.Controls.Add(this.gbMinKhataKhassras);
+            this.gbMinKhassras.Controls.Add(this.btnNewMinKhassra);
+            this.gbMinKhassras.Controls.Add(this.btnDelMinKhassra);
+            this.gbMinKhassras.Controls.Add(this.btnSaveMinKhassra);
+            this.gbMinKhassras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhassras.Location = new System.Drawing.Point(0, 69);
+            this.gbMinKhassras.Name = "gbMinKhassras";
+            this.gbMinKhassras.Size = new System.Drawing.Size(946, 169);
+            this.gbMinKhassras.TabIndex = 10008;
+            this.gbMinKhassras.TabStop = false;
             // 
             // gbMinKhataKhassras
             // 
@@ -5263,18 +5275,6 @@
             this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
             this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
             // 
-            // btnNewMushteri
-            // 
-            this.btnNewMushteri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewMushteri.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMushteri.Location = new System.Drawing.Point(398, 17);
-            this.btnNewMushteri.Name = "btnNewMushteri";
-            this.btnNewMushteri.Size = new System.Drawing.Size(83, 37);
-            this.btnNewMushteri.TabIndex = 238;
-            this.btnNewMushteri.Text = "نیا مالک";
-            this.btnNewMushteri.UseVisualStyleBackColor = true;
-            this.btnNewMushteri.Click += new System.EventHandler(this.btnNewMushteri_Click);
-            // 
             // frmFardeBadarManual
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -5309,7 +5309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewKhewatMalikaan)).EndInit();
             this.gbKhewatGroupFareeq.ResumeLayout(false);
             this.gbKhewatGroupFareeq.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
+            this.gbKhataMalikan.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -5320,7 +5320,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewKhassraAreaDetails)).EndInit();
             this.panelControlsKhassra.ResumeLayout(false);
             this.gBKhassraContols.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
+            this.gbKhassra.ResumeLayout(false);
             this.gbKhassraProposed.ResumeLayout(false);
             this.gbKhassraProposed.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -5335,7 +5335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridviewKhatooniMeezan)).EndInit();
             this.gbKhatooniMeezan.ResumeLayout(false);
             this.gbKhatooniMeezan.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
+            this.gbKhatooniMain.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.groupBox17.ResumeLayout(false);
@@ -5346,8 +5346,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqain)).EndInit();
             this.gbKhanaKasht.ResumeLayout(false);
             this.gbKhanaKasht.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.gbKasht.ResumeLayout(false);
+            this.gbKasht.PerformLayout();
             this.gbKashtCurrent.ResumeLayout(false);
             this.gbKashtCurrent.PerformLayout();
             this.gbKashtProposed.ResumeLayout(false);
@@ -5374,20 +5374,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgMinKhataMalkan)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
+            this.gbMinMalikan.ResumeLayout(false);
+            this.gbMinMalikan.PerformLayout();
             this.gbMinKhataMalkan.ResumeLayout(false);
             this.gbMinKhataMalkan.PerformLayout();
             this.MinKhatoonies.ResumeLayout(false);
             this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdGetkhatonichange)).EndInit();
-            this.groupBox20.ResumeLayout(false);
+            this.gbMinKhataKhatooni.ResumeLayout(false);
             this.gbMinKhatooni.ResumeLayout(false);
             this.gbMinKhatooni.PerformLayout();
             this.MinKhassras.ResumeLayout(false);
             this.groupBox23.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgMinKhataKhassraJat)).EndInit();
-            this.groupBox22.ResumeLayout(false);
+            this.gbMinKhassras.ResumeLayout(false);
             this.gbMinKhataKhassras.ResumeLayout(false);
             this.gbMinKhataKhassras.PerformLayout();
             this.gbMinKhatoniKhassraSelec.ResumeLayout(false);
@@ -5573,14 +5573,14 @@
         private System.Windows.Forms.CheckBox chbIsKhataMeezanChange;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox gbKhataMalikan;
         private System.Windows.Forms.Button btnNewFbMalik;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtDrustHissaBata;
         private System.Windows.Forms.TextBox txtFbFareeqId;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox gbKhassraProposed;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox gbKhassra;
         private System.Windows.Forms.Button btnSearchKhassra;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtDrustKhassraNo;
@@ -5601,7 +5601,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox txtKahstHisa_Pro;
-        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox gbKasht;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cbKashtKhatooni;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelMushteri;
@@ -5639,7 +5639,7 @@
         private System.Windows.Forms.TabPage tabKhanakashtMalkan;
         private System.Windows.Forms.GroupBox gbKhatooniMeezan;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox gbKhatooniMain;
         private System.Windows.Forms.Button btnDelKhatooniMeezan;
         private System.Windows.Forms.Button btnSaveKhatooniMeezan;
         private System.Windows.Forms.GroupBox groupBox16;
@@ -5735,7 +5735,7 @@
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.TextBox txtMinMalikHissa;
         private System.Windows.Forms.TextBox txtMinMalkinName;
-        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox gbMinMalikan;
         private System.Windows.Forms.Button btnNewMinMalik;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
@@ -5756,7 +5756,7 @@
         private System.Windows.Forms.Button btnSaveKhatonichagne;
         private System.Windows.Forms.TextBox txtKhatooninumchagee;
         private System.Windows.Forms.TextBox txtabbpashi;
-        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.GroupBox gbMinKhataKhatooni;
         private System.Windows.Forms.Button btnNewMinKhatooni;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.DataGridView grdGetkhatonichange;
@@ -5778,7 +5778,7 @@
         private System.Windows.Forms.TextBox txtMinKhassraNo;
         private System.Windows.Forms.TextBox txt_Marala_Khasra;
         private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.GroupBox gbMinKhassras;
         private System.Windows.Forms.Button btnNewMinKhassra;
         private System.Windows.Forms.GroupBox groupBox23;
         private System.Windows.Forms.DataGridView dgMinKhataKhassraJat;

@@ -1756,6 +1756,9 @@ namespace SDC_Application.AL
         #region selection from Grid for Finger Capture
         private void grfIntiqalPersonSanps_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            pboxFingerPrint.Image = null;
+            imgDataFinger = null;
+            pboxPicture.Image = null;
             DataGridView g = sender as DataGridView;
             if (e.ColumnIndex == grfIntiqalPersonSanps.CurrentRow.Cells["Selection"].ColumnIndex)
             {

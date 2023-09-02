@@ -45,6 +45,8 @@ namespace SDC_Application.AL
         public string isGardawar { get; set; }
         public string RegStatus { get; set; }
         public bool isManualMutation { get; set; }
+        public bool isConfirmed { get; set; }
+        public bool isEnabeled { get; set; }
 
         LanguageConverter lang = new LanguageConverter();
 
@@ -681,8 +683,15 @@ namespace SDC_Application.AL
                                             btnAmaldaramad.Enabled = false;
                                         }
                                     }
+                                    if (!Amaldaramadkhata && isConfirmed && isEnabeled)
+                                    {
+                                        btnAmaldaramad.Enabled = true;
+                                        //btnCancelConfirm.Enabled = true;
+                                    }
                                 }
                             }
+                           
+                            
                            
                         }
                         else

@@ -578,6 +578,13 @@ namespace SDC_Application.AL
                  this.SetCredentials("IntiqalAttestationDateReport", rp, false);
 
              }
+             if (UsersManagments.check == 55) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("AreaDifference_KhataKhewatKhatooni", rp, false);
+
+             }
         }
 
     }

@@ -124,6 +124,7 @@ namespace SDC_Application.AL
         public string KhewatGroupFareeqId { get; set; }
         public string MushtriFareeqIdTaqseem { get; set; }
         public bool IsJuzviKhatta { get; set; }
+        public bool isForManual { get; set; }
         //  public string RegisterHqDKhataId { get; set; }
         /// <summary>
         /// get or set entry mode
@@ -412,7 +413,10 @@ namespace SDC_Application.AL
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
-
+            if (isForManual)
+            {
+                gbAmalDaramad.Visible = false;
+            }
             //FillGridMalikanChange();
             if (UsersManagments.Implementation == "0")
             {
@@ -4795,7 +4799,7 @@ namespace SDC_Application.AL
         {
             if (cmbtaqseemChangeKhata.SelectedIndex != 0)
             {
-                if (Convert.ToInt32(RegisterHqDKhataId) > 0)
+                if (Convert.ToInt32(RegisterHqDKhataId) > 0 && cmbkhatoonisnew.SelectedValue.ToString().Length>5)
                 {
                     try
                     {
@@ -4813,6 +4817,10 @@ namespace SDC_Application.AL
                     {
                         MessageBox.Show(ex.Message);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("کھتونی نمبر کا انتخاب کریں", "", MessageBoxButtons.OK);
                 }
             }
 
@@ -4835,30 +4843,36 @@ namespace SDC_Application.AL
 
         public void FillKhasraJatNew()
         {
-            if (cmbkhatoonisnew.SelectedValue.ToString() != "System.Data.DataRowView")
+            if (cmbkhatoonisnew.DataSource != null)
             {
-                string khatooniid = cmbkhatoonisnew.SelectedValue.ToString();
-                dt = taqseemnewkhata.Proc_Get_KhatooniKhassraDetail(khatooniid.ToString());
-                if (dt != null)
+                if (cmbkhatoonisnew.Items.Count > 0)
                 {
-                    this.grdNewKhasrajat.DataSource = dt;
+                    if (cmbkhatoonisnew.SelectedValue.ToString() != "System.Data.DataRowView")
+                    {
+                        string khatooniid = cmbkhatoonisnew.SelectedValue.ToString();
+                        dt = taqseemnewkhata.Proc_Get_KhatooniKhassraDetail(khatooniid.ToString());
+                        if (dt != null)
+                        {
+                            this.grdNewKhasrajat.DataSource = dt;
 
-                    grdNewKhasrajat.Columns["KhassraDetailId"].Visible = false;
-                    grdNewKhasrajat.Columns["AreaTypeId"].Visible = false;
-                    grdNewKhasrajat.Columns["KhatooniId"].Visible = false;
-                    grdNewKhasrajat.Columns["KhassraId"].Visible = false;
-                    //grdNewKhasrajat.Columns["AreaType"].Visible = false;
-                    //grdNewKhasrajat.Columns["Kanal"].Visible = false;
-                    //grdNewKhasrajat.Columns["Marla"].Visible = false;
-                    //grdNewKhasrajat.Columns["Sarsai"].Visible = false;
-                    //grdNewKhasrajat.Columns["Feet"].Visible = false;
-                    grdNewKhasrajat.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
-                    grdNewKhasrajat.Columns["AreaType"].HeaderText = "قسم خسرہ";
+                            grdNewKhasrajat.Columns["KhassraDetailId"].Visible = false;
+                            grdNewKhasrajat.Columns["AreaTypeId"].Visible = false;
+                            grdNewKhasrajat.Columns["KhatooniId"].Visible = false;
+                            grdNewKhasrajat.Columns["KhassraId"].Visible = false;
+                            //grdNewKhasrajat.Columns["AreaType"].Visible = false;
+                            //grdNewKhasrajat.Columns["Kanal"].Visible = false;
+                            //grdNewKhasrajat.Columns["Marla"].Visible = false;
+                            //grdNewKhasrajat.Columns["Sarsai"].Visible = false;
+                            //grdNewKhasrajat.Columns["Feet"].Visible = false;
+                            grdNewKhasrajat.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
+                            grdNewKhasrajat.Columns["AreaType"].HeaderText = "قسم خسرہ";
 
-                    grdNewKhasrajat.Columns["Kanal"].HeaderText = "کنال";
-                    grdNewKhasrajat.Columns["Marla"].HeaderText = "مرلہ";
-                    grdNewKhasrajat.Columns["Sarsai"].HeaderText = "سرسائی";
-                    grdNewKhasrajat.Columns["Feet"].HeaderText = "فٹ";
+                            grdNewKhasrajat.Columns["Kanal"].HeaderText = "کنال";
+                            grdNewKhasrajat.Columns["Marla"].HeaderText = "مرلہ";
+                            grdNewKhasrajat.Columns["Sarsai"].HeaderText = "سرسائی";
+                            grdNewKhasrajat.Columns["Feet"].HeaderText = "فٹ";
+                        }
+                    }
                 }
             }
         }

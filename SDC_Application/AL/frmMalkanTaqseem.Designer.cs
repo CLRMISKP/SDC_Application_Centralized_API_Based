@@ -44,7 +44,9 @@
             this.txtIntiqalId = new System.Windows.Forms.TextBox();
             this.txtIntiqalMinGroupID = new System.Windows.Forms.TextBox();
             this.rbBayanMushteryan = new System.Windows.Forms.RadioButton();
+            this.cbKhatas = new System.Windows.Forms.ComboBox();
             this.rbBayan = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.rbMushteryan = new System.Windows.Forms.RadioButton();
             this.rbRHZ = new System.Windows.Forms.RadioButton();
             this.checkBoxSearchByFamily = new System.Windows.Forms.CheckBox();
@@ -52,9 +54,6 @@
             this.txtKhewatKhataId = new System.Windows.Forms.TextBox();
             this.txtKhewatGroupId = new System.Windows.Forms.TextBox();
             this.txtKhewatFreeqainGroupId = new System.Windows.Forms.TextBox();
-            this.cbKhatas = new System.Windows.Forms.ComboBox();
-            this.GetKhatajatDataSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCheckAll = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -67,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GetMInMalkanSelectedDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetMalikanSelectedDataSource)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GetKhatajatDataSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -79,14 +77,17 @@
             this.GridViewMalikan.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.GridViewMalikan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridViewMalikan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridViewMalikan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridViewMalikan.ColumnHeadersHeight = 43;
             this.GridViewMalikan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelect});
             this.GridViewMalikan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewMalikan.Location = new System.Drawing.Point(0, 0);
-            this.GridViewMalikan.Margin = new System.Windows.Forms.Padding(4);
+            this.GridViewMalikan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.GridViewMalikan.Name = "GridViewMalikan";
             this.GridViewMalikan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewMalikan.Size = new System.Drawing.Size(470, 306);
+            this.GridViewMalikan.Size = new System.Drawing.Size(451, 410);
             this.GridViewMalikan.TabIndex = 0;
             this.GridViewMalikan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewMalikan_CellClick);
             // 
@@ -94,7 +95,6 @@
             // 
             this.colSelect.HeaderText = "انتخاب کریں";
             this.colSelect.Name = "colSelect";
-            this.colSelect.Width = 427;
             // 
             // GridViewMalikanSelect
             // 
@@ -102,30 +102,33 @@
             this.GridViewMalikanSelect.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.GridViewMalikanSelect.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.GridViewMalikanSelect.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridViewMalikanSelect.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.GridViewMalikanSelect.ColumnHeadersHeight = 43;
             this.GridViewMalikanSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRemove});
             this.GridViewMalikanSelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewMalikanSelect.Location = new System.Drawing.Point(0, 0);
-            this.GridViewMalikanSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.GridViewMalikanSelect.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.GridViewMalikanSelect.Name = "GridViewMalikanSelect";
             this.GridViewMalikanSelect.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewMalikanSelect.Size = new System.Drawing.Size(414, 306);
+            this.GridViewMalikanSelect.Size = new System.Drawing.Size(592, 410);
             this.GridViewMalikanSelect.TabIndex = 1;
             this.GridViewMalikanSelect.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewMalikanSelect_CellClick);
+            this.GridViewMalikanSelect.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GridViewMalikanSelect_CellValidating);
             // 
             // colRemove
             // 
             this.colRemove.HeaderText = "حذف کریں";
             this.colRemove.Name = "colRemove";
-            this.colRemove.Width = 371;
             // 
             // btnSelect
             // 
             this.btnSelect.Enabled = false;
-            this.btnSelect.Location = new System.Drawing.Point(475, 6);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelect.Location = new System.Drawing.Point(638, 6);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(207, 41);
+            this.btnSelect.Size = new System.Drawing.Size(172, 39);
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "انتخاب مالکان";
             this.btnSelect.UseVisualStyleBackColor = true;
@@ -133,14 +136,11 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtIntiqalId);
-            this.panel1.Controls.Add(this.txtIntiqalMinGroupID);
-            this.panel1.Controls.Add(this.rbBayanMushteryan);
-            this.panel1.Controls.Add(this.rbBayan);
+            this.panel1.Controls.Add(this.cbKhatas);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.rbMushteryan);
-            this.panel1.Controls.Add(this.rbRHZ);
             this.panel1.Controls.Add(this.checkBoxSearchByFamily);
             this.panel1.Controls.Add(this.cbFamily);
             this.panel1.Controls.Add(this.txtKhewatKhataId);
@@ -148,19 +148,20 @@
             this.panel1.Controls.Add(this.txtKhewatFreeqainGroupId);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 58);
+            this.panel1.Size = new System.Drawing.Size(1062, 57);
             this.panel1.TabIndex = 3;
             // 
             // txtIntiqalId
             // 
             this.txtIntiqalId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIntiqalId.Enabled = false;
-            this.txtIntiqalId.Location = new System.Drawing.Point(460, 28);
+            this.txtIntiqalId.Location = new System.Drawing.Point(-1, 3);
+            this.txtIntiqalId.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtIntiqalId.Name = "txtIntiqalId";
             this.txtIntiqalId.ReadOnly = true;
-            this.txtIntiqalId.Size = new System.Drawing.Size(69, 26);
+            this.txtIntiqalId.Size = new System.Drawing.Size(52, 39);
             this.txtIntiqalId.TabIndex = 14;
             this.txtIntiqalId.Visible = false;
             // 
@@ -168,77 +169,111 @@
             // 
             this.txtIntiqalMinGroupID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIntiqalMinGroupID.Enabled = false;
-            this.txtIntiqalMinGroupID.Location = new System.Drawing.Point(460, 1);
+            this.txtIntiqalMinGroupID.Location = new System.Drawing.Point(10, 8);
+            this.txtIntiqalMinGroupID.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtIntiqalMinGroupID.Name = "txtIntiqalMinGroupID";
             this.txtIntiqalMinGroupID.ReadOnly = true;
-            this.txtIntiqalMinGroupID.Size = new System.Drawing.Size(69, 26);
+            this.txtIntiqalMinGroupID.Size = new System.Drawing.Size(52, 39);
             this.txtIntiqalMinGroupID.TabIndex = 13;
             this.txtIntiqalMinGroupID.Visible = false;
             // 
             // rbBayanMushteryan
             // 
             this.rbBayanMushteryan.AutoSize = true;
-            this.rbBayanMushteryan.Location = new System.Drawing.Point(568, 17);
+            this.rbBayanMushteryan.Location = new System.Drawing.Point(4, 7);
+            this.rbBayanMushteryan.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.rbBayanMushteryan.Name = "rbBayanMushteryan";
-            this.rbBayanMushteryan.Size = new System.Drawing.Size(108, 23);
+            this.rbBayanMushteryan.Size = new System.Drawing.Size(124, 35);
             this.rbBayanMushteryan.TabIndex = 12;
             this.rbBayanMushteryan.Text = "بائعان-مشتریان";
             this.rbBayanMushteryan.UseVisualStyleBackColor = true;
+            this.rbBayanMushteryan.Visible = false;
             this.rbBayanMushteryan.CheckedChanged += new System.EventHandler(this.rbBayanMushteryan_CheckedChanged);
+            // 
+            // cbKhatas
+            // 
+            this.cbKhatas.DisplayMember = "RegisterHqDKhataId";
+            this.cbKhatas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhatas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhatas.FormattingEnabled = true;
+            this.cbKhatas.Location = new System.Drawing.Point(484, 11);
+            this.cbKhatas.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.cbKhatas.Name = "cbKhatas";
+            this.cbKhatas.Size = new System.Drawing.Size(269, 31);
+            this.cbKhatas.TabIndex = 1;
+            this.cbKhatas.ValueMember = "RegisterHqDKhataId";
+            this.cbKhatas.SelectionChangeCommitted += new System.EventHandler(this.cbKhatas_SelectionChangeCommitted);
             // 
             // rbBayan
             // 
             this.rbBayan.AutoSize = true;
-            this.rbBayan.Location = new System.Drawing.Point(682, 17);
+            this.rbBayan.Location = new System.Drawing.Point(55, 12);
+            this.rbBayan.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.rbBayan.Name = "rbBayan";
-            this.rbBayan.Size = new System.Drawing.Size(58, 23);
+            this.rbBayan.Size = new System.Drawing.Size(72, 35);
             this.rbBayan.TabIndex = 11;
             this.rbBayan.Text = "بائعان";
             this.rbBayan.UseVisualStyleBackColor = true;
+            this.rbBayan.Visible = false;
             this.rbBayan.CheckedChanged += new System.EventHandler(this.rbBayan_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(757, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "انتخاب کھاتہ:";
             // 
             // rbMushteryan
             // 
             this.rbMushteryan.AutoSize = true;
-            this.rbMushteryan.Location = new System.Drawing.Point(746, 17);
+            this.rbMushteryan.Location = new System.Drawing.Point(608, 4);
+            this.rbMushteryan.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.rbMushteryan.Name = "rbMushteryan";
-            this.rbMushteryan.Size = new System.Drawing.Size(72, 23);
+            this.rbMushteryan.Size = new System.Drawing.Size(80, 35);
             this.rbMushteryan.TabIndex = 10;
             this.rbMushteryan.Text = "مشتریان";
             this.rbMushteryan.UseVisualStyleBackColor = true;
+            this.rbMushteryan.Visible = false;
             this.rbMushteryan.CheckedChanged += new System.EventHandler(this.rbMushteryan_CheckedChanged);
             // 
             // rbRHZ
             // 
             this.rbRHZ.AutoSize = true;
             this.rbRHZ.Checked = true;
-            this.rbRHZ.Location = new System.Drawing.Point(818, 17);
+            this.rbRHZ.Location = new System.Drawing.Point(49, 3);
+            this.rbRHZ.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.rbRHZ.Name = "rbRHZ";
-            this.rbRHZ.Size = new System.Drawing.Size(71, 23);
+            this.rbRHZ.Size = new System.Drawing.Size(78, 35);
             this.rbRHZ.TabIndex = 9;
             this.rbRHZ.TabStop = true;
             this.rbRHZ.Text = "جمعبندی";
             this.rbRHZ.UseVisualStyleBackColor = true;
+            this.rbRHZ.Visible = false;
             this.rbRHZ.CheckedChanged += new System.EventHandler(this.rbRHZ_CheckedChanged);
             // 
             // checkBoxSearchByFamily
             // 
             this.checkBoxSearchByFamily.AutoSize = true;
-            this.checkBoxSearchByFamily.Location = new System.Drawing.Point(84, -1);
+            this.checkBoxSearchByFamily.Location = new System.Drawing.Point(342, 7);
+            this.checkBoxSearchByFamily.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.checkBoxSearchByFamily.Name = "checkBoxSearchByFamily";
-            this.checkBoxSearchByFamily.Size = new System.Drawing.Size(105, 23);
+            this.checkBoxSearchByFamily.Size = new System.Drawing.Size(121, 35);
             this.checkBoxSearchByFamily.TabIndex = 8;
             this.checkBoxSearchByFamily.Text = "انتخاب خاندان:";
             this.checkBoxSearchByFamily.UseVisualStyleBackColor = true;
-            this.checkBoxSearchByFamily.Visible = false;
             this.checkBoxSearchByFamily.CheckedChanged += new System.EventHandler(this.checkBoxSearchByFamily_CheckedChanged);
             // 
             // cbFamily
             // 
             this.cbFamily.FormattingEnabled = true;
-            this.cbFamily.Location = new System.Drawing.Point(63, 0);
+            this.cbFamily.Location = new System.Drawing.Point(66, 5);
+            this.cbFamily.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cbFamily.Name = "cbFamily";
-            this.cbFamily.Size = new System.Drawing.Size(15, 27);
+            this.cbFamily.Size = new System.Drawing.Size(273, 39);
             this.cbFamily.TabIndex = 7;
             this.cbFamily.Visible = false;
             this.cbFamily.SelectionChangeCommitted += new System.EventHandler(this.cbFamily_SelectionChangeCommitted);
@@ -248,10 +283,11 @@
             // 
             this.txtKhewatKhataId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKhewatKhataId.Enabled = false;
-            this.txtKhewatKhataId.Location = new System.Drawing.Point(0, 31);
+            this.txtKhewatKhataId.Location = new System.Drawing.Point(0, 42);
+            this.txtKhewatKhataId.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtKhewatKhataId.Name = "txtKhewatKhataId";
             this.txtKhewatKhataId.ReadOnly = true;
-            this.txtKhewatKhataId.Size = new System.Drawing.Size(58, 26);
+            this.txtKhewatKhataId.Size = new System.Drawing.Size(44, 39);
             this.txtKhewatKhataId.TabIndex = 5;
             this.txtKhewatKhataId.Visible = false;
             // 
@@ -259,10 +295,11 @@
             // 
             this.txtKhewatGroupId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKhewatGroupId.Enabled = false;
-            this.txtKhewatGroupId.Location = new System.Drawing.Point(6, -18);
+            this.txtKhewatGroupId.Location = new System.Drawing.Point(4, -24);
+            this.txtKhewatGroupId.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtKhewatGroupId.Name = "txtKhewatGroupId";
             this.txtKhewatGroupId.ReadOnly = true;
-            this.txtKhewatGroupId.Size = new System.Drawing.Size(58, 26);
+            this.txtKhewatGroupId.Size = new System.Drawing.Size(44, 39);
             this.txtKhewatGroupId.TabIndex = 4;
             this.txtKhewatGroupId.Visible = false;
             // 
@@ -270,58 +307,39 @@
             // 
             this.txtKhewatFreeqainGroupId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKhewatFreeqainGroupId.Enabled = false;
-            this.txtKhewatFreeqainGroupId.Location = new System.Drawing.Point(6, 13);
+            this.txtKhewatFreeqainGroupId.Location = new System.Drawing.Point(4, 18);
+            this.txtKhewatFreeqainGroupId.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtKhewatFreeqainGroupId.Name = "txtKhewatFreeqainGroupId";
             this.txtKhewatFreeqainGroupId.ReadOnly = true;
-            this.txtKhewatFreeqainGroupId.Size = new System.Drawing.Size(51, 26);
+            this.txtKhewatFreeqainGroupId.Size = new System.Drawing.Size(39, 39);
             this.txtKhewatFreeqainGroupId.TabIndex = 3;
             this.txtKhewatFreeqainGroupId.Visible = false;
             // 
-            // cbKhatas
-            // 
-            this.cbKhatas.DataSource = this.GetKhatajatDataSource;
-            this.cbKhatas.DisplayMember = "KhataNo";
-            this.cbKhatas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhatas.FormattingEnabled = true;
-            this.cbKhatas.Location = new System.Drawing.Point(-1, 27);
-            this.cbKhatas.Name = "cbKhatas";
-            this.cbKhatas.Size = new System.Drawing.Size(94, 27);
-            this.cbKhatas.TabIndex = 1;
-            this.cbKhatas.ValueMember = "RegisterHqDKhataId";
-            this.cbKhatas.Visible = false;
-            this.cbKhatas.SelectionChangeCommitted += new System.EventHandler(this.cbKhatas_SelectionChangeCommitted);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "انتخاب کھاتہ:";
-            this.label1.Visible = false;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.rbBayanMushteryan);
+            this.panel2.Controls.Add(this.rbBayan);
+            this.panel2.Controls.Add(this.txtIntiqalMinGroupID);
+            this.panel2.Controls.Add(this.rbRHZ);
+            this.panel2.Controls.Add(this.txtIntiqalId);
             this.panel2.Controls.Add(this.btnCheckAll);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnSelect);
-            this.panel2.Controls.Add(this.cbKhatas);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 366);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 469);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(902, 59);
+            this.panel2.Size = new System.Drawing.Size(1062, 56);
             this.panel2.TabIndex = 4;
             // 
             // btnCheckAll
             // 
-            this.btnCheckAll.Location = new System.Drawing.Point(746, 6);
+            this.btnCheckAll.Location = new System.Drawing.Point(842, 6);
+            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Size = new System.Drawing.Size(114, 41);
+            this.btnCheckAll.Size = new System.Drawing.Size(103, 39);
             this.btnCheckAll.TabIndex = 4;
             this.btnCheckAll.Text = "تمام منتخب کریں";
             this.btnCheckAll.UseVisualStyleBackColor = true;
@@ -330,10 +348,10 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(113, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(184, 7);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(207, 41);
+            this.btnSave.Size = new System.Drawing.Size(185, 39);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "انتخاب شدہ مالکان محفوظ کریں";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -344,10 +362,10 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.GridViewMalikan);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(430, 58);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(609, 57);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(472, 308);
+            this.panel3.Size = new System.Drawing.Size(453, 412);
             this.panel3.TabIndex = 5;
             // 
             // panel4
@@ -355,24 +373,24 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.GridViewMalikanSelect);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 58);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(0, 57);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(416, 308);
+            this.panel4.Size = new System.Drawing.Size(594, 412);
             this.panel4.TabIndex = 6;
             // 
             // frmMalkanTaqseem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 425);
+            this.ClientSize = new System.Drawing.Size(1062, 525);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmMalkanTaqseem";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -386,7 +404,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GetMalikanSelectedDataSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GetKhatajatDataSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -409,7 +426,6 @@
         private System.Windows.Forms.BindingSource GetMalikanSelectedDataSource;
         private System.Windows.Forms.ComboBox cbKhatas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource GetKhatajatDataSource;
         private System.Windows.Forms.TextBox txtKhewatFreeqainGroupId;
         private System.Windows.Forms.TextBox txtKhewatGroupId;
         private System.Windows.Forms.TextBox txtKhewatKhataId;

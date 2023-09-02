@@ -101,6 +101,7 @@
             this.dgKhewatFareeqainAll = new System.Windows.Forms.DataGridView();
             this.ColSelection = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnMalikanFromPrevKhata = new System.Windows.Forms.Button();
             this.btnSearchAllMutations = new System.Windows.Forms.Button();
             this.txtKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
             this.txtKhewatGroupFareeqRecId = new System.Windows.Forms.TextBox();
@@ -819,6 +820,7 @@
             this.txtKhataHissaProp.Name = "txtKhataHissaProp";
             this.txtKhataHissaProp.Size = new System.Drawing.Size(115, 30);
             this.txtKhataHissaProp.TabIndex = 6;
+            this.txtKhataHissaProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataHissaProp_KeyPress);
             // 
             // txtKhataKanalProp
             // 
@@ -828,6 +830,7 @@
             this.txtKhataKanalProp.Name = "txtKhataKanalProp";
             this.txtKhataKanalProp.Size = new System.Drawing.Size(107, 30);
             this.txtKhataKanalProp.TabIndex = 7;
+            this.txtKhataKanalProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataHissaProp_KeyPress);
             // 
             // btnSaveKhataProp
             // 
@@ -873,6 +876,7 @@
             this.txtKhataMarlaProp.Name = "txtKhataMarlaProp";
             this.txtKhataMarlaProp.Size = new System.Drawing.Size(68, 30);
             this.txtKhataMarlaProp.TabIndex = 8;
+            this.txtKhataMarlaProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataHissaProp_KeyPress);
             // 
             // label31
             // 
@@ -904,6 +908,7 @@
             this.txtKhataSarsaiProp.Name = "txtKhataSarsaiProp";
             this.txtKhataSarsaiProp.Size = new System.Drawing.Size(48, 30);
             this.txtKhataSarsaiProp.TabIndex = 9;
+            this.txtKhataSarsaiProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataSarsaiProp_KeyPress);
             // 
             // label32
             // 
@@ -923,6 +928,7 @@
             this.txtKhataSFTprop.Name = "txtKhataSFTprop";
             this.txtKhataSFTprop.Size = new System.Drawing.Size(73, 30);
             this.txtKhataSFTprop.TabIndex = 10;
+            this.txtKhataSFTprop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataHissaProp_KeyPress);
             // 
             // label48
             // 
@@ -1158,9 +1164,9 @@
             // 
             this.groupBox1.Controls.Add(this.dgKhewatFareeqainAll);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 102);
+            this.groupBox1.Location = new System.Drawing.Point(3, 166);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1193, 267);
+            this.groupBox1.Size = new System.Drawing.Size(1193, 203);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "موجودہ مالکان";
@@ -1178,7 +1184,7 @@
             this.dgKhewatFareeqainAll.Name = "dgKhewatFareeqainAll";
             this.dgKhewatFareeqainAll.RowHeadersVisible = false;
             this.dgKhewatFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKhewatFareeqainAll.Size = new System.Drawing.Size(1187, 229);
+            this.dgKhewatFareeqainAll.Size = new System.Drawing.Size(1187, 165);
             this.dgKhewatFareeqainAll.TabIndex = 1;
             this.dgKhewatFareeqainAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhewatFareeqainAll_CellClick);
             // 
@@ -1191,6 +1197,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnMalikanFromPrevKhata);
             this.panel4.Controls.Add(this.btnSearchAllMutations);
             this.panel4.Controls.Add(this.txtKhewatGroupFareeqId);
             this.panel4.Controls.Add(this.txtKhewatGroupFareeqRecId);
@@ -1218,8 +1225,22 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1193, 96);
+            this.panel4.Size = new System.Drawing.Size(1193, 160);
             this.panel4.TabIndex = 0;
+            // 
+            // btnMalikanFromPrevKhata
+            // 
+            this.btnMalikanFromPrevKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMalikanFromPrevKhata.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMalikanFromPrevKhata.Location = new System.Drawing.Point(542, 117);
+            this.btnMalikanFromPrevKhata.Name = "btnMalikanFromPrevKhata";
+            this.btnMalikanFromPrevKhata.Size = new System.Drawing.Size(157, 37);
+            this.btnMalikanFromPrevKhata.TabIndex = 314;
+            this.btnMalikanFromPrevKhata.TabStop = false;
+            this.btnMalikanFromPrevKhata.Text = "مالکان بمطابق مندرجہ کھاتہ";
+            this.tt.SetToolTip(this.btnMalikanFromPrevKhata, "مندرجہ کھاتہ سے مالکان کا انتخاب کریں۔");
+            this.btnMalikanFromPrevKhata.UseVisualStyleBackColor = true;
+            this.btnMalikanFromPrevKhata.Click += new System.EventHandler(this.btnMalikanFromPrevKhata_Click);
             // 
             // btnSearchAllMutations
             // 
@@ -1294,7 +1315,7 @@
             // 
             this.btnNewMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMalik.Location = new System.Drawing.Point(193, 50);
+            this.btnNewMalik.Location = new System.Drawing.Point(861, 117);
             this.btnNewMalik.Name = "btnNewMalik";
             this.btnNewMalik.Size = new System.Drawing.Size(68, 37);
             this.btnNewMalik.TabIndex = 306;
@@ -1308,7 +1329,7 @@
             // 
             this.btnPersonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPersonSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonSave.Location = new System.Drawing.Point(268, 50);
+            this.btnPersonSave.Location = new System.Drawing.Point(936, 117);
             this.btnPersonSave.Name = "btnPersonSave";
             this.btnPersonSave.Size = new System.Drawing.Size(68, 37);
             this.btnPersonSave.TabIndex = 305;
@@ -1321,7 +1342,7 @@
             // 
             this.btnDeleteMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMalik.Location = new System.Drawing.Point(119, 50);
+            this.btnDeleteMalik.Location = new System.Drawing.Point(787, 117);
             this.btnDeleteMalik.Name = "btnDeleteMalik";
             this.btnDeleteMalik.Size = new System.Drawing.Size(68, 37);
             this.btnDeleteMalik.TabIndex = 243;
@@ -4180,5 +4201,6 @@
         private System.Windows.Forms.RadioButton rbCurrentKhata;
         private System.Windows.Forms.Button btnSearchAllMutations;
         private System.Windows.Forms.Button btnViewAllMushtry;
+        private System.Windows.Forms.Button btnMalikanFromPrevKhata;
     }
 }

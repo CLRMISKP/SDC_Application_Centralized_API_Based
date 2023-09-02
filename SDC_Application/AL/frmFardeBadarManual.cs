@@ -1433,6 +1433,7 @@ namespace SDC_Application.AL
 		 
         private void btnSearchFB_Click(object sender, EventArgs e)
         {
+            enableControles();
         if (cmbMouza.SelectedValue.ToString() == "-1" || cmbMouza.SelectedValue.ToString() == "0")
                 {
                 MessageBox.Show("موضع کا انتخاب کریں", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1466,7 +1467,7 @@ namespace SDC_Application.AL
                     if (this.ConfirmationStatus)
                         {
                         btnAmaldaramad.Enabled = !AmaldaramadStatus;
-                        btnConfirm.Enabled = false;
+                        disableControles();
                         //this.tabKhataDetail.TabPages.Remove(gardawarTab);
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);
                         //this.tabKhataDetail.TabPages.Add(gardawarTab);
@@ -1474,7 +1475,8 @@ namespace SDC_Application.AL
                         }
                     if(this.AmaldaramadStatus)
                     {
-                        this.DisAbleControls();
+                        //this.DisAbleControls();
+                        disableControles();
                     }
                     else
                         {
@@ -1482,6 +1484,7 @@ namespace SDC_Application.AL
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);
                         //btnConfirm.Enabled = true;
                         }
+                   // if(UsersManagments.UserId.ToString()==
                     this.LoadFBKhatajat(txtFbId.Text);
                     loadFbData(txtFbId.Text);
                     //Load Data for Afrad
@@ -1500,6 +1503,36 @@ namespace SDC_Application.AL
                 }
         }
       #endregion
+        #region Controle Enable disable
+        private void disableControles()
+        {
+            btnConfirm.Enabled = false;
+            gbKhattaControls.Enabled = false;
+            gbKhataMalikan.Enabled = false;
+            gbKhassra.Enabled = false;
+            gbKhatooniMain.Enabled = false;
+            gbKasht.Enabled = false;
+            gbAfradRegisterControls.Enabled = false;
+            gbMinKhataButtons.Enabled = false;
+            gbMinMalikan.Enabled = false;
+            gbMinKhataKhatooni.Enabled = false;
+            gbMinKhassras.Enabled = false;
+        }
+        private void enableControles()
+        {
+            btnConfirm.Enabled = true;
+            //dgFBKhatajat.Enabled = true;
+            gbKhataMalikan.Enabled = true;
+            gbKhassra.Enabled = true;
+            gbKhatooniMain.Enabled = true;
+            gbKasht.Enabled = true;
+            gbAfradRegisterControls.Enabled = true;
+            gbMinKhataButtons.Enabled = true;
+            gbMinMalikan.Enabled = true;
+            gbMinKhataKhatooni.Enabled = true;
+            gbMinKhassras.Enabled = true;
+        }
+        #endregion
 
         #region Load Save Fb Afrad gridview
         private void FillDgFBAfrad()

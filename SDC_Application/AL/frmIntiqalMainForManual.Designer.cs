@@ -58,6 +58,7 @@
             this.dtpTasdiq = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.print = new System.Windows.Forms.Button();
             this.btnCancelConfirm = new System.Windows.Forms.Button();
             this.btnIntiqalAmalDaramadByKhata = new System.Windows.Forms.Button();
             this.btnIntiqalAmal = new System.Windows.Forms.Button();
@@ -73,7 +74,7 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.print = new System.Windows.Forms.Button();
+            this.btnRecivedDucoments = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -422,6 +423,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnRecivedDucoments);
             this.groupBox7.Controls.Add(this.print);
             this.groupBox7.Controls.Add(this.btnCancelConfirm);
             this.groupBox7.Controls.Add(this.btnIntiqalAmalDaramadByKhata);
@@ -444,6 +446,18 @@
             this.groupBox7.TabIndex = 30;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "اندراج و تبدیلی انتقال";
+            // 
+            // print
+            // 
+            this.print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.print.BackgroundImage = global::SDC_Application.Resource1.Print31;
+            this.print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.print.Location = new System.Drawing.Point(675, 47);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(59, 50);
+            this.print.TabIndex = 37;
+            this.print.UseVisualStyleBackColor = true;
+            this.print.Click += new System.EventHandler(this.print_Click_1);
             // 
             // btnCancelConfirm
             // 
@@ -522,7 +536,7 @@
             this.lblIntiqalPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIntiqalPending.Location = new System.Drawing.Point(10, 22);
             this.lblIntiqalPending.Name = "lblIntiqalPending";
-            this.lblIntiqalPending.Size = new System.Drawing.Size(526, 85);
+            this.lblIntiqalPending.Size = new System.Drawing.Size(412, 85);
             this.lblIntiqalPending.TabIndex = 32;
             this.lblIntiqalPending.TabStop = true;
             this.lblIntiqalPending.Text = "\'";
@@ -531,7 +545,7 @@
             // 
             this.chkPendingIntiqal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPendingIntiqal.AutoSize = true;
-            this.chkPendingIntiqal.Location = new System.Drawing.Point(543, 45);
+            this.chkPendingIntiqal.Location = new System.Drawing.Point(438, 46);
             this.chkPendingIntiqal.Name = "chkPendingIntiqal";
             this.chkPendingIntiqal.Size = new System.Drawing.Size(94, 42);
             this.chkPendingIntiqal.TabIndex = 5;
@@ -637,17 +651,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
             // 
-            // print
+            // btnRecivedDucoments
             // 
-            this.print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.print.BackgroundImage = global::SDC_Application.Resource1.Print31;
-            this.print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.print.Location = new System.Drawing.Point(675, 47);
-            this.print.Name = "print";
-            this.print.Size = new System.Drawing.Size(59, 50);
-            this.print.TabIndex = 37;
-            this.print.UseVisualStyleBackColor = true;
-            this.print.Click += new System.EventHandler(this.print_Click_1);
+            this.btnRecivedDucoments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecivedDucoments.Image = global::SDC_Application.Resource1.Attach_44;
+            this.btnRecivedDucoments.Location = new System.Drawing.Point(597, 44);
+            this.btnRecivedDucoments.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnRecivedDucoments.Name = "btnRecivedDucoments";
+            this.btnRecivedDucoments.Size = new System.Drawing.Size(59, 50);
+            this.btnRecivedDucoments.TabIndex = 38;
+            this.btnRecivedDucoments.TabStop = false;
+            this.toolTip.SetToolTip(this.btnRecivedDucoments, "اندراج دستاویزات انتقال");
+            this.btnRecivedDucoments.UseVisualStyleBackColor = true;
+            this.btnRecivedDucoments.Click += new System.EventHandler(this.btnRecivedDucoments_Click_1);
             // 
             // frmIntiqalMainForManual
             // 
@@ -726,5 +742,6 @@
         private System.Windows.Forms.Button btnIntiqalAmalDaramadByKhata;
         private System.Windows.Forms.Button btnCancelConfirm;
         private System.Windows.Forms.Button print;
+        private System.Windows.Forms.Button btnRecivedDucoments;
     }
 }

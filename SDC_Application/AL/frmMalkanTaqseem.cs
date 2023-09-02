@@ -29,22 +29,28 @@ namespace SDC_Application.AL
         DataTable malikanSel = new DataTable();
         DataTable MozaFamilies = new DataTable();
         DataTable FamilyPersons = new DataTable();
+        DataTable dtkj = new DataTable();
         UserMangement currentUsers = new UserMangement();
-
-
+        AutoComplete auto = new AutoComplete();
+        CommanFunctions cfn = new CommanFunctions();
+        Misal misal = new Misal();
         LanguageConverter Lang = new LanguageConverter();
+        RhzSDC rhz = new RhzSDC();
         public string KhataId { get; set; }
         public string KhewatGroupId { get; set; }
         public string MozaId { get; set; }
         public string RegisterId { get; set; }
         public string IntiqalId { get; set; }
-        public string MyProperty { get; set; }
+        public string KhewatTypeId { get; set; }
         public string IntiqalMinGroupId { get; set; }
         public string MalikanType { get; set; }
         public string MinGroupNo { get; set; }
         public string OldKhatooniId { get; set; }
         public string KhatooniRecId { get; set; }
         public string MushteriFareeqId { get; set; }
+        public string RHZ_ChangeId { get; set; }
+        public string KhataHissa { get; set; }
+        public string Khata_Area { get; set; }
 
 
         #endregion
@@ -80,8 +86,7 @@ namespace SDC_Application.AL
             GridViewMalikanSelect.Columns["PersonType"].Visible = false;
             GridViewMalikanSelect.Columns.Add("KhewatGroupFareeqId", "مالک کا نام");
             GridViewMalikanSelect.Columns["KhewatGroupFareeqId"].Visible = false;
-            GridViewMalikanSelect.Columns.Add("FardAreaPart", "مالک کا نام");
-            GridViewMalikanSelect.Columns["FardAreaPart"].Visible = false;
+            GridViewMalikanSelect.Columns.Add("FardAreaPart", "حصہ تبدیلی کے لئے حصہ کلک کریں");
             GridViewMalikanSelect.Columns.Add("KhewatGroupId", "مالک کا نام");
             GridViewMalikanSelect.Columns["KhewatGroupId"].Visible = false;
             GridViewMalikanSelect.Columns.Add("RegisterHqDKhataId", "مالک کا نام");
@@ -111,6 +116,7 @@ namespace SDC_Application.AL
 
         private void FillMozaFamaliesList()
         {
+            auto.FillCombo("Proc_Get_Moza_Families_List " + UsersManagments._Tehsilid.ToString() + "," + MozaId, cbFamily, "FamilyName", "FmailyNo");
             //MozaFamilies = client.GetMozaFamilyListByMozaId(CurrentUser.MozaId).ToList();
             //Proc_Get_Moza_Families_List_Result SelFamily = new Proc_Get_Moza_Families_List_Result();
             //SelFamily.FamilyName = " - فیملی کا انتخاب کریں - ";
@@ -132,9 +138,9 @@ namespace SDC_Application.AL
         /// <param name="e"></param>
         private void cbKhatas_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //FillKhewatMalikanByKhataId();
-            //this.txtKhewatGroupId.Text = this.KhewatGroupId;
-            //this.txtKhewatKhataId.Text = this.KhataId;
+            FillKhewatMalikanByKhataId();
+            this.txtKhewatGroupId.Text = this.KhewatGroupId;
+            this.txtKhewatKhataId.Text = this.KhataId;
         }
 
         #endregion
@@ -147,23 +153,24 @@ namespace SDC_Application.AL
         {
             try
             {
-                string KhataId = this.KhataId != "" ? this.KhataId : "0";
-                malikan = inteq.GetIntiqalMinMalikanList(KhataId, this.MalikanType, this.IntiqalId); //client.GetKhewatMalikanByKhataId(khataid).ToList();
+                //string KhataId = this.KhataId != "" ? this.KhataId : "0";
+                malikan = inteq.GetIntiqalKhataMalikanByKhataId(cbKhatas.SelectedValue.ToString()); //client.GetKhewatMalikanByKhataId(khataid).ToList();
                 GridViewMalikan.DataSource = malikan;
-                GridViewMalikan.Columns["CompleteName"].HeaderText = "نام مالک"; 
+                GridViewMalikan.Columns["personname"].HeaderText = "نام مالک"; 
                 GridViewMalikan.Columns["PersonId"].Visible = false;
-                GridViewMalikan.Columns["Kanal"].Visible = false;
-                GridViewMalikan.Columns["marla"].Visible = false;
-                GridViewMalikan.Columns["sarsai"].Visible = false;
-                GridViewMalikan.Columns["Feet"].Visible = false;
-                GridViewMalikan.Columns["Area"].Visible = false;
+                GridViewMalikan.Columns["Farad_Kanal"].Visible = false;
+                GridViewMalikan.Columns["Fard_Marla"].Visible = false;
+                GridViewMalikan.Columns["Fard_Sarsai"].Visible = false;
+                GridViewMalikan.Columns["Fard_Feet"].Visible = false;
+                GridViewMalikan.Columns["Fard_Area"].Visible = false;
                 GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
                 GridViewMalikan.Columns["KhewatType"].Visible = false;
-                GridViewMalikan.Columns["PersonType"].Visible = false;
+                //GridViewMalikan.Columns["PersonType"].Visible = false;
                 GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible = false;
                 GridViewMalikan.Columns["FardAreaPart"].Visible = false;
                 GridViewMalikan.Columns["KhewatGroupId"].Visible = false;
                 GridViewMalikan.Columns["RegisterHqDKhataId"].Visible = false;
+                GridViewMalikan.Columns["KhataNo"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -194,34 +201,57 @@ namespace SDC_Application.AL
 
         public void gridfill()
         {
-            foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
+            if (checkBoxSearchByFamily.Checked)
             {
-
-                if (row.Cells[0].Value != null)
+                foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
                 {
-                    if ((Boolean)row.Cells[0].Value)
+
+                    if (row.Cells[0].Value != null)
                     {
-                        int rowcount = GridViewMalikanSelect.Rows.Count;
+                        if ((Boolean)row.Cells[0].Value)
+                        {
+                            int rowcount = GridViewMalikanSelect.Rows.Count;
 
-                        GridViewMalikanSelect.Rows.Add();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["CompleteName"].Value = row.Cells["CompleteName"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["Kanal"].Value = row.Cells["Kanal"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["marla"].Value = row.Cells["marla"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["sarsai"].Value = row.Cells["sarsai"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["Feet"].Value = row.Cells["Feet"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["Area"].Value = row.Cells["Area"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatTypeId"].Value = row.Cells["KhewatTypeId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatType"].Value = row.Cells["KhewatType"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["PersonType"].Value = row.Cells["PersonType"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupFareeqId"].Value = row.Cells["KhewatGroupFareeqId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["FardAreaPart"].Value = row.Cells["FardAreaPart"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupId"].Value = row.Cells["KhewatGroupId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["RegisterHqDKhataId"].Value = row.Cells["RegisterHqDKhataId"].Value.ToString();
-
+                            GridViewMalikanSelect.Rows.Add();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["CompleteName"].Value = row.Cells["FamilyName"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["FardAreaPart"].Value = "0";
+                        }
                     }
-                }
 
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
+                {
+
+                    if (row.Cells[0].Value != null)
+                    {
+                        if ((Boolean)row.Cells[0].Value)
+                        {
+                            int rowcount = GridViewMalikanSelect.Rows.Count;
+
+                            GridViewMalikanSelect.Rows.Add();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["CompleteName"].Value = row.Cells["personname"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["Kanal"].Value = row.Cells["Farad_Kanal"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["marla"].Value = row.Cells["Fard_Marla"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["sarsai"].Value = row.Cells["Fard_Sarsai"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["Feet"].Value = row.Cells["Fard_Feet"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["Area"].Value = row.Cells["Fard_Area"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatTypeId"].Value = row.Cells["KhewatTypeId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatType"].Value = row.Cells["KhewatType"].Value.ToString();
+                            //GridViewMalikanSelect.Rows[rowcount].Cells["PersonType"].Value = row.Cells["PersonType"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupFareeqId"].Value = row.Cells["KhewatGroupFareeqId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["FardAreaPart"].Value = row.Cells["FardAreaPart"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupId"].Value = row.Cells["KhewatGroupId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["RegisterHqDKhataId"].Value = row.Cells["RegisterHqDKhataId"].Value.ToString();
+
+                        }
+                    }
+
+                }
             }
 
             removeFromGridDuplicate(GridViewMalikanSelect);
@@ -292,27 +322,30 @@ namespace SDC_Application.AL
         {
             foreach (DataGridViewRow row in GridViewMalikanSelect.Rows)
             {
-                string khewatgroupfreeqid = "-1";
-                int khewatgroupid = 0;
-                int personid = Convert.ToInt32(row.Cells["PersonId"].Value);
-                string khewatGroupFareeqId = row.Cells["KhewatGroupFareeqId"].Value.ToString();
-
-                float fardareapart = row.Cells["FardAreaPart"].Value != null ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
-                int fardkanal = row.Cells["kanal"].Value != null ? Convert.ToInt32(row.Cells["kanal"].Value) : 0;
-                int fardmarla = row.Cells["marla"].Value != null ? Convert.ToInt32(row.Cells["marla"].Value) : 0;
-                float fardsarsai = row.Cells["sarsai"].Value != null ? float.Parse(row.Cells["sarsai"].Value.ToString()) : 0;
-                string AreaPart = fardareapart.ToString();
-                float fardfeet = fardsarsai * (float)30.25;
-                int khewattypeid = Convert.ToInt32(row.Cells["KhewatTypeId"].Value != null ? row.Cells["KhewatTypeId"].Value.ToString() : "1");
-                int khewatkhataid = Convert.ToInt32(this.txtKhewatKhataId.Text.ToString());
-                this.OldKhatooniId = this.OldKhatooniId != null ? this.OldKhatooniId : "0";
-                this.KhatooniRecId = this.KhatooniRecId != null ? this.KhatooniRecId : "0";
-                this.MushteriFareeqId=this.MushteriFareeqId!=null?this.MushteriFareeqId:"0";
-                string last = inteq.SaveIntiqalMinFareeqain("-1", IntiqalId,IntiqalMinGroupId, Convert.ToString(KhataId), khewatGroupFareeqId.ToString(),OldKhatooniId, KhatooniRecId, MushteriFareeqId, row.Index.ToString(), khewattypeid.ToString(), personid.ToString(), AreaPart, fardkanal.ToString(), fardmarla.ToString(), fardsarsai.ToString(), fardfeet.ToString(), "19001", "Admin", "19001", "Admin", "19001");
-                this.txtKhewatFreeqainGroupId.Text = last;              
-                if (last != string.Empty)
-                { 
-                }             
+                string personid = row.Cells["PersonId"].Value.ToString();
+                
+                    string khewatgroupfreeqid = "-1";
+                    float fardareapart = row.Cells["FardAreaPart"].Value != null ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
+                    string[] KhataArea=Khata_Area.Split('-');
+                    string[] Area = cfn.CalculatedAreaFromHisa(float.Parse(KhataHissa), fardareapart,Convert.ToInt32(KhataArea[0]),Convert.ToInt32( KhataArea[1]),float.Parse(KhataArea[2]), float.Parse(KhataArea[3]));
+                    string fardkanal = Area[0]!=null?Area[0] : "0";
+                    string fardmarla = Area[1] != null ? Area[1] : "0"; ;
+                    string fardsarsai = Area[2] != null ? Area[2] : "0";
+                    string AreaPart = fardareapart.ToString();
+                    string fardfeet = Area[3] != null ? Area[3] : "0";
+                    //string khewattypeid = row.Cells["KhewatTypeId"].Value != null ? row.Cells["KhewatTypeId"].Value.ToString() : "1";
+                    //int khewatkhataid = Convert.ToInt32(this.txtKhewatKhataId.Text.ToString());
+                    //this.OldKhatooniId = this.OldKhatooniId != null ? this.OldKhatooniId : "0";
+                    //this.KhatooniRecId = this.KhatooniRecId != null ? this.KhatooniRecId : "0";
+                    //this.MushteriFareeqId = this.MushteriFareeqId != null ? this.MushteriFareeqId : "0";
+                    string last =rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus("-1","0", personid, "0", "0", "0", "0", "0", KhewatTypeId ,KhataId, UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", "Data Entry", "0");
+                    khewatgroupfreeqid = last;
+                    string retVal = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinEdit("-1", khewatgroupfreeqid, "0", personid, personid, "0", fardareapart.ToString(), "0", fardkanal, "0", fardmarla, "0", fardsarsai, "0", fardfeet, KhewatTypeId, KhewatTypeId, KhataId, UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", "0", "Data Etnry", "0", RHZ_ChangeId, "Insert");
+                    this.txtKhewatFreeqainGroupId.Text = last;
+                    if (last != string.Empty)
+                    {
+                    }
+                
             }
             MessageBox.Show("مالکان محفوظ ہوگئے", "من گروپ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //frmIntiqalTaqseem frmIntiqalTaqseem = new frmIntiqalTaqseem();
@@ -335,9 +368,23 @@ namespace SDC_Application.AL
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (IntiqalId != "-1" && GridViewMalikanSelect.Rows.Count >0)
+            KhataId=KhataId !=null?KhataId:"0";
+            if (KhataId.Length>5 && GridViewMalikanSelect.Rows.Count >0)
             {
-                SaveKhewatGroupFreqein();
+                float kulHissa = 0;
+                foreach (DataGridViewRow row in GridViewMalikanSelect.Rows)
+                {
+                    kulHissa = kulHissa + float.Parse(row.Cells["FardAreaPart"].Value.ToString().Length > 0 ? row.Cells["FardAreaPart"].Value.ToString() : "0");
+                }
+                if (float.Parse(KhataHissa) < Math.Round( kulHissa, 0))
+                {
+                    if (DialogResult.Yes == MessageBox.Show("آپ کا درج کردہ مالکان حصے ، کھاتہ کے کل حصے سے زیادہ ہیں۔حصے میں " +(float.Parse(KhataHissa)- Math.Round( kulHissa, 0)).ToString() + "   فرق ہے۔ کیا آپ یہ ریکارڈ محفوظ کرنا چاہتے ہیں؟", "حصے کم زیادہ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                    {
+                        SaveKhewatGroupFreqein();
+                    }
+                }
+                else
+                    SaveKhewatGroupFreqein();
             }
             else
             {
@@ -412,32 +459,60 @@ namespace SDC_Application.AL
 
         private void checkBoxSearchByFamily_CheckedChanged(object sender, EventArgs e)
         {
-            //this.cbFamily.Visible = this.checkBoxSearchByFamily.Checked;
-            //if (this.checkBoxSearchByFamily.Checked)
-            //{
-            //    this.FillMozaFamaliesList();
-            //}
+            GridViewMalikan.DataSource = null;
+            this.cbFamily.Visible = this.checkBoxSearchByFamily.Checked;
+            if (this.checkBoxSearchByFamily.Checked)
+            {
+                //GridViewMalikan.DataSource = null;
+                this.FillMozaFamaliesList();
+            }
         }
 
         private void cbFamily_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //this.FamilyPersons = client.GetFamilyPersonListByFamilyId(Convert.ToInt32(cbFamily.SelectedValue)).ToList().Where(p => p.familytypeId == 2).ToList();
-            //this.GetMalikanbyKhataIdDataSource.DataSource = null;
-            //this.malikan.Clear();
-            //List<Proc_Get_KhewatTypes_Result> KhewatTypes=client.GetKhewatTypes(CurrentUser.TehsilId).ToList();
-            //foreach (var q in FamilyPersons)
-            //{
-            //    Proc_Get_IntiqalMin_MalkanList_Result person = new Proc_Get_IntiqalMin_MalkanList_Result();
-            //    person.KhewatTypeId = KhewatTypes.Count > 0 ? KhewatTypes.FirstOrDefault().KhewatTypeId : 0;
-            //    person.PersonId = q.PersonId;
-            //    person.CompleteName = q.FamilyName;
-            //    person.FardAreaPart = 0;
-            //    this.malikan.Add(person);
-            //}
-            //this.GetMalikanbyKhataIdDataSource.DataSource = this.malikan;
-            //this.txtKhewatKhataId.Text = this.KhataId;
+           
+            try
+            {
+                //string KhataId = this.KhataId != "" ? this.KhataId : "0";
+                this.FamilyPersons =  inteq.GetMozaFamilyListByFamilyId(cbFamily.SelectedValue.ToString());
+                GridViewMalikan.DataSource = FamilyPersons;
+                GridViewMalikan.Columns["FamilyName"].HeaderText = "نام مالک";
+                GridViewMalikan.Columns["PersonId"].Visible = false;
+                GridViewMalikan.Columns["familyType"].Visible = false;
+                GridViewMalikan.Columns["familytypeId"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        #endregion
+
+        #region Fill Khata Dropdown
+
+        public void Fill_Khata_DropDown()
+        {
+            try
+            {
+
+                dtkj = misal.GetAllKhatajatByMoza(Convert.ToInt32(MozaId));
+                DataRow inteqKj = dtkj.NewRow();
+                inteqKj["RegisterHqDKhataId"] = "0";
+                inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
+                dtkj.Rows.InsertAt(inteqKj, 0);
+                cbKhatas.DataSource = dtkj;
+                cbKhatas.DisplayMember = "KhataNo";
+                cbKhatas.ValueMember = "RegisterHqDKhataId";
+                cbKhatas.SelectedValue = 0;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         #endregion
 
         #region KeyPress Event
@@ -460,13 +535,13 @@ namespace SDC_Application.AL
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
-
-            this.MalikanType = "RHZ";
-            FillKhewatMalikanByKhataId();
-            this.txtKhewatGroupId.Text = this.KhewatGroupId;
-            this.txtKhewatKhataId.Text = this.KhataId;
-            this.txtIntiqalMinGroupID.Text=this.IntiqalMinGroupId;
-            this.txtIntiqalId.Text = this.IntiqalId;
+            Fill_Khata_DropDown();
+            //this.MalikanType = "RHZ";
+            //FillKhewatMalikanByKhataId();
+            //this.txtKhewatGroupId.Text = this.KhewatGroupId;
+            //this.txtKhewatKhataId.Text = this.KhataId;
+            //this.txtIntiqalMinGroupID.Text=this.IntiqalMinGroupId;
+            //this.txtIntiqalId.Text = this.IntiqalId;
             btnSelect.Enabled = true;
         }
 
@@ -541,6 +616,25 @@ namespace SDC_Application.AL
                 {
                     int index = Convert.ToInt32(GridViewMalikanSelect.CurrentRow.Index.ToString());
                     GridViewMalikanSelect.Rows.RemoveAt(index);
+                }
+            }
+        }
+
+        private void GridViewMalikanSelect_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            DataGridView dg =sender as DataGridView;
+            if (e.ColumnIndex == dg.Columns["FardAreaPart"].Index) // 1 should be your column index
+            {
+                float i;
+
+                if (!float.TryParse(Convert.ToString(e.FormattedValue), out i))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show( "صرف ہندسہ اور اعشاریہ لکھے جا سکتے ہے۔");
+                }
+                else
+                {
+                    // the input is numeric 
                 }
             }
         }

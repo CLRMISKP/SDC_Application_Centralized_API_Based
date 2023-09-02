@@ -37,10 +37,10 @@
     <ProductName>CLRMIS</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>Land Records Management Information System</SuiteName>
-    <MinimumRequiredVersion>2.0.5.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.5.64</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>59</ApplicationRevision>
+    <ApplicationRevision>65</ApplicationRevision>
     <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

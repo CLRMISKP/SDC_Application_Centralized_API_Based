@@ -93,6 +93,7 @@ namespace SDC_Application.AL
         public string dtTaxesReceived { get; set; }
         public string dtChkGainTax { get; set; }
         public string dtChkPersonSnaps { get; set; }
+        public bool enableAmal { get; set; }
 
         #endregion
 
@@ -375,9 +376,9 @@ namespace SDC_Application.AL
                     TokenId = data["TokenId"].ToString();
                     //this.Teh_Report = data["Teh_Report"].ToString().Length;
                     // dtpTasdiq.Value = data.IntiqalAttestationDate;
-                isConfirmed=Convert.ToBoolean(data["isConfirm"].ToString());
+                    isConfirmed=Convert.ToBoolean(data["isConfirm"].ToString());
                     btnConfirm.Enabled = !isConfirmed;
-                    bool enableAmal = Convert.ToBoolean(data["enableAmal"].ToString());
+                    enableAmal = Convert.ToBoolean(data["enableAmal"].ToString());
                    
                 //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
@@ -679,7 +680,7 @@ namespace SDC_Application.AL
                     frmIK.isConfirmed = this.isConfirmed;
                     frmIK.MalkiatKashkat = true;
                     frmIK.MinhayeIntiqalId = this.MinhayeIntiqalId;
-
+                    frmIK.isForManual = true;
                     frmIK.IntiqalTypeId = this.intiqalTypeId;
                     frmIK.FardTokenId = "0";
                     frmIK.intiqalIId = this.intiqalIId;
@@ -859,19 +860,7 @@ namespace SDC_Application.AL
 
         private void btnRecivedDucoments_Click(object sender, EventArgs e)
         {
-            if (IntiqalId != "-1")
-            {
-                frmDucomentRecievedForScan frmDucomentRecievedForScan = new frmDucomentRecievedForScan();
-                frmDucomentRecievedForScan.FormClosed -= new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
-                frmDucomentRecievedForScan.FormClosed += new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
-                frmDucomentRecievedForScan.IntiqalId = IntiqalId;
-                frmDucomentRecievedForScan.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
         }
 
         public void frmDucomentRecievedForScan_FormClosed(object sender, EventArgs e)
@@ -1584,7 +1573,8 @@ namespace SDC_Application.AL
                     IntiqalKhataAmal.isAttested = this.Attested;
                     IntiqalKhataAmal.isGardawar = this.GardawarId;
                     IntiqalKhataAmal.Teh_Report = this.Teh_Report;
-
+                    IntiqalKhataAmal.isConfirmed = this.isConfirmed;
+                    IntiqalKhataAmal.isEnabeled = this.enableAmal;
                     IntiqalKhataAmal.MdiParent = this.ParentForm;
                     IntiqalKhataAmal.IntiqalPending = this.intiqalPending;
                     IntiqalKhataAmal.Show();
@@ -1642,6 +1632,25 @@ namespace SDC_Application.AL
                 else if (radKhanaMalkiat.Checked)
                     UsersManagments.check = 4;
                 TokenReport.ShowDialog();
+            }
+        }
+
+        private void btnRecivedDucoments_Click_1(object sender, EventArgs e)
+        {
+            if (IntiqalId != "-1")
+            {
+                frmDucomentRecievedForScan frmDucomentRecievedForScan = new frmDucomentRecievedForScan();
+                frmDucomentRecievedForScan.Cancelled = this.Cancelled;
+                frmDucomentRecievedForScan.Pending = this.intiqalPending;
+                frmDucomentRecievedForScan.FormClosed -= new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
+                frmDucomentRecievedForScan.FormClosed += new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
+                frmDucomentRecievedForScan.IntiqalId = IntiqalId;
+                frmDucomentRecievedForScan.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }
