@@ -70,7 +70,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgFBKhatajat = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhattaControls = new System.Windows.Forms.GroupBox();
             this.btnDelKhatta = new System.Windows.Forms.Button();
             this.btnSaveKhata = new System.Windows.Forms.Button();
@@ -442,6 +441,7 @@
             this.cmbkhatoonisnew = new System.Windows.Forms.ComboBox();
             this.btnMinKhatooniKhassras = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
+            this.colKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -902,7 +902,7 @@
             this.dgFBKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFBKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFBKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1});
+            this.colKhataSel});
             this.dgFBKhatajat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgFBKhatajat.Location = new System.Drawing.Point(3, 35);
             this.dgFBKhatajat.MultiSelect = false;
@@ -915,12 +915,6 @@
             this.dgFBKhatajat.TabIndex = 1;
             this.dgFBKhatajat.TabStop = false;
             this.dgFBKhatajat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFBKhatajat_CellClick);
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // gbKhattaControls
             // 
@@ -5275,6 +5269,12 @@
             this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
             this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
             // 
+            // colKhataSel
+            // 
+            this.colKhataSel.HeaderText = "انتخاب کریں";
+            this.colKhataSel.Name = "colKhataSel";
+            this.colKhataSel.ReadOnly = true;
+            // 
             // frmFardeBadarManual
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -5633,7 +5633,6 @@
         private System.Windows.Forms.GroupBox gbKhattaControls;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.DataGridView dgFBKhatajat;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabKhatooniMeezan;
         private System.Windows.Forms.TabPage tabKhanakashtMalkan;
@@ -5799,5 +5798,6 @@
         private System.Windows.Forms.RadioButton rbMisal;
         private System.Windows.Forms.Button btnHissaRaqba;
         private System.Windows.Forms.Button btnNewMushteri;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colKhataSel;
     }
 }

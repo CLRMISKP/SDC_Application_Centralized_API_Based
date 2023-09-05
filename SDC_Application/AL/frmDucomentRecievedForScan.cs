@@ -642,6 +642,7 @@ namespace SDC_Application.AL
 
                 if (e.ColumnIndex == this.grdScanedDocStatus.CurrentRow.Cells["PictureLoad"].ColumnIndex)
                 {
+                    string path = System.IO.Path.GetTempPath();
                     string docImgid = grdScanedDocStatus.CurrentRow.Cells["IntiqalDocImageID"].Value.ToString();
                     ToSaveFileTo = "IntImgDoc";
                     DataTable dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Intiqal_DocumentImagesByImgId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + docImgid + "'");
@@ -658,13 +659,15 @@ namespace SDC_Application.AL
                     {
                        
                         int Fileno = 0;
-                        while (File.Exists(ToSaveFileTo+".pdf"))
+                        ToSaveFileTo = path + ToSaveFileTo + ".pdf";
+                        while (File.Exists(ToSaveFileTo))
                         {
-                            ToSaveFileTo = ToSaveFileTo + Fileno.ToString();
-                            Fileno++;
+                            File.Delete(ToSaveFileTo);
+                            //ToSaveFileTo = ToSaveFileTo + Fileno.ToString();
+                            //Fileno++;
                         }
                         
-                            ToSaveFileTo = ToSaveFileTo + ".pdf";
+                            
                             using (System.IO.FileStream fs = new System.IO.FileStream(ToSaveFileTo, System.IO.FileMode.Create, System.IO.FileAccess.ReadWrite))
                             {
 
@@ -686,6 +689,7 @@ namespace SDC_Application.AL
                     Process p = new Process();
                     p.StartInfo.FileName= ToSaveFileTo;
                     p.EnableRaisingEvents = true;
+                    p.Exited -= new EventHandler(p_Exited);
                     p.Exited += new EventHandler(p_Exited);
                     //Process.Start(ToSaveFileTo);
                     p.Start();
@@ -698,22 +702,22 @@ namespace SDC_Application.AL
 
         void p_Exited(object sender, EventArgs e)
         {
-            string fName="IntImgDoc";
-            try
-            {
-                File.Delete(ToSaveFileTo);
-                int count=0;
-                while (File.Exists(fName + ".pdf"))
-                {
-                    File.Delete(fName+".pdf");
-                    fName = fName + count.ToString();
-                    count++;
-                }
-            }
-            catch (Exception ex)
-            {
-                //
-            }
+            //string fName = "IntImgDoc";
+            //try
+            //{
+            //    File.Delete(ToSaveFileTo);
+            //    int count = 0;
+            //    while (File.Exists(fName + ".pdf"))
+            //    {
+            //        File.Delete(fName + ".pdf");
+            //        fName = fName + count.ToString();
+            //        count++;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    //
+            //}
         }
 
         public void frmKhataPictureViewerFunction(string datagridname)

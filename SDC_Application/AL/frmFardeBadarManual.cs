@@ -1613,6 +1613,8 @@ namespace SDC_Application.AL
 
         private void cmbMouza_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            ClearDGVs();
+            dgFBKhatajat.DataSource = null;
             this.FillMisalMian();
             DataTable RegisNo=misalBL.GetHaqdaraanRegistersByMoza(Convert.ToInt32(cmbMouza.SelectedValue));
             if(RegisNo.Rows.Count > 0)
@@ -1622,6 +1624,20 @@ namespace SDC_Application.AL
             this.FillKhataJaatByMoza();
         }
 
+        #endregion
+        #region Clear Gridview Lists
+        private void ClearDGVs()
+        {
+            
+            GridViewKhewatMalikaan.DataSource = null;
+            gridViewKhassraAreaDetails.DataSource = null;
+            gridviewKhatooniMeezan.DataSource = null;
+            dgFBAfrad.DataSource = null;
+            DgMinKhataList.DataSource = null;
+            dgMinKhataMalkan.DataSource = null;
+            grdGetkhatonichange.DataSource = null;
+            dgMinKhataKhassraJat.DataSource = null;
+        }
         #endregion
 
         #region Drop Down Khata No selection Change Event
@@ -2660,6 +2676,7 @@ namespace SDC_Application.AL
         private void dgFBKhatajat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dg = sender as DataGridView;
+            ClearDGVs();
             try
             {
                 cboKhataNo.SelectedValue = dg.CurrentRow.Cells["FB_RegisterHqDKhataId"].Value.ToString();
@@ -2678,7 +2695,15 @@ namespace SDC_Application.AL
                 txtFeet.Text = dg.CurrentRow.Cells["Khata_Feet"].Value.ToString();
                 txtDrustFeet.Text = dg.CurrentRow.Cells["Khata_Feet_Proposed"].Value.ToString();
                 txtFbKhataId.Text = dg.CurrentRow.Cells["FB_KhataId"].Value.ToString();
-
+                foreach (DataGridViewRow row in dg.Rows)
+                {
+                    if (row.Selected)
+                    {
+                        row.Cells["colKhataSel"].Value = 1;
+                    }
+                    else
+                        row.Cells["colKhataSel"].Value = 0;
+                }
                 // Load Khewat Malkan if any
                 //this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(txtFbId.Text, cboKhataNo.SelectedValue.ToString());
                 //this.FillGridviewMalkan(khewatMalikanByFB);
