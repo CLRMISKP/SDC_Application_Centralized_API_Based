@@ -160,6 +160,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.fmrDowraSchedule = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -554,7 +555,8 @@
             this.ٹوکنرولToolStripMenuItem,
             this.mnuRhz_ChangeAdminDashboard,
             this.ایمآئاسسیToolStripMenuItem,
-            this.mnuUserVisibility});
+            this.mnuUserVisibility,
+            this.fmrDowraSchedule});
             this.mnuSupervisorMain.Name = "mnuSupervisorMain";
             this.mnuSupervisorMain.Size = new System.Drawing.Size(94, 42);
             this.mnuSupervisorMain.Text = "سپروائزری";
@@ -1274,6 +1276,13 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // fmrDowraSchedule
+            // 
+            this.fmrDowraSchedule.Name = "fmrDowraSchedule";
+            this.fmrDowraSchedule.Size = new System.Drawing.Size(408, 42);
+            this.fmrDowraSchedule.Text = "13 - دورا شیڈول";
+            this.fmrDowraSchedule.Click += new System.EventHandler(this.fmrDowraSchedule_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1442,5 +1451,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSubNotAttestedMut;
         private System.Windows.Forms.ToolStripMenuItem mnuSubUnAttestedMutOPM;
         private System.Windows.Forms.ToolStripMenuItem mnuInconsistentRpt;
+        private System.Windows.Forms.ToolStripMenuItem fmrDowraSchedule;
     }
 }

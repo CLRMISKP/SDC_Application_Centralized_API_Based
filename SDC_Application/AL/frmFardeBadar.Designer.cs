@@ -69,6 +69,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgFBKhatajat = new System.Windows.Forms.DataGridView();
+            this.ColKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhattaControls = new System.Windows.Forms.GroupBox();
             this.btnDelKhatta = new System.Windows.Forms.Button();
             this.btnSaveKhata = new System.Windows.Forms.Button();
@@ -454,7 +455,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.ColKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -599,6 +600,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnShowScanImg);
             this.groupBox1.Controls.Add(this.chkMinKhataFb);
             this.groupBox1.Controls.Add(this.btnPrintMisalBadar);
             this.groupBox1.Controls.Add(this.btnAmaldaramad);
@@ -631,7 +633,7 @@
             // 
             this.chkMinKhataFb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkMinKhataFb.AutoSize = true;
-            this.chkMinKhataFb.Location = new System.Drawing.Point(121, 429);
+            this.chkMinKhataFb.Location = new System.Drawing.Point(122, 432);
             this.chkMinKhataFb.Name = "chkMinKhataFb";
             this.chkMinKhataFb.Size = new System.Drawing.Size(147, 35);
             this.chkMinKhataFb.TabIndex = 204;
@@ -643,7 +645,7 @@
             this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
             this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintMisalBadar.Location = new System.Drawing.Point(60, 418);
+            this.btnPrintMisalBadar.Location = new System.Drawing.Point(70, 422);
             this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
             this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
             this.btnPrintMisalBadar.TabIndex = 202;
@@ -919,6 +921,12 @@
             this.dgFBKhatajat.TabIndex = 1;
             this.dgFBKhatajat.TabStop = false;
             this.dgFBKhatajat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFBKhatajat_CellClick);
+            // 
+            // ColKhataSel
+            // 
+            this.ColKhataSel.HeaderText = "انتخاب کریں";
+            this.ColKhataSel.Name = "ColKhataSel";
+            this.ColKhataSel.ReadOnly = true;
             // 
             // gbKhattaControls
             // 
@@ -5433,11 +5441,19 @@
             this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
             this.txtTehsildarRpt.TabIndex = 56;
             // 
-            // ColKhataSel
+            // btnShowScanImg
             // 
-            this.ColKhataSel.HeaderText = "انتخاب کریں";
-            this.ColKhataSel.Name = "ColKhataSel";
-            this.ColKhataSel.ReadOnly = true;
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Enabled = false;
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(13, 425);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 205;
+            this.ttMisal.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
             // 
             // frmFardeBadar
             // 
@@ -5986,5 +6002,6 @@
         private System.Windows.Forms.CheckBox chkMinKhataFb;
         private System.Windows.Forms.Button btnSaveAll;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColKhataSel;
+        private System.Windows.Forms.Button btnShowScanImg;
     }
 }

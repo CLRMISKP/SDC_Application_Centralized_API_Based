@@ -70,6 +70,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgFBKhatajat = new System.Windows.Forms.DataGridView();
+            this.colKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhattaControls = new System.Windows.Forms.GroupBox();
             this.btnDelKhatta = new System.Windows.Forms.Button();
             this.btnSaveKhata = new System.Windows.Forms.Button();
@@ -441,7 +442,7 @@
             this.cmbkhatoonisnew = new System.Windows.Forms.ComboBox();
             this.btnMinKhatooniKhassras = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.colKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -578,6 +579,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnShowScanImg);
             this.groupBox1.Controls.Add(this.rbManualFb);
             this.groupBox1.Controls.Add(this.rbMisal);
             this.groupBox1.Controls.Add(this.btnAmaldaramad);
@@ -915,6 +917,12 @@
             this.dgFBKhatajat.TabIndex = 1;
             this.dgFBKhatajat.TabStop = false;
             this.dgFBKhatajat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFBKhatajat_CellClick);
+            // 
+            // colKhataSel
+            // 
+            this.colKhataSel.HeaderText = "انتخاب کریں";
+            this.colKhataSel.Name = "colKhataSel";
+            this.colKhataSel.ReadOnly = true;
             // 
             // gbKhattaControls
             // 
@@ -5269,11 +5277,19 @@
             this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
             this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
             // 
-            // colKhataSel
+            // btnShowScanImg
             // 
-            this.colKhataSel.HeaderText = "انتخاب کریں";
-            this.colKhataSel.Name = "colKhataSel";
-            this.colKhataSel.ReadOnly = true;
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Enabled = false;
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(7, 418);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 206;
+            this.ttMisal.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
             // 
             // frmFardeBadarManual
             // 
@@ -5799,5 +5815,6 @@
         private System.Windows.Forms.Button btnHissaRaqba;
         private System.Windows.Forms.Button btnNewMushteri;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colKhataSel;
+        private System.Windows.Forms.Button btnShowScanImg;
     }
 }

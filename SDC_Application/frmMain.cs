@@ -1836,6 +1836,19 @@ namespace SDC_Application
                 obj.Show();
             }
         }
+
+        private void fmrDowraSchedule_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmDowraSchedule");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmDowraSchedule obj = new frmDowraSchedule();
+                obj.Show();
+            }
+        }
      
     }
 }

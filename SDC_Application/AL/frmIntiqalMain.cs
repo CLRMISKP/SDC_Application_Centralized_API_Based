@@ -1389,6 +1389,12 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
 
         private void btnIntiqalWitness_Click(object sender, EventArgs e)
         {
+            if (!isDowraAllowedToday())
+            {
+                string today = DateTime.Now.DayOfWeek.ToString();
+                MessageBox.Show("Dowra is not allowed on " + today);
+                return;
+            }
             if (IntiqalId != "-1")
             {
                 //this.dtVisitingPlan = Iq.GetIntiqalTaqdeeqDateStatus(this.IntiqalId);
