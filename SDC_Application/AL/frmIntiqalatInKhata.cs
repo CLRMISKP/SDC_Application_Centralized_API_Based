@@ -44,7 +44,7 @@ namespace SDC_Application.AL
 
         private void frmNaqalIntiqal_Load(object sender, EventArgs e)
         {
-            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
         }
 
 

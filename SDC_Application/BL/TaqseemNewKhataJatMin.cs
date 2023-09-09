@@ -63,9 +63,9 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
-        public string WEB_SP_INSERT_KhassraRegistert(string KhassraId, string MozaId, string KhassraCode, string KhassraNo, string KhassraCreation_Date, string InsertUserId, string InsertLoginName)
+        public string WEB_SP_INSERT_KhassraRegistert(string KhassraId, string MozaId, string KhassraCode, string KhassraNo, string KhassraCreation_Date, string InsertUserId, string InsertLoginName, string KhatooniId)
         {
-            string spWithParam = "WEB_SP_INSERT_KhassraRegister  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhassraId + "," + MozaId + "," + KhassraCode + ",N'" + KhassraNo + "','" + KhassraCreation_Date + "'," + InsertUserId + ",'" + InsertLoginName + "'";
+            string spWithParam = "WEB_SP_INSERT_KhassraRegister  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhassraId + "," + MozaId + "," + KhassraCode + ",N'" + KhassraNo + "','" + KhassraCreation_Date + "'," + InsertUserId + ",'" + InsertLoginName + "',"+KhatooniId;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 

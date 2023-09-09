@@ -58,6 +58,7 @@
             this.dtpTasdiq = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.btnRecivedDucoments = new System.Windows.Forms.Button();
             this.print = new System.Windows.Forms.Button();
             this.btnCancelConfirm = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -449,6 +449,20 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "اندراج و تبدیلی انتقال";
             // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(530, 44);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 206;
+            this.toolTip.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
+            // 
             // btnRecivedDucoments
             // 
             this.btnRecivedDucoments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -666,20 +680,6 @@
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
-            // 
-            // btnShowScanImg
-            // 
-            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowScanImg.Enabled = false;
-            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(530, 44);
-            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnShowScanImg.Name = "btnShowScanImg";
-            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
-            this.btnShowScanImg.TabIndex = 206;
-            this.toolTip.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
-            this.btnShowScanImg.UseVisualStyleBackColor = true;
             // 
             // frmIntiqalMainForManual
             // 

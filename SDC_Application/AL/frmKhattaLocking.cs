@@ -40,7 +40,7 @@ namespace SDC_Application.AL
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             //objauto.FillCombo("Proc_Get_Admin_Users_By_Tehsil_DE_Zerekar " + UsersManagments._Tehsilid.ToString(), cmbUsers, "CompleteName", "UserId");
             //if (UsersManagments._UserName.Contains("zakir") || UsersManagments._UserName.Contains("Admin"))
             //{

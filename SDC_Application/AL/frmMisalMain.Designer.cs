@@ -2323,7 +2323,7 @@
             // btnSaveTafseel
             // 
             this.btnSaveTafseel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTafseel.Location = new System.Drawing.Point(262, 49);
+            this.btnSaveTafseel.Location = new System.Drawing.Point(264, 49);
             this.btnSaveTafseel.Name = "btnSaveTafseel";
             this.btnSaveTafseel.Size = new System.Drawing.Size(92, 33);
             this.btnSaveTafseel.TabIndex = 515;
@@ -2333,7 +2333,7 @@
             // btnGetTafseel
             // 
             this.btnGetTafseel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGetTafseel.Location = new System.Drawing.Point(261, 7);
+            this.btnGetTafseel.Location = new System.Drawing.Point(263, 7);
             this.btnGetTafseel.Name = "btnGetTafseel";
             this.btnGetTafseel.Size = new System.Drawing.Size(94, 33);
             this.btnGetTafseel.TabIndex = 513;
@@ -2349,7 +2349,7 @@
             this.txtKulTafsilKasht.Location = new System.Drawing.Point(8, 7);
             this.txtKulTafsilKasht.Multiline = true;
             this.txtKulTafsilKasht.Name = "txtKulTafsilKasht";
-            this.txtKulTafsilKasht.Size = new System.Drawing.Size(360, 75);
+            this.txtKulTafsilKasht.Size = new System.Drawing.Size(362, 75);
             this.txtKulTafsilKasht.TabIndex = 1;
             // 
             // panel16
@@ -3321,7 +3321,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.groupBox6);
             this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainer2.Size = new System.Drawing.Size(953, 485);
-            this.splitContainer2.SplitterDistance = 221;
+            this.splitContainer2.SplitterDistance = 220;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox4
@@ -3329,7 +3329,7 @@
             this.groupBox4.Controls.Add(this.btnAttachMisalDocs);
             this.groupBox4.Controls.Add(this.btnSaveMisalDocs);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(0, 156);
+            this.groupBox4.Location = new System.Drawing.Point(0, 155);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(953, 65);
             this.groupBox4.TabIndex = 1;
@@ -3497,7 +3497,7 @@
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(953, 260);
+            this.groupBox6.Size = new System.Drawing.Size(953, 261);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "دستاویزات";
@@ -3525,7 +3525,7 @@
             this.grdMisalScanDocs.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.grdMisalScanDocs.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdMisalScanDocs.RowTemplate.Height = 28;
-            this.grdMisalScanDocs.Size = new System.Drawing.Size(947, 222);
+            this.grdMisalScanDocs.Size = new System.Drawing.Size(947, 223);
             this.grdMisalScanDocs.TabIndex = 3;
             this.grdMisalScanDocs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMisalScanDocs_CellContentClick);
             this.grdMisalScanDocs.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMisalScanDocs_CellContentDoubleClick);

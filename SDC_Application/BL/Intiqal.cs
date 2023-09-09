@@ -87,7 +87,7 @@ namespace SDC_Application.BL
         }
          public DataTable GetSearchedPersonListforAllMouzas(string PersonName,string FatherName)//, string IntiqalID, string SeqNo)
         {
-            string spWithParam = "Proc_Get_SearchPersonslistforAllMozas " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",N'" + PersonName + "',N'" + FatherName + "'";
+            string spWithParam = "Proc_Get_SearchPersonslistforAllMozas " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+Classess.UsersManagments.SubSdcId.ToString() + ",N'" + PersonName + "',N'" + FatherName + "'";
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
@@ -461,13 +461,13 @@ namespace SDC_Application.BL
 
             public DataTable GetIntiqalatForAttestation(string dt)
             {
-                string spWithParam = "Proc_Self_Get_Intiqalat_for_Attestation " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + dt + "'";
+                string spWithParam = "Proc_Self_Get_Intiqalat_for_Attestation " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + dt + "',"+Classess.UsersManagments.SubSdcId.ToString();
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
 
             public DataTable GetIntiqalatForVerification(string type)
             {
-                string spWithParam = "Proc_Self_Get_Intiqalat_for_Verification  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + type + "'";
+                string spWithParam = "Proc_Self_Get_Intiqalat_for_Verification  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + type + "'," + Classess.UsersManagments.SubSdcId.ToString();
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
 

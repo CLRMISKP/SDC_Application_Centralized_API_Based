@@ -91,6 +91,7 @@
             this.mnuRhz_ChangeAdminDashboard = new System.Windows.Forms.ToolStripMenuItem();
             this.ایمآئاسسیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUserVisibility = new System.Windows.Forms.ToolStripMenuItem();
+            this.fmrDowraSchedule = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuCorrection = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuIndrajMisal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardeBadar = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,7 +161,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fmrDowraSchedule = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -672,6 +672,13 @@
             this.mnuUserVisibility.Size = new System.Drawing.Size(408, 42);
             this.mnuUserVisibility.Text = "12- صارفین کو انتقال عمل، مثل وغیرہ شو یا ہائد کریں";
             this.mnuUserVisibility.Click += new System.EventHandler(this.mnuUserVisibility_Click);
+            // 
+            // fmrDowraSchedule
+            // 
+            this.fmrDowraSchedule.Name = "fmrDowraSchedule";
+            this.fmrDowraSchedule.Size = new System.Drawing.Size(408, 42);
+            this.fmrDowraSchedule.Text = "13 - دورا شیڈول";
+            this.fmrDowraSchedule.Click += new System.EventHandler(this.fmrDowraSchedule_Click);
             // 
             // ToolStripMenuCorrection
             // 
@@ -1249,8 +1256,8 @@
             this.lblSDCTitle.Name = "lblSDCTitle";
             this.lblSDCTitle.Size = new System.Drawing.Size(1126, 39);
             this.lblSDCTitle.TabIndex = 2;
-            this.lblSDCTitle.Text = "   مرکز ترسیل سہولیات -   مردان | Service Delivery Center - District  Mardan- Teh" +
-                "sil Mardan  ";
+            this.lblSDCTitle.Text = "   مرکز ترسیل سہولیات آراضی -    | Service Delivery Center - District  - Tehsil  " +
+                " ";
             this.lblSDCTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -1275,13 +1282,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
-            // 
-            // fmrDowraSchedule
-            // 
-            this.fmrDowraSchedule.Name = "fmrDowraSchedule";
-            this.fmrDowraSchedule.Size = new System.Drawing.Size(408, 42);
-            this.fmrDowraSchedule.Text = "13 - دورا شیڈول";
-            this.fmrDowraSchedule.Click += new System.EventHandler(this.fmrDowraSchedule_Click);
             // 
             // frmMain
             // 

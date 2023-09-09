@@ -4926,7 +4926,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                if (txthiddenkhasraid.Text != null && OldKhassraNo.Text.Trim() != null)
+                if (txthiddenkhasraid.Text != null && OldKhassraNo.Text.Trim() != null && cmbkhatoonisnew.SelectedValue.ToString().Length>5)
                 {
                     string khasraid = this.txthiddenkhasraid.Text;
                     string khasradetailid = this.txthiddendetailid.Text;
@@ -4958,7 +4958,7 @@ namespace SDC_Application.AL
                     //string mozaid = str.Substring(0,5);
                     if (OldKhassraNo.Text != txthiddenKhasarno.Text)
                     {
-                        last = taqseemnewkhata.WEB_SP_INSERT_KhassraRegistert(khasraid, MozaId.ToString(), "0", khassrno, "", UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+                        last = taqseemnewkhata.WEB_SP_INSERT_KhassraRegistert(khasraid, MozaId.ToString(), "0", khassrno, "", UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), cmbkhatoonisnew.SelectedValue.ToString());
                     }
                     last1 = taqseemnewkhata.WEB_SP_INSERT_KhassraRegisterDetail(khasradetailid, khasraid, AreaTypeId, kanal, marla, sarsar, feet, UsersManagments.UserId.ToString());
 

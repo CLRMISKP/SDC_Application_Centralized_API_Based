@@ -53,6 +53,7 @@ namespace SDC_Application.BL
                             UsersManagments.Registry = row["Registry"].ToString();
                             UsersManagments.Misal = row["Misal"].ToString();
                             UsersManagments.Implementation = row["Implementation"].ToString();
+                            UsersManagments.SubSdcId = Convert.ToInt32(row["SubSDCId"].ToString().Length > 0 && row["SubSDCId"].ToString()!="null"? row["SubSDCId"].ToString() : "0");
                             //UsersManagments = row["DistrictNameUrdu"];
                             // = row["tehsilNameUrdu"];
                             //CurrentUser.UserName =  row["username"];

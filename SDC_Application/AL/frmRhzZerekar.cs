@@ -53,7 +53,7 @@ namespace SDC_Application.AL
 
         private void frmRhzAmaladaramad_Load(object sender, EventArgs e)
         {
-            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
         }
 
         private void cmbMouza_SelectionChangeCommitted(object sender, EventArgs e)
@@ -724,6 +724,21 @@ namespace SDC_Application.AL
                     e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
                 }
             }
+        }
+
+        private void btnShowScanImg_Click(object sender, EventArgs e)
+        {
+            if (cmbMouza.SelectedValue.ToString().Length > 3 && cbokhataNo.SelectedValue.ToString().Length > 5)
+            {
+                string[] khataNo = cbokhataNo.Text.Split('/');
+                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
+                frmImageViewerBrowser iv = new frmImageViewerBrowser();
+                iv.url = url;
+                iv.Show();
+                ///System.Diagnostics.Process.Start(url);
+            }
+            else
+                MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
         }
        
     }

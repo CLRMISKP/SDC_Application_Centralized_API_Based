@@ -322,6 +322,7 @@
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -671,6 +672,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnShowScanImg);
             this.groupBox3.Controls.Add(this.rbPreviousKhata);
             this.groupBox3.Controls.Add(this.rbCurrentKhata);
             this.groupBox3.Controls.Add(this.btnDelProposedKhata);
@@ -3826,6 +3828,20 @@
             this.label58.TabIndex = 0;
             this.label58.Text = "نمبر شمار";
             // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(86, 76);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 210;
+            this.tt.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
+            // 
             // frmRhzSDCEditing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -4202,5 +4218,6 @@
         private System.Windows.Forms.Button btnSearchAllMutations;
         private System.Windows.Forms.Button btnViewAllMushtry;
         private System.Windows.Forms.Button btnMalikanFromPrevKhata;
+        private System.Windows.Forms.Button btnShowScanImg;
     }
 }

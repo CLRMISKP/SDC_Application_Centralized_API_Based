@@ -27,7 +27,7 @@ namespace SDC_Application.AL
 
         private void frmRegRecFromIntiqal_Load(object sender, EventArgs e)
         {
-            objauto.FillCombo("Proc_Get_Moza_List", cmbRegMoza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List"+UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbRegMoza, "MozaNameUrdu", "MozaId");
             objauto.FillComboWithTopIndex("Proc_Self_Get_SR_List", cmbSR, "SRUrduName", "SRId");
             this.GetRegReceivedByDate(DateTime.Now.ToShortDateString());
             if(MozaId!="0")

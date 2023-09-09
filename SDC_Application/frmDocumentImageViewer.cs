@@ -22,6 +22,7 @@ namespace SDC_Application
         #region Properties
 
         public List<KhataNoIndex> KhataPictures { get; set; }
+        public string url { get; set; }
 
         #endregion
 
@@ -115,7 +116,8 @@ namespace SDC_Application
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
-            this.LoadFiles(this.KhataPictures);
+            //this.LoadFiles(this.KhataPictures);
+            pbImageViewer.LoadAsync(@"http://175.107.63.31:9090/Images?mozaId=15141&documentTypeId=13&recordNo=1");
         }
 
         private void btnZoomIn_Click(object sender, EventArgs e)

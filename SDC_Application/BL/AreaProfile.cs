@@ -41,9 +41,9 @@ namespace SDC_Application.BL
 
         #region Get Tehsil District Name
 
-        public DataTable GetDistTehsilNames(string TehsilId)
+        public DataTable GetDistTehsilNames(string TehsilId, string SubSdcId)
         {
-            string spWithParam = "Proc_Get_Dist_Tehsils_By_TehsilId " + TehsilId;
+            string spWithParam = "Proc_Get_Dist_Tehsils_By_TehsilId " + TehsilId+","+SubSdcId;
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
         }
 

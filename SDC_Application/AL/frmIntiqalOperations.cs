@@ -900,7 +900,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboMoza, "MozaNameUrdu", "MozaId");
+                objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cboMoza, "MozaNameUrdu", "MozaId");
                 ////int pcId = Convert.ToInt32(cboPC.SelectedValue);
                 //Mozas = area.GetMozaByPatwarCircle(UsersManagments._Tehsilid.ToString(), PcId);
                 //DataRow MozaRow = Mozas.NewRow();

@@ -219,7 +219,7 @@ namespace SDC_Application
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
             // UsersManagments._Tehsilid = Convert.ToInt32(ConfigurationSettings.AppSettings["Tehsil"]);
             BL.AreaProfile af = new BL.AreaProfile();
-            DataTable dt = af.GetDistTehsilNames(UsersManagments._Tehsilid.ToString());
+            DataTable dt = af.GetDistTehsilNames(UsersManagments._Tehsilid.ToString(), UsersManagments.SubSdcId.ToString());
             string DistNameUrdu = "";
             string DistNameEng = "";
             //string TehsilNameUrdu="";
@@ -232,7 +232,7 @@ namespace SDC_Application
                 UsersManagments.TehsilNameUrdu = r["TehsilNameUrdu"].ToString();
 
             }
-            this.lblSDCTitle.Text = "   مرکز ترسیل سہولیات -   " + UsersManagments.TehsilNameUrdu + " | Service Delivery Center -  Tehsil  " + TehsilNameEng + " - District - " + DistNameEng;
+            this.lblSDCTitle.Text = "   مرکز ترسیل سہولیات آراضی -   " + UsersManagments.TehsilNameUrdu + " | Service Delivery Center -  Tehsil  " + TehsilNameEng + " - District - " + DistNameEng;
 
 
             checkForAdmin();

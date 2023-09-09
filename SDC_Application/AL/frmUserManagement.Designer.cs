@@ -449,9 +449,9 @@
             // 
             this.groupBox8.Controls.Add(this.grdUserRoles);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox8.Location = new System.Drawing.Point(3, 88);
+            this.groupBox8.Location = new System.Drawing.Point(3, 100);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(511, 569);
+            this.groupBox8.Size = new System.Drawing.Size(511, 557);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             // 
@@ -466,7 +466,7 @@
             this.grdUserRoles.Name = "grdUserRoles";
             this.grdUserRoles.ReadOnly = true;
             this.grdUserRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdUserRoles.Size = new System.Drawing.Size(505, 548);
+            this.grdUserRoles.Size = new System.Drawing.Size(505, 536);
             this.grdUserRoles.TabIndex = 0;
             // 
             // groupBox7
@@ -480,7 +480,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.Location = new System.Drawing.Point(3, 18);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(511, 70);
+            this.groupBox7.Size = new System.Drawing.Size(511, 82);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             // 

@@ -71,15 +71,15 @@ namespace SDC_Application.AL
                           //objauto.FillCombo("Proc_Get_ServiceTypes_All", cmbServiceId, "ServiceTypeName_Urdu", "ServiceTypeId");
 
                         // for users with tokenrole
-            objauto.FillCombo("Proc_Self_Get_ServiceTypes_All   " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + UsersManagments.UserId, cmbServiceId, "ServiceTypeName_Urdu", "ServiceTypeId");
+            objauto.FillCombo("Proc_Self_Get_ServiceTypes_All   " + UsersManagments._Tehsilid.ToString() + "," + UsersManagments.UserId, cmbServiceId, "ServiceTypeName_Urdu", "ServiceTypeId");
       
                          // objauto.FillCombo("Proc_Get_SDC_TokenPurpose", cmbPurpose, "TokenPurpose_Urdu", "TokenPurposeId");
-                          objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+                          objauto.FillCombo("Proc_Get_Moza_List " + UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
        }
        public void loadTokenNo()
        {
 
-           dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Token_Detail_Last " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() );
+           dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Token_Detail_Last " + UsersManagments._Tehsilid.ToString() );
            if (dt != null)
            {
                this.labeltimetoken.Visible = true;

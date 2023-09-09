@@ -52,13 +52,13 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
             
             // Load Mouza List 
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboMouza, "MozaNameUrdu", "MozaId");
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboMouzaSearch, "MozaNameUrdu", "MozaId");
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbRegMoza, "MozaNameUrdu", "MozaId");
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbRegSearchMoza, "MozaNameUrdu", "MozaId");
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbRegUpdateMoza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cboMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cboMouzaSearch, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbRegMoza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbRegSearchMoza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbRegUpdateMoza, "MozaNameUrdu", "MozaId");
             objauto.FillCombo("proc_Get_DocumentTypes", cboDocType, "DocumentTypeDescription", "DocumentTypeID");
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cboMouzaUpdate, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cboMouzaUpdate, "MozaNameUrdu", "MozaId");
             objauto.FillCombo("proc_Get_DocumentTypes", cboDocTypeUpdate, "DocumentTypeDescription", "DocumentTypeID");
             objauto.FillCombo("Proc_Self_Get_Letter_List" + "'R'", cbLetterNo, "number", "RegFardDispatchMainId");
             objauto.FillComboWithTopIndex("Proc_Self_Get_SR_List "+ SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbSR, "SRUrduName", "SRId");

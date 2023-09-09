@@ -767,7 +767,7 @@ namespace SDC_Application.AL
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
-            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             FillMalikanTypeDropDown();
             this.AreaTypesList = misalBL.GetAreaTypesList();
             this.FillKhataJaatByMoza();
@@ -3456,6 +3456,23 @@ namespace SDC_Application.AL
             this.txtMushteriFareeqId.Text = "-1";
 
 
+        }
+
+        private void btnShowScanImg_Click(object sender, EventArgs e)
+        {
+            if (cmbMouza.SelectedValue.ToString().Length > 3 && txtFardBadarDocNO.Text.Length > 0)
+            {
+                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + txtFardBadarDocNO.Text;
+                //System.Diagnostics.Process.Start(url);
+                //frmDocumentImageViewer iv = new frmDocumentImageViewer();
+                //iv.url = url;
+                //iv.ShowDialog();
+                frmImageViewerBrowser iv = new frmImageViewerBrowser();
+                iv.url = url;
+                iv.Show();
+            }
+            else
+                MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
         }
 
     }

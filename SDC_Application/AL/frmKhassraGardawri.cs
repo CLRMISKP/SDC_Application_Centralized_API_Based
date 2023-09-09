@@ -43,7 +43,7 @@ namespace SDC_Application.AL
         
         private void frmKhassraGardawri_Load(object sender, EventArgs e)
         {
-            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+            objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             //objauto.FillCombo("proc_Get_AreaTypes "+UsersManagments._Tehsilid.ToString(), cbAreaTypes, "AreaType", "AreaTypeId");
             objauto.FillCombo("proc_Get_AreaTypes " + UsersManagments._Tehsilid.ToString(), cbAreaTypesNew, "AreaType", "AreaTypeId");
             objauto.FillCombo("Proc_Get_Gardawri_KhassraNature ", cbKhassraNature, "KhassraNatureType", "KhassraNatureId");

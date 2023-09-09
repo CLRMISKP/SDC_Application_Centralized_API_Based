@@ -106,7 +106,7 @@ namespace SDC_Application.BL
 
         public DataTable GetMozaList()
         {
-            string spWithParam = "Proc_Get_Moza_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() ;
+            string spWithParam = "Proc_Get_Moza_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+SDC_Application.Classess.UsersManagments.SubSdcId.ToString() ;
             return objdatabase.filldatatable_from_storedProcedure(spWithParam);
         }
 

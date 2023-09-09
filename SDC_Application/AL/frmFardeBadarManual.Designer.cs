@@ -46,6 +46,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.rbManualFb = new System.Windows.Forms.RadioButton();
             this.rbMisal = new System.Windows.Forms.RadioButton();
             this.btnAmaldaramad = new System.Windows.Forms.Button();
@@ -442,7 +443,6 @@
             this.cmbkhatoonisnew = new System.Windows.Forms.ComboBox();
             this.btnMinKhatooniKhassras = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -608,6 +608,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تفصیل مثل / دستی فرد بدر";
+            // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(7, 418);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 206;
+            this.ttMisal.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
             // 
             // rbManualFb
             // 
@@ -2163,7 +2177,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(591, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 31);
+            this.label7.Size = new System.Drawing.Size(81, 31);
             this.label7.TabIndex = 22;
             this.label7.Text = "درست کنال  :";
             // 
@@ -2183,7 +2197,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(208, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 31);
+            this.label6.Size = new System.Drawing.Size(90, 31);
             this.label6.TabIndex = 21;
             this.label6.Text = " درست سرسائی:";
             // 
@@ -2266,7 +2280,7 @@
             this.label57.AutoSize = true;
             this.label57.Location = new System.Drawing.Point(850, 28);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(68, 31);
+            this.label57.Size = new System.Drawing.Size(66, 31);
             this.label57.TabIndex = 12;
             this.label57.Text = " نمبر خسرہ:";
             // 
@@ -5276,20 +5290,6 @@
             this.btnMinKhatooniKhassras.Text = " انتخاب خسرہ جات";
             this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
             this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
-            // 
-            // btnShowScanImg
-            // 
-            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowScanImg.Enabled = false;
-            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(7, 418);
-            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnShowScanImg.Name = "btnShowScanImg";
-            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
-            this.btnShowScanImg.TabIndex = 206;
-            this.ttMisal.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
-            this.btnShowScanImg.UseVisualStyleBackColor = true;
             // 
             // frmFardeBadarManual
             // 

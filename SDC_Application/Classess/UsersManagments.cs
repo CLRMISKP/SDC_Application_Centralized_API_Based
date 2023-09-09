@@ -34,6 +34,7 @@ namespace SDC_Application.Classess
         public static string Registry { get; set; }
         public static string Misal { get; set; }
         public static string Implementation { get; set; }
+        public static int SubSdcId { get; set; }
 
         public static int ServiceTypeId
         {

@@ -37,10 +37,10 @@
     <ProductName>CLRMIS</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>Land Records Management Information System</SuiteName>
-    <MinimumRequiredVersion>2.0.5.64</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.5.70</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>68</ApplicationRevision>
+    <ApplicationRevision>71</ApplicationRevision>
     <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -179,6 +179,12 @@
     </Compile>
     <Compile Include="AL\frmDowraSchedule.designer.cs">
       <DependentUpon>frmDowraSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmImageViewerBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmImageViewerBrowser.Designer.cs">
+      <DependentUpon>frmImageViewerBrowser.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmIntiqalAllByPersonId.cs">
       <SubType>Form</SubType>
@@ -1253,6 +1259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmDowraSchedule.resx">
       <DependentUpon>frmDowraSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmImageViewerBrowser.resx">
+      <DependentUpon>frmImageViewerBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalAllByPersonId.resx">
       <DependentUpon>frmIntiqalAllByPersonId.cs</DependentUpon>
