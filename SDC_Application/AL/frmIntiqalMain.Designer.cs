@@ -31,12 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntiqalMain));
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dtMisal = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelCurrentStatus = new System.Windows.Forms.Panel();
             this.lbCurrentStatus = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbIntialListForMinhayeIntiqal = new System.Windows.Forms.ComboBox();
             this.label89 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radkhanakashtToMalkiat = new System.Windows.Forms.RadioButton();
             this.radkhanakashtmalkiat = new System.Windows.Forms.RadioButton();
             this.radKhanaKasht = new System.Windows.Forms.RadioButton();
             this.radKhanaMalkiat = new System.Windows.Forms.RadioButton();
@@ -78,6 +81,13 @@
             this.dtpIntiqalAmaldramadDate = new System.Windows.Forms.DateTimePicker();
             this.label49 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lbDtRegistry = new System.Windows.Forms.Label();
+            this.lblSR = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLetterNo = new System.Windows.Forms.TextBox();
+            this.txtLetterFrom = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnRegReciev = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbFardTokenNo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -113,16 +123,6 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
-            this.btnRegReciev = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtLetterNo = new System.Windows.Forms.TextBox();
-            this.txtLetterFrom = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblSR = new System.Windows.Forms.Label();
-            this.dtMisal = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.radkhanakashtToMalkiat = new System.Windows.Forms.RadioButton();
-            this.lbDtRegistry = new System.Windows.Forms.Label();
             this.btnLandTax = new System.Windows.Forms.Button();
             this.btnRoznamcha = new System.Windows.Forms.Button();
             this.btnChkGainTax = new System.Windows.Forms.Button();
@@ -149,6 +149,7 @@
             this.btnMinhayeIntiqal = new System.Windows.Forms.Button();
             this.btnSrchToken = new System.Windows.Forms.Button();
             this.btnSearchInteqal = new System.Windows.Forms.Button();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -206,6 +207,30 @@
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "تفصیل انتقال";
+            // 
+            // dtMisal
+            // 
+            this.dtMisal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtMisal.Checked = false;
+            this.dtMisal.CustomFormat = "dd/MM/yyyy";
+            this.dtMisal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtMisal.Location = new System.Drawing.Point(173, 184);
+            this.dtMisal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.dtMisal.Name = "dtMisal";
+            this.dtMisal.ShowCheckBox = true;
+            this.dtMisal.Size = new System.Drawing.Size(169, 43);
+            this.dtMisal.TabIndex = 91;
+            this.dtMisal.Tag = "4";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(348, 189);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 38);
+            this.label8.TabIndex = 92;
+            this.label8.Text = "تاریخ مثل:";
             // 
             // panelCurrentStatus
             // 
@@ -274,6 +299,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(442, 42);
             this.panel1.TabIndex = 3;
+            // 
+            // radkhanakashtToMalkiat
+            // 
+            this.radkhanakashtToMalkiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radkhanakashtToMalkiat.AutoSize = true;
+            this.radkhanakashtToMalkiat.Location = new System.Drawing.Point(-4, 0);
+            this.radkhanakashtToMalkiat.Name = "radkhanakashtToMalkiat";
+            this.radkhanakashtToMalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radkhanakashtToMalkiat.Size = new System.Drawing.Size(157, 42);
+            this.radkhanakashtToMalkiat.TabIndex = 93;
+            this.radkhanakashtToMalkiat.TabStop = true;
+            this.radkhanakashtToMalkiat.Text = "خانہ کاشت سے ملکیت";
+            this.radkhanakashtToMalkiat.UseVisualStyleBackColor = true;
+            this.radkhanakashtToMalkiat.CheckedChanged += new System.EventHandler(this.radkhanakashtToMalkiat_CheckedChanged);
             // 
             // radkhanakashtmalkiat
             // 
@@ -789,6 +828,81 @@
             this.groupBox5.Text = "رجسٹری کی تفصیل";
             this.groupBox5.Visible = false;
             // 
+            // lbDtRegistry
+            // 
+            this.lbDtRegistry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDtRegistry.Location = new System.Drawing.Point(905, 95);
+            this.lbDtRegistry.Name = "lbDtRegistry";
+            this.lbDtRegistry.Size = new System.Drawing.Size(69, 30);
+            this.lbDtRegistry.TabIndex = 101;
+            this.lbDtRegistry.Text = "تاریخ فیصلہ:";
+            // 
+            // lblSR
+            // 
+            this.lblSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSR.Location = new System.Drawing.Point(660, 95);
+            this.lblSR.Name = "lblSR";
+            this.lblSR.Size = new System.Drawing.Size(71, 33);
+            this.lblSR.TabIndex = 100;
+            this.lblSR.Text = "نام عدالت:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Location = new System.Drawing.Point(425, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 28);
+            this.label6.TabIndex = 99;
+            this.label6.Text = "لیٹر نمبر";
+            this.label6.Visible = false;
+            // 
+            // txtLetterNo
+            // 
+            this.txtLetterNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLetterNo.Location = new System.Drawing.Point(292, 72);
+            this.txtLetterNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtLetterNo.Name = "txtLetterNo";
+            this.txtLetterNo.Size = new System.Drawing.Size(127, 43);
+            this.txtLetterNo.TabIndex = 98;
+            this.txtLetterNo.Tag = "4";
+            this.txtLetterNo.Visible = false;
+            // 
+            // txtLetterFrom
+            // 
+            this.txtLetterFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLetterFrom.Location = new System.Drawing.Point(62, 114);
+            this.txtLetterFrom.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtLetterFrom.Name = "txtLetterFrom";
+            this.txtLetterFrom.Size = new System.Drawing.Size(357, 43);
+            this.txtLetterFrom.TabIndex = 96;
+            this.txtLetterFrom.Tag = "4";
+            this.txtLetterFrom.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Location = new System.Drawing.Point(432, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 30);
+            this.label7.TabIndex = 97;
+            this.label7.Text = "از:";
+            this.label7.Visible = false;
+            // 
+            // btnRegReciev
+            // 
+            this.btnRegReciev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegReciev.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnRegReciev.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegReciev.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegReciev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegReciev.Location = new System.Drawing.Point(297, 36);
+            this.btnRegReciev.Name = "btnRegReciev";
+            this.btnRegReciev.Size = new System.Drawing.Size(148, 48);
+            this.btnRegReciev.TabIndex = 95;
+            this.btnRegReciev.Text = "رجسٹری وصول کریں";
+            this.btnRegReciev.UseVisualStyleBackColor = false;
+            this.btnRegReciev.Click += new System.EventHandler(this.btnRegReciev_Click);
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1161,6 +1275,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnShowScanImg);
             this.groupBox1.Controls.Add(this.btnLandTax);
             this.groupBox1.Controls.Add(this.btnRoznamcha);
             this.groupBox1.Controls.Add(this.btnChkGainTax);
@@ -1192,9 +1307,9 @@
             this.lblOperatorNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOperatorNote.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperatorNote.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lblOperatorNote.Location = new System.Drawing.Point(63, 679);
+            this.lblOperatorNote.Location = new System.Drawing.Point(17, 687);
             this.lblOperatorNote.Name = "lblOperatorNote";
-            this.lblOperatorNote.Size = new System.Drawing.Size(1109, 59);
+            this.lblOperatorNote.Size = new System.Drawing.Size(1155, 48);
             this.lblOperatorNote.TabIndex = 76;
             this.lblOperatorNote.TabStop = true;
             this.lblOperatorNote.Text = "آپریٹر نوٹ لکھنے کیلئے کلک کریں";
@@ -1212,124 +1327,11 @@
             this.label2.TabIndex = 75;
             this.label2.Text = "آپریٹر نوٹ:";
             // 
-            // btnRegReciev
-            // 
-            this.btnRegReciev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegReciev.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnRegReciev.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegReciev.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegReciev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegReciev.Location = new System.Drawing.Point(297, 36);
-            this.btnRegReciev.Name = "btnRegReciev";
-            this.btnRegReciev.Size = new System.Drawing.Size(148, 48);
-            this.btnRegReciev.TabIndex = 95;
-            this.btnRegReciev.Text = "رجسٹری وصول کریں";
-            this.btnRegReciev.UseVisualStyleBackColor = false;
-            this.btnRegReciev.Click += new System.EventHandler(this.btnRegReciev_Click);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Location = new System.Drawing.Point(425, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 28);
-            this.label6.TabIndex = 99;
-            this.label6.Text = "لیٹر نمبر";
-            this.label6.Visible = false;
-            // 
-            // txtLetterNo
-            // 
-            this.txtLetterNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLetterNo.Location = new System.Drawing.Point(292, 72);
-            this.txtLetterNo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtLetterNo.Name = "txtLetterNo";
-            this.txtLetterNo.Size = new System.Drawing.Size(127, 43);
-            this.txtLetterNo.TabIndex = 98;
-            this.txtLetterNo.Tag = "4";
-            this.txtLetterNo.Visible = false;
-            // 
-            // txtLetterFrom
-            // 
-            this.txtLetterFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLetterFrom.Location = new System.Drawing.Point(62, 114);
-            this.txtLetterFrom.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtLetterFrom.Name = "txtLetterFrom";
-            this.txtLetterFrom.Size = new System.Drawing.Size(357, 43);
-            this.txtLetterFrom.TabIndex = 96;
-            this.txtLetterFrom.Tag = "4";
-            this.txtLetterFrom.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Location = new System.Drawing.Point(432, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 30);
-            this.label7.TabIndex = 97;
-            this.label7.Text = "از:";
-            this.label7.Visible = false;
-            // 
-            // lblSR
-            // 
-            this.lblSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSR.Location = new System.Drawing.Point(660, 95);
-            this.lblSR.Name = "lblSR";
-            this.lblSR.Size = new System.Drawing.Size(71, 33);
-            this.lblSR.TabIndex = 100;
-            this.lblSR.Text = "نام عدالت:";
-            // 
-            // dtMisal
-            // 
-            this.dtMisal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtMisal.Checked = false;
-            this.dtMisal.CustomFormat = "dd/MM/yyyy";
-            this.dtMisal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtMisal.Location = new System.Drawing.Point(173, 184);
-            this.dtMisal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.dtMisal.Name = "dtMisal";
-            this.dtMisal.ShowCheckBox = true;
-            this.dtMisal.Size = new System.Drawing.Size(169, 43);
-            this.dtMisal.TabIndex = 91;
-            this.dtMisal.Tag = "4";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(348, 189);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 38);
-            this.label8.TabIndex = 92;
-            this.label8.Text = "تاریخ مثل:";
-            // 
-            // radkhanakashtToMalkiat
-            // 
-            this.radkhanakashtToMalkiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radkhanakashtToMalkiat.AutoSize = true;
-            this.radkhanakashtToMalkiat.Location = new System.Drawing.Point(-4, 0);
-            this.radkhanakashtToMalkiat.Name = "radkhanakashtToMalkiat";
-            this.radkhanakashtToMalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radkhanakashtToMalkiat.Size = new System.Drawing.Size(157, 42);
-            this.radkhanakashtToMalkiat.TabIndex = 93;
-            this.radkhanakashtToMalkiat.TabStop = true;
-            this.radkhanakashtToMalkiat.Text = "خانہ کاشت سے ملکیت";
-            this.radkhanakashtToMalkiat.UseVisualStyleBackColor = true;
-            this.radkhanakashtToMalkiat.CheckedChanged += new System.EventHandler(this.radkhanakashtToMalkiat_CheckedChanged);
-            // 
-            // lbDtRegistry
-            // 
-            this.lbDtRegistry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbDtRegistry.Location = new System.Drawing.Point(905, 95);
-            this.lbDtRegistry.Name = "lbDtRegistry";
-            this.lbDtRegistry.Size = new System.Drawing.Size(69, 30);
-            this.lbDtRegistry.TabIndex = 101;
-            this.lbDtRegistry.Text = "تاریخ فیصلہ:";
-            // 
             // btnLandTax
             // 
             this.btnLandTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLandTax.Image = global::SDC_Application.Resource1.AIT;
-            this.btnLandTax.Location = new System.Drawing.Point(1147, 36);
+            this.btnLandTax.Location = new System.Drawing.Point(1154, 36);
             this.btnLandTax.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnLandTax.Name = "btnLandTax";
             this.btnLandTax.Size = new System.Drawing.Size(59, 50);
@@ -1337,13 +1339,14 @@
             this.btnLandTax.TabStop = false;
             this.toolTip.SetToolTip(this.btnLandTax, "لینڈ ٹیکس چیک کریں");
             this.btnLandTax.UseVisualStyleBackColor = true;
+            this.btnLandTax.Visible = false;
             this.btnLandTax.Click += new System.EventHandler(this.btnLandTax_Click);
             // 
             // btnRoznamcha
             // 
             this.btnRoznamcha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRoznamcha.Image = ((System.Drawing.Image)(resources.GetObject("btnRoznamcha.Image")));
-            this.btnRoznamcha.Location = new System.Drawing.Point(1079, 36);
+            this.btnRoznamcha.Location = new System.Drawing.Point(1169, 35);
             this.btnRoznamcha.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnRoznamcha.Name = "btnRoznamcha";
             this.btnRoznamcha.Size = new System.Drawing.Size(59, 50);
@@ -1351,13 +1354,14 @@
             this.btnRoznamcha.TabStop = false;
             this.toolTip.SetToolTip(this.btnRoznamcha, "گین ٹیکس چیک کریں");
             this.btnRoznamcha.UseVisualStyleBackColor = true;
+            this.btnRoznamcha.Visible = false;
             this.btnRoznamcha.Click += new System.EventHandler(this.btnRoznamcha_Click);
             // 
             // btnChkGainTax
             // 
             this.btnChkGainTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChkGainTax.Image = ((System.Drawing.Image)(resources.GetObject("btnChkGainTax.Image")));
-            this.btnChkGainTax.Location = new System.Drawing.Point(1013, 36);
+            this.btnChkGainTax.Location = new System.Drawing.Point(1089, 35);
             this.btnChkGainTax.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnChkGainTax.Name = "btnChkGainTax";
             this.btnChkGainTax.Size = new System.Drawing.Size(59, 50);
@@ -1514,7 +1518,7 @@
             this.btnRecivedDucoments.Size = new System.Drawing.Size(59, 50);
             this.btnRecivedDucoments.TabIndex = 0;
             this.btnRecivedDucoments.TabStop = false;
-            this.toolTip.SetToolTip(this.btnRecivedDucoments, "اندراج دستاویزات انتقال");
+            this.toolTip.SetToolTip(this.btnRecivedDucoments, "انتخاب کردہ انتقال کے سکین دستاویزات اپلوڈ کرنے کیلئے کلک کریں");
             this.btnRecivedDucoments.UseVisualStyleBackColor = true;
             this.btnRecivedDucoments.Click += new System.EventHandler(this.btnRecivedDucoments_Click);
             // 
@@ -1534,7 +1538,7 @@
             // btnIntiqalDoc
             // 
             this.btnIntiqalDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIntiqalDoc.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnIntiqalDoc.Image = global::SDC_Application.Resource1.CheckAll;
             this.btnIntiqalDoc.Location = new System.Drawing.Point(883, 36);
             this.btnIntiqalDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalDoc.Name = "btnIntiqalDoc";
@@ -1678,6 +1682,20 @@
             this.btnSearchInteqal.TabIndex = 2;
             this.btnSearchInteqal.UseVisualStyleBackColor = true;
             this.btnSearchInteqal.Click += new System.EventHandler(this.btnSearchInteqal_Click);
+            // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(1017, 37);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 206;
+            this.toolTip.SetToolTip(this.btnShowScanImg, "انتخاب کردہ انتقال کے ساتھ سکین اپلوڈ شدہ دستاویزات دیکھئے");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
             // 
             // frmIntiqalMain
             // 
@@ -1843,5 +1861,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton radkhanakashtToMalkiat;
         private System.Windows.Forms.Label lbDtRegistry;
+        private System.Windows.Forms.Button btnShowScanImg;
     }
 }

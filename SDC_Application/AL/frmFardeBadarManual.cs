@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using SDC_Application.LanguageManager;
 using SDC_Application.BL;
 using SDC_Application.Classess;
+using System.IO;
 
 namespace SDC_Application.AL
 {
@@ -44,7 +45,7 @@ namespace SDC_Application.AL
         DataView dvMinKhataMalkan = new DataView();
         RhzSDC rhz = new RhzSDC();
         CommanFunctions cmnFns = new CommanFunctions();
-
+        fileIndexing fi = new fileIndexing();
         bool ConfirmationStatus = false;
         bool AmaldaramadStatus = false;
         bool isManualFb = false;
@@ -3473,6 +3474,38 @@ namespace SDC_Application.AL
             }
             else
                 MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
+        }
+
+        private void btnUploadDoc_Click(object sender, EventArgs e)
+        {
+            if (cmbMouza.SelectedValue.ToString().Length > 3 && txtFardBadarDocNO.Text.Length > 0)
+            {
+                OpenFileDialog openFD = new OpenFileDialog();
+                openFD.Filter = "Bitmaps|*.bmp|JPEG|*.jpg|PNG|*.png|Tiff|*.tiff";
+                openFD.Multiselect = true;
+                openFD.Title = " دستاویز کا انتخاب اور اپلوڈ";
+                string message = "";
+                if (openFD.ShowDialog() == DialogResult.OK)
+                {
+                    int imageNo = 1;
+                    DataTable dtFiles = fi.GetFileIndexingFileNameByDocNo(cmbMouza.SelectedValue.ToString(), "13", txtFardBadarDocNO.Text.Split('/').First());
+                    if (dtFiles != null)
+                        if (dtFiles.Rows.Count > 0)
+                            imageNo = dtFiles.Rows.Count+1;
+                    
+                    foreach (String file in openFD.FileNames)
+                    {
+                        string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
+                        string FardBadarNo = txtFardBadarDocNO.Text.Split('/').First();
+                        
+                         message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Upload", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        imageNo = imageNo + 1;
+                        //I want to get the directory path Picturebox.Imagelocation is not working for me
+                    }
+                    MessageBox.Show(message.Length > 1 ? message : "مطلوبہ دستاویزات اپلوڈ ہو گئے ہیں۔");
+                }
+                
+             }
         }
 
     }

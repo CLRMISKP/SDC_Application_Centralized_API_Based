@@ -46,6 +46,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUploadDoc = new System.Windows.Forms.Button();
             this.btnShowScanImg = new System.Windows.Forms.Button();
             this.rbManualFb = new System.Windows.Forms.RadioButton();
             this.rbMisal = new System.Windows.Forms.RadioButton();
@@ -579,6 +580,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUploadDoc);
             this.groupBox1.Controls.Add(this.btnShowScanImg);
             this.groupBox1.Controls.Add(this.rbManualFb);
             this.groupBox1.Controls.Add(this.rbMisal);
@@ -608,6 +610,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تفصیل مثل / دستی فرد بدر";
+            // 
+            // btnUploadDoc
+            // 
+            this.btnUploadDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadDoc.Image = global::SDC_Application.Resource1.Attach_44;
+            this.btnUploadDoc.Location = new System.Drawing.Point(76, 416);
+            this.btnUploadDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnUploadDoc.Name = "btnUploadDoc";
+            this.btnUploadDoc.Size = new System.Drawing.Size(59, 50);
+            this.btnUploadDoc.TabIndex = 207;
+            this.btnUploadDoc.TabStop = false;
+            this.ttMisal.SetToolTip(this.btnUploadDoc, "انتخاب کردہ فرد بدر کے سکین دستاویزات اپلوڈ کرنے کیلئے کلک کریں");
+            this.btnUploadDoc.UseVisualStyleBackColor = true;
+            this.btnUploadDoc.Click += new System.EventHandler(this.btnUploadDoc_Click);
             // 
             // btnShowScanImg
             // 
@@ -2177,7 +2193,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(591, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 31);
+            this.label7.Size = new System.Drawing.Size(85, 31);
             this.label7.TabIndex = 22;
             this.label7.Text = "درست کنال  :";
             // 
@@ -2197,7 +2213,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(208, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 31);
+            this.label6.Size = new System.Drawing.Size(92, 31);
             this.label6.TabIndex = 21;
             this.label6.Text = " درست سرسائی:";
             // 
@@ -2280,7 +2296,7 @@
             this.label57.AutoSize = true;
             this.label57.Location = new System.Drawing.Point(850, 28);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(66, 31);
+            this.label57.Size = new System.Drawing.Size(68, 31);
             this.label57.TabIndex = 12;
             this.label57.Text = " نمبر خسرہ:";
             // 
@@ -5816,5 +5832,6 @@
         private System.Windows.Forms.Button btnNewMushteri;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colKhataSel;
         private System.Windows.Forms.Button btnShowScanImg;
+        private System.Windows.Forms.Button btnUploadDoc;
     }
 }

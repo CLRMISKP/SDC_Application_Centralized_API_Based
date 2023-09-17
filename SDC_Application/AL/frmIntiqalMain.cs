@@ -116,7 +116,7 @@ namespace SDC_Application.AL
         DataTable Mozas = new DataTable();
         AutoComplete objauto = new AutoComplete();
         BL.frmVoucher objbusines = new BL.frmVoucher();
-
+        fileIndexing fi = new fileIndexing();
         public frmIntiqalMain()
         {
 
@@ -1315,19 +1315,36 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
 
         private void btnRecivedDucoments_Click(object sender, EventArgs e)
         {
-            if (IntiqalId != "-1")
+            if (IntiqalId != "-1" && cboMoza.SelectedValue.ToString().Length > 3 && txtIntiqalNo.Text.Length > 0)
             {
-                frmDucomentRecievedForScan frmDucomentRecievedForScan = new frmDucomentRecievedForScan();
-                frmDucomentRecievedForScan.Cancelled = this.Cancelled;
-                frmDucomentRecievedForScan.Pending = this.intiqalPending;
-                frmDucomentRecievedForScan.FormClosed -= new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
-                frmDucomentRecievedForScan.FormClosed += new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
-                frmDucomentRecievedForScan.IntiqalId = IntiqalId;
-                frmDucomentRecievedForScan.ShowDialog();
+                OpenFileDialog openFD = new OpenFileDialog();
+                openFD.Filter = "Bitmaps|*.bmp|JPEG|*.jpg|PNG|*.png|Tiff|*.tiff";
+                openFD.Multiselect = true;
+                openFD.Title = " دستاویز کا انتخاب اور اپلوڈ";
+                string message = "";
+                if (openFD.ShowDialog() == DialogResult.OK)
+                {
+                    int imageNo = 1;
+                    DataTable dtFiles = fi.GetFileIndexingFileNameByDocNo(cboMoza.SelectedValue.ToString(), "12", txtIntiqalNo.Text.Split('/').First());
+                    if (dtFiles != null)
+                        if (dtFiles.Rows.Count > 0)
+                            imageNo = dtFiles.Rows.Count + 1;
+                    foreach (String file in openFD.FileNames)
+                    {
+                        string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
+                        string IntiqalNo = txtIntiqalNo.Text.Split('/').First();
+
+                        message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Upload", Convert.ToInt32(cboMoza.SelectedValue.ToString()), 12, Convert.ToInt32(IntiqalNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        imageNo = imageNo + 1;
+                        //I want to get the directory path Picturebox.Imagelocation is not working for me
+                    }
+                    MessageBox.Show(message.Length > 1 ? message : "مطلوبہ دستاویزات اپلوڈ ہو گئے ہیں۔");
+                }
+                
             }
             else
             {
-                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("موضع کا انتخاب کریں اور انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -2308,6 +2325,20 @@ txtLandValue.Enabled = false;
             }
             else
                 radkhanakashtToMalkiat.Checked = false;
+        }
+
+        private void btnShowScanImg_Click(object sender, EventArgs e)
+        {
+            if (cboMoza.SelectedValue.ToString().Length > 3 && txtIntiqalNo.Text.Length > 0)
+            {
+                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cboMoza.SelectedValue.ToString() + "&documentTypeId=12&recordNo=" + txtIntiqalNo.Text;
+                //System.Diagnostics.Process.Start(url);
+                frmImageViewerBrowser iv = new frmImageViewerBrowser();
+                iv.url = url;
+                iv.Show();
+            }
+            else
+                MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
         }
 
       

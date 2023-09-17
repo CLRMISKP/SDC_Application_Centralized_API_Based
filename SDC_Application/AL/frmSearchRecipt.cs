@@ -69,7 +69,7 @@ namespace SDC_Application.AL
               string day = date.Day.ToString();
               string year = date.Year.ToString();
               datetoken = month + "/" + day + "/" + year;
-              dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokensList_For_ReceiptVoucher " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'");
+              dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokensList_For_ReceiptVoucher " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
             bs.DataSource = dt;
             grdTokenData.DataSource = bs;
             DataTable outputTable = dt.Clone();

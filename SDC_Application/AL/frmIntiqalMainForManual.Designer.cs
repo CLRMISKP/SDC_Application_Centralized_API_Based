@@ -473,7 +473,7 @@
             this.btnRecivedDucoments.Size = new System.Drawing.Size(59, 50);
             this.btnRecivedDucoments.TabIndex = 38;
             this.btnRecivedDucoments.TabStop = false;
-            this.toolTip.SetToolTip(this.btnRecivedDucoments, "اندراج دستاویزات انتقال");
+            this.toolTip.SetToolTip(this.btnRecivedDucoments, "انتخاب کردہ انتقال کے سکین دستاویزات اپلوڈ کرنے کیلئے کلک کریں");
             this.btnRecivedDucoments.UseVisualStyleBackColor = true;
             this.btnRecivedDucoments.Click += new System.EventHandler(this.btnRecivedDucoments_Click_1);
             // 

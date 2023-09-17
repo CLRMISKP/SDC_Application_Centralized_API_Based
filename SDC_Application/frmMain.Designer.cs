@@ -621,7 +621,7 @@
             // 
             this.ڈیشبورڈToolStripMenuItem.Name = "ڈیشبورڈToolStripMenuItem";
             this.ڈیشبورڈToolStripMenuItem.Size = new System.Drawing.Size(408, 42);
-            this.ڈیشبورڈToolStripMenuItem.Text = "5  - ڈیش بورڈ";
+            this.ڈیشبورڈToolStripMenuItem.Text = "5  - ذیلی ایس ڈی سی";
             this.ڈیشبورڈToolStripMenuItem.Click += new System.EventHandler(this.ڈیشبورڈToolStripMenuItem_Click);
             // 
             // toolStripPicIndexing

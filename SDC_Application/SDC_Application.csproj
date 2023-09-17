@@ -37,11 +37,11 @@
     <ProductName>CLRMIS</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>Land Records Management Information System</SuiteName>
-    <MinimumRequiredVersion>2.0.5.70</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.0.1.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>71</ApplicationRevision>
-    <ApplicationVersion>2.0.5.%2a</ApplicationVersion>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -209,6 +209,12 @@
     </Compile>
     <Compile Include="AL\frmKhattaSearchByPersonForOtherDistTehsil.Designer.cs">
       <DependentUpon>frmKhattaSearchByPersonForOtherDistTehsil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmSubSdcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmSubSdcs.Designer.cs">
+      <DependentUpon>frmSubSdcs.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmTokenOtherTehsil.cs">
       <SubType>Form</SubType>
@@ -1274,6 +1280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmKhattaSearchByPersonForOtherDistTehsil.resx">
       <DependentUpon>frmKhattaSearchByPersonForOtherDistTehsil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmSubSdcs.resx">
+      <DependentUpon>frmSubSdcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmTokenOtherTehsil.resx">
       <DependentUpon>frmTokenOtherTehsil.cs</DependentUpon>

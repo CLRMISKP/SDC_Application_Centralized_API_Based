@@ -62,7 +62,7 @@ namespace SDC_Application.AL
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
 
-            dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherMaster_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "'");
+            dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherMaster_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "',"+UsersManagments.SubSdcId.ToString());
             bs.DataSource = dt;
             grdReciptMaster.DataSource = bs;
             DataTable outputTable = dt.Clone();

@@ -67,7 +67,7 @@ namespace SDC_Application.AL
             string day = date.Day.ToString();
             string year = date.Year.ToString();
             datetoken = month + "/" + day + "/" + year;
-            dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherMaster_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'");
+            dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherMaster_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
             DataTable outputTable = dt.Clone();
 
             for (int i = dt.Rows.Count - 1; i >= 0; i--)

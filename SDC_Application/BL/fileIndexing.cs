@@ -6,6 +6,10 @@ using SDC_Application.Classess;
 using System.Data;
 using System.Data.SqlClient;
 using SDC_Application.DL;
+using SDC_Application.Classess;
+using System.Security.Cryptography.X509Certificates;
+using System.Net;
+using System.IO;
 
 namespace SDC_Application.BL
 {
@@ -140,7 +144,11 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_FileIndexing_FileName " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ", '" + DocumentType + "', '" + Recordno + "', " + Picno + "";
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
         }
-
+        public DataTable GetFileIndexingFileNameByDocNo(string MozaId, string DocumentType, string Recordno)
+        {
+            string spWithParam = "Proc_Get_FileIndexingRecords_SDC " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ", '" + DocumentType + "', '" + Recordno + "'";
+            return ojbdb.filldatatable_from_storedProcedure(spWithParam);
+        }
         #endregion
 
         #region Save Document Image
@@ -230,6 +238,101 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_DocumentImage " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() ;
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
 
+        }
+
+        #endregion
+
+        #region File Uploading
+         public string UploadFileToServer(string filePath, string targetUri ,int MozaId , int DocumentTypeID , int RecordNo, int ImageNo, DateTime ModifiedDate)
+        {
+            string formattedDate = ModifiedDate.ToString("dd MMM yyyy");
+
+
+            string boundary = "------------------------" + DateTime.Now.Ticks.ToString("x");
+            WebClient client = new WebClient();
+            client.Headers.Add("Content-Type", "multipart/form-data; boundary=" + boundary);
+
+            byte[] fileData = File.ReadAllBytes(filePath);
+
+            List<byte> formData = new List<byte>();
+
+            // Add file content to form data
+            string fileHeader = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"ImageFile\"; filename=\"{1}\"\r\nContent-Type: application/octet-stream\r\n\r\n",boundary,Path.GetFileName(filePath));
+            formData.AddRange(Encoding.UTF8.GetBytes(fileHeader));
+            formData.AddRange(fileData);
+            formData.AddRange(Encoding.UTF8.GetBytes("\r\n"));
+
+            // Additional form fields
+            formData.AddRange(Encoding.UTF8.GetBytes(string.Format("--{0}\r\nContent-Disposition: form-data; name=\"MozaId\"\r\n\r\n{1}\r\n", boundary, MozaId)));
+            formData.AddRange(Encoding.UTF8.GetBytes(string.Format("--{0}\r\nContent-Disposition: form-data; name=\"DocumentTypeId\"\r\n\r\n{1}\r\n", boundary, DocumentTypeID)));
+            formData.AddRange(Encoding.UTF8.GetBytes(string.Format("--{0}\r\nContent-Disposition: form-data; name=\"RecordNo\"\r\n\r\n{1}\r\n", boundary, RecordNo)));
+            formData.AddRange(Encoding.UTF8.GetBytes(string.Format("--{0}\r\nContent-Disposition: form-data; name=\"ImageNo\"\r\n\r\n{1}\r\n", boundary, ImageNo)));
+            formData.AddRange(Encoding.UTF8.GetBytes(string.Format("--{0}\r\nContent-Disposition: form-data; name=\"ModifiedDate\"\r\n\r\n{1}\r\n", boundary, formattedDate)));
+            formData.AddRange(Encoding.UTF8.GetBytes(string.Format("--{0}\r\nContent-Disposition: form-data; name=\"FileName\"\r\n\r\n{1}\r\n", boundary, Path.GetFileName(filePath))));
+            formData.AddRange(Encoding.UTF8.GetBytes("--" + boundary + "--"));
+
+            try
+            {
+                byte[] response = client.UploadData(targetUri, "POST", formData.ToArray());
+                string responseString = Encoding.UTF8.GetString(response);
+                if (responseString != "")
+                {
+                    //MessageBox.Show(responseString);
+                }
+                return responseString; //Console.WriteLine(responseString);
+            }
+            catch (WebException e)
+            {
+                string Error = "";
+                Error = ("An error occurred: " + e.Message);
+                if (e.InnerException != null)
+                {
+                    Error = Error + (" Inner Exception: " + e.InnerException.Message);
+                }
+                if (e.Response != null)
+                {
+                    using (var reader = new StreamReader(e.Response.GetResponseStream()))
+                    {
+                        Error = Error + (" Response: " + reader.ReadToEnd());
+                    }
+                }
+                return Error;
+            }
+        }
+       
+        public void FetchImagesFromService()
+        {
+            // Bypass the SSL Certificate validation
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // This corresponds to TLS 1.2
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; // Or Tls, Tls11, depending on server configuration
+
+
+
+            // string url = "https://192.168.1.111:7050/Images?mozaId=15113&documentTypeId=11&recordNo=11";
+            //string url = "http://192.168.1.111:5162/Images?mozaId=15113&documentTypeId=11&recordNo=11"; // ssl port mentioned in launchSettings.json of web api
+            //string url = "https://172.16.100.130:5002/Images?mozaId=15113&documentTypeId=11&recordNo=11"; // ssl port mentioned in launchSettings.json of web api
+            string url = "https://kplr.gkp.pk/:5002/Images?mozaId=15113&documentTypeId=11&recordNo=11"; // ssl port mentioned in launchSettings.json of web api
+
+            using (WebClient client = new WebClient())
+            {
+                try
+                {
+                    byte[] responseData = client.DownloadData(url);
+                    string responseString = System.Text.Encoding.UTF8.GetString(responseData);
+                    Console.WriteLine(responseString);
+                }
+                catch (WebException e)
+                {
+                    Console.WriteLine("An error occurred: " + e.Message);
+                    if (e.InnerException != null)
+                    {
+                        Console.WriteLine("Inner Exception: " + e.InnerException.Message);
+                    }
+                    // Rest of your code...
+                }
+
+            }
         }
 
         #endregion

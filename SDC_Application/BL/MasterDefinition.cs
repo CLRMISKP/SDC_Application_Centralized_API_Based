@@ -13,6 +13,21 @@ namespace SDC_Application.BL
 
         #region SDC and Intqalat Get Members
 
+        public DataTable GetSubSdcsList()
+        {
+            string spWithParam = "Proc_Get_SubSdcsList  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString();
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+        public DataTable GetMozaListBySubSdcId(string SubSdcId)
+        {
+            string spWithParam = "Proc_Get_MozaList_By_SubSdc  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+SubSdcId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+        public DataTable GetUsersListBySubSdcId(string SubSdcId)
+        {
+            string spWithParam = "Proc_Get_UsersList_By_SubSdc  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SubSdcId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
         public DataTable GetSDCTokenPurpose()
         {
             string spWithParam = "Proc_Get_SDC_TokenPurpose  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() ;
@@ -115,6 +130,21 @@ namespace SDC_Application.BL
         public string SaveSDCTokenPurpose(string TokenPurposeId, string TokenPurpose_Urdu, string TokenPurpose_Eng, string TehsilId, string InsertUserId, string InsertLoginName, string UpdateUserId, string UpdateLoginName)
         {
             string spWithParam = "WEB_SP_INSERT_SDC_TokenPurpose  " + TokenPurposeId + ",N'" + TokenPurpose_Urdu + "','" + TokenPurpose_Eng + "'," + TehsilId + "," + InsertUserId + "," + InsertLoginName + "," + UpdateUserId + "," + UpdateLoginName;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string UpdateMozaForSubSdc(string SubSdcId,  string MozaId)
+        {
+            string spWithParam = "Web_Sp_Update_Moza_SubSdc  " + Classess.UsersManagments._Tehsilid.ToString() + "," + SubSdcId + "," + MozaId; //Web_Sp_Update_User_SubSdc
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string UpdateUserForSubSdc(string SubSdcId, string UserId)
+        {
+            string spWithParam = "Web_Sp_Update_User_SubSdc  " + Classess.UsersManagments._Tehsilid.ToString() + "," + SubSdcId + "," + UserId; //Web_Sp_Update_User_SubSdc
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string SaveSubSdc(string SubSdcId, string SDCNameEng, string SDCNameUrdu, string InsertUserId, string InsertLoginName)
+        {
+            string spWithParam = "Web_Sp_Insert_SubSdc  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SubSdcId + ",'" + SDCNameEng + "',N'" + SDCNameUrdu + "'," + InsertUserId + ",'" + InsertLoginName+"'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 

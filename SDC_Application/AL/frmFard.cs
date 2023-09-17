@@ -416,97 +416,103 @@ namespace SDC_Application.AL
                         if (row.Selected)
                         {
                             row.Cells["ColCheck"].Value = 1;
-                            cboKhewatGroupFareeq.SelectedValue = row.Cells["KhewatGroupFareeqId"].Value;
-                            //this.cboKhewatGroupFareeq_SelectionChangeCommitted(sender, e);
-                            txtFardPersonRecId.Text= row.Cells["FardPersonRecId"].Value.ToString();
-                            txtFardPersonId.Text = row.Cells["FardPersonId"].Value.ToString();
-                            txtHissaMuntaqla.Text = row.Cells["FardAreaPart"].Value.ToString();
-                            txtKanalMuntaqal.Text= row.Cells["FardKanal"].Value.ToString();
-                            txtMarlaMuntaqla.Text= row.Cells["FardMarla"].Value.ToString();
-                            txtSarsaiMuntaqla.Text= row.Cells["FardSarsai"].Value.ToString();
-                            txtSFTmuntaqla.Text= row.Cells["FardFeet"].Value.ToString();
-                            txtKhewatTypeId.Text = row.Cells["KhewatTypeId"].Value.ToString();
-                            chkTransactional.Checked = Convert.ToBoolean(row.Cells["isTransactional"].Value);
-                           
-                            //chkTransactional.Enabled = !chkTransactional.Checked;
-                            //btnSaveKhewatFareeq.Enabled= !chkTransactional.Checked;
-                            //btnDelKhewatFareeq.Enabled= !chkTransactional.Checked;
+                            string Intiqalat = intiqal.GetIntiqalatByKhewatGroupFareeqId(row.Cells["KhewatGroupFareeqId"].Value.ToString());
+                            if (Intiqalat != "0")
+                            {
+                                MessageBox.Show("اپکا انتخاب کردہ مالک انتقال نمبر "+Intiqalat+ " سابقہ ہوچکاہے۔ ");
+                            }
+                                cboKhewatGroupFareeq.SelectedValue = row.Cells["KhewatGroupFareeqId"].Value;
+                                //this.cboKhewatGroupFareeq_SelectionChangeCommitted(sender, e);
+                                txtFardPersonRecId.Text = row.Cells["FardPersonRecId"].Value.ToString();
+                                txtFardPersonId.Text = row.Cells["FardPersonId"].Value.ToString();
+                                txtHissaMuntaqla.Text = row.Cells["FardAreaPart"].Value.ToString();
+                                txtKanalMuntaqal.Text = row.Cells["FardKanal"].Value.ToString();
+                                txtMarlaMuntaqla.Text = row.Cells["FardMarla"].Value.ToString();
+                                txtSarsaiMuntaqla.Text = row.Cells["FardSarsai"].Value.ToString();
+                                txtSFTmuntaqla.Text = row.Cells["FardFeet"].Value.ToString();
+                                txtKhewatTypeId.Text = row.Cells["KhewatTypeId"].Value.ToString();
+                                chkTransactional.Checked = Convert.ToBoolean(row.Cells["isTransactional"].Value);
 
-                            //============ For remaining are and hissa in case of updation
-                            DataTable dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaNewFard(cboKhewatGroupFareeq.SelectedValue.ToString());
-                            double KulHissay = 0;
-                            double KulKanal = 0;
-                            double KulMarla = 0;
-                            double KulSarsai = 0; ;
-                            double KulFeet = 0; ;
-                             if(chkTransactional.Checked==true)
-                             { 
-                                 KulHissay = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["FardAreaPart"].Value.ToString());
-                                 KulKanal = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Kanal"].ToString()) + Convert.ToDouble(row.Cells["FardKanal"].Value.ToString());
-                                 KulMarla = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Marla"].ToString()) + Convert.ToDouble(row.Cells["FardMarla"].Value.ToString());
-                                 KulSarsai = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Sarsai"].ToString()) + Convert.ToDouble(row.Cells["FardSarsai"].Value.ToString());
-                                 KulFeet = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Feet"].ToString()) + Convert.ToDouble(row.Cells["FardFeet"].Value.ToString());
-                             }
-                             else
-                             {
-                                  KulHissay = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Hissa"].ToString());
-                                  KulKanal = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Kanal"].ToString());
-                                  KulMarla = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Marla"].ToString());
-                                  KulSarsai = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Sarsai"].ToString());
-                                  KulFeet = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Feet"].ToString());
-                             }
+                                //chkTransactional.Enabled = !chkTransactional.Checked;
+                                //btnSaveKhewatFareeq.Enabled= !chkTransactional.Checked;
+                                //btnDelKhewatFareeq.Enabled= !chkTransactional.Checked;
 
-                             //================================= function for raqba calculate =============================
+                                //============ For remaining are and hissa in case of updation
+                                DataTable dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaNewFard(cboKhewatGroupFareeq.SelectedValue.ToString());
+                                double KulHissay = 0;
+                                double KulKanal = 0;
+                                double KulMarla = 0;
+                                double KulSarsai = 0; ;
+                                double KulFeet = 0; ;
+                                if (chkTransactional.Checked == true)
+                                {
+                                    KulHissay = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["FardAreaPart"].Value.ToString());
+                                    KulKanal = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Kanal"].ToString()) + Convert.ToDouble(row.Cells["FardKanal"].Value.ToString());
+                                    KulMarla = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Marla"].ToString()) + Convert.ToDouble(row.Cells["FardMarla"].Value.ToString());
+                                    KulSarsai = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Sarsai"].ToString()) + Convert.ToDouble(row.Cells["FardSarsai"].Value.ToString());
+                                    KulFeet = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Feet"].ToString()) + Convert.ToDouble(row.Cells["FardFeet"].Value.ToString());
+                                }
+                                else
+                                {
+                                    KulHissay = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Hissa"].ToString());
+                                    KulKanal = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Kanal"].ToString());
+                                    KulMarla = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Marla"].ToString());
+                                    KulSarsai = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Sarsai"].ToString());
+                                    KulFeet = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Feet"].ToString());
+                                }
 
-                             double PersonRaqba = ((KulKanal * 20 + KulMarla) * 272.25) + (KulSarsai > 0 ? KulSarsai * 30.25 : KulFeet);
+                                //================================= function for raqba calculate =============================
 
-
-                             if (PersonRaqba >= 272.25)
-                             {
-                                 KulFeet = PersonRaqba % 272.25;
-                                 KulMarla = Convert.ToInt32((PersonRaqba - KulFeet) / 272.25);
-
-                                 if (KulMarla >= 20)
-                                 {
-                                     KulKanal = (KulMarla - (KulMarla % 20)) / 20;
-                                     KulMarla = KulMarla % 20;
+                                double PersonRaqba = ((KulKanal * 20 + KulMarla) * 272.25) + (KulSarsai > 0 ? KulSarsai * 30.25 : KulFeet);
 
 
-                                 }
-                                 else
-                                 {
-                                     KulKanal = 0;
-                                 }
+                                if (PersonRaqba >= 272.25)
+                                {
+                                    KulFeet = PersonRaqba % 272.25;
+                                    KulMarla = Convert.ToInt32((PersonRaqba - KulFeet) / 272.25);
 
-                             }
-                             else
-                             {
-                                 KulMarla = 0;
-                                 KulKanal = 0;
-
-                             }
-                             if (KulFeet > 0)
-                             {
-                                 KulSarsai = Math.Round(KulFeet / 30.25, 4);
-                             }
-                             else
-                             {
-                                 KulSarsai = 0;
-                             }
+                                    if (KulMarla >= 20)
+                                    {
+                                        KulKanal = (KulMarla - (KulMarla % 20)) / 20;
+                                        KulMarla = KulMarla % 20;
 
 
-                             //================================================================================================
+                                    }
+                                    else
+                                    {
+                                        KulKanal = 0;
+                                    }
+
+                                }
+                                else
+                                {
+                                    KulMarla = 0;
+                                    KulKanal = 0;
+
+                                }
+                                if (KulFeet > 0)
+                                {
+                                    KulSarsai = Math.Round(KulFeet / 30.25, 4);
+                                }
+                                else
+                                {
+                                    KulSarsai = 0;
+                                }
 
 
-                             txtKhewatFareeqHissa.Text = KulHissay.ToString();
-                             txtKFkanal.Text = Math.Round(KulKanal, 0).ToString();
-                             txtKFmarla.Text = Math.Round(KulMarla, 0).ToString();
-                             txtKFsarsai.Text = Math.Round(KulSarsai, 4).ToString();
-                             txtKFfeet.Text = Math.Round(KulFeet, 0).ToString();
-                             txtKhewatFareeqRaqba.Text = txtKFkanal.Text + "-" + txtKFmarla.Text + "-" + txtKFfeet.Text;
+                                //================================================================================================
 
-                             btnDelKhewatFareeq.Enabled = true;
-                            // ===============  END  =======================================
+
+                                txtKhewatFareeqHissa.Text = KulHissay.ToString();
+                                txtKFkanal.Text = Math.Round(KulKanal, 0).ToString();
+                                txtKFmarla.Text = Math.Round(KulMarla, 0).ToString();
+                                txtKFsarsai.Text = Math.Round(KulSarsai, 4).ToString();
+                                txtKFfeet.Text = Math.Round(KulFeet, 0).ToString();
+                                txtKhewatFareeqRaqba.Text = txtKFkanal.Text + "-" + txtKFmarla.Text + "-" + txtKFfeet.Text;
+
+                                btnDelKhewatFareeq.Enabled = true;
+                                // ===============  END  =======================================
+                            
                         }
                         else
                             row.Cells["ColCheck"].Value = 0;

@@ -279,6 +279,11 @@ namespace SDC_Application.BL
                 string spWithParam = "Proc_Intiqal_Revert_Sellers_Buyers_Dependency_Check_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalKhataRecId;
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
+            public String GetIntiqalatByKhewatGroupFareeqId(string KhewatGroupFareeqId)
+            {
+                string spWithParam = "Proc_Get_Intiqal_by_KhewatGroupFareeqId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhewatGroupFareeqId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
 
             public String GetPersonIdByKhewatgroupFareeqId(string KhewatGroupFareeqId)
             {

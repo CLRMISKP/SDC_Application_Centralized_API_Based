@@ -1004,7 +1004,7 @@ namespace SDC_Application
             if (!isOpen)
             {
 
-                frmRevenueDashboard obj = new frmRevenueDashboard();
+                frmSubSdcs obj = new frmSubSdcs();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();

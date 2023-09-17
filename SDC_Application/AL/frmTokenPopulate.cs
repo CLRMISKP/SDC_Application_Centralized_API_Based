@@ -148,11 +148,11 @@ namespace SDC_Application.AL
                     if (fromform == "1")
                     {
                         //dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal '" + datetoken + "'," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
-                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "'");
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
                     }
                     else
                     {
-                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'");
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
                     }
                 }
                  
