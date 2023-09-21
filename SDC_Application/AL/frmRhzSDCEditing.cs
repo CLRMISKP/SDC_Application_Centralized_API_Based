@@ -1416,7 +1416,7 @@ namespace SDC_Application.AL
         {
             if (cbokhataNo.SelectedValue.ToString().Length > 5)
             {
-                if (cboKhatoonies.SelectedValue != null)
+                if (cboKhatoonies.SelectedValue != null && cboKhatoonies.SelectedValue.ToString()!="0")
                 {
                     if (cboKhatoonies.SelectedValue.ToString().Length > 5 && txtKhatooniNoProp.Text.Trim().Length > 0)
                     {
@@ -1893,7 +1893,7 @@ namespace SDC_Application.AL
             txtDetails.Text = row[0]["ChangeDetails"].ToString();
             ImplementedBy = row[0]["ImplemnetedBy"].ToString() == "0" ? false : true;
             btnConfirm.Enabled = row[0]["ConfirmedBy"].ToString() == "0" ? true : false;
-            tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() ? true : false) : false;//ImplemnetedBy
+            tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() || UsersManagments._IsAdmin ? true : false) : false;//ImplemnetedBy
             //tabControlMain.Enabled=UsersManagments.UserId.ToString()=="111111"?true:false;
             PopulateDgKhataJatEdited();
             FillDgFBAfrad();

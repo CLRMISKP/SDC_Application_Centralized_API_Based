@@ -41,6 +41,17 @@ namespace SDC_Application.BL
         }
 
         #endregion
+        #region Revert  Fard e Badar 
+
+        public string RevertFardBadar(string FB_Id, int InsertUserId, string InsertLoginName)
+        {
+            string retVal = "";
+            string spWithParms = "Proc_EFB_Amal_Revert  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_Id + "," + InsertUserId.ToString() + ",'" + InsertLoginName + "'";
+            retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+            return retVal;
+        }
+
+        #endregion
 
         #region Get Afrad list under proposed in Fard e Badar
         public DataTable GetFBAfradListProposed(string MozaId, string FBId)

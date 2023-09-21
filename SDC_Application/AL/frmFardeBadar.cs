@@ -1487,10 +1487,13 @@ namespace SDC_Application.AL
                         }
                     if(this.AmaldaramadStatus)
                     {
+                        if(UsersManagments._IsAdmin)
+                            btnFbRevert.Enabled =true;
                         this.DisAbleControls();
                     }
                     else
                         {
+                            btnFbRevert.Enabled = false;
                         //this.tabKhataDetail.TabPages.Remove(gardawarTab);
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);
                         //btnConfirm.Enabled = true;
@@ -3661,13 +3664,29 @@ namespace SDC_Application.AL
                         string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
                         string FardBadarNo = txtFardBadarDocNO.Text.Split('/').First();
 
-                        message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Upload", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
                         imageNo = imageNo + 1;
                         //I want to get the directory path Picturebox.Imagelocation is not working for me
                     }
                     MessageBox.Show(message.Length > 1 ? message : "مطلوبہ دستاویزات اپلوڈ ہو گئے ہیں۔");
                 }
                 
+            }
+        }
+
+        private void btnFbRevert_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ فرد بدر عمل ری ورٹ کرنا چاہتے ہے؟", "ری ورٹ کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    string msg = fardBadarBL.RevertFardBadar(txtFbId.Text, UsersManagments.UserId, UsersManagments.UserName);
+                    MessageBox.Show(msg);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

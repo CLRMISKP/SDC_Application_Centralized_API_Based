@@ -192,7 +192,7 @@ namespace SDC_Application
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult res= MessageBox.Show("Are You Sure to Close the DLRR Application", "Confirm to Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res= MessageBox.Show("Are You Sure to Close the CLRMIS Application", "Confirm to Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 e.Cancel = false;
@@ -350,7 +350,8 @@ namespace SDC_Application
             this.mnuSubIntiqalatTehsildar.Visible = isMenuVisible("Intiqal_Tehsildar_Report_dem");
             this.mnuSubIntiqalatPendingRegistry.Visible = isMenuVisible("Registry_Intiqal_Pending_dem");
             this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
-            //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
+            this.mnuCoBiometricNotAttested.Visible = isMenuVisible("IntiqalBoimetricCapturedNotAttestedReport");
+            //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem"); IntiqalBoimetricCapturedNotAttestedReport
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
 
@@ -1846,6 +1847,23 @@ namespace SDC_Application
 
                 //UsersManagments.check = 2;
                 frmDowraSchedule obj = new frmDowraSchedule();
+                obj.Show();
+            }
+        }
+
+        private void mnuCoBiometricNotAttested_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 48;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
                 obj.Show();
             }
         }

@@ -1315,38 +1315,51 @@ Query = Query.Replace("@TehsilId" , Tehsilid.ToString());
 
         private void btnRecivedDucoments_Click(object sender, EventArgs e)
         {
-            if (IntiqalId != "-1" && cboMoza.SelectedValue.ToString().Length > 3 && txtIntiqalNo.Text.Length > 0)
+            if (IntiqalId != "-1")
             {
-                OpenFileDialog openFD = new OpenFileDialog();
-                openFD.Filter = "Bitmaps|*.bmp|JPEG|*.jpg|PNG|*.png|Tiff|*.tiff";
-                openFD.Multiselect = true;
-                openFD.Title = " دستاویز کا انتخاب اور اپلوڈ";
-                string message = "";
-                if (openFD.ShowDialog() == DialogResult.OK)
-                {
-                    int imageNo = 1;
-                    DataTable dtFiles = fi.GetFileIndexingFileNameByDocNo(cboMoza.SelectedValue.ToString(), "12", txtIntiqalNo.Text.Split('/').First());
-                    if (dtFiles != null)
-                        if (dtFiles.Rows.Count > 0)
-                            imageNo = dtFiles.Rows.Count + 1;
-                    foreach (String file in openFD.FileNames)
-                    {
-                        string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
-                        string IntiqalNo = txtIntiqalNo.Text.Split('/').First();
-
-                        message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Upload", Convert.ToInt32(cboMoza.SelectedValue.ToString()), 12, Convert.ToInt32(IntiqalNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
-                        imageNo = imageNo + 1;
-                        //I want to get the directory path Picturebox.Imagelocation is not working for me
-                    }
-                    MessageBox.Show(message.Length > 1 ? message : "مطلوبہ دستاویزات اپلوڈ ہو گئے ہیں۔");
-                }
-                
+                frmDucomentRecievedForScan frmDucomentRecievedForScan = new frmDucomentRecievedForScan();
+                frmDucomentRecievedForScan.FormClosed -= new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
+                frmDucomentRecievedForScan.FormClosed += new FormClosedEventHandler(frmDucomentRecievedForScan_FormClosed);
+                frmDucomentRecievedForScan.IntiqalId = IntiqalId;
+                frmDucomentRecievedForScan.ShowDialog();
             }
             else
             {
-                MessageBox.Show("موضع کا انتخاب کریں اور انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            //if (IntiqalId != "-1" && cboMoza.SelectedValue.ToString().Length > 3 && txtIntiqalNo.Text.Length > 0)
+            //{
+            //    OpenFileDialog openFD = new OpenFileDialog();
+            //    openFD.Filter = "Bitmaps|*.bmp|JPEG|*.jpg|PNG|*.png|Tiff|*.tiff";
+            //    openFD.Multiselect = true;
+            //    openFD.Title = " دستاویز کا انتخاب اور اپلوڈ";
+            //    string message = "";
+            //    if (openFD.ShowDialog() == DialogResult.OK)
+            //    {
+            //        int imageNo = 1;
+            //        DataTable dtFiles = fi.GetFileIndexingFileNameByDocNo(cboMoza.SelectedValue.ToString(), "12", txtIntiqalNo.Text.Split('/').First());
+            //        if (dtFiles != null)
+            //            if (dtFiles.Rows.Count > 0)
+            //                imageNo = dtFiles.Rows.Count + 1;
+            //        foreach (String file in openFD.FileNames)
+            //        {
+            //            string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
+            //            string IntiqalNo = txtIntiqalNo.Text.Split('/').First();
+
+            //            message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Uploads", Convert.ToInt32(cboMoza.SelectedValue.ToString()), 12, Convert.ToInt32(IntiqalNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+            //            imageNo = imageNo + 1;
+            //            //I want to get the directory path Picturebox.Imagelocation is not working for me
+            //        }
+            //        MessageBox.Show(message.Length > 1 ? message : "مطلوبہ دستاویزات اپلوڈ ہو گئے ہیں۔");
+            //    }
+                
+            //}
+            //else
+            //{
+            //    MessageBox.Show("موضع کا انتخاب کریں اور انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //}
         }
 
         public void frmDucomentRecievedForScan_FormClosed(object sender, EventArgs e)

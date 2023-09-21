@@ -1658,7 +1658,7 @@ namespace SDC_Application.AL
                         string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
                         string IntiqalNo = txtIntiqalNo.Text.Split('/').First();
 
-                        message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Upload", Convert.ToInt32(cboMoza.SelectedValue.ToString()), 12, Convert.ToInt32(IntiqalNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        message = fi.UploadFileToServer(@path, "http://172.16.100.11:8082/Images/Uploads", Convert.ToInt32(cboMoza.SelectedValue.ToString()), 12, Convert.ToInt32(IntiqalNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
                         imageNo = imageNo + 1;
                         //I want to get the directory path Picturebox.Imagelocation is not working for me
                     }
@@ -1677,7 +1677,7 @@ namespace SDC_Application.AL
         {
             if (cboMoza.SelectedValue.ToString().Length > 3 && txtIntiqalNo.Text.Length > 0)
             {
-                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cboMoza.SelectedValue.ToString() + "&documentTypeId=12&recordNo=" + txtIntiqalNo.Text;
+                string url = @"https://172.16.100.11:8082/Images?mozaId=" + cboMoza.SelectedValue.ToString() + "&documentTypeId=12&recordNo=" + txtIntiqalNo.Text;
                 //System.Diagnostics.Process.Start(url);
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;
