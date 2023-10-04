@@ -143,6 +143,7 @@
             this.mnuSubIntiqalatCancel = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubIntiqalatAttNotImp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubUnAttestedMutOPM = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCoBiometricNotAttested = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
@@ -161,7 +162,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuCoBiometricNotAttested = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEnteredMutationsReport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -702,15 +703,15 @@
             // mnuFardeBadar
             // 
             this.mnuFardeBadar.Name = "mnuFardeBadar";
-            this.mnuFardeBadar.Size = new System.Drawing.Size(258, 42);
-            this.mnuFardeBadar.Text = "2-فرد بدر";
+            this.mnuFardeBadar.Size = new System.Drawing.Size(246, 42);
+            this.mnuFardeBadar.Text = "-فرد بدر";
             this.mnuFardeBadar.Click += new System.EventHandler(this.mnuFardeBadar_Click);
             // 
             // mnuMisalManualFb
             // 
             this.mnuMisalManualFb.Name = "mnuMisalManualFb";
-            this.mnuMisalManualFb.Size = new System.Drawing.Size(258, 42);
-            this.mnuMisalManualFb.Text = "3-اندراج مثل / دستی فرد بدر";
+            this.mnuMisalManualFb.Size = new System.Drawing.Size(246, 42);
+            this.mnuMisalManualFb.Text = "-اندراج مثل / دستی فرد بدر";
             this.mnuMisalManualFb.Click += new System.EventHandler(this.mnuMisalManualFb_Click);
             // 
             // mnuReports
@@ -1039,7 +1040,8 @@
             this.mnuSubIntiqalatCancel,
             this.mnuSubIntiqalatAttNotImp,
             this.mnuSubUnAttestedMutOPM,
-            this.mnuCoBiometricNotAttested});
+            this.mnuCoBiometricNotAttested,
+            this.mnuEnteredMutationsReport});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
             this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
@@ -1098,6 +1100,13 @@
             this.mnuSubUnAttestedMutOPM.Size = new System.Drawing.Size(348, 42);
             this.mnuSubUnAttestedMutOPM.Text = " - غیر تصدیق شدہ انتقالات";
             this.mnuSubUnAttestedMutOPM.Click += new System.EventHandler(this.mnuSubUnAttestedMutOPM_Click);
+            // 
+            // mnuCoBiometricNotAttested
+            // 
+            this.mnuCoBiometricNotAttested.Name = "mnuCoBiometricNotAttested";
+            this.mnuCoBiometricNotAttested.Size = new System.Drawing.Size(348, 42);
+            this.mnuCoBiometricNotAttested.Text = " - بائیو مٹرک شدہ، غیر تصدیق شدہ انتقالات";
+            this.mnuCoBiometricNotAttested.Click += new System.EventHandler(this.mnuCoBiometricNotAttested_Click);
             // 
             // mnuRHZ
             // 
@@ -1285,12 +1294,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuCoBiometricNotAttested
+            // mnuEnteredMutationsReport
             // 
-            this.mnuCoBiometricNotAttested.Name = "mnuCoBiometricNotAttested";
-            this.mnuCoBiometricNotAttested.Size = new System.Drawing.Size(348, 42);
-            this.mnuCoBiometricNotAttested.Text = " - بائیو مٹرک شدہ، غیر تصدیق شدہ انتقالات";
-            this.mnuCoBiometricNotAttested.Click += new System.EventHandler(this.mnuCoBiometricNotAttested_Click);
+            this.mnuEnteredMutationsReport.Name = "mnuEnteredMutationsReport";
+            this.mnuEnteredMutationsReport.Size = new System.Drawing.Size(348, 42);
+            this.mnuEnteredMutationsReport.Text = "- درج شدہ انتقالات ";
+            this.mnuEnteredMutationsReport.Click += new System.EventHandler(this.mnuEnteredMutationsReport_Click);
             // 
             // frmMain
             // 
@@ -1462,5 +1471,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuInconsistentRpt;
         private System.Windows.Forms.ToolStripMenuItem fmrDowraSchedule;
         private System.Windows.Forms.ToolStripMenuItem mnuCoBiometricNotAttested;
+        private System.Windows.Forms.ToolStripMenuItem mnuEnteredMutationsReport;
     }
 }

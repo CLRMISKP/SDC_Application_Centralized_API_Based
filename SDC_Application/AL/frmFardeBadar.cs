@@ -897,7 +897,7 @@ namespace SDC_Application.AL
                 string fbExistsKGF = txtFbExistsKGF.Text;
              DataTable dtFardatIntiqalat = fardBadarBL.GetFardatIntiqalatOnKhewatGrpupFareeqId(txtKhewatFreeqainGroupId.Text.Length > 0 ? txtKhewatFreeqainGroupId.Text : "0");
                 bool isProceed = true;
-             if(dtFardatIntiqalat.Rows.Count>0)
+                if (dtFardatIntiqalat.Rows.Count > 0 && dtFardatIntiqalat.Rows[0][0].ToString() != "0" && dtFardatIntiqalat.Rows[0][1].ToString() != "0")
              {
                  if (DialogResult.Yes == MessageBox.Show("اپکا انتخاب کردہ ریکارڈ " + dtFardatIntiqalat.Rows[0][0].ToString() + "  فردات اور " + dtFardatIntiqalat.Rows[0][1].ToString() + "  انتقالات میں موجود ہیں، کیا اپ اس مالک کو فرد بدر کے ذرئعے تبدیل کرنا چاہتے ہیں؟ ", "تبدیل کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                  {
@@ -2140,7 +2140,8 @@ namespace SDC_Application.AL
             this.txtDrustHissa.Text = this.calculateNetPart(this.txtDrustHissaBata.Text.Trim()).ToString();
             if (txtDrustHissa.Text.Length > 0)
             {
-                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKulHisay.Text), float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
+                float KhataKulHissay = txtDrustKulHissay.Text.Length > 0 && txtDrustKulHissay.Text != "0" && txtDrustKulHissay.Text != txtKulHisay.Text ? float.Parse(txtDrustKulHissay.Text) : float.Parse(txtKulHisay.Text);
+                string[] Area = cmnFns.CalculatedAreaFromHisa(KhataKulHissay, float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
                 txtDrustPersonKanal.Text = Area[0] != null ? Area[0].ToString() : "0";
                 txtDrustPersonMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
                 txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
@@ -3633,8 +3634,9 @@ namespace SDC_Application.AL
         {
             if (cmbMouza.SelectedValue.ToString().Length > 3 && txtFardBadarDocNO.Text.Length > 0)
             {
-                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + txtFardBadarDocNO.Text;
-                //System.Diagnostics.Process.Start(url);
+                string FbNo = txtFardBadarDocNO.Text.Split('/').First();
+                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + FbNo;
+                //System.Diagnostics.Process.Start(url); http://172.16.100.11:8087/Images?mozaId=15168&documentTypeId=11&recordNo=141
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;
                 iv.Show();
@@ -3664,7 +3666,7 @@ namespace SDC_Application.AL
                         string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
                         string FardBadarNo = txtFardBadarDocNO.Text.Split('/').First();
 
-                        message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        message = fi.UploadFileToServer(@path, "http://172.16.100.227/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
                         imageNo = imageNo + 1;
                         //I want to get the directory path Picturebox.Imagelocation is not working for me
                     }

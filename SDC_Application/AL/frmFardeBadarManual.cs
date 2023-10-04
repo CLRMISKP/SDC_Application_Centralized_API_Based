@@ -890,7 +890,7 @@ namespace SDC_Application.AL
                 string fbExistsKGF = txtFbExistsKGF.Text;
               DataTable dtFardatIntiqalat = fardBadarBL.GetFardatIntiqalatOnKhewatGrpupFareeqId(txtKhewatFreeqainGroupId.Text.Length > 0 ? txtKhewatFreeqainGroupId.Text : "0");
                 bool isProceed = true;
-             if(dtFardatIntiqalat.Rows.Count>0)
+                if (dtFardatIntiqalat.Rows.Count > 0 && dtFardatIntiqalat.Rows[0][0].ToString() != "0" && dtFardatIntiqalat.Rows[0][1].ToString() != "0")
              {
                  if (DialogResult.Yes == MessageBox.Show("اپکا انتخاب کردہ ریکارڈ " + dtFardatIntiqalat.Rows[0][0].ToString() + "  فردات اور " + dtFardatIntiqalat.Rows[0][1].ToString() + "  انتقالات میں موجود ہیں، کیا اپ اس مالک کو فرد بدر کے ذرئعے تبدیل کرنا چاہتے ہیں؟ ", "تبدیل کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                  {
@@ -2144,7 +2144,8 @@ namespace SDC_Application.AL
             this.txtDrustHissa.Text = this.calculateNetPart(this.txtDrustHissaBata.Text.Trim()).ToString();
             if (txtDrustHissa.Text.Length > 0)
             {
-                string[] Area = cmnFns.CalculatedAreaFromHisa(float.Parse(txtKulHisay.Text), float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
+                float KhataKulHissay = txtDrustKulHissay.Text.Length > 0 && txtDrustKulHissay.Text != "0" && txtDrustKulHissay.Text != txtKulHisay.Text ? float.Parse(txtDrustKulHissay.Text) : float.Parse(txtKulHisay.Text);
+                string[] Area = cmnFns.CalculatedAreaFromHisa(KhataKulHissay, float.Parse(txtDrustHissa.Text), Convert.ToInt32(txtKanal.Text), Convert.ToInt32(txtMarla.Text), float.Parse(txtSarsai.Text != "" ? txtSarsai.Text : "0"), float.Parse(txtFeet.Text != "" ? txtFeet.Text : "0"));
                 txtDrustPersonKanal.Text = Area[0] != null ? Area[0].ToString() : "0";
                 txtDrustPersonMarla.Text = Area[1] != null ? Area[1].ToString() : "0";
                 txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
@@ -3465,8 +3466,10 @@ namespace SDC_Application.AL
         {
             if (cmbMouza.SelectedValue.ToString().Length > 3 && txtFardBadarDocNO.Text.Length > 0)
             {
-                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + txtFardBadarDocNO.Text;
-                //System.Diagnostics.Process.Start(url);
+                string FbNo = txtFardBadarDocNO.Text.Split('/').First();
+                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + FbNo;
+                //string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + txtFardBadarDocNO.Text;
+                //System.Diagnostics.Process.Start(url); --http://172.16.100.227/Images?mozaId=
                 //frmDocumentImageViewer iv = new frmDocumentImageViewer();
                 //iv.url = url;
                 //iv.ShowDialog();
@@ -3499,8 +3502,8 @@ namespace SDC_Application.AL
                     {
                         string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
                         string FardBadarNo = txtFardBadarDocNO.Text.Split('/').First();
-                        
-                         message = fi.UploadFileToServer(@path, "https://kplr.gkp.pk:5002/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+
+                        message = fi.UploadFileToServer(@path, "http://172.16.100.227/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
                         imageNo = imageNo + 1;
                         //I want to get the directory path Picturebox.Imagelocation is not working for me
                     }
@@ -3524,6 +3527,50 @@ namespace SDC_Application.AL
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void btnSaveAll_Click(object sender, EventArgs e)
+        {
+            if (GridViewKhewatMalikaan.Rows.Count < 1)
+            {
+                DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
+
+                foreach (DataRow row in dtMalkan.Rows)
+                {
+                    string[] Area = row["Khewat_Area"].ToString().Split('-');
+                    string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
+                           "-1",
+                           cbFBDocuments.SelectedValue.ToString(),
+                            row["KhewatGroupFareeqId"].ToString(), //kgf_id,
+                           row["KhewatGroupId"].ToString(), //kg_id,
+                           "Fard_e_Badar",
+                           "0",
+                           row["seqno"].ToString(), //sqNo.ToString(),
+                           row["PersonId"].ToString(), //pid,
+                           row["PersonId"].ToString(), //pidProposed,
+                           row["KhewatTypeId"].ToString(), //khewatTypeId.ToString(),
+                           row["KhewatTypeId"].ToString(), //khewatTypeIdProposed.ToString(),
+                           row["FardAreaPart"].ToString(), //netPart,
+                           row["FardAreaPart"].ToString(), //netPartProposed,
+                           Area[0], //kanal.ToString(),
+                           Area[0], //kanalProposed.ToString(),
+                           Area[1], //marla.ToString(),
+                           Area[1], //marlaProposed.ToString(),
+                           Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsai.ToString(),
+                           Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsaiProposed.ToString(),
+                           Area[2], //sft.ToString(),
+                           Area[2], //sftProposed.ToString(),
+                           UsersManagments.UserId.ToString(),
+                           UsersManagments.UserName,
+                           row["FardAreaPart"].ToString(), //txtPersonNetHissa.Text.Trim(),
+                           row["FardAreaPart"].ToString(), //txtDrustHissa.Text.Trim(),
+                           cboKhataNo.SelectedValue.ToString());//KhattaId.ToString());
+                }
+                this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(cbFBDocuments.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString());
+                this.FillGridviewMalkan(khewatMalikanByFB);
+            }
+            else
+                MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");
         }
 
     }

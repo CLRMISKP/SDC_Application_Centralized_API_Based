@@ -29,6 +29,7 @@ namespace SDC_Application.AL
         DataTable dtkj = new DataTable();
         DataTable dtFardBadar = new DataTable();
         DataTable dtKhewatFareeqain = new DataTable();
+        DataTable dtKhewatFareeqainForBayan = new DataTable();
         DataTable dtKhewatFareeqainAll = new DataTable();
         DataTable dtKhewatFareeqainEdit = new DataTable();
         DataTable dtMushteriFareeqain = new DataTable();
@@ -96,6 +97,7 @@ namespace SDC_Application.AL
             cbSrNo.DataSource = null;
             txtDetails.Clear();
             this.Fill_Khata_DropDown();
+            this.Fill_Khata_DropDownForBayan();
             txtSerialNo.Text = getNextSrNoByMoza(cmbMouza.SelectedValue.ToString());
             //dtRHZchangeDetailsList = rhz.GetRHZChangeDetailsListBYMozaId(cmbMouza.SelectedValue.ToString());
             //cbSrNo.DataSource = dtRHZchangeDetailsList;
@@ -152,6 +154,28 @@ namespace SDC_Application.AL
                 cbokhataNo.DisplayMember = "KhataNo";
                 cbokhataNo.ValueMember = "RegisterHqDKhataId";
                 cbokhataNo.SelectedValue = 0;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void Fill_Khata_DropDownForBayan()
+        {
+            try
+            {
+
+               DataTable dt = misal.GetAllKhatajatByMoza(Convert.ToInt32(cmbMouza.SelectedValue.ToString()));
+               DataRow inteqKj = dt.NewRow();
+                inteqKj["RegisterHqDKhataId"] = "0";
+                inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
+                dt.Rows.InsertAt(inteqKj, 0);
+                cbKhataForBayan.DataSource = dt;
+                cbKhataForBayan.DisplayMember = "KhataNo";
+                cbKhataForBayan.ValueMember = "RegisterHqDKhataId";
+                cbKhataForBayan.SelectedValue = 0;
 
             }
             catch (Exception ex)
@@ -612,6 +636,8 @@ namespace SDC_Application.AL
                         FillMushteriFareeqainEdit();
                         this.GetKhatooniBayan(cboKhatoonies.SelectedValue.ToString());
                         btnLoadKhassras_Click(sender, e);
+                        fillGridViewKhatooniBayan();
+                        fillGridViewKhatooniBayanEdit();
                     }
 
                 }
@@ -1840,7 +1866,11 @@ namespace SDC_Application.AL
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            string lastId = rhz.UpdateRhzChangeConfirmStatus(txtRHZ_ChangeId.Text, UsersManagments.UserId.ToString());
+            if (lastId.Length > 5)
+            {
+                btnConfirm.Enabled = false;
+            }
         }
 
         private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -2458,7 +2488,7 @@ namespace SDC_Application.AL
             if (cmbMouza.SelectedValue.ToString().Length > 3 && cbokhataNo.SelectedValue.ToString().Length > 5)
             {
                 string[] khataNo = cbokhataNo.Text.Split('/');
-                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
+                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;
                 iv.Show();
@@ -2467,5 +2497,190 @@ namespace SDC_Application.AL
             else
                 MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
         }
+
+        private void cbKhataForBayan_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+             dtKhewatFareeqainForBayan = rhz.Proc_Get_KhewatFareeqeinBy_KhataId(cbKhataForBayan.SelectedValue.ToString());
+             cbKhataMalikanForBayan.DataSource = dtKhewatFareeqainForBayan;
+            cbKhataMalikanForBayan.DisplayMember = "PersonName";
+            cbKhataMalikanForBayan.ValueMember = "KhewatGroupFareeqId";
+        }
+
+        private void cbKhataMalikanForBayan_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataRow filteredRows = dtKhewatFareeqainForBayan.Select("KhewatGroupFareeqId = " + cbKhataMalikanForBayan.SelectedValue.ToString()).First() ;
+            if (filteredRows != null)
+            {
+                txtBayaHissa.Text =Math.Round(Convert.ToDecimal(filteredRows["FardAreaPart"].ToString()), 5).ToString();
+                txtBayaKanal.Text = filteredRows["Kanal"].ToString();
+                txtBayaMarla.Text = filteredRows["marla"].ToString();
+                txtBayaSarsai.Text =Math.Round(Convert.ToDecimal( filteredRows["sarsai"].ToString()), 3).ToString();
+                txtBayaPersonId.Text = filteredRows["PersonId"].ToString();
+            }
+
+        }
+
+        private void txtBayaHissaSold_Leave(object sender, EventArgs e)
+        {
+            if (txtBayaHissaSold.Text.Length > 0)
+            {
+                string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtBayaHissa.Text), float.Parse(txtBayaHissaSold.Text), Convert.ToInt32(txtBayaKanal.Text), Convert.ToInt32(txtBayaMarla.Text), float.Parse(txtBayaSarsai.Text != "" ? txtBayaSarsai.Text : "0"), float.Parse(Math.Round(((Convert.ToDecimal(txtBayaSarsai.Text != "" ? txtBayaSarsai.Text : "0")) * (decimal)30.25), 0).ToString()));
+                txtBayaKanalSold.Text = Area[0];
+                txtBayaMarlaSold.Text = Area[1];
+                txtBayaSarsaiSold.Text = Area[2];
+                txtBayaFeetSold.Text = Area[3];
+            }
+            else
+            {
+                txtBayaKanalSold.Text = "0";
+                txtBayaMarlaSold.Text = "0";
+                txtBayaSarsaiSold.Text = "0";
+                txtBayaFeetSold.Text ="0";
+            }
+
+        }
+
+        private void btnSaveBaya_Click(object sender, EventArgs e)
+        {
+            if (cboKhatoonies.SelectedValue.ToString().Length>5 && txtBayaHissaSold.Text.Length > 0 && txtBayaKanalSold.Text.Length > 0 && txtBayaMarlaSold.Text.Length > 0 && txtBayaSarsaiSold.Text.Length > 0)
+            {
+                if (txtKhatooniKhewatFareeqId.Text.Length > 5)
+                {
+                    string lastId = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqeinEdit(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, txtKhatooniKhewatFareeqId.Text, txtBayaKhataId.Text, cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaMarla.Text, txtBayaSarsai.Text, txtBayaSarsai.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, txtBayaHissaSold.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
+                    fillGridViewKhatooniBayanEdit();
+                }
+                else
+                {
+                    txtKhatooniKhewatFareeqId.Text = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqein(txtKhatooniKhewatFareeqId.Text, cbKhataMalikanForBayan.SelectedValue.ToString(), cbKhataForBayan.SelectedValue.ToString(), cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaSarsai.Text, (float.Parse(txtBayaSarsai.Text) * 30.25).ToString(), txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
+                    if (txtKhatooniKhewatFareeqId.Text.Length > 5)
+                    {
+                        string lastId = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqeinEdit(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, cbKhataMalikanForBayan.SelectedValue.ToString(), cbKhataForBayan.SelectedValue.ToString(), cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaMarla.Text, txtBayaSarsai.Text, txtBayaSarsai.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, txtBayaHissaSold.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
+                        fillGridViewKhatooniBayan();
+                        fillGridViewKhatooniBayanEdit();
+                    }
+                }
+            }
+            else
+                MessageBox.Show("کھتونی کا انتخاب کریں اور بائع کے تمام کوائف پر کریں", "کوائف نامکمل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void fillGridViewKhatooniBayan()
+        {
+            DataTable dt = rhz.GetKhatooniBayanByKhatooniId(cboKhatoonies.SelectedValue.ToString());
+            dgKhatooniBayan.DataSource = dt;
+            if (dt != null)
+            {
+                dgKhatooniBayan.Columns["CompleteName"].HeaderText = "نام بائع";
+                dgKhatooniBayan.Columns["KhewatFareeq_Total_Hissa"].Visible=false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Total_Kanal"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Total_Marla"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Total_Sarsai"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Total_Feet"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Sold_Hissa"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Sold_Kanal"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Sold_Marla"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Sold_Sarsai"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatFareeq_Sold_Feet"].Visible = false;
+                dgKhatooniBayan.Columns["Khatooni_Area_KMSr"].HeaderText = "کل رقبہ";
+                dgKhatooniBayan.Columns["Baya_Sold_Area_KMSr"].HeaderText = "بیع شدہ رقبہ";
+                dgKhatooniBayan.Columns["KhatooniKhewatFareeqRecId"].Visible = false;
+                dgKhatooniBayan.Columns["KhewatGroupFareeqId"].Visible = false;
+                dgKhatooniBayan.Columns["PersonId"].Visible = false;
+                dgKhatooniBayan.Columns["RegisterHqDKhataId"].Visible = false;
+                dgKhatooniBayan.Columns["KhatooniId"].Visible = false;
+                dgKhatooniBayan.Columns["Khatooni_Area_KMSqft"].Visible = false;
+            }
+        }
+        private void fillGridViewKhatooniBayanEdit()
+        {
+            DataTable dt = rhz.GetKhatooniBayanEditByKhatooniId(cboKhatoonies.SelectedValue.ToString(), cbSrNo.SelectedValue.ToString());
+            dgKhatooniBayanEdit.DataSource = dt;
+            if (dt != null)
+            {
+                dgKhatooniBayanEdit.Columns["CompleteName"].HeaderText = "نام بائع";
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Hissa_Prop"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Kanal_Prop"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Marla_Prop"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Sarsai_Prop"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Feet_Prop"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Hissa"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Kanal"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Marla"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Sarsai"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatFareeq_Sold_Feet"].Visible = false;
+                dgKhatooniBayanEdit.Columns["Khatooni_Area_KMSr"].HeaderText = "بیع شدہ رقبہ";
+                dgKhatooniBayanEdit.Columns["Baya_Sold_Area_Prop_KMSr"].HeaderText = "مجوزہ بیع شدہ رقبہ";
+                dgKhatooniBayanEdit.Columns["KhatooniKhewatFareeqRecId"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhewatGroupFareeqId"].Visible = false;
+                dgKhatooniBayanEdit.Columns["PersonId"].Visible = false;
+                dgKhatooniBayanEdit.Columns["RegisterHqDKhataId"].Visible = false;
+                dgKhatooniBayanEdit.Columns["KhatooniId"].Visible = false;
+                dgKhatooniBayanEdit.Columns["Khatooni_Area_KMSqft"].Visible = false;
+                dgKhatooniBayanEdit.Columns["BayaId"].Visible = false;
+
+            }
+        }
+
+        private void dgKhatooniBayan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView g = sender as DataGridView;
+            if (g.SelectedRows.Count > 0)
+            {
+                txtKhatooniKhewatFareeqId.Text = g.SelectedRows[0].Cells["KhatooniKhewatFareeqRecId"].Value.ToString();
+                txtBayaPersonId.Text = g.SelectedRows[0].Cells["PersonId"].Value.ToString();
+                txtBayaHissa.Text = g.SelectedRows[0].Cells["KhewatFareeq_Total_Hissa"].Value.ToString();
+                txtBayaHissaSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Hissa"].Value.ToString();
+                txtBayaKanal.Text = g.SelectedRows[0].Cells["KhewatFareeq_Total_Kanal"].Value.ToString();
+                txtBayaKanalSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Kanal"].Value.ToString();
+                txtBayaMarla.Text = g.SelectedRows[0].Cells["KhewatFareeq_Total_Marla"].Value.ToString();
+                txtBayaMarlaSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Marla"].Value.ToString();
+                txtBayaSarsai.Text = g.SelectedRows[0].Cells["KhewatFareeq_Total_Sarsai"].Value.ToString();
+                txtBayaSarsaiSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Sarsai"].Value.ToString();
+                txtBayaFeet.Text = g.SelectedRows[0].Cells["KhewatFareeq_Total_Feet"].Value.ToString();
+                txtBayaFeetSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Feet"].Value.ToString();
+                txtBayaKhewatGroupFareeqId.Text = g.SelectedRows[0].Cells["KhewatGroupFareeqId"].Value.ToString();
+                txtBayaKhataId.Text = g.SelectedRows[0].Cells["RegisterHqDKhataId"].Value.ToString();
+            }
+            foreach(DataGridViewRow row  in g.Rows)
+            {
+                if (row.Selected)
+                    row.Cells["ColSelBayan"].Value = 1;
+                else
+                    row.Cells["ColSelBayan"].Value = 0;
+
+            }
+        }
+
+        private void dgKhatooniBayanEdit_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView g = sender as DataGridView;
+            if (g.SelectedRows.Count > 0)
+            {
+                txtKhatooniKhewatFareeqId.Text = g.SelectedRows[0].Cells["KhatooniKhewatFareeqRecId"].Value.ToString();
+                txtBayaPersonId.Text = g.SelectedRows[0].Cells["PersonId"].Value.ToString();
+                txtBayaHissa.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Hissa"].Value.ToString();
+                txtBayaHissaSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Hissa_Prop"].Value.ToString();
+                txtBayaKanal.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Kanal"].Value.ToString();
+                txtBayaKanalSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Kanal_Prop"].Value.ToString();
+                txtBayaMarla.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Marla"].Value.ToString();
+                txtBayaMarlaSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Marla_Prop"].Value.ToString();
+                txtBayaSarsai.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Sarsai"].Value.ToString();
+                txtBayaSarsaiSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Sarsai_Prop"].Value.ToString();
+                txtBayaFeet.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Feet"].Value.ToString();
+                txtBayaFeetSold.Text = g.SelectedRows[0].Cells["KhewatFareeq_Sold_Feet_Prop"].Value.ToString();
+                txtBayaKhewatGroupFareeqId.Text = g.SelectedRows[0].Cells["KhewatGroupFareeqId"].Value.ToString();
+                txtBayaKhataId.Text = g.SelectedRows[0].Cells["RegisterHqDKhataId"].Value.ToString();
+                txtBayaId.Text = g.SelectedRows[0].Cells["BayaId"].Value.ToString();
+            }
+            foreach (DataGridViewRow row in g.Rows)
+            {
+                if (row.Selected)
+                    row.Cells["ColSelBayanEdit"].Value = 1;
+                else
+                    row.Cells["ColSelBayanEdit"].Value = 0;
+
+            }
+        }
+
     }
 }

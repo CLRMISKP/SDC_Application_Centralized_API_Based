@@ -81,7 +81,7 @@ namespace SDC_Application.AL
         public string TokenDate { get; set; }
         public string RegFardDispatchMainId { get; set; }
         public string PersonName { get; set; }
-        
+        public string SubSdcId { get; set; }
         public frmSDCReportingMain()
         {
             InitializeComponent();
@@ -152,6 +152,9 @@ namespace SDC_Application.AL
                 ReportParameter param = new ReportParameter();
                 param.Name = "TehsilId";
                 param.Values.Add(Tehsilid);
+                ReportParameter param2 = new ReportParameter();
+                param2.Name = "SubSdcId";
+                param2.Values.Add(SubSdcId);
                 rvIntiqalReport.ServerReport.SetParameters(param);
                 rvIntiqalReport.ShowParameterPrompts = true;
             }

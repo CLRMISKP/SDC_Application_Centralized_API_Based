@@ -388,7 +388,7 @@ namespace SDC_Application.AL
             }
             else
             {
-                MessageBox.Show("انتقال تقسیم سے من گروپ کا انتخاب کریں", "من گروپ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("کھاتہ اور مالک کا انتخاب کریں", "محفوظ نہیں ہو سکتا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 this.Close();
             }

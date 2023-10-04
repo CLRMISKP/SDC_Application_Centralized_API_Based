@@ -1308,7 +1308,7 @@ namespace SDC_Application.AL
             if (cmbMouza.SelectedValue.ToString().Length > 3 && cbokhataNo.SelectedValue.ToString().Length > 5)
             {
                 string[] khataNo = cbokhataNo.Text.Split('/');
-                string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
+                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
                 //System.Diagnostics.Process.Start(url);
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;

@@ -26,7 +26,18 @@ namespace SDC_Application.BL
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
             }
+            public DataTable GetKhatooniBayanByKhatooniId(string KhatooniId)
+            {
+                string spWithParam = "Proc_Get_KhatooniKhewatGroupFareeqein_By_KhatooniId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniId ;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
+            }
+            public DataTable GetKhatooniBayanEditByKhatooniId(string KhatooniId, string RHZ_ChangeId)
+            {
+                string spWithParam = "Proc_Get_KhatooniKhewatGroupFareeqeinEdit_By_KhatooniId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhatooniId+","+RHZ_ChangeId;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+            }
         public DataTable WEB_SP_DELETE_KhatooniRegister(string khatooniid)
         {
             string spWithParam = "WEB_SP_DELETE_KhatooniRegister  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + khatooniid;
@@ -60,6 +71,11 @@ namespace SDC_Application.BL
         public string SaveRHZChangeDetails(string RHZ_ChangeId, string MozaId, string SrNo, string ChangeDetails)
         {
             string spWithParam = "WEB_SP_INSERT_RHZ_Change_Record  "+RHZ_ChangeId+"," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + ", " + SrNo + ", N'" + ChangeDetails + "', " + Classess.UsersManagments.UserId + ", '" + Classess.UsersManagments.UserName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string UpdateRhzChangeConfirmStatus(string RHZ_ChangeId, string UserId)
+        {
+            string spWithParam = "Web_Sp_Update_RHZ_Confirm_Status  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + RHZ_ChangeId + "," + UserId;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
@@ -460,7 +476,22 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-
+        public string WEB_SP_INSERT_Khatooni_KhewatGroupFareeqeinEdit(string bayaId, string KhatooniKhewatGroupFareeqId, string KhewatGroupFareeqId, string RegisterHqDKhataId, string KhatooniId, string PersonId, string KhewatFareeq_Total_Hissa, string KhewatFareeq_Total_Hissa_Prop, string KhewatFareeq_Total_Kanal,       
+                string KhewatFareeq_Total_Kanal_Prop, string KhewatFareeq_Total_Marla, string KhewatFareeq_Total_Marla_Prop, string KhewatFareeq_Total_Sarsai, string KhewatFareeq_Total_Sarsai_Prop ,string KhewatFareeq_Total_Feet, string KhewatFareeq_Total_Feet_Prop, string KhewatFareeq_Sold_Hissa, string KhewatFareeq_Sold_Hissa_Prop,   
+                string KhewatFareeq_Sold_Kanal,string KhewatFareeq_Sold_Kanal_Prop,string KhewatFareeq_Sold_Marla,string KhewatFareeq_Sold_Marla_Prop ,string KhewatFareeq_Sold_Sarsai, string KhewatFareeq_Sold_Sarsai_Prop, string KhewatFareeq_Sold_Feet, string KhewatFareeq_Sold_Feet_Prop, string InsertUserId, string InsertLoginName, string RHZ_ChangeId)
+        {
+            string spWithParam = "WEB_SP_INSERT_KhatooniKhewatGroupFareeqeinEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + bayaId + "," + KhatooniKhewatGroupFareeqId + ",'" + KhewatGroupFareeqId + "'," + RegisterHqDKhataId + "," + KhatooniId + "," + PersonId + "," + KhewatFareeq_Total_Hissa + ",'" + KhewatFareeq_Total_Hissa_Prop + "'," + KhewatFareeq_Total_Kanal + "," + KhewatFareeq_Total_Kanal_Prop + "," + KhewatFareeq_Total_Marla + "," + KhewatFareeq_Total_Marla_Prop +
+                "," + KhewatFareeq_Total_Sarsai + "," + KhewatFareeq_Total_Sarsai_Prop + "," + KhewatFareeq_Total_Feet + "," + KhewatFareeq_Total_Feet_Prop + "," + KhewatFareeq_Sold_Hissa + "," + KhewatFareeq_Sold_Hissa_Prop + "," + KhewatFareeq_Sold_Kanal + ",'" + KhewatFareeq_Sold_Kanal_Prop + "','" + KhewatFareeq_Sold_Marla + "','" + KhewatFareeq_Sold_Marla_Prop + "','" + KhewatFareeq_Sold_Sarsai + "'," + KhewatFareeq_Sold_Sarsai_Prop + "," + KhewatFareeq_Sold_Feet + "," + KhewatFareeq_Sold_Feet_Prop + "," + InsertUserId + ",'" + InsertLoginName + "'," + RHZ_ChangeId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string WEB_SP_INSERT_Khatooni_KhewatGroupFareeqein(string KhatooniKhewatGroupFareeqId, string KhewatGroupFareeqId, string RegisterHqDKhataId, string KhatooniId, string PersonId, string KhewatFareeq_Total_Hissa, string KhewatFareeq_Total_Kanal,
+                 string KhewatFareeq_Total_Marla, string KhewatFareeq_Total_Sarsai, string KhewatFareeq_Total_Feet, string KhewatFareeq_Sold_Hissa, 
+                string KhewatFareeq_Sold_Kanal, string KhewatFareeq_Sold_Marla,  string KhewatFareeq_Sold_Sarsai,  string KhewatFareeq_Sold_Feet,  string InsertUserId, string InsertLoginName, string RHZ_ChangeId)
+        {
+            string spWithParam = "WEB_SP_INSERT_KhatooniKhewatGroupFareeqein " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniKhewatGroupFareeqId + ",'" + KhewatGroupFareeqId + "'," + RegisterHqDKhataId + "," + KhatooniId + "," + PersonId + "," + KhewatFareeq_Total_Hissa + "," + KhewatFareeq_Total_Kanal  + "," + KhewatFareeq_Total_Marla  +
+                "," + KhewatFareeq_Total_Marla + ","  + KhewatFareeq_Total_Sarsai  + "," + KhewatFareeq_Total_Feet + "," + KhewatFareeq_Sold_Hissa  + "," + KhewatFareeq_Sold_Kanal + "," + KhewatFareeq_Sold_Marla + "," + KhewatFareeq_Sold_Sarsai + "," + KhewatFareeq_Sold_Feet +  "," + InsertUserId + ",'" + InsertLoginName + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
         public DataTable WEB_SP_DELETE_KhewatGroupFareeqein(string Kgfid)
         {
             string spWithParam = "WEB_SP_DELETE_KhewatGroupFareeqein  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + Kgfid + "'";

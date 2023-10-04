@@ -56,6 +56,7 @@
             this.dgKhatajatProposed = new System.Windows.Forms.DataGridView();
             this.dgKhataEditColSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.rbPreviousKhata = new System.Windows.Forms.RadioButton();
             this.rbCurrentKhata = new System.Windows.Forms.RadioButton();
             this.btnDelProposedKhata = new System.Windows.Forms.Button();
@@ -215,31 +216,32 @@
             this.dgKhatooniBayan = new System.Windows.Forms.DataGridView();
             this.ColSelBayan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgKhatooniBayanEdit = new System.Windows.Forms.DataGridView();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txtBayaFeetSold = new System.Windows.Forms.TextBox();
+            this.txtKhatooniKhewatFareeqId = new System.Windows.Forms.TextBox();
+            this.btnNewBaya = new System.Windows.Forms.Button();
+            this.txtBayaHissaSold = new System.Windows.Forms.TextBox();
+            this.btnDelBaya = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.btnSaveBaya = new System.Windows.Forms.Button();
+            this.txtBayaSarsaiSold = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtBayaMarlaSold = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBayaKanalSold = new System.Windows.Forms.TextBox();
+            this.txtBayaHissa = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBayaSarsai = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBayaMarla = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtBayaKanal = new System.Windows.Forms.TextBox();
+            this.cbKhataMalikanForBayan = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbKhataForBayan = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.tabMushteryan = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
@@ -322,7 +324,12 @@
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.btnShowScanImg = new System.Windows.Forms.Button();
+            this.txtBayaId = new System.Windows.Forms.TextBox();
+            this.txtBayaPersonId = new System.Windows.Forms.TextBox();
+            this.txtBayaFeet = new System.Windows.Forms.TextBox();
+            this.txtBayaKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
+            this.txtBayaKhataId = new System.Windows.Forms.TextBox();
+            this.ColSelBayanEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -357,7 +364,7 @@
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayan)).BeginInit();
             this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayanEdit)).BeginInit();
             this.groupBox17.SuspendLayout();
             this.tabMushteryan.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -703,6 +710,20 @@
             this.groupBox3.TabIndex = 311;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "مجوزہ تفصیل کھاتہ";
+            // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(86, 76);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 210;
+            this.tt.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
             // 
             // rbPreviousKhata
             // 
@@ -2521,8 +2542,11 @@
             this.dgKhatooniBayan.Location = new System.Drawing.Point(3, 35);
             this.dgKhatooniBayan.Name = "dgKhatooniBayan";
             this.dgKhatooniBayan.ReadOnly = true;
+            this.dgKhatooniBayan.RowHeadersVisible = false;
+            this.dgKhatooniBayan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniBayan.Size = new System.Drawing.Size(1173, 159);
             this.dgKhatooniBayan.TabIndex = 2;
+            this.dgKhatooniBayan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhatooniBayan_CellClick);
             // 
             // ColSelBayan
             // 
@@ -2532,7 +2556,7 @@
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.dataGridView1);
+            this.groupBox18.Controls.Add(this.dgKhatooniBayanEdit);
             this.groupBox18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox18.Location = new System.Drawing.Point(3, 321);
             this.groupBox18.Name = "groupBox18";
@@ -2541,51 +2565,55 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "موجوزہ تفصیل بائعان";
             // 
-            // dataGridView1
+            // dgKhatooniBayanEdit
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn3});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1173, 128);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.dgKhatooniBayanEdit.AllowUserToAddRows = false;
+            this.dgKhatooniBayanEdit.AllowUserToDeleteRows = false;
+            this.dgKhatooniBayanEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgKhatooniBayanEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKhatooniBayanEdit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColSelBayanEdit});
+            this.dgKhatooniBayanEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgKhatooniBayanEdit.Location = new System.Drawing.Point(3, 35);
+            this.dgKhatooniBayanEdit.Name = "dgKhatooniBayanEdit";
+            this.dgKhatooniBayanEdit.ReadOnly = true;
+            this.dgKhatooniBayanEdit.RowHeadersVisible = false;
+            this.dgKhatooniBayanEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgKhatooniBayanEdit.Size = new System.Drawing.Size(1173, 128);
+            this.dgKhatooniBayanEdit.TabIndex = 5;
+            this.dgKhatooniBayanEdit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhatooniBayanEdit_CellClick);
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.button4);
-            this.groupBox17.Controls.Add(this.textBox9);
-            this.groupBox17.Controls.Add(this.button5);
+            this.groupBox17.Controls.Add(this.txtBayaKhataId);
+            this.groupBox17.Controls.Add(this.txtBayaKhewatGroupFareeqId);
+            this.groupBox17.Controls.Add(this.txtBayaFeet);
+            this.groupBox17.Controls.Add(this.txtBayaPersonId);
+            this.groupBox17.Controls.Add(this.txtBayaId);
+            this.groupBox17.Controls.Add(this.txtBayaFeetSold);
+            this.groupBox17.Controls.Add(this.txtKhatooniKhewatFareeqId);
+            this.groupBox17.Controls.Add(this.btnNewBaya);
+            this.groupBox17.Controls.Add(this.txtBayaHissaSold);
+            this.groupBox17.Controls.Add(this.btnDelBaya);
             this.groupBox17.Controls.Add(this.label40);
-            this.groupBox17.Controls.Add(this.button6);
-            this.groupBox17.Controls.Add(this.textBox10);
+            this.groupBox17.Controls.Add(this.btnSaveBaya);
+            this.groupBox17.Controls.Add(this.txtBayaSarsaiSold);
             this.groupBox17.Controls.Add(this.label41);
-            this.groupBox17.Controls.Add(this.textBox11);
+            this.groupBox17.Controls.Add(this.txtBayaMarlaSold);
             this.groupBox17.Controls.Add(this.label42);
             this.groupBox17.Controls.Add(this.label43);
-            this.groupBox17.Controls.Add(this.textBox12);
-            this.groupBox17.Controls.Add(this.textBox5);
+            this.groupBox17.Controls.Add(this.txtBayaKanalSold);
+            this.groupBox17.Controls.Add(this.txtBayaHissa);
             this.groupBox17.Controls.Add(this.label36);
-            this.groupBox17.Controls.Add(this.textBox6);
+            this.groupBox17.Controls.Add(this.txtBayaSarsai);
             this.groupBox17.Controls.Add(this.label37);
-            this.groupBox17.Controls.Add(this.textBox7);
+            this.groupBox17.Controls.Add(this.txtBayaMarla);
             this.groupBox17.Controls.Add(this.label38);
             this.groupBox17.Controls.Add(this.label39);
-            this.groupBox17.Controls.Add(this.textBox8);
-            this.groupBox17.Controls.Add(this.comboBox2);
+            this.groupBox17.Controls.Add(this.txtBayaKanal);
+            this.groupBox17.Controls.Add(this.cbKhataMalikanForBayan);
             this.groupBox17.Controls.Add(this.label35);
-            this.groupBox17.Controls.Add(this.comboBox1);
+            this.groupBox17.Controls.Add(this.cbKhataForBayan);
             this.groupBox17.Controls.Add(this.label34);
             this.groupBox17.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox17.Location = new System.Drawing.Point(3, 3);
@@ -2595,36 +2623,59 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "تبدیلی تفصیل بائعان";
             // 
-            // button4
+            // txtBayaFeetSold
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(359, 73);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(83, 39);
-            this.button4.TabIndex = 313;
-            this.button4.Text = "نیا خسرہ";
-            this.button4.UseVisualStyleBackColor = true;
+            this.txtBayaFeetSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaFeetSold.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaFeetSold.Location = new System.Drawing.Point(227, 77);
+            this.txtBayaFeetSold.Name = "txtBayaFeetSold";
+            this.txtBayaFeetSold.Size = new System.Drawing.Size(46, 30);
+            this.txtBayaFeetSold.TabIndex = 315;
+            this.txtBayaFeetSold.Text = "0";
+            this.txtBayaFeetSold.Visible = false;
             // 
-            // textBox9
+            // txtKhatooniKhewatFareeqId
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(1049, 77);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(71, 30);
-            this.textBox9.TabIndex = 71;
+            this.txtKhatooniKhewatFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKhatooniKhewatFareeqId.Location = new System.Drawing.Point(6, 77);
+            this.txtKhatooniKhewatFareeqId.Name = "txtKhatooniKhewatFareeqId";
+            this.txtKhatooniKhewatFareeqId.Size = new System.Drawing.Size(69, 39);
+            this.txtKhatooniKhewatFareeqId.TabIndex = 314;
+            this.txtKhatooniKhewatFareeqId.Text = "-1";
+            this.txtKhatooniKhewatFareeqId.Visible = false;
             // 
-            // button5
+            // btnNewBaya
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(264, 73);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(83, 39);
-            this.button5.TabIndex = 312;
-            this.button5.Text = "خذف کریں";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnNewBaya.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewBaya.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewBaya.Location = new System.Drawing.Point(380, 73);
+            this.btnNewBaya.Name = "btnNewBaya";
+            this.btnNewBaya.Size = new System.Drawing.Size(83, 39);
+            this.btnNewBaya.TabIndex = 313;
+            this.btnNewBaya.Text = "نیا بائع";
+            this.btnNewBaya.UseVisualStyleBackColor = true;
+            // 
+            // txtBayaHissaSold
+            // 
+            this.txtBayaHissaSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaHissaSold.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaHissaSold.Location = new System.Drawing.Point(1049, 77);
+            this.txtBayaHissaSold.Name = "txtBayaHissaSold";
+            this.txtBayaHissaSold.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaHissaSold.TabIndex = 71;
+            this.txtBayaHissaSold.Text = "0";
+            this.txtBayaHissaSold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataSarsaiProp_KeyPress);
+            this.txtBayaHissaSold.Leave += new System.EventHandler(this.txtBayaHissaSold_Leave);
+            // 
+            // btnDelBaya
+            // 
+            this.btnDelBaya.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelBaya.Location = new System.Drawing.Point(285, 73);
+            this.btnDelBaya.Name = "btnDelBaya";
+            this.btnDelBaya.Size = new System.Drawing.Size(83, 39);
+            this.btnDelBaya.TabIndex = 312;
+            this.btnDelBaya.Text = "خذف کریں";
+            this.btnDelBaya.UseVisualStyleBackColor = true;
             // 
             // label40
             // 
@@ -2636,25 +2687,27 @@
             this.label40.TabIndex = 67;
             this.label40.Text = "حصہ منتقلہ";
             // 
-            // button6
+            // btnSaveBaya
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(455, 73);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 39);
-            this.button6.TabIndex = 311;
-            this.button6.Text = "محفوظ کریں";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSaveBaya.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveBaya.Location = new System.Drawing.Point(476, 73);
+            this.btnSaveBaya.Name = "btnSaveBaya";
+            this.btnSaveBaya.Size = new System.Drawing.Size(83, 39);
+            this.btnSaveBaya.TabIndex = 311;
+            this.btnSaveBaya.Text = "محفوظ کریں";
+            this.btnSaveBaya.UseVisualStyleBackColor = true;
+            this.btnSaveBaya.Click += new System.EventHandler(this.btnSaveBaya_Click);
             // 
-            // textBox10
+            // txtBayaSarsaiSold
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(584, 77);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(71, 30);
-            this.textBox10.TabIndex = 74;
+            this.txtBayaSarsaiSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaSarsaiSold.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaSarsaiSold.Location = new System.Drawing.Point(584, 77);
+            this.txtBayaSarsaiSold.Name = "txtBayaSarsaiSold";
+            this.txtBayaSarsaiSold.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaSarsaiSold.TabIndex = 74;
+            this.txtBayaSarsaiSold.Text = "0";
+            this.txtBayaSarsaiSold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhataSarsaiProp_KeyPress);
             // 
             // label41
             // 
@@ -2666,15 +2719,16 @@
             this.label41.TabIndex = 68;
             this.label41.Text = " مرلہ منتقلہ";
             // 
-            // textBox11
+            // txtBayaMarlaSold
             // 
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox11.Enabled = false;
-            this.textBox11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(747, 77);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(71, 30);
-            this.textBox11.TabIndex = 73;
+            this.txtBayaMarlaSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaMarlaSold.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaMarlaSold.Location = new System.Drawing.Point(747, 77);
+            this.txtBayaMarlaSold.Name = "txtBayaMarlaSold";
+            this.txtBayaMarlaSold.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaMarlaSold.TabIndex = 73;
+            this.txtBayaMarlaSold.Text = "0";
+            this.txtBayaMarlaSold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeqNo_KeyPress);
             // 
             // label42
             // 
@@ -2696,25 +2750,26 @@
             this.label43.TabIndex = 70;
             this.label43.Text = "سرسائی منتقلہ";
             // 
-            // textBox12
+            // txtBayaKanalSold
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(900, 77);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(71, 30);
-            this.textBox12.TabIndex = 72;
+            this.txtBayaKanalSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaKanalSold.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaKanalSold.Location = new System.Drawing.Point(900, 77);
+            this.txtBayaKanalSold.Name = "txtBayaKanalSold";
+            this.txtBayaKanalSold.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaKanalSold.TabIndex = 72;
+            this.txtBayaKanalSold.Text = "0";
+            this.txtBayaKanalSold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeqNo_KeyPress);
             // 
-            // textBox5
+            // txtBayaHissa
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(474, 29);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(71, 30);
-            this.textBox5.TabIndex = 63;
+            this.txtBayaHissa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaHissa.Enabled = false;
+            this.txtBayaHissa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaHissa.Location = new System.Drawing.Point(439, 29);
+            this.txtBayaHissa.Name = "txtBayaHissa";
+            this.txtBayaHissa.Size = new System.Drawing.Size(106, 30);
+            this.txtBayaHissa.TabIndex = 63;
             // 
             // label36
             // 
@@ -2726,41 +2781,41 @@
             this.label36.TabIndex = 59;
             this.label36.Text = "کل حصے";
             // 
-            // textBox6
+            // txtBayaSarsai
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(120, 29);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(71, 30);
-            this.textBox6.TabIndex = 66;
+            this.txtBayaSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaSarsai.Enabled = false;
+            this.txtBayaSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaSarsai.Location = new System.Drawing.Point(71, 29);
+            this.txtBayaSarsai.Name = "txtBayaSarsai";
+            this.txtBayaSarsai.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaSarsai.TabIndex = 66;
             // 
             // label37
             // 
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(321, 29);
+            this.label37.Location = new System.Drawing.Point(279, 29);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(39, 31);
             this.label37.TabIndex = 60;
             this.label37.Text = " مرلہ";
             // 
-            // textBox7
+            // txtBayaMarla
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(244, 29);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(71, 30);
-            this.textBox7.TabIndex = 65;
+            this.txtBayaMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaMarla.Enabled = false;
+            this.txtBayaMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaMarla.Location = new System.Drawing.Point(202, 29);
+            this.txtBayaMarla.Name = "txtBayaMarla";
+            this.txtBayaMarla.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaMarla.TabIndex = 65;
             // 
             // label38
             // 
             this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(436, 29);
+            this.label38.Location = new System.Drawing.Point(394, 29);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(39, 31);
             this.label38.TabIndex = 61;
@@ -2770,57 +2825,59 @@
             // 
             this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(197, 29);
+            this.label39.Location = new System.Drawing.Point(148, 29);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(48, 31);
             this.label39.TabIndex = 62;
             this.label39.Text = "سرسائی";
             // 
-            // textBox8
+            // txtBayaKanal
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(359, 29);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(71, 30);
-            this.textBox8.TabIndex = 64;
+            this.txtBayaKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaKanal.Enabled = false;
+            this.txtBayaKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaKanal.Location = new System.Drawing.Point(317, 29);
+            this.txtBayaKanal.Name = "txtBayaKanal";
+            this.txtBayaKanal.Size = new System.Drawing.Size(71, 30);
+            this.txtBayaKanal.TabIndex = 64;
             // 
-            // comboBox2
+            // cbKhataMalikanForBayan
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DisplayMember = "KhataNo";
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(597, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(270, 31);
-            this.comboBox2.TabIndex = 57;
-            this.comboBox2.ValueMember = "RegisterHqDKhataId";
+            this.cbKhataMalikanForBayan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbKhataMalikanForBayan.DisplayMember = "KhataNo";
+            this.cbKhataMalikanForBayan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhataMalikanForBayan.FormattingEnabled = true;
+            this.cbKhataMalikanForBayan.Location = new System.Drawing.Point(609, 28);
+            this.cbKhataMalikanForBayan.Name = "cbKhataMalikanForBayan";
+            this.cbKhataMalikanForBayan.Size = new System.Drawing.Size(298, 31);
+            this.cbKhataMalikanForBayan.TabIndex = 57;
+            this.cbKhataMalikanForBayan.ValueMember = "RegisterHqDKhataId";
+            this.cbKhataMalikanForBayan.SelectionChangeCommitted += new System.EventHandler(this.cbKhataMalikanForBayan_SelectionChangeCommitted);
             // 
             // label35
             // 
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(873, 29);
+            this.label35.Location = new System.Drawing.Point(913, 28);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(69, 31);
             this.label35.TabIndex = 58;
             this.label35.Text = "کھاتہ مالکان";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
+            // cbKhataForBayan
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DisplayMember = "KhataNo";
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(948, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 31);
-            this.comboBox1.TabIndex = 55;
-            this.comboBox1.ValueMember = "RegisterHqDKhataId";
+            this.cbKhataForBayan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbKhataForBayan.DisplayMember = "KhataNo";
+            this.cbKhataForBayan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhataForBayan.FormattingEnabled = true;
+            this.cbKhataForBayan.Location = new System.Drawing.Point(989, 29);
+            this.cbKhataForBayan.Name = "cbKhataForBayan";
+            this.cbKhataForBayan.Size = new System.Drawing.Size(131, 31);
+            this.cbKhataForBayan.TabIndex = 55;
+            this.cbKhataForBayan.ValueMember = "RegisterHqDKhataId";
+            this.cbKhataForBayan.SelectionChangeCommitted += new System.EventHandler(this.cbKhataForBayan_SelectionChangeCommitted);
             // 
             // label34
             // 
@@ -3828,19 +3885,62 @@
             this.label58.TabIndex = 0;
             this.label58.Text = "نمبر شمار";
             // 
-            // btnShowScanImg
+            // txtBayaId
             // 
-            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(86, 76);
-            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnShowScanImg.Name = "btnShowScanImg";
-            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
-            this.btnShowScanImg.TabIndex = 210;
-            this.tt.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
-            this.btnShowScanImg.UseVisualStyleBackColor = true;
-            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
+            this.txtBayaId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaId.Location = new System.Drawing.Point(81, 77);
+            this.txtBayaId.Name = "txtBayaId";
+            this.txtBayaId.Size = new System.Drawing.Size(69, 39);
+            this.txtBayaId.TabIndex = 316;
+            this.txtBayaId.Text = "-1";
+            this.txtBayaId.Visible = false;
+            // 
+            // txtBayaPersonId
+            // 
+            this.txtBayaPersonId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaPersonId.Location = new System.Drawing.Point(3, 23);
+            this.txtBayaPersonId.Name = "txtBayaPersonId";
+            this.txtBayaPersonId.Size = new System.Drawing.Size(62, 39);
+            this.txtBayaPersonId.TabIndex = 317;
+            this.txtBayaPersonId.Text = "-1";
+            this.txtBayaPersonId.Visible = false;
+            // 
+            // txtBayaFeet
+            // 
+            this.txtBayaFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaFeet.Location = new System.Drawing.Point(175, 77);
+            this.txtBayaFeet.Name = "txtBayaFeet";
+            this.txtBayaFeet.Size = new System.Drawing.Size(46, 30);
+            this.txtBayaFeet.TabIndex = 318;
+            this.txtBayaFeet.Text = "0";
+            this.txtBayaFeet.Visible = false;
+            // 
+            // txtBayaKhewatGroupFareeqId
+            // 
+            this.txtBayaKhewatGroupFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaKhewatGroupFareeqId.Location = new System.Drawing.Point(37, 50);
+            this.txtBayaKhewatGroupFareeqId.Name = "txtBayaKhewatGroupFareeqId";
+            this.txtBayaKhewatGroupFareeqId.Size = new System.Drawing.Size(69, 39);
+            this.txtBayaKhewatGroupFareeqId.TabIndex = 319;
+            this.txtBayaKhewatGroupFareeqId.Text = "-1";
+            this.txtBayaKhewatGroupFareeqId.Visible = false;
+            // 
+            // txtBayaKhataId
+            // 
+            this.txtBayaKhataId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaKhataId.Location = new System.Drawing.Point(112, 63);
+            this.txtBayaKhataId.Name = "txtBayaKhataId";
+            this.txtBayaKhataId.Size = new System.Drawing.Size(69, 39);
+            this.txtBayaKhataId.TabIndex = 320;
+            this.txtBayaKhataId.Text = "-1";
+            this.txtBayaKhataId.Visible = false;
+            // 
+            // ColSelBayanEdit
+            // 
+            this.ColSelBayanEdit.HeaderText = "انتخاب کریں";
+            this.ColSelBayanEdit.Name = "ColSelBayanEdit";
+            this.ColSelBayanEdit.ReadOnly = true;
             // 
             // frmRhzSDCEditing
             // 
@@ -3899,7 +3999,7 @@
             this.groupBox19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayan)).EndInit();
             this.groupBox18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayanEdit)).EndInit();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.tabMushteryan.ResumeLayout(false);
@@ -4033,35 +4133,34 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelKhassras;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.DataGridView dgkhatooniKhassraEdit;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnNewBaya;
+        private System.Windows.Forms.Button btnDelBaya;
+        private System.Windows.Forms.Button btnSaveBaya;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridView dgKhatooniBayanEdit;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelBayan;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbKhataForBayan;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbKhataMalikanForBayan;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBayaHissa;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBayaSarsai;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBayaMarla;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtBayaKanal;
+        private System.Windows.Forms.TextBox txtBayaHissaSold;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtBayaSarsaiSold;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtBayaMarlaSold;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtBayaKanalSold;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.DataGridView dgMushteriFareeqainAll;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -4219,5 +4318,13 @@
         private System.Windows.Forms.Button btnViewAllMushtry;
         private System.Windows.Forms.Button btnMalikanFromPrevKhata;
         private System.Windows.Forms.Button btnShowScanImg;
+        private System.Windows.Forms.TextBox txtKhatooniKhewatFareeqId;
+        private System.Windows.Forms.TextBox txtBayaFeetSold;
+        private System.Windows.Forms.TextBox txtBayaId;
+        private System.Windows.Forms.TextBox txtBayaPersonId;
+        private System.Windows.Forms.TextBox txtBayaFeet;
+        private System.Windows.Forms.TextBox txtBayaKhewatGroupFareeqId;
+        private System.Windows.Forms.TextBox txtBayaKhataId;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelBayanEdit;
     }
 }

@@ -1332,6 +1332,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 27;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId= UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1349,6 +1350,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 28;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1366,6 +1368,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 29;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1383,6 +1386,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 30;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1400,6 +1404,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 31;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1434,6 +1439,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 32;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1451,6 +1457,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 34;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1468,6 +1475,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 35;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1502,6 +1510,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 54;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1519,6 +1528,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 41;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1570,6 +1580,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 42;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1633,6 +1644,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 43;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1734,6 +1746,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 48;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1798,6 +1811,7 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 52;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
@@ -1862,6 +1876,25 @@ namespace SDC_Application
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 48;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuEnteredMutationsReport_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 33;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();

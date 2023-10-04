@@ -67,16 +67,16 @@ namespace SDC_Application.AL
             // Get Intiqal Khatajat and Fill Grid view
             if (this.TokenId!="0")
             {
-                gbAttestationEnableDisable.Enabled = true;
-                gbAmalEnableDisable.Enabled = false;
+                //gbAttestationEnableDisable.Enabled = true;
+                //gbAmalEnableDisable.Enabled = false;
                 //btnAmaldaramad.Enabled = false;
                 //lblMutStatus.Text = "عملدرامد شدہ";
                 //lblMutStatus.ForeColor = Color.Green;
             }
             else
             {
-                gbAttestationEnableDisable.Enabled = false;
-                gbAmalEnableDisable.Enabled = true;
+                //gbAttestationEnableDisable.Enabled = false;
+                //gbAmalEnableDisable.Enabled = true;
                // btnAmaldaramad.Enabled = true;
                 //lblMutStatus.Text = "زیر تجویز";
                 //lblMutStatus.ForeColor = Color.Red;

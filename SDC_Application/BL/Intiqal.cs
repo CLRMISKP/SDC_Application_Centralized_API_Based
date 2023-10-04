@@ -357,6 +357,12 @@ namespace SDC_Application.BL
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
             }
+            public string GetDawraValidity(string Date)
+            {
+                string spWithParam = "select dbo.getFnDowra ( " + Classess.UsersManagments._Tehsilid.ToString() + ",'" + Date + "')";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+
+            }
             public string WEB_Self_SP_INSERT_Intiqal_KhataJat_and_Sellers(string IntiqalId, string IntiqalKhataId, string SellerPersonId, string InsertUserid)
             {
                 string spWithParam = "WEB_Self_SP_INSERT_Intiqal_KhataJat_and_Sellers " + Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalKhataId + ", " + SellerPersonId + ", " + InsertUserid + " ";
