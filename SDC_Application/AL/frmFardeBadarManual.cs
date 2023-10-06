@@ -3573,5 +3573,12 @@ namespace SDC_Application.AL
                 MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");
         }
 
+        private void exportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewHelper dgh = new DataGridViewHelper(GridViewKhewatMalikaan);
+            //dgh.ExportSelectedRowsToCSV();
+            dgh.ExportAllRowsToCSV();
+        }
+
     }
 }
