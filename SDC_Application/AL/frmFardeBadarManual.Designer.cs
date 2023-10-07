@@ -1486,6 +1486,7 @@
             this.GridViewKhewatMalikaan.TabIndex = 0;
             this.GridViewKhewatMalikaan.TabStop = false;
             this.GridViewKhewatMalikaan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewKhewatMalikaan_CellClick);
+            this.GridViewKhewatMalikaan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridViewKhewatMalikaan_CellFormatting);
             // 
             // ColCheck
             // 
@@ -1791,6 +1792,7 @@
             // btnSaveAll
             // 
             this.btnSaveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveAll.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveAll.Location = new System.Drawing.Point(6, 23);
             this.btnSaveAll.Name = "btnSaveAll";

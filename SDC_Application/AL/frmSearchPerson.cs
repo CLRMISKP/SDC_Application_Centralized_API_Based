@@ -132,6 +132,7 @@ namespace SDC_Application
                 GridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ نمبر";
                 GridViewPersons.Columns["QoamId"].Visible = false;
                 GridViewPersons.Columns["PersonName"].Visible = false;
+                GridViewPersons.Columns["FamilyNo"].HeaderText = "خاندان نمبر";
             }
             else
             {
