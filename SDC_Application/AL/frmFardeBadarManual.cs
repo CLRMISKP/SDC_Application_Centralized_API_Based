@@ -3531,46 +3531,67 @@ namespace SDC_Application.AL
 
         private void btnSaveAll_Click(object sender, EventArgs e)
         {
-            if (GridViewKhewatMalikaan.Rows.Count < 1)
+            if (GridViewKhewatMalikaan.Rows.Count < 1  )
             {
-                DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
-
-                foreach (DataRow row in dtMalkan.Rows)
+                if (txtFbId.Text.Length > 5 && cboKhataNo.SelectedValue.ToString().Length > 5)
                 {
-                    string[] Area = row["Khewat_Area"].ToString().Split('-');
-                    string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
-                           "-1",
-                           cbFBDocuments.SelectedValue.ToString(),
-                            row["KhewatGroupFareeqId"].ToString(), //kgf_id,
-                           row["KhewatGroupId"].ToString(), //kg_id,
-                           "Fard_e_Badar",
-                           "0",
-                           row["seqno"].ToString(), //sqNo.ToString(),
-                           row["PersonId"].ToString(), //pid,
-                           row["PersonId"].ToString(), //pidProposed,
-                           row["KhewatTypeId"].ToString(), //khewatTypeId.ToString(),
-                           row["KhewatTypeId"].ToString(), //khewatTypeIdProposed.ToString(),
-                           row["FardAreaPart"].ToString(), //netPart,
-                           row["FardAreaPart"].ToString(), //netPartProposed,
-                           Area[0], //kanal.ToString(),
-                           Area[0], //kanalProposed.ToString(),
-                           Area[1], //marla.ToString(),
-                           Area[1], //marlaProposed.ToString(),
-                           Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsai.ToString(),
-                           Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsaiProposed.ToString(),
-                           Area[2], //sft.ToString(),
-                           Area[2], //sftProposed.ToString(),
-                           UsersManagments.UserId.ToString(),
-                           UsersManagments.UserName,
-                           row["FardAreaPart"].ToString(), //txtPersonNetHissa.Text.Trim(),
-                           row["FardAreaPart"].ToString(), //txtDrustHissa.Text.Trim(),
-                           cboKhataNo.SelectedValue.ToString());//KhattaId.ToString());
+                    DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
+
+                    foreach (DataRow row in dtMalkan.Rows)
+                    {
+                        string[] Area = row["Khewat_Area"].ToString().Split('-');
+                        string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
+                               "-1",
+                               txtFbId.Text,
+                                row["KhewatGroupFareeqId"].ToString(), //kgf_id,
+                               row["KhewatGroupId"].ToString(), //kg_id,
+                               "Fard_e_Badar",
+                               "0",
+                               row["seqno"].ToString(), //sqNo.ToString(),
+                               row["PersonId"].ToString(), //pid,
+                               row["PersonId"].ToString(), //pidProposed,
+                               row["KhewatTypeId"].ToString(), //khewatTypeId.ToString(),
+                               row["KhewatTypeId"].ToString(), //khewatTypeIdProposed.ToString(),
+                               row["FardAreaPart"].ToString(), //netPart,
+                               row["FardAreaPart"].ToString(), //netPartProposed,
+                               Area[0], //kanal.ToString(),
+                               Area[0], //kanalProposed.ToString(),
+                               Area[1], //marla.ToString(),
+                               Area[1], //marlaProposed.ToString(),
+                               Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsai.ToString(),
+                               Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsaiProposed.ToString(),
+                               Area[2], //sft.ToString(),
+                               Area[2], //sftProposed.ToString(),
+                               UsersManagments.UserId.ToString(),
+                               UsersManagments.UserName,
+                               row["FardAreaPart"].ToString(), //txtPersonNetHissa.Text.Trim(),
+                               row["FardAreaPart"].ToString(), //txtDrustHissa.Text.Trim(),
+                               cboKhataNo.SelectedValue.ToString());//KhattaId.ToString());
+                    }
+                    this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(cbFBDocuments.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString());
+                    this.FillGridviewMalkan(khewatMalikanByFB);
                 }
-                this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(cbFBDocuments.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString());
-                this.FillGridviewMalkan(khewatMalikanByFB);
+                else
+                    MessageBox.Show("فرد بدر اور کھاتہ کا انتخاب کریں");
             }
             else
                 MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");
+        }
+
+        private void GridViewKhewatMalikaan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow Myrow in GridViewKhewatMalikaan.Rows)
+            {
+                // Here 2 cell is target value and 1 cell is Volume
+                if (float.Parse(Myrow.Cells["FardAreaPart"].Value.ToString()) != float.Parse(Myrow.Cells["FardAreaPart_Proposed"].Value.ToString()))
+                {
+                    Myrow.DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    //Myrow.DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+            }
         }
 
     }
