@@ -3577,7 +3577,6 @@ namespace SDC_Application.AL
             else
                 MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");
         }
-
         private void GridViewKhewatMalikaan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             foreach (DataGridViewRow Myrow in GridViewKhewatMalikaan.Rows)
@@ -3592,6 +3591,11 @@ namespace SDC_Application.AL
                     //Myrow.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
             }
+        private void exportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewHelper dgh = new DataGridViewHelper(GridViewKhewatMalikaan);
+            //dgh.ExportSelectedRowsToCSV();
+            dgh.ExportAllRowsToCSV();
         }
 
     }

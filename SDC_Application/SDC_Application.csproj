@@ -1165,6 +1165,7 @@
       <DependentUpon>frmToken.cs</DependentUpon>
     </Compile>
     <Compile Include="Classess\WebCam.cs" />
+    <Compile Include="DataGridViewHelper.cs" />
     <Compile Include="DatetoDateToken.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
