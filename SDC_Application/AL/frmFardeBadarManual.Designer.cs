@@ -1486,7 +1486,7 @@
             this.GridViewKhewatMalikaan.TabIndex = 0;
             this.GridViewKhewatMalikaan.TabStop = false;
             this.GridViewKhewatMalikaan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewKhewatMalikaan_CellClick);
-            this.GridViewKhewatMalikaan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridViewKhewatMalikaan_CellFormatting);
+            //this.GridViewKhewatMalikaan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridViewKhewatMalikaan_CellFormatting);
             // 
             // ColCheck
             // 
