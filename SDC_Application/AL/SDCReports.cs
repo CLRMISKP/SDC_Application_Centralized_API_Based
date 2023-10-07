@@ -67,7 +67,7 @@ namespace SDC_Application.AL
         private void SDCReports_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             frmMain main = new frmMain();
             string username = "Administrator";

@@ -49,8 +49,10 @@ namespace SDC_Application.AL
         private void frmDocReceiving_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
-            
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
+            //DataGridViewHelper.addHelpterToAllFormGridViews(this);
+
+
             // Load Mouza List 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cboMouza, "MozaNameUrdu", "MozaId");
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cboMouzaSearch, "MozaNameUrdu", "MozaId");

@@ -30,8 +30,8 @@ namespace SDC_Application
         {
             //CrystalReport1 objRpt = new CrystalReport1();
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
-
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
+           // DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             DataTable dt = new DataTable();
            SDC_Application.DL.Database  dbc = new DL.Database();

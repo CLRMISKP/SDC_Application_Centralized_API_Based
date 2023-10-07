@@ -112,7 +112,7 @@ namespace SDC_Application.AL
         private void frmTokenPopulate_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             TooltipPopulate();
             Proc_Get_SDCToken_Detail_All();

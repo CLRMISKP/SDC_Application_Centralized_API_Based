@@ -163,7 +163,7 @@ namespace SDC_Application.AL
         private void frmRegistrySearch_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             txtRegNo.Focus();
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");

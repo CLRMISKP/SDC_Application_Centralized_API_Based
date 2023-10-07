@@ -33,6 +33,14 @@ namespace SDC_Application
             DateTime converTed = new DateTime(s2);
     */
             Application.Run(new Login());// MessageBox.Show("Null");
+
+            /*
+            TestGridCSV_Helpter frm = new TestGridCSV_Helpter();
+            DataGridViewHelper.addHelpterToAllFormGridViews(frm);
+
+            Application.Run(frm);// MessageBox.Show("Null");
+            */
+            
             //Application.Run(new frmMISC());
 
             //Application.Run(new mainWinForm());

@@ -55,6 +55,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(205, 29);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.Text = "admin@clrmis";
             // 
             // btnSaveLogin
             // 
@@ -99,6 +100,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(205, 29);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "admin@pmu@1122";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 

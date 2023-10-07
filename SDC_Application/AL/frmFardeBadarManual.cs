@@ -766,7 +766,8 @@ namespace SDC_Application.AL
         private void frmMisalMain_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
+           // DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             FillMalikanTypeDropDown();
@@ -3573,11 +3574,16 @@ namespace SDC_Application.AL
                 MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");
         }
 
-        private void exportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            DataGridViewHelper dgh = new DataGridViewHelper(GridViewKhewatMalikaan);
-            //dgh.ExportSelectedRowsToCSV();
-            dgh.ExportAllRowsToCSV();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
     }
