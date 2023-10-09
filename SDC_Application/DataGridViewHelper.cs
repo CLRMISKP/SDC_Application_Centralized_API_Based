@@ -139,13 +139,11 @@ public class DataGridViewHelper
         foreach (Control control in frm.Controls)
         {
             FindDataGridViews(control);
-            //SetFont(control);
         }
 
         foreach (Control control in frm.Controls)
         {
-            //FindDataGridViews(control);
-            SetFont(control);
+           // SetFont(control);
         }
     }
 
