@@ -1247,6 +1247,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestGridCSV_Helpter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestGridCSV_Helpter.Designer.cs">
+      <DependentUpon>TestGridCSV_Helpter.cs</DependentUpon>
+    </Compile>
     <Compile Include="TokenDateToDate.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1790,6 +1796,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestGridCSV_Helpter.resx">
+      <DependentUpon>TestGridCSV_Helpter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AL\app.config">
       <SubType>Designer</SubType>

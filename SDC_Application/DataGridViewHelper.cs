@@ -20,120 +20,56 @@ public class DataGridViewHelper
     {
         dataGridView = dgv;
         originalSelectionMode = dataGridView.SelectionMode;
+
+
+        // Create a ContextMenuStrip
+        ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+
+        // Create a ToolStripMenuItem "Export to HTML" with an anonymous function handler
+        ToolStripMenuItem exportToHtmlItem = new ToolStripMenuItem("Export to HTML");
+        exportToHtmlItem.Click += (s, eventArgs) =>
+        {
+            // Handle the "Export to HTML" click event here
+            GenerateHtmlTable();
+        };
+
+        // Add the "Export to HTML" item to the context menu
+        contextMenuStrip.Items.Add(exportToHtmlItem);
+
+        // Set the context menu for the DataGridView
+        dataGridView.ContextMenuStrip = contextMenuStrip;
     }
 
-
-    public void ExportAllRowsToCSV()
+    // Recursive function to find DataGridView controls within containers
+    private static void  FindDataGridViews(Control parentControl)
     {
-        // Save the original selection mode
-        DataGridViewSelectionMode previousSelectionMode = dataGridView.SelectionMode;
-
-        // Set the selection mode to FullRowSelect
-        dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-        // Create a StringBuilder to build the CSV content
-        StringBuilder csvContent = new StringBuilder();
-
-
-
-        // Add headers row
-        foreach (DataGridViewColumn column in dataGridView.Columns)
+        foreach (Control control in parentControl.Controls)
         {
-            if (column.Visible)
+            if (control is DataGridView)
             {
-                csvContent.Append(column.HeaderText); // Add Text qualifier to headers
-                csvContent.Append(",");
+                DataGridView dg = (DataGridView)control;
+                new DataGridViewHelper(dg);
+            }
+            else
+            {
+                // Recursively search for DataGridView controls in child controls
+                FindDataGridViews(control);
             }
         }
-        csvContent.AppendLine(); // New line after headers
-
-
-        // Iterate through all rows
-        foreach (DataGridViewRow row in dataGridView.Rows)
-        {
-            // Iterate through all cells in the row
-            foreach (DataGridViewCell cell in row.Cells)
-            {
-
-                if (cell.OwningColumn.Visible)
-                { 
-                       // Append the cell value, replacing "," with "-"
-                    string cellValue = cell.Value != null ? cell.Value.ToString().Replace(",", "-") : "";
-                    csvContent.Append(cellValue);
-
-                    // Add a comma unless it's the last cell in the row
-                    if (cell.OwningColumn.Index < row.Cells.Count - 1)
-                    {
-                        if(cell.Visible)csvContent.Append(",");
-                    }             
-                }
-
-            }
-
-            // Add a new line to separate rows
-            csvContent.AppendLine();
-        }
-
-        // Restore the original selection mode
-        dataGridView.SelectionMode = previousSelectionMode;
-
-
-        GenerateHtmlTable(csvContent.ToString());
-        /*
-        // Save the CSV content to a file in the temp folder
-        string tempFolderPath = Path.GetTempPath();
-        string csvFilePath = Path.Combine(tempFolderPath, "AllData.csv");
-
-        using (TextWriter writer = new StreamWriter(csvFilePath, false, Encoding.UTF8))
-        {
-            writer.Write(csvContent.ToString());
-        }
-
-        // Open the CSV file with the default system application
-        System.Diagnostics.Process.Start(csvFilePath);
-        */
     }
 
-    public void ExportSelectedRowsToCSV()
-    {
-         
-        // Save the original selection mode
-        DataGridViewSelectionMode previousSelectionMode = dataGridView.SelectionMode;
+    public static void addHelpterToAllFormGridViews(Form frm){
+        // Call the recursive function to find DataGridView controls
 
-        // Set the selection mode to FullRowSelect
-        dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-        // Select all rows
-        foreach (DataGridViewRow row in dataGridView.Rows)
+        foreach (Control control in frm.Controls)
         {
-            row.Selected = true;
+            FindDataGridViews(control);
         }
-
-        // Copy the selected data to the clipboard
-        dataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-        dataGridView.SelectAll();
-        DataObject dataObj = dataGridView.GetClipboardContent();
-        Clipboard.SetDataObject(dataObj);
-
-        // Restore the original selection mode
-        dataGridView.SelectionMode = previousSelectionMode;
-
-
-      
-        // Save clipboard data to a Unicode CSV file in the temp folder
-        string tempFolderPath = Path.GetTempPath();
-        string csvFilePath = Path.Combine(tempFolderPath, "SelectedData.csv");
-
-        using (TextWriter writer = new StreamWriter(csvFilePath, false, Encoding.Unicode)) // Use Encoding.Unicode
-        {
-            writer.Write(Clipboard.GetText());
-        }
-
-        // Open the CSV file with the default system application
-        System.Diagnostics.Process.Start(csvFilePath);
     }
 
-    public static void GenerateHtmlTable(string csvContent)
+
+    public  void GenerateHtmlTable()
     {
         try
         {
@@ -141,52 +77,7 @@ public class DataGridViewHelper
             string timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
             string htmlFileName = "CSVTable_"+timeStamp+".html";
 
-            // Split CSV content into rows and cells
-            string[] rows = csvContent.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (rows.Length == 0)
-            {
-                Console.WriteLine("No data to generate an HTML table.");
-                return;
-            }
-
-            string[] headers = rows[0].Split(new[] { ',' }, StringSplitOptions.None);
-
-            // Construct the HTML content with the CSV data
-            StringBuilder htmlContent = new StringBuilder();
-            htmlContent.AppendLine("<html>");
-            htmlContent.AppendLine("<head>");
-            htmlContent.AppendLine("<style>");
-            htmlContent.AppendLine("table { border-collapse: collapse; width: 100%; }");
-            htmlContent.AppendLine("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
-            htmlContent.AppendLine("</style>");
-            htmlContent.AppendLine("</head>");
-            htmlContent.AppendLine("<body>");
-            htmlContent.AppendLine("<table>");
-
-            // Add headers row
-            htmlContent.AppendLine("<tr>");
-            foreach (string header in headers)
-            {
-                htmlContent.AppendLine("<th>"+header+"</th>");
-            }
-            htmlContent.AppendLine("</tr>");
-
-            // Skip the first row (headers) and process data rows
-            for (int i = 1; i < rows.Length; i++)
-            {
-                string[] cells = rows[i].Split(new[] { ',' }, StringSplitOptions.None);
-                htmlContent.AppendLine("<tr>");
-                foreach (string cell in cells)
-                {
-                    htmlContent.AppendLine("<td>"+cell+"</td>");
-                }
-                htmlContent.AppendLine("</tr>");
-            }
-
-            htmlContent.AppendLine("</table>");
-            htmlContent.AppendLine("</body>");
-            htmlContent.AppendLine("</html>");
+            string htmlContent = GenerateDataGridHtml();
 
             // Save the HTML content to a file
             string tempFolderPath = Path.GetTempPath();
@@ -207,6 +98,336 @@ public class DataGridViewHelper
         }
     }
 
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public string ConvertDataGridViewToJSArray(DataGridView dataGridView1)
+{
+    StringBuilder sb = new StringBuilder();
+
+    // Add JavaScript array initialization
+    sb.Append("const dataGrid_NO_SEL = [\n");
+
+    // Headers
+    sb.Append("[");
+    foreach (DataGridViewColumn column in dataGridView1.Columns)
+    {
+        if (column.Visible)
+//            sb.Append($"\"{column.HeaderText}\",");
+        sb.Append("\"" + column.HeaderText + "\",");
+
+    }
+    sb.Length--;  // remove the last comma
+    sb.Append("],\n");
+
+    // Rows
+    foreach (DataGridViewRow row in dataGridView1.Rows)
+    {
+        sb.Append("[");
+        foreach (DataGridViewCell cell in row.Cells)
+        {
+            if (cell.OwningColumn.Visible)
+                //sb.Append($"\"{cell.Value}\",");
+                sb.Append("\"" + cell.Value + "\",");
+
+        }
+        sb.Length--;  // remove the last comma
+        sb.Append("],\n");
+    }
+    sb.Length -= 2;  // remove the last comma and newline
+    sb.Append("\n];\n");  // Close the JavaScript array definition
+
+    return sb.ToString();
+}
+
+public string GenerateDataGridHtml()
+{
+    string cSharpHtml = @"
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>DataGrid Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid black;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div id='tableContainer'></div>
+<div id='totalsContainer'></div>
+
+<script>
+" + ConvertDataGridViewToJSArray(dataGridView) + @"
+
+	
+let lastSortedColumnName = '';
+let lastSortedDirection = '';  // either '↑' or '↓'
+
+dataGrid = addSelectColumn(dataGrid_NO_SEL);
+console.log(dataGrid);
+
+document.getElementById('tableContainer').innerHTML = generateHTMLTable(dataGrid);
+document.getElementById('totalsContainer').innerHTML = generateTotalsHTML(dataGrid);
+
+
+function sortDataGrid(columnIndex, sortInt) {
+    const compareFunction = (a, b) => {
+        if (a[columnIndex] < b[columnIndex]) return sortInt;
+        if (a[columnIndex] > b[columnIndex]) return -sortInt;
+        return 0;
+    };
+
+    // Exclude the header row, sort the rest
+    const header = dataGrid[0];
+    const sortedRows = dataGrid.slice(1).sort(compareFunction);
+
+    dataGrid = [header, ...sortedRows];   
+}
+
+
+
+function toggleArrow(event) {
+    const thElement = event.target;
+    const clickedHeader = thElement.innerText;
+    
+    // Remove arrows from clickedHeader, if they exist
+    const cleanedHeader = clickedHeader.replace('↑', '').replace('↓', '');
+
+    // Determine the column index
+    const columnIndex = dataGrid[0].findIndex(header => header === cleanedHeader);
+
+    // Determine sort direction
+    const sortInt = thElement.innerHTML.endsWith('↑') ? -1 : 1;  // Toggle the sorting direction
+
+    lastSortedColumnName = cleanedHeader;
+    lastSortedDirection = sortInt === 1 ? '↑' : '↓';
+
+    // Sort the dataGrid based on the clicked header
+    sortDataGrid(columnIndex, sortInt);
+
+    // Re-render the table with the sorted dataGrid
+    document.querySelector('table').outerHTML = generateHTMLTable(dataGrid);
+}
+
+
+
+
+function headerClicked(event) {
+    const headerText = event.target.innerText;
+    //alert(`You clicked the header: ${headerText}`);
+    toggleArrow(event);  // Add this line
+}
+
+function selectClicked() {
+    let anySelected = dataGrid.some(row => row[row.length - 1] === 'true');
+
+    if (anySelected) {
+        for (let i = 1; i < dataGrid.length; i++) {
+            dataGrid[i][dataGrid[i].length - 1] = 'false';
+        }
+    } else {
+        for (let i = 1; i < dataGrid.length; i++) {
+            dataGrid[i][dataGrid[i].length - 1] = 'true';
+        }
+    }
+
+    // Re-render the table
+    document.getElementById('tableContainer').innerHTML = generateHTMLTable(dataGrid);
+}
+
+
+function checkboxClicked(event, rowIndex) {
+    const isChecked = event.target.checked;
+    
+    // Update the corresponding value in the dataGrid
+    dataGrid[rowIndex][dataGrid[rowIndex].length - 1] = isChecked ? 'true' : 'false';
+
+    // Update the totals
+    document.getElementById('totalsContainer').innerHTML = generateTotalsHTML(dataGrid);
+}
+
+function sumKanalMarlaFeet(valueStr, currentSumStr) {
+    const KANAL_TO_FEET = 5445;
+    const MARLA_TO_FEET = 272.25;
+
+    const convertToFeet = (kanal, marla, feet) => {
+        return (kanal * KANAL_TO_FEET) + (marla * MARLA_TO_FEET) + parseFloat(feet);
+    };
+
+    const [valueKanal, valueMarla, valueFeet] = valueStr.split('-').map(Number);
+    const [sumKanal, sumMarla, sumFeet] = currentSumStr.split('-').map(Number);
+
+    const totalValueFeet = convertToFeet(valueKanal, valueMarla, valueFeet);
+    const totalSumFeet = convertToFeet(sumKanal, sumMarla, sumFeet);
+
+    const totalFeet = totalValueFeet + totalSumFeet;
+
+    const resultantKanal = Math.floor(totalFeet / KANAL_TO_FEET);
+    const resultantFeetWithoutKanal = totalFeet % KANAL_TO_FEET;
+    const resultantMarla = Math.floor(resultantFeetWithoutKanal / MARLA_TO_FEET);
+    const resultantFeet = resultantFeetWithoutKanal % MARLA_TO_FEET;
+
+    return `${resultantKanal}-${resultantMarla}-${resultantFeet.toFixed(2)}`;
+}
+
+
+
+function generateTotalsHTML(dataGrid) {
+    // Fetch column widths from the 'tableContainer' table
+    let table = document.querySelector('#tableContainer table');
+    let columnWidths = [];
+    if (table) {
+        let headerCells = table.rows[0].cells;
+        for (let cell of headerCells) {
+            columnWidths.push(cell.offsetWidth);
+        }
+    }
+
+    let html = '<table>';
+
+    // Add a row with the 'Total' header
+    html += '<tr><th colspan=""' + dataGrid[0].length + '"">Total</th></tr>';
+
+    // Add the row with the summations
+    html += '<tr>';
+    for (let j = 0; j < dataGrid[0].length; j++) {
+		let style = 'style=""width: ' + columnWidths[j] + 'px""'; // Apply the fetched width
+        if (j == 0) {
+            html += '<td ' + style + '></td>'; // The first cell will be empty
+        } else if (j == dataGrid[0].length - 1) {
+            html += '<td ' + style + '></td>'; // Last 'Select' column, so add an empty cell
+        } else {
+            let sum = '0-0-0';
+            for (let i = 1; i < dataGrid.length; i++) {
+				let valueStr = dataGrid[i][j].toString(); // Ensure it's a string
+				
+                // Consider only rows with 'Select' as true
+				if (dataGrid[i][dataGrid[i].length - 1] === 'true') {
+					if (valueStr.includes('-')) {						
+						sum = sumKanalMarlaFeet(valueStr, sum);
+					} else {
+						let value = parseFloat(valueStr);
+						if (!isNaN(value)) { // Check if it's a number
+							sum = (parseInt(sum) + value).toString();
+						}
+					}
+				}
+			}
+            html += '<td ' + style + '>' + sum + '</td>';
+        }
+    }
+    html += '</tr>';
+	
+    html += '</table>';
+    return html;
+}
+
+
+
+
+function generateHTMLTable(dataGrid) {
+    let html = '<table>';
+
+	for (let i = 0; i < dataGrid.length; i++) {
+		html += '<tr>';
+
+		for (let j = 0; j < dataGrid[i].length; j++) {
+			
+			if (i === 0) {
+				var arrowToAppend = '';
+				// Headers with attached click event
+				if(dataGrid[i][j] == lastSortedColumnName){
+					arrowToAppend = lastSortedDirection;
+				}
+					
+				if(dataGrid[i].length-1 == j) {
+					html += '<th onclick=\'selectClicked(event)\' style=\'cursor:pointer;\'>' + dataGrid[i][j] + arrowToAppend + '</th>';
+				} else {
+					html += '<th onclick=\'headerClicked(event)\' style=\'cursor:pointer;\'>' + dataGrid[i][j] + arrowToAppend + '</th>';
+				}
+					
+			} else {
+				if (j === dataGrid[i].length - 1) {
+					// Add the checkbox based on the last element's value
+					let checkbox = (dataGrid[i][j] === 'true') 
+						? '<input type=\'checkbox\' checked onclick=\'checkboxClicked(event, ' + i + ')\'>'
+						: '<input type=\'checkbox\' onclick=\'checkboxClicked(event, ' + i + ')\'>';
+
+					html += '<td>' + checkbox + '</td>';
+				} else {
+					// Regular data
+					html += '<td>' + dataGrid[i][j] + '</td>';
+				}
+			}
+		}
+
+		html += '</tr>';
+	}
+	
+    html += '</table>';
+	
+    return html;
+}
+
+
+function addSelectColumn(grid) {
+    // Clone the input grid to avoid modifying it directly
+    let modifiedGrid = JSON.parse(JSON.stringify(grid));
+    
+    // Add 'Select' to the header
+    modifiedGrid[0].push('Select');
+    
+    // Add 'true' to the end of each subsequent row
+    for (let i = 1; i < modifiedGrid.length; i++) {
+        modifiedGrid[i].push('true');
+    }
+
+    return modifiedGrid;
+}
+
+function synchronizeColumnWidths() {
+    const mainTableRows = document.querySelector('#tableContainer table').rows;
+    const totalsTableRows = document.querySelector('#totalsContainer table').rows;
+
+    if (mainTableRows.length > 0 && totalsTableRows.length > 0) {
+        const mainHeaderCells = mainTableRows[0].cells;
+        const totalsHeaderCells = totalsTableRows[0].cells;
+
+        for (let i = 0; i < mainHeaderCells.length; i++) {
+            const width = mainHeaderCells[i].offsetWidth;
+            if (totalsHeaderCells[i]) {
+                totalsHeaderCells[i].style.width = `${width}px`;
+            }
+        }
+    }
+}
+
+
+	
+</script>
+
+</body>
+</html>
+";
+
+    return cSharpHtml;
+}
 
 
 }

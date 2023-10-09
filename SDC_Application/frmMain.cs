@@ -216,7 +216,7 @@ namespace SDC_Application
         {
 
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
             // UsersManagments._Tehsilid = Convert.ToInt32(ConfigurationSettings.AppSettings["Tehsil"]);
             BL.AreaProfile af = new BL.AreaProfile();
             DataTable dt = af.GetDistTehsilNames(UsersManagments._Tehsilid.ToString(), UsersManagments.SubSdcId.ToString());

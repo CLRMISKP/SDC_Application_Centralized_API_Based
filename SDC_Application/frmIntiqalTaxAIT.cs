@@ -27,7 +27,7 @@ namespace SDC_Application
         {
 
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             ReportParameter[] rp = new ReportParameter[1];
                 rp[0] = new ReportParameter("intiqalid", this.IntiqalId);

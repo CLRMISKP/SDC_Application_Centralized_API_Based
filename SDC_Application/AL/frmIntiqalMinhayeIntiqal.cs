@@ -66,7 +66,7 @@ namespace SDC_Application.AL
         private void frmIntiqalMinhayeIntiqal_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             this.fillIntiqalListForMinhayeIntiqal(this.MozaId.ToString());
             this.FilldgMinhayeIntiqal();

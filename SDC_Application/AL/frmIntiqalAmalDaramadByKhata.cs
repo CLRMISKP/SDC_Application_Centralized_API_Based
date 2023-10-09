@@ -62,7 +62,7 @@ namespace SDC_Application.AL
         private void frmIntiqalAmalDaramadByKhata_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
             if (UsersManagments.Implementation == "0")
             {
                 this.btnAmaldaramad.Visible = false;

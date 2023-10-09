@@ -34,7 +34,7 @@ namespace SDC_Application.AL
         private void frmIntiqalRevenueReports_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
            
             GetRecordIfAvailable();
             this.lblIntiqalNo.Text = this.IntiqalNo;

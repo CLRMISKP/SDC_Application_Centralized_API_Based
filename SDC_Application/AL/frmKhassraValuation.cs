@@ -38,7 +38,7 @@ namespace SDC_Application.AL
         private void frmKhassraValuation_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             objauto.FillCombo("Proc_Get_Intiqal_PlotTypes_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() , cboKhassraType, "PlotType_Urdu", "PlotTypeId");

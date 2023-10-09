@@ -114,7 +114,7 @@ namespace SDC_Application
         private void frmDocumentImageViewer_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             //this.LoadFiles(this.KhataPictures);
             pbImageViewer.LoadAsync(@"http://175.107.63.31:9090/Images?mozaId=15141&documentTypeId=13&recordNo=1");
