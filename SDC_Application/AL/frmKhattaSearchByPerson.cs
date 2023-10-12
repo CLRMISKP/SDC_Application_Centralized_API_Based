@@ -274,9 +274,9 @@ namespace SDC_Application.AL
         {
 
           
-            if (grdPersonKatajats.DataSource != null)
+            if (grdPersonKatajats.DataSource != null) 
             {
-                if (rbKhatta.Checked)
+                if (rbKhatta.Checked && grdPersonKatajats.CurrentRow != null) //  bro adding null check cause of current row null 
                 {
                     DataTable dtKhewatFareeqainByPerson = new DataTable();
                     dtKhewatFareeqainByPerson = intiqal.KhewatGroupFareeqByKhataIdPersonId(grdPersonKatajats.CurrentRow.Cells["RegisterHqDKhataId"].Value.ToString(), grdPersonKatajats.CurrentRow.Cells["PersonId"].Value.ToString());
@@ -285,7 +285,7 @@ namespace SDC_Application.AL
                     
                 }
 
-                if (rbKhatooni.Checked)
+                if (rbKhatooni.Checked && grdPersonKatajats.CurrentRow != null)
                 {
 
                    

@@ -180,43 +180,51 @@ public class DataGridViewHelper
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public string ConvertDataGridViewToJSArray(DataGridView dataGridView1)
-{
-    StringBuilder sb = new StringBuilder();
-
-    // Add JavaScript array initialization
-    sb.Append("const dataGrid_NO_SEL = [\n");
-
-    // Headers
-    sb.Append("[");
-    foreach (DataGridViewColumn column in dataGridView1.Columns)
     {
-        if (column.Visible)
-//            sb.Append($"\"{column.HeaderText}\",");
-        sb.Append("\"" + column.HeaderText + "\",");
+        StringBuilder sb = new StringBuilder();
 
-    }
-    sb.Length--;  // remove the last comma
-    sb.Append("],\n");
+        // Add JavaScript array initialization
+        sb.Append("const dataGrid_NO_SEL = [\n");
 
-    // Rows
-    foreach (DataGridViewRow row in dataGridView1.Rows)
-    {
+        // Headers
         sb.Append("[");
-        foreach (DataGridViewCell cell in row.Cells)
+        foreach (DataGridViewColumn column in dataGridView1.Columns)
         {
-            if (cell.OwningColumn.Visible)
-                //sb.Append($"\"{cell.Value}\",");
-                sb.Append("\"" + cell.Value + "\",");
-
+            if (column.Visible)
+            {
+                sb.Append("\"" + column.HeaderText + "\",");
+            }
         }
         sb.Length--;  // remove the last comma
         sb.Append("],\n");
-    }
-    sb.Length -= 2;  // remove the last comma and newline
-    sb.Append("\n];\n");  // Close the JavaScript array definition
 
-    return sb.ToString();
-}
+        // Rows
+        foreach (DataGridViewRow row in dataGridView1.Rows)
+        {
+            sb.Append("[");
+            foreach (DataGridViewCell cell in row.Cells)
+            {
+                if (cell.OwningColumn.Visible)
+                {
+                    string cellValue = cell.Value == null ? "" : cell.Value.ToString()
+                        .Replace(",", "'")
+                        .Replace("\"", "'")
+                        .Replace("\r\n", "\\n")
+                        .Replace("\n\r", "\\n")
+                        .Replace("\r", "\\n")
+                        .Replace("\n", "\\n");
+                    sb.Append("\"" + cellValue + "\",");
+                }
+            }
+            sb.Length--;  // remove the last comma
+            sb.Append("],\n");
+        }
+        sb.Length -= 2;  // remove the last comma and newline
+        sb.Append("\n];\n");  // Close the JavaScript array definition
+
+        return sb.ToString();
+    }
+
 
 public string GenerateDataGridHtml()
 {
