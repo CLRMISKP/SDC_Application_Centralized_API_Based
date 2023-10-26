@@ -111,6 +111,16 @@ namespace SDC_Application {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] alvi_Nastaleeq_Lahori_shipped {
+            get {
+                object obj = ResourceManager.GetObject("alvi_Nastaleeq_Lahori_shipped", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Approve_icon2 {

@@ -5,6 +5,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
+using System.Drawing;
+using System.Drawing.Text;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 /* 
   USAGE
@@ -13,6 +17,7 @@ using System.IO;
  */
 public class DataGridViewHelper
 {
+    public static Font font = null;
     private DataGridView dataGridView;
     private DataGridViewSelectionMode originalSelectionMode;
 
@@ -40,6 +45,55 @@ public class DataGridViewHelper
         dataGridView.ContextMenuStrip = contextMenuStrip;
     }
 
+
+    public static void LoadFontFromResource(Control control)
+    {
+        if(DataGridViewHelper.font==null){
+                // Load the font data from your resources
+                byte[] fontData = SDC_Application.Resource1.alvi_Nastaleeq_Lahori_shipped;
+
+                if (fontData == null)
+                {
+                   // throw new Exception("Font resource not found.");
+                }
+
+                // Create a private font collection
+                using (PrivateFontCollection fontCollection = new PrivateFontCollection())
+                {
+                    // Pin the font data in memory
+                    IntPtr fontDataPtr = Marshal.AllocCoTaskMem(fontData.Length);
+                    Marshal.Copy(fontData, 0, fontDataPtr, fontData.Length);
+
+                    // Add the font to the collection
+                    fontCollection.AddMemoryFont(fontDataPtr, fontData.Length);
+
+                    // Free the pinned memory
+                    Marshal.FreeCoTaskMem(fontDataPtr);
+
+                    DataGridViewHelper.font= new Font(fontCollection.Families[0], 12);
+                }
+        }
+
+                   // if (control.GetType() != typeof(CheckBox) && control.Font != null)
+                  if ( control.Font != null)
+                    {
+                        if (control.Name == "label1") {
+                            int i = 0; 
+                            i++;
+                        }
+                        // Create a new font with the loaded font family and the existing font size and style
+                        Font newFont = new Font(DataGridViewHelper.font.FontFamily, control.Font.Size, control.Font.Style);
+  
+                        // Apply the new font to the control
+                       control.Font = newFont;
+                    }
+                    else
+                    {
+                        // The control doesn't have a font property, so you can't apply the font.
+                        //throw new Exception("Control does not have a font property.");
+                    }
+    }
+
     // Recursive function to find DataGridView controls within containers
     private static void  FindDataGridViews(Control parentControl)
     {
@@ -58,6 +112,26 @@ public class DataGridViewHelper
         }
     }
 
+    // Recursive function to find DataGridView controls within containers
+    // Recursive function to set the font for controls that have a Font property
+    private static void SetFont(Control parentControl)
+    {
+        DataGridViewHelper.LoadFontFromResource(parentControl);
+
+        foreach (Control control in parentControl.Controls)
+        {
+            
+            /*if (control.Font != null)
+            {
+                DataGridViewHelper.LoadFontFromResource(control);
+                control.Font = font;
+            }*/
+            SetFont(control);
+        }
+    }
+
+
+
     public static void addHelpterToAllFormGridViews(Form frm){
         // Call the recursive function to find DataGridView controls
 
@@ -65,6 +139,11 @@ public class DataGridViewHelper
         foreach (Control control in frm.Controls)
         {
             FindDataGridViews(control);
+        }
+
+        foreach (Control control in frm.Controls)
+        {
+           // SetFont(control);
         }
     }
 
@@ -101,43 +180,51 @@ public class DataGridViewHelper
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public string ConvertDataGridViewToJSArray(DataGridView dataGridView1)
-{
-    StringBuilder sb = new StringBuilder();
-
-    // Add JavaScript array initialization
-    sb.Append("const dataGrid_NO_SEL = [\n");
-
-    // Headers
-    sb.Append("[");
-    foreach (DataGridViewColumn column in dataGridView1.Columns)
     {
-        if (column.Visible)
-//            sb.Append($"\"{column.HeaderText}\",");
-        sb.Append("\"" + column.HeaderText + "\",");
+        StringBuilder sb = new StringBuilder();
 
-    }
-    sb.Length--;  // remove the last comma
-    sb.Append("],\n");
+        // Add JavaScript array initialization
+        sb.Append("const dataGrid_NO_SEL = [\n");
 
-    // Rows
-    foreach (DataGridViewRow row in dataGridView1.Rows)
-    {
+        // Headers
         sb.Append("[");
-        foreach (DataGridViewCell cell in row.Cells)
+        foreach (DataGridViewColumn column in dataGridView1.Columns)
         {
-            if (cell.OwningColumn.Visible)
-                //sb.Append($"\"{cell.Value}\",");
-                sb.Append("\"" + cell.Value + "\",");
-
+            if (column.Visible)
+            {
+                sb.Append("\"" + column.HeaderText + "\",");
+            }
         }
         sb.Length--;  // remove the last comma
         sb.Append("],\n");
-    }
-    sb.Length -= 2;  // remove the last comma and newline
-    sb.Append("\n];\n");  // Close the JavaScript array definition
 
-    return sb.ToString();
-}
+        // Rows
+        foreach (DataGridViewRow row in dataGridView1.Rows)
+        {
+            sb.Append("[");
+            foreach (DataGridViewCell cell in row.Cells)
+            {
+                if (cell.OwningColumn.Visible)
+                {
+                    string cellValue = cell.Value == null ? "" : cell.Value.ToString()
+                        .Replace(",", "'")
+                        .Replace("\"", "'")
+                        .Replace("\r\n", "\\n")
+                        .Replace("\n\r", "\\n")
+                        .Replace("\r", "\\n")
+                        .Replace("\n", "\\n");
+                    sb.Append("\"" + cellValue + "\",");
+                }
+            }
+            sb.Length--;  // remove the last comma
+            sb.Append("],\n");
+        }
+        sb.Length -= 2;  // remove the last comma and newline
+        sb.Append("\n];\n");  // Close the JavaScript array definition
+
+        return sb.ToString();
+    }
+
 
 public string GenerateDataGridHtml()
 {
