@@ -117,6 +117,7 @@
             this.mnuSubIntiqalatAttestedNotImplemented = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubBiometricCapturedNotAttestIntiqalat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubNotAttestedMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDePendingMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuYearlyIntiqalatReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalaQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalMakhloot = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,6 +145,8 @@
             this.mnuSubIntiqalatAttNotImp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubUnAttestedMutOPM = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCoBiometricNotAttested = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEnteredMutationsReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDePendingMutCo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,7 +165,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuEnteredMutationsReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAdminRptAttMutAudit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -695,7 +698,7 @@
             // mnuIndrajMisal
             // 
             this.mnuIndrajMisal.Name = "mnuIndrajMisal";
-            this.mnuIndrajMisal.Size = new System.Drawing.Size(258, 42);
+            this.mnuIndrajMisal.Size = new System.Drawing.Size(246, 42);
             this.mnuIndrajMisal.Text = "1-اندراج مثل ";
             this.mnuIndrajMisal.Visible = false;
             this.mnuIndrajMisal.Click += new System.EventHandler(this.mnuIndrajMisal_Click);
@@ -818,7 +821,9 @@
             this.mnuSubCancelledInital,
             this.mnuSubIntiqalatAttestedNotImplemented,
             this.mnuSubBiometricCapturedNotAttestIntiqalat,
-            this.mnuSubNotAttestedMut});
+            this.mnuSubNotAttestedMut,
+            this.mnuDePendingMut,
+            this.mnuAdminRptAttMutAudit});
             this.mnuIntiqalReport.Name = "mnuIntiqalReport";
             this.mnuIntiqalReport.Size = new System.Drawing.Size(355, 42);
             this.mnuIntiqalReport.Text = "6 - انتقالا ت رپورٹس";
@@ -885,6 +890,13 @@
             this.mnuSubNotAttestedMut.Size = new System.Drawing.Size(348, 42);
             this.mnuSubNotAttestedMut.Text = " - غیر تصدیق شدہ انتقالات";
             this.mnuSubNotAttestedMut.Click += new System.EventHandler(this.mnuSubNotAttestedMut_Click);
+            // 
+            // mnuDePendingMut
+            // 
+            this.mnuDePendingMut.Name = "mnuDePendingMut";
+            this.mnuDePendingMut.Size = new System.Drawing.Size(348, 42);
+            this.mnuDePendingMut.Text = "- ڈیٹا انٹری نامکمل انتقالات";
+            this.mnuDePendingMut.Click += new System.EventHandler(this.mnuDePendingMut_Click);
             // 
             // mnuYearlyIntiqalatReports
             // 
@@ -1041,7 +1053,8 @@
             this.mnuSubIntiqalatAttNotImp,
             this.mnuSubUnAttestedMutOPM,
             this.mnuCoBiometricNotAttested,
-            this.mnuEnteredMutationsReport});
+            this.mnuEnteredMutationsReport,
+            this.mnuDePendingMutCo});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
             this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
@@ -1107,6 +1120,20 @@
             this.mnuCoBiometricNotAttested.Size = new System.Drawing.Size(348, 42);
             this.mnuCoBiometricNotAttested.Text = " - بائیو مٹرک شدہ، غیر تصدیق شدہ انتقالات";
             this.mnuCoBiometricNotAttested.Click += new System.EventHandler(this.mnuCoBiometricNotAttested_Click);
+            // 
+            // mnuEnteredMutationsReport
+            // 
+            this.mnuEnteredMutationsReport.Name = "mnuEnteredMutationsReport";
+            this.mnuEnteredMutationsReport.Size = new System.Drawing.Size(348, 42);
+            this.mnuEnteredMutationsReport.Text = "- درج شدہ انتقالات ";
+            this.mnuEnteredMutationsReport.Click += new System.EventHandler(this.mnuEnteredMutationsReport_Click);
+            // 
+            // mnuDePendingMutCo
+            // 
+            this.mnuDePendingMutCo.Name = "mnuDePendingMutCo";
+            this.mnuDePendingMutCo.Size = new System.Drawing.Size(348, 42);
+            this.mnuDePendingMutCo.Text = "- ڈیٹا انٹری نامکمل انتقالات";
+            this.mnuDePendingMutCo.Click += new System.EventHandler(this.mnuDePendingMutCo_Click);
             // 
             // mnuRHZ
             // 
@@ -1184,11 +1211,11 @@
             this.labelUser.AutoSize = true;
             this.labelUser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelUser.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUser.ForeColor = System.Drawing.Color.Teal;
             this.labelUser.Location = new System.Drawing.Point(76, 5);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(137, 26);
+            this.labelUser.Size = new System.Drawing.Size(109, 34);
             this.labelUser.TabIndex = 7;
             this.labelUser.Text = "Unspecified";
             // 
@@ -1294,12 +1321,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuEnteredMutationsReport
+            // mnuAdminRptAttMutAudit
             // 
-            this.mnuEnteredMutationsReport.Name = "mnuEnteredMutationsReport";
-            this.mnuEnteredMutationsReport.Size = new System.Drawing.Size(348, 42);
-            this.mnuEnteredMutationsReport.Text = "- درج شدہ انتقالات ";
-            this.mnuEnteredMutationsReport.Click += new System.EventHandler(this.mnuEnteredMutationsReport_Click);
+            this.mnuAdminRptAttMutAudit.Name = "mnuAdminRptAttMutAudit";
+            this.mnuAdminRptAttMutAudit.Size = new System.Drawing.Size(348, 42);
+            this.mnuAdminRptAttMutAudit.Text = " - تصدیق شدہ انتقالات برائے آڈٹ";
+            this.mnuAdminRptAttMutAudit.Click += new System.EventHandler(this.mnuAdminRptAttMutAudit_Click);
             // 
             // frmMain
             // 
@@ -1472,5 +1499,8 @@
         private System.Windows.Forms.ToolStripMenuItem fmrDowraSchedule;
         private System.Windows.Forms.ToolStripMenuItem mnuCoBiometricNotAttested;
         private System.Windows.Forms.ToolStripMenuItem mnuEnteredMutationsReport;
+        private System.Windows.Forms.ToolStripMenuItem mnuDePendingMut;
+        private System.Windows.Forms.ToolStripMenuItem mnuDePendingMutCo;
+        private System.Windows.Forms.ToolStripMenuItem mnuAdminRptAttMutAudit;
     }
 }

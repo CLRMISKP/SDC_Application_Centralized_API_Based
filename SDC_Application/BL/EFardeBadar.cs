@@ -181,6 +181,7 @@ namespace SDC_Application.BL
                    string KhassraDetailId,
                    string KhatooniId,
                    string AreaTypeId,
+                    string AreaTypeIdProp,
                    string Kanal,
                    string Kanal_Proposed,
                    string Marla,
@@ -204,6 +205,7 @@ namespace SDC_Application.BL
             KhassraDetailId + "," +
             KhatooniId + "," +
             AreaTypeId + "," +
+            AreaTypeIdProp + "," +
             Kanal + ",'" +
             Kanal_Proposed + "','" +
             Marla + "'," +

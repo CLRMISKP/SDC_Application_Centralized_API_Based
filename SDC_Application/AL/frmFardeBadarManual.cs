@@ -1241,7 +1241,7 @@ namespace SDC_Application.AL
                 string FbKhassraId = txtFbKhassraId.Text;
                    
                 string khasraId= txtKhassraId.Text;
-                    string lastId = fardBadarBL.SaveFBKhassraRegister(FbKhassraId, FbKhasraDetailId, FbId,khasraId,cmbMouza.SelectedValue.ToString(),txtKhassraNo.Text.Trim(), KhassranoProposed, khasraDetailId,khatoniid, aretype, k,kp, m,mp, s,sp, f,fp, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    string lastId = fardBadarBL.SaveFBKhassraRegister(FbKhassraId, FbKhasraDetailId, FbId,khasraId,cmbMouza.SelectedValue.ToString(),txtKhassraNo.Text.Trim(), KhassranoProposed, khasraDetailId,khatoniid, aretype,"0", k,kp, m,mp, s,sp, f,fp, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                     if (lastId != "-1")
                     {
                         this.txtKhassraNo.ReadOnly = false;
@@ -3552,7 +3552,7 @@ namespace SDC_Application.AL
 
         private void btnSaveAll_Click(object sender, EventArgs e)
         {
-            if (GridViewKhewatMalikaan.Rows.Count < 1)
+            if (GridViewKhewatMalikaan.Rows.Count < 1 && txtFbId.Text.Length > 5 && cboKhataNo.SelectedValue.ToString().Length>5)
             {
                 DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
 
@@ -3561,7 +3561,7 @@ namespace SDC_Application.AL
                     string[] Area = row["Khewat_Area"].ToString().Split('-');
                     string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
                            "-1",
-                           cbFBDocuments.SelectedValue.ToString(),
+                           txtFbId.Text,
                             row["KhewatGroupFareeqId"].ToString(), //kgf_id,
                            row["KhewatGroupId"].ToString(), //kg_id,
                            "Fard_e_Badar",

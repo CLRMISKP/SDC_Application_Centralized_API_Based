@@ -166,6 +166,11 @@ namespace SDC_Application.AL
             {
                 rvIntiqalReport.ServerReport.SetParameters(rp);
             }
+            else if (UsersManagments.check == 61) //-- Khata Khatooni Khassra Detail Report
+            {
+
+                rvIntiqalReport.ServerReport.SetParameters(r);
+            }
             else
             {
                 ReportParameter param = new ReportParameter();
@@ -586,6 +591,28 @@ namespace SDC_Application.AL
                  ReportParameter[] rp = new ReportParameter[1];
                  rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                  this.SetCredentials("AreaDifference_KhataKhewatKhatooni", rp, false);
+
+             }
+             if (UsersManagments.check == 56) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("Intiqal_Pending", rp, false);
+
+             }
+             if (UsersManagments.check == 57) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("Attested_Mutation_For_Audit", rp, false);
+
+             }
+             if (UsersManagments.check == 61) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("KhataKhatooniKhassras", rp, false);
 
              }
         }

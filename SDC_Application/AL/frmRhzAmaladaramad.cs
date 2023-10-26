@@ -1317,6 +1317,57 @@ namespace SDC_Application.AL
             else
                 MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
         }
+
+        private void rbCurrent_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterMalikan();
+        }
+
+        private void rbPrev_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterMalikan();
+        }
+
+        private void rbAll_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterMalikan();
+        }
+        private void FilterMalikan()
+        {
+            if (rbAll.Checked)
+            {
+                view.RowFilter = "RecStatus LIKE '%%'";
+                dgKhewatFareeqainAll.DataSource = view;
+                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+            }
+            else if (rbCurrent.Checked)
+            {
+                view.RowFilter = "RecStatus LIKE '%موجودہ%'";
+                dgKhewatFareeqainAll.DataSource = view;
+                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+            }
+            else if (rbPrev.Checked)
+            {
+                view.RowFilter = "RecStatus LIKE '%سابقہ%'";
+                dgKhewatFareeqainAll.DataSource = view;
+                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+            }
+        }
+
+        private void btnShowKhassraRpt_Click(object sender, EventArgs e)
+        {
+            if (cbokhataNo.SelectedValue.ToString().Length > 5)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 61;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.KhataId = cbokhataNo.SelectedValue.ToString();
+                obj.Show();
+            }
+            
+        }
        
     }
 }

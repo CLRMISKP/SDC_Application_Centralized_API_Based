@@ -563,8 +563,9 @@ namespace SDC_Application.AL
         {
             try
             {
-                if (cboKhatoonies.SelectedValue.ToString() != "0")
-                {
+                this.ClearKhatooniControls();
+                this.panelKhassra.Enabled = false;
+                //DataTable g = cboKhatoonies.DataSource ;
                     this.panelKhassra.Enabled = true;
                     //DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
                     DataTable KhatooniEditingDetails = rhz.GetKhatooniEditingDetailsByKhatooniId(cboKhatoonies.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
@@ -630,7 +631,6 @@ namespace SDC_Application.AL
                             //        //txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
                             //    }
                             //}
-                        }
 
                         this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
                         FillMushteriFareeqainEdit();
@@ -638,14 +638,13 @@ namespace SDC_Application.AL
                         btnLoadKhassras_Click(sender, e);
                         fillGridViewKhatooniBayan();
                         fillGridViewKhatooniBayanEdit();
+                        this.panelKhassra.Enabled = true;
                     }
-
-                }
                 else
                 {
-                    this.ClearKhatooniControls();
-                    this.panelKhassra.Enabled = false;
+                    
                 }
+            }
             }
             catch (Exception ex)
             {

@@ -357,6 +357,7 @@ namespace SDC_Application.AL
                 this.gridViewKhassraAreaDetails.Columns["KhatooniId"].Visible = false;
                 this.gridViewKhassraAreaDetails.Columns["KhassraDetailId"].Visible = false;
                 this.gridViewKhassraAreaDetails.Columns["AreaTypeId"].Visible = false;
+                this.gridViewKhassraAreaDetails.Columns["AreaTypeIdProp"].Visible = false;
                 this.gridViewKhassraAreaDetails.Columns["FB_KhassraId"].Visible = false;
 
                 ////// Set Grid columns Names ///////////
@@ -476,6 +477,19 @@ namespace SDC_Application.AL
             cboAreaType.DisplayMember = "AreaType";
             cboAreaType.ValueMember = "AreaTypeId";
             cboAreaType.SelectedValue = 0;
+
+        }
+        private void fillAreaTypeProp()
+        {
+            DataTable AreaTypesProp = misalBL.GetAreaTypesList();
+            DataRow row = AreaTypesProp.NewRow();
+            row["AreaType"] = " - قسم اراضی چنیے - ";
+            row["AreaTypeId"] = 0;
+            AreaTypesProp.Rows.Add(row);
+            cboAreaTypeProp.DataSource = AreaTypesProp;
+            cboAreaTypeProp.DisplayMember = "AreaType";
+            cboAreaTypeProp.ValueMember = "AreaTypeId";
+            cboAreaTypeProp.SelectedValue = 0;
 
         }
 
@@ -770,6 +784,7 @@ namespace SDC_Application.AL
             this.AreaTypesList = misalBL.GetAreaTypesList();
             this.FillKhataJaatByMoza();
             fillAreaType();
+            fillAreaTypeProp();
             this.FillQoamCombo();
             Fill_ComboKhewatTypes();
             //this.FillMisalMian();
@@ -1231,7 +1246,7 @@ namespace SDC_Application.AL
                 string FbKhassraId = txtFbKhassraId.Text;
                    
                 string khasraId= txtKhassraId.Text;
-                    string lastId = fardBadarBL.SaveFBKhassraRegister(FbKhassraId, FbKhasraDetailId, FbId,khasraId,cmbMouza.SelectedValue.ToString(),txtKhassraNo.Text.Trim(), KhassranoProposed, khasraDetailId,khatoniid, aretype, k,kp, m,mp, s,sp, f,fp, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    string lastId = fardBadarBL.SaveFBKhassraRegister(FbKhassraId, FbKhasraDetailId, FbId,khasraId,cmbMouza.SelectedValue.ToString(),txtKhassraNo.Text.Trim(), KhassranoProposed, khasraDetailId,khatoniid, aretype, cboAreaTypeProp.SelectedValue.ToString(), k,kp, m,mp, s,sp, f,fp, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                     if (lastId != "-1")
                     {
                         this.txtKhassraNo.ReadOnly = false;
@@ -1853,6 +1868,7 @@ namespace SDC_Application.AL
                             txtFbKhassraDetailId.Text = row.Cells["FB_KhassraRegisterDetailId"].Value.ToString();
                             // txtkh.Text = row.Cells["RegisterHqDKhataId"].Value.ToString();
                             cboAreaType.SelectedValue = row.Cells["AreaTypeId"].Value.ToString();
+                            cboAreaTypeProp.SelectedValue = row.Cells["AreaTypeIdProp"].Value.ToString();
                             txtKhassraKanal.Text = row.Cells["Kanal"].Value.ToString();
                             txtKhassraMarla.Text = row.Cells["Marla"].Value.ToString();
                             txtKhassraSarsai.Text = row.Cells["Sarsai"].Value.ToString();
