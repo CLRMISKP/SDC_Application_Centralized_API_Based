@@ -150,7 +150,7 @@ namespace SDC_Application.BL
 
             try
             {
-                lastId = dbobject.ExecStoredProcedure("WEB_Self_SP_Update_Users_TokenRole " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",", mycomm);
+                lastId = dbobject.ExecStoredProcedure("WEB_Self_SP_Update_Users_TokenRole ", mycomm);
 
             }
             catch (Exception e)

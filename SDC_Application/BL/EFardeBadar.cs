@@ -39,7 +39,13 @@ namespace SDC_Application.BL
             retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
             return retVal;
         }
-
+        public string DeleteFbKhatooniBaya(string BayaRecId)
+        {
+            string retVal = "";
+            string spWithParms = "WEB_SP_Delete_KhatooniBaya  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," +BayaRecId;
+            retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+            return retVal;
+        }
         #endregion
         #region Revert  Fard e Badar 
 
@@ -68,7 +74,18 @@ namespace SDC_Application.BL
             string spWithParms = "Proc_Get_FardBadar_Main_By_DocumentNo_EFB  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + FB_DocumentNo + "'," + MozaId.ToString();
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
+        public DataTable GetFbKhatooniKhewatGroupFareeqain(string KhatooniId)
+        {
+            string spWithParms = "Proc_Get_Fb_KhatooniKhewatGroupFareeqain  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + KhatooniId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParms);
+        }
         #endregion
+        public string WEB_SP_INSERT_FB_Khatooni_KhewatGroupFareeqein(string bayaRecId, string KhatooniKhewatGroupFareeqId, string KhewatGroupFareeqId, string RegisterHqDKhataId, string KhatooniId, string PersonId, string KhewatFareeq_Sold_Hissa_Prop, string KhewatFareeq_Sold_Kanal_Prop, string KhewatFareeq_Sold_Marla_Prop,  string KhewatFareeq_Sold_Sarsai_Prop, string KhewatFareeq_Sold_Feet_Prop, string InsertUserId, string InsertLoginName, string Fb_Id)
+        {
+            string spWithParam = "WEB_SP_INSERT_FB_KhatooniKhewatGroupFareeqein " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + bayaRecId + "," + KhatooniKhewatGroupFareeqId + ",'" + KhewatGroupFareeqId + "'," + RegisterHqDKhataId + "," + KhatooniId + "," + PersonId + "," + KhewatFareeq_Sold_Hissa_Prop +
+                 "," + KhewatFareeq_Sold_Kanal_Prop  + "," + KhewatFareeq_Sold_Marla_Prop  + "," + KhewatFareeq_Sold_Sarsai_Prop + "," + KhewatFareeq_Sold_Feet_Prop + "," + InsertUserId + ",'" + InsertLoginName + "'," + Fb_Id;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
 
         #region Get FBKhatajat by FBId
         public DataTable GetFbKhattajatProposed(
