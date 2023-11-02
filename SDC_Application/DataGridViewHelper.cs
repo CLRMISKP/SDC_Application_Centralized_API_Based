@@ -97,6 +97,13 @@ public class DataGridViewHelper
     // Recursive function to find DataGridView controls within containers
     private static void  FindDataGridViews(Control parentControl)
     {
+        if (parentControl is DataGridView)
+        {
+            DataGridView dg = (DataGridView)parentControl;
+            new DataGridViewHelper(dg);
+            return;
+        }
+
         foreach (Control control in parentControl.Controls)
         {
             if (control is DataGridView)
