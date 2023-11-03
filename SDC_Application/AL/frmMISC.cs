@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using SDC_Application.Classess;
 using System.Text.RegularExpressions;
-
+using System.Security.Cryptography;
 
 namespace SDC_Application.AL
 {
@@ -25,18 +25,20 @@ namespace SDC_Application.AL
         string password = "";//SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
         string connectionString ="";// "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
 
-
+        public Sp_Arg_and_Meta_Info Selected_Sp_Arg_and_Meta_Info = null;
         public class Sp_Arg_and_Meta_Info
         {
             public string ProcName { get; set; }
             public Dictionary<string, string> MetadataContent { get; set; }
             public Dictionary<string, string> Arguments { get; set; }
+            public List<ControlCreationAndBindingInfo> controlCreationInfo = null;
+            public Dictionary<Control, List<Control>>  ControlAndTheirDependentControls = new Dictionary<Control, List<Control>>();
 
             public Sp_Arg_and_Meta_Info(string procName, Dictionary<string, string> metadataContent, Dictionary<string, string> arguments)
             {
                 ProcName = procName;
                 MetadataContent = metadataContent;
-                Arguments = arguments;
+                Arguments = arguments;               
             }
 
             public Sp_Arg_and_Meta_Info(string procName)
@@ -112,640 +114,65 @@ namespace SDC_Application.AL
         private void frmMISC_Load(object sender, EventArgs e)
         {
 
+            String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text; DataGridViewHelper.addHelpterToAllFormGridViews(this);
+
               dsvr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
               db = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);
               password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
-              connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
+              if (dsvr == null || db == null || password == null)
+              {
+                  frmDbConn mfrmDbConn = new frmDbConn();
+                  connectionString = mfrmDbConn.getConnectionStringFromConfig();
+                  if (connectionString == null)
+                  {
+                      mfrmDbConn.ShowDialog();
+                      if ((connectionString = mfrmDbConn.getConnectionStringFromConfig()) == null) { MessageBox.Show("Invalid Database"); return; };
+                      
+                  }
+              }
+              else {
+                  connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
+              }
 
-              PopulateReportsComboBox(getReportInfoFromProcedures());
+              CreateTableFilesIfNotPresent();
+              AddStoredProcedureToDbIfNotFound("getReportsMetaData", getReportsMetaData);
 
-            chkWeekDays = new CheckBox[]
-            {
-                checkBox1,
-                checkBox2,
-                checkBox3,
-                checkBox4,
-                checkBox5
-            };
-            
-            int CurrentMonth = DateTime.Now.Month;
-            for (int month = CurrentMonth; month <= 12; month++)
-            {
-                DateTime firstDayOfMonth = new DateTime(DateTime.Now.Year, month, 1);
-                string monthNameAbbreviated = firstDayOfMonth.ToString("MMM");
-
-                cmbMonths.Items.Add(new MonthItem
-                {
-                    MonthName = monthNameAbbreviated,
-                    FirstDayOfMonth = firstDayOfMonth
-                });
-            }
-
-            // Set up ComboBox display and value members
-            cmbMonths.DisplayMember = "MonthName";
-            cmbMonths.ValueMember = "FirstDayOfMonth";
-
-            if (cmbMonths.Items.Count > 0)
-            {
-                cmbMonths.SelectedIndex = 0;
-            }
-            
-            cmbMonths.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+              List<Sp_Arg_and_Meta_Info> ret = getReportInfoFromProcedures();
+              
+            PopulateReportsComboBox(ret);
 
 
 
 
-            if (UsersManagments._Tehsilid == 0) UsersManagments._Tehsilid = 11;// for testing
+            if (UsersManagments._Tehsilid == 0) UsersManagments._Tehsilid = 15;// for testing
             Tehsilid = UsersManagments._Tehsilid;
 
-
-            /*
-            // Connection string setup
-            string dsvr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
-            string db = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);
-            string password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
-            string connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Create a SqlCommand instance for the stored procedure
-                    SqlCommand command = new SqlCommand("getDowraStatus", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandTimeout = 5;
-
-                    // Add parameters to the stored procedure
-                    command.Parameters.AddWithValue("@TehsilId", Tehsilid);
-
-                    // Add output parameters for @Dated and @Err_Msg
-                    command.Parameters.Add("@Dated", SqlDbType.DateTime).Value = DBNull.Value; // You might need to adjust this based on your logic
-                    command.Parameters.Add("@Err_Msg", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
-
-                    // Execute the stored procedure
-                    command.ExecuteNonQuery();
-
-                    // Retrieve the output parameter values (if needed)
-                    string errMessage = command.Parameters["@Err_Msg"].Value.ToString();
-
-                    // Update checkbox states based on the retrieved data
-                    // Implement your logic here to get the data from the result and populate checkboxes accordingly
-                    // Note: Since the procedure's logic is not known, you'll need to adjust this part
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            */
-
-
-            ComboBox_SelectedIndexChanged(null, null);
-
-            //this.calendarPanel
-            label2.Top = this.calendarPanel.Top + this.calendarPanel.Height + 10;
-            this.cmbReports.Top = this.calendarPanel.Top+this.calendarPanel.Height+10;
 
             this.panelParameters.Top = this.cmbReports.Top + this.cmbReports.Height;
 
         }
 
 
-        public class DowraStatus
+    public bool IsConnectionStringValid(string connectionString)
+    {
+        try
         {
-            public int TehsilId { get; set; }
-            public string WeekDays { get; set; }
-            public string DaysOfMonth { get; set; }
-            public DateTime Dated { get; set; }
-        }
-
-
-        private DowraStatus getDowraStatus()
-        {
-            DateTime firstDayOfMonth = DateTime.Now;
-            if (cmbMonths.SelectedItem != null)
-            {
-                // Get the selected MonthItem
-                MonthItem selectedMonth = (MonthItem)cmbMonths.SelectedItem;
-                firstDayOfMonth = selectedMonth.FirstDayOfMonth;
-            }     
-
-            return getDowraStatus(firstDayOfMonth);
-        }
-
-
-        private DowraStatus getDowraStatus(DateTime dated)
-        {
-
-            DowraStatus dowraStatus = null;
-
-            //int tehsilId = UsersManagments._Tehsilid;
-
-            // Connection string setup
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                try
-                {
-                    connection.Open();
-
-                    // Create a SqlCommand instance for the stored procedure
-                    SqlCommand command = new SqlCommand("getDowraStatus", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandTimeout = 5;
-
-                    // Add parameters to the stored procedure
-                    command.Parameters.AddWithValue("@TehsilId", Tehsilid);
-                    command.Parameters.AddWithValue("@Dated", dated);
-
-                    // Execute the stored procedure and retrieve the result set
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        dowraStatus = new DowraStatus
-                        {
-                            TehsilId = reader.GetInt32(reader.GetOrdinal("Tehsilid")),
-                            WeekDays = reader.GetString(reader.GetOrdinal("WeekDays")),
-                            DaysOfMonth = reader.GetString(reader.GetOrdinal("DaysOfMonth")),
-                            Dated = reader.GetDateTime(reader.GetOrdinal("Dated"))
-                        };
-
-                        // Use the retrieved values as needed
-                    }
-
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                connection.Open();
+                // If the connection opens successfully, it's considered valid
+                return true;
             }
-            return dowraStatus;
         }
-
-
-        private void InsertOrUpdateDowaraStatus(int tehsilId, string weekDays, string daysOfMonth, DateTime dated)
+        catch (Exception ex)
         {
+            // Handle the exception or log it as needed
+            Console.WriteLine("Connection error: " + ex.Message);
 
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Create a SqlCommand instance for the stored procedure
-                    SqlCommand command = new SqlCommand("insertOrUpdateDowraStatus", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandTimeout = 5;
-
-                    // Add parameters to the stored procedure
-                    command.Parameters.AddWithValue("@TehsilId", tehsilId);
-                    command.Parameters.AddWithValue("@WeekDays", weekDays);
-                    command.Parameters.AddWithValue("@DaysOfMonth", daysOfMonth);
-                    command.Parameters.AddWithValue("@Dated", dated);
-                    command.Parameters.Add("@Err_Msg", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
-
-                    // Execute the stored procedure
-                    command.ExecuteNonQuery();
-
-                    // Retrieve the output parameter value (if needed)
-                    string errMessage = command.Parameters["@Err_Msg"].Value.ToString();
-
-                    // Handle the output parameter value as needed
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            return false;
         }
-
-        private string getChkWeekDaysToCSV()
-        {
-             
-            StringBuilder csvBuilder = new StringBuilder();
-
-            for (int i = 0; i < chkWeekDays.Length; i++)
-            {
-                if (chkWeekDays[i].Checked)
-                {
-                    csvBuilder.Append(i);
-                    csvBuilder.Append(",");
-                }
-            }
-
-            if (csvBuilder.Length > 0)
-            {
-                // Remove the trailing comma
-                csvBuilder.Length -= 1;
-            }
-
-            return csvBuilder.ToString();
-        }
-
-        private void setChkWeekDaysFromCSV(string csv)
-        {
-
-            // First, uncheck all checkboxes
-            foreach (CheckBox chk in chkWeekDays)
-            {
-                chk.Checked = false;
-            }
-            string[] indexes = csv.Split(',');
-
-            foreach (string indexStr in indexes)
-            {
-                int index;
-                if (int.TryParse(indexStr, out index) && index >= 0 && index < chkWeekDays.Length)
-                {
-                    chkWeekDays[index].Checked = true;
-                }
-            }
-        }
-
-
-        private void chkWeekDays_CheckedChanged(object sender, EventArgs e)
-        {
-               // int Tehsilid= UsersManagments._Tehsilid;
-                //if (Tehsilid == -1 || Tehsilid == 0) return;
-
-
-            /*
-            string dsvr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
-            string db = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);
-            string password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
-            string connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                bool bMonday = this.checkBox1.Checked;
-                bool bTuesday = this.checkBox2.Checked;
-                bool bWednesday = this.checkBox3.Checked;
-                bool bThursday = this.checkBox4.Checked;
-                bool bFriday = this.checkBox5.Checked;
-
-                try
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("setDowaraWeekDays", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@Monday",  bMonday));
-                    command.Parameters.Add(new SqlParameter("@Tuesday",  bTuesday));
-                    command.Parameters.Add(new SqlParameter("@Wednesday", bWednesday ));
-                    command.Parameters.Add(new SqlParameter("@Thursday",  bThursday));
-                    command.Parameters.Add(new SqlParameter("@Friday", bFriday));
-                    command.Parameters.Add(new SqlParameter("@Tehsilid", Tehsilid));
-                    command.CommandTimeout = 5;
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds);
-
-                    this.dataGridView1.DataSource = ds.Tables[0];
-
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            */
-
-
-            String Dates = this.GetSelectedDates();
-            this.PopulateCalendarGrid(Dates, this.monthInfo);
-
-        }
-
-
-
-        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DateTime firstDayOfMonth = GetFirstDayOfMonth(DateTime.Now); ;
-            // Check if an item is selected in the ComboBox
-            if (cmbMonths.SelectedItem != null)
-            {
-                // Get the selected MonthItem
-                MonthItem selectedMonth = (MonthItem)cmbMonths.SelectedItem;
-                firstDayOfMonth = selectedMonth.FirstDayOfMonth;
-            }            
-
-                // Create a new MonthInfo instance using the first day of the selected month
-                monthInfo = new MonthInfo(firstDayOfMonth);
-
-                // Call methods to initialize and populate the calendar grid
-                InitializeCalendarGrid(monthInfo);
-
-                DowraStatus status = getDowraStatus(firstDayOfMonth);
-               // this.set 
-                this.setChkWeekDaysFromCSV(status.WeekDays);
-                PopulateCalendarGrid(status.DaysOfMonth, monthInfo);
-        }
-
-
-        string datesSelected = "";
-        private void InitializeCalendarGrid(MonthInfo monthInfo)
-        {
-            calendarPanel.Controls.Clear();
-            int offset = monthInfo.offset;
-            int currentDate = monthInfo.currentDate;
-            int NumberInMonth = monthInfo.DaysInMonth;
-            //offset = 7;
-            offset = offset % 7;// start of month may be sat sun mon tue wed etc. or any day of week 
-            int x = 0; // initial position
-            int y = 0; // adjust this to account for the week day row
-            int width = 50; // width of each PictureBox
-            int height = 30; // height of each PictureBox
-            int GapBetween = 0;
-            // First, let's add the weekdays row
-            string[] weekDays = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-            for (int i = 0; i < 7; i++)
-            {
-                PictureBox weekDayPicBox = new PictureBox();
-                Label weekDayLbl = new Label();
-
-                weekDayPicBox.Name = "weekDayPicBox" + i.ToString();
-                weekDayPicBox.Width = width;
-                weekDayPicBox.Height = height;
-                weekDayPicBox.BorderStyle = BorderStyle.None;
-                weekDayPicBox.BackColor = Color.LightGray;
-                weekDayPicBox.Location = new Point(x, y);
-                
-
-                weekDayLbl.Name = "weekDayLbl" + i.ToString();
-                weekDayLbl.Text = weekDays[i];
-                weekDayLbl.Font = new Font(weekDayLbl.Font, FontStyle.Bold);
-                weekDayLbl.ForeColor = (i == 0 || i == 6) ? Color.Red : Color.Black;
-                weekDayLbl.TextAlign = ContentAlignment.MiddleCenter;
-                weekDayLbl.Dock = DockStyle.Fill;
-
-                if (i != 0 && i != 6) // Sun and Sat not selectable 
-                {
-                    weekDayPicBox.Click += new EventHandler(WeekDayPictureBox_Click);
-                    weekDayLbl.Click += new EventHandler(WeekDayPictureBox_Click);
-                }
-                weekDayPicBox.Controls.Add(weekDayLbl);
-                calendarPanel.Controls.Add(weekDayPicBox);
-
-                x += width + GapBetween;
-            }
-
-             width = 50; // width of each PictureBox
-             height = 30; // height of each PictureBox
-            // Now, let's add the 6 rows of 7 days each
-            x = 0;
-            x += ((width + GapBetween) * offset);
-            y += height ; // starting y-position for the days
-
-            int picBoxCount = NumberInMonth;// calendarPanel.Controls.OfType<PictureBox>().Count(pb => pb.Name.StartsWith("picBox"));
-            for (int i = 1; i <= picBoxCount; i++)
-            {
-                PictureBox picBox = new PictureBox();
-                Label lbl = new Label();
-
-                picBox.Name = "picBox" + i.ToString();
-                picBox.Width = width;
-                picBox.Height = height;
-                picBox.BorderStyle = BorderStyle.None;
-                picBox.Location = new Point(x, y);
-                picBox.Tag = new pic_box_status { selected = false };
-
-                lbl.Name = "lbl" + i.ToString();
-                lbl.ForeColor = Color.White;
-                lbl.TextAlign = ContentAlignment.MiddleCenter;
-                lbl.Dock = DockStyle.Fill;
-
-                picBox.Controls.Add(lbl);
-
-
-                // Gray scale or distinguish Sat and Sunday
-                if (!(((i + offset + 0) % 7 == 0) || ((i + offset + 6) % 7 == 0)))// Saturday
-                {
-                    picBox.Click += PictureBox_Click;
-                    lbl.Click += PictureBox_Click;
-                }
-                
-                calendarPanel.Controls.Add(picBox);
-
-                x += width + GapBetween;
-
-                if ((i + offset) % 7 == 0)
-                {
-                    x = 0;
-                    y += height + 0;
-                }
-            }
-
-            // After adding all the picture boxes and labels:
-            int totalWidth = (width * 7) + (GapBetween * 6); // 7 picture boxes and 6 gaps
-            int totalHeight = height * 7; // 1 row for weekdays and a maximum of 6 rows for the days of the month.
-
-            calendarPanel.Size = new Size(totalWidth, totalHeight);
-
-        }
-
-        private void WeekDayPictureBox_Click(object sender, EventArgs e)
-        {
-            if (sender is Label) sender = ((Label)sender).Parent;
-            if (sender is PictureBox )
-            {
-                PictureBox pictureBox = (PictureBox)sender;
-                string pictureBoxName = pictureBox.Name;
-                int pictureBoxNumber = int.Parse(pictureBoxName.Replace("weekDayPicBox", ""));
-                // Use pictureBoxNumber as needed
-                //MessageBox.Show("Clicked on PictureBox with number: " + pictureBoxNumber);
-                CheckBox chk = chkWeekDays[pictureBoxNumber - 1];
-                chk.Checked = !chk.Checked;
-            }
-        }
-
-
-        private string PopulateCalendarGrid(string dates, MonthInfo monthInfo)
-        {
-            int offset = monthInfo.offset;
-            int currentDate = monthInfo.currentDate;
-            int NumberInMonth = monthInfo.DaysInMonth;
-
-            List<int> dateList = new List<int>();
-            try
-            {
-                dateList = dates.Split(',').Select(s => int.Parse(s.Trim())).ToList();
-            }
-            catch (Exception ex)
-            {
-
-                //MessageBox.Show("Data=" + dates + "->" + ex.Message);
-            }
-            
-
-            int picBoxCount = calendarPanel.Controls.OfType<PictureBox>().Count(pb => pb.Name.StartsWith("picBox"));
-            for (int i = 1; i <= picBoxCount; i++)
-            {
-                PictureBox picBox = calendarPanel.Controls["picBox" + i.ToString()] as PictureBox;
-                Label lbl = picBox.Controls["lbl" + i.ToString()] as Label;
-
-                pic_box_status status = null;
-                lbl.Text = i.ToString();
-
-                if(picBox.Tag is pic_box_status)
-                {
-                    status = (pic_box_status)picBox.Tag;
-                    status.selected = dateList.Contains(i);
-                }
-                else
-                {
-                    status = new pic_box_status() { selected = dateList.Contains(i) };
-                    picBox.Tag = status;
-                }
-
-                picBox.BackColor = dateList.Contains(i) ? Color.Green : Color.Black;
-                lbl.ForeColor = Color.White;
-
-                status.selected = dateList.Contains(i); 
-                
-                // SATURDAY => selected = false;
-                if ((i + offset+0) % 7 == 0) // Saturday
-                {
-                    picBox.BackColor = Color.LightGray;
-                    lbl.ForeColor = Color.Black;
-                    status.selected = false;
-                }
-                // SUNDAY => selected = false;
-                if((i + offset + 6) % 7 == 0) 
-                {
-                    picBox.BackColor = Color.LightGray;
-                    lbl.ForeColor = Color.Black;
-                    status.selected = false;
-                }
-
-                // NOW SELECTION SHOW OF SELECTED WEEK DAYS ---- START
-                if (
-                    this.chkWeekDays[0].Checked && ((i + offset + 5) % 7 == 0)// 5 -- Monday
-                    || this.chkWeekDays[1].Checked && ((i + offset + 4) % 7 == 0)// 5 -- Tuesday
-                    || this.chkWeekDays[2].Checked && ((i + offset + 3) % 7 == 0)// 5 -- Wed
-                    || this.chkWeekDays[3].Checked && ((i + offset + 2) % 7 == 0)// 5 -- Thrusday
-                    || this.chkWeekDays[4].Checked && ((i + offset + 1) % 7 == 0)// 5 -- Friday                    
-                   ) 
-                {
-                    picBox.BackColor = Color.Green;
-                }
-                // NOW SELECTION SHOW OF SELECTED WEEK DAYS ---- END
-
-            }
-            return GetSelectedDates();
-        }
-
-
-
-
-        public string GetSelectedDates()
-        {
-            List<string> selectedDates = new List<string>();
-
-            foreach (PictureBox picBox in calendarPanel.Controls.OfType<PictureBox>()) // Ensure only PictureBox controls are looped through
-            {
-                if (picBox.Name.StartsWith("picBox"))
-                {
-                    pic_box_status status = (pic_box_status)picBox.Tag;
-                    if (status.selected)
-                    {
-                        selectedDates.Add(picBox.Name.Replace("picBox", ""));
-                    }
-                }
-            }
-
-            return string.Join(",", selectedDates);
-        }
-
-
-
-
-
-
-        private List<int> selectedDates = new List<int>();
-        public class pic_box_status
-        {
-            public pic_box_status() { selected = false; }
-            public bool selected;
-        }
-
-        private void PictureBox_Click(object sender, EventArgs e)
-        {
-            PictureBox clickedPictureBox;
-
-            if (sender is Label)
-            {
-                clickedPictureBox = (PictureBox)((Label)sender).Parent;
-            }
-            else
-            {
-                clickedPictureBox = sender as PictureBox;
-            }
-
-            Label associatedLabel = clickedPictureBox.Controls[0] as Label;
-
-            pic_box_status clickedPictureBoxTag = (pic_box_status)clickedPictureBox.Tag;
-            clickedPictureBoxTag.selected = !clickedPictureBoxTag.selected;
-            clickedPictureBox.Tag = clickedPictureBoxTag; // Update the Tag property with new status
-
-            // Generating a comma separated string of selected dates
-            string selectedDates = string.Join(",",
-                                               calendarPanel.Controls.OfType<PictureBox>()
-                                                              .Where(pb => pb.Name.StartsWith("picBox") && ((pic_box_status)pb.Tag).selected)
-                                                              .Select(pb => pb.Name.Replace("picBox", ""))
-                                             );
-
-
-            PopulateCalendarGrid(selectedDates,this.monthInfo);
-        }
-
-
-        private void PictureBox_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pb = sender as PictureBox;
-
-            // Right shadow
-            e.Graphics.DrawLine(Pens.Gray, new Point(pb.Width - 1, 0), new Point(pb.Width - 1, pb.Height));
-
-            // Bottom shadow
-            e.Graphics.DrawLine(Pens.Gray, new Point(0, pb.Height - 1), new Point(pb.Width, pb.Height - 1));
-        }
-
-
-
-        private void timerSavingMessage_Tick(object sender, EventArgs e)
-        {
-            // Hide the message and stop the timer
-            labelSavingMessage.Visible = false;
-            timerSavingMessage.Stop();
-        }
-        private void picBoxSave_Click(object sender, EventArgs e)
-        {
-
-            DateTime firstDayOfMonth = GetFirstDayOfMonth(DateTime.Now); ;
-            // Check if an item is selected in the ComboBox
-            if (cmbMonths.SelectedItem != null)
-            {
-                // Get the selected MonthItem
-                MonthItem selectedMonth = (MonthItem)cmbMonths.SelectedItem;
-                firstDayOfMonth = selectedMonth.FirstDayOfMonth;
-            }
-
-            InsertOrUpdateDowaraStatus(Tehsilid, this.getChkWeekDaysToCSV(), this.GetSelectedDates(), firstDayOfMonth);
-            //labelSavingMessage.Text = "Record Saved";
-            //labelSavingMessage.ForeColor = Color.Orange; // Light Orange color
-            labelSavingMessage.Visible = true;
-            labelSavingMessage.BackColor = Color.Transparent;
-
-            // Start the timer
-            timerSavingMessage.Start();
-        }
+    }
 
 
         //--------------------------------------------------------------------------------  REPORT PORTION --------------------------------------------------------------------------------------------------------------------------------------
@@ -761,37 +188,47 @@ namespace SDC_Application.AL
         private List<Sp_Arg_and_Meta_Info> getReportInfoFromProcedures(string procNameFilter = null)
         {
             List<Sp_Arg_and_Meta_Info> ret = new List<Sp_Arg_and_Meta_Info>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("getReportsMetaData", conn))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    conn.Open();
-
-                    // Add the @ProcName parameter to filter the reports if a value is provided
-                    if (!string.IsNullOrEmpty(procNameFilter))
+                    using (SqlCommand cmd = new SqlCommand("getReportsMetaData", conn))
                     {
-                        cmd.Parameters.AddWithValue("@ProcName", procNameFilter);
-                    }
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        conn.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
+                        // Add the @ProcName parameter to filter the reports if a value is provided
+                        if (!string.IsNullOrEmpty(procNameFilter))
                         {
-                            Sp_Arg_and_Meta_Info report = new Sp_Arg_and_Meta_Info();
-                            report.ProcName = reader["ProcName"].ToString();
+                            cmd.Parameters.AddWithValue("@ProcName", procNameFilter);
+                        }
 
-                            // Parse MetadataContent into Dictionary
-                            report.MetadataContent = ParseKeyValuePairs(reader["MetadataContent"].ToString());
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Sp_Arg_and_Meta_Info report = new Sp_Arg_and_Meta_Info();
+                                report.ProcName = reader["ProcName"].ToString();
 
-                            // Parse Arguments into Dictionary
-                            report.Arguments = ParseKeyValuePairs(reader["Arguments"].ToString(), true);
+                                // Parse MetadataContent into Dictionary
+                                report.MetadataContent = ParseKeyValuePairs(reader["MetadataContent"].ToString());
 
-                            ret.Add(report);
+                                // Parse Arguments into Dictionary
+                                report.Arguments = ParseKeyValuePairs(reader["Arguments"].ToString(), true);
+
+                                report.controlCreationInfo = this.getNewControlCreationInfroFromMetaData(report.MetadataContent);
+                                ret.Add(report);
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
             return ret;
         }
 
@@ -891,7 +328,7 @@ private void handleError(string errMsg, Panel panelOfControls)
     }
 }
 
-        class DataSetContainer
+        public class DataSetContainer
         {
             public DataSet ds;
             public string Err_Msg;
@@ -946,7 +383,20 @@ private void handleError(string errMsg, Panel panelOfControls)
                             if (!arg.Value.ToLower().Contains("output")) // Since we've already handled "@Err_Msg"
                             {
                                 var parameterControl = panelParameters.Controls.Find(arg.Key.Replace("@", ""), false).FirstOrDefault();
-                                if (parameterControl != null)
+                                if (parameterControl == null)
+                                {
+                                    ControlCreationAndBindingInfo controlCreationInfo = new ControlCreationAndBindingInfo(arg.Key.Replace("@", ""));
+                                    if (arg.Value.ToUpper().StartsWith("DATE")) controlCreationInfo.ControlType = ControlType.DATE;
+
+                                    addAdditionalControlOrUpdateExistingToPanel(controlCreationInfo);
+                                    parameterControl = panelParameters.Controls.Find(arg.Key.Replace("@", ""), false).FirstOrDefault();
+                                    if (parameterControl != null && arg.Value.ToUpper() == "INT") parameterControl.Text = "0"; // default value
+                                    if (this.Selected_Sp_Arg_and_Meta_Info != null) this.Selected_Sp_Arg_and_Meta_Info.controlCreationInfo.Add(controlCreationInfo);
+                                    
+                                    
+                                }
+
+                               // if (parameterControl != null)
                                 {
                                     var textBox = parameterControl as TextBox;
                                     if (textBox != null)
@@ -986,7 +436,16 @@ private void handleError(string errMsg, Panel panelOfControls)
 
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataSet ds = new DataSet();
-                        da.Fill(ds);
+                        try
+                        {
+                            da.Fill(ds);
+                        }
+                        catch (Exception ex)
+                        {
+                            
+                            throw;
+                        }
+                        
 
                         // Retrieve output parameter and return value post execution
                         errMsg = errParam.Value != null ? errParam.Value.ToString() : null;
@@ -1029,6 +488,7 @@ private void btnShowReport_Click(object sender, EventArgs e)
 
 private void SaveAndOpenCSV(DataSet dataSet)
 {
+    if (dataSet.Tables.Count == 0) return;
     DataTable data = dataSet.Tables[0];
 
     // Get the user-specific temporary folder
@@ -1101,21 +561,30 @@ public class ControlCreationAndBindingInfo
         DataSource = string.Empty;
         DataSourceColumn = string.Empty;
         FilterControl = string.Empty;
-        WhereClause = new List<string>();
+        WhereTokens = new List<string>();
+        control = null;
+        Whereclause = "";
+        bHidden = false;
+        bEnable = true;
+
     }
 
+    public bool bEnable { get; set; }
+    public bool bHidden { get; set; }
+    public Control control { get; set; }
     public string ControlName { get; set; }
     public ControlType ControlType { get; set; }
     public string DataSource { get; set; }
     public string DataSourceColumn { get; set; }
     public string FilterControl { get; set; }
-    public List<string> WhereClause { get; set; }
+    public List<string> WhereTokens { get; set; }
+    public string Whereclause { get; set; }
 }
 
 
-public  List<string> ExtractBracketValues(string s, string TokenStart)
+public  List<string> ExtractBracketValues(string s, string TokenStart , out string CompleteCondition)
 {
-    
+    CompleteCondition = "";
     List<string> result = new List<string>();
 
     // Split the string based on '|'
@@ -1130,6 +599,7 @@ public  List<string> ExtractBracketValues(string s, string TokenStart)
         // Trim spaces and check if the token starts with "Where "
         if (token.TrimStart().StartsWith(TokenStart, StringComparison.OrdinalIgnoreCase))
         {
+            CompleteCondition = token;
             // Match all values inside square brackets
             var matches = Regex.Matches(token, pattern);
             foreach (Match match in matches)
@@ -1143,6 +613,23 @@ public  List<string> ExtractBracketValues(string s, string TokenStart)
 }
 
 
+
+public static string getValueFromStringList(string[] array, string key)
+{
+    foreach (var entry in array)
+    {
+        var keyValue = entry.Split(new char[] { '=' }, 2);  // Split at most into 2 parts
+
+        if (string.Equals(keyValue[0].Trim(), key, StringComparison.OrdinalIgnoreCase))
+
+        {
+            // If there's a value part after '=', return it. Else return empty string.
+            return keyValue.Length > 1 ? keyValue[1].Trim() : "";
+        }
+    }
+
+    return null;  // Key not found in the list
+}
 private List<ControlCreationAndBindingInfo> getNewControlCreationInfroFromMetaData(Dictionary<string, string> metaData)
 {
     List<ControlCreationAndBindingInfo> ret = new List<ControlCreationAndBindingInfo>();
@@ -1161,9 +648,26 @@ private List<ControlCreationAndBindingInfo> getNewControlCreationInfroFromMetaDa
         string parameterName = parameterKey;
         string parameterValue = metaData["create_control_"+parameterKey];
 
+        var v = new ControlCreationAndBindingInfo(parameterKey);
+
+
         // Split parameterValue into its parts
         string[] parameterParts = parameterValue.Split('|');
-        var v = new ControlCreationAndBindingInfo(parameterKey);
+
+        string sHidden = getValueFromStringList(parameterParts, "HIDDEN");
+        if (sHidden != null && string.Equals(sHidden, "true", StringComparison.OrdinalIgnoreCase))
+        {
+            v.bHidden = true;
+        }
+        string sEnable = getValueFromStringList(parameterParts, "ENABLE");
+        if (sEnable != null && string.Equals(sEnable, "FALSE", StringComparison.OrdinalIgnoreCase))
+        {
+            v.bEnable = false;
+        }
+
+
+
+       
 
         if(parameterParts.Length>1){
             if(parameterParts[0]=="COMBO")v.ControlType = ControlType.COMBO;
@@ -1183,9 +687,9 @@ private List<ControlCreationAndBindingInfo> getNewControlCreationInfroFromMetaDa
             v.FilterControl = parameterParts[3];
         }
 
-
-        v.WhereClause = ExtractBracketValues(parameterValue, "where");
-        
+        string outWhereCaluse; 
+        v.WhereTokens = ExtractBracketValues(parameterValue, "where", out outWhereCaluse);
+        v.Whereclause = outWhereCaluse;
 
         ret.Add(v);
     }
@@ -1254,6 +758,51 @@ private List<ReportParameterInfoFromComments> GetReportParameterInfoFromComments
 }
 
 
+public string GetFilePathOrFromDB(string fileName, bool saveInTempFolder = true)
+{
+    string currentFolder = AppDomain.CurrentDomain.BaseDirectory;
+    string filePathInCurrentFolder = Path.Combine(currentFolder, fileName);
+
+    if (File.Exists(filePathInCurrentFolder))
+    {
+        return filePathInCurrentFolder;
+    }
+
+    string query = "SELECT FileObj FROM ReportFiles WHERE FileName = @FileName";
+    byte[] fileBytes = null;
+
+    using (IDbConnection db = new SqlConnection(connectionString))
+    {
+        db.Open();
+
+        using (SqlCommand command = new SqlCommand(query, (SqlConnection)db))
+        {
+            command.Parameters.AddWithValue("@FileName", fileName);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    fileBytes = (byte[])reader["FileObj"];
+                }
+            }
+        }
+    }
+
+    if (fileBytes != null)
+    {
+        string destinationFolder = saveInTempFolder ? Path.GetTempPath() : currentFolder;
+        string filePath = Path.Combine(destinationFolder, fileName);
+
+        File.WriteAllBytes(filePath, fileBytes);
+        return filePath;
+    }
+    else
+    {
+        Console.WriteLine("File not found in the current folder or the database.");
+        return string.Empty;
+    }
+}
+
 
 private void HandleOutputFormat(Dictionary<string, string> metaData, Dictionary<string, string> arguments, DataSet data)
 {
@@ -1266,6 +815,56 @@ private void HandleOutputFormat(Dictionary<string, string> metaData, Dictionary<
         if (outputFormat == "GRID") {
             dataGridView1.Visible = true;
             dataGridView1.DataSource = data.Tables[0];
+            if (data.Tables.Count > 1)
+            {
+                // Check if dataGridView2 already exists
+                if (!this.Controls.ContainsKey("dataGridView2"))
+                {
+                    // Halve the height of dataGridView1
+                    
+                    dataGridView1.Height = dataGridView1.Height / 2;
+
+                    // Create and set up dataGridView2
+                    DataGridView dataGridView2 = new DataGridView
+                    {
+                        Name = "dataGridView2",  // Important: Give it a name for future reference
+                        Width = dataGridView1.Width,
+                        Height = dataGridView1.Height,
+                        Top = dataGridView1.Bottom,
+                        Left = dataGridView1.Left,
+                        Anchor = dataGridView1.Anchor  // Assuming dataGridView1 was anchored to resize with the form
+                    };
+
+                    // Add dataGridView2 to the form's controls
+                    this.Controls.Add(dataGridView2);
+                    dataGridView2.DataSource = data.Tables[1];
+                    
+                    // Create dataGridView2
+                    /*
+                    DataGridView dataGridView2 = new DataGridView
+                    {
+                        Name = "dataGridView2",
+                        Dock = DockStyle.Fill
+                    };
+
+                    // Create and configure SplitContainer
+                    SplitContainer splitContainer = new SplitContainer
+                    {
+                        Dock = DockStyle.Fill,
+                        Orientation = Orientation.Horizontal
+                    };
+
+                    // Add dataGridView1 to Panel1 and dataGridView2 to Panel2
+                    splitContainer.Panel1.Controls.Add(dataGridView1);
+                    splitContainer.Panel2.Controls.Add(dataGridView2);
+
+                    // Add SplitContainer to the form's controls
+                    this.Controls.Add(splitContainer);
+                    dataGridView2.DataSource = data.Tables[1];
+                    */
+                }
+
+            }
         }else
         if (outputFormat == "CrystalReport")
         {
@@ -1276,10 +875,14 @@ private void HandleOutputFormat(Dictionary<string, string> metaData, Dictionary<
 
                 // Check if the reportName exists in resource 'Resource1.resx'
                 //if (!Resource1.ResourceManager.GetString(reportName, Resource1.Culture).IsNullOrEmpty())
-                if (!string.IsNullOrEmpty(Resource1.ResourceManager.GetString(reportName, Resource1.Culture))
+                /*if (!string.IsNullOrEmpty(Resource1.ResourceManager.GetString(reportName, Resource1.Culture))
                     ||
                     File.Exists(Path.Combine(Environment.CurrentDirectory, reportName))
                     )
+                    */
+                String filePath = GetFile(reportName, true);
+                
+                if (filePath != string.Empty)
                 {
                     try
                     {
@@ -1297,8 +900,8 @@ private void HandleOutputFormat(Dictionary<string, string> metaData, Dictionary<
                         // Now you have a parameterDictionary with parameter names and values
                         // Call your LoadGenericReport method with this dictionary as an argument
                         FardForPersonalRecord_Cr frm = new FardForPersonalRecord_Cr();
-                        //frm.bUsingForGeneralpurposeThisReport = true;
-                        //frm.LoadGenericReport(data, parameterDictionary, reportName);
+                        frm.bUsingForGeneralpurposeThisReport = true;
+                        frm.LoadGenericReport(data, parameterDictionary, reportName);
                         //frm.Show();
                         frm.ShowDialog();
 
@@ -1368,9 +971,14 @@ private void cmbReports_SelectedIndexChanged(object sender, EventArgs e)
     int ControlWidth = 200;
     int spacing = 10;
 
+
+
+
     Sp_Arg_and_Meta_Info selectedReport = cmbReports.SelectedItem as Sp_Arg_and_Meta_Info;
     if (selectedReport != null)
     {
+        Selected_Sp_Arg_and_Meta_Info = selectedReport;
+
         int yOffset = 10;  // Starting offset
 
         foreach (var arg in selectedReport.Arguments)
@@ -1396,14 +1004,35 @@ private void cmbReports_SelectedIndexChanged(object sender, EventArgs e)
             {
                 DateTimePicker dtp = new DateTimePicker();
                 //dtp.Name = "dtp" + arg.Key;
-                dtp.Name = arg.Key.Replace("@","");
+                dtp.Name = arg.Key.Replace("@", "");
                 dtp.Format = DateTimePickerFormat.Custom;
                 dtp.CustomFormat = "dd MMM yyyy";
                 dtp.Top = yOffset;
                 dtp.Left = lbl.Right + 10;
                 dtp.Width = ControlWidth;
                 inputControl = dtp;
+
+                // Add an anonymous event handler for ValueChanged event
+                dtp.ValueChanged += (sender2, e2) =>
+                {
+                    // Handle the date change event here
+                    DateTimePicker datePicker = (DateTimePicker)sender2;
+                    DateTime selectedDate = datePicker.Value.Date;
+
+                    // Check if the selected date is equal to "30 Jun 1976"
+                    if (selectedDate == new DateTime(1976, 6, 30))
+                    {
+                        // Enable visibility of button1
+                        btnUpload.Visible = true;
+                    }
+                    else
+                    {
+                        // Disable visibility of button1
+                       // button1.Visible = false;
+                    }
+                };
             }
+
             else
             {
                 TextBox txt = new TextBox();
@@ -1437,30 +1066,22 @@ private void cmbReports_SelectedIndexChanged(object sender, EventArgs e)
                     txt.ReadOnly = true;
                 }
 
-                if (arg.Key.Equals("@TokenNo", StringComparison.OrdinalIgnoreCase))
+                if (arg.Key.Equals("@TokenId", StringComparison.OrdinalIgnoreCase))
                 {
                     txt.Click += (sender2, e2) =>
-                    {
+                    {/*
                         frmTokenPopulate PopulateO = new frmTokenPopulate();
                         PopulateO.ServiceTypeId = "0";// GetServiceTypeIdByServiceName("Inteqal");
-                        PopulateO.fromform = "1";
+                        PopulateO.fromform = "0";
                         PopulateO.InteqalMain = true;
 
                         PopulateO.FormClosed += (sender3, e3) =>
                         {
-                            /*
-                            frmTokenPopulate Populate = sender3 as frmTokenPopulate;
-                            string TokenId = Populate.TokenID;
-                            string TokenNo  = Populate.TokenNo;
-                            int MozaId = Convert.ToInt32(Populate.Mouzaid);
-                            txt.Text = TokenId;
-                            */
-
                             txt.Text = PopulateO.TokenID;
                             txt.ReadOnly = true;
                         };
                         PopulateO.ShowDialog();
-                        
+                        */
                     };
                 }
 
@@ -1468,9 +1089,17 @@ private void cmbReports_SelectedIndexChanged(object sender, EventArgs e)
             }
 
 
+            ControlCreationAndBindingInfo cc = selectedReport.controlCreationInfo.FirstOrDefault(c => c.ControlName == inputControl.Name);
+
             // Add the label and input control to the panel
+            lbl.Name = "LABEL_" + inputControl.Name;
             panelParameters.Controls.Add(lbl);
             panelParameters.Controls.Add(inputControl);
+
+            if (cc==null || cc.bEnable == false)
+            {
+                lbl.Enabled = true;
+            }
 
             // Adjust the offset for the next controls
             yOffset += inputControl.Height + 10;
@@ -1490,14 +1119,20 @@ private void cmbReports_SelectedIndexChanged(object sender, EventArgs e)
         // Show the panel
         panelParameters.Visible = true;
 
-        addAdditionalControlOrUpdateExistingToPanel(selectedReport.MetadataContent);
-
-        List<ControlCreationAndBindingInfo> controlCreationInfo2 = this.getNewControlCreationInfroFromMetaData(selectedReport.MetadataContent);
+         addAdditionalControlOrUpdateExistingToPanel(selectedReport.controlCreationInfo);
 
 
+        // Most Important it contains the hirarche of controls 
+         this.Selected_Sp_Arg_and_Meta_Info.ControlAndTheirDependentControls = get_ControlAndTheirDependentControls(
+                this.Selected_Sp_Arg_and_Meta_Info.controlCreationInfo
+             );
 
+        // Most Important it contains the hirarche of controls 
+         PopulateTreeView(this.Selected_Sp_Arg_and_Meta_Info.ControlAndTheirDependentControls);
         // Now it is sure that all controll has been created so now papulating them
 
+         PopulateCombo("");
+        
     }
     else
     {
@@ -1505,6 +1140,120 @@ private void cmbReports_SelectedIndexChanged(object sender, EventArgs e)
     }
 }
 
+
+// Assuming Control has a property 'Name' to represent its name or identifier
+public void PopulateTreeView(Dictionary<Control, List<Control>> ControlAndTheirDependentControls)
+{
+    treeView1.Nodes.Clear();  // Clear existing nodes
+
+    foreach (var entry in ControlAndTheirDependentControls)
+    {
+        TreeNode parentNode = new TreeNode(entry.Key.Name);
+        parentNode.Name = entry.Key.Name; // This step is crucial for the Find method
+        ControlCreationAndBindingInfo ctrlInfo = this.GetControlCreationAndBindingInfoByControlName(this.Selected_Sp_Arg_and_Meta_Info.controlCreationInfo, entry.Key.Name);
+        ctrlInfo.control = this.GetPanelControlByName(parentNode.Name);
+        parentNode.Tag = ctrlInfo;
+
+        TreeNode temp = getDeepestChildNode(entry.Key.Name);
+        if (temp != null) parentNode = temp;
+        else treeView1.Nodes.Add(parentNode);
+        
+        //TreeNode parentNode = AddNodeToTreeView(entry.Key.Name);
+
+        foreach (Control childControl in entry.Value)
+        {
+            //TreeNode childNode = new TreeNode(childControl.Name);
+            //parentNode.Nodes.Add(childNode);
+            TreeNode parentNodeT = AddNodeToTreeView(entry.Key.Name, childControl.Name);
+        }
+    }
+    treeView1.ExpandAll();  // Optionally, expand all nodes after populating
+}
+        
+
+public TreeNode AddNodeToTreeView(string parentNodeName, string childNodeName)
+{
+    TreeNode nodeToAddTo = getDeepestChildNode(parentNodeName);
+
+    if (nodeToAddTo != null)
+    {
+        TreeNode addedOne = new TreeNode(childNodeName);
+        addedOne.Name = childNodeName;
+        ControlCreationAndBindingInfo ctrlInfo = this.GetControlCreationAndBindingInfoByControlName(this.Selected_Sp_Arg_and_Meta_Info.controlCreationInfo, addedOne.Name);
+        ctrlInfo.control = this.GetPanelControlByName(addedOne.Name);
+        addedOne.Tag = ctrlInfo;
+
+       // addedOne.Tag = this.GetPanelControlByName(addedOne.Name);
+        nodeToAddTo.Nodes.Add(addedOne);
+    }
+    else
+    {
+        TreeNode addedOne = new TreeNode(childNodeName);
+        addedOne.Name = childNodeName;
+        ControlCreationAndBindingInfo ctrlInfo = this.GetControlCreationAndBindingInfoByControlName(this.Selected_Sp_Arg_and_Meta_Info.controlCreationInfo, addedOne.Name);
+        ctrlInfo.control = this.GetPanelControlByName(addedOne.Name);
+        addedOne.Tag = ctrlInfo;
+        //addedOne.Tag = this.GetPanelControlByName(addedOne.Name);
+        treeView1.Nodes.Add(addedOne);
+    }
+    return nodeToAddTo;
+}
+
+public TreeNode getDeepestChildNode(string nodeName)
+{
+    TreeNode[] nodes = treeView1.Nodes.Find(nodeName, true);
+
+    if (nodes.Length == 0)
+        return null;
+    return nodes[0];
+    /*
+    TreeNode node = nodes[0];
+    while (node.Nodes.Count > 0)
+    {
+        node = node.LastNode;
+    }
+
+    return node;
+    */
+}
+public Dictionary<Control, List<Control>> get_ControlAndTheirDependentControls(List<ControlCreationAndBindingInfo> controlCreationInfo)
+{
+    Dictionary<Control, List<Control>> ControlAndTheirDependentControls = new Dictionary<Control, List<Control>>();
+        foreach (var v in controlCreationInfo)
+        {
+            Control effectedControl = GetPanelControlByName(v.ControlName);
+            if (effectedControl == null) continue;
+
+            Control filterControl = GetPanelControlByName(v.FilterControl);
+            if (filterControl == null) continue;
+
+            if (effectedControl == filterControl) continue;
+
+            List<Control> effectedControls;
+            if (!ControlAndTheirDependentControls.TryGetValue(filterControl, out effectedControls))
+            {
+                effectedControls = new List<Control>();
+                ControlAndTheirDependentControls[filterControl] = effectedControls;
+            }
+
+
+            effectedControls.Add(effectedControl);
+
+            if (effectedControls.Contains(filterControl))
+                throw new Exception("Circular Dependency of Control affecting himself violating parent-child");
+
+            ControlAndTheirDependentControls[filterControl] = effectedControls;
+        }
+    return ControlAndTheirDependentControls;
+}
+ControlCreationAndBindingInfo GetControlCreationAndBindingInfoByControlName(List<ControlCreationAndBindingInfo> controlCreationInfo,string controlName)
+{
+    return controlCreationInfo.FirstOrDefault(x => x.ControlName == controlName);
+}
+List<ControlCreationAndBindingInfo> GetControlCreationAndBindingInfoByFilterControl(List<ControlCreationAndBindingInfo> controlCreationInfo,string filterControl)
+{
+    return controlCreationInfo.Where(x => x.FilterControl == filterControl).ToList();
+}
 public Control GetPanelControlByName(string name)
 {
     foreach (Control control in panelParameters.Controls)
@@ -1573,33 +1322,249 @@ private void AddDataSourceToControls(List<ControlCreationAndBindingInfo> control
 }
 
 
-/*
-private int PopulateCombo(Dictionary<string, string> MetadataContent)
+
+private int PopulateCombo(string CtrlName)
 {
-    List<ControlCreationAndBindingInfo> controlCreationInfo = this.getNewControlCreationInfroFromMetaData(MetadataContent);
-    return PopulateCombo(controlCreationInfo);
+    //List<ControlCreationAndBindingInfo> controlCreationInfo = this.getNewControlCreationInfroFromMetaData(MetadataContent);
+    // return PopulateCombo(controlCreationInfo);
+
+    if (CtrlName == "") // Means iterate through all and papulate all 
+    {
+        foreach (TreeNode selectedNode in treeView1.Nodes)
+        {
+            // Do something with the child node, for example, print its name.
+            //Console.WriteLine("Child Node Name: " + childNode.Text);
+            IterateTreeView(selectedNode);
+        }
+    }
+    else
+    {   
+//        MessageBox.Show("Selected Node Name: " + selectedNode.Text + " Ctrl=" + ctrlInfo.control.Name);     
+        TreeNode selectedNode = getDeepestChildNode(CtrlName);
+        if (selectedNode != null) IterateTreeView(selectedNode);
+    }
+    return 0;
 }
-*/
-private int PopulateCombo(List<ControlCreationAndBindingInfo> controlCreationInfo)
+
+
+int  IterateTreeView(TreeNode parentNode)
 {
     int ret = 1;
 
-
-List<Sp_Arg_and_Meta_Info> rptInfo = getReportInfoFromProcedures("Procedure_Name");
-List<ReportParameterInfoFromComments>  reportParams = GetReportParameterInfoFromComments(rptInfo[0].MetadataContent);
-List<ControlCreationAndBindingInfo> controlCreationInfo2 = this.getNewControlCreationInfroFromMetaData(rptInfo[0].MetadataContent);
-    
-    DataSetContainer dc =this.getDataSet(rptInfo[0]);
-
-    /*
-    List<ControlCreationAndBindingInfo> controlCreationInfo = this.getNewControlCreationInfroFromMetaData(metaData);
-    for each contro 
-        ReportInfo rinfo = getReportInfoFromProcedures("proc");
-        this.getDataSet(rinfo)
-
-            */
+    if (parentNode != null)
+    {
+        ControlCreationAndBindingInfo ctrlInfo = (ControlCreationAndBindingInfo)parentNode.Tag;// this.GetControlCreationAndBindingInfoByControlName(selectedNode.Tag);
+        if (ctrlInfo == null) return 0;
+        if (ctrlInfo.control == null) return 0;
+        ret = PopulateCombo(ctrlInfo);
+    }
+    foreach (TreeNode selectedNode in parentNode.Nodes)
+    {
+        // Do something with the child node, for example, print its name.
+        //Console.WriteLine("Node Name: " + childNode.Text);
+        if (selectedNode != null)
+        {
+            ControlCreationAndBindingInfo ctrlInfo2 = (ControlCreationAndBindingInfo)selectedNode.Tag;// this.GetControlCreationAndBindingInfoByControlName(selectedNode.Tag);
+            if (ctrlInfo2 == null) return 0;
+            if (ctrlInfo2.control == null) return 0;
+            ret = PopulateCombo(ctrlInfo2);
+        }
+        // Recursively call the function to iterate through child nodes of the current child node.
+        IterateTreeView(selectedNode);
+    }
     return ret;
 }
+
+
+private int PopulateCombo(ControlCreationAndBindingInfo controlCreationInfo)
+{
+    int ret = 1;
+    List<Sp_Arg_and_Meta_Info> info = this.getReportInfoFromProcedures(controlCreationInfo.DataSource);
+    DataSetContainer dc = null;
+    if(info.Count!=0){ // It is stored procedure
+        dc = this.getDataSet(info[0]);
+    }else{ // May be Table as no infor for Stored Procedure is returned
+        dc = CallDynamicReturnTableRecords(
+                controlCreationInfo.DataSource ,
+                controlCreationInfo.DataSourceColumn,
+                getUpdatedWhereclause(controlCreationInfo.Whereclause, controlCreationInfo.WhereTokens )                
+            );
+    }
+
+    if (dc != null && dc.ds != null)
+    {
+        if (dc.Err_Msg.Trim() == "")
+        {
+            if (controlCreationInfo.control is ComboBox)
+            {
+                ComboBox cmbo = (ComboBox)controlCreationInfo.control;
+                this.PopulateCombo(cmbo, dc.ds, controlCreationInfo.DataSourceColumn);
+            }else{
+                MessageBox.Show("Control " + controlCreationInfo.control.Name + " is not combobox");
+                controlCreationInfo.control.Focus();
+
+            }
+            
+        }
+        else MessageBox.Show(dc.Err_Msg);
+    }
+    
+    return ret;
+}
+
+
+public string getUpdatedWhereclause(string Whereclause, List<string> controlNames)
+{
+    foreach (var controlName in controlNames)
+    {
+        string controlValueAsString = getControlValue(controlName);
+        Whereclause = Whereclause.Replace("[" + controlName + "]", "[" + controlValueAsString + "]");
+    }
+    return Whereclause;
+}
+
+
+public String getControlValue(String Controlname)
+{
+    string ret ="";
+    Control ctrl = this.GetPanelControlByName(Controlname);
+    if (ctrl != null) ret= getControlValue(ctrl);
+    else MessageBox.Show("Control="+Controlname+" Not found ");
+    return ret;
+}
+
+
+public String getControlValue(Control ctrl)
+{
+    if (ctrl is ComboBox)
+    {
+        ComboBox combo = ctrl as ComboBox;
+        DataTable dt = combo.DataSource as DataTable;
+        String I_ = "'";
+        String V_ = "Cast('[VAL_TAG]' AS [AS_TAG])";
+        String C_ = "Cast('[VAL_TAG]' AS VARCHAR(MAX))"; // DEFAULT
+
+        if (dt == null) return "'0'";
+
+        Type firstColumnType = dt.Columns[0].DataType;
+        
+        Type secondColumnType = dt.Columns[1].DataType;
+
+        switch (firstColumnType.Name)
+        {
+            case "Int32":
+                C_ = V_.Replace("'", "").Replace("[AS_TAG]", "INT");
+                break;
+            case "Int64":
+                C_ = V_.Replace("'", "").Replace("[AS_TAG]", "BIGINT");
+                break;
+            case "Boolean":
+                C_ = V_.Replace("'", "").Replace("[AS_TAG]", "BIT");
+                break;
+            case "String":
+                C_ = C_.Replace("[AS_TAG]", "VARCHAR(MAX)");
+                break;
+            case "DateTime":
+                C_ = V_.Replace("[AS_TAG]", "DATETIME");
+                break;
+            // Add more cases as needed for other data types
+            default:                
+                break;
+        }
+  
+        if (combo.SelectedItem != null)
+        {
+            if (combo.SelectedItem is System.Data.DataRowView)
+            {
+                DataRowView v = (DataRowView)combo.SelectedItem;
+                Type dataType = v.Row[0].GetType();
+                string dataTypeStr = dataType.ToString();
+                // Assuming you want to get the value from the first column
+                return C_.Replace("[AS_TAG]",v.Row[0].ToString());
+            }
+            else
+            {
+     
+                return C_.Replace("[AS_TAG]", combo.SelectedItem.ToString());
+            }
+        }
+        else if (combo.Items.Count > 0)
+        {
+            return combo.Items[0].ToString();
+        }
+        else return I_ + "0" + I_;
+    }
+    else if (ctrl is DateTimePicker)
+    {
+        DateTimePicker dateTime = ctrl as DateTimePicker;
+        return dateTime.Value.ToString();
+    }
+    else if (ctrl is TextBox)
+    {
+        TextBox textBox = ctrl as TextBox;
+        return textBox.Text;
+    }
+
+    return ""; // Default empty string if control type doesn't match any of the above
+}
+
+
+public DataSetContainer CallDynamicReturnTableRecords(string table, string displayCol, string whereClause)
+{
+    //string connectionString = "YourConnectionStringHere"; //Replace with your connection string.
+    DataSetContainer container = new DataSetContainer();
+
+    using (SqlConnection connection = new SqlConnection(this.connectionString))
+    {
+        try
+        {
+            connection.Open();
+            using (SqlCommand cmd = new SqlCommand("Dynamic_ReturnTableRecords", connection))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Input parameters
+                cmd.Parameters.Add("@Table", SqlDbType.VarChar, 150).Value = table;
+                cmd.Parameters.Add("@DisplayColProposed", SqlDbType.VarChar, 150).Value = displayCol;
+                if (!string.IsNullOrEmpty(whereClause))
+                {
+                    cmd.Parameters.Add("@Where", SqlDbType.NVarChar, -1).Value = whereClause;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@Where", SqlDbType.NVarChar, -1).Value = DBNull.Value;
+                }
+
+                // Output parameter
+                SqlParameter errParam = new SqlParameter("@Err_Msg", SqlDbType.VarChar, 100);
+                errParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errParam);
+
+                // Return value
+                SqlParameter returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                // Fill the dataset
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(container.ds);
+
+                // Fetch the output parameter and return value
+                container.Err_Msg = cmd.Parameters["@Err_Msg"].Value.ToString();
+                container.Return = (int)cmd.Parameters["@ReturnVal"].Value;
+
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle exception
+            container.Err_Msg = ex.Message;
+        }
+    }
+
+    return container;
+}
+
+
 
 private int PopulateCombo(ComboBox combo, DataSet ds, string displayField)
 {
@@ -1630,6 +1595,19 @@ private int PopulateCombo(ComboBox combo, DataSet ds, string displayField)
 private void addAdditionalControlOrUpdateExistingToPanel(Dictionary<string, string> metaData)
 {
     List<ControlCreationAndBindingInfo> controlCreationInfo = this.getNewControlCreationInfroFromMetaData(metaData);
+    addAdditionalControlOrUpdateExistingToPanel(controlCreationInfo);
+}
+
+private void addAdditionalControlOrUpdateExistingToPanel(ControlCreationAndBindingInfo controlCreationInfo)
+{
+    List<ControlCreationAndBindingInfo> List = new List<ControlCreationAndBindingInfo>();
+    List.Add(controlCreationInfo);
+    addAdditionalControlOrUpdateExistingToPanel(List);
+}
+
+private void addAdditionalControlOrUpdateExistingToPanel(List<ControlCreationAndBindingInfo> controlCreationInfo)
+{
+    
     // panelParameters is the Panel on the form where additional controls will be added.
 
     int yOffset = 10; // Starting offset
@@ -1757,8 +1735,430 @@ private void button2_Click(object sender, EventArgs e)
 
 }
 
+private void button2_Click_1(object sender, EventArgs e)
+{
+    if(UploadFile())MessageBox.Show("Successfully uploaded the file");
+}
+
+private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+{
+    TreeNode selectedNode = e.Node;
+    ControlCreationAndBindingInfo ctrlInfo = (ControlCreationAndBindingInfo)selectedNode.Tag;// this.GetControlCreationAndBindingInfoByControlName(selectedNode.Tag);
+    if (ctrlInfo == null) return;
+    if(ctrlInfo.control == null) return;
+    MessageBox.Show("Selected Node Name: " + selectedNode.Text+" Ctrl="+ctrlInfo.control.Name);
+    ctrlInfo.control.Focus();
+}
 
 
+
+
+
+
+
+// -- adding missing stored procedure 
+    public bool AddStoredProcedureToDbIfNotFound(string storedProcedureName, string tsql_StoredProcedure_ToAddToDb)
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Check if the stored procedure already exists
+                using (SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM sys.procedures WHERE name = @storedProcedureName", connection))
+                {
+                    checkCommand.Parameters.AddWithValue("@storedProcedureName", storedProcedureName);
+                    int existingProcedureCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                    if (existingProcedureCount == 0)
+                    {
+                        // Stored procedure doesn't exist, so add it
+                        using (SqlCommand createCommand = new SqlCommand(tsql_StoredProcedure_ToAddToDb, connection))
+                        {
+                            createCommand.ExecuteNonQuery();
+                        }
+
+                        // Return true to indicate the stored procedure was added
+                        return true;
+                    }
+                    else
+                    {
+                        // Stored procedure already exists
+                        return false;
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle any exceptions, such as database connection errors
+            Console.WriteLine("Error: {"+ex.Message+"}");
+            return false;
+        }
+    }
+
+
+    string getReportsMetaData = @"create PROCEDURE [dbo].[getReportsMetaData]  
+--ALTER PROCEDURE getReportsMetaData  
+@ProcName VARCHAR(256)=null,--ARG1 NUMERIC,    
+@Err_Msg varchar(100)=null output    
+AS    
+BEGIN     
+    
+SET @ProcName = trim(ISNULL(@ProcName,''))
+SELECT 
+    o.name AS ProcName,
+    CASE
+        WHEN CHARINDEX('START_REPORT_METADATA', m.definition) > 0 
+             AND CHARINDEX('END_REPORT_METADATA', m.definition) > 0 THEN
+            SUBSTRING(
+                m.definition, 
+                CHARINDEX('START_REPORT_METADATA', m.definition) + LEN('START_REPORT_METADATA'), 
+                CHARINDEX('END_REPORT_METADATA', m.definition) - CHARINDEX('START_REPORT_METADATA', m.definition) - LEN('START_REPORT_METADATA')
+            )
+        ELSE NULL
+    END AS MetadataContent,
+(
+    SELECT p.name + ' ' + t.name + 
+           CASE WHEN t.name IN ('char', 'varchar', 'nchar', 'nvarchar', 'binary', 'varbinary') THEN
+               '(' + 
+                   CASE WHEN p.max_length = -1 THEN 'MAX' 
+                        ELSE CAST(p.max_length AS VARCHAR(10)) 
+                   END + ')'
+           ELSE '' 
+           END + 
+           CASE WHEN p.has_default_value = 1 THEN ' = ' + CAST(p.default_value AS VARCHAR(100)) ELSE '' END + 
+           CASE WHEN p.is_output = 1 THEN ' output' ELSE '' END + ','
+    FROM sys.parameters p 
+    JOIN sys.types t ON p.system_type_id = t.system_type_id
+    WHERE p.object_id = o.object_id
+    FOR XML PATH('')
+) AS Arguments
+FROM 
+    sys.sql_modules m
+JOIN 
+    sys.objects o ON m.object_id = o.object_id
+WHERE 
+    o.type = 'P' 
+    AND 
+    (
+    	(@ProcName='' AND o.name LIKE 'Report_%')
+    	OR
+    	(o.name= @ProcName) 
+    
+	)
+     
+ if @@Error!=0     
+ begin    
+  set @Err_Msg='Could Not Find Specified Record'    
+  return 200    
+ end    
+ return 100    
+END    
+    ";
+
+
+
+    public void CreateTableFilesIfNotPresent()
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // SQL command to create the "Files" table if it doesn't exist
+                string createTableSQL = @"
+                    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Files')
+                    BEGIN
+                        CREATE TABLE Files (
+                            FileCheckSum VARCHAR(256),
+                            FILENAME NVARCHAR(256),
+                            fileOfImage VARBINARY(MAX),
+                            uploadDate DATETIME,
+                            fileCreationDate DATETIME,
+                            fileUpdatedDate DATETIME
+                        )
+                    END";
+
+                using (SqlCommand command = new SqlCommand(createTableSQL, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle any exceptions, such as database connection errors
+            Console.WriteLine("Error: {"+ex.Message+"}");
+        }
+    }
+
+
+
+    public bool UploadFile()
+    {
+        try
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select a File";
+            
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                // Calculate the checksum of the selected file
+                string fileChecksum = CalculateFileChecksum(filePath);
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Check if the file with the same checksum exists in the database
+                    string query = "SELECT COUNT(*) FROM Files WHERE FileCheckSum = @fileChecksum";
+                    using (SqlCommand checkCommand = new SqlCommand(query, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@fileChecksum", fileChecksum);
+                        int existingFileCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                        if (existingFileCount == 0)
+                        {
+                            // File with the same checksum not found, so insert it
+                            InsertFileToDatabase(filePath, fileChecksum, connection);
+                            return true; // File uploaded
+                        }
+                        else
+                        {
+                            // File with the same checksum found, do not insert
+                            return false; // File already exists
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle any exceptions, such as database connection errors or file-related errors
+            MessageBox.Show(ex.Message);
+            Console.WriteLine("Error: {"+ex.Message+"}");
+        }
+
+        return false; // File upload failed
+    }
+
+    private string CalculateFileChecksum(string filePath)
+    {
+        using (FileStream fileStream = File.OpenRead(filePath))
+        using (SHA256 sha256 = SHA256.Create())
+        {
+            byte[] hashBytes = sha256.ComputeHash(fileStream);
+            return BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+        }
+    }
+
+
+
+
+        /*
+    private void InsertFileToDatabase(string filePath, string fileChecksum, SqlConnection connection)
+    {
+        // Check if a file with the same name exists in the database
+        string checkDuplicateSQL = "SELECT COUNT(*) FROM Files WHERE FILENAME = @fileName";
+
+        using (SqlCommand checkDuplicateCommand = new SqlCommand(checkDuplicateSQL, connection))
+        {
+            checkDuplicateCommand.Parameters.AddWithValue("@fileName", Path.GetFileName(filePath));
+
+            int fileCount = (int)checkDuplicateCommand.ExecuteScalar();
+
+            if (fileCount > 0)
+            {
+                // A file with the same name exists, update it in the database
+                string updateSQL = @"
+                UPDATE Files
+                SET FileCheckSum = @fileChecksum,
+                    fileOfImage = @fileData,
+                    uploadDate = @uploadDate,
+                    fileCreationDate = @creationDate,
+                    fileUpdatedDate = @updatedDate
+                WHERE FILENAME = @fileName";
+
+                using (SqlCommand updateCommand = new SqlCommand(updateSQL, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("@fileChecksum", fileChecksum);
+                    updateCommand.Parameters.AddWithValue("@fileName", Path.GetFileName(filePath));
+                    updateCommand.Parameters.AddWithValue("@fileData", File.ReadAllBytes(filePath));
+                    updateCommand.Parameters.AddWithValue("@uploadDate", DateTime.Now);
+                    updateCommand.Parameters.AddWithValue("@creationDate", File.GetCreationTime(filePath));
+                    updateCommand.Parameters.AddWithValue("@updatedDate", File.GetLastWriteTime(filePath));
+
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                // Insert the new file into the database
+                string insertSQL = @"
+                INSERT INTO Files (FileCheckSum, FILENAME, fileOfImage, uploadDate, fileCreationDate, fileUpdatedDate)
+                VALUES (@fileChecksum, @fileName, @fileData, @uploadDate, @creationDate, @updatedDate)";
+
+                using (SqlCommand insertCommand = new SqlCommand(insertSQL, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("@fileChecksum", fileChecksum);
+                    insertCommand.Parameters.AddWithValue("@fileName", Path.GetFileName(filePath));
+                    insertCommand.Parameters.AddWithValue("@fileData", File.ReadAllBytes(filePath));
+                    insertCommand.Parameters.AddWithValue("@uploadDate", DateTime.Now);
+                    insertCommand.Parameters.AddWithValue("@creationDate", File.GetCreationTime(filePath));
+                    insertCommand.Parameters.AddWithValue("@updatedDate", File.GetLastWriteTime(filePath));
+
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+    }
+*/
+
+    private void InsertFileToDatabase(string filePath, string fileChecksum, SqlConnection connection)
+    {
+        // Check if a file with the same name exists in the database
+        string checkDuplicateSQL = "SELECT COUNT(*) FROM Files WHERE FILENAME = @fileName";
+
+        using (SqlCommand checkDuplicateCommand = new SqlCommand(checkDuplicateSQL, connection))
+        {
+            checkDuplicateCommand.Parameters.AddWithValue("@fileName", Path.GetFileName(filePath));
+
+            int fileCount = (int)checkDuplicateCommand.ExecuteScalar();
+
+            if (fileCount > 0)
+            {
+                // A file with the same name exists, delete it from the database
+                string deleteSQL = "DELETE FROM Files WHERE FILENAME = @fileName";
+
+                using (SqlCommand deleteCommand = new SqlCommand(deleteSQL, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("@fileName", Path.GetFileName(filePath));
+                    deleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // Insert the new file into the database
+        string insertSQL = @"
+        INSERT INTO Files (FileCheckSum, FILENAME, fileOfImage, uploadDate, fileCreationDate, fileUpdatedDate)
+        VALUES (@fileChecksum, @fileName, @fileData, @uploadDate, @creationDate, @updatedDate)";
+
+        using (SqlCommand insertCommand = new SqlCommand(insertSQL, connection))
+        {
+            insertCommand.Parameters.AddWithValue("@fileChecksum", fileChecksum);
+            insertCommand.Parameters.AddWithValue("@fileName", Path.GetFileName(filePath));
+            insertCommand.Parameters.AddWithValue("@fileData", File.ReadAllBytes(filePath));
+            insertCommand.Parameters.AddWithValue("@uploadDate", DateTime.Now);
+            insertCommand.Parameters.AddWithValue("@creationDate", File.GetCreationTime(filePath));
+            insertCommand.Parameters.AddWithValue("@updatedDate", File.GetLastWriteTime(filePath));
+
+            insertCommand.ExecuteNonQuery();
+        }
+    }
+
+
+   public string GetFile(string fileName, bool storedInCurrentDirectory)
+    {
+        string filePath = storedInCurrentDirectory
+            ? Path.Combine(Environment.CurrentDirectory, fileName)
+            : Path.Combine(Path.GetTempPath(), fileName);
+
+        string checkSumOfExistingFileIfExists = GetFileChecksum(filePath);
+
+
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Check if the file with the same filename exists in the database
+                string query = "SELECT FileCheckSum FROM Files WHERE FILENAME = @fileName";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@fileName", fileName);
+
+                    object checksumFromDb = command.ExecuteScalar();
+
+                    if (checksumFromDb != null && checksumFromDb != DBNull.Value)
+                    {
+                        // File with the same checksum exists in the database
+                        if(checkSumOfExistingFileIfExists==checksumFromDb)return filePath;
+                    }
+                }
+
+                // File not found locally or in the database, retrieve it from the database
+                query = "SELECT FILENAME, fileOfImage FROM Files WHERE FILENAME = @fileName";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@fileName", fileName);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            byte[] fileData = (byte[])reader["fileOfImage"];
+
+                            // Save the file to the specified location
+                            File.WriteAllBytes(filePath, fileData);
+
+                            return filePath;
+                        }
+                        else
+                        {
+                            // File not found in the database
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle any exceptions, such as database connection errors or file-related errors
+            Console.WriteLine("Error: {"+ex.Message+"}");
+            return null;
+        }
+    }
+
+    private string GetFileChecksum(string filePath)
+    {
+        try
+        {
+            if (File.Exists(filePath))
+            {
+                using (FileStream fileStream = File.OpenRead(filePath))
+                using (SHA256 sha256 = SHA256.Create())
+                {
+                    byte[] hashBytes = sha256.ComputeHash(fileStream);
+                    return BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+                }
+            }
+            else
+            {
+                // File doesn't exist locally
+                return "";
+            }
+        }
+        catch (Exception)
+        {
+            // Handle any exceptions that may occur during checksum calculation
+            return "";
+        }
+    }
+
+    private void btnDebug(object sender, EventArgs e)
+    {
+        cmbReports.Items.Clear();
+        frmMISC_Load(null, null);
+    }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

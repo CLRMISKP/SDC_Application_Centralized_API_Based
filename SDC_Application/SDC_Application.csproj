@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>3.0.1.16</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1179,6 +1179,9 @@
     </Compile>
     <Compile Include="DL\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDbConn.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSelectTehsil.cs">
       <SubType>Form</SubType>

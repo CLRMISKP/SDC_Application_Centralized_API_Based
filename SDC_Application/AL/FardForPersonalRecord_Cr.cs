@@ -15,7 +15,7 @@ namespace SDC_Application.AL
 {
     public partial class FardForPersonalRecord_Cr : Form
     {
-
+        public bool bUsingForGeneralpurposeThisReport = false;
         public string MozaId { get; set; }
         public string TokenId { get; set; }
         public string tehsilid { get; set; }
@@ -29,9 +29,113 @@ namespace SDC_Application.AL
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)        
         {
-            loadReport(null);
+            if (!bUsingForGeneralpurposeThisReport) loadReport(null);
         
         }
+
+
+            public void LoadGenericReport(DataSet ds, Dictionary<string, string> ReportParameters, string ReportName)
+            {
+                ReportDocument cryRpt = new ReportDocument();
+    
+                // Load the report from the specified path
+                string currentDirectory = Environment.CurrentDirectory;
+                string fullPathToReport = currentDirectory + "\\" + ReportName;
+                cryRpt.Load(fullPathToReport);
+
+
+
+                // Set the main report's data source
+                cryRpt.SetDataSource(ds.Tables[0]);
+
+                // Set subreport data sources
+                for (int i = 1; i < ds.Tables.Count; i++)
+                {
+                    cryRpt.Subreports[i - 1].SetDataSource(ds.Tables[i]);
+                }
+
+
+                // Set report parameters from the provided dictionary
+                /*
+                if (ReportParameters != null && ReportParameters.Count > 0)
+                {
+                    foreach (var parameter in ReportParameters)
+                    {
+                        // Assuming your report parameters are string and you want to set them as strings
+                        cryRpt.SetParameterValue(parameter.Key, parameter.Value);
+                    }
+                }
+                */
+
+// Create a list to store missing parameters
+List<string> missingParameters = new List<string>();
+
+// Iterate through the report's parameters
+foreach (var parameterField in cryRpt.ParameterFields)
+{
+
+    CrystalDecisions.Shared.ParameterField pf = (CrystalDecisions.Shared.ParameterField)parameterField;
+    var parameterName = pf.Name;
+
+    // Check if the parameter exists in the ReportParameters dictionary
+    if (!ReportParameters.ContainsKey(parameterName))
+    {
+        // Add the missing parameter to the list
+        missingParameters.Add(parameterName);
+    }
+}
+
+
+        // Check if there are any missing parameters
+if (missingParameters.Count > 0)
+{
+    // Create the message string
+    string missingParams = string.Join(", ", missingParameters);
+    string message = "The following parameters are missing in the report: " + missingParams;
+
+    // Display a message box with the missing parameters
+    //MessageBox.Show(message, "Missing Parameters", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    throw new Exception(message);
+}
+else
+{
+
+    List<string> parameterNames = new List<string>();
+    //CrystalDecisions.Shared.ParameterFields     
+    foreach (  CrystalDecisions.Shared.ParameterField parameterField in cryRpt.ParameterFields)
+    {
+        parameterNames.Add(parameterField.Name);
+    }
+
+        foreach (var parameter in ReportParameters)
+        {
+            // Check if the parameter exists in the report before setting its value
+            if (parameterNames.Contains(parameter.Key))
+            {
+                cryRpt.SetParameterValue(parameter.Key, parameter.Value);
+            }  
+        }    
+}
+
+
+
+                try
+                {
+                    // Set the CrystalReportViewer's report source
+                    crystalReportViewer1.ReportSource = cryRpt;
+
+                    // Refresh and show the CrystalReportViewer
+                    crystalReportViewer1.Refresh();
+                    crystalReportViewer1.Show();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw;
+                }
+            }
+
 
 
         public void loadReport(DataSet dsA) 
@@ -139,6 +243,11 @@ namespace SDC_Application.AL
         private void button1_Click(object sender, EventArgs e)
         {
             loadReport(null);
+        }
+
+        private void FardForPersonalRecord_Cr_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
