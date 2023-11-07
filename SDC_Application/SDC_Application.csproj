@@ -1088,11 +1088,23 @@
     <Compile Include="AL\frmVoucherPopulate.Designer.cs">
       <DependentUpon>frmVoucherPopulate.cs</DependentUpon>
     </Compile>
+    <Compile Include="AL\MainKhata_New_Sel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainKhata_New_Sel.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AL\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AL\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\RHZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\RHZ.designer.cs">
+      <DependentUpon>RHZ.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\SDCReports.cs">
       <SubType>Form</SubType>
@@ -1748,8 +1760,15 @@
     <EmbeddedResource Include="AL\frmVoucherPopulate.resx">
       <DependentUpon>frmVoucherPopulate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AL\MainKhata_New_Sel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MainKhata_New_Sel.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\RHZ.resx">
+      <DependentUpon>RHZ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\SDCReports.resx">
       <DependentUpon>SDCReports.cs</DependentUpon>

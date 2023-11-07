@@ -350,7 +350,8 @@ namespace SDC_Application
             this.mnuSubIntiqalatTehsildar.Visible = isMenuVisible("Intiqal_Tehsildar_Report_dem");
             this.mnuSubIntiqalatPendingRegistry.Visible = isMenuVisible("Registry_Intiqal_Pending_dem");
             this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
-            this.mnuCoBiometricNotAttested.Visible = isMenuVisible("IntiqalBoimetricCapturedNotAttestedReport");
+            this.mnuCoBiometricNotAttested.Visible = isMenuVisible("IntiqalBoimetricCapturedNotAttestedReport");//mnuRHZreport
+            this.mnuRHZreport.Visible = isMenuVisible("mnuRHZreport");//
             //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem"); IntiqalBoimetricCapturedNotAttestedReport
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;

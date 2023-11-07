@@ -118,6 +118,7 @@
             this.mnuSubBiometricCapturedNotAttestIntiqalat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubNotAttestedMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDePendingMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAdminRptAttMutAudit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuYearlyIntiqalatReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalaQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalMakhloot = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,7 +166,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuAdminRptAttMutAudit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRHZreport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -898,6 +899,13 @@
             this.mnuDePendingMut.Text = "- ڈیٹا انٹری نامکمل انتقالات";
             this.mnuDePendingMut.Click += new System.EventHandler(this.mnuDePendingMut_Click);
             // 
+            // mnuAdminRptAttMutAudit
+            // 
+            this.mnuAdminRptAttMutAudit.Name = "mnuAdminRptAttMutAudit";
+            this.mnuAdminRptAttMutAudit.Size = new System.Drawing.Size(348, 42);
+            this.mnuAdminRptAttMutAudit.Text = " - تصدیق شدہ انتقالات برائے آڈٹ";
+            this.mnuAdminRptAttMutAudit.Click += new System.EventHandler(this.mnuAdminRptAttMutAudit_Click);
+            // 
             // mnuYearlyIntiqalatReports
             // 
             this.mnuYearlyIntiqalatReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -978,7 +986,8 @@
             this.mnuOperatorReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuDRA,
             this.mnuRTS,
-            this.mnuIntiqalat});
+            this.mnuIntiqalat,
+            this.mnuRHZreport});
             this.mnuOperatorReports.Name = "mnuOperatorReports";
             this.mnuOperatorReports.Size = new System.Drawing.Size(78, 42);
             this.mnuOperatorReports.Text = "رپورٹس";
@@ -990,7 +999,7 @@
             this.mnuSubDraIntiqalatParthFee,
             this.mnuSubDraFardatFee});
             this.mnuDRA.Name = "mnuDRA";
-            this.mnuDRA.Size = new System.Drawing.Size(197, 42);
+            this.mnuDRA.Size = new System.Drawing.Size(256, 42);
             this.mnuDRA.Text = "ڈی ار اے رپوٹس";
             // 
             // mnuSubDraIntiqalatFee
@@ -1023,7 +1032,7 @@
             this.mnuSubRTSIntiqalat,
             this.mnuSubRTSfardat});
             this.mnuRTS.Name = "mnuRTS";
-            this.mnuRTS.Size = new System.Drawing.Size(197, 42);
+            this.mnuRTS.Size = new System.Drawing.Size(256, 42);
             this.mnuRTS.Text = "ار ٹی ایس رپورٹس";
             // 
             // mnuSubRTSIntiqalat
@@ -1056,7 +1065,7 @@
             this.mnuEnteredMutationsReport,
             this.mnuDePendingMutCo});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
-            this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
+            this.mnuIntiqalat.Size = new System.Drawing.Size(256, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
             // 
             // mnuSubIntiqalatTehsildar
@@ -1321,12 +1330,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuAdminRptAttMutAudit
+            // mnuRHZreport
             // 
-            this.mnuAdminRptAttMutAudit.Name = "mnuAdminRptAttMutAudit";
-            this.mnuAdminRptAttMutAudit.Size = new System.Drawing.Size(348, 42);
-            this.mnuAdminRptAttMutAudit.Text = " - تصدیق شدہ انتقالات برائے آڈٹ";
-            this.mnuAdminRptAttMutAudit.Click += new System.EventHandler(this.mnuAdminRptAttMutAudit_Click);
+            this.mnuRHZreport.Name = "mnuRHZreport";
+            this.mnuRHZreport.Size = new System.Drawing.Size(256, 42);
+            this.mnuRHZreport.Text = "رجسٹر حقداران زمین رپورٹ";
+            this.mnuRHZreport.Visible = false;
             // 
             // frmMain
             // 
@@ -1502,5 +1511,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuDePendingMut;
         private System.Windows.Forms.ToolStripMenuItem mnuDePendingMutCo;
         private System.Windows.Forms.ToolStripMenuItem mnuAdminRptAttMutAudit;
+        private System.Windows.Forms.ToolStripMenuItem mnuRHZreport;
     }
 }
