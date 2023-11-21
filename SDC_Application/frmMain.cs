@@ -352,6 +352,7 @@ namespace SDC_Application
             this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem");
             this.mnuCoBiometricNotAttested.Visible = isMenuVisible("IntiqalBoimetricCapturedNotAttestedReport");//mnuRHZreport
             this.mnuRHZreport.Visible = isMenuVisible("mnuRHZreport");//
+            this.mnuRegEntryRptCo.Visible = isMenuVisible("mnuRegEntryRptCo");//
             //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem"); IntiqalBoimetricCapturedNotAttestedReport
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
@@ -1948,6 +1949,92 @@ namespace SDC_Application
                 //UsersManagments.check = 2;
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 57;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuRhzRptAdmin_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("RHZ");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                RHZ obj = new RHZ();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuRHZreport_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("RHZ");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                RHZ obj = new RHZ();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+            
+            
+        }
+
+        private void mnuFardBadarEntryRpt_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 58;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void MnuRegEntryRptsm_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 59;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuRegEntryRptCo_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 59;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;

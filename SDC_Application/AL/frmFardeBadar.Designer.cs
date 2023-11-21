@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle109 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle110 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle111 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle112 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle114 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle115 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle116 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle117 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle118 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle119 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -309,6 +309,44 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.tabKhatooniBayan = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.dgKhatooniBayanFb = new System.Windows.Forms.DataGridView();
+            this.ColSelBayanEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.dgKhatooniBayan = new System.Windows.Forms.DataGridView();
+            this.ColSelBayan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.txtBayaKhataId = new System.Windows.Forms.TextBox();
+            this.txtBayaKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
+            this.txtBayaFeet = new System.Windows.Forms.TextBox();
+            this.txtBayaPersonId = new System.Windows.Forms.TextBox();
+            this.txtBayaId = new System.Windows.Forms.TextBox();
+            this.txtBayaFeetSold = new System.Windows.Forms.TextBox();
+            this.txtKhatooniKhewatFareeqId = new System.Windows.Forms.TextBox();
+            this.btnNewBaya = new System.Windows.Forms.Button();
+            this.txtBayaHissaSold = new System.Windows.Forms.TextBox();
+            this.btnDelBaya = new System.Windows.Forms.Button();
+            this.label109 = new System.Windows.Forms.Label();
+            this.btnSaveBaya = new System.Windows.Forms.Button();
+            this.txtBayaSarsaiSold = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
+            this.txtBayaMarlaSold = new System.Windows.Forms.TextBox();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.txtBayaKanalSold = new System.Windows.Forms.TextBox();
+            this.txtBayaHissa = new System.Windows.Forms.TextBox();
+            this.label117 = new System.Windows.Forms.Label();
+            this.txtBayaSarsai = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.txtBayaMarla = new System.Windows.Forms.TextBox();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.txtBayaKanal = new System.Windows.Forms.TextBox();
+            this.cbKhataMalikanForBayan = new System.Windows.Forms.ComboBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.cbKhataForBayan = new System.Windows.Forms.ComboBox();
+            this.label122 = new System.Windows.Forms.Label();
             this.ShajraTab = new System.Windows.Forms.TabPage();
             this.panel27 = new System.Windows.Forms.Panel();
             this.dgFBAfrad = new System.Windows.Forms.DataGridView();
@@ -344,7 +382,6 @@
             this.MinKhata = new System.Windows.Forms.TabPage();
             this.gbMinKhataGrid = new System.Windows.Forms.GroupBox();
             this.DgMinKhataList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbMinKhataButtons = new System.Windows.Forms.GroupBox();
             this.txtMinKhataId = new System.Windows.Forms.TextBox();
             this.btnDelMinKhata = new System.Windows.Forms.Button();
@@ -460,44 +497,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.tabKhatooniBayan = new System.Windows.Forms.TabPage();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.dgKhatooniBayanFb = new System.Windows.Forms.DataGridView();
-            this.ColSelBayanEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.dgKhatooniBayan = new System.Windows.Forms.DataGridView();
-            this.ColSelBayan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.txtBayaKhataId = new System.Windows.Forms.TextBox();
-            this.txtBayaKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
-            this.txtBayaFeet = new System.Windows.Forms.TextBox();
-            this.txtBayaPersonId = new System.Windows.Forms.TextBox();
-            this.txtBayaId = new System.Windows.Forms.TextBox();
-            this.txtBayaFeetSold = new System.Windows.Forms.TextBox();
-            this.txtKhatooniKhewatFareeqId = new System.Windows.Forms.TextBox();
-            this.btnNewBaya = new System.Windows.Forms.Button();
-            this.txtBayaHissaSold = new System.Windows.Forms.TextBox();
-            this.btnDelBaya = new System.Windows.Forms.Button();
-            this.label109 = new System.Windows.Forms.Label();
-            this.btnSaveBaya = new System.Windows.Forms.Button();
-            this.txtBayaSarsaiSold = new System.Windows.Forms.TextBox();
-            this.label113 = new System.Windows.Forms.Label();
-            this.txtBayaMarlaSold = new System.Windows.Forms.TextBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.label116 = new System.Windows.Forms.Label();
-            this.txtBayaKanalSold = new System.Windows.Forms.TextBox();
-            this.txtBayaHissa = new System.Windows.Forms.TextBox();
-            this.label117 = new System.Windows.Forms.Label();
-            this.txtBayaSarsai = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.txtBayaMarla = new System.Windows.Forms.TextBox();
-            this.label119 = new System.Windows.Forms.Label();
-            this.label120 = new System.Windows.Forms.Label();
-            this.txtBayaKanal = new System.Windows.Forms.TextBox();
-            this.cbKhataMalikanForBayan = new System.Windows.Forms.ComboBox();
-            this.label121 = new System.Windows.Forms.Label();
-            this.cbKhataForBayan = new System.Windows.Forms.ComboBox();
-            this.label122 = new System.Windows.Forms.Label();
+            this.ColMinKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -548,6 +548,12 @@
             this.groupBox11.SuspendLayout();
             this.gbKashtCurrent.SuspendLayout();
             this.gbKashtProposed.SuspendLayout();
+            this.tabKhatooniBayan.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayanFb)).BeginInit();
+            this.groupBox19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayan)).BeginInit();
+            this.groupBox24.SuspendLayout();
             this.ShajraTab.SuspendLayout();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFBAfrad)).BeginInit();
@@ -586,12 +592,6 @@
             this.panel7.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.tabKhatooniBayan.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayanFb)).BeginInit();
-            this.groupBox19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayan)).BeginInit();
-            this.groupBox24.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -903,7 +903,7 @@
             this.label73.AutoSize = true;
             this.label73.Location = new System.Drawing.Point(279, 223);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(48, 31);
+            this.label73.Size = new System.Drawing.Size(50, 31);
             this.label73.TabIndex = 39;
             this.label73.Text = " تفصیل";
             // 
@@ -944,7 +944,7 @@
             this.label77.AutoSize = true;
             this.label77.Location = new System.Drawing.Point(279, 73);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(64, 31);
+            this.label77.Size = new System.Drawing.Size(66, 31);
             this.label77.TabIndex = 37;
             this.label77.Text = " فردبدرنمبر";
             // 
@@ -977,7 +977,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 40);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(966, 516);
+            this.tabPage1.Size = new System.Drawing.Size(1215, 586);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "ترمیم کھاتہ ";
             // 
@@ -987,7 +987,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(3, 357);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(960, 156);
+            this.groupBox15.Size = new System.Drawing.Size(1209, 226);
             this.groupBox15.TabIndex = 119;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "فرد بدر کے محفوظ شدہ کھاتہ جات";
@@ -996,8 +996,8 @@
             // 
             this.dgFBKhatajat.AllowUserToAddRows = false;
             this.dgFBKhatajat.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle109.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle109;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgFBKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFBKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFBKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1007,10 +1007,10 @@
             this.dgFBKhatajat.MultiSelect = false;
             this.dgFBKhatajat.Name = "dgFBKhatajat";
             this.dgFBKhatajat.ReadOnly = true;
-            dataGridViewCellStyle110.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle110;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgFBKhatajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFBKhatajat.Size = new System.Drawing.Size(954, 118);
+            this.dgFBKhatajat.Size = new System.Drawing.Size(1203, 188);
             this.dgFBKhatajat.TabIndex = 1;
             this.dgFBKhatajat.TabStop = false;
             this.dgFBKhatajat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFBKhatajat_CellClick);
@@ -1029,7 +1029,7 @@
             this.gbKhattaControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbKhattaControls.Location = new System.Drawing.Point(3, 281);
             this.gbKhattaControls.Name = "gbKhattaControls";
-            this.gbKhattaControls.Size = new System.Drawing.Size(960, 76);
+            this.gbKhattaControls.Size = new System.Drawing.Size(1209, 76);
             this.gbKhattaControls.TabIndex = 118;
             this.gbKhattaControls.TabStop = false;
             // 
@@ -1037,7 +1037,7 @@
             // 
             this.btnDelKhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelKhatta.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelKhatta.Location = new System.Drawing.Point(461, 20);
+            this.btnDelKhatta.Location = new System.Drawing.Point(710, 20);
             this.btnDelKhatta.Name = "btnDelKhatta";
             this.btnDelKhatta.Size = new System.Drawing.Size(53, 48);
             this.btnDelKhatta.TabIndex = 111;
@@ -1050,7 +1050,7 @@
             this.btnSaveKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveKhata.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveKhata.Location = new System.Drawing.Point(535, 20);
+            this.btnSaveKhata.Location = new System.Drawing.Point(784, 20);
             this.btnSaveKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSaveKhata.Name = "btnSaveKhata";
             this.btnSaveKhata.Size = new System.Drawing.Size(53, 48);
@@ -1063,7 +1063,7 @@
             // 
             this.btnNewKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewKhata.Location = new System.Drawing.Point(609, 20);
+            this.btnNewKhata.Location = new System.Drawing.Point(858, 20);
             this.btnNewKhata.Name = "btnNewKhata";
             this.btnNewKhata.Size = new System.Drawing.Size(53, 48);
             this.btnNewKhata.TabIndex = 201;
@@ -1102,7 +1102,7 @@
             this.gbKhataRaqba.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbKhataRaqba.Location = new System.Drawing.Point(3, 81);
             this.gbKhataRaqba.Name = "gbKhataRaqba";
-            this.gbKhataRaqba.Size = new System.Drawing.Size(960, 200);
+            this.gbKhataRaqba.Size = new System.Drawing.Size(1209, 200);
             this.gbKhataRaqba.TabIndex = 117;
             this.gbKhataRaqba.TabStop = false;
             this.gbKhataRaqba.Text = "کھاتہ میزان";
@@ -1112,7 +1112,7 @@
             // 
             this.txtKafyat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKafyat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKafyat.Location = new System.Drawing.Point(31, 148);
+            this.txtKafyat.Location = new System.Drawing.Point(280, 148);
             this.txtKafyat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKafyat.Multiline = true;
             this.txtKafyat.Name = "txtKafyat";
@@ -1124,7 +1124,7 @@
             // 
             this.txtMalia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMalia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMalia.Location = new System.Drawing.Point(551, 148);
+            this.txtMalia.Location = new System.Drawing.Point(800, 148);
             this.txtMalia.Multiline = true;
             this.txtMalia.Name = "txtMalia";
             this.txtMalia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1137,7 +1137,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(476, 156);
+            this.label18.Location = new System.Drawing.Point(725, 156);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1151,7 +1151,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(896, 148);
+            this.label17.Location = new System.Drawing.Point(1145, 148);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1165,7 +1165,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(251, 108);
+            this.label16.Location = new System.Drawing.Point(500, 108);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 31);
             this.label16.TabIndex = 117;
@@ -1176,7 +1176,7 @@
             // 
             this.txtDrustSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDrustSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrustSarsai.Location = new System.Drawing.Point(551, 110);
+            this.txtDrustSarsai.Location = new System.Drawing.Point(800, 110);
             this.txtDrustSarsai.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDrustSarsai.Name = "txtDrustSarsai";
             this.txtDrustSarsai.Size = new System.Drawing.Size(122, 30);
@@ -1186,7 +1186,7 @@
             // 
             this.txtDrustFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDrustFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrustFeet.Location = new System.Drawing.Point(162, 104);
+            this.txtDrustFeet.Location = new System.Drawing.Point(411, 104);
             this.txtDrustFeet.Name = "txtDrustFeet";
             this.txtDrustFeet.Size = new System.Drawing.Size(84, 30);
             this.txtDrustFeet.TabIndex = 116;
@@ -1196,7 +1196,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(251, 65);
+            this.label12.Location = new System.Drawing.Point(500, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 31);
             this.label12.TabIndex = 111;
@@ -1208,7 +1208,7 @@
             this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(476, 110);
+            this.label41.Location = new System.Drawing.Point(725, 110);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(68, 31);
             this.label41.TabIndex = 109;
@@ -1220,7 +1220,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(681, 109);
+            this.label15.Location = new System.Drawing.Point(930, 109);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 31);
             this.label15.TabIndex = 110;
@@ -1231,7 +1231,7 @@
             // 
             this.txtFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFeet.Location = new System.Drawing.Point(341, 106);
+            this.txtFeet.Location = new System.Drawing.Point(590, 106);
             this.txtFeet.Name = "txtFeet";
             this.txtFeet.Size = new System.Drawing.Size(129, 30);
             this.txtFeet.TabIndex = 106;
@@ -1241,7 +1241,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(681, 68);
+            this.label11.Location = new System.Drawing.Point(930, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 31);
             this.label11.TabIndex = 112;
@@ -1252,7 +1252,7 @@
             // 
             this.txtDrustMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDrustMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrustMarla.Location = new System.Drawing.Point(160, 66);
+            this.txtDrustMarla.Location = new System.Drawing.Point(409, 66);
             this.txtDrustMarla.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDrustMarla.Name = "txtDrustMarla";
             this.txtDrustMarla.Size = new System.Drawing.Size(86, 30);
@@ -1262,7 +1262,7 @@
             // 
             this.txtSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSarsai.Location = new System.Drawing.Point(768, 108);
+            this.txtSarsai.Location = new System.Drawing.Point(1017, 108);
             this.txtSarsai.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSarsai.Name = "txtSarsai";
             this.txtSarsai.Size = new System.Drawing.Size(123, 30);
@@ -1273,7 +1273,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(895, 29);
+            this.label13.Location = new System.Drawing.Point(1144, 29);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1287,7 +1287,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(895, 107);
+            this.label10.Location = new System.Drawing.Point(1144, 107);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 31);
             this.label10.TabIndex = 6;
@@ -1298,7 +1298,7 @@
             // 
             this.txtDrustKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDrustKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrustKanal.Location = new System.Drawing.Point(551, 69);
+            this.txtDrustKanal.Location = new System.Drawing.Point(800, 69);
             this.txtDrustKanal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDrustKanal.Name = "txtDrustKanal";
             this.txtDrustKanal.Size = new System.Drawing.Size(122, 30);
@@ -1308,7 +1308,7 @@
             // 
             this.txtDrustKulHissay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDrustKulHissay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrustKulHissay.Location = new System.Drawing.Point(341, 28);
+            this.txtDrustKulHissay.Location = new System.Drawing.Point(590, 28);
             this.txtDrustKulHissay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDrustKulHissay.Name = "txtDrustKulHissay";
             this.txtDrustKulHissay.Size = new System.Drawing.Size(129, 30);
@@ -1319,7 +1319,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(681, 29);
+            this.label8.Location = new System.Drawing.Point(930, 29);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 31);
@@ -1332,7 +1332,7 @@
             this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(476, 29);
+            this.label47.Location = new System.Drawing.Point(725, 29);
             this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(90, 31);
@@ -1345,7 +1345,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(476, 67);
+            this.label2.Location = new System.Drawing.Point(725, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 31);
             this.label2.TabIndex = 7;
@@ -1356,7 +1356,7 @@
             // 
             this.txtMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarla.Location = new System.Drawing.Point(341, 68);
+            this.txtMarla.Location = new System.Drawing.Point(590, 68);
             this.txtMarla.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMarla.Name = "txtMarla";
             this.txtMarla.Size = new System.Drawing.Size(129, 30);
@@ -1366,7 +1366,7 @@
             // 
             this.txtKulHisay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKulHisay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKulHisay.Location = new System.Drawing.Point(551, 28);
+            this.txtKulHisay.Location = new System.Drawing.Point(800, 28);
             this.txtKulHisay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKulHisay.Name = "txtKulHisay";
             this.txtKulHisay.Size = new System.Drawing.Size(122, 30);
@@ -1376,7 +1376,7 @@
             // 
             this.txtKhatatNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatatNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatatNo.Location = new System.Drawing.Point(768, 28);
+            this.txtKhatatNo.Location = new System.Drawing.Point(1017, 28);
             this.txtKhatatNo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKhatatNo.Name = "txtKhatatNo";
             this.txtKhatatNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1387,7 +1387,7 @@
             // 
             this.txtKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKanal.Location = new System.Drawing.Point(768, 67);
+            this.txtKanal.Location = new System.Drawing.Point(1017, 67);
             this.txtKanal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKanal.Name = "txtKanal";
             this.txtKanal.Size = new System.Drawing.Size(123, 30);
@@ -1398,7 +1398,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(895, 66);
+            this.label1.Location = new System.Drawing.Point(1144, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 31);
             this.label1.TabIndex = 8;
@@ -1415,7 +1415,7 @@
             this.gbKhataMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbKhataMain.Location = new System.Drawing.Point(3, 3);
             this.gbKhataMain.Name = "gbKhataMain";
-            this.gbKhataMain.Size = new System.Drawing.Size(960, 78);
+            this.gbKhataMain.Size = new System.Drawing.Size(1209, 78);
             this.gbKhataMain.TabIndex = 114;
             this.gbKhataMain.TabStop = false;
             this.gbKhataMain.Text = "کھاتہ تفصیل";
@@ -1454,7 +1454,7 @@
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(850, 29);
+            this.label14.Location = new System.Drawing.Point(1099, 29);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(105, 33);
@@ -1468,7 +1468,7 @@
             this.cboKhataNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKhataNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKhataNo.FormattingEnabled = true;
-            this.cboKhataNo.Location = new System.Drawing.Point(719, 35);
+            this.cboKhataNo.Location = new System.Drawing.Point(968, 35);
             this.cboKhataNo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboKhataNo.Name = "cboKhataNo";
             this.cboKhataNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1485,7 +1485,7 @@
             this.khewatTab.Location = new System.Drawing.Point(4, 40);
             this.khewatTab.Name = "khewatTab";
             this.khewatTab.Padding = new System.Windows.Forms.Padding(3);
-            this.khewatTab.Size = new System.Drawing.Size(966, 516);
+            this.khewatTab.Size = new System.Drawing.Size(1215, 586);
             this.khewatTab.TabIndex = 0;
             this.khewatTab.Text = " ترمیم کھاتہ مالکان";
             // 
@@ -1498,7 +1498,7 @@
             this.pnlKhewatGrid.Location = new System.Drawing.Point(3, 239);
             this.pnlKhewatGrid.Name = "pnlKhewatGrid";
             this.pnlKhewatGrid.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlKhewatGrid.Size = new System.Drawing.Size(960, 274);
+            this.pnlKhewatGrid.Size = new System.Drawing.Size(1209, 344);
             this.pnlKhewatGrid.TabIndex = 58;
             // 
             // panel20
@@ -1508,15 +1508,15 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(5, 5);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(948, 262);
+            this.panel20.Size = new System.Drawing.Size(1197, 332);
             this.panel20.TabIndex = 2;
             // 
             // GridViewKhewatMalikaan
             // 
             this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
             this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle111.BackColor = System.Drawing.Color.AliceBlue;
-            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle111;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1526,10 +1526,10 @@
             this.GridViewKhewatMalikaan.MultiSelect = false;
             this.GridViewKhewatMalikaan.Name = "GridViewKhewatMalikaan";
             this.GridViewKhewatMalikaan.ReadOnly = true;
-            dataGridViewCellStyle112.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle112;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.GridViewKhewatMalikaan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewKhewatMalikaan.Size = new System.Drawing.Size(946, 260);
+            this.GridViewKhewatMalikaan.Size = new System.Drawing.Size(1195, 330);
             this.GridViewKhewatMalikaan.TabIndex = 0;
             this.GridViewKhewatMalikaan.TabStop = false;
             this.GridViewKhewatMalikaan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewKhewatMalikaan_CellClick);
@@ -1567,7 +1567,7 @@
             this.gbKhewatGroupFareeq.Name = "gbKhewatGroupFareeq";
             this.gbKhewatGroupFareeq.Padding = new System.Windows.Forms.Padding(5);
             this.gbKhewatGroupFareeq.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gbKhewatGroupFareeq.Size = new System.Drawing.Size(960, 236);
+            this.gbKhewatGroupFareeq.Size = new System.Drawing.Size(1209, 236);
             this.gbKhewatGroupFareeq.TabIndex = 57;
             this.gbKhewatGroupFareeq.TabStop = false;
             // 
@@ -1587,7 +1587,7 @@
             this.groupBox7.Controls.Add(this.btnNewFbMalik);
             this.groupBox7.Controls.Add(this.btnPersonSave);
             this.groupBox7.Controls.Add(this.btnDeleteMalik);
-            this.groupBox7.Location = new System.Drawing.Point(40, 172);
+            this.groupBox7.Location = new System.Drawing.Point(289, 172);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(915, 58);
             this.groupBox7.TabIndex = 239;
@@ -1661,7 +1661,7 @@
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.txtDrustHissa);
             this.groupBox6.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(40, 108);
+            this.groupBox6.Location = new System.Drawing.Point(289, 108);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(915, 60);
             this.groupBox6.TabIndex = 238;
@@ -1829,7 +1829,7 @@
             this.groupBox5.Controls.Add(this.label64);
             this.groupBox5.Controls.Add(this.txtNetHissa);
             this.groupBox5.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(40, 14);
+            this.groupBox5.Location = new System.Drawing.Point(289, 14);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(915, 92);
             this.groupBox5.TabIndex = 237;
@@ -2020,7 +2020,7 @@
             // btnSelectFromSaved
             // 
             this.btnSelectFromSaved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelectFromSaved.Location = new System.Drawing.Point(-137, 63);
+            this.btnSelectFromSaved.Location = new System.Drawing.Point(112, 63);
             this.btnSelectFromSaved.Name = "btnSelectFromSaved";
             this.btnSelectFromSaved.Size = new System.Drawing.Size(48, 30);
             this.btnSelectFromSaved.TabIndex = 211;
@@ -2032,7 +2032,7 @@
             // 
             this.txtPersonFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPersonFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonFeet.Location = new System.Drawing.Point(-147, 27);
+            this.txtPersonFeet.Location = new System.Drawing.Point(102, 27);
             this.txtPersonFeet.Name = "txtPersonFeet";
             this.txtPersonFeet.Size = new System.Drawing.Size(58, 30);
             this.txtPersonFeet.TabIndex = 10;
@@ -2043,7 +2043,7 @@
             this.label67.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(-147, 15);
+            this.label67.Location = new System.Drawing.Point(102, 15);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(72, 23);
             this.label67.TabIndex = 79;
@@ -2054,7 +2054,7 @@
             // 
             this.txtPersonSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPersonSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonSarsai.Location = new System.Drawing.Point(20, 45);
+            this.txtPersonSarsai.Location = new System.Drawing.Point(269, 45);
             this.txtPersonSarsai.Name = "txtPersonSarsai";
             this.txtPersonSarsai.Size = new System.Drawing.Size(17, 30);
             this.txtPersonSarsai.TabIndex = 9;
@@ -2065,7 +2065,7 @@
             this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(-139, 42);
+            this.label59.Location = new System.Drawing.Point(110, 42);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(71, 23);
             this.label59.TabIndex = 62;
@@ -2076,7 +2076,7 @@
             // 
             this.txtPersonMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPersonMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonMarla.Location = new System.Drawing.Point(-139, 99);
+            this.txtPersonMarla.Location = new System.Drawing.Point(110, 99);
             this.txtPersonMarla.Name = "txtPersonMarla";
             this.txtPersonMarla.Size = new System.Drawing.Size(43, 30);
             this.txtPersonMarla.TabIndex = 8;
@@ -2087,7 +2087,7 @@
             this.label60.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(-140, 87);
+            this.label60.Location = new System.Drawing.Point(109, 87);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(47, 23);
             this.label60.TabIndex = 64;
@@ -2098,7 +2098,7 @@
             // 
             this.txtPersonKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPersonKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonKanal.Location = new System.Drawing.Point(21, 14);
+            this.txtPersonKanal.Location = new System.Drawing.Point(270, 14);
             this.txtPersonKanal.Name = "txtPersonKanal";
             this.txtPersonKanal.Size = new System.Drawing.Size(17, 30);
             this.txtPersonKanal.TabIndex = 7;
@@ -2109,7 +2109,7 @@
             this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(-106, 30);
+            this.label61.Location = new System.Drawing.Point(143, 30);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(43, 23);
             this.label61.TabIndex = 63;
@@ -2124,7 +2124,7 @@
             this.khassraTab.Location = new System.Drawing.Point(4, 40);
             this.khassraTab.Name = "khassraTab";
             this.khassraTab.Padding = new System.Windows.Forms.Padding(3);
-            this.khassraTab.Size = new System.Drawing.Size(966, 516);
+            this.khassraTab.Size = new System.Drawing.Size(1215, 586);
             this.khassraTab.TabIndex = 3;
             this.khassraTab.Text = "ترمیم خسرہ جات";
             this.khassraTab.UseVisualStyleBackColor = true;
@@ -2136,7 +2136,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel22.Location = new System.Drawing.Point(3, 244);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(960, 269);
+            this.panel22.Size = new System.Drawing.Size(1209, 339);
             this.panel22.TabIndex = 3;
             // 
             // panel24
@@ -2146,7 +2146,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel24.Location = new System.Drawing.Point(0, 0);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(958, 267);
+            this.panel24.Size = new System.Drawing.Size(1207, 337);
             this.panel24.TabIndex = 2;
             // 
             // gridViewKhassraAreaDetails
@@ -2164,7 +2164,7 @@
             this.gridViewKhassraAreaDetails.ReadOnly = true;
             this.gridViewKhassraAreaDetails.RowHeadersVisible = false;
             this.gridViewKhassraAreaDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewKhassraAreaDetails.Size = new System.Drawing.Size(956, 265);
+            this.gridViewKhassraAreaDetails.Size = new System.Drawing.Size(1205, 335);
             this.gridViewKhassraAreaDetails.TabIndex = 0;
             this.gridViewKhassraAreaDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewKhassraAreaDetails_CellClick);
             this.gridViewKhassraAreaDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewKhassraAreaDetails_CellContentClick);
@@ -2183,7 +2183,7 @@
             this.panelControlsKhassra.Location = new System.Drawing.Point(3, 27);
             this.panelControlsKhassra.Name = "panelControlsKhassra";
             this.panelControlsKhassra.Padding = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.panelControlsKhassra.Size = new System.Drawing.Size(960, 217);
+            this.panelControlsKhassra.Size = new System.Drawing.Size(1209, 217);
             this.panelControlsKhassra.TabIndex = 1;
             // 
             // gBKhassraContols
@@ -2192,7 +2192,7 @@
             this.gBKhassraContols.Controls.Add(this.groupBox9);
             this.gBKhassraContols.Controls.Add(this.gbKhassraProposed);
             this.gBKhassraContols.Controls.Add(this.groupBox3);
-            this.gBKhassraContols.Location = new System.Drawing.Point(23, 0);
+            this.gBKhassraContols.Location = new System.Drawing.Point(272, 0);
             this.gBKhassraContols.Name = "gBKhassraContols";
             this.gBKhassraContols.Size = new System.Drawing.Size(925, 210);
             this.gBKhassraContols.TabIndex = 22;
@@ -2522,7 +2522,7 @@
             this.panelKhatoniKhassra.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelKhatoniKhassra.Location = new System.Drawing.Point(3, 3);
             this.panelKhatoniKhassra.Name = "panelKhatoniKhassra";
-            this.panelKhatoniKhassra.Size = new System.Drawing.Size(960, 24);
+            this.panelKhatoniKhassra.Size = new System.Drawing.Size(1209, 24);
             this.panelKhatoniKhassra.TabIndex = 0;
             // 
             // txtFbKhassraDetailId
@@ -2583,7 +2583,7 @@
             // 
             this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(811, 6);
+            this.label53.Location = new System.Drawing.Point(1060, 6);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(58, 30);
             this.label53.TabIndex = 407;
@@ -2661,8 +2661,8 @@
             // 
             this.gridviewKhatooniMeezan.AllowUserToAddRows = false;
             this.gridviewKhatooniMeezan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle113.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle113;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gridviewKhatooniMeezan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridviewKhatooniMeezan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewKhatooniMeezan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2672,8 +2672,8 @@
             this.gridviewKhatooniMeezan.MultiSelect = false;
             this.gridviewKhatooniMeezan.Name = "gridviewKhatooniMeezan";
             this.gridviewKhatooniMeezan.ReadOnly = true;
-            dataGridViewCellStyle114.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle114;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.gridviewKhatooniMeezan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridviewKhatooniMeezan.Size = new System.Drawing.Size(1177, 294);
             this.gridviewKhatooniMeezan.TabIndex = 0;
@@ -3205,8 +3205,8 @@
             // 
             this.dgMushteriFareeqain.AllowUserToAddRows = false;
             this.dgMushteriFareeqain.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle115.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle115;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgMushteriFareeqain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMushteriFareeqain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMushteriFareeqain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -3216,8 +3216,8 @@
             this.dgMushteriFareeqain.MultiSelect = false;
             this.dgMushteriFareeqain.Name = "dgMushteriFareeqain";
             this.dgMushteriFareeqain.ReadOnly = true;
-            dataGridViewCellStyle116.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle116;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgMushteriFareeqain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMushteriFareeqain.Size = new System.Drawing.Size(1177, 283);
             this.dgMushteriFareeqain.TabIndex = 0;
@@ -3765,1798 +3765,6 @@
             this.label27.Text = "کنال:";
             this.label27.Visible = false;
             // 
-            // ShajraTab
-            // 
-            this.ShajraTab.Controls.Add(this.panel27);
-            this.ShajraTab.Controls.Add(this.panel26);
-            this.ShajraTab.Controls.Add(this.gbAfradRegisterControls);
-            this.ShajraTab.Location = new System.Drawing.Point(4, 40);
-            this.ShajraTab.Name = "ShajraTab";
-            this.ShajraTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ShajraTab.Size = new System.Drawing.Size(966, 516);
-            this.ShajraTab.TabIndex = 5;
-            this.ShajraTab.Text = "ترمیم نام مالک";
-            this.ShajraTab.UseVisualStyleBackColor = true;
-            // 
-            // panel27
-            // 
-            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel27.Controls.Add(this.dgFBAfrad);
-            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel27.Location = new System.Drawing.Point(3, 232);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(960, 281);
-            this.panel27.TabIndex = 2;
-            // 
-            // dgFBAfrad
-            // 
-            this.dgFBAfrad.AllowUserToAddRows = false;
-            this.dgFBAfrad.AllowUserToDeleteRows = false;
-            this.dgFBAfrad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgFBAfrad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgFBAfrad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColSelPerson});
-            this.dgFBAfrad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgFBAfrad.Location = new System.Drawing.Point(0, 0);
-            this.dgFBAfrad.MultiSelect = false;
-            this.dgFBAfrad.Name = "dgFBAfrad";
-            this.dgFBAfrad.ReadOnly = true;
-            this.dgFBAfrad.RowHeadersVisible = false;
-            this.dgFBAfrad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFBAfrad.Size = new System.Drawing.Size(958, 279);
-            this.dgFBAfrad.StandardTab = true;
-            this.dgFBAfrad.TabIndex = 4;
-            this.dgFBAfrad.DoubleClick += new System.EventHandler(this.dgFBAfrad_DoubleClick);
-            // 
-            // ColSelPerson
-            // 
-            this.ColSelPerson.HeaderText = "انتخاب کریں";
-            this.ColSelPerson.Name = "ColSelPerson";
-            this.ColSelPerson.ReadOnly = true;
-            // 
-            // panel26
-            // 
-            this.panel26.BackColor = System.Drawing.SystemColors.Control;
-            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel26.Controls.Add(this.txtFBPersonId);
-            this.panel26.Controls.Add(this.txtFbExistsShajra);
-            this.panel26.Controls.Add(this.txtpersonIdShajra);
-            this.panel26.Controls.Add(this.label82);
-            this.panel26.Controls.Add(this.txtSearch);
-            this.panel26.Controls.Add(this.btnSearch);
-            this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel26.Location = new System.Drawing.Point(3, 166);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(960, 66);
-            this.panel26.TabIndex = 1;
-            // 
-            // txtFBPersonId
-            // 
-            this.txtFBPersonId.Location = new System.Drawing.Point(109, 25);
-            this.txtFBPersonId.Name = "txtFBPersonId";
-            this.txtFBPersonId.Size = new System.Drawing.Size(35, 39);
-            this.txtFBPersonId.TabIndex = 54;
-            this.txtFBPersonId.Text = "-1";
-            this.txtFBPersonId.Visible = false;
-            // 
-            // txtFbExistsShajra
-            // 
-            this.txtFbExistsShajra.Location = new System.Drawing.Point(62, 21);
-            this.txtFbExistsShajra.Name = "txtFbExistsShajra";
-            this.txtFbExistsShajra.Size = new System.Drawing.Size(24, 39);
-            this.txtFbExistsShajra.TabIndex = 53;
-            this.txtFbExistsShajra.Text = "0";
-            this.txtFbExistsShajra.Visible = false;
-            // 
-            // txtpersonIdShajra
-            // 
-            this.txtpersonIdShajra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtpersonIdShajra.Enabled = false;
-            this.txtpersonIdShajra.Location = new System.Drawing.Point(18, 21);
-            this.txtpersonIdShajra.Name = "txtpersonIdShajra";
-            this.txtpersonIdShajra.ReadOnly = true;
-            this.txtpersonIdShajra.Size = new System.Drawing.Size(37, 39);
-            this.txtpersonIdShajra.TabIndex = 52;
-            this.txtpersonIdShajra.Text = "0";
-            this.txtpersonIdShajra.Visible = false;
-            // 
-            // label82
-            // 
-            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(878, 21);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(67, 31);
-            this.label82.TabIndex = 30;
-            this.label82.Text = "تلاش کریں";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.txtSearch.Location = new System.Drawing.Point(623, 18);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(249, 39);
-            this.txtSearch.TabIndex = 28;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearch.Location = new System.Drawing.Point(582, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(35, 34);
-            this.btnSearch.TabIndex = 29;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // gbAfradRegisterControls
-            // 
-            this.gbAfradRegisterControls.BackColor = System.Drawing.SystemColors.Control;
-            this.gbAfradRegisterControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gbAfradRegisterControls.Controls.Add(this.txtFatherName);
-            this.gbAfradRegisterControls.Controls.Add(this.label37);
-            this.gbAfradRegisterControls.Controls.Add(this.txtPersonKhataDetails);
-            this.gbAfradRegisterControls.Controls.Add(this.label36);
-            this.gbAfradRegisterControls.Controls.Add(this.txtPersonExtraDetails);
-            this.gbAfradRegisterControls.Controls.Add(this.label23);
-            this.gbAfradRegisterControls.Controls.Add(this.txtfbShajraOldName);
-            this.gbAfradRegisterControls.Controls.Add(this.btnDelFbFard);
-            this.gbAfradRegisterControls.Controls.Add(this.btnSaveShajra);
-            this.gbAfradRegisterControls.Controls.Add(this.txtDrustNaam);
-            this.gbAfradRegisterControls.Controls.Add(this.label81);
-            this.gbAfradRegisterControls.Controls.Add(this.cbQoam);
-            this.gbAfradRegisterControls.Controls.Add(this.label80);
-            this.gbAfradRegisterControls.Controls.Add(this.txtNIC);
-            this.gbAfradRegisterControls.Controls.Add(this.label79);
-            this.gbAfradRegisterControls.Controls.Add(this.txtName);
-            this.gbAfradRegisterControls.Controls.Add(this.label78);
-            this.gbAfradRegisterControls.Controls.Add(this.btnSearchaFard);
-            this.gbAfradRegisterControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbAfradRegisterControls.Location = new System.Drawing.Point(3, 3);
-            this.gbAfradRegisterControls.Name = "gbAfradRegisterControls";
-            this.gbAfradRegisterControls.Size = new System.Drawing.Size(960, 163);
-            this.gbAfradRegisterControls.TabIndex = 0;
-            // 
-            // txtFatherName
-            // 
-            this.txtFatherName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFatherName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFatherName.Location = new System.Drawing.Point(118, 42);
-            this.txtFatherName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtFatherName.Multiline = true;
-            this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtFatherName.Size = new System.Drawing.Size(137, 28);
-            this.txtFatherName.TabIndex = 62;
-            this.txtFatherName.Visible = false;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(179, 2);
-            this.label37.Name = "label37";
-            this.label37.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label37.Size = new System.Drawing.Size(104, 38);
-            this.label37.TabIndex = 61;
-            this.label37.Text = "درست ولدیت";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label37.Visible = false;
-            // 
-            // txtPersonKhataDetails
-            // 
-            this.txtPersonKhataDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPersonKhataDetails.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonKhataDetails.Location = new System.Drawing.Point(458, 116);
-            this.txtPersonKhataDetails.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtPersonKhataDetails.Multiline = true;
-            this.txtPersonKhataDetails.Name = "txtPersonKhataDetails";
-            this.txtPersonKhataDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPersonKhataDetails.Size = new System.Drawing.Size(232, 28);
-            this.txtPersonKhataDetails.TabIndex = 60;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(509, 80);
-            this.label36.Name = "label36";
-            this.label36.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label36.Size = new System.Drawing.Size(186, 33);
-            this.label36.TabIndex = 59;
-            this.label36.Text = "تفصیل کھاتہ جات اگر کوئی ہے";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtPersonExtraDetails
-            // 
-            this.txtPersonExtraDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPersonExtraDetails.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonExtraDetails.Location = new System.Drawing.Point(715, 116);
-            this.txtPersonExtraDetails.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtPersonExtraDetails.Multiline = true;
-            this.txtPersonExtraDetails.Name = "txtPersonExtraDetails";
-            this.txtPersonExtraDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPersonExtraDetails.Size = new System.Drawing.Size(232, 28);
-            this.txtPersonExtraDetails.TabIndex = 58;
-            this.txtPersonExtraDetails.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(814, 80);
-            this.label23.Name = "label23";
-            this.label23.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label23.Size = new System.Drawing.Size(138, 33);
-            this.label23.TabIndex = 57;
-            this.label23.Text = "تفصیل افراد اگر کوئی ہے";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtfbShajraOldName
-            // 
-            this.txtfbShajraOldName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtfbShajraOldName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfbShajraOldName.Location = new System.Drawing.Point(22, 6);
-            this.txtfbShajraOldName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtfbShajraOldName.Multiline = true;
-            this.txtfbShajraOldName.Name = "txtfbShajraOldName";
-            this.txtfbShajraOldName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtfbShajraOldName.Size = new System.Drawing.Size(46, 28);
-            this.txtfbShajraOldName.TabIndex = 56;
-            this.txtfbShajraOldName.Visible = false;
-            // 
-            // btnDelFbFard
-            // 
-            this.btnDelFbFard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelFbFard.Location = new System.Drawing.Point(258, 110);
-            this.btnDelFbFard.Name = "btnDelFbFard";
-            this.btnDelFbFard.Size = new System.Drawing.Size(83, 36);
-            this.btnDelFbFard.TabIndex = 54;
-            this.btnDelFbFard.Text = "خذف کریں";
-            this.btnDelFbFard.UseVisualStyleBackColor = true;
-            this.btnDelFbFard.Click += new System.EventHandler(this.btnDelFbFard_Click);
-            // 
-            // btnSaveShajra
-            // 
-            this.btnSaveShajra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveShajra.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveShajra.Location = new System.Drawing.Point(347, 110);
-            this.btnSaveShajra.Name = "btnSaveShajra";
-            this.btnSaveShajra.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveShajra.Size = new System.Drawing.Size(90, 37);
-            this.btnSaveShajra.TabIndex = 53;
-            this.btnSaveShajra.Text = "محفوظ کریں";
-            this.btnSaveShajra.UseVisualStyleBackColor = true;
-            this.btnSaveShajra.Click += new System.EventHandler(this.btnSaveShajra_Click);
-            // 
-            // txtDrustNaam
-            // 
-            this.txtDrustNaam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDrustNaam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrustNaam.Location = new System.Drawing.Point(275, 43);
-            this.txtDrustNaam.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtDrustNaam.Multiline = true;
-            this.txtDrustNaam.Name = "txtDrustNaam";
-            this.txtDrustNaam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDrustNaam.Size = new System.Drawing.Size(137, 28);
-            this.txtDrustNaam.TabIndex = 52;
-            this.txtDrustNaam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // label81
-            // 
-            this.label81.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(330, 2);
-            this.label81.Name = "label81";
-            this.label81.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label81.Size = new System.Drawing.Size(78, 38);
-            this.label81.TabIndex = 51;
-            this.label81.Text = "درست نام";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbQoam
-            // 
-            this.cbQoam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbQoam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbQoam.FormattingEnabled = true;
-            this.cbQoam.Location = new System.Drawing.Point(431, 44);
-            this.cbQoam.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.cbQoam.Name = "cbQoam";
-            this.cbQoam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbQoam.Size = new System.Drawing.Size(107, 31);
-            this.cbQoam.TabIndex = 50;
-            // 
-            // label80
-            // 
-            this.label80.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label80.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(487, 6);
-            this.label80.Name = "label80";
-            this.label80.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label80.Size = new System.Drawing.Size(56, 29);
-            this.label80.TabIndex = 49;
-            this.label80.Text = "قو م:";
-            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtNIC
-            // 
-            this.txtNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIC.Location = new System.Drawing.Point(558, 44);
-            this.txtNIC.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtNIC.MaxLength = 13;
-            this.txtNIC.Name = "txtNIC";
-            this.txtNIC.ReadOnly = true;
-            this.txtNIC.Size = new System.Drawing.Size(132, 30);
-            this.txtNIC.TabIndex = 9;
-            // 
-            // label79
-            // 
-            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label79.BackColor = System.Drawing.SystemColors.Control;
-            this.label79.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(652, 6);
-            this.label79.Name = "label79";
-            this.label79.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label79.Size = new System.Drawing.Size(86, 26);
-            this.label79.TabIndex = 5;
-            this.label79.Text = "شنا ختی کارڈ نمبر:";
-            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(756, 42);
-            this.txtName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtName.Size = new System.Drawing.Size(192, 30);
-            this.txtName.TabIndex = 4;
-            // 
-            // label78
-            // 
-            this.label78.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label78.BackColor = System.Drawing.Color.Transparent;
-            this.label78.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(814, 3);
-            this.label78.Name = "label78";
-            this.label78.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label78.Size = new System.Drawing.Size(141, 32);
-            this.label78.TabIndex = 3;
-            this.label78.Text = "نام فرد / ادارہ/مرتہن:";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSearchaFard
-            // 
-            this.btnSearchaFard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchaFard.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchaFard.Image = global::SDC_Application.Resource1._1338735730_search_lense;
-            this.btnSearchaFard.Location = new System.Drawing.Point(715, 39);
-            this.btnSearchaFard.Name = "btnSearchaFard";
-            this.btnSearchaFard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearchaFard.Size = new System.Drawing.Size(37, 34);
-            this.btnSearchaFard.TabIndex = 55;
-            this.btnSearchaFard.UseVisualStyleBackColor = true;
-            this.btnSearchaFard.Click += new System.EventHandler(this.btnSearchaFard_Click);
-            // 
-            // KhataMin
-            // 
-            this.KhataMin.Controls.Add(this.tabControl2);
-            this.KhataMin.Location = new System.Drawing.Point(4, 40);
-            this.KhataMin.Name = "KhataMin";
-            this.KhataMin.Padding = new System.Windows.Forms.Padding(6);
-            this.KhataMin.Size = new System.Drawing.Size(966, 516);
-            this.KhataMin.TabIndex = 9;
-            this.KhataMin.Text = "ترمیم کھاتہ من";
-            this.KhataMin.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.MinKhata);
-            this.tabControl2.Controls.Add(this.MinMalkan);
-            this.tabControl2.Controls.Add(this.MinKhatoonies);
-            this.tabControl2.Controls.Add(this.MinKhassras);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(6, 6);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.RightToLeftLayout = true;
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(954, 504);
-            this.tabControl2.TabIndex = 0;
-            // 
-            // MinKhata
-            // 
-            this.MinKhata.Controls.Add(this.gbMinKhataGrid);
-            this.MinKhata.Controls.Add(this.gbMinKhataButtons);
-            this.MinKhata.Controls.Add(this.gbMinKhataMain);
-            this.MinKhata.Location = new System.Drawing.Point(4, 40);
-            this.MinKhata.Name = "MinKhata";
-            this.MinKhata.Padding = new System.Windows.Forms.Padding(3);
-            this.MinKhata.Size = new System.Drawing.Size(946, 460);
-            this.MinKhata.TabIndex = 0;
-            this.MinKhata.Text = "تفصیل من کھاتہ";
-            this.MinKhata.UseVisualStyleBackColor = true;
-            // 
-            // gbMinKhataGrid
-            // 
-            this.gbMinKhataGrid.Controls.Add(this.DgMinKhataList);
-            this.gbMinKhataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbMinKhataGrid.Location = new System.Drawing.Point(3, 239);
-            this.gbMinKhataGrid.Name = "gbMinKhataGrid";
-            this.gbMinKhataGrid.Size = new System.Drawing.Size(940, 218);
-            this.gbMinKhataGrid.TabIndex = 120;
-            this.gbMinKhataGrid.TabStop = false;
-            this.gbMinKhataGrid.Text = " محفوظ شدہ من کھاتہ جات";
-            // 
-            // DgMinKhataList
-            // 
-            this.DgMinKhataList.AllowUserToAddRows = false;
-            this.DgMinKhataList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle117.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle117;
-            this.DgMinKhataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgMinKhataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgMinKhataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn2});
-            this.DgMinKhataList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgMinKhataList.Location = new System.Drawing.Point(3, 35);
-            this.DgMinKhataList.MultiSelect = false;
-            this.DgMinKhataList.Name = "DgMinKhataList";
-            this.DgMinKhataList.ReadOnly = true;
-            dataGridViewCellStyle118.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle118;
-            this.DgMinKhataList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgMinKhataList.Size = new System.Drawing.Size(934, 180);
-            this.DgMinKhataList.TabIndex = 1;
-            this.DgMinKhataList.TabStop = false;
-            this.DgMinKhataList.Click += new System.EventHandler(this.DgMinKhataList_Click);
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            // 
-            // gbMinKhataButtons
-            // 
-            this.gbMinKhataButtons.Controls.Add(this.txtMinKhataId);
-            this.gbMinKhataButtons.Controls.Add(this.btnDelMinKhata);
-            this.gbMinKhataButtons.Controls.Add(this.btnSaveMinKhata);
-            this.gbMinKhataButtons.Controls.Add(this.btnNewMinKhata);
-            this.gbMinKhataButtons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMinKhataButtons.Location = new System.Drawing.Point(3, 163);
-            this.gbMinKhataButtons.Name = "gbMinKhataButtons";
-            this.gbMinKhataButtons.Size = new System.Drawing.Size(940, 76);
-            this.gbMinKhataButtons.TabIndex = 119;
-            this.gbMinKhataButtons.TabStop = false;
-            // 
-            // txtMinKhataId
-            // 
-            this.txtMinKhataId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataId.Location = new System.Drawing.Point(255, 32);
-            this.txtMinKhataId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataId.Name = "txtMinKhataId";
-            this.txtMinKhataId.Size = new System.Drawing.Size(95, 30);
-            this.txtMinKhataId.TabIndex = 202;
-            this.txtMinKhataId.Text = "-1";
-            this.txtMinKhataId.Visible = false;
-            // 
-            // btnDelMinKhata
-            // 
-            this.btnDelMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelMinKhata.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMinKhata.Location = new System.Drawing.Point(441, 20);
-            this.btnDelMinKhata.Name = "btnDelMinKhata";
-            this.btnDelMinKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnDelMinKhata.TabIndex = 111;
-            this.ttMisal.SetToolTip(this.btnDelMinKhata, " محفوظ شدہ کھاتہ حذف کریں");
-            this.btnDelMinKhata.UseVisualStyleBackColor = true;
-            this.btnDelMinKhata.Click += new System.EventHandler(this.btnDelMinKhata_Click);
-            // 
-            // btnSaveMinKhata
-            // 
-            this.btnSaveMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveMinKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveMinKhata.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveMinKhata.Location = new System.Drawing.Point(515, 20);
-            this.btnSaveMinKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnSaveMinKhata.Name = "btnSaveMinKhata";
-            this.btnSaveMinKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveMinKhata.TabIndex = 200;
-            this.ttMisal.SetToolTip(this.btnSaveMinKhata, "کھاتہ محفوظ کریں");
-            this.btnSaveMinKhata.UseVisualStyleBackColor = true;
-            this.btnSaveMinKhata.Click += new System.EventHandler(this.btnSaveMinKhata_Click);
-            // 
-            // btnNewMinKhata
-            // 
-            this.btnNewMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewMinKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinKhata.Location = new System.Drawing.Point(589, 20);
-            this.btnNewMinKhata.Name = "btnNewMinKhata";
-            this.btnNewMinKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinKhata.TabIndex = 201;
-            this.ttMisal.SetToolTip(this.btnNewMinKhata, "نئے کھاتے کیلئے کلک کریں");
-            this.btnNewMinKhata.UseVisualStyleBackColor = true;
-            this.btnNewMinKhata.Click += new System.EventHandler(this.btnNewMinKhata_Click);
-            // 
-            // gbMinKhataMain
-            // 
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataKyfiat);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataMalia);
-            this.gbMinKhataMain.Controls.Add(this.label83);
-            this.gbMinKhataMain.Controls.Add(this.label84);
-            this.gbMinKhataMain.Controls.Add(this.label87);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataSFT);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataSarsai);
-            this.gbMinKhataMain.Controls.Add(this.label90);
-            this.gbMinKhataMain.Controls.Add(this.label91);
-            this.gbMinKhataMain.Controls.Add(this.label92);
-            this.gbMinKhataMain.Controls.Add(this.label94);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataMarla);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataKulHisa);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataNo);
-            this.gbMinKhataMain.Controls.Add(this.txtMinKhataKanal);
-            this.gbMinKhataMain.Controls.Add(this.label95);
-            this.gbMinKhataMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMinKhataMain.Location = new System.Drawing.Point(3, 3);
-            this.gbMinKhataMain.Name = "gbMinKhataMain";
-            this.gbMinKhataMain.Size = new System.Drawing.Size(940, 160);
-            this.gbMinKhataMain.TabIndex = 118;
-            this.gbMinKhataMain.TabStop = false;
-            this.gbMinKhataMain.Text = "کھاتہ میزان";
-            // 
-            // txtMinKhataKyfiat
-            // 
-            this.txtMinKhataKyfiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataKyfiat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataKyfiat.Location = new System.Drawing.Point(50, 108);
-            this.txtMinKhataKyfiat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataKyfiat.Multiline = true;
-            this.txtMinKhataKyfiat.Name = "txtMinKhataKyfiat";
-            this.txtMinKhataKyfiat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtMinKhataKyfiat.Size = new System.Drawing.Size(522, 33);
-            this.txtMinKhataKyfiat.TabIndex = 108;
-            this.txtMinKhataKyfiat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // txtMinKhataMalia
-            // 
-            this.txtMinKhataMalia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataMalia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataMalia.Location = new System.Drawing.Point(628, 113);
-            this.txtMinKhataMalia.Multiline = true;
-            this.txtMinKhataMalia.Name = "txtMinKhataMalia";
-            this.txtMinKhataMalia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtMinKhataMalia.Size = new System.Drawing.Size(251, 28);
-            this.txtMinKhataMalia.TabIndex = 107;
-            this.txtMinKhataMalia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // label83
-            // 
-            this.label83.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(576, 112);
-            this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label83.Name = "label83";
-            this.label83.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label83.Size = new System.Drawing.Size(52, 31);
-            this.label83.TabIndex = 105;
-            this.label83.Text = "کیفیت:";
-            this.label83.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label84
-            // 
-            this.label84.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(884, 115);
-            this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label84.Name = "label84";
-            this.label84.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label84.Size = new System.Drawing.Size(42, 31);
-            this.label84.TabIndex = 108;
-            this.label84.Text = "مالیہ :";
-            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label87
-            // 
-            this.label87.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(413, 72);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(68, 31);
-            this.label87.TabIndex = 109;
-            this.label87.Text = "مربع فٹ:";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMinKhataSFT
-            // 
-            this.txtMinKhataSFT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataSFT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataSFT.Location = new System.Drawing.Point(307, 71);
-            this.txtMinKhataSFT.Name = "txtMinKhataSFT";
-            this.txtMinKhataSFT.Size = new System.Drawing.Size(100, 30);
-            this.txtMinKhataSFT.TabIndex = 106;
-            // 
-            // txtMinKhataSarsai
-            // 
-            this.txtMinKhataSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataSarsai.Location = new System.Drawing.Point(480, 69);
-            this.txtMinKhataSarsai.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataSarsai.Name = "txtMinKhataSarsai";
-            this.txtMinKhataSarsai.Size = new System.Drawing.Size(92, 30);
-            this.txtMinKhataSarsai.TabIndex = 105;
-            // 
-            // label90
-            // 
-            this.label90.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(883, 29);
-            this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label90.Name = "label90";
-            this.label90.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label90.Size = new System.Drawing.Size(63, 31);
-            this.label90.TabIndex = 58;
-            this.label90.Text = "کھاتہ نمبر:";
-            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label91
-            // 
-            this.label91.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(576, 70);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(54, 31);
-            this.label91.TabIndex = 6;
-            this.label91.Text = "سرسائی:";
-            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label92
-            // 
-            this.label92.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label92.AutoSize = true;
-            this.label92.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(731, 29);
-            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(58, 31);
-            this.label92.TabIndex = 57;
-            this.label92.Text = "کل حصے:";
-            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label94
-            // 
-            this.label94.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(731, 68);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(44, 31);
-            this.label94.TabIndex = 7;
-            this.label94.Text = "مرلہ:";
-            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMinKhataMarla
-            // 
-            this.txtMinKhataMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataMarla.Location = new System.Drawing.Point(628, 69);
-            this.txtMinKhataMarla.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataMarla.Name = "txtMinKhataMarla";
-            this.txtMinKhataMarla.Size = new System.Drawing.Size(95, 30);
-            this.txtMinKhataMarla.TabIndex = 104;
-            this.txtMinKhataMarla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
-            // 
-            // txtMinKhataKulHisa
-            // 
-            this.txtMinKhataKulHisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataKulHisa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataKulHisa.Location = new System.Drawing.Point(628, 28);
-            this.txtMinKhataKulHisa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataKulHisa.Name = "txtMinKhataKulHisa";
-            this.txtMinKhataKulHisa.Size = new System.Drawing.Size(95, 30);
-            this.txtMinKhataKulHisa.TabIndex = 102;
-            this.txtMinKhataKulHisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
-            // 
-            // txtMinKhataNo
-            // 
-            this.txtMinKhataNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataNo.Location = new System.Drawing.Point(789, 28);
-            this.txtMinKhataNo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataNo.Name = "txtMinKhataNo";
-            this.txtMinKhataNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtMinKhataNo.Size = new System.Drawing.Size(90, 30);
-            this.txtMinKhataNo.TabIndex = 101;
-            // 
-            // txtMinKhataKanal
-            // 
-            this.txtMinKhataKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhataKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhataKanal.Location = new System.Drawing.Point(789, 67);
-            this.txtMinKhataKanal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMinKhataKanal.Name = "txtMinKhataKanal";
-            this.txtMinKhataKanal.Size = new System.Drawing.Size(90, 30);
-            this.txtMinKhataKanal.TabIndex = 103;
-            this.txtMinKhataKanal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
-            // 
-            // label95
-            // 
-            this.label95.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(883, 68);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(44, 31);
-            this.label95.TabIndex = 8;
-            this.label95.Text = "کنال:";
-            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MinMalkan
-            // 
-            this.MinMalkan.Controls.Add(this.panel10);
-            this.MinMalkan.Controls.Add(this.panel9);
-            this.MinMalkan.Controls.Add(this.groupBox18);
-            this.MinMalkan.Controls.Add(this.gbMinKhataMalkan);
-            this.MinMalkan.Location = new System.Drawing.Point(4, 40);
-            this.MinMalkan.Name = "MinMalkan";
-            this.MinMalkan.Padding = new System.Windows.Forms.Padding(3);
-            this.MinMalkan.Size = new System.Drawing.Size(946, 460);
-            this.MinMalkan.TabIndex = 1;
-            this.MinMalkan.Text = "تفصیل من کھاتہ ملکان";
-            this.MinMalkan.UseVisualStyleBackColor = true;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel10.Location = new System.Drawing.Point(3, 250);
-            this.panel10.Name = "panel10";
-            this.panel10.Padding = new System.Windows.Forms.Padding(5);
-            this.panel10.Size = new System.Drawing.Size(940, 207);
-            this.panel10.TabIndex = 1038;
-            // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.dgMinKhataMalkan);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(5, 5);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(928, 195);
-            this.panel11.TabIndex = 2;
-            // 
-            // dgMinKhataMalkan
-            // 
-            this.dgMinKhataMalkan.AllowUserToAddRows = false;
-            this.dgMinKhataMalkan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle119.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle119;
-            this.dgMinKhataMalkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgMinKhataMalkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMinKhataMalkan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn3});
-            this.dgMinKhataMalkan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgMinKhataMalkan.Location = new System.Drawing.Point(0, 0);
-            this.dgMinKhataMalkan.MultiSelect = false;
-            this.dgMinKhataMalkan.Name = "dgMinKhataMalkan";
-            this.dgMinKhataMalkan.ReadOnly = true;
-            dataGridViewCellStyle120.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle120;
-            this.dgMinKhataMalkan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMinKhataMalkan.Size = new System.Drawing.Size(926, 193);
-            this.dgMinKhataMalkan.TabIndex = 0;
-            this.dgMinKhataMalkan.TabStop = false;
-            this.dgMinKhataMalkan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMinKhataMalkan_CellContentClick);
-            this.dgMinKhataMalkan.Click += new System.EventHandler(this.dgMinKhataMalkan_Click);
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.chkselectallchangemalikan);
-            this.panel9.Controls.Add(this.txtSearchMalik);
-            this.panel9.Controls.Add(this.label114);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(3, 201);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(940, 49);
-            this.panel9.TabIndex = 1037;
-            // 
-            // chkselectallchangemalikan
-            // 
-            this.chkselectallchangemalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkselectallchangemalikan.AutoSize = true;
-            this.chkselectallchangemalikan.Location = new System.Drawing.Point(807, 10);
-            this.chkselectallchangemalikan.Name = "chkselectallchangemalikan";
-            this.chkselectallchangemalikan.Size = new System.Drawing.Size(110, 35);
-            this.chkselectallchangemalikan.TabIndex = 1032;
-            this.chkselectallchangemalikan.Text = "تمام منتخب کریں";
-            this.chkselectallchangemalikan.UseVisualStyleBackColor = true;
-            this.chkselectallchangemalikan.Visible = false;
-            // 
-            // txtSearchMalik
-            // 
-            this.txtSearchMalik.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchMalik.Location = new System.Drawing.Point(536, 12);
-            this.txtSearchMalik.Name = "txtSearchMalik";
-            this.txtSearchMalik.Size = new System.Drawing.Size(135, 30);
-            this.txtSearchMalik.TabIndex = 1035;
-            this.txtSearchMalik.TextChanged += new System.EventHandler(this.txtSearchMalik_TextChanged);
-            this.txtSearchMalik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label114.Location = new System.Drawing.Point(677, 12);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(67, 31);
-            this.label114.TabIndex = 1034;
-            this.label114.Text = "تلاش کریں";
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.txtMinMalikPersonId);
-            this.groupBox18.Controls.Add(this.txtKhewatGroupFareeqId);
-            this.groupBox18.Controls.Add(this.btnNewMinMalik);
-            this.groupBox18.Controls.Add(this.btnSaveMinMalik);
-            this.groupBox18.Controls.Add(this.btnDelMalik);
-            this.groupBox18.Controls.Add(this.btnMalkanFromCurrentKhata);
-            this.groupBox18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox18.Location = new System.Drawing.Point(3, 116);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(940, 85);
-            this.groupBox18.TabIndex = 1036;
-            this.groupBox18.TabStop = false;
-            // 
-            // txtMinMalikPersonId
-            // 
-            this.txtMinMalikPersonId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalikPersonId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalikPersonId.Location = new System.Drawing.Point(127, 34);
-            this.txtMinMalikPersonId.Name = "txtMinMalikPersonId";
-            this.txtMinMalikPersonId.Size = new System.Drawing.Size(70, 30);
-            this.txtMinMalikPersonId.TabIndex = 1034;
-            this.txtMinMalikPersonId.Text = "-1";
-            this.txtMinMalikPersonId.Visible = false;
-            // 
-            // txtKhewatGroupFareeqId
-            // 
-            this.txtKhewatGroupFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhewatGroupFareeqId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(42, 32);
-            this.txtKhewatGroupFareeqId.Name = "txtKhewatGroupFareeqId";
-            this.txtKhewatGroupFareeqId.Size = new System.Drawing.Size(70, 30);
-            this.txtKhewatGroupFareeqId.TabIndex = 1033;
-            this.txtKhewatGroupFareeqId.Text = "-1";
-            this.txtKhewatGroupFareeqId.Visible = false;
-            // 
-            // btnNewMinMalik
-            // 
-            this.btnNewMinMalik.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinMalik.Location = new System.Drawing.Point(518, 24);
-            this.btnNewMinMalik.Name = "btnNewMinMalik";
-            this.btnNewMinMalik.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinMalik.TabIndex = 1032;
-            this.ttMisal.SetToolTip(this.btnNewMinMalik, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewMinMalik.UseVisualStyleBackColor = true;
-            this.btnNewMinMalik.Click += new System.EventHandler(this.btnNewMinMalik_Click);
-            // 
-            // btnSaveMinMalik
-            // 
-            this.btnSaveMinMalik.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveMinMalik.Location = new System.Drawing.Point(450, 24);
-            this.btnSaveMinMalik.Name = "btnSaveMinMalik";
-            this.btnSaveMinMalik.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveMinMalik.TabIndex = 1032;
-            this.btnSaveMinMalik.UseVisualStyleBackColor = true;
-            this.btnSaveMinMalik.Click += new System.EventHandler(this.btnSaveMinMalik_Click);
-            // 
-            // btnDelMalik
-            // 
-            this.btnDelMalik.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMalik.Location = new System.Drawing.Point(382, 24);
-            this.btnDelMalik.Name = "btnDelMalik";
-            this.btnDelMalik.Size = new System.Drawing.Size(53, 48);
-            this.btnDelMalik.TabIndex = 1031;
-            this.btnDelMalik.UseVisualStyleBackColor = true;
-            this.btnDelMalik.Click += new System.EventHandler(this.btnDelMalik_Click);
-            // 
-            // btnMalkanFromCurrentKhata
-            // 
-            this.btnMalkanFromCurrentKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMalkanFromCurrentKhata.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMalkanFromCurrentKhata.Location = new System.Drawing.Point(734, 23);
-            this.btnMalkanFromCurrentKhata.Name = "btnMalkanFromCurrentKhata";
-            this.btnMalkanFromCurrentKhata.Size = new System.Drawing.Size(188, 45);
-            this.btnMalkanFromCurrentKhata.TabIndex = 1012;
-            this.btnMalkanFromCurrentKhata.Text = "کھاتہ حال سے ملکان کا انتخاب کریں";
-            this.btnMalkanFromCurrentKhata.UseVisualStyleBackColor = true;
-            this.btnMalkanFromCurrentKhata.Click += new System.EventHandler(this.btnMalkanFromCurrentKhata_Click);
-            // 
-            // gbMinKhataMalkan
-            // 
-            this.gbMinKhataMalkan.Controls.Add(this.cboKhewatType);
-            this.gbMinKhataMalkan.Controls.Add(this.label100);
-            this.gbMinKhataMalkan.Controls.Add(this.btnishtarakhisabamutabiq);
-            this.gbMinKhataMalkan.Controls.Add(this.label85);
-            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikSFT);
-            this.gbMinKhataMalkan.Controls.Add(this.label86);
-            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikSarsai);
-            this.gbMinKhataMalkan.Controls.Add(this.label89);
-            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikkanal);
-            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikMarla);
-            this.gbMinKhataMalkan.Controls.Add(this.label93);
-            this.gbMinKhataMalkan.Controls.Add(this.label98);
-            this.gbMinKhataMalkan.Controls.Add(this.label99);
-            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikHissa);
-            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalkinName);
-            this.gbMinKhataMalkan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMinKhataMalkan.Location = new System.Drawing.Point(3, 3);
-            this.gbMinKhataMalkan.Name = "gbMinKhataMalkan";
-            this.gbMinKhataMalkan.Size = new System.Drawing.Size(940, 113);
-            this.gbMinKhataMalkan.TabIndex = 0;
-            this.gbMinKhataMalkan.TabStop = false;
-            // 
-            // cboKhewatType
-            // 
-            this.cboKhewatType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboKhewatType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cboKhewatType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboKhewatType.DropDownWidth = 8;
-            this.cboKhewatType.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboKhewatType.FormattingEnabled = true;
-            this.cboKhewatType.Location = new System.Drawing.Point(284, 20);
-            this.cboKhewatType.Name = "cboKhewatType";
-            this.cboKhewatType.Size = new System.Drawing.Size(217, 46);
-            this.cboKhewatType.TabIndex = 1027;
-            this.cboKhewatType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // label100
-            // 
-            this.label100.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label100.AutoSize = true;
-            this.label100.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label100.Location = new System.Drawing.Point(507, 27);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(74, 38);
-            this.label100.TabIndex = 1034;
-            this.label100.Text = "قسم ملکیت";
-            this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnishtarakhisabamutabiq
-            // 
-            this.btnishtarakhisabamutabiq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnishtarakhisabamutabiq.Location = new System.Drawing.Point(20, 61);
-            this.btnishtarakhisabamutabiq.Name = "btnishtarakhisabamutabiq";
-            this.btnishtarakhisabamutabiq.Size = new System.Drawing.Size(183, 34);
-            this.btnishtarakhisabamutabiq.TabIndex = 1033;
-            this.btnishtarakhisabamutabiq.Text = "حصہ بمطابق رقبہ/رقبہ بمطابق حصہ";
-            this.btnishtarakhisabamutabiq.UseVisualStyleBackColor = true;
-            this.btnishtarakhisabamutabiq.Click += new System.EventHandler(this.btnishtarakhisabamutabiq_Click);
-            // 
-            // label85
-            // 
-            this.label85.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(274, 65);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(72, 38);
-            this.label85.TabIndex = 1025;
-            this.label85.Text = "فٹ منتقلہ";
-            // 
-            // txtMinMalikSFT
-            // 
-            this.txtMinMalikSFT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalikSFT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalikSFT.Location = new System.Drawing.Point(218, 67);
-            this.txtMinMalikSFT.Name = "txtMinMalikSFT";
-            this.txtMinMalikSFT.Size = new System.Drawing.Size(50, 30);
-            this.txtMinMalikSFT.TabIndex = 1031;
-            this.txtMinMalikSFT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikkanal_KeyPress);
-            // 
-            // label86
-            // 
-            this.label86.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(389, 65);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(89, 38);
-            this.label86.TabIndex = 1023;
-            this.label86.Text = "سرسائی منتقلہ";
-            // 
-            // txtMinMalikSarsai
-            // 
-            this.txtMinMalikSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalikSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalikSarsai.Location = new System.Drawing.Point(337, 67);
-            this.txtMinMalikSarsai.Name = "txtMinMalikSarsai";
-            this.txtMinMalikSarsai.Size = new System.Drawing.Size(46, 30);
-            this.txtMinMalikSarsai.TabIndex = 1030;
-            this.txtMinMalikSarsai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikHissa_KeyPress);
-            // 
-            // label89
-            // 
-            this.label89.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(507, 65);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(77, 38);
-            this.label89.TabIndex = 1024;
-            this.label89.Text = "مرلہ منتقلہ";
-            // 
-            // txtMinMalikkanal
-            // 
-            this.txtMinMalikkanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalikkanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalikkanal.Location = new System.Drawing.Point(580, 67);
-            this.txtMinMalikkanal.Name = "txtMinMalikkanal";
-            this.txtMinMalikkanal.Size = new System.Drawing.Size(70, 30);
-            this.txtMinMalikkanal.TabIndex = 1028;
-            this.txtMinMalikkanal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikkanal_KeyPress);
-            // 
-            // txtMinMalikMarla
-            // 
-            this.txtMinMalikMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalikMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalikMarla.Location = new System.Drawing.Point(470, 67);
-            this.txtMinMalikMarla.Name = "txtMinMalikMarla";
-            this.txtMinMalikMarla.Size = new System.Drawing.Size(31, 30);
-            this.txtMinMalikMarla.TabIndex = 1029;
-            this.txtMinMalikMarla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikHissa_KeyPress);
-            // 
-            // label93
-            // 
-            this.label93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label93.AutoSize = true;
-            this.label93.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(656, 65);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(77, 38);
-            this.label93.TabIndex = 1022;
-            this.label93.Text = "کنال منتقلہ";
-            // 
-            // label98
-            // 
-            this.label98.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label98.AutoSize = true;
-            this.label98.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label98.Location = new System.Drawing.Point(657, 27);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(75, 38);
-            this.label98.TabIndex = 1015;
-            this.label98.Text = "حصہ منتقلہ";
-            // 
-            // label99
-            // 
-            this.label99.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label99.AutoSize = true;
-            this.label99.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label99.Location = new System.Drawing.Point(873, 27);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(68, 38);
-            this.label99.TabIndex = 1017;
-            this.label99.Text = "نام مالک";
-            this.label99.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMinMalikHissa
-            // 
-            this.txtMinMalikHissa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalikHissa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalikHissa.Location = new System.Drawing.Point(576, 29);
-            this.txtMinMalikHissa.Name = "txtMinMalikHissa";
-            this.txtMinMalikHissa.Size = new System.Drawing.Size(76, 30);
-            this.txtMinMalikHissa.TabIndex = 1026;
-            this.txtMinMalikHissa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikHissa_KeyPress);
-            this.txtMinMalikHissa.Leave += new System.EventHandler(this.txtMinMalikHissa_Leave);
-            // 
-            // txtMinMalkinName
-            // 
-            this.txtMinMalkinName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinMalkinName.Enabled = false;
-            this.txtMinMalkinName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinMalkinName.Location = new System.Drawing.Point(726, 24);
-            this.txtMinMalkinName.Name = "txtMinMalkinName";
-            this.txtMinMalkinName.Size = new System.Drawing.Size(141, 44);
-            this.txtMinMalkinName.TabIndex = 1013;
-            this.txtMinMalkinName.TabStop = false;
-            // 
-            // MinKhatoonies
-            // 
-            this.MinKhatoonies.Controls.Add(this.groupBox21);
-            this.MinKhatoonies.Controls.Add(this.groupBox20);
-            this.MinKhatoonies.Controls.Add(this.gbMinKhatooni);
-            this.MinKhatoonies.Location = new System.Drawing.Point(4, 40);
-            this.MinKhatoonies.Name = "MinKhatoonies";
-            this.MinKhatoonies.Size = new System.Drawing.Size(946, 460);
-            this.MinKhatoonies.TabIndex = 2;
-            this.MinKhatoonies.Text = "تفصیل من کھاتہ کھتونی";
-            this.MinKhatoonies.UseVisualStyleBackColor = true;
-            // 
-            // groupBox21
-            // 
-            this.groupBox21.Controls.Add(this.grdGetkhatonichange);
-            this.groupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox21.Location = new System.Drawing.Point(0, 271);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(946, 189);
-            this.groupBox21.TabIndex = 1018;
-            this.groupBox21.TabStop = false;
-            // 
-            // grdGetkhatonichange
-            // 
-            this.grdGetkhatonichange.AllowUserToAddRows = false;
-            this.grdGetkhatonichange.AllowUserToDeleteRows = false;
-            this.grdGetkhatonichange.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdGetkhatonichange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdGetkhatonichange.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chkkk});
-            this.grdGetkhatonichange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdGetkhatonichange.Location = new System.Drawing.Point(3, 35);
-            this.grdGetkhatonichange.Name = "grdGetkhatonichange";
-            this.grdGetkhatonichange.ReadOnly = true;
-            this.grdGetkhatonichange.RowTemplate.Height = 30;
-            this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdGetkhatonichange.Size = new System.Drawing.Size(940, 151);
-            this.grdGetkhatonichange.TabIndex = 8;
-            this.grdGetkhatonichange.Click += new System.EventHandler(this.grdGetkhatonichange_Click);
-            // 
-            // chkkk
-            // 
-            this.chkkk.HeaderText = "انتخاب کریں";
-            this.chkkk.Name = "chkkk";
-            this.chkkk.ReadOnly = true;
-            // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.btnNewMinKhatooni);
-            this.groupBox20.Controls.Add(this.btnDeleteKhatoonichange);
-            this.groupBox20.Controls.Add(this.btnSaveKhatonichagne);
-            this.groupBox20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox20.Location = new System.Drawing.Point(0, 188);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(946, 83);
-            this.groupBox20.TabIndex = 1017;
-            this.groupBox20.TabStop = false;
-            // 
-            // btnNewMinKhatooni
-            // 
-            this.btnNewMinKhatooni.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinKhatooni.Location = new System.Drawing.Point(486, 22);
-            this.btnNewMinKhatooni.Name = "btnNewMinKhatooni";
-            this.btnNewMinKhatooni.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinKhatooni.TabIndex = 204;
-            this.ttMisal.SetToolTip(this.btnNewMinKhatooni, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewMinKhatooni.UseVisualStyleBackColor = true;
-            this.btnNewMinKhatooni.Click += new System.EventHandler(this.btnNewMinKhatooni_Click);
-            // 
-            // btnDeleteKhatoonichange
-            // 
-            this.btnDeleteKhatoonichange.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDeleteKhatoonichange.Location = new System.Drawing.Point(359, 21);
-            this.btnDeleteKhatoonichange.Name = "btnDeleteKhatoonichange";
-            this.btnDeleteKhatoonichange.Size = new System.Drawing.Size(49, 50);
-            this.btnDeleteKhatoonichange.TabIndex = 1016;
-            this.btnDeleteKhatoonichange.UseVisualStyleBackColor = true;
-            this.btnDeleteKhatoonichange.Click += new System.EventHandler(this.btnDeleteKhatoonichange_Click);
-            // 
-            // btnSaveKhatonichagne
-            // 
-            this.btnSaveKhatonichagne.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveKhatonichagne.Location = new System.Drawing.Point(422, 21);
-            this.btnSaveKhatonichagne.Name = "btnSaveKhatonichagne";
-            this.btnSaveKhatonichagne.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveKhatonichagne.TabIndex = 1011;
-            this.btnSaveKhatonichagne.UseVisualStyleBackColor = true;
-            this.btnSaveKhatonichagne.Click += new System.EventHandler(this.btnSaveKhatonichagne_Click);
-            // 
-            // gbMinKhatooni
-            // 
-            this.gbMinKhatooni.Controls.Add(this.label88);
-            this.gbMinKhatooni.Controls.Add(this.txtMinKhatooniId);
-            this.gbMinKhatooni.Controls.Add(this.btnMusheryanFromKhatooni);
-            this.gbMinKhatooni.Controls.Add(this.label110);
-            this.gbMinKhatooni.Controls.Add(this.label112);
-            this.gbMinKhatooni.Controls.Add(this.txtlagan);
-            this.gbMinKhatooni.Controls.Add(this.txtKhatooninumchagee);
-            this.gbMinKhatooni.Controls.Add(this.txtabbpashi);
-            this.gbMinKhatooni.Controls.Add(this.btnGetKhatooni);
-            this.gbMinKhatooni.Controls.Add(this.label111);
-            this.gbMinKhatooni.Controls.Add(this.txttafsel);
-            this.gbMinKhatooni.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMinKhatooni.Location = new System.Drawing.Point(0, 0);
-            this.gbMinKhatooni.Name = "gbMinKhatooni";
-            this.gbMinKhatooni.Size = new System.Drawing.Size(946, 188);
-            this.gbMinKhatooni.TabIndex = 0;
-            this.gbMinKhatooni.TabStop = false;
-            // 
-            // label88
-            // 
-            this.label88.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label88.AutoSize = true;
-            this.label88.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(755, 29);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(77, 38);
-            this.label88.TabIndex = 1019;
-            this.label88.Text = "کھتونی نمبر";
-            // 
-            // txtMinKhatooniId
-            // 
-            this.txtMinKhatooniId.Location = new System.Drawing.Point(6, 24);
-            this.txtMinKhatooniId.Name = "txtMinKhatooniId";
-            this.txtMinKhatooniId.Size = new System.Drawing.Size(82, 39);
-            this.txtMinKhatooniId.TabIndex = 1018;
-            this.txtMinKhatooniId.Text = "-1";
-            this.txtMinKhatooniId.Visible = false;
-            // 
-            // btnMusheryanFromKhatooni
-            // 
-            this.btnMusheryanFromKhatooni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMusheryanFromKhatooni.Location = new System.Drawing.Point(49, 103);
-            this.btnMusheryanFromKhatooni.Name = "btnMusheryanFromKhatooni";
-            this.btnMusheryanFromKhatooni.Size = new System.Drawing.Size(100, 60);
-            this.btnMusheryanFromKhatooni.TabIndex = 1017;
-            this.btnMusheryanFromKhatooni.Text = "مشتریان بمطابق مندرجہ کھتونی";
-            this.btnMusheryanFromKhatooni.UseVisualStyleBackColor = true;
-            this.btnMusheryanFromKhatooni.Click += new System.EventHandler(this.btnMusheryanFromKhatooni_Click);
-            // 
-            // label110
-            // 
-            this.label110.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label110.AutoSize = true;
-            this.label110.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label110.Location = new System.Drawing.Point(335, 29);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(92, 38);
-            this.label110.TabIndex = 1010;
-            this.label110.Text = "وسائل آبپاشی";
-            // 
-            // label112
-            // 
-            this.label112.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label112.AutoSize = true;
-            this.label112.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label112.Location = new System.Drawing.Point(630, 29);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(44, 38);
-            this.label112.TabIndex = 1013;
-            this.label112.Text = "لگان";
-            // 
-            // txtlagan
-            // 
-            this.txtlagan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtlagan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlagan.Location = new System.Drawing.Point(412, 28);
-            this.txtlagan.Multiline = true;
-            this.txtlagan.Name = "txtlagan";
-            this.txtlagan.Size = new System.Drawing.Size(195, 33);
-            this.txtlagan.TabIndex = 1009;
-            this.txtlagan.TabStop = false;
-            this.txtlagan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // txtKhatooninumchagee
-            // 
-            this.txtKhatooninumchagee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhatooninumchagee.Location = new System.Drawing.Point(671, 28);
-            this.txtKhatooninumchagee.Name = "txtKhatooninumchagee";
-            this.txtKhatooninumchagee.Size = new System.Drawing.Size(64, 39);
-            this.txtKhatooninumchagee.TabIndex = 1012;
-            this.txtKhatooninumchagee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
-            // 
-            // txtabbpashi
-            // 
-            this.txtabbpashi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtabbpashi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtabbpashi.Location = new System.Drawing.Point(165, 28);
-            this.txtabbpashi.Multiline = true;
-            this.txtabbpashi.Name = "txtabbpashi";
-            this.txtabbpashi.Size = new System.Drawing.Size(163, 32);
-            this.txtabbpashi.TabIndex = 1015;
-            this.txtabbpashi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // btnGetKhatooni
-            // 
-            this.btnGetKhatooni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGetKhatooni.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetKhatooni.Location = new System.Drawing.Point(843, 24);
-            this.btnGetKhatooni.Name = "btnGetKhatooni";
-            this.btnGetKhatooni.Size = new System.Drawing.Size(97, 101);
-            this.btnGetKhatooni.TabIndex = 9;
-            this.btnGetKhatooni.Text = "کھاتہ حال سے کھتونی کا انتخاب کریں";
-            this.btnGetKhatooni.UseVisualStyleBackColor = true;
-            this.btnGetKhatooni.Click += new System.EventHandler(this.btnGetKhatooni_Click);
-            // 
-            // label111
-            // 
-            this.label111.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label111.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label111.Location = new System.Drawing.Point(746, 79);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(72, 93);
-            this.label111.TabIndex = 11;
-            this.label111.Text = "تفصیل حصہ داران وکاشتکاران";
-            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txttafsel
-            // 
-            this.txttafsel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttafsel.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttafsel.Location = new System.Drawing.Point(165, 82);
-            this.txttafsel.Multiline = true;
-            this.txttafsel.Name = "txttafsel";
-            this.txttafsel.Size = new System.Drawing.Size(570, 93);
-            this.txttafsel.TabIndex = 10;
-            this.txttafsel.TabStop = false;
-            this.txttafsel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
-            // 
-            // MinKhassras
-            // 
-            this.MinKhassras.Controls.Add(this.groupBox23);
-            this.MinKhassras.Controls.Add(this.groupBox22);
-            this.MinKhassras.Controls.Add(this.gbMinKhatoniKhassraSelec);
-            this.MinKhassras.Location = new System.Drawing.Point(4, 40);
-            this.MinKhassras.Name = "MinKhassras";
-            this.MinKhassras.Size = new System.Drawing.Size(946, 460);
-            this.MinKhassras.TabIndex = 3;
-            this.MinKhassras.Text = "تفصیل من کھاتہ خسرہ جات";
-            this.MinKhassras.UseVisualStyleBackColor = true;
-            // 
-            // groupBox23
-            // 
-            this.groupBox23.Controls.Add(this.dgMinKhataKhassraJat);
-            this.groupBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox23.Location = new System.Drawing.Point(0, 238);
-            this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(946, 222);
-            this.groupBox23.TabIndex = 10009;
-            this.groupBox23.TabStop = false;
-            // 
-            // dgMinKhataKhassraJat
-            // 
-            this.dgMinKhataKhassraJat.AllowUserToAddRows = false;
-            this.dgMinKhataKhassraJat.AllowUserToDeleteRows = false;
-            this.dgMinKhataKhassraJat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgMinKhataKhassraJat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMinKhataKhassraJat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn4});
-            this.dgMinKhataKhassraJat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgMinKhataKhassraJat.Location = new System.Drawing.Point(3, 35);
-            this.dgMinKhataKhassraJat.Name = "dgMinKhataKhassraJat";
-            this.dgMinKhataKhassraJat.ReadOnly = true;
-            this.dgMinKhataKhassraJat.RowTemplate.Height = 30;
-            this.dgMinKhataKhassraJat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMinKhataKhassraJat.Size = new System.Drawing.Size(940, 184);
-            this.dgMinKhataKhassraJat.TabIndex = 8;
-            this.dgMinKhataKhassraJat.Click += new System.EventHandler(this.dgMinKhataKhassraJat_Click);
-            // 
-            // dataGridViewCheckBoxColumn4
-            // 
-            this.dataGridViewCheckBoxColumn4.HeaderText = "انتخاب کریں";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            this.dataGridViewCheckBoxColumn4.ReadOnly = true;
-            // 
-            // groupBox22
-            // 
-            this.groupBox22.Controls.Add(this.gbMinKhataKhassras);
-            this.groupBox22.Controls.Add(this.btnNewMinKhassra);
-            this.groupBox22.Controls.Add(this.btnDelMinKhassra);
-            this.groupBox22.Controls.Add(this.btnSaveMinKhassra);
-            this.groupBox22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox22.Location = new System.Drawing.Point(0, 69);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(946, 169);
-            this.groupBox22.TabIndex = 10008;
-            this.groupBox22.TabStop = false;
-            // 
-            // gbMinKhataKhassras
-            // 
-            this.gbMinKhataKhassras.Controls.Add(this.cmbMinKhewattypes);
-            this.gbMinKhataKhassras.Controls.Add(this.label101);
-            this.gbMinKhataKhassras.Controls.Add(this.label102);
-            this.gbMinKhataKhassras.Controls.Add(this.label106);
-            this.gbMinKhataKhassras.Controls.Add(this.txt_Marala_Khasra);
-            this.gbMinKhataKhassras.Controls.Add(this.txtMinKhassraNo);
-            this.gbMinKhataKhassras.Controls.Add(this.txt_kanal_Khasra);
-            this.gbMinKhataKhassras.Controls.Add(this.label104);
-            this.gbMinKhataKhassras.Controls.Add(this.label97);
-            this.gbMinKhataKhassras.Controls.Add(this.label103);
-            this.gbMinKhataKhassras.Controls.Add(this.txt_Feet_Khasra);
-            this.gbMinKhataKhassras.Controls.Add(this.txt_Sarsai_Khasra);
-            this.gbMinKhataKhassras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMinKhataKhassras.Location = new System.Drawing.Point(3, 35);
-            this.gbMinKhataKhassras.Name = "gbMinKhataKhassras";
-            this.gbMinKhataKhassras.Size = new System.Drawing.Size(940, 74);
-            this.gbMinKhataKhassras.TabIndex = 100013;
-            this.gbMinKhataKhassras.TabStop = false;
-            // 
-            // cmbMinKhewattypes
-            // 
-            this.cmbMinKhewattypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMinKhewattypes.DropDownWidth = 8;
-            this.cmbMinKhewattypes.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMinKhewattypes.FormattingEnabled = true;
-            this.cmbMinKhewattypes.Location = new System.Drawing.Point(471, 25);
-            this.cmbMinKhewattypes.Name = "cmbMinKhewattypes";
-            this.cmbMinKhewattypes.Size = new System.Drawing.Size(191, 46);
-            this.cmbMinKhewattypes.TabIndex = 10004;
-            // 
-            // label101
-            // 
-            this.label101.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label101.AutoSize = true;
-            this.label101.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label101.Location = new System.Drawing.Point(218, 29);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(58, 38);
-            this.label101.TabIndex = 26;
-            this.label101.Text = "سرسائی";
-            // 
-            // label102
-            // 
-            this.label102.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label102.AutoSize = true;
-            this.label102.Enabled = false;
-            this.label102.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label102.Location = new System.Drawing.Point(664, 29);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(69, 38);
-            this.label102.TabIndex = 10011;
-            this.label102.Text = "قسم زمین";
-            // 
-            // label106
-            // 
-            this.label106.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label106.AutoSize = true;
-            this.label106.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label106.Location = new System.Drawing.Point(429, 29);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(46, 38);
-            this.label106.TabIndex = 25;
-            this.label106.Text = "کنال";
-            // 
-            // txt_Marala_Khasra
-            // 
-            this.txt_Marala_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Marala_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Marala_Khasra.Location = new System.Drawing.Point(268, 31);
-            this.txt_Marala_Khasra.Name = "txt_Marala_Khasra";
-            this.txt_Marala_Khasra.Size = new System.Drawing.Size(49, 30);
-            this.txt_Marala_Khasra.TabIndex = 10006;
-            // 
-            // txtMinKhassraNo
-            // 
-            this.txtMinKhassraNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhassraNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinKhassraNo.Location = new System.Drawing.Point(723, 31);
-            this.txtMinKhassraNo.Name = "txtMinKhassraNo";
-            this.txtMinKhassraNo.Size = new System.Drawing.Size(131, 30);
-            this.txtMinKhassraNo.TabIndex = 10003;
-            this.txtMinKhassraNo.TabStop = false;
-            // 
-            // txt_kanal_Khasra
-            // 
-            this.txt_kanal_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_kanal_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_kanal_Khasra.Location = new System.Drawing.Point(361, 31);
-            this.txt_kanal_Khasra.Name = "txt_kanal_Khasra";
-            this.txt_kanal_Khasra.Size = new System.Drawing.Size(61, 30);
-            this.txt_kanal_Khasra.TabIndex = 10005;
-            // 
-            // label104
-            // 
-            this.label104.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label104.AutoSize = true;
-            this.label104.Enabled = false;
-            this.label104.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label104.Location = new System.Drawing.Point(860, 29);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(79, 38);
-            this.label104.TabIndex = 7;
-            this.label104.Text = " خسرہ نمبر ";
-            // 
-            // label97
-            // 
-            this.label97.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label97.AutoSize = true;
-            this.label97.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label97.Location = new System.Drawing.Point(122, 29);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(41, 38);
-            this.label97.TabIndex = 28;
-            this.label97.Text = "فٹ";
-            // 
-            // label103
-            // 
-            this.label103.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(321, 29);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(46, 38);
-            this.label103.TabIndex = 27;
-            this.label103.Text = "مرلہ";
-            // 
-            // txt_Feet_Khasra
-            // 
-            this.txt_Feet_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Feet_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Feet_Khasra.Location = new System.Drawing.Point(61, 31);
-            this.txt_Feet_Khasra.Name = "txt_Feet_Khasra";
-            this.txt_Feet_Khasra.Size = new System.Drawing.Size(56, 30);
-            this.txt_Feet_Khasra.TabIndex = 10008;
-            // 
-            // txt_Sarsai_Khasra
-            // 
-            this.txt_Sarsai_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Sarsai_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Sarsai_Khasra.Location = new System.Drawing.Point(159, 31);
-            this.txt_Sarsai_Khasra.Name = "txt_Sarsai_Khasra";
-            this.txt_Sarsai_Khasra.Size = new System.Drawing.Size(49, 30);
-            this.txt_Sarsai_Khasra.TabIndex = 10007;
-            // 
-            // btnNewMinKhassra
-            // 
-            this.btnNewMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewMinKhassra.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinKhassra.Location = new System.Drawing.Point(578, 114);
-            this.btnNewMinKhassra.Name = "btnNewMinKhassra";
-            this.btnNewMinKhassra.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinKhassra.TabIndex = 100010;
-            this.ttMisal.SetToolTip(this.btnNewMinKhassra, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewMinKhassra.UseVisualStyleBackColor = true;
-            this.btnNewMinKhassra.Click += new System.EventHandler(this.btnNewMinKhassra_Click);
-            // 
-            // btnDelMinKhassra
-            // 
-            this.btnDelMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelMinKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMinKhassra.Location = new System.Drawing.Point(438, 114);
-            this.btnDelMinKhassra.Name = "btnDelMinKhassra";
-            this.btnDelMinKhassra.Size = new System.Drawing.Size(53, 48);
-            this.btnDelMinKhassra.TabIndex = 100012;
-            this.btnDelMinKhassra.UseVisualStyleBackColor = true;
-            this.btnDelMinKhassra.Click += new System.EventHandler(this.btnDelMinKhassra_Click);
-            // 
-            // btnSaveMinKhassra
-            // 
-            this.btnSaveMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveMinKhassra.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveMinKhassra.Location = new System.Drawing.Point(508, 114);
-            this.btnSaveMinKhassra.Name = "btnSaveMinKhassra";
-            this.btnSaveMinKhassra.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveMinKhassra.TabIndex = 10009;
-            this.btnSaveMinKhassra.UseVisualStyleBackColor = true;
-            this.btnSaveMinKhassra.Click += new System.EventHandler(this.btnSaveMinKhassra_Click);
-            // 
-            // gbMinKhatoniKhassraSelec
-            // 
-            this.gbMinKhatoniKhassraSelec.Controls.Add(this.txtMinKhassraDetailId);
-            this.gbMinKhatoniKhassraSelec.Controls.Add(this.label96);
-            this.gbMinKhatoniKhassraSelec.Controls.Add(this.txtMinKhassraId);
-            this.gbMinKhatoniKhassraSelec.Controls.Add(this.cmbkhatoonisnew);
-            this.gbMinKhatoniKhassraSelec.Controls.Add(this.btnMinKhatooniKhassras);
-            this.gbMinKhatoniKhassraSelec.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMinKhatoniKhassraSelec.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMinKhatoniKhassraSelec.Location = new System.Drawing.Point(0, 0);
-            this.gbMinKhatoniKhassraSelec.Name = "gbMinKhatoniKhassraSelec";
-            this.gbMinKhatoniKhassraSelec.Size = new System.Drawing.Size(946, 69);
-            this.gbMinKhatoniKhassraSelec.TabIndex = 20;
-            this.gbMinKhatoniKhassraSelec.TabStop = false;
-            // 
-            // txtMinKhassraDetailId
-            // 
-            this.txtMinKhassraDetailId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhassraDetailId.Location = new System.Drawing.Point(19, 29);
-            this.txtMinKhassraDetailId.Name = "txtMinKhassraDetailId";
-            this.txtMinKhassraDetailId.Size = new System.Drawing.Size(75, 44);
-            this.txtMinKhassraDetailId.TabIndex = 10010;
-            this.txtMinKhassraDetailId.Text = "-1";
-            this.txtMinKhassraDetailId.Visible = false;
-            // 
-            // label96
-            // 
-            this.label96.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label96.AutoSize = true;
-            this.label96.Enabled = false;
-            this.label96.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(820, 31);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(136, 38);
-            this.label96.TabIndex = 10009;
-            this.label96.Text = "کھتونی کا انتخاب کریں";
-            // 
-            // txtMinKhassraId
-            // 
-            this.txtMinKhassraId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinKhassraId.Location = new System.Drawing.Point(104, 29);
-            this.txtMinKhassraId.Name = "txtMinKhassraId";
-            this.txtMinKhassraId.Size = new System.Drawing.Size(75, 44);
-            this.txtMinKhassraId.TabIndex = 107;
-            this.txtMinKhassraId.Text = "-1";
-            this.txtMinKhassraId.Visible = false;
-            // 
-            // cmbkhatoonisnew
-            // 
-            this.cmbkhatoonisnew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbkhatoonisnew.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbkhatoonisnew.FormattingEnabled = true;
-            this.cmbkhatoonisnew.Location = new System.Drawing.Point(673, 27);
-            this.cmbkhatoonisnew.Name = "cmbkhatoonisnew";
-            this.cmbkhatoonisnew.Size = new System.Drawing.Size(141, 44);
-            this.cmbkhatoonisnew.TabIndex = 10001;
-            this.cmbkhatoonisnew.SelectionChangeCommitted += new System.EventHandler(this.cmbkhatoonisnew_SelectionChangeCommitted);
-            // 
-            // btnMinKhatooniKhassras
-            // 
-            this.btnMinKhatooniKhassras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinKhatooniKhassras.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinKhatooniKhassras.Location = new System.Drawing.Point(534, 27);
-            this.btnMinKhatooniKhassras.Name = "btnMinKhatooniKhassras";
-            this.btnMinKhatooniKhassras.Size = new System.Drawing.Size(118, 38);
-            this.btnMinKhatooniKhassras.TabIndex = 10002;
-            this.btnMinKhatooniKhassras.Text = " انتخاب خسرہ جات";
-            this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
-            this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
-            // 
-            // gardawarTab
-            // 
-            this.gardawarTab.Controls.Add(this.panel6);
-            this.gardawarTab.Location = new System.Drawing.Point(4, 40);
-            this.gardawarTab.Name = "gardawarTab";
-            this.gardawarTab.Size = new System.Drawing.Size(966, 516);
-            this.gardawarTab.TabIndex = 7;
-            this.gardawarTab.Text = "گرداور رپورٹ";
-            this.gardawarTab.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Controls.Add(this.groupBox4);
-            this.panel6.Controls.Add(this.groupBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(966, 494);
-            this.panel6.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnSaveGardawarRpt);
-            this.groupBox4.Location = new System.Drawing.Point(146, 279);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(793, 78);
-            this.groupBox4.TabIndex = 56;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnSaveGardawarRpt
-            // 
-            this.btnSaveGardawarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveGardawarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveGardawarRpt.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveGardawarRpt.Location = new System.Drawing.Point(396, 19);
-            this.btnSaveGardawarRpt.Name = "btnSaveGardawarRpt";
-            this.btnSaveGardawarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveGardawarRpt.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveGardawarRpt.TabIndex = 54;
-            this.ttMisal.SetToolTip(this.btnSaveGardawarRpt, "گرداور رپورٹ محفوظ کریں");
-            this.btnSaveGardawarRpt.UseVisualStyleBackColor = true;
-            this.btnSaveGardawarRpt.Click += new System.EventHandler(this.btnSaveGardawarRpt_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtGardawarRpt);
-            this.groupBox2.Location = new System.Drawing.Point(146, 26);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(793, 250);
-            this.groupBox2.TabIndex = 55;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "گرداور رپورٹ";
-            // 
-            // txtGardawarRpt
-            // 
-            this.txtGardawarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGardawarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGardawarRpt.Location = new System.Drawing.Point(6, 32);
-            this.txtGardawarRpt.Multiline = true;
-            this.txtGardawarRpt.Name = "txtGardawarRpt";
-            this.txtGardawarRpt.Size = new System.Drawing.Size(781, 208);
-            this.txtGardawarRpt.TabIndex = 41;
-            // 
-            // tehsilDarTb
-            // 
-            this.tehsilDarTb.Controls.Add(this.panel7);
-            this.tehsilDarTb.Location = new System.Drawing.Point(4, 40);
-            this.tehsilDarTb.Name = "tehsilDarTb";
-            this.tehsilDarTb.Size = new System.Drawing.Size(966, 516);
-            this.tehsilDarTb.TabIndex = 8;
-            this.tehsilDarTb.Text = "تحصیلدار رپورٹ";
-            this.tehsilDarTb.UseVisualStyleBackColor = true;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Control;
-            this.panel7.Controls.Add(this.groupBox12);
-            this.panel7.Controls.Add(this.groupBox8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(966, 488);
-            this.panel7.TabIndex = 0;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.btnSaveTehsildarRpt);
-            this.groupBox12.Location = new System.Drawing.Point(135, 292);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(805, 75);
-            this.groupBox12.TabIndex = 59;
-            this.groupBox12.TabStop = false;
-            // 
-            // btnSaveTehsildarRpt
-            // 
-            this.btnSaveTehsildarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTehsildarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveTehsildarRpt.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveTehsildarRpt.Location = new System.Drawing.Point(413, 18);
-            this.btnSaveTehsildarRpt.Name = "btnSaveTehsildarRpt";
-            this.btnSaveTehsildarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveTehsildarRpt.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveTehsildarRpt.TabIndex = 57;
-            this.ttMisal.SetToolTip(this.btnSaveTehsildarRpt, "تحصیلدار رپورٹ محفو ظ کریں");
-            this.btnSaveTehsildarRpt.UseVisualStyleBackColor = true;
-            this.btnSaveTehsildarRpt.Click += new System.EventHandler(this.btnSaveTehsildarRpt_Click);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.groupBox10);
-            this.groupBox8.Controls.Add(this.txtTehsildarRpt);
-            this.groupBox8.Location = new System.Drawing.Point(135, 26);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(805, 263);
-            this.groupBox8.TabIndex = 58;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "تحصیلدار رپورٹ";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Location = new System.Drawing.Point(334, 263);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(262, 100);
-            this.groupBox10.TabIndex = 59;
-            this.groupBox10.TabStop = false;
-            // 
-            // txtTehsildarRpt
-            // 
-            this.txtTehsildarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTehsildarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTehsildarRpt.Location = new System.Drawing.Point(6, 32);
-            this.txtTehsildarRpt.Multiline = true;
-            this.txtTehsildarRpt.Name = "txtTehsildarRpt";
-            this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
-            this.txtTehsildarRpt.TabIndex = 56;
-            // 
             // tabKhatooniBayan
             // 
             this.tabKhatooniBayan.Controls.Add(this.groupBox13);
@@ -5824,7 +4032,7 @@
             this.label113.AutoSize = true;
             this.label113.Location = new System.Drawing.Point(836, 77);
             this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(64, 31);
+            this.label113.Size = new System.Drawing.Size(66, 31);
             this.label113.TabIndex = 68;
             this.label113.Text = " مرلہ منتقلہ";
             // 
@@ -5844,7 +4052,7 @@
             this.label115.AutoSize = true;
             this.label115.Location = new System.Drawing.Point(989, 77);
             this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(64, 31);
+            this.label115.Size = new System.Drawing.Size(66, 31);
             this.label115.TabIndex = 69;
             this.label115.Text = " کنال منتقلہ";
             // 
@@ -5904,7 +4112,7 @@
             this.label118.AutoSize = true;
             this.label118.Location = new System.Drawing.Point(291, 29);
             this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(39, 31);
+            this.label118.Size = new System.Drawing.Size(41, 31);
             this.label118.TabIndex = 60;
             this.label118.Text = " مرلہ";
             // 
@@ -5924,7 +4132,7 @@
             this.label119.AutoSize = true;
             this.label119.Location = new System.Drawing.Point(406, 29);
             this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(39, 31);
+            this.label119.Size = new System.Drawing.Size(41, 31);
             this.label119.TabIndex = 61;
             this.label119.Text = " کنال";
             // 
@@ -5997,6 +4205,1798 @@
             this.label122.TabIndex = 56;
             this.label122.Text = "کھاتہ نمبر";
             this.label122.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ShajraTab
+            // 
+            this.ShajraTab.Controls.Add(this.panel27);
+            this.ShajraTab.Controls.Add(this.panel26);
+            this.ShajraTab.Controls.Add(this.gbAfradRegisterControls);
+            this.ShajraTab.Location = new System.Drawing.Point(4, 40);
+            this.ShajraTab.Name = "ShajraTab";
+            this.ShajraTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ShajraTab.Size = new System.Drawing.Size(1215, 586);
+            this.ShajraTab.TabIndex = 5;
+            this.ShajraTab.Text = "ترمیم نام مالک";
+            this.ShajraTab.UseVisualStyleBackColor = true;
+            // 
+            // panel27
+            // 
+            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel27.Controls.Add(this.dgFBAfrad);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel27.Location = new System.Drawing.Point(3, 232);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(1209, 351);
+            this.panel27.TabIndex = 2;
+            // 
+            // dgFBAfrad
+            // 
+            this.dgFBAfrad.AllowUserToAddRows = false;
+            this.dgFBAfrad.AllowUserToDeleteRows = false;
+            this.dgFBAfrad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgFBAfrad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFBAfrad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColSelPerson});
+            this.dgFBAfrad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgFBAfrad.Location = new System.Drawing.Point(0, 0);
+            this.dgFBAfrad.MultiSelect = false;
+            this.dgFBAfrad.Name = "dgFBAfrad";
+            this.dgFBAfrad.ReadOnly = true;
+            this.dgFBAfrad.RowHeadersVisible = false;
+            this.dgFBAfrad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgFBAfrad.Size = new System.Drawing.Size(1207, 349);
+            this.dgFBAfrad.StandardTab = true;
+            this.dgFBAfrad.TabIndex = 4;
+            this.dgFBAfrad.DoubleClick += new System.EventHandler(this.dgFBAfrad_DoubleClick);
+            // 
+            // ColSelPerson
+            // 
+            this.ColSelPerson.HeaderText = "انتخاب کریں";
+            this.ColSelPerson.Name = "ColSelPerson";
+            this.ColSelPerson.ReadOnly = true;
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.SystemColors.Control;
+            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel26.Controls.Add(this.txtFBPersonId);
+            this.panel26.Controls.Add(this.txtFbExistsShajra);
+            this.panel26.Controls.Add(this.txtpersonIdShajra);
+            this.panel26.Controls.Add(this.label82);
+            this.panel26.Controls.Add(this.txtSearch);
+            this.panel26.Controls.Add(this.btnSearch);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel26.Location = new System.Drawing.Point(3, 166);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(1209, 66);
+            this.panel26.TabIndex = 1;
+            // 
+            // txtFBPersonId
+            // 
+            this.txtFBPersonId.Location = new System.Drawing.Point(109, 25);
+            this.txtFBPersonId.Name = "txtFBPersonId";
+            this.txtFBPersonId.Size = new System.Drawing.Size(35, 39);
+            this.txtFBPersonId.TabIndex = 54;
+            this.txtFBPersonId.Text = "-1";
+            this.txtFBPersonId.Visible = false;
+            // 
+            // txtFbExistsShajra
+            // 
+            this.txtFbExistsShajra.Location = new System.Drawing.Point(62, 21);
+            this.txtFbExistsShajra.Name = "txtFbExistsShajra";
+            this.txtFbExistsShajra.Size = new System.Drawing.Size(24, 39);
+            this.txtFbExistsShajra.TabIndex = 53;
+            this.txtFbExistsShajra.Text = "0";
+            this.txtFbExistsShajra.Visible = false;
+            // 
+            // txtpersonIdShajra
+            // 
+            this.txtpersonIdShajra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpersonIdShajra.Enabled = false;
+            this.txtpersonIdShajra.Location = new System.Drawing.Point(18, 21);
+            this.txtpersonIdShajra.Name = "txtpersonIdShajra";
+            this.txtpersonIdShajra.ReadOnly = true;
+            this.txtpersonIdShajra.Size = new System.Drawing.Size(37, 39);
+            this.txtpersonIdShajra.TabIndex = 52;
+            this.txtpersonIdShajra.Text = "0";
+            this.txtpersonIdShajra.Visible = false;
+            // 
+            // label82
+            // 
+            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(1127, 21);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(67, 31);
+            this.label82.TabIndex = 30;
+            this.label82.Text = "تلاش کریں";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtSearch.Location = new System.Drawing.Point(872, 18);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(249, 39);
+            this.txtSearch.TabIndex = 28;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Image = global::SDC_Application.Resource1.search01;
+            this.btnSearch.Location = new System.Drawing.Point(831, 17);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(35, 34);
+            this.btnSearch.TabIndex = 29;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // gbAfradRegisterControls
+            // 
+            this.gbAfradRegisterControls.BackColor = System.Drawing.SystemColors.Control;
+            this.gbAfradRegisterControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gbAfradRegisterControls.Controls.Add(this.txtFatherName);
+            this.gbAfradRegisterControls.Controls.Add(this.label37);
+            this.gbAfradRegisterControls.Controls.Add(this.txtPersonKhataDetails);
+            this.gbAfradRegisterControls.Controls.Add(this.label36);
+            this.gbAfradRegisterControls.Controls.Add(this.txtPersonExtraDetails);
+            this.gbAfradRegisterControls.Controls.Add(this.label23);
+            this.gbAfradRegisterControls.Controls.Add(this.txtfbShajraOldName);
+            this.gbAfradRegisterControls.Controls.Add(this.btnDelFbFard);
+            this.gbAfradRegisterControls.Controls.Add(this.btnSaveShajra);
+            this.gbAfradRegisterControls.Controls.Add(this.txtDrustNaam);
+            this.gbAfradRegisterControls.Controls.Add(this.label81);
+            this.gbAfradRegisterControls.Controls.Add(this.cbQoam);
+            this.gbAfradRegisterControls.Controls.Add(this.label80);
+            this.gbAfradRegisterControls.Controls.Add(this.txtNIC);
+            this.gbAfradRegisterControls.Controls.Add(this.label79);
+            this.gbAfradRegisterControls.Controls.Add(this.txtName);
+            this.gbAfradRegisterControls.Controls.Add(this.label78);
+            this.gbAfradRegisterControls.Controls.Add(this.btnSearchaFard);
+            this.gbAfradRegisterControls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbAfradRegisterControls.Location = new System.Drawing.Point(3, 3);
+            this.gbAfradRegisterControls.Name = "gbAfradRegisterControls";
+            this.gbAfradRegisterControls.Size = new System.Drawing.Size(1209, 163);
+            this.gbAfradRegisterControls.TabIndex = 0;
+            // 
+            // txtFatherName
+            // 
+            this.txtFatherName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFatherName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFatherName.Location = new System.Drawing.Point(367, 42);
+            this.txtFatherName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtFatherName.Multiline = true;
+            this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtFatherName.Size = new System.Drawing.Size(137, 28);
+            this.txtFatherName.TabIndex = 62;
+            this.txtFatherName.Visible = false;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(428, 2);
+            this.label37.Name = "label37";
+            this.label37.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label37.Size = new System.Drawing.Size(104, 38);
+            this.label37.TabIndex = 61;
+            this.label37.Text = "درست ولدیت";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label37.Visible = false;
+            // 
+            // txtPersonKhataDetails
+            // 
+            this.txtPersonKhataDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonKhataDetails.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonKhataDetails.Location = new System.Drawing.Point(707, 116);
+            this.txtPersonKhataDetails.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtPersonKhataDetails.Multiline = true;
+            this.txtPersonKhataDetails.Name = "txtPersonKhataDetails";
+            this.txtPersonKhataDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPersonKhataDetails.Size = new System.Drawing.Size(232, 28);
+            this.txtPersonKhataDetails.TabIndex = 60;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(758, 80);
+            this.label36.Name = "label36";
+            this.label36.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label36.Size = new System.Drawing.Size(186, 33);
+            this.label36.TabIndex = 59;
+            this.label36.Text = "تفصیل کھاتہ جات اگر کوئی ہے";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPersonExtraDetails
+            // 
+            this.txtPersonExtraDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonExtraDetails.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonExtraDetails.Location = new System.Drawing.Point(964, 116);
+            this.txtPersonExtraDetails.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtPersonExtraDetails.Multiline = true;
+            this.txtPersonExtraDetails.Name = "txtPersonExtraDetails";
+            this.txtPersonExtraDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPersonExtraDetails.Size = new System.Drawing.Size(232, 28);
+            this.txtPersonExtraDetails.TabIndex = 58;
+            this.txtPersonExtraDetails.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(1063, 80);
+            this.label23.Name = "label23";
+            this.label23.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label23.Size = new System.Drawing.Size(138, 33);
+            this.label23.TabIndex = 57;
+            this.label23.Text = "تفصیل افراد اگر کوئی ہے";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtfbShajraOldName
+            // 
+            this.txtfbShajraOldName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtfbShajraOldName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfbShajraOldName.Location = new System.Drawing.Point(271, 6);
+            this.txtfbShajraOldName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtfbShajraOldName.Multiline = true;
+            this.txtfbShajraOldName.Name = "txtfbShajraOldName";
+            this.txtfbShajraOldName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtfbShajraOldName.Size = new System.Drawing.Size(46, 28);
+            this.txtfbShajraOldName.TabIndex = 56;
+            this.txtfbShajraOldName.Visible = false;
+            // 
+            // btnDelFbFard
+            // 
+            this.btnDelFbFard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelFbFard.Location = new System.Drawing.Point(507, 110);
+            this.btnDelFbFard.Name = "btnDelFbFard";
+            this.btnDelFbFard.Size = new System.Drawing.Size(83, 36);
+            this.btnDelFbFard.TabIndex = 54;
+            this.btnDelFbFard.Text = "خذف کریں";
+            this.btnDelFbFard.UseVisualStyleBackColor = true;
+            this.btnDelFbFard.Click += new System.EventHandler(this.btnDelFbFard_Click);
+            // 
+            // btnSaveShajra
+            // 
+            this.btnSaveShajra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveShajra.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveShajra.Location = new System.Drawing.Point(596, 110);
+            this.btnSaveShajra.Name = "btnSaveShajra";
+            this.btnSaveShajra.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSaveShajra.Size = new System.Drawing.Size(90, 37);
+            this.btnSaveShajra.TabIndex = 53;
+            this.btnSaveShajra.Text = "محفوظ کریں";
+            this.btnSaveShajra.UseVisualStyleBackColor = true;
+            this.btnSaveShajra.Click += new System.EventHandler(this.btnSaveShajra_Click);
+            // 
+            // txtDrustNaam
+            // 
+            this.txtDrustNaam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDrustNaam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDrustNaam.Location = new System.Drawing.Point(524, 43);
+            this.txtDrustNaam.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtDrustNaam.Multiline = true;
+            this.txtDrustNaam.Name = "txtDrustNaam";
+            this.txtDrustNaam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtDrustNaam.Size = new System.Drawing.Size(137, 28);
+            this.txtDrustNaam.TabIndex = 52;
+            this.txtDrustNaam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // label81
+            // 
+            this.label81.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label81.Location = new System.Drawing.Point(579, 2);
+            this.label81.Name = "label81";
+            this.label81.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label81.Size = new System.Drawing.Size(78, 38);
+            this.label81.TabIndex = 51;
+            this.label81.Text = "درست نام";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbQoam
+            // 
+            this.cbQoam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbQoam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbQoam.FormattingEnabled = true;
+            this.cbQoam.Location = new System.Drawing.Point(680, 44);
+            this.cbQoam.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.cbQoam.Name = "cbQoam";
+            this.cbQoam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbQoam.Size = new System.Drawing.Size(107, 31);
+            this.cbQoam.TabIndex = 50;
+            // 
+            // label80
+            // 
+            this.label80.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label80.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(736, 6);
+            this.label80.Name = "label80";
+            this.label80.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label80.Size = new System.Drawing.Size(56, 29);
+            this.label80.TabIndex = 49;
+            this.label80.Text = "قو م:";
+            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNIC
+            // 
+            this.txtNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIC.Location = new System.Drawing.Point(807, 44);
+            this.txtNIC.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtNIC.MaxLength = 13;
+            this.txtNIC.Name = "txtNIC";
+            this.txtNIC.ReadOnly = true;
+            this.txtNIC.Size = new System.Drawing.Size(132, 30);
+            this.txtNIC.TabIndex = 9;
+            // 
+            // label79
+            // 
+            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label79.BackColor = System.Drawing.SystemColors.Control;
+            this.label79.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Location = new System.Drawing.Point(901, 6);
+            this.label79.Name = "label79";
+            this.label79.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label79.Size = new System.Drawing.Size(86, 26);
+            this.label79.TabIndex = 5;
+            this.label79.Text = "شنا ختی کارڈ نمبر:";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(1005, 42);
+            this.txtName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtName.Size = new System.Drawing.Size(192, 30);
+            this.txtName.TabIndex = 4;
+            // 
+            // label78
+            // 
+            this.label78.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label78.BackColor = System.Drawing.Color.Transparent;
+            this.label78.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.Location = new System.Drawing.Point(1063, 3);
+            this.label78.Name = "label78";
+            this.label78.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label78.Size = new System.Drawing.Size(141, 32);
+            this.label78.TabIndex = 3;
+            this.label78.Text = "نام فرد / ادارہ/مرتہن:";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSearchaFard
+            // 
+            this.btnSearchaFard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchaFard.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchaFard.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnSearchaFard.Location = new System.Drawing.Point(964, 39);
+            this.btnSearchaFard.Name = "btnSearchaFard";
+            this.btnSearchaFard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSearchaFard.Size = new System.Drawing.Size(37, 34);
+            this.btnSearchaFard.TabIndex = 55;
+            this.btnSearchaFard.UseVisualStyleBackColor = true;
+            this.btnSearchaFard.Click += new System.EventHandler(this.btnSearchaFard_Click);
+            // 
+            // KhataMin
+            // 
+            this.KhataMin.Controls.Add(this.tabControl2);
+            this.KhataMin.Location = new System.Drawing.Point(4, 40);
+            this.KhataMin.Name = "KhataMin";
+            this.KhataMin.Padding = new System.Windows.Forms.Padding(6);
+            this.KhataMin.Size = new System.Drawing.Size(1215, 586);
+            this.KhataMin.TabIndex = 9;
+            this.KhataMin.Text = "ترمیم کھاتہ من";
+            this.KhataMin.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.MinKhata);
+            this.tabControl2.Controls.Add(this.MinMalkan);
+            this.tabControl2.Controls.Add(this.MinKhatoonies);
+            this.tabControl2.Controls.Add(this.MinKhassras);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(6, 6);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.RightToLeftLayout = true;
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1203, 574);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // MinKhata
+            // 
+            this.MinKhata.Controls.Add(this.gbMinKhataGrid);
+            this.MinKhata.Controls.Add(this.gbMinKhataButtons);
+            this.MinKhata.Controls.Add(this.gbMinKhataMain);
+            this.MinKhata.Location = new System.Drawing.Point(4, 40);
+            this.MinKhata.Name = "MinKhata";
+            this.MinKhata.Padding = new System.Windows.Forms.Padding(3);
+            this.MinKhata.Size = new System.Drawing.Size(1195, 530);
+            this.MinKhata.TabIndex = 0;
+            this.MinKhata.Text = "تفصیل من کھاتہ";
+            this.MinKhata.UseVisualStyleBackColor = true;
+            // 
+            // gbMinKhataGrid
+            // 
+            this.gbMinKhataGrid.Controls.Add(this.DgMinKhataList);
+            this.gbMinKhataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbMinKhataGrid.Location = new System.Drawing.Point(3, 239);
+            this.gbMinKhataGrid.Name = "gbMinKhataGrid";
+            this.gbMinKhataGrid.Size = new System.Drawing.Size(1189, 288);
+            this.gbMinKhataGrid.TabIndex = 120;
+            this.gbMinKhataGrid.TabStop = false;
+            this.gbMinKhataGrid.Text = " محفوظ شدہ من کھاتہ جات";
+            // 
+            // DgMinKhataList
+            // 
+            this.DgMinKhataList.AllowUserToAddRows = false;
+            this.DgMinKhataList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.DgMinKhataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgMinKhataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgMinKhataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColMinKhataSel});
+            this.DgMinKhataList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgMinKhataList.Location = new System.Drawing.Point(3, 35);
+            this.DgMinKhataList.MultiSelect = false;
+            this.DgMinKhataList.Name = "DgMinKhataList";
+            this.DgMinKhataList.ReadOnly = true;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.DgMinKhataList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgMinKhataList.Size = new System.Drawing.Size(1183, 250);
+            this.DgMinKhataList.TabIndex = 1;
+            this.DgMinKhataList.TabStop = false;
+            this.DgMinKhataList.Click += new System.EventHandler(this.DgMinKhataList_Click);
+            // 
+            // gbMinKhataButtons
+            // 
+            this.gbMinKhataButtons.Controls.Add(this.txtMinKhataId);
+            this.gbMinKhataButtons.Controls.Add(this.btnDelMinKhata);
+            this.gbMinKhataButtons.Controls.Add(this.btnSaveMinKhata);
+            this.gbMinKhataButtons.Controls.Add(this.btnNewMinKhata);
+            this.gbMinKhataButtons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhataButtons.Location = new System.Drawing.Point(3, 163);
+            this.gbMinKhataButtons.Name = "gbMinKhataButtons";
+            this.gbMinKhataButtons.Size = new System.Drawing.Size(1189, 76);
+            this.gbMinKhataButtons.TabIndex = 119;
+            this.gbMinKhataButtons.TabStop = false;
+            // 
+            // txtMinKhataId
+            // 
+            this.txtMinKhataId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataId.Location = new System.Drawing.Point(504, 32);
+            this.txtMinKhataId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataId.Name = "txtMinKhataId";
+            this.txtMinKhataId.Size = new System.Drawing.Size(95, 30);
+            this.txtMinKhataId.TabIndex = 202;
+            this.txtMinKhataId.Text = "-1";
+            this.txtMinKhataId.Visible = false;
+            // 
+            // btnDelMinKhata
+            // 
+            this.btnDelMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelMinKhata.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMinKhata.Location = new System.Drawing.Point(690, 20);
+            this.btnDelMinKhata.Name = "btnDelMinKhata";
+            this.btnDelMinKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnDelMinKhata.TabIndex = 111;
+            this.ttMisal.SetToolTip(this.btnDelMinKhata, " محفوظ شدہ کھاتہ حذف کریں");
+            this.btnDelMinKhata.UseVisualStyleBackColor = true;
+            this.btnDelMinKhata.Click += new System.EventHandler(this.btnDelMinKhata_Click);
+            // 
+            // btnSaveMinKhata
+            // 
+            this.btnSaveMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveMinKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMinKhata.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinKhata.Location = new System.Drawing.Point(764, 20);
+            this.btnSaveMinKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveMinKhata.Name = "btnSaveMinKhata";
+            this.btnSaveMinKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveMinKhata.TabIndex = 200;
+            this.ttMisal.SetToolTip(this.btnSaveMinKhata, "کھاتہ محفوظ کریں");
+            this.btnSaveMinKhata.UseVisualStyleBackColor = true;
+            this.btnSaveMinKhata.Click += new System.EventHandler(this.btnSaveMinKhata_Click);
+            // 
+            // btnNewMinKhata
+            // 
+            this.btnNewMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMinKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinKhata.Location = new System.Drawing.Point(838, 20);
+            this.btnNewMinKhata.Name = "btnNewMinKhata";
+            this.btnNewMinKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinKhata.TabIndex = 201;
+            this.ttMisal.SetToolTip(this.btnNewMinKhata, "نئے کھاتے کیلئے کلک کریں");
+            this.btnNewMinKhata.UseVisualStyleBackColor = true;
+            this.btnNewMinKhata.Click += new System.EventHandler(this.btnNewMinKhata_Click);
+            // 
+            // gbMinKhataMain
+            // 
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataKyfiat);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataMalia);
+            this.gbMinKhataMain.Controls.Add(this.label83);
+            this.gbMinKhataMain.Controls.Add(this.label84);
+            this.gbMinKhataMain.Controls.Add(this.label87);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataSFT);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataSarsai);
+            this.gbMinKhataMain.Controls.Add(this.label90);
+            this.gbMinKhataMain.Controls.Add(this.label91);
+            this.gbMinKhataMain.Controls.Add(this.label92);
+            this.gbMinKhataMain.Controls.Add(this.label94);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataMarla);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataKulHisa);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataNo);
+            this.gbMinKhataMain.Controls.Add(this.txtMinKhataKanal);
+            this.gbMinKhataMain.Controls.Add(this.label95);
+            this.gbMinKhataMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhataMain.Location = new System.Drawing.Point(3, 3);
+            this.gbMinKhataMain.Name = "gbMinKhataMain";
+            this.gbMinKhataMain.Size = new System.Drawing.Size(1189, 160);
+            this.gbMinKhataMain.TabIndex = 118;
+            this.gbMinKhataMain.TabStop = false;
+            this.gbMinKhataMain.Text = "کھاتہ میزان";
+            // 
+            // txtMinKhataKyfiat
+            // 
+            this.txtMinKhataKyfiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataKyfiat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataKyfiat.Location = new System.Drawing.Point(299, 108);
+            this.txtMinKhataKyfiat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataKyfiat.Multiline = true;
+            this.txtMinKhataKyfiat.Name = "txtMinKhataKyfiat";
+            this.txtMinKhataKyfiat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtMinKhataKyfiat.Size = new System.Drawing.Size(522, 33);
+            this.txtMinKhataKyfiat.TabIndex = 108;
+            this.txtMinKhataKyfiat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // txtMinKhataMalia
+            // 
+            this.txtMinKhataMalia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataMalia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataMalia.Location = new System.Drawing.Point(877, 113);
+            this.txtMinKhataMalia.Multiline = true;
+            this.txtMinKhataMalia.Name = "txtMinKhataMalia";
+            this.txtMinKhataMalia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtMinKhataMalia.Size = new System.Drawing.Size(251, 28);
+            this.txtMinKhataMalia.TabIndex = 107;
+            this.txtMinKhataMalia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // label83
+            // 
+            this.label83.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(825, 112);
+            this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label83.Name = "label83";
+            this.label83.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label83.Size = new System.Drawing.Size(52, 31);
+            this.label83.TabIndex = 105;
+            this.label83.Text = "کیفیت:";
+            this.label83.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label84
+            // 
+            this.label84.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(1133, 115);
+            this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label84.Name = "label84";
+            this.label84.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label84.Size = new System.Drawing.Size(42, 31);
+            this.label84.TabIndex = 108;
+            this.label84.Text = "مالیہ :";
+            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label87
+            // 
+            this.label87.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(662, 72);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(68, 31);
+            this.label87.TabIndex = 109;
+            this.label87.Text = "مربع فٹ:";
+            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtMinKhataSFT
+            // 
+            this.txtMinKhataSFT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataSFT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataSFT.Location = new System.Drawing.Point(556, 71);
+            this.txtMinKhataSFT.Name = "txtMinKhataSFT";
+            this.txtMinKhataSFT.Size = new System.Drawing.Size(100, 30);
+            this.txtMinKhataSFT.TabIndex = 106;
+            // 
+            // txtMinKhataSarsai
+            // 
+            this.txtMinKhataSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataSarsai.Location = new System.Drawing.Point(729, 69);
+            this.txtMinKhataSarsai.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataSarsai.Name = "txtMinKhataSarsai";
+            this.txtMinKhataSarsai.Size = new System.Drawing.Size(92, 30);
+            this.txtMinKhataSarsai.TabIndex = 105;
+            // 
+            // label90
+            // 
+            this.label90.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(1132, 29);
+            this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label90.Name = "label90";
+            this.label90.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label90.Size = new System.Drawing.Size(63, 31);
+            this.label90.TabIndex = 58;
+            this.label90.Text = "کھاتہ نمبر:";
+            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label91
+            // 
+            this.label91.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Location = new System.Drawing.Point(825, 70);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(54, 31);
+            this.label91.TabIndex = 6;
+            this.label91.Text = "سرسائی:";
+            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label92
+            // 
+            this.label92.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.Location = new System.Drawing.Point(980, 29);
+            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(58, 31);
+            this.label92.TabIndex = 57;
+            this.label92.Text = "کل حصے:";
+            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label94
+            // 
+            this.label94.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label94.Location = new System.Drawing.Point(980, 68);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(44, 31);
+            this.label94.TabIndex = 7;
+            this.label94.Text = "مرلہ:";
+            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtMinKhataMarla
+            // 
+            this.txtMinKhataMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataMarla.Location = new System.Drawing.Point(877, 69);
+            this.txtMinKhataMarla.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataMarla.Name = "txtMinKhataMarla";
+            this.txtMinKhataMarla.Size = new System.Drawing.Size(95, 30);
+            this.txtMinKhataMarla.TabIndex = 104;
+            this.txtMinKhataMarla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
+            // 
+            // txtMinKhataKulHisa
+            // 
+            this.txtMinKhataKulHisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataKulHisa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataKulHisa.Location = new System.Drawing.Point(877, 28);
+            this.txtMinKhataKulHisa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataKulHisa.Name = "txtMinKhataKulHisa";
+            this.txtMinKhataKulHisa.Size = new System.Drawing.Size(95, 30);
+            this.txtMinKhataKulHisa.TabIndex = 102;
+            this.txtMinKhataKulHisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
+            // 
+            // txtMinKhataNo
+            // 
+            this.txtMinKhataNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataNo.Location = new System.Drawing.Point(1038, 28);
+            this.txtMinKhataNo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataNo.Name = "txtMinKhataNo";
+            this.txtMinKhataNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtMinKhataNo.Size = new System.Drawing.Size(90, 30);
+            this.txtMinKhataNo.TabIndex = 101;
+            // 
+            // txtMinKhataKanal
+            // 
+            this.txtMinKhataKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhataKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhataKanal.Location = new System.Drawing.Point(1038, 67);
+            this.txtMinKhataKanal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMinKhataKanal.Name = "txtMinKhataKanal";
+            this.txtMinKhataKanal.Size = new System.Drawing.Size(90, 30);
+            this.txtMinKhataKanal.TabIndex = 103;
+            this.txtMinKhataKanal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
+            // 
+            // label95
+            // 
+            this.label95.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(1132, 68);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(44, 31);
+            this.label95.TabIndex = 8;
+            this.label95.Text = "کنال:";
+            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MinMalkan
+            // 
+            this.MinMalkan.Controls.Add(this.panel10);
+            this.MinMalkan.Controls.Add(this.panel9);
+            this.MinMalkan.Controls.Add(this.groupBox18);
+            this.MinMalkan.Controls.Add(this.gbMinKhataMalkan);
+            this.MinMalkan.Location = new System.Drawing.Point(4, 40);
+            this.MinMalkan.Name = "MinMalkan";
+            this.MinMalkan.Padding = new System.Windows.Forms.Padding(3);
+            this.MinMalkan.Size = new System.Drawing.Size(1195, 530);
+            this.MinMalkan.TabIndex = 1;
+            this.MinMalkan.Text = "تفصیل من کھاتہ ملکان";
+            this.MinMalkan.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel10.Location = new System.Drawing.Point(3, 250);
+            this.panel10.Name = "panel10";
+            this.panel10.Padding = new System.Windows.Forms.Padding(5);
+            this.panel10.Size = new System.Drawing.Size(1189, 277);
+            this.panel10.TabIndex = 1038;
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.dgMinKhataMalkan);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(5, 5);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1177, 265);
+            this.panel11.TabIndex = 2;
+            // 
+            // dgMinKhataMalkan
+            // 
+            this.dgMinKhataMalkan.AllowUserToAddRows = false;
+            this.dgMinKhataMalkan.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgMinKhataMalkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMinKhataMalkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMinKhataMalkan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn3});
+            this.dgMinKhataMalkan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgMinKhataMalkan.Location = new System.Drawing.Point(0, 0);
+            this.dgMinKhataMalkan.MultiSelect = false;
+            this.dgMinKhataMalkan.Name = "dgMinKhataMalkan";
+            this.dgMinKhataMalkan.ReadOnly = true;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgMinKhataMalkan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMinKhataMalkan.Size = new System.Drawing.Size(1175, 263);
+            this.dgMinKhataMalkan.TabIndex = 0;
+            this.dgMinKhataMalkan.TabStop = false;
+            this.dgMinKhataMalkan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMinKhataMalkan_CellContentClick);
+            this.dgMinKhataMalkan.Click += new System.EventHandler(this.dgMinKhataMalkan_Click);
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.chkselectallchangemalikan);
+            this.panel9.Controls.Add(this.txtSearchMalik);
+            this.panel9.Controls.Add(this.label114);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(3, 201);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1189, 49);
+            this.panel9.TabIndex = 1037;
+            // 
+            // chkselectallchangemalikan
+            // 
+            this.chkselectallchangemalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkselectallchangemalikan.AutoSize = true;
+            this.chkselectallchangemalikan.Location = new System.Drawing.Point(1056, 10);
+            this.chkselectallchangemalikan.Name = "chkselectallchangemalikan";
+            this.chkselectallchangemalikan.Size = new System.Drawing.Size(110, 35);
+            this.chkselectallchangemalikan.TabIndex = 1032;
+            this.chkselectallchangemalikan.Text = "تمام منتخب کریں";
+            this.chkselectallchangemalikan.UseVisualStyleBackColor = true;
+            this.chkselectallchangemalikan.Visible = false;
+            // 
+            // txtSearchMalik
+            // 
+            this.txtSearchMalik.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchMalik.Location = new System.Drawing.Point(536, 12);
+            this.txtSearchMalik.Name = "txtSearchMalik";
+            this.txtSearchMalik.Size = new System.Drawing.Size(135, 30);
+            this.txtSearchMalik.TabIndex = 1035;
+            this.txtSearchMalik.TextChanged += new System.EventHandler(this.txtSearchMalik_TextChanged);
+            this.txtSearchMalik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label114.Location = new System.Drawing.Point(677, 12);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(67, 31);
+            this.label114.TabIndex = 1034;
+            this.label114.Text = "تلاش کریں";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.txtMinMalikPersonId);
+            this.groupBox18.Controls.Add(this.txtKhewatGroupFareeqId);
+            this.groupBox18.Controls.Add(this.btnNewMinMalik);
+            this.groupBox18.Controls.Add(this.btnSaveMinMalik);
+            this.groupBox18.Controls.Add(this.btnDelMalik);
+            this.groupBox18.Controls.Add(this.btnMalkanFromCurrentKhata);
+            this.groupBox18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox18.Location = new System.Drawing.Point(3, 116);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(1189, 85);
+            this.groupBox18.TabIndex = 1036;
+            this.groupBox18.TabStop = false;
+            // 
+            // txtMinMalikPersonId
+            // 
+            this.txtMinMalikPersonId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalikPersonId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalikPersonId.Location = new System.Drawing.Point(376, 34);
+            this.txtMinMalikPersonId.Name = "txtMinMalikPersonId";
+            this.txtMinMalikPersonId.Size = new System.Drawing.Size(70, 30);
+            this.txtMinMalikPersonId.TabIndex = 1034;
+            this.txtMinMalikPersonId.Text = "-1";
+            this.txtMinMalikPersonId.Visible = false;
+            // 
+            // txtKhewatGroupFareeqId
+            // 
+            this.txtKhewatGroupFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKhewatGroupFareeqId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(291, 32);
+            this.txtKhewatGroupFareeqId.Name = "txtKhewatGroupFareeqId";
+            this.txtKhewatGroupFareeqId.Size = new System.Drawing.Size(70, 30);
+            this.txtKhewatGroupFareeqId.TabIndex = 1033;
+            this.txtKhewatGroupFareeqId.Text = "-1";
+            this.txtKhewatGroupFareeqId.Visible = false;
+            // 
+            // btnNewMinMalik
+            // 
+            this.btnNewMinMalik.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinMalik.Location = new System.Drawing.Point(518, 24);
+            this.btnNewMinMalik.Name = "btnNewMinMalik";
+            this.btnNewMinMalik.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinMalik.TabIndex = 1032;
+            this.ttMisal.SetToolTip(this.btnNewMinMalik, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewMinMalik.UseVisualStyleBackColor = true;
+            this.btnNewMinMalik.Click += new System.EventHandler(this.btnNewMinMalik_Click);
+            // 
+            // btnSaveMinMalik
+            // 
+            this.btnSaveMinMalik.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinMalik.Location = new System.Drawing.Point(450, 24);
+            this.btnSaveMinMalik.Name = "btnSaveMinMalik";
+            this.btnSaveMinMalik.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveMinMalik.TabIndex = 1032;
+            this.btnSaveMinMalik.UseVisualStyleBackColor = true;
+            this.btnSaveMinMalik.Click += new System.EventHandler(this.btnSaveMinMalik_Click);
+            // 
+            // btnDelMalik
+            // 
+            this.btnDelMalik.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMalik.Location = new System.Drawing.Point(382, 24);
+            this.btnDelMalik.Name = "btnDelMalik";
+            this.btnDelMalik.Size = new System.Drawing.Size(53, 48);
+            this.btnDelMalik.TabIndex = 1031;
+            this.btnDelMalik.UseVisualStyleBackColor = true;
+            this.btnDelMalik.Click += new System.EventHandler(this.btnDelMalik_Click);
+            // 
+            // btnMalkanFromCurrentKhata
+            // 
+            this.btnMalkanFromCurrentKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMalkanFromCurrentKhata.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMalkanFromCurrentKhata.Location = new System.Drawing.Point(983, 23);
+            this.btnMalkanFromCurrentKhata.Name = "btnMalkanFromCurrentKhata";
+            this.btnMalkanFromCurrentKhata.Size = new System.Drawing.Size(188, 45);
+            this.btnMalkanFromCurrentKhata.TabIndex = 1012;
+            this.btnMalkanFromCurrentKhata.Text = "کھاتہ حال سے ملکان کا انتخاب کریں";
+            this.btnMalkanFromCurrentKhata.UseVisualStyleBackColor = true;
+            this.btnMalkanFromCurrentKhata.Click += new System.EventHandler(this.btnMalkanFromCurrentKhata_Click);
+            // 
+            // gbMinKhataMalkan
+            // 
+            this.gbMinKhataMalkan.Controls.Add(this.cboKhewatType);
+            this.gbMinKhataMalkan.Controls.Add(this.label100);
+            this.gbMinKhataMalkan.Controls.Add(this.btnishtarakhisabamutabiq);
+            this.gbMinKhataMalkan.Controls.Add(this.label85);
+            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikSFT);
+            this.gbMinKhataMalkan.Controls.Add(this.label86);
+            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikSarsai);
+            this.gbMinKhataMalkan.Controls.Add(this.label89);
+            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikkanal);
+            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikMarla);
+            this.gbMinKhataMalkan.Controls.Add(this.label93);
+            this.gbMinKhataMalkan.Controls.Add(this.label98);
+            this.gbMinKhataMalkan.Controls.Add(this.label99);
+            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalikHissa);
+            this.gbMinKhataMalkan.Controls.Add(this.txtMinMalkinName);
+            this.gbMinKhataMalkan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhataMalkan.Location = new System.Drawing.Point(3, 3);
+            this.gbMinKhataMalkan.Name = "gbMinKhataMalkan";
+            this.gbMinKhataMalkan.Size = new System.Drawing.Size(1189, 113);
+            this.gbMinKhataMalkan.TabIndex = 0;
+            this.gbMinKhataMalkan.TabStop = false;
+            // 
+            // cboKhewatType
+            // 
+            this.cboKhewatType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboKhewatType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboKhewatType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboKhewatType.DropDownWidth = 8;
+            this.cboKhewatType.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboKhewatType.FormattingEnabled = true;
+            this.cboKhewatType.Location = new System.Drawing.Point(533, 20);
+            this.cboKhewatType.Name = "cboKhewatType";
+            this.cboKhewatType.Size = new System.Drawing.Size(217, 46);
+            this.cboKhewatType.TabIndex = 1027;
+            this.cboKhewatType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // label100
+            // 
+            this.label100.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label100.Location = new System.Drawing.Point(756, 27);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(74, 38);
+            this.label100.TabIndex = 1034;
+            this.label100.Text = "قسم ملکیت";
+            this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnishtarakhisabamutabiq
+            // 
+            this.btnishtarakhisabamutabiq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnishtarakhisabamutabiq.Location = new System.Drawing.Point(269, 61);
+            this.btnishtarakhisabamutabiq.Name = "btnishtarakhisabamutabiq";
+            this.btnishtarakhisabamutabiq.Size = new System.Drawing.Size(183, 34);
+            this.btnishtarakhisabamutabiq.TabIndex = 1033;
+            this.btnishtarakhisabamutabiq.Text = "حصہ بمطابق رقبہ/رقبہ بمطابق حصہ";
+            this.btnishtarakhisabamutabiq.UseVisualStyleBackColor = true;
+            this.btnishtarakhisabamutabiq.Click += new System.EventHandler(this.btnishtarakhisabamutabiq_Click);
+            // 
+            // label85
+            // 
+            this.label85.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.Location = new System.Drawing.Point(523, 65);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(72, 38);
+            this.label85.TabIndex = 1025;
+            this.label85.Text = "فٹ منتقلہ";
+            // 
+            // txtMinMalikSFT
+            // 
+            this.txtMinMalikSFT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalikSFT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalikSFT.Location = new System.Drawing.Point(467, 67);
+            this.txtMinMalikSFT.Name = "txtMinMalikSFT";
+            this.txtMinMalikSFT.Size = new System.Drawing.Size(50, 30);
+            this.txtMinMalikSFT.TabIndex = 1031;
+            this.txtMinMalikSFT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikkanal_KeyPress);
+            // 
+            // label86
+            // 
+            this.label86.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.Location = new System.Drawing.Point(638, 65);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(89, 38);
+            this.label86.TabIndex = 1023;
+            this.label86.Text = "سرسائی منتقلہ";
+            // 
+            // txtMinMalikSarsai
+            // 
+            this.txtMinMalikSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalikSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalikSarsai.Location = new System.Drawing.Point(586, 67);
+            this.txtMinMalikSarsai.Name = "txtMinMalikSarsai";
+            this.txtMinMalikSarsai.Size = new System.Drawing.Size(46, 30);
+            this.txtMinMalikSarsai.TabIndex = 1030;
+            this.txtMinMalikSarsai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikHissa_KeyPress);
+            // 
+            // label89
+            // 
+            this.label89.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Location = new System.Drawing.Point(756, 65);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(77, 38);
+            this.label89.TabIndex = 1024;
+            this.label89.Text = "مرلہ منتقلہ";
+            // 
+            // txtMinMalikkanal
+            // 
+            this.txtMinMalikkanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalikkanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalikkanal.Location = new System.Drawing.Point(829, 67);
+            this.txtMinMalikkanal.Name = "txtMinMalikkanal";
+            this.txtMinMalikkanal.Size = new System.Drawing.Size(70, 30);
+            this.txtMinMalikkanal.TabIndex = 1028;
+            this.txtMinMalikkanal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikkanal_KeyPress);
+            // 
+            // txtMinMalikMarla
+            // 
+            this.txtMinMalikMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalikMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalikMarla.Location = new System.Drawing.Point(719, 67);
+            this.txtMinMalikMarla.Name = "txtMinMalikMarla";
+            this.txtMinMalikMarla.Size = new System.Drawing.Size(31, 30);
+            this.txtMinMalikMarla.TabIndex = 1029;
+            this.txtMinMalikMarla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikHissa_KeyPress);
+            // 
+            // label93
+            // 
+            this.label93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label93.Location = new System.Drawing.Point(905, 65);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(77, 38);
+            this.label93.TabIndex = 1022;
+            this.label93.Text = "کنال منتقلہ";
+            // 
+            // label98
+            // 
+            this.label98.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label98.Location = new System.Drawing.Point(906, 27);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(75, 38);
+            this.label98.TabIndex = 1015;
+            this.label98.Text = "حصہ منتقلہ";
+            // 
+            // label99
+            // 
+            this.label99.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label99.Location = new System.Drawing.Point(1122, 27);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(68, 38);
+            this.label99.TabIndex = 1017;
+            this.label99.Text = "نام مالک";
+            this.label99.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtMinMalikHissa
+            // 
+            this.txtMinMalikHissa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalikHissa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalikHissa.Location = new System.Drawing.Point(825, 29);
+            this.txtMinMalikHissa.Name = "txtMinMalikHissa";
+            this.txtMinMalikHissa.Size = new System.Drawing.Size(76, 30);
+            this.txtMinMalikHissa.TabIndex = 1026;
+            this.txtMinMalikHissa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinMalikHissa_KeyPress);
+            this.txtMinMalikHissa.Leave += new System.EventHandler(this.txtMinMalikHissa_Leave);
+            // 
+            // txtMinMalkinName
+            // 
+            this.txtMinMalkinName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinMalkinName.Enabled = false;
+            this.txtMinMalkinName.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinMalkinName.Location = new System.Drawing.Point(975, 24);
+            this.txtMinMalkinName.Name = "txtMinMalkinName";
+            this.txtMinMalkinName.Size = new System.Drawing.Size(141, 44);
+            this.txtMinMalkinName.TabIndex = 1013;
+            this.txtMinMalkinName.TabStop = false;
+            // 
+            // MinKhatoonies
+            // 
+            this.MinKhatoonies.Controls.Add(this.groupBox21);
+            this.MinKhatoonies.Controls.Add(this.groupBox20);
+            this.MinKhatoonies.Controls.Add(this.gbMinKhatooni);
+            this.MinKhatoonies.Location = new System.Drawing.Point(4, 40);
+            this.MinKhatoonies.Name = "MinKhatoonies";
+            this.MinKhatoonies.Size = new System.Drawing.Size(1195, 530);
+            this.MinKhatoonies.TabIndex = 2;
+            this.MinKhatoonies.Text = "تفصیل من کھاتہ کھتونی";
+            this.MinKhatoonies.UseVisualStyleBackColor = true;
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.grdGetkhatonichange);
+            this.groupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox21.Location = new System.Drawing.Point(0, 271);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(1195, 259);
+            this.groupBox21.TabIndex = 1018;
+            this.groupBox21.TabStop = false;
+            // 
+            // grdGetkhatonichange
+            // 
+            this.grdGetkhatonichange.AllowUserToAddRows = false;
+            this.grdGetkhatonichange.AllowUserToDeleteRows = false;
+            this.grdGetkhatonichange.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdGetkhatonichange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdGetkhatonichange.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkkk});
+            this.grdGetkhatonichange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdGetkhatonichange.Location = new System.Drawing.Point(3, 35);
+            this.grdGetkhatonichange.Name = "grdGetkhatonichange";
+            this.grdGetkhatonichange.ReadOnly = true;
+            this.grdGetkhatonichange.RowTemplate.Height = 30;
+            this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdGetkhatonichange.Size = new System.Drawing.Size(1189, 221);
+            this.grdGetkhatonichange.TabIndex = 8;
+            this.grdGetkhatonichange.Click += new System.EventHandler(this.grdGetkhatonichange_Click);
+            // 
+            // chkkk
+            // 
+            this.chkkk.HeaderText = "انتخاب کریں";
+            this.chkkk.Name = "chkkk";
+            this.chkkk.ReadOnly = true;
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.btnNewMinKhatooni);
+            this.groupBox20.Controls.Add(this.btnDeleteKhatoonichange);
+            this.groupBox20.Controls.Add(this.btnSaveKhatonichagne);
+            this.groupBox20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox20.Location = new System.Drawing.Point(0, 188);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(1195, 83);
+            this.groupBox20.TabIndex = 1017;
+            this.groupBox20.TabStop = false;
+            // 
+            // btnNewMinKhatooni
+            // 
+            this.btnNewMinKhatooni.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinKhatooni.Location = new System.Drawing.Point(486, 22);
+            this.btnNewMinKhatooni.Name = "btnNewMinKhatooni";
+            this.btnNewMinKhatooni.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinKhatooni.TabIndex = 204;
+            this.ttMisal.SetToolTip(this.btnNewMinKhatooni, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewMinKhatooni.UseVisualStyleBackColor = true;
+            this.btnNewMinKhatooni.Click += new System.EventHandler(this.btnNewMinKhatooni_Click);
+            // 
+            // btnDeleteKhatoonichange
+            // 
+            this.btnDeleteKhatoonichange.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteKhatoonichange.Location = new System.Drawing.Point(359, 21);
+            this.btnDeleteKhatoonichange.Name = "btnDeleteKhatoonichange";
+            this.btnDeleteKhatoonichange.Size = new System.Drawing.Size(49, 50);
+            this.btnDeleteKhatoonichange.TabIndex = 1016;
+            this.btnDeleteKhatoonichange.UseVisualStyleBackColor = true;
+            this.btnDeleteKhatoonichange.Click += new System.EventHandler(this.btnDeleteKhatoonichange_Click);
+            // 
+            // btnSaveKhatonichagne
+            // 
+            this.btnSaveKhatonichagne.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveKhatonichagne.Location = new System.Drawing.Point(422, 21);
+            this.btnSaveKhatonichagne.Name = "btnSaveKhatonichagne";
+            this.btnSaveKhatonichagne.Size = new System.Drawing.Size(50, 50);
+            this.btnSaveKhatonichagne.TabIndex = 1011;
+            this.btnSaveKhatonichagne.UseVisualStyleBackColor = true;
+            this.btnSaveKhatonichagne.Click += new System.EventHandler(this.btnSaveKhatonichagne_Click);
+            // 
+            // gbMinKhatooni
+            // 
+            this.gbMinKhatooni.Controls.Add(this.label88);
+            this.gbMinKhatooni.Controls.Add(this.txtMinKhatooniId);
+            this.gbMinKhatooni.Controls.Add(this.btnMusheryanFromKhatooni);
+            this.gbMinKhatooni.Controls.Add(this.label110);
+            this.gbMinKhatooni.Controls.Add(this.label112);
+            this.gbMinKhatooni.Controls.Add(this.txtlagan);
+            this.gbMinKhatooni.Controls.Add(this.txtKhatooninumchagee);
+            this.gbMinKhatooni.Controls.Add(this.txtabbpashi);
+            this.gbMinKhatooni.Controls.Add(this.btnGetKhatooni);
+            this.gbMinKhatooni.Controls.Add(this.label111);
+            this.gbMinKhatooni.Controls.Add(this.txttafsel);
+            this.gbMinKhatooni.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhatooni.Location = new System.Drawing.Point(0, 0);
+            this.gbMinKhatooni.Name = "gbMinKhatooni";
+            this.gbMinKhatooni.Size = new System.Drawing.Size(1195, 188);
+            this.gbMinKhatooni.TabIndex = 0;
+            this.gbMinKhatooni.TabStop = false;
+            // 
+            // label88
+            // 
+            this.label88.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label88.Location = new System.Drawing.Point(1004, 29);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(77, 38);
+            this.label88.TabIndex = 1019;
+            this.label88.Text = "کھتونی نمبر";
+            // 
+            // txtMinKhatooniId
+            // 
+            this.txtMinKhatooniId.Location = new System.Drawing.Point(6, 24);
+            this.txtMinKhatooniId.Name = "txtMinKhatooniId";
+            this.txtMinKhatooniId.Size = new System.Drawing.Size(82, 39);
+            this.txtMinKhatooniId.TabIndex = 1018;
+            this.txtMinKhatooniId.Text = "-1";
+            this.txtMinKhatooniId.Visible = false;
+            // 
+            // btnMusheryanFromKhatooni
+            // 
+            this.btnMusheryanFromKhatooni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMusheryanFromKhatooni.Location = new System.Drawing.Point(298, 103);
+            this.btnMusheryanFromKhatooni.Name = "btnMusheryanFromKhatooni";
+            this.btnMusheryanFromKhatooni.Size = new System.Drawing.Size(100, 60);
+            this.btnMusheryanFromKhatooni.TabIndex = 1017;
+            this.btnMusheryanFromKhatooni.Text = "مشتریان بمطابق مندرجہ کھتونی";
+            this.btnMusheryanFromKhatooni.UseVisualStyleBackColor = true;
+            this.btnMusheryanFromKhatooni.Click += new System.EventHandler(this.btnMusheryanFromKhatooni_Click);
+            // 
+            // label110
+            // 
+            this.label110.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label110.Location = new System.Drawing.Point(584, 29);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(92, 38);
+            this.label110.TabIndex = 1010;
+            this.label110.Text = "وسائل آبپاشی";
+            // 
+            // label112
+            // 
+            this.label112.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label112.Location = new System.Drawing.Point(879, 29);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(44, 38);
+            this.label112.TabIndex = 1013;
+            this.label112.Text = "لگان";
+            // 
+            // txtlagan
+            // 
+            this.txtlagan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtlagan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlagan.Location = new System.Drawing.Point(661, 28);
+            this.txtlagan.Multiline = true;
+            this.txtlagan.Name = "txtlagan";
+            this.txtlagan.Size = new System.Drawing.Size(195, 33);
+            this.txtlagan.TabIndex = 1009;
+            this.txtlagan.TabStop = false;
+            this.txtlagan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // txtKhatooninumchagee
+            // 
+            this.txtKhatooninumchagee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKhatooninumchagee.Location = new System.Drawing.Point(920, 28);
+            this.txtKhatooninumchagee.Name = "txtKhatooninumchagee";
+            this.txtKhatooninumchagee.Size = new System.Drawing.Size(64, 39);
+            this.txtKhatooninumchagee.TabIndex = 1012;
+            this.txtKhatooninumchagee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustHissaBata_KeyPress);
+            // 
+            // txtabbpashi
+            // 
+            this.txtabbpashi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtabbpashi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtabbpashi.Location = new System.Drawing.Point(414, 28);
+            this.txtabbpashi.Multiline = true;
+            this.txtabbpashi.Name = "txtabbpashi";
+            this.txtabbpashi.Size = new System.Drawing.Size(163, 32);
+            this.txtabbpashi.TabIndex = 1015;
+            this.txtabbpashi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // btnGetKhatooni
+            // 
+            this.btnGetKhatooni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGetKhatooni.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetKhatooni.Location = new System.Drawing.Point(1092, 24);
+            this.btnGetKhatooni.Name = "btnGetKhatooni";
+            this.btnGetKhatooni.Size = new System.Drawing.Size(97, 101);
+            this.btnGetKhatooni.TabIndex = 9;
+            this.btnGetKhatooni.Text = "کھاتہ حال سے کھتونی کا انتخاب کریں";
+            this.btnGetKhatooni.UseVisualStyleBackColor = true;
+            this.btnGetKhatooni.Click += new System.EventHandler(this.btnGetKhatooni_Click);
+            // 
+            // label111
+            // 
+            this.label111.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label111.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label111.Location = new System.Drawing.Point(995, 79);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(72, 93);
+            this.label111.TabIndex = 11;
+            this.label111.Text = "تفصیل حصہ داران وکاشتکاران";
+            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txttafsel
+            // 
+            this.txttafsel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttafsel.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttafsel.Location = new System.Drawing.Point(414, 82);
+            this.txttafsel.Multiline = true;
+            this.txttafsel.Name = "txttafsel";
+            this.txttafsel.Size = new System.Drawing.Size(570, 93);
+            this.txttafsel.TabIndex = 10;
+            this.txttafsel.TabStop = false;
+            this.txttafsel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // MinKhassras
+            // 
+            this.MinKhassras.Controls.Add(this.groupBox23);
+            this.MinKhassras.Controls.Add(this.groupBox22);
+            this.MinKhassras.Controls.Add(this.gbMinKhatoniKhassraSelec);
+            this.MinKhassras.Location = new System.Drawing.Point(4, 40);
+            this.MinKhassras.Name = "MinKhassras";
+            this.MinKhassras.Size = new System.Drawing.Size(1195, 530);
+            this.MinKhassras.TabIndex = 3;
+            this.MinKhassras.Text = "تفصیل من کھاتہ خسرہ جات";
+            this.MinKhassras.UseVisualStyleBackColor = true;
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.dgMinKhataKhassraJat);
+            this.groupBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox23.Location = new System.Drawing.Point(0, 238);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(1195, 292);
+            this.groupBox23.TabIndex = 10009;
+            this.groupBox23.TabStop = false;
+            // 
+            // dgMinKhataKhassraJat
+            // 
+            this.dgMinKhataKhassraJat.AllowUserToAddRows = false;
+            this.dgMinKhataKhassraJat.AllowUserToDeleteRows = false;
+            this.dgMinKhataKhassraJat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMinKhataKhassraJat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMinKhataKhassraJat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn4});
+            this.dgMinKhataKhassraJat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgMinKhataKhassraJat.Location = new System.Drawing.Point(3, 35);
+            this.dgMinKhataKhassraJat.Name = "dgMinKhataKhassraJat";
+            this.dgMinKhataKhassraJat.ReadOnly = true;
+            this.dgMinKhataKhassraJat.RowTemplate.Height = 30;
+            this.dgMinKhataKhassraJat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMinKhataKhassraJat.Size = new System.Drawing.Size(1189, 254);
+            this.dgMinKhataKhassraJat.TabIndex = 8;
+            this.dgMinKhataKhassraJat.Click += new System.EventHandler(this.dgMinKhataKhassraJat_Click);
+            // 
+            // dataGridViewCheckBoxColumn4
+            // 
+            this.dataGridViewCheckBoxColumn4.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            this.dataGridViewCheckBoxColumn4.ReadOnly = true;
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.gbMinKhataKhassras);
+            this.groupBox22.Controls.Add(this.btnNewMinKhassra);
+            this.groupBox22.Controls.Add(this.btnDelMinKhassra);
+            this.groupBox22.Controls.Add(this.btnSaveMinKhassra);
+            this.groupBox22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox22.Location = new System.Drawing.Point(0, 69);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(1195, 169);
+            this.groupBox22.TabIndex = 10008;
+            this.groupBox22.TabStop = false;
+            // 
+            // gbMinKhataKhassras
+            // 
+            this.gbMinKhataKhassras.Controls.Add(this.cmbMinKhewattypes);
+            this.gbMinKhataKhassras.Controls.Add(this.label101);
+            this.gbMinKhataKhassras.Controls.Add(this.label102);
+            this.gbMinKhataKhassras.Controls.Add(this.label106);
+            this.gbMinKhataKhassras.Controls.Add(this.txt_Marala_Khasra);
+            this.gbMinKhataKhassras.Controls.Add(this.txtMinKhassraNo);
+            this.gbMinKhataKhassras.Controls.Add(this.txt_kanal_Khasra);
+            this.gbMinKhataKhassras.Controls.Add(this.label104);
+            this.gbMinKhataKhassras.Controls.Add(this.label97);
+            this.gbMinKhataKhassras.Controls.Add(this.label103);
+            this.gbMinKhataKhassras.Controls.Add(this.txt_Feet_Khasra);
+            this.gbMinKhataKhassras.Controls.Add(this.txt_Sarsai_Khasra);
+            this.gbMinKhataKhassras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhataKhassras.Location = new System.Drawing.Point(3, 35);
+            this.gbMinKhataKhassras.Name = "gbMinKhataKhassras";
+            this.gbMinKhataKhassras.Size = new System.Drawing.Size(1189, 74);
+            this.gbMinKhataKhassras.TabIndex = 100013;
+            this.gbMinKhataKhassras.TabStop = false;
+            // 
+            // cmbMinKhewattypes
+            // 
+            this.cmbMinKhewattypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMinKhewattypes.DropDownWidth = 8;
+            this.cmbMinKhewattypes.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMinKhewattypes.FormattingEnabled = true;
+            this.cmbMinKhewattypes.Location = new System.Drawing.Point(720, 25);
+            this.cmbMinKhewattypes.Name = "cmbMinKhewattypes";
+            this.cmbMinKhewattypes.Size = new System.Drawing.Size(191, 46);
+            this.cmbMinKhewattypes.TabIndex = 10004;
+            // 
+            // label101
+            // 
+            this.label101.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label101.Location = new System.Drawing.Point(467, 29);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(58, 38);
+            this.label101.TabIndex = 26;
+            this.label101.Text = "سرسائی";
+            // 
+            // label102
+            // 
+            this.label102.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label102.AutoSize = true;
+            this.label102.Enabled = false;
+            this.label102.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label102.Location = new System.Drawing.Point(913, 29);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(69, 38);
+            this.label102.TabIndex = 10011;
+            this.label102.Text = "قسم زمین";
+            // 
+            // label106
+            // 
+            this.label106.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label106.Location = new System.Drawing.Point(678, 29);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(46, 38);
+            this.label106.TabIndex = 25;
+            this.label106.Text = "کنال";
+            // 
+            // txt_Marala_Khasra
+            // 
+            this.txt_Marala_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Marala_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Marala_Khasra.Location = new System.Drawing.Point(517, 31);
+            this.txt_Marala_Khasra.Name = "txt_Marala_Khasra";
+            this.txt_Marala_Khasra.Size = new System.Drawing.Size(49, 30);
+            this.txt_Marala_Khasra.TabIndex = 10006;
+            // 
+            // txtMinKhassraNo
+            // 
+            this.txtMinKhassraNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhassraNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinKhassraNo.Location = new System.Drawing.Point(972, 31);
+            this.txtMinKhassraNo.Name = "txtMinKhassraNo";
+            this.txtMinKhassraNo.Size = new System.Drawing.Size(131, 30);
+            this.txtMinKhassraNo.TabIndex = 10003;
+            this.txtMinKhassraNo.TabStop = false;
+            // 
+            // txt_kanal_Khasra
+            // 
+            this.txt_kanal_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_kanal_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_kanal_Khasra.Location = new System.Drawing.Point(610, 31);
+            this.txt_kanal_Khasra.Name = "txt_kanal_Khasra";
+            this.txt_kanal_Khasra.Size = new System.Drawing.Size(61, 30);
+            this.txt_kanal_Khasra.TabIndex = 10005;
+            // 
+            // label104
+            // 
+            this.label104.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label104.AutoSize = true;
+            this.label104.Enabled = false;
+            this.label104.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label104.Location = new System.Drawing.Point(1109, 29);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(79, 38);
+            this.label104.TabIndex = 7;
+            this.label104.Text = " خسرہ نمبر ";
+            // 
+            // label97
+            // 
+            this.label97.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label97.AutoSize = true;
+            this.label97.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label97.Location = new System.Drawing.Point(371, 29);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(41, 38);
+            this.label97.TabIndex = 28;
+            this.label97.Text = "فٹ";
+            // 
+            // label103
+            // 
+            this.label103.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.Location = new System.Drawing.Point(570, 29);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(46, 38);
+            this.label103.TabIndex = 27;
+            this.label103.Text = "مرلہ";
+            // 
+            // txt_Feet_Khasra
+            // 
+            this.txt_Feet_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Feet_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Feet_Khasra.Location = new System.Drawing.Point(310, 31);
+            this.txt_Feet_Khasra.Name = "txt_Feet_Khasra";
+            this.txt_Feet_Khasra.Size = new System.Drawing.Size(56, 30);
+            this.txt_Feet_Khasra.TabIndex = 10008;
+            // 
+            // txt_Sarsai_Khasra
+            // 
+            this.txt_Sarsai_Khasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Sarsai_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Sarsai_Khasra.Location = new System.Drawing.Point(408, 31);
+            this.txt_Sarsai_Khasra.Name = "txt_Sarsai_Khasra";
+            this.txt_Sarsai_Khasra.Size = new System.Drawing.Size(49, 30);
+            this.txt_Sarsai_Khasra.TabIndex = 10007;
+            // 
+            // btnNewMinKhassra
+            // 
+            this.btnNewMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMinKhassra.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinKhassra.Location = new System.Drawing.Point(827, 114);
+            this.btnNewMinKhassra.Name = "btnNewMinKhassra";
+            this.btnNewMinKhassra.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinKhassra.TabIndex = 100010;
+            this.ttMisal.SetToolTip(this.btnNewMinKhassra, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewMinKhassra.UseVisualStyleBackColor = true;
+            this.btnNewMinKhassra.Click += new System.EventHandler(this.btnNewMinKhassra_Click);
+            // 
+            // btnDelMinKhassra
+            // 
+            this.btnDelMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelMinKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMinKhassra.Location = new System.Drawing.Point(687, 114);
+            this.btnDelMinKhassra.Name = "btnDelMinKhassra";
+            this.btnDelMinKhassra.Size = new System.Drawing.Size(53, 48);
+            this.btnDelMinKhassra.TabIndex = 100012;
+            this.btnDelMinKhassra.UseVisualStyleBackColor = true;
+            this.btnDelMinKhassra.Click += new System.EventHandler(this.btnDelMinKhassra_Click);
+            // 
+            // btnSaveMinKhassra
+            // 
+            this.btnSaveMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveMinKhassra.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinKhassra.Location = new System.Drawing.Point(757, 114);
+            this.btnSaveMinKhassra.Name = "btnSaveMinKhassra";
+            this.btnSaveMinKhassra.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveMinKhassra.TabIndex = 10009;
+            this.btnSaveMinKhassra.UseVisualStyleBackColor = true;
+            this.btnSaveMinKhassra.Click += new System.EventHandler(this.btnSaveMinKhassra_Click);
+            // 
+            // gbMinKhatoniKhassraSelec
+            // 
+            this.gbMinKhatoniKhassraSelec.Controls.Add(this.txtMinKhassraDetailId);
+            this.gbMinKhatoniKhassraSelec.Controls.Add(this.label96);
+            this.gbMinKhatoniKhassraSelec.Controls.Add(this.txtMinKhassraId);
+            this.gbMinKhatoniKhassraSelec.Controls.Add(this.cmbkhatoonisnew);
+            this.gbMinKhatoniKhassraSelec.Controls.Add(this.btnMinKhatooniKhassras);
+            this.gbMinKhatoniKhassraSelec.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMinKhatoniKhassraSelec.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMinKhatoniKhassraSelec.Location = new System.Drawing.Point(0, 0);
+            this.gbMinKhatoniKhassraSelec.Name = "gbMinKhatoniKhassraSelec";
+            this.gbMinKhatoniKhassraSelec.Size = new System.Drawing.Size(1195, 69);
+            this.gbMinKhatoniKhassraSelec.TabIndex = 20;
+            this.gbMinKhatoniKhassraSelec.TabStop = false;
+            // 
+            // txtMinKhassraDetailId
+            // 
+            this.txtMinKhassraDetailId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhassraDetailId.Location = new System.Drawing.Point(268, 29);
+            this.txtMinKhassraDetailId.Name = "txtMinKhassraDetailId";
+            this.txtMinKhassraDetailId.Size = new System.Drawing.Size(75, 44);
+            this.txtMinKhassraDetailId.TabIndex = 10010;
+            this.txtMinKhassraDetailId.Text = "-1";
+            this.txtMinKhassraDetailId.Visible = false;
+            // 
+            // label96
+            // 
+            this.label96.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label96.AutoSize = true;
+            this.label96.Enabled = false;
+            this.label96.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.Location = new System.Drawing.Point(1069, 31);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(136, 38);
+            this.label96.TabIndex = 10009;
+            this.label96.Text = "کھتونی کا انتخاب کریں";
+            // 
+            // txtMinKhassraId
+            // 
+            this.txtMinKhassraId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMinKhassraId.Location = new System.Drawing.Point(353, 29);
+            this.txtMinKhassraId.Name = "txtMinKhassraId";
+            this.txtMinKhassraId.Size = new System.Drawing.Size(75, 44);
+            this.txtMinKhassraId.TabIndex = 107;
+            this.txtMinKhassraId.Text = "-1";
+            this.txtMinKhassraId.Visible = false;
+            // 
+            // cmbkhatoonisnew
+            // 
+            this.cmbkhatoonisnew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbkhatoonisnew.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbkhatoonisnew.FormattingEnabled = true;
+            this.cmbkhatoonisnew.Location = new System.Drawing.Point(922, 27);
+            this.cmbkhatoonisnew.Name = "cmbkhatoonisnew";
+            this.cmbkhatoonisnew.Size = new System.Drawing.Size(141, 44);
+            this.cmbkhatoonisnew.TabIndex = 10001;
+            this.cmbkhatoonisnew.SelectionChangeCommitted += new System.EventHandler(this.cmbkhatoonisnew_SelectionChangeCommitted);
+            // 
+            // btnMinKhatooniKhassras
+            // 
+            this.btnMinKhatooniKhassras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinKhatooniKhassras.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinKhatooniKhassras.Location = new System.Drawing.Point(783, 27);
+            this.btnMinKhatooniKhassras.Name = "btnMinKhatooniKhassras";
+            this.btnMinKhatooniKhassras.Size = new System.Drawing.Size(118, 38);
+            this.btnMinKhatooniKhassras.TabIndex = 10002;
+            this.btnMinKhatooniKhassras.Text = " انتخاب خسرہ جات";
+            this.btnMinKhatooniKhassras.UseVisualStyleBackColor = true;
+            this.btnMinKhatooniKhassras.Click += new System.EventHandler(this.btnMinKhatooniKhassras_Click);
+            // 
+            // gardawarTab
+            // 
+            this.gardawarTab.Controls.Add(this.panel6);
+            this.gardawarTab.Location = new System.Drawing.Point(4, 40);
+            this.gardawarTab.Name = "gardawarTab";
+            this.gardawarTab.Size = new System.Drawing.Size(1215, 586);
+            this.gardawarTab.TabIndex = 7;
+            this.gardawarTab.Text = "گرداور رپورٹ";
+            this.gardawarTab.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.Controls.Add(this.groupBox4);
+            this.panel6.Controls.Add(this.groupBox2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1215, 494);
+            this.panel6.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnSaveGardawarRpt);
+            this.groupBox4.Location = new System.Drawing.Point(146, 279);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(793, 78);
+            this.groupBox4.TabIndex = 56;
+            this.groupBox4.TabStop = false;
+            // 
+            // btnSaveGardawarRpt
+            // 
+            this.btnSaveGardawarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveGardawarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveGardawarRpt.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveGardawarRpt.Location = new System.Drawing.Point(396, 19);
+            this.btnSaveGardawarRpt.Name = "btnSaveGardawarRpt";
+            this.btnSaveGardawarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSaveGardawarRpt.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveGardawarRpt.TabIndex = 54;
+            this.ttMisal.SetToolTip(this.btnSaveGardawarRpt, "گرداور رپورٹ محفوظ کریں");
+            this.btnSaveGardawarRpt.UseVisualStyleBackColor = true;
+            this.btnSaveGardawarRpt.Click += new System.EventHandler(this.btnSaveGardawarRpt_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtGardawarRpt);
+            this.groupBox2.Location = new System.Drawing.Point(146, 26);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(793, 250);
+            this.groupBox2.TabIndex = 55;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "گرداور رپورٹ";
+            // 
+            // txtGardawarRpt
+            // 
+            this.txtGardawarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGardawarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGardawarRpt.Location = new System.Drawing.Point(6, 32);
+            this.txtGardawarRpt.Multiline = true;
+            this.txtGardawarRpt.Name = "txtGardawarRpt";
+            this.txtGardawarRpt.Size = new System.Drawing.Size(781, 208);
+            this.txtGardawarRpt.TabIndex = 41;
+            // 
+            // tehsilDarTb
+            // 
+            this.tehsilDarTb.Controls.Add(this.panel7);
+            this.tehsilDarTb.Location = new System.Drawing.Point(4, 40);
+            this.tehsilDarTb.Name = "tehsilDarTb";
+            this.tehsilDarTb.Size = new System.Drawing.Size(1215, 586);
+            this.tehsilDarTb.TabIndex = 8;
+            this.tehsilDarTb.Text = "تحصیلدار رپورٹ";
+            this.tehsilDarTb.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Control;
+            this.panel7.Controls.Add(this.groupBox12);
+            this.panel7.Controls.Add(this.groupBox8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1215, 488);
+            this.panel7.TabIndex = 0;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.btnSaveTehsildarRpt);
+            this.groupBox12.Location = new System.Drawing.Point(135, 292);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(805, 75);
+            this.groupBox12.TabIndex = 59;
+            this.groupBox12.TabStop = false;
+            // 
+            // btnSaveTehsildarRpt
+            // 
+            this.btnSaveTehsildarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveTehsildarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveTehsildarRpt.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveTehsildarRpt.Location = new System.Drawing.Point(413, 18);
+            this.btnSaveTehsildarRpt.Name = "btnSaveTehsildarRpt";
+            this.btnSaveTehsildarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSaveTehsildarRpt.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveTehsildarRpt.TabIndex = 57;
+            this.ttMisal.SetToolTip(this.btnSaveTehsildarRpt, "تحصیلدار رپورٹ محفو ظ کریں");
+            this.btnSaveTehsildarRpt.UseVisualStyleBackColor = true;
+            this.btnSaveTehsildarRpt.Click += new System.EventHandler(this.btnSaveTehsildarRpt_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.groupBox10);
+            this.groupBox8.Controls.Add(this.txtTehsildarRpt);
+            this.groupBox8.Location = new System.Drawing.Point(135, 26);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(805, 263);
+            this.groupBox8.TabIndex = 58;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "تحصیلدار رپورٹ";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Location = new System.Drawing.Point(334, 263);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(262, 100);
+            this.groupBox10.TabIndex = 59;
+            this.groupBox10.TabStop = false;
+            // 
+            // txtTehsildarRpt
+            // 
+            this.txtTehsildarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTehsildarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTehsildarRpt.Location = new System.Drawing.Point(6, 32);
+            this.txtTehsildarRpt.Multiline = true;
+            this.txtTehsildarRpt.Name = "txtTehsildarRpt";
+            this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
+            this.txtTehsildarRpt.TabIndex = 56;
+            // 
+            // ColMinKhataSel
+            // 
+            this.ColMinKhataSel.HeaderText = "انتخاب کریں";
+            this.ColMinKhataSel.Name = "ColMinKhataSel";
+            this.ColMinKhataSel.ReadOnly = true;
             // 
             // frmFardeBadar
             // 
@@ -6075,6 +6075,13 @@
             this.gbKashtCurrent.PerformLayout();
             this.gbKashtProposed.ResumeLayout(false);
             this.gbKashtProposed.PerformLayout();
+            this.tabKhatooniBayan.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayanFb)).EndInit();
+            this.groupBox19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayan)).EndInit();
+            this.groupBox24.ResumeLayout(false);
+            this.groupBox24.PerformLayout();
             this.ShajraTab.ResumeLayout(false);
             this.panel27.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgFBAfrad)).EndInit();
@@ -6125,13 +6132,6 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.tabKhatooniBayan.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayanFb)).EndInit();
-            this.groupBox19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgKhatooniBayan)).EndInit();
-            this.groupBox24.ResumeLayout(false);
-            this.groupBox24.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6467,7 +6467,6 @@
         private System.Windows.Forms.Button btnNewMinKhata;
         private System.Windows.Forms.GroupBox gbMinKhataGrid;
         private System.Windows.Forms.DataGridView DgMinKhataList;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.GroupBox gbMinKhataMalkan;
         private System.Windows.Forms.Label label114;
         private System.Windows.Forms.TextBox txtSearchMalik;
@@ -6595,5 +6594,6 @@
         private System.Windows.Forms.Label label121;
         private System.Windows.Forms.ComboBox cbKhataForBayan;
         private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColMinKhataSel;
     }
 }

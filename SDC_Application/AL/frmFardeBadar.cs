@@ -2664,6 +2664,10 @@ namespace SDC_Application.AL
                 txtKhatooniDrostSarsai.Text = g.SelectedRows[0].Cells["KhatooniSarsai_Proposed"].Value.ToString();
                 cmbKhatooniNoMeezan.SelectedValue = g.SelectedRows[0].Cells["KhatooniId"].Value.ToString();
                 chbIsKhatooniMeezanChange.Checked = Convert.ToBoolean(g.SelectedRows[0].Cells["isApplicableForMeezan"].Value.ToString());
+
+                GetKhatooniBayan(cmbKhatooniNoMeezan.SelectedValue.ToString());
+                GetFbKhatooniBayan(cmbKhatooniNoMeezan.SelectedValue.ToString());
+                Fill_Khata_DropDownForBayan();
             }
             foreach(DataGridViewRow row in g.Rows)
                 {
@@ -2893,6 +2897,13 @@ namespace SDC_Application.AL
                 Fillkhatoniforkhasra();
                 AutoComplete oc = new AutoComplete();
                 oc.FillCombo("proc_Get_AreaTypes " + UsersManagments._Tehsilid.ToString(), cmbMinKhewattypes, "AreaType", "AreaTypeId");
+                foreach (DataGridViewRow r in dg.Rows)
+                {
+                    if( r.Selected)
+                    r.Cells["ColMinKhataSel"].Value = 1;
+                    else
+                        r.Cells["ColMinKhataSel"].Value = 0;
+                }
 
             }
             catch (Exception ex)
@@ -3206,6 +3217,13 @@ namespace SDC_Application.AL
                 this.txtlagan.Text = grdGetkhatonichange.CurrentRow.Cells["KhatooniLagan"].Value.ToString();
                 this.txtKhatooninumchagee.Text = grdGetkhatonichange.CurrentRow.Cells["KhatooniNo"].Value.ToString();
                 this.txtMinKhatooniId.Text = grdGetkhatonichange.CurrentRow.Cells["KhatooniId"].Value.ToString();
+                foreach (DataGridViewRow r in grdGetkhatonichange.Rows)
+                {
+                    if (r.Selected)
+                        r.Cells["chkkk"].Value = 1;
+                    else
+                        r.Cells["chkkk"].Value = 0;
+                }
 
             }
             catch (Exception ex)
@@ -3736,7 +3754,8 @@ namespace SDC_Application.AL
                 dgKhatooniBayan.Columns["KhewatFareeq_Total_Marla"].Visible = false;
                 dgKhatooniBayan.Columns["KhewatFareeq_Total_Sarsai"].Visible = false;
                 dgKhatooniBayan.Columns["KhewatFareeq_Total_Feet"].Visible = false;
-                dgKhatooniBayan.Columns["Khatooni_Area_KMSr"].Visible = false;
+                dgKhatooniBayan.Columns["Khatooni_Area_KMSr"].Visible = false; //Baya_Sold_Area_KMSr
+                dgKhatooniBayan.Columns["Baya_Sold_Area_KMSr"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -3767,7 +3786,8 @@ namespace SDC_Application.AL
                 dgKhatooniBayanFb.Columns["RegisterHqDKhataId"].Visible = false;
                 dgKhatooniBayanFb.Columns["KhatooniId"].Visible = false;
                 dgKhatooniBayanFb.Columns["Fb_Id"].Visible = false;
-                dgKhatooniBayanFb.Columns["InsertUserId"].Visible = false;
+                dgKhatooniBayanFb.Columns["InsertUserId"].Visible = false; //
+                dgKhatooniBayanFb.Columns["BayaRecId"].Visible = false; 
             }
             catch (Exception ex)
             {
@@ -3844,16 +3864,28 @@ namespace SDC_Application.AL
         {
             if (cmbKhatooniNoMeezan.SelectedValue.ToString().Length > 5 && txtBayaHissaSold.Text.Length > 0 && txtBayaKanalSold.Text.Length > 0 && txtBayaMarlaSold.Text.Length > 0 && txtBayaSarsaiSold.Text.Length > 0)
             {
-                DataRow dtRow = dtKhewatFareeqainForBayan.Select("KhewatGroupFareeqId = " + cbKhataMalikanForBayan.SelectedValue.ToString()).First();
                 string Hissa, Kanal, Marla, Sarsai, Feet;
-                if (dtRow != null)
+                if (cbKhataMalikanForBayan.DataSource != null)
                 {
-                    Hissa = Math.Round(Convert.ToDecimal(dtRow["FardAreaPart"].ToString()), 5).ToString();
-                    Kanal = dtRow["Kanal"].ToString();
-                    Marla = dtRow["marla"].ToString();
-                    Sarsai = Math.Round(Convert.ToDecimal(dtRow["sarsai"].ToString()), 4).ToString();
-                    Feet = Math.Round(Convert.ToDecimal(dtRow["sarsai"].ToString()) * (decimal)30.25, 0).ToString();
-                    //txtBayaPersonId.Text = dtRow["PersonId"].ToString();
+                    DataRow dtRow = dtKhewatFareeqainForBayan.Select("KhewatGroupFareeqId = " + cbKhataMalikanForBayan.SelectedValue.ToString()).First();
+                    
+                    if (dtRow != null)
+                    {
+                        Hissa = Math.Round(Convert.ToDecimal(dtRow["FardAreaPart"].ToString()), 5).ToString();
+                        Kanal = dtRow["Kanal"].ToString();
+                        Marla = dtRow["marla"].ToString();
+                        Sarsai = Math.Round(Convert.ToDecimal(dtRow["sarsai"].ToString()), 4).ToString();
+                        Feet = Math.Round(Convert.ToDecimal(dtRow["sarsai"].ToString()) * (decimal)30.25, 0).ToString();
+                        //txtBayaPersonId.Text = dtRow["PersonId"].ToString();
+                    }
+                    else
+                    {
+                        Hissa = "0";
+                        Kanal = "0";
+                        Marla = "0";
+                        Sarsai = "0";
+                        Feet = "0";
+                    }
                 }
                 else
                 {
@@ -3863,9 +3895,11 @@ namespace SDC_Application.AL
                     Sarsai = "0";
                     Feet = "0";
                 }
+                string feetSlod = txtBayaSarsaiSold.Text.Trim().Length > 0 && txtBayaSarsaiSold.Text.Trim() != "0" ? Math.Round(Convert.ToDecimal(txtBayaSarsaiSold.Text) * (decimal)30.25, 0).ToString() : "0";
                 if (txtKhatooniKhewatFareeqId.Text.Length > 5)
                 {
-                    string lastId = fardBadarBL.WEB_SP_INSERT_FB_Khatooni_KhewatGroupFareeqein(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, txtKhatooniKhewatFareeqId.Text, txtBayaKhataId.Text, cmbKhatooniNoMeezan.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtFbId.Text);
+                    
+                    string lastId = fardBadarBL.WEB_SP_INSERT_FB_Khatooni_KhewatGroupFareeqein(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, txtKhatooniKhewatFareeqId.Text, txtBayaKhataId.Text, cmbKhatooniNoMeezan.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, feetSlod, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtFbId.Text);
                     GetFbKhatooniBayan(cmbKhatooniNoMeezan.SelectedValue.ToString());
                 }
                 else
@@ -3873,7 +3907,7 @@ namespace SDC_Application.AL
                     txtKhatooniKhewatFareeqId.Text = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqein(txtKhatooniKhewatFareeqId.Text, cbKhataMalikanForBayan.SelectedValue.ToString(), cbKhataForBayan.SelectedValue.ToString(), cmbKhatooniNoMeezan.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaSarsai.Text, (float.Parse(txtBayaSarsai.Text) * 30.25).ToString(), "0", "0", "0", "0", "0", UsersManagments.UserId.ToString(), UsersManagments.UserName, txtFbId.Text);
                     if (txtKhatooniKhewatFareeqId.Text.Length > 5)
                     {
-                        string lastId = fardBadarBL.WEB_SP_INSERT_FB_Khatooni_KhewatGroupFareeqein(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, txtKhatooniKhewatFareeqId.Text, txtBayaKhataId.Text, cmbKhatooniNoMeezan.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtFbId.Text);
+                        string lastId = fardBadarBL.WEB_SP_INSERT_FB_Khatooni_KhewatGroupFareeqein(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, txtKhatooniKhewatFareeqId.Text, txtBayaKhataId.Text, cmbKhatooniNoMeezan.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, feetSlod, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtFbId.Text);
                         GetKhatooniBayan(cmbKhatooniNoMeezan.SelectedValue.ToString());
                         GetFbKhatooniBayan(cmbKhatooniNoMeezan.SelectedValue.ToString());
                         //fillGridViewKhatooniBayanEdit();
@@ -3954,9 +3988,9 @@ namespace SDC_Application.AL
             foreach (DataGridViewRow row in g.Rows)
             {
                 if (row.Selected)
-                    row.Cells["ColSelBayan"].Value = 1;
+                    row.Cells["ColSelBayanEdit"].Value = 1;
                 else
-                    row.Cells["ColSelBayan"].Value = 0;
+                    row.Cells["ColSelBayanEdit"].Value = 0;
 
             }
         }

@@ -1362,7 +1362,7 @@ namespace SDC_Application.AL
                     string KhataId = rhz.SaveNewKhata("-1", cmbMouza.SelectedValue.ToString() + "0001", txtKhataNoProp.Text, "", "", txtKhataHissaProp.Text.Trim(), txtKhataKanalProp.Text.Trim(), txtKhataMarlaProp.Text.Trim(), txtKhataSarsaiProp.Text.Trim(), txtKhataSFTprop.Text.Trim(), "", txtKhataKifiatProp.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName, "0", cmbMouza.SelectedValue.ToString());
                     if (KhataId.Length == 9)
                     {
-                        string retVal = rhz.SaveKhataDetails(txtKhataRecId.Text, txtRHZ_ChangeId.Text, KhataId, "0", txtKhataNoProp.Text, txtKhataNoProp.Text.Trim(), "0", txtKhataHissaProp.Text.Trim(), "0", txtKhataKanalProp.Text.Trim(), "0", txtKhataMarlaProp.Text.Trim(), "0", txtKhataSarsaiProp.Text.Trim(), "0", txtKhataSFTprop.Text.Trim(), "", UsersManagments.UserId.ToString(), UsersManagments.UserName, txtKhataKifiatProp.Text.Trim(), "Inserted", rbCurrentKhata.Checked?"1":"0");
+                        string retVal = rhz.SaveKhataDetails(txtKhataRecId.Text, txtRHZ_ChangeId.Text, KhataId, "0", txtKhataNoProp.Text, txtKhataNoProp.Text.Trim(), "0", txtKhataHissaProp.Text.Trim(), "0", txtKhataKanalProp.Text.Trim(), "0", txtKhataMarlaProp.Text.Trim(), "0", txtKhataSarsaiProp.Text.Trim(), "0", txtKhataSFTprop.Text.Trim(), "", UsersManagments.UserId.ToString(), UsersManagments.UserName, txtKhataKifiatProp.Text.Trim(), "Inserted", chkIsNewKhata.Checked?"1": rbCurrentKhata.Checked?"1":"0");
                         if (retVal.Length == 10)
                         {
                             MessageBox.Show("انتخاب کردہ کھاتے کا مجوزہ تبدیلیاں محفوظ ہو گئے۔", "مجوزہ تبدیلیاں", MessageBoxButtons.OK, MessageBoxIcon.Information);

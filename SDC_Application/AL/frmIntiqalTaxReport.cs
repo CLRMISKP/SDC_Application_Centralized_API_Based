@@ -223,6 +223,29 @@ namespace SDC_Application.AL
                         this.SetCredentials("WH_TaxChallan", rp, false);
                     }
                 }
+                else if (cmbTaxType.Text.Contains("زرعی"))
+                {
+                    if (cmbTaxPayer.SelectedIndex > 0)
+                    {
+                        ReportParameter[] rp = new ReportParameter[5];
+                        rp[0] = new ReportParameter("p_Intiqalid", this.IntiqalId);
+                        rp[1] = new ReportParameter("personId", cmbTaxPayer.SelectedValue.ToString());
+                        rp[2] = new ReportParameter("taxId", cmbTaxType.SelectedValue.ToString());
+                        rp[3] = new ReportParameter("taxName", cmbTaxType.Text);
+                        rp[4] = new ReportParameter("tehsilid", UsersManagments._Tehsilid.ToString());
+                        this.SetCredentials("Intiqal_TaxBankChallan_zari", rp, false);
+                    }
+                    else
+                    {
+                        ReportParameter[] rp = new ReportParameter[5];
+                        rp[0] = new ReportParameter("p_Intiqalid", "");
+                        rp[1] = new ReportParameter("personId", "");
+                        rp[2] = new ReportParameter("taxId", "");
+                        rp[3] = new ReportParameter("taxName", cmbTaxType.Text);
+                        rp[4] = new ReportParameter("tehsilid", UsersManagments._Tehsilid.ToString());
+                        this.SetCredentials("Intiqal_TaxBankChallan_zari", rp, false);
+                    }
+                }
                 else
                 {
                     if (cmbTaxPayer.SelectedIndex > 0)

@@ -44,6 +44,10 @@
                 this.GridViewKhataJat = new System.Windows.Forms.DataGridView();
                 this.cbgrid = new System.Windows.Forms.DataGridViewCheckBoxColumn();
                 this.groupBox1 = new System.Windows.Forms.GroupBox();
+                this.btnResetKhataList = new System.Windows.Forms.Button();
+                this.txtNoKhassras = new System.Windows.Forms.TextBox();
+                this.btnsearch = new System.Windows.Forms.Button();
+                this.label2 = new System.Windows.Forms.Label();
                 this.panel5 = new System.Windows.Forms.Panel();
                 this.rbLock = new System.Windows.Forms.RadioButton();
                 this.rbUnlock = new System.Windows.Forms.RadioButton();
@@ -88,10 +92,7 @@
                 this.label4 = new System.Windows.Forms.Label();
                 this.label9 = new System.Windows.Forms.Label();
                 this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-                this.label2 = new System.Windows.Forms.Label();
-                this.txtNoKhassras = new System.Windows.Forms.TextBox();
-                this.btnsearch = new System.Windows.Forms.Button();
-                this.btnResetKhataList = new System.Windows.Forms.Button();
+                this.chkMoreSO = new System.Windows.Forms.CheckBox();
                 this.tabControl1.SuspendLayout();
                 this.tbMalkiat.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -249,6 +250,55 @@
                 this.groupBox1.TabIndex = 0;
                 this.groupBox1.TabStop = false;
                 this.groupBox1.Text = "انتخاب کھاتہ";
+                // 
+                // btnResetKhataList
+                // 
+                this.btnResetKhataList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnResetKhataList.BackColor = System.Drawing.SystemColors.Control;
+                this.btnResetKhataList.BackgroundImage = global::SDC_Application.Resource1.icon_refresh;
+                this.btnResetKhataList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.btnResetKhataList.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.btnResetKhataList.ForeColor = System.Drawing.Color.Black;
+                this.btnResetKhataList.Location = new System.Drawing.Point(7, 82);
+                this.btnResetKhataList.Margin = new System.Windows.Forms.Padding(4);
+                this.btnResetKhataList.Name = "btnResetKhataList";
+                this.btnResetKhataList.Padding = new System.Windows.Forms.Padding(2);
+                this.btnResetKhataList.Size = new System.Drawing.Size(45, 38);
+                this.btnResetKhataList.TabIndex = 102;
+                this.btnResetKhataList.UseVisualStyleBackColor = false;
+                this.btnResetKhataList.Click += new System.EventHandler(this.btnResetKhataList_Click);
+                // 
+                // txtNoKhassras
+                // 
+                this.txtNoKhassras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.txtNoKhassras.Location = new System.Drawing.Point(106, 81);
+                this.txtNoKhassras.Name = "txtNoKhassras";
+                this.txtNoKhassras.Size = new System.Drawing.Size(259, 39);
+                this.txtNoKhassras.TabIndex = 61;
+                this.toolTip.SetToolTip(this.txtNoKhassras, "نمبر خسرہ لیکھئے، اگر نمبر خسرہ ذیادہ ہے تو نمبر خسرہ کے بیچ کومہ درج کریں");
+                this.txtNoKhassras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoKhassras_KeyPress);
+                // 
+                // btnsearch
+                // 
+                this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.btnsearch.BackgroundImage = global::SDC_Application.Resource1._1338735730_search_lense;
+                this.btnsearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.btnsearch.Location = new System.Drawing.Point(52, 81);
+                this.btnsearch.Name = "btnsearch";
+                this.btnsearch.Size = new System.Drawing.Size(48, 41);
+                this.btnsearch.TabIndex = 62;
+                this.btnsearch.UseVisualStyleBackColor = true;
+                this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
+                // 
+                // label2
+                // 
+                this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.label2.AutoSize = true;
+                this.label2.Location = new System.Drawing.Point(371, 85);
+                this.label2.Name = "label2";
+                this.label2.Size = new System.Drawing.Size(59, 31);
+                this.label2.TabIndex = 60;
+                this.label2.Text = "نمبر خسرہ";
                 // 
                 // panel5
                 // 
@@ -510,6 +560,7 @@
                 // 
                 // groupBox7
                 // 
+                this.groupBox7.Controls.Add(this.chkMoreSO);
                 this.groupBox7.Controls.Add(this.btnPics);
                 this.groupBox7.Controls.Add(this.btnSave);
                 this.groupBox7.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -733,54 +784,17 @@
                 // 
                 this.toolTip.IsBalloon = true;
                 // 
-                // label2
+                // chkMoreSO
                 // 
-                this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.label2.AutoSize = true;
-                this.label2.Location = new System.Drawing.Point(371, 85);
-                this.label2.Name = "label2";
-                this.label2.Size = new System.Drawing.Size(59, 31);
-                this.label2.TabIndex = 60;
-                this.label2.Text = "نمبر خسرہ";
-                // 
-                // txtNoKhassras
-                // 
-                this.txtNoKhassras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.txtNoKhassras.Location = new System.Drawing.Point(106, 81);
-                this.txtNoKhassras.Name = "txtNoKhassras";
-                this.txtNoKhassras.Size = new System.Drawing.Size(259, 39);
-                this.txtNoKhassras.TabIndex = 61;
-                this.toolTip.SetToolTip(this.txtNoKhassras, "نمبر خسرہ لیکھئے، اگر نمبر خسرہ ذیادہ ہے تو نمبر خسرہ کے بیچ کومہ درج کریں");
-                this.txtNoKhassras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoKhassras_KeyPress);
-                // 
-                // btnsearch
-                // 
-                this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.btnsearch.BackgroundImage = global::SDC_Application.Resource1._1338735730_search_lense;
-                this.btnsearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                this.btnsearch.Location = new System.Drawing.Point(52, 81);
-                this.btnsearch.Name = "btnsearch";
-                this.btnsearch.Size = new System.Drawing.Size(48, 41);
-                this.btnsearch.TabIndex = 62;
-                this.btnsearch.UseVisualStyleBackColor = true;
-                this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
-                // 
-                // btnResetKhataList
-                // 
-                this.btnResetKhataList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.btnResetKhataList.BackColor = System.Drawing.SystemColors.Control;
-                this.btnResetKhataList.BackgroundImage = global::SDC_Application.Resource1.icon_refresh;
-                this.btnResetKhataList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                this.btnResetKhataList.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.btnResetKhataList.ForeColor = System.Drawing.Color.Black;
-                this.btnResetKhataList.Location = new System.Drawing.Point(7, 82);
-                this.btnResetKhataList.Margin = new System.Windows.Forms.Padding(4);
-                this.btnResetKhataList.Name = "btnResetKhataList";
-                this.btnResetKhataList.Padding = new System.Windows.Forms.Padding(2);
-                this.btnResetKhataList.Size = new System.Drawing.Size(45, 38);
-                this.btnResetKhataList.TabIndex = 102;
-                this.btnResetKhataList.UseVisualStyleBackColor = false;
-                this.btnResetKhataList.Click += new System.EventHandler(this.btnResetKhataList_Click);
+                this.chkMoreSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.chkMoreSO.AutoSize = true;
+                this.chkMoreSO.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.chkMoreSO.Location = new System.Drawing.Point(54, 38);
+                this.chkMoreSO.Name = "chkMoreSO";
+                this.chkMoreSO.Size = new System.Drawing.Size(101, 35);
+                this.chkMoreSO.TabIndex = 3;
+                this.chkMoreSO.Text = "مزید سٹے آرڈر";
+                this.chkMoreSO.UseVisualStyleBackColor = true;
                 // 
                 // frmStayOrder
                 // 
@@ -818,6 +832,7 @@
                 this.panelImages.ResumeLayout(false);
                 ((System.ComponentModel.ISupportInitialize)(this.grdScanedDocStatus)).EndInit();
                 this.groupBox7.ResumeLayout(false);
+                this.groupBox7.PerformLayout();
                 this.tabPage1.ResumeLayout(false);
                 this.groupBox3.ResumeLayout(false);
                 this.panel6.ResumeLayout(false);
@@ -888,5 +903,6 @@
         private System.Windows.Forms.TextBox txtNoKhassras;
         private System.Windows.Forms.Button btnsearch;
         public System.Windows.Forms.Button btnResetKhataList;
+        private System.Windows.Forms.CheckBox chkMoreSO;
     }
     }

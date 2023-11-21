@@ -76,7 +76,7 @@ namespace SDC_Application.BL
         }
         public DataTable GetFbKhatooniKhewatGroupFareeqain(string KhatooniId)
         {
-            string spWithParms = "Proc_Get_Fb_KhatooniKhewatGroupFareeqain  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + KhatooniId;
+            string spWithParms = "Proc_Get_Fb_KhatooniKhewatGroupFareeqain  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+"," + KhatooniId;
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
         #endregion
