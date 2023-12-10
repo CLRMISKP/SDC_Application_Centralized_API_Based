@@ -489,7 +489,7 @@ namespace SDC_Application.BL
                 string KhewatFareeq_Sold_Kanal, string KhewatFareeq_Sold_Marla,  string KhewatFareeq_Sold_Sarsai,  string KhewatFareeq_Sold_Feet,  string InsertUserId, string InsertLoginName, string RHZ_ChangeId)
         {
             string spWithParam = "WEB_SP_INSERT_KhatooniKhewatGroupFareeqein " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhatooniKhewatGroupFareeqId + ",'" + KhewatGroupFareeqId + "'," + RegisterHqDKhataId + "," + KhatooniId + "," + PersonId + "," + KhewatFareeq_Total_Hissa + "," + KhewatFareeq_Total_Kanal  + "," + KhewatFareeq_Total_Marla  +
-                "," + KhewatFareeq_Total_Marla + ","  + KhewatFareeq_Total_Sarsai  + "," + KhewatFareeq_Total_Feet + "," + KhewatFareeq_Sold_Hissa  + "," + KhewatFareeq_Sold_Kanal + "," + KhewatFareeq_Sold_Marla + "," + KhewatFareeq_Sold_Sarsai + "," + KhewatFareeq_Sold_Feet +  "," + InsertUserId + ",'" + InsertLoginName + "'";
+                 ","  + KhewatFareeq_Total_Sarsai  + "," + KhewatFareeq_Total_Feet + "," + KhewatFareeq_Sold_Hissa  + "," + KhewatFareeq_Sold_Kanal + "," + KhewatFareeq_Sold_Marla + "," + KhewatFareeq_Sold_Sarsai + "," + KhewatFareeq_Sold_Feet +  "," + InsertUserId + ",'" + InsertLoginName + "'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
         public DataTable WEB_SP_DELETE_KhewatGroupFareeqein(string Kgfid)
@@ -511,7 +511,12 @@ namespace SDC_Application.BL
             string spWithParam = "WEB_SP_DELETE_HaqdaranZameenKhatajat_NewKhataTaqseem " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhataId + "";
             dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
         }
-
+        public void DeleteKhatooniKhewatGroupFareeqEdit(string BayaId)
+        {
+            //DataContext.WEB_SP_DELETE_Intiqal_Intiqal_KhataJat(IntiqalKhataRecId);
+            string spWithParam = "WEB_SP_DELETE_KhatooniKhewatGroupFareeqeinEdit " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + BayaId + "";
+            dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
+        }
         public string DeleteKhewatGroupFareeqEdite(string KhewatGroupFareeqRecId)
         {
             //DataContext.WEB_SP_DELETE_Intiqal_Intiqal_KhataJat(IntiqalKhataRecId);

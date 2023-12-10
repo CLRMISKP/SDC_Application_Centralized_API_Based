@@ -102,7 +102,8 @@ namespace SDC_Application.AL
                    this.txttokenid.Text = dr["TokenId"].ToString();
                    this.txtToken.Text = dr["TokenNo"].ToString();
                    this.labeltimetoken.Text = dr["TokenTime"].ToString();
-                   string PrintDuplicateStatus = dr["Token_DuplicatePrint"].ToString();                  
+                   string PrintDuplicateStatus = dr["Token_DuplicatePrint"].ToString();
+                   cbRelation.Text = dr["Relation"].ToString(); 
                    btnPrint.Enabled = true;
 
                    btnload = false;
@@ -641,6 +642,7 @@ namespace SDC_Application.AL
                 this.txtParAdress.Text = Populate.PerAdd;
                 this.cmbServiceId.Text = Populate.ServiceName;
                 this.cmbPurpose.Text = Populate.PurposeName;
+                cbRelation.Text = Populate.Relation;
                 this.txtStatus.Text = Populate.TokenStatus;
                 this.txtToken.Text = Populate.TokenNo;
                 this.txttokenid.Text = Populate.TokenID;

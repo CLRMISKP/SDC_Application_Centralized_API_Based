@@ -154,3 +154,18 @@ C:\Users\Administrator\Documents\SDC_Application_Centralized\ControlsLib\obj\Rel
 C:\Users\Administrator\Documents\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
 C:\Users\Administrator\Documents\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb

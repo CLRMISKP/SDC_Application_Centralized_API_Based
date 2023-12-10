@@ -353,6 +353,7 @@ namespace SDC_Application
             this.mnuCoBiometricNotAttested.Visible = isMenuVisible("IntiqalBoimetricCapturedNotAttestedReport");//mnuRHZreport
             this.mnuRHZreport.Visible = isMenuVisible("mnuRHZreport");//
             this.mnuRegEntryRptCo.Visible = isMenuVisible("mnuRegEntryRptCo");//
+            this.mnuTaskNonAdmin.Visible = isMenuVisible("frmAdminPendingTaskDashboard");
             //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem"); IntiqalBoimetricCapturedNotAttestedReport
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
@@ -2037,6 +2038,37 @@ namespace SDC_Application
                 UsersManagments.check = 59;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuKhanakashtDetail_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 62;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuTaskNonAdmin_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmAdminPendingTaskDashboard");
+            if (!isOpen)
+            {
+
+                frmAdminPendingTaskDashboard obj = new frmAdminPendingTaskDashboard();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();

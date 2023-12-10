@@ -19,6 +19,7 @@ namespace SDC_Application.AL
         public bool IntiqalPending { get; set; }
         public bool IntiqalAmalDaramad { get; set; }
         public bool Amaldaramadkhata { get; set; }
+        public bool Canceled { get; set; }
         Intiqal intiqal = new Intiqal();
         DataTable dtSellersBeforeAmal = new DataTable();
         DataTable dtSellersBeforeAmalKK = new DataTable();
@@ -58,14 +59,14 @@ namespace SDC_Application.AL
         private void frmIntiqalAmalDaramadByKhata_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
-            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text; DataGridViewHelper.addHelpterToAllFormGridViews(this);
             btnIntiqalAmal.Enabled = !IntiqalAmalDaramad;
             btnIntiqalEnable.Enabled = IntiqalAmalDaramad;
             btnIntiqalEnableAttested.Enabled = isAttested;
             btnIntiqalDisableAttested.Enabled = !isAttested;
             btnIntiqalEnableRevert.Enabled = IntiqalAmalDaramad;
             // Get Intiqal Khatajat and Fill Grid view
-            if (this.TokenId!="0")
+            if (this.TokenId != "0")
             {
                 //gbAttestationEnableDisable.Enabled = true;
                 //gbAmalEnableDisable.Enabled = false;
@@ -77,7 +78,7 @@ namespace SDC_Application.AL
             {
                 //gbAttestationEnableDisable.Enabled = false;
                 //gbAmalEnableDisable.Enabled = true;
-               // btnAmaldaramad.Enabled = true;
+                // btnAmaldaramad.Enabled = true;
                 //lblMutStatus.Text = "زیر تجویز";
                 //lblMutStatus.ForeColor = Color.Red;
                 //if (this.isAttested && this.isGardawar.ToString() != "0" && this.Teh_Report > 10)
@@ -90,6 +91,17 @@ namespace SDC_Application.AL
                 //}
             }
             this.Fill_InteqalKhataGrid();
+            if (this.Canceled)
+            {
+                lblCS.Text = "کینسل شدہ";
+                btnCancel.Enabled = false;
+                btnPending.Enabled = true;
+            }
+            {
+                lblCS.Text = "غیر کینسل شدہ";
+                btnCancel.Enabled = true;
+                btnPending.Enabled = false;
+            }
             //this.Fill_Khata_DropDown();
         }
 
@@ -347,6 +359,22 @@ namespace SDC_Application.AL
              {
                  MessageBox.Show(ex.Message);
              }
+         }
+
+         private void btnCancel_Click(object sender, EventArgs e)
+         {
+             intiqal.IntiqalMarkCancelNonCancel(IntiqalId, "1", UsersManagments.UserId.ToString());
+             btnPending.Enabled = true;
+             btnCancel.Enabled = false;
+             lblCS.Text = "کینسل شدہ";
+         }
+
+         private void btnPending_Click(object sender, EventArgs e)
+         {
+             intiqal.IntiqalMarkCancelNonCancel(IntiqalId, "0", UsersManagments.UserId.ToString());
+             btnPending.Enabled = false;
+             btnCancel.Enabled = true;
+             lblCS.Text = "غیر کینسل شدہ";
          }
 
     }

@@ -67,6 +67,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCommentsRevert = new System.Windows.Forms.TextBox();
             this.ttIntiqalRevert = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnPending = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblCS = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbAttestationEnableDisable.SuspendLayout();
@@ -79,12 +84,14 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
@@ -517,6 +524,68 @@
             this.ttIntiqalRevert.SetToolTip(this.txtCommentsRevert, "انتقال / کھاتہ ریورٹ کرنے کی تفصیل درج کریں");
             this.txtCommentsRevert.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lblCS);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.btnCancel);
+            this.tabPage2.Controls.Add(this.btnPending);
+            this.tabPage2.Location = new System.Drawing.Point(4, 40);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1242, 564);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "خارج / زیر تجویز بنائیں";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = global::SDC_Application.Resource1.Approve_icon2;
+            this.btnCancel.Location = new System.Drawing.Point(771, 31);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(74, 61);
+            this.btnCancel.TabIndex = 37;
+            this.ttIntiqalRevert.SetToolTip(this.btnCancel, "انتقال کینسل کریں");
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnPending
+            // 
+            this.btnPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPending.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnPending.Location = new System.Drawing.Point(671, 31);
+            this.btnPending.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnPending.Name = "btnPending";
+            this.btnPending.Size = new System.Drawing.Size(74, 61);
+            this.btnPending.TabIndex = 36;
+            this.btnPending.TabStop = false;
+            this.ttIntiqalRevert.SetToolTip(this.btnPending, "انتقال زیر تجویز کرِیں");
+            this.btnPending.UseVisualStyleBackColor = true;
+            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1069, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 38);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "موجودہ حیثیت";
+            // 
+            // lblCS
+            // 
+            this.lblCS.AutoSize = true;
+            this.lblCS.Location = new System.Drawing.Point(1010, 46);
+            this.lblCS.Name = "lblCS";
+            this.lblCS.Size = new System.Drawing.Size(30, 31);
+            this.lblCS.TabIndex = 39;
+            this.lblCS.Text = "cS";
+            // 
             // frmIntiqalRevertEnable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -546,6 +615,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -590,5 +661,10 @@
         private System.Windows.Forms.Button btnRevertKhata;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblKhataRevert;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnPending;
+        private System.Windows.Forms.Label lblCS;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -461,11 +461,15 @@ namespace SDC_Application.AL
                     {
                         this.groupBox1.Enabled = false;
                         this.groupBox7.Enabled = false;
+                        this.btnCancel.Enabled = UsersManagments._IsAdmin? true:false;
+                        this.btnCancel.Visible = UsersManagments._IsAdmin ? true : false; 
                     }
                     else
                     {
                         this.groupBox1.Enabled = true;
                         this.groupBox7.Enabled = true;
+                        this.btnCancel.Enabled = false;
+                        this.btnCancel.Visible = false;
                     }
                     if (data["IntiqalPending"].ToString()=="True")
                     {
@@ -1536,6 +1540,7 @@ namespace SDC_Application.AL
                     ire.IntiqalAmalDaramad = AmalDaramad;
                     ire.isAttested = Attested;
                     ire.TokenId = this.TokenId;
+                    ire.Canceled = this.Cancelled;
                     ire.FormClosed -= new FormClosedEventHandler(ire_FormClosed);
                     ire.FormClosed += new FormClosedEventHandler(ire_FormClosed);
                     ire.ShowDialog();
@@ -1686,6 +1691,26 @@ namespace SDC_Application.AL
             }
             else
                 MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmIntiqalRevertEnable ire = new frmIntiqalRevertEnable();
+                ire.IntiqalId = this.IntiqalId;
+                ire.IntiqalAmalDaramad = AmalDaramad;
+                ire.isAttested = Attested;
+                ire.TokenId = this.TokenId;
+                ire.Canceled = this.Cancelled;
+                ire.FormClosed -= new FormClosedEventHandler(ire_FormClosed);
+                ire.FormClosed += new FormClosedEventHandler(ire_FormClosed);
+                ire.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

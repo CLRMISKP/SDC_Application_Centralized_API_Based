@@ -23,3 +23,7 @@ C:\Users\Administrator\Documents\SDC_Application_Centralized\FpReader.Core\bin\R
 C:\Users\Administrator\Documents\SDC_Application_Centralized\FpReader.Core\bin\Release\FpReader.Core.pdb
 C:\Users\Administrator\Documents\SDC_Application_Centralized\FpReader.Core\obj\Release\FpReader.Core.dll
 C:\Users\Administrator\Documents\SDC_Application_Centralized\FpReader.Core\obj\Release\FpReader.Core.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\bin\Release\FpReader.Core.dll
+D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\bin\Release\FpReader.Core.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\obj\Release\FpReader.Core.dll
+D:\Office Data\Land System\SDC_Application_Centralized\FpReader.Core\obj\Release\FpReader.Core.pdb

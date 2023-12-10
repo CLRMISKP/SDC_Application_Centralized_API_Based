@@ -245,6 +245,7 @@ namespace SDC_Application.AL
             grdExistingUsers.Columns["RecStatus"].HeaderText = "Active";
             grdExistingUsers.Columns["UserId"].Visible = false;
             grdExistingUsers.Columns["Password"].Visible = false;
+            grdExistingUsers.Columns["BiometricCaptured"].Visible = false;
         }
         private void grdExistingUsers_DoubleClick(object sender, EventArgs e)
         {
@@ -254,6 +255,8 @@ namespace SDC_Application.AL
             txtLastName.Text = grdExistingUsers.CurrentRow.Cells["LastName"].Value.ToString();
             txtPassword.Text = grdExistingUsers.CurrentRow.Cells["Password"].Value.ToString();
             txtLoginId.Text = grdExistingUsers.CurrentRow.Cells["LoginName"].Value.ToString();
+            btnFingerPrint.Enabled = grdExistingUsers.CurrentRow.Cells["BiometricCaptured"].Value.ToString() == "1" ? false : true;
+            btnFingerHysoon.Enabled = grdExistingUsers.CurrentRow.Cells["BiometricCaptured"].Value.ToString() == "1" ? false : true;
             if (grdExistingUsers.CurrentRow.Cells["RecStatus"].Value != null)
             {
                 bool status = true;

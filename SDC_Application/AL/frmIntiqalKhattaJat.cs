@@ -2057,7 +2057,13 @@ namespace SDC_Application.AL
 
                     }
                     // Call Hissa Raqba Bamutabiq Hissa before save
-                    txtFrokhtHisay_Leave(sender, e);
+                    if (this.IntiqalId == "151462543" || this.IntiqalId == "151462544")
+                    {
+                    }
+                    else
+                    {
+                        txtFrokhtHisay_Leave(sender, e);
+                    }
                     // txtKulHisay.Text.Trim() != "" ? float.Parse(txtKulHisay.Text.Trim()) : 0;
 
                     //if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -4473,7 +4479,7 @@ namespace SDC_Application.AL
                 string fardsarsai = txtsarsaichangee.Text != "" ? this.txtsarsaichangee.Text.ToString() : "0";
                 decimal fardfeet = txtfeetchagee.Text.Trim() != "" ? Convert.ToDecimal(this.txtfeetchagee.Text.ToString()) : 0;
                 string KhewatTypeId = grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatTypeId"].Value.ToString();
-                string KhewatGroupId = grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatGroupId"].Value.ToString();
+                string KhewatGroupId = grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatGroupId"].Value.ToString().Length < 5 ? RegisterHqDKhataId.ToString() : grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatGroupId"].Value.ToString();
                 string Dar = grdMushtrianMalinkanChange.CurrentRow.Cells["DarNo"].Value.ToString();
                 string TotalDarPart = grdMushtrianMalinkanChange.CurrentRow.Cells["TotalDarPart"].Value.ToString();
                 string PersonDarPart = grdMushtrianMalinkanChange.CurrentRow.Cells["PersonDarPart"].Value.ToString();
@@ -4570,7 +4576,7 @@ namespace SDC_Application.AL
                 {
                     AL.frmNewKhatooniAdd frmKhatooni = new AL.frmNewKhatooniAdd();
                     frmKhatooni.IntiqalId = IntiqalId;
-                    frmKhatooni.RegisterHaqKhataID = RegisterHqDKhataId;
+                    frmKhatooni.RegisterHaqKhataID = cmbtaqseemChangeKhata.SelectedValue.ToString();
                     frmKhatooni.FormClosed -= new FormClosedEventHandler(frmKhatooni_FormClosed);
                     frmKhatooni.FormClosed += new FormClosedEventHandler(frmKhatooni_FormClosed);
                     frmKhatooni.ShowDialog();

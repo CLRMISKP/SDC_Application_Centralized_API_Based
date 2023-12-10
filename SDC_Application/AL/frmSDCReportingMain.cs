@@ -675,6 +675,14 @@ namespace SDC_Application.AL
                  this.SetCredentials("KhataKhatooniKhassras", rp, false);
 
              }
+             if (UsersManagments.check == 62) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("KhanakashDetail_Transposition", rp, false);
+
+             }
         }
 
     }

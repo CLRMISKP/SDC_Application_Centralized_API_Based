@@ -629,7 +629,7 @@ namespace SDC_Application.BL
 
             public DataTable SearchKhassraByKhassraNoMozaId(string KhassraNo, string MozaId)
             {
-                string spWithParam = "Proc_Get_Search_Khassra_ByKhassraNo_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhassraNo + "," + MozaId;
+                string spWithParam = "Proc_Get_Search_Khassra_ByKhassraNo_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + KhassraNo + "'," + MozaId;
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
 
@@ -1720,7 +1720,16 @@ namespace SDC_Application.BL
                 IntiqalNo = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return IntiqalNo;
             }
+            //
+            #endregion
+            #region Intiqal Cancel, non cancel
 
+            public void IntiqalMarkCancelNonCancel(string IntiqalId, string Cancel, string userId)
+            {
+                string spWithParam = "WEB_SP_Update_Intiqal_Mark_Cancel_NonCancel  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + Cancel+"," + userId;
+                dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
+            }
+            //WEB_SP_Update_Intiqal_Mark_Cancel_NonCancel
             #endregion
 
             #region save khatalock documents

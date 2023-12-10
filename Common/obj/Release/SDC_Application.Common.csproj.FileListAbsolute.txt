@@ -43,3 +43,7 @@ C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\bin\Release\
 C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\bin\Release\SDC_Application.Common.pdb
 C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.dll
 C:\Users\Administrator\Documents\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Release\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Release\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.pdb

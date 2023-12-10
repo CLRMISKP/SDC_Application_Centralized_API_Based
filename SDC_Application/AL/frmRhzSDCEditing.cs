@@ -2538,7 +2538,24 @@ namespace SDC_Application.AL
             }
 
         }
-
+        private void clearKhankashtBayanFields()
+        {
+            txtBayaId.Text = "-1";
+            txtKhatooniKhewatFareeqId.Text = "-1";
+            txtBayaPersonId.Text ="0";
+            txtBayaHissa.Clear();
+            txtBayaHissaSold.Clear();
+            txtBayaKanal.Clear();
+            txtBayaKanalSold.Clear();
+            txtBayaMarla.Clear();
+            txtBayaMarlaSold.Clear();
+            txtBayaSarsai.Clear();
+            txtBayaSarsaiSold.Clear();
+            txtBayaFeet.Clear();
+            txtBayaFeetSold.Clear();
+            txtBayaKhewatGroupFareeqId.Text = "0";
+            txtBayaKhataId.Text = "0";
+        }
         private void btnSaveBaya_Click(object sender, EventArgs e)
         {
             if (cboKhatoonies.SelectedValue.ToString().Length>5 && txtBayaHissaSold.Text.Length > 0 && txtBayaKanalSold.Text.Length > 0 && txtBayaMarlaSold.Text.Length > 0 && txtBayaSarsaiSold.Text.Length > 0)
@@ -2547,15 +2564,17 @@ namespace SDC_Application.AL
                 {
                     string lastId = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqeinEdit(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, txtKhatooniKhewatFareeqId.Text, txtBayaKhataId.Text, cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaMarla.Text, txtBayaSarsai.Text, txtBayaSarsai.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, txtBayaHissaSold.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
                     fillGridViewKhatooniBayanEdit();
+                    clearKhankashtBayanFields();
                 }
                 else
                 {
-                    txtKhatooniKhewatFareeqId.Text = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqein(txtKhatooniKhewatFareeqId.Text, cbKhataMalikanForBayan.SelectedValue.ToString(), cbKhataForBayan.SelectedValue.ToString(), cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaSarsai.Text, (float.Parse(txtBayaSarsai.Text) * 30.25).ToString(), txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
+                    txtKhatooniKhewatFareeqId.Text = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqein(txtKhatooniKhewatFareeqId.Text, cbKhataMalikanForBayan.SelectedValue.ToString(), cbKhataForBayan.SelectedValue.ToString(), cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaSarsai.Text, (float.Parse(txtBayaSarsai.Text) * 30.25).ToString(), txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, (float.Parse(txtBayaSarsaiSold.Text) * 30.25).ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
                     if (txtKhatooniKhewatFareeqId.Text.Length > 5)
                     {
                         string lastId = rhz.WEB_SP_INSERT_Khatooni_KhewatGroupFareeqeinEdit(txtBayaId.Text, txtKhatooniKhewatFareeqId.Text, cbKhataMalikanForBayan.SelectedValue.ToString(), cbKhataForBayan.SelectedValue.ToString(), cboKhatoonies.SelectedValue.ToString(), txtBayaPersonId.Text, txtBayaHissa.Text, txtBayaHissa.Text, txtBayaKanal.Text, txtBayaKanal.Text, txtBayaMarla.Text, txtBayaMarla.Text, txtBayaSarsai.Text, txtBayaSarsai.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, txtBayaHissaSold.Text, txtBayaHissaSold.Text, txtBayaKanalSold.Text, txtBayaKanalSold.Text, txtBayaMarlaSold.Text, txtBayaMarlaSold.Text, txtBayaSarsaiSold.Text, txtBayaSarsaiSold.Text, txtBayaFeetSold.Text, txtBayaFeetSold.Text, UsersManagments.UserId.ToString(), UsersManagments.UserName, cbSrNo.SelectedValue.ToString());
                         fillGridViewKhatooniBayan();
                         fillGridViewKhatooniBayanEdit();
+                        clearKhankashtBayanFields();
                     }
                 }
             }
@@ -2679,6 +2698,28 @@ namespace SDC_Application.AL
                     row.Cells["ColSelBayanEdit"].Value = 0;
 
             }
+        }
+
+        private void btnDelBaya_Click(object sender, EventArgs e)
+        {
+            if (txtBayaId.Text.Length > 5)
+            {
+                if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ ریکارڈ خذف کرنا چاہتے ہے؟", "خذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    try
+                    {
+                        rhz.DeleteKhatooniKhewatGroupFareeqEdit(txtBayaId.Text);
+                        fillGridViewKhatooniBayanEdit();
+                        clearKhankashtBayanFields();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("محفوظ شدہ بائع کا انتخاب کریں۔");
         }
 
     }

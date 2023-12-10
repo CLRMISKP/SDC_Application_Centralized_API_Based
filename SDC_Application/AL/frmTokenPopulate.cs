@@ -47,6 +47,7 @@ namespace SDC_Application.AL
         public string tokentime { get; set; }
         public string fromform { get; set; }
         public string otherTehsilId { get; set; }
+        public string Relation { get; set; }
 
         public string ServiceTypeId { get; set; } // for filtering Token on basis of Service generated for
 
@@ -257,7 +258,7 @@ namespace SDC_Application.AL
             this.CNIC = grdToken.CurrentRow.Cells["Visitor_CNIC"].Value.ToString();
             this.VisitorContactNo = grdToken.CurrentRow.Cells["VisitorContactNo"].Value.ToString();
             this.FatherName = grdToken.CurrentRow.Cells["Visitor_FatherName"].Value.ToString();
-            
+            this.Relation = grdToken.CurrentRow.Cells["Relation"].Value.ToString();
            // this.Tokendate = grdToken.CurrentRow.Cells["Token_ShortDate"].Value.ToString();
             object tokenDateObj3 = grdToken.CurrentRow.Cells["Token_ShortDate"].Value;
             DateTime tokenDate3;

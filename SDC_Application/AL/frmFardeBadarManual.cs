@@ -3559,6 +3559,7 @@ namespace SDC_Application.AL
         {
             if (GridViewKhewatMalikaan.Rows.Count < 1 && txtFbId.Text.Length > 5 && cboKhataNo.SelectedValue.ToString().Length>5)
             {
+                btnSaveAll.Enabled = false;
                 DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
 
                 foreach (DataRow row in dtMalkan.Rows)
@@ -3594,6 +3595,7 @@ namespace SDC_Application.AL
                 }
                 this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(cbFBDocuments.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString());
                 this.FillGridviewMalkan(khewatMalikanByFB);
+                btnSaveAll.Enabled = true;
             }
             else
                 MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");

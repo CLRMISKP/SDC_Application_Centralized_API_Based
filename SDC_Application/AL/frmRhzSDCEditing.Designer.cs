@@ -217,7 +217,13 @@
             this.ColSelBayan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.dgKhatooniBayanEdit = new System.Windows.Forms.DataGridView();
+            this.ColSelBayanEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.txtBayaKhataId = new System.Windows.Forms.TextBox();
+            this.txtBayaKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
+            this.txtBayaFeet = new System.Windows.Forms.TextBox();
+            this.txtBayaPersonId = new System.Windows.Forms.TextBox();
+            this.txtBayaId = new System.Windows.Forms.TextBox();
             this.txtBayaFeetSold = new System.Windows.Forms.TextBox();
             this.txtKhatooniKhewatFareeqId = new System.Windows.Forms.TextBox();
             this.btnNewBaya = new System.Windows.Forms.Button();
@@ -324,12 +330,6 @@
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.txtBayaId = new System.Windows.Forms.TextBox();
-            this.txtBayaPersonId = new System.Windows.Forms.TextBox();
-            this.txtBayaFeet = new System.Windows.Forms.TextBox();
-            this.txtBayaKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
-            this.txtBayaKhataId = new System.Windows.Forms.TextBox();
-            this.ColSelBayanEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -2583,6 +2583,12 @@
             this.dgKhatooniBayanEdit.TabIndex = 5;
             this.dgKhatooniBayanEdit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhatooniBayanEdit_CellClick);
             // 
+            // ColSelBayanEdit
+            // 
+            this.ColSelBayanEdit.HeaderText = "انتخاب کریں";
+            this.ColSelBayanEdit.Name = "ColSelBayanEdit";
+            this.ColSelBayanEdit.ReadOnly = true;
+            // 
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.txtBayaKhataId);
@@ -2622,6 +2628,57 @@
             this.groupBox17.TabIndex = 33;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "تبدیلی تفصیل بائعان";
+            // 
+            // txtBayaKhataId
+            // 
+            this.txtBayaKhataId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaKhataId.Location = new System.Drawing.Point(112, 63);
+            this.txtBayaKhataId.Name = "txtBayaKhataId";
+            this.txtBayaKhataId.Size = new System.Drawing.Size(69, 39);
+            this.txtBayaKhataId.TabIndex = 320;
+            this.txtBayaKhataId.Text = "-1";
+            this.txtBayaKhataId.Visible = false;
+            // 
+            // txtBayaKhewatGroupFareeqId
+            // 
+            this.txtBayaKhewatGroupFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaKhewatGroupFareeqId.Location = new System.Drawing.Point(37, 50);
+            this.txtBayaKhewatGroupFareeqId.Name = "txtBayaKhewatGroupFareeqId";
+            this.txtBayaKhewatGroupFareeqId.Size = new System.Drawing.Size(69, 39);
+            this.txtBayaKhewatGroupFareeqId.TabIndex = 319;
+            this.txtBayaKhewatGroupFareeqId.Text = "-1";
+            this.txtBayaKhewatGroupFareeqId.Visible = false;
+            // 
+            // txtBayaFeet
+            // 
+            this.txtBayaFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBayaFeet.Location = new System.Drawing.Point(175, 77);
+            this.txtBayaFeet.Name = "txtBayaFeet";
+            this.txtBayaFeet.Size = new System.Drawing.Size(46, 30);
+            this.txtBayaFeet.TabIndex = 318;
+            this.txtBayaFeet.Text = "0";
+            this.txtBayaFeet.Visible = false;
+            // 
+            // txtBayaPersonId
+            // 
+            this.txtBayaPersonId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaPersonId.Location = new System.Drawing.Point(3, 23);
+            this.txtBayaPersonId.Name = "txtBayaPersonId";
+            this.txtBayaPersonId.Size = new System.Drawing.Size(62, 39);
+            this.txtBayaPersonId.TabIndex = 317;
+            this.txtBayaPersonId.Text = "-1";
+            this.txtBayaPersonId.Visible = false;
+            // 
+            // txtBayaId
+            // 
+            this.txtBayaId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBayaId.Location = new System.Drawing.Point(81, 77);
+            this.txtBayaId.Name = "txtBayaId";
+            this.txtBayaId.Size = new System.Drawing.Size(69, 39);
+            this.txtBayaId.TabIndex = 316;
+            this.txtBayaId.Text = "-1";
+            this.txtBayaId.Visible = false;
             // 
             // txtBayaFeetSold
             // 
@@ -2676,6 +2733,7 @@
             this.btnDelBaya.TabIndex = 312;
             this.btnDelBaya.Text = "خذف کریں";
             this.btnDelBaya.UseVisualStyleBackColor = true;
+            this.btnDelBaya.Click += new System.EventHandler(this.btnDelBaya_Click);
             // 
             // label40
             // 
@@ -3884,63 +3942,6 @@
             this.label58.Size = new System.Drawing.Size(49, 31);
             this.label58.TabIndex = 0;
             this.label58.Text = "نمبر شمار";
-            // 
-            // txtBayaId
-            // 
-            this.txtBayaId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBayaId.Location = new System.Drawing.Point(81, 77);
-            this.txtBayaId.Name = "txtBayaId";
-            this.txtBayaId.Size = new System.Drawing.Size(69, 39);
-            this.txtBayaId.TabIndex = 316;
-            this.txtBayaId.Text = "-1";
-            this.txtBayaId.Visible = false;
-            // 
-            // txtBayaPersonId
-            // 
-            this.txtBayaPersonId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBayaPersonId.Location = new System.Drawing.Point(3, 23);
-            this.txtBayaPersonId.Name = "txtBayaPersonId";
-            this.txtBayaPersonId.Size = new System.Drawing.Size(62, 39);
-            this.txtBayaPersonId.TabIndex = 317;
-            this.txtBayaPersonId.Text = "-1";
-            this.txtBayaPersonId.Visible = false;
-            // 
-            // txtBayaFeet
-            // 
-            this.txtBayaFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBayaFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBayaFeet.Location = new System.Drawing.Point(175, 77);
-            this.txtBayaFeet.Name = "txtBayaFeet";
-            this.txtBayaFeet.Size = new System.Drawing.Size(46, 30);
-            this.txtBayaFeet.TabIndex = 318;
-            this.txtBayaFeet.Text = "0";
-            this.txtBayaFeet.Visible = false;
-            // 
-            // txtBayaKhewatGroupFareeqId
-            // 
-            this.txtBayaKhewatGroupFareeqId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBayaKhewatGroupFareeqId.Location = new System.Drawing.Point(37, 50);
-            this.txtBayaKhewatGroupFareeqId.Name = "txtBayaKhewatGroupFareeqId";
-            this.txtBayaKhewatGroupFareeqId.Size = new System.Drawing.Size(69, 39);
-            this.txtBayaKhewatGroupFareeqId.TabIndex = 319;
-            this.txtBayaKhewatGroupFareeqId.Text = "-1";
-            this.txtBayaKhewatGroupFareeqId.Visible = false;
-            // 
-            // txtBayaKhataId
-            // 
-            this.txtBayaKhataId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBayaKhataId.Location = new System.Drawing.Point(112, 63);
-            this.txtBayaKhataId.Name = "txtBayaKhataId";
-            this.txtBayaKhataId.Size = new System.Drawing.Size(69, 39);
-            this.txtBayaKhataId.TabIndex = 320;
-            this.txtBayaKhataId.Text = "-1";
-            this.txtBayaKhataId.Visible = false;
-            // 
-            // ColSelBayanEdit
-            // 
-            this.ColSelBayanEdit.HeaderText = "انتخاب کریں";
-            this.ColSelBayanEdit.Name = "ColSelBayanEdit";
-            this.ColSelBayanEdit.ReadOnly = true;
             // 
             // frmRhzSDCEditing
             // 

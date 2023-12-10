@@ -318,6 +318,7 @@ namespace SDC_Application.AL
                 this.GridViewKhewatMalikaan.Columns["PersonId_Proposed"].Visible = false;
                 this.GridViewKhewatMalikaan.Columns["FardPart_Bata_Proposed"].Visible = false;
                 this.GridViewKhewatMalikaan.Columns["FB_FareeqeinId"].Visible = false;
+                this.GridViewKhewatMalikaan.Columns["KhewatTypeId_Proposed"].Visible = false; 
 
                 ////// Set Grid columns Names ///////////
 
@@ -940,6 +941,7 @@ namespace SDC_Application.AL
                      //this.txtSeqNo.Enabled = false;
                      int idx = this.GridViewKhewatMalikaan.Rows.Count;
                      this.txtSeqNo.Text = (idx + 1).ToString();
+                     btnPersonSave.Enabled = true;
                  }
              }
              else
@@ -991,6 +993,7 @@ namespace SDC_Application.AL
 
         private bool saveMalikNew()
         {
+            btnPersonSave.Enabled = false;
             bool isSaved = false;
             int KhattaId = Convert.ToInt32(cboKhataNo.SelectedValue);
             string pid = txtPersonId.Text.Trim() != "" ? txtPersonId.Text : "0";
@@ -1349,6 +1352,7 @@ namespace SDC_Application.AL
                                 try
                                 {
                                     cboQismMalik.SelectedValue = row.Cells["KhewatTypeId"].Value.ToString();
+                                    //cboQismMalikProp.SelectedValue=
                                 }
                                 catch (Exception)
                                 {
@@ -1364,8 +1368,8 @@ namespace SDC_Application.AL
                                 txtPersonName.Text = row.Cells["PersonName"].Value.ToString();
                                 txtSeqNo.Text = row.Cells["seqno"].Value.ToString();
                                 txtFbFareeqId.Text = row.Cells["FB_FareeqeinId"].Value.ToString();
-                                //txtFbExistsKGF.Text = row.Cells["FB_Exists"].Value.ToString();
-
+                                //txtFbExistsKGF.Text = row.Cells["FB_Exists"].Value.ToString(); KhewatTypeId_Proposed
+                                cboQismMalikProp.SelectedValue = row.Cells["KhewatTypeId_Proposed"].Value.ToString();
                                 txtPersonId.Text = row.Cells["PersonId"].Value.ToString();
                                 txtDrustHissa.Text = row.Cells["FardAreaPart_Proposed"].Value.ToString();
                                 txtDrustHissaBata.Text = row.Cells["FardPart_Bata_Proposed"].Value.ToString();
