@@ -306,9 +306,17 @@ namespace SDC_Application.AL
 
                 getIntiqalat("M");
             }
-            else
+            else if (rbRegistry.Checked)
             {
                 getIntiqalat("R");
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+                getIntiqalat("C");
+            }
+            else if (rbFBs.Checked)
+            {
+                //getIntiqalat("C");
             }
             
         }
@@ -442,20 +450,17 @@ namespace SDC_Application.AL
             if (rbIntiqal.Checked)
             {
                 getIntiqalat("M");
-
             }
             else if (rbRegistry.Checked)
             {
-
                 getIntiqalat("R");
-
-
             }
             else if (rbCourtDecrees.Checked)
             {
-
                 getIntiqalat("C");
-
+            }
+            else if (rbFBs.Checked)
+            {
 
             }
         }

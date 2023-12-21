@@ -382,6 +382,7 @@
             this.MinKhata = new System.Windows.Forms.TabPage();
             this.gbMinKhataGrid = new System.Windows.Forms.GroupBox();
             this.DgMinKhataList = new System.Windows.Forms.DataGridView();
+            this.ColMinKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbMinKhataButtons = new System.Windows.Forms.GroupBox();
             this.txtMinKhataId = new System.Windows.Forms.TextBox();
             this.btnDelMinKhata = new System.Windows.Forms.Button();
@@ -497,7 +498,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.ColMinKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnPrevKhataFamily = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -1583,6 +1584,7 @@
             // groupBox7
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.btnPrevKhataFamily);
             this.groupBox7.Controls.Add(this.btnHissaRaqba);
             this.groupBox7.Controls.Add(this.btnNewFbMalik);
             this.groupBox7.Controls.Add(this.btnPersonSave);
@@ -1610,7 +1612,7 @@
             // 
             this.btnNewFbMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewFbMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewFbMalik.Location = new System.Drawing.Point(469, 16);
+            this.btnNewFbMalik.Location = new System.Drawing.Point(574, 16);
             this.btnNewFbMalik.Name = "btnNewFbMalik";
             this.btnNewFbMalik.Size = new System.Drawing.Size(83, 37);
             this.btnNewFbMalik.TabIndex = 237;
@@ -1622,7 +1624,7 @@
             // 
             this.btnPersonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPersonSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonSave.Location = new System.Drawing.Point(568, 16);
+            this.btnPersonSave.Location = new System.Drawing.Point(673, 16);
             this.btnPersonSave.Name = "btnPersonSave";
             this.btnPersonSave.Size = new System.Drawing.Size(83, 37);
             this.btnPersonSave.TabIndex = 236;
@@ -1634,7 +1636,7 @@
             // 
             this.btnDeleteMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMalik.Location = new System.Drawing.Point(371, 16);
+            this.btnDeleteMalik.Location = new System.Drawing.Point(476, 16);
             this.btnDeleteMalik.Name = "btnDeleteMalik";
             this.btnDeleteMalik.Size = new System.Drawing.Size(83, 37);
             this.btnDeleteMalik.TabIndex = 238;
@@ -4658,6 +4660,12 @@
             this.DgMinKhataList.TabStop = false;
             this.DgMinKhataList.Click += new System.EventHandler(this.DgMinKhataList_Click);
             // 
+            // ColMinKhataSel
+            // 
+            this.ColMinKhataSel.HeaderText = "انتخاب کریں";
+            this.ColMinKhataSel.Name = "ColMinKhataSel";
+            this.ColMinKhataSel.ReadOnly = true;
+            // 
             // gbMinKhataButtons
             // 
             this.gbMinKhataButtons.Controls.Add(this.txtMinKhataId);
@@ -5992,11 +6000,17 @@
             this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
             this.txtTehsildarRpt.TabIndex = 56;
             // 
-            // ColMinKhataSel
+            // btnPrevKhataFamily
             // 
-            this.ColMinKhataSel.HeaderText = "انتخاب کریں";
-            this.ColMinKhataSel.Name = "ColMinKhataSel";
-            this.ColMinKhataSel.ReadOnly = true;
+            this.btnPrevKhataFamily.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrevKhataFamily.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevKhataFamily.Location = new System.Drawing.Point(304, 16);
+            this.btnPrevKhataFamily.Name = "btnPrevKhataFamily";
+            this.btnPrevKhataFamily.Size = new System.Drawing.Size(129, 37);
+            this.btnPrevKhataFamily.TabIndex = 240;
+            this.btnPrevKhataFamily.Text = "مندرجہ کھاتہ / خاندان";
+            this.btnPrevKhataFamily.UseVisualStyleBackColor = true;
+            this.btnPrevKhataFamily.Click += new System.EventHandler(this.btnPrevKhataFamily_Click);
             // 
             // frmFardeBadar
             // 
@@ -6595,5 +6609,6 @@
         private System.Windows.Forms.ComboBox cbKhataForBayan;
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColMinKhataSel;
+        private System.Windows.Forms.Button btnPrevKhataFamily;
     }
 }

@@ -45,10 +45,12 @@
                 this.txtIntiqalNo = new System.Windows.Forms.TextBox();
                 this.groupBox1 = new System.Windows.Forms.GroupBox();
                 this.panel5 = new System.Windows.Forms.Panel();
+                this.rbFBs = new System.Windows.Forms.RadioButton();
                 this.rbCourtDecrees = new System.Windows.Forms.RadioButton();
                 this.rbIntiqal = new System.Windows.Forms.RadioButton();
                 this.rbRegistry = new System.Windows.Forms.RadioButton();
                 this.groupBox2 = new System.Windows.Forms.GroupBox();
+                this.verificationControl2 = new DPFP.Gui.Verification.VerificationControl();
                 this.groupBox3 = new System.Windows.Forms.GroupBox();
                 this.btnFingerHysoon = new System.Windows.Forms.Button();
                 this.btnSave = new System.Windows.Forms.Button();
@@ -58,7 +60,6 @@
                 this.cboROs = new System.Windows.Forms.ComboBox();
                 this.lbl5 = new System.Windows.Forms.Label();
                 this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-                this.verificationControl2 = new DPFP.Gui.Verification.VerificationControl();
                 this.tabControl1.SuspendLayout();
                 this.tbGardawarVerification.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -243,19 +244,33 @@
                 // panel5
                 // 
                 this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.panel5.Controls.Add(this.rbFBs);
                 this.panel5.Controls.Add(this.rbCourtDecrees);
                 this.panel5.Controls.Add(this.rbIntiqal);
                 this.panel5.Controls.Add(this.rbRegistry);
-                this.panel5.Location = new System.Drawing.Point(233, 22);
+                this.panel5.Location = new System.Drawing.Point(124, 22);
                 this.panel5.Name = "panel5";
-                this.panel5.Size = new System.Drawing.Size(289, 48);
+                this.panel5.Size = new System.Drawing.Size(398, 48);
                 this.panel5.TabIndex = 62;
+                // 
+                // rbFBs
+                // 
+                this.rbFBs.AutoSize = true;
+                this.rbFBs.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.rbFBs.Location = new System.Drawing.Point(3, 2);
+                this.rbFBs.Name = "rbFBs";
+                this.rbFBs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                this.rbFBs.Size = new System.Drawing.Size(101, 42);
+                this.rbFBs.TabIndex = 90;
+                this.rbFBs.Text = "فرد بدرات";
+                this.rbFBs.UseVisualStyleBackColor = true;
+                this.rbFBs.Visible = false;
                 // 
                 // rbCourtDecrees
                 // 
                 this.rbCourtDecrees.AutoSize = true;
                 this.rbCourtDecrees.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.rbCourtDecrees.Location = new System.Drawing.Point(22, 2);
+                this.rbCourtDecrees.Location = new System.Drawing.Point(126, 2);
                 this.rbCourtDecrees.Name = "rbCourtDecrees";
                 this.rbCourtDecrees.RightToLeft = System.Windows.Forms.RightToLeft.No;
                 this.rbCourtDecrees.Size = new System.Drawing.Size(113, 42);
@@ -268,7 +283,7 @@
                 // 
                 this.rbIntiqal.AutoSize = true;
                 this.rbIntiqal.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.rbIntiqal.Location = new System.Drawing.Point(214, 2);
+                this.rbIntiqal.Location = new System.Drawing.Point(318, 2);
                 this.rbIntiqal.Name = "rbIntiqal";
                 this.rbIntiqal.RightToLeft = System.Windows.Forms.RightToLeft.No;
                 this.rbIntiqal.Size = new System.Drawing.Size(73, 42);
@@ -281,7 +296,7 @@
                 // 
                 this.rbRegistry.AutoSize = true;
                 this.rbRegistry.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.rbRegistry.Location = new System.Drawing.Point(141, 2);
+                this.rbRegistry.Location = new System.Drawing.Point(245, 2);
                 this.rbRegistry.Name = "rbRegistry";
                 this.rbRegistry.RightToLeft = System.Windows.Forms.RightToLeft.No;
                 this.rbRegistry.Size = new System.Drawing.Size(83, 42);
@@ -304,6 +319,19 @@
                 this.groupBox2.TabIndex = 24;
                 this.groupBox2.TabStop = false;
                 this.groupBox2.Text = "حیثیت تصدیق";
+                // 
+                // verificationControl2
+                // 
+                this.verificationControl2.Active = true;
+                this.verificationControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.verificationControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+                this.verificationControl2.Location = new System.Drawing.Point(294, 34);
+                this.verificationControl2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+                this.verificationControl2.Name = "verificationControl2";
+                this.verificationControl2.ReaderSerialNumber = "00000000-0000-0000-0000-000000000000";
+                this.verificationControl2.Size = new System.Drawing.Size(56, 64);
+                this.verificationControl2.TabIndex = 24;
+                this.verificationControl2.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.verificationControl1_OnComplete);
                 // 
                 // groupBox3
                 // 
@@ -412,19 +440,6 @@
                 // 
                 this.toolTip.IsBalloon = true;
                 // 
-                // verificationControl2
-                // 
-                this.verificationControl2.Active = true;
-                this.verificationControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.verificationControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-                this.verificationControl2.Location = new System.Drawing.Point(294, 34);
-                this.verificationControl2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
-                this.verificationControl2.Name = "verificationControl2";
-                this.verificationControl2.ReaderSerialNumber = "00000000-0000-0000-0000-000000000000";
-                this.verificationControl2.Size = new System.Drawing.Size(56, 64);
-                this.verificationControl2.TabIndex = 24;
-                this.verificationControl2.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.verificationControl1_OnComplete);
-                // 
                 // frmBulkGardawarVerification
                 // 
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -490,5 +505,6 @@
         private System.Windows.Forms.Button btnFingerHysoon;
         private System.Windows.Forms.RadioButton rbCourtDecrees;
         private DPFP.Gui.Verification.VerificationControl verificationControl2;
+        private System.Windows.Forms.RadioButton rbFBs;
     }
     }

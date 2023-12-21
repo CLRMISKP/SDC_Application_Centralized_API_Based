@@ -481,6 +481,11 @@ namespace SDC_Application.BL
                 string spWithParam = "Proc_Self_Get_Intiqalat_for_Verification  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + type + "'," + Classess.UsersManagments.SubSdcId.ToString();
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
+            public DataTable GetFardBadratForVerification()
+            {
+                string spWithParam = "Proc_Get_FBs_for_Verification  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + Classess.UsersManagments.SubSdcId.ToString();
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
 
             public DataTable GetKhataJatForRegistryintiqalByFardTokenId(string fardTokenId)
             {
@@ -1632,6 +1637,11 @@ namespace SDC_Application.BL
             {
                 string spWithParam = "WEB_SP_INSERT_Intiqal_Main_ConfirmByOperator  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + " ," + isConfirm;
                 return Convert.ToBoolean(dbobject.ExecInsertUpdateStoredProcedure(spWithParam));
+            }
+            public string Fb_Attestation_Amaldaramad(string FbId, string AttestedBy)
+            {
+                string spWithParam = "Proc_EFB_Amaldaramad  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FbId + " ,'" + AttestedBy+"'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
 
         #endregion

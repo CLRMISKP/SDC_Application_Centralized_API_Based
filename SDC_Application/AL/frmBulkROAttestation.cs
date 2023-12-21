@@ -344,30 +344,38 @@ namespace SDC_Application.AL
           
             if (countSelectedIntiqalat < 1)
             {
-                MessageBox.Show("کم از کم ایک انتقال سیلیکٹ کریں", "تصدیق انتقال", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("کم از کم ایک انتقال / فرد بدر سیلیکٹ کریں", "تصدیق انتقال / فرد بدر", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (countSelectedIntiqalat > 5 && rbFBs.Checked)
+            {
+                MessageBox.Show("ایک ساتھ پانچ فرد بدرات سے زیادہ تصدیق نہیں کر سکتے۔ زیادہ فرد بدرات کے تصدیق سے عملدرامد میں حلل پڑ سکتاہے۔", "تصدیق فرد بدر", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-           
-
-          
-          
             countAttestedIntiqalat = 0;
             
-       
-            if (this.GridViewIntiqalat.Rows.Count > 0)
+           if (this.GridViewIntiqalat.Rows.Count > 0)
             {
 
                 for (int i = 0; i <= GridViewIntiqalat.Rows.Count - 1; i++)
                 {
                     if (Convert.ToInt32(GridViewIntiqalat.Rows[i].Cells["cbgrid"].Value) == 1)
                     {
+                        if (rbFBs.Checked)
+                        {
+                            string intiqalId = GridViewIntiqalat.Rows[i].Cells["FB_Id"].Value.ToString();
 
+                            string lastId = Iq.Fb_Attestation_Amaldaramad(intiqalId, lblRoName.Text);
+                            countAttestedIntiqalat += 1;
+                        }
+                        else
+                        {
+                            string intiqalId = GridViewIntiqalat.Rows[i].Cells["intiqalId"].Value.ToString();
 
-                        string intiqalId = GridViewIntiqalat.Rows[i].Cells["intiqalId"].Value.ToString();
-
-                        string lastId = Iq.WEB_SP_Update_Intiqal_Verification(intiqalId, cboROs.SelectedValue.ToString(), this.PersonFingerPrint);
-                        countAttestedIntiqalat += 1;
+                            string lastId = Iq.WEB_SP_Update_Intiqal_Verification(intiqalId, cboROs.SelectedValue.ToString(), this.PersonFingerPrint);
+                            countAttestedIntiqalat += 1;
+                        }
                     }
                 }
 
@@ -376,17 +384,21 @@ namespace SDC_Application.AL
 
             string I = "";
            
-            if (countAttestedIntiqalat == 1)
+            if (countAttestedIntiqalat == 1 && !rbFBs.Checked)
             {
                 I = countAttestedIntiqalat.ToString() + " انتقال";
             }
-            else
+            else if (countAttestedIntiqalat > 1 && !rbFBs.Checked)
             {
                 I = countAttestedIntiqalat.ToString() + " انتقالات";
             }
+            else if (rbFBs.Checked)
+            {
+                I = countAttestedIntiqalat.ToString() + " فرد بدرات";
+            }
 
 
-            MessageBox.Show(I +" " + "  تصدیق ہو گئے", "تصدیق انتقال", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+            MessageBox.Show(I +" " + "  تصدیق ہو گئے", " تصدیق انتقال/ فردبدر", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
 
             btnSave.Enabled = false;
             countAttestedIntiqalat = 0;
@@ -398,9 +410,17 @@ namespace SDC_Application.AL
 
                 cmbDawraDt_SelectionChangeCommitted(sender, e);
             }
-            else
+            else if(rbRegistry.Checked)
             {
                 rbRegistry_CheckedChanged(sender, e);
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+                rbCourtDecrees_CheckedChanged(sender, e);
+            }
+            else if (rbFBs.Checked)
+            {
+                rbFBs_CheckedChanged(sender, e);
             }
             
         }
@@ -473,22 +493,43 @@ namespace SDC_Application.AL
 
                 for (int i = 0; i <= GridViewIntiqalat.Rows.Count - 1; i++)
                 {
-
-                    if (GridViewIntiqalat.Rows[i].Cells["IntiqalNo"].Value.ToString().Contains(txtIntiqalNo.Text.Trim()))
+                    if (rbFBs.Checked)
                     {
+                        if (GridViewIntiqalat.Rows[i].Cells["FB_DocumentNo"].Value.ToString().Contains(txtIntiqalNo.Text.Trim()))
+                        {
 
-                        GridViewIntiqalat.Rows[i].Visible = true;
+                            GridViewIntiqalat.Rows[i].Visible = true;
+                        }
+                        else
+                        {
+
+                            CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[GridViewIntiqalat.DataSource];
+                            currencyManager1.SuspendBinding();
+                            GridViewIntiqalat.Rows[i].Visible = false;
+                            currencyManager1.ResumeBinding();
+                            GridViewIntiqalat.Rows[i].Visible = false;
+
+
+                        }
                     }
                     else
                     {
+                        if (GridViewIntiqalat.Rows[i].Cells["IntiqalNo"].Value.ToString().Contains(txtIntiqalNo.Text.Trim()))
+                        {
 
-                        CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[GridViewIntiqalat.DataSource];
-                        currencyManager1.SuspendBinding();
-                        GridViewIntiqalat.Rows[i].Visible = false;
-                        currencyManager1.ResumeBinding();
-                        GridViewIntiqalat.Rows[i].Visible = false;
+                            GridViewIntiqalat.Rows[i].Visible = true;
+                        }
+                        else
+                        {
+
+                            CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[GridViewIntiqalat.DataSource];
+                            currencyManager1.SuspendBinding();
+                            GridViewIntiqalat.Rows[i].Visible = false;
+                            currencyManager1.ResumeBinding();
+                            GridViewIntiqalat.Rows[i].Visible = false;
 
 
+                        }
                     }
                 }
 
@@ -584,6 +625,70 @@ namespace SDC_Application.AL
                     GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
 
                     GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
+
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
+
+            }
+            else if (rbFBs.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetFardBadratForVerification();
+
+
+                GridViewIntiqalat.DataSource = dtIntiqal;
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["FB_DocumentNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    
+
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["FB_DocumentNo"].HeaderText = "فرد بدر نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+
+                    GridViewIntiqalat.Columns["FB_Id"].Visible = false;
+
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
+
+            }
+        }
+
+        private void rbFBs_CheckedChanged(object sender, EventArgs e)
+        {
+             if (rbFBs.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetFardBadratForVerification();
+
+
+                GridViewIntiqalat.DataSource = dtIntiqal;
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["FB_DocumentNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    
+
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["FB_DocumentNo"].HeaderText = "فرد بدر نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+
+                    GridViewIntiqalat.Columns["FB_Id"].Visible = false;
 
                     GridViewIntiqalat.Columns[0].Width = 80;
                     GridViewIntiqalat.Columns[1].Width = 80;

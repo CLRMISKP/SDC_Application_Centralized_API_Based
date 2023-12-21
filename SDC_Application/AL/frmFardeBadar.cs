@@ -4015,5 +4015,31 @@ namespace SDC_Application.AL
             ResetBayanFields();
         }
 
+        private void btnPrevKhataFamily_Click(object sender, EventArgs e)
+        {
+            if (txtFbId.Text.Length > 5 && cboKhataNo.SelectedValue.ToString().Length > 5)
+            {
+                if (cboQismMalikProp.SelectedValue.ToString().Length > 3)
+                {
+                    frmFbMalikanFromPrevKhataShajra fbPrevKhataFamily = new frmFbMalikanFromPrevKhataShajra();
+                    fbPrevKhataFamily.KhataId = cboKhataNo.SelectedValue.ToString();
+                    fbPrevKhataFamily.FbId = txtFbId.Text;
+                    fbPrevKhataFamily.MozaId = cmbMouza.SelectedValue.ToString();
+                    fbPrevKhataFamily.khewatTypeId = cboQismMalikProp.SelectedValue.ToString();
+                    fbPrevKhataFamily.FormClosed -= new FormClosedEventHandler(fbPrevKhataFamily_FormClosed);
+                    fbPrevKhataFamily.FormClosed += new FormClosedEventHandler(fbPrevKhataFamily_FormClosed);
+                    fbPrevKhataFamily.ShowDialog();
+                }
+                else
+                    MessageBox.Show("درست حصہ و رقبہ کے ٹیب سے قسم مالکیت کا انتخاب کریں", "قسم مالکیت", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void fbPrevKhataFamily_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(txtFbId.Text, cboKhataNo.SelectedValue.ToString());
+            this.FillGridviewMalkan(khewatMalikanByFB);
+        }
+
     }
 }

@@ -379,7 +379,7 @@ namespace SDC_Application.AL
                     isConfirmed=Convert.ToBoolean(data["isConfirm"].ToString());
                     btnConfirm.Enabled = !isConfirmed;
                     enableAmal = Convert.ToBoolean(data["enableAmal"].ToString());
-                   
+                    this.Cancelled = Convert.ToBoolean(data["Cancelled"].ToString());
                 //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 

@@ -46,11 +46,13 @@
                 this.groupBox1 = new System.Windows.Forms.GroupBox();
                 this.cmbDawraDt = new System.Windows.Forms.ComboBox();
                 this.panel5 = new System.Windows.Forms.Panel();
+                this.rbFBs = new System.Windows.Forms.RadioButton();
                 this.rbCourtDecrees = new System.Windows.Forms.RadioButton();
                 this.rbIntiqal = new System.Windows.Forms.RadioButton();
                 this.rbRegistry = new System.Windows.Forms.RadioButton();
                 this.lbDawraDt = new System.Windows.Forms.Label();
                 this.groupBox2 = new System.Windows.Forms.GroupBox();
+                this.verificationControl2 = new DPFP.Gui.Verification.VerificationControl();
                 this.groupBox3 = new System.Windows.Forms.GroupBox();
                 this.btnFingerHysoon = new System.Windows.Forms.Button();
                 this.btnSave = new System.Windows.Forms.Button();
@@ -60,7 +62,6 @@
                 this.cboROs = new System.Windows.Forms.ComboBox();
                 this.lbl5 = new System.Windows.Forms.Label();
                 this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-                this.verificationControl2 = new DPFP.Gui.Verification.VerificationControl();
                 this.tabControl1.SuspendLayout();
                 this.tbAttestation.SuspendLayout();
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -124,7 +125,7 @@
                 this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
                 this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
                 this.splitContainer1.Size = new System.Drawing.Size(1188, 505);
-                this.splitContainer1.SplitterDistance = 537;
+                this.splitContainer1.SplitterDistance = 627;
                 this.splitContainer1.SplitterWidth = 8;
                 this.splitContainer1.TabIndex = 0;
                 // 
@@ -134,7 +135,7 @@
                 this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.panel1.Location = new System.Drawing.Point(5, 5);
                 this.panel1.Name = "panel1";
-                this.panel1.Size = new System.Drawing.Size(525, 493);
+                this.panel1.Size = new System.Drawing.Size(615, 493);
                 this.panel1.TabIndex = 1;
                 // 
                 // panel2
@@ -144,7 +145,7 @@
                 this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.panel2.Location = new System.Drawing.Point(0, 0);
                 this.panel2.Name = "panel2";
-                this.panel2.Size = new System.Drawing.Size(525, 493);
+                this.panel2.Size = new System.Drawing.Size(615, 493);
                 this.panel2.TabIndex = 10;
                 // 
                 // groupBox8
@@ -157,7 +158,7 @@
                 this.groupBox8.Location = new System.Drawing.Point(0, 76);
                 this.groupBox8.Name = "groupBox8";
                 this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 30, 3, 3);
-                this.groupBox8.Size = new System.Drawing.Size(525, 417);
+                this.groupBox8.Size = new System.Drawing.Size(615, 417);
                 this.groupBox8.TabIndex = 4;
                 this.groupBox8.TabStop = false;
                 this.groupBox8.Text = "انتقالات";
@@ -167,7 +168,7 @@
                 this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.label33.AutoSize = true;
                 this.label33.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.label33.Location = new System.Drawing.Point(346, 19);
+                this.label33.Location = new System.Drawing.Point(436, 19);
                 this.label33.Name = "label33";
                 this.label33.Size = new System.Drawing.Size(67, 31);
                 this.label33.TabIndex = 74;
@@ -190,7 +191,7 @@
                 this.txtIntiqalNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
                 this.txtIntiqalNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 this.txtIntiqalNo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.txtIntiqalNo.Location = new System.Drawing.Point(192, 21);
+                this.txtIntiqalNo.Location = new System.Drawing.Point(282, 21);
                 this.txtIntiqalNo.Multiline = true;
                 this.txtIntiqalNo.Name = "txtIntiqalNo";
                 this.txtIntiqalNo.Size = new System.Drawing.Size(105, 27);
@@ -204,7 +205,7 @@
                 this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.panel3.Location = new System.Drawing.Point(3, 62);
                 this.panel3.Name = "panel3";
-                this.panel3.Size = new System.Drawing.Size(519, 352);
+                this.panel3.Size = new System.Drawing.Size(609, 352);
                 this.panel3.TabIndex = 3;
                 // 
                 // GridViewIntiqalat
@@ -221,7 +222,7 @@
                 this.GridViewIntiqalat.Name = "GridViewIntiqalat";
                 this.GridViewIntiqalat.ReadOnly = true;
                 this.GridViewIntiqalat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-                this.GridViewIntiqalat.Size = new System.Drawing.Size(519, 352);
+                this.GridViewIntiqalat.Size = new System.Drawing.Size(609, 352);
                 this.GridViewIntiqalat.TabIndex = 1;
                 this.GridViewIntiqalat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewIntiqalat_CellClick);
                 // 
@@ -239,7 +240,7 @@
                 this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
                 this.groupBox1.Location = new System.Drawing.Point(0, 0);
                 this.groupBox1.Name = "groupBox1";
-                this.groupBox1.Size = new System.Drawing.Size(525, 76);
+                this.groupBox1.Size = new System.Drawing.Size(615, 76);
                 this.groupBox1.TabIndex = 0;
                 this.groupBox1.TabStop = false;
                 // 
@@ -264,19 +265,33 @@
                 // panel5
                 // 
                 this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.panel5.Controls.Add(this.rbFBs);
                 this.panel5.Controls.Add(this.rbCourtDecrees);
                 this.panel5.Controls.Add(this.rbIntiqal);
                 this.panel5.Controls.Add(this.rbRegistry);
-                this.panel5.Location = new System.Drawing.Point(270, 28);
+                this.panel5.Location = new System.Drawing.Point(230, 28);
                 this.panel5.Name = "panel5";
-                this.panel5.Size = new System.Drawing.Size(250, 42);
+                this.panel5.Size = new System.Drawing.Size(380, 42);
                 this.panel5.TabIndex = 62;
+                // 
+                // rbFBs
+                // 
+                this.rbFBs.AutoSize = true;
+                this.rbFBs.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.rbFBs.Location = new System.Drawing.Point(3, 1);
+                this.rbFBs.Name = "rbFBs";
+                this.rbFBs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                this.rbFBs.Size = new System.Drawing.Size(101, 42);
+                this.rbFBs.TabIndex = 91;
+                this.rbFBs.Text = "فرد بدرات";
+                this.rbFBs.UseVisualStyleBackColor = true;
+                this.rbFBs.CheckedChanged += new System.EventHandler(this.rbFBs_CheckedChanged);
                 // 
                 // rbCourtDecrees
                 // 
                 this.rbCourtDecrees.AutoSize = true;
                 this.rbCourtDecrees.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.rbCourtDecrees.Location = new System.Drawing.Point(4, 4);
+                this.rbCourtDecrees.Location = new System.Drawing.Point(109, 1);
                 this.rbCourtDecrees.Name = "rbCourtDecrees";
                 this.rbCourtDecrees.RightToLeft = System.Windows.Forms.RightToLeft.No;
                 this.rbCourtDecrees.Size = new System.Drawing.Size(113, 42);
@@ -289,7 +304,7 @@
                 // 
                 this.rbIntiqal.AutoSize = true;
                 this.rbIntiqal.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.rbIntiqal.Location = new System.Drawing.Point(171, 4);
+                this.rbIntiqal.Location = new System.Drawing.Point(304, 1);
                 this.rbIntiqal.Name = "rbIntiqal";
                 this.rbIntiqal.RightToLeft = System.Windows.Forms.RightToLeft.No;
                 this.rbIntiqal.Size = new System.Drawing.Size(73, 42);
@@ -302,7 +317,7 @@
                 // 
                 this.rbRegistry.AutoSize = true;
                 this.rbRegistry.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.rbRegistry.Location = new System.Drawing.Point(98, 4);
+                this.rbRegistry.Location = new System.Drawing.Point(231, 1);
                 this.rbRegistry.Name = "rbRegistry";
                 this.rbRegistry.RightToLeft = System.Windows.Forms.RightToLeft.No;
                 this.rbRegistry.Size = new System.Drawing.Size(83, 42);
@@ -333,10 +348,23 @@
                 this.groupBox2.Location = new System.Drawing.Point(5, 93);
                 this.groupBox2.Name = "groupBox2";
                 this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                this.groupBox2.Size = new System.Drawing.Size(631, 405);
+                this.groupBox2.Size = new System.Drawing.Size(541, 405);
                 this.groupBox2.TabIndex = 24;
                 this.groupBox2.TabStop = false;
                 this.groupBox2.Text = "حیثیت تصدیق";
+                // 
+                // verificationControl2
+                // 
+                this.verificationControl2.Active = true;
+                this.verificationControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+                this.verificationControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+                this.verificationControl2.Location = new System.Drawing.Point(247, 50);
+                this.verificationControl2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+                this.verificationControl2.Name = "verificationControl2";
+                this.verificationControl2.ReaderSerialNumber = "00000000-0000-0000-0000-000000000000";
+                this.verificationControl2.Size = new System.Drawing.Size(48, 47);
+                this.verificationControl2.TabIndex = 24;
+                this.verificationControl2.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.verificationControl1_OnComplete);
                 // 
                 // groupBox3
                 // 
@@ -347,7 +375,7 @@
                 this.groupBox3.Location = new System.Drawing.Point(3, 318);
                 this.groupBox3.Name = "groupBox3";
                 this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                this.groupBox3.Size = new System.Drawing.Size(625, 84);
+                this.groupBox3.Size = new System.Drawing.Size(535, 84);
                 this.groupBox3.TabIndex = 23;
                 this.groupBox3.TabStop = false;
                 this.groupBox3.Text = "تصدیق کے بعد محفوظ کریں";
@@ -359,7 +387,7 @@
                 this.btnFingerHysoon.ForeColor = System.Drawing.Color.White;
                 this.btnFingerHysoon.Image = global::SDC_Application.Resource1.fingerPrint1;
                 this.btnFingerHysoon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-                this.btnFingerHysoon.Location = new System.Drawing.Point(241, 25);
+                this.btnFingerHysoon.Location = new System.Drawing.Point(151, 25);
                 this.btnFingerHysoon.Name = "btnFingerHysoon";
                 this.btnFingerHysoon.Size = new System.Drawing.Size(56, 50);
                 this.btnFingerHysoon.TabIndex = 25;
@@ -373,7 +401,7 @@
                 this.btnSave.Enabled = false;
                 this.btnSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
-                this.btnSave.Location = new System.Drawing.Point(334, 25);
+                this.btnSave.Location = new System.Drawing.Point(244, 25);
                 this.btnSave.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
                 this.btnSave.Name = "btnSave";
                 this.btnSave.Size = new System.Drawing.Size(59, 50);
@@ -400,7 +428,7 @@
                 this.gbSelectRO.Location = new System.Drawing.Point(5, 5);
                 this.gbSelectRO.Name = "gbSelectRO";
                 this.gbSelectRO.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                this.gbSelectRO.Size = new System.Drawing.Size(631, 88);
+                this.gbSelectRO.Size = new System.Drawing.Size(541, 88);
                 this.gbSelectRO.TabIndex = 4;
                 this.gbSelectRO.TabStop = false;
                 this.gbSelectRO.Text = "ریونیو افیسر کا انتخاب کریں";
@@ -423,7 +451,7 @@
                 this.cboROs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 this.cboROs.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.cboROs.FormattingEnabled = true;
-                this.cboROs.Location = new System.Drawing.Point(392, 35);
+                this.cboROs.Location = new System.Drawing.Point(302, 35);
                 this.cboROs.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
                 this.cboROs.Name = "cboROs";
                 this.cboROs.Size = new System.Drawing.Size(159, 32);
@@ -435,7 +463,7 @@
                 // lbl5
                 // 
                 this.lbl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.lbl5.Location = new System.Drawing.Point(557, 38);
+                this.lbl5.Location = new System.Drawing.Point(467, 38);
                 this.lbl5.Name = "lbl5";
                 this.lbl5.Size = new System.Drawing.Size(66, 25);
                 this.lbl5.TabIndex = 16;
@@ -444,19 +472,6 @@
                 // toolTip
                 // 
                 this.toolTip.IsBalloon = true;
-                // 
-                // verificationControl2
-                // 
-                this.verificationControl2.Active = true;
-                this.verificationControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.verificationControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-                this.verificationControl2.Location = new System.Drawing.Point(337, 50);
-                this.verificationControl2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
-                this.verificationControl2.Name = "verificationControl2";
-                this.verificationControl2.ReaderSerialNumber = null;
-                this.verificationControl2.Size = new System.Drawing.Size(48, 47);
-                this.verificationControl2.TabIndex = 24;
-                this.verificationControl2.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.verificationControl1_OnComplete);
                 // 
                 // frmBulkROCancellation
                 // 
@@ -526,5 +541,6 @@
         private System.Windows.Forms.Button btnFingerHysoon;
         private System.Windows.Forms.RadioButton rbCourtDecrees;
         private DPFP.Gui.Verification.VerificationControl verificationControl2;
+        private System.Windows.Forms.RadioButton rbFBs;
     }
     }

@@ -97,6 +97,7 @@ namespace SDC_Application.AL
                 btnCancel.Enabled = false;
                 btnPending.Enabled = true;
             }
+            else
             {
                 lblCS.Text = "غیر کینسل شدہ";
                 btnCancel.Enabled = true;

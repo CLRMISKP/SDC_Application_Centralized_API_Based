@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>3.0.1.16</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>43</ApplicationRevision>
+    <ApplicationRevision>45</ApplicationRevision>
     <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -168,6 +168,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmFbMalikanFromPrevKhataShajra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmFbMalikanFromPrevKhataShajra.designer.cs">
+      <DependentUpon>frmFbMalikanFromPrevKhataShajra.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\FardForPersonalRecord_Cr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1282,6 +1288,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmFbMalikanFromPrevKhataShajra.resx">
+      <DependentUpon>frmFbMalikanFromPrevKhataShajra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\FardForPersonalRecord_Cr.resx">
       <DependentUpon>FardForPersonalRecord_Cr.cs</DependentUpon>
     </EmbeddedResource>
