@@ -1618,10 +1618,10 @@ namespace SDC_Application.AL
                     if (row.Cells["KhassraDetailId"].Value.ToString() == txtKhassraDetailId.Text)
                     {
                         KhassraNo = row.Cells["KhassraNo"].Value.ToString();
-                        AreaTypeId = row.Cells["AreaTypeId"].Value.ToString();
-                        KhassraKanal = row.Cells["Kanal"].Value.ToString();
-                        KhassraMarla = row.Cells["Marla"].Value.ToString();
-                        KhassraSarsai = row.Cells["Sarsai"].Value.ToString();
+                        AreaTypeId = row.Cells["AreaTypeId"].Value.ToString().Length>0?row.Cells["AreaTypeId"].Value.ToString():"0";
+                        KhassraKanal = row.Cells["Kanal"].Value.ToString().Length>0?row.Cells["Kanal"].Value.ToString():"0";
+                        KhassraMarla = row.Cells["Marla"].Value.ToString().Length > 0 ? row.Cells["Marla"].Value.ToString() : "0" ;
+                        KhassraSarsai = row.Cells["Sarsai"].Value.ToString().Length>0?row.Cells["Sarsai"].Value.ToString():"0";
                         break;
                     }
                 }
