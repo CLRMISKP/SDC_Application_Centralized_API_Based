@@ -55,6 +55,7 @@
             this.dgAllPendingTasks = new System.Windows.Forms.DataGridView();
             this.ColSelAllPendingTask = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnFinishTask = new System.Windows.Forms.Button();
             this.txtMozaIdAllPendingTask = new System.Windows.Forms.TextBox();
             this.btnPrintProposedChanges = new System.Windows.Forms.Button();
             this.txtRHZ_ChangeId = new System.Windows.Forms.TextBox();
@@ -87,6 +88,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMouza = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
+            this.btnCancelMutation = new System.Windows.Forms.Button();
+            this.btnPrintMutation = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageRHZ.SuspendLayout();
@@ -327,6 +330,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnPrintMutation);
+            this.groupBox5.Controls.Add(this.btnCancelMutation);
             this.groupBox5.Controls.Add(this.txtMozaId);
             this.groupBox5.Controls.Add(this.txtIntiqalId);
             this.groupBox5.Controls.Add(this.btnImplementMutation);
@@ -361,7 +366,7 @@
             // 
             this.btnImplementMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImplementMutation.Enabled = false;
-            this.btnImplementMutation.Location = new System.Drawing.Point(308, 32);
+            this.btnImplementMutation.Location = new System.Drawing.Point(577, 36);
             this.btnImplementMutation.Name = "btnImplementMutation";
             this.btnImplementMutation.Size = new System.Drawing.Size(207, 46);
             this.btnImplementMutation.TabIndex = 1;
@@ -372,9 +377,9 @@
             // btnShowAllPendingMutations
             // 
             this.btnShowAllPendingMutations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowAllPendingMutations.Location = new System.Drawing.Point(533, 32);
+            this.btnShowAllPendingMutations.Location = new System.Drawing.Point(796, 36);
             this.btnShowAllPendingMutations.Name = "btnShowAllPendingMutations";
-            this.btnShowAllPendingMutations.Size = new System.Drawing.Size(212, 46);
+            this.btnShowAllPendingMutations.Size = new System.Drawing.Size(179, 46);
             this.btnShowAllPendingMutations.TabIndex = 0;
             this.btnShowAllPendingMutations.Text = "تمام غیر عمل شدہ انتقالات دیکھیئے";
             this.btnShowAllPendingMutations.UseVisualStyleBackColor = true;
@@ -418,6 +423,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnFinishTask);
             this.groupBox4.Controls.Add(this.txtMozaIdAllPendingTask);
             this.groupBox4.Controls.Add(this.btnPrintProposedChanges);
             this.groupBox4.Controls.Add(this.txtRHZ_ChangeId);
@@ -430,6 +436,18 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "تمام نا مکمل ٹاسک دیکھنے کےلئے بٹن کلک کریں";
+            // 
+            // btnFinishTask
+            // 
+            this.btnFinishTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinishTask.Enabled = false;
+            this.btnFinishTask.Location = new System.Drawing.Point(343, 32);
+            this.btnFinishTask.Name = "btnFinishTask";
+            this.btnFinishTask.Size = new System.Drawing.Size(174, 44);
+            this.btnFinishTask.TabIndex = 207;
+            this.btnFinishTask.Text = "انتخاب کردہ ٹاسک ختم کریں";
+            this.btnFinishTask.UseVisualStyleBackColor = true;
+            this.btnFinishTask.Click += new System.EventHandler(this.btnFinishTask_Click);
             // 
             // txtMozaIdAllPendingTask
             // 
@@ -466,9 +484,9 @@
             // 
             this.btnImplementTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImplementTask.Enabled = false;
-            this.btnImplementTask.Location = new System.Drawing.Point(374, 32);
+            this.btnImplementTask.Location = new System.Drawing.Point(525, 32);
             this.btnImplementTask.Name = "btnImplementTask";
-            this.btnImplementTask.Size = new System.Drawing.Size(195, 46);
+            this.btnImplementTask.Size = new System.Drawing.Size(174, 44);
             this.btnImplementTask.TabIndex = 1;
             this.btnImplementTask.Text = "انتخاب کردہ ٹاسک پر عمل کریں";
             this.btnImplementTask.UseVisualStyleBackColor = true;
@@ -477,9 +495,9 @@
             // btnShowAllPendingTasks
             // 
             this.btnShowAllPendingTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowAllPendingTasks.Location = new System.Drawing.Point(590, 32);
+            this.btnShowAllPendingTasks.Location = new System.Drawing.Point(705, 32);
             this.btnShowAllPendingTasks.Name = "btnShowAllPendingTasks";
-            this.btnShowAllPendingTasks.Size = new System.Drawing.Size(195, 46);
+            this.btnShowAllPendingTasks.Size = new System.Drawing.Size(164, 44);
             this.btnShowAllPendingTasks.TabIndex = 0;
             this.btnShowAllPendingTasks.Text = "تمام نا مکمل ٹاسک دیکھیئے";
             this.btnShowAllPendingTasks.UseVisualStyleBackColor = true;
@@ -812,6 +830,31 @@
             this.lbl1.TabIndex = 60;
             this.lbl1.Text = "موضع";
             // 
+            // btnCancelMutation
+            // 
+            this.btnCancelMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelMutation.Enabled = false;
+            this.btnCancelMutation.Location = new System.Drawing.Point(391, 37);
+            this.btnCancelMutation.Name = "btnCancelMutation";
+            this.btnCancelMutation.Size = new System.Drawing.Size(174, 44);
+            this.btnCancelMutation.TabIndex = 208;
+            this.btnCancelMutation.Text = "انتخاب کردہ انتقال کینسل کریں";
+            this.btnCancelMutation.UseVisualStyleBackColor = true;
+            this.btnCancelMutation.Click += new System.EventHandler(this.btnCancelMutation_Click);
+            // 
+            // btnPrintMutation
+            // 
+            this.btnPrintMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintMutation.BackgroundImage = global::SDC_Application.Resource1.Print3;
+            this.btnPrintMutation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintMutation.Enabled = false;
+            this.btnPrintMutation.Location = new System.Drawing.Point(323, 35);
+            this.btnPrintMutation.Name = "btnPrintMutation";
+            this.btnPrintMutation.Size = new System.Drawing.Size(53, 48);
+            this.btnPrintMutation.TabIndex = 209;
+            this.btnPrintMutation.UseVisualStyleBackColor = true;
+            this.btnPrintMutation.Click += new System.EventHandler(this.btnPrintMutation_Click);
+            // 
             // frmAdminPendingTaskDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -913,5 +956,8 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabKhewatFareeqain;
         private System.Windows.Forms.TabPage tabMushtriFareeqain;
+        private System.Windows.Forms.Button btnFinishTask;
+        private System.Windows.Forms.Button btnCancelMutation;
+        private System.Windows.Forms.Button btnPrintMutation;
     }
 }

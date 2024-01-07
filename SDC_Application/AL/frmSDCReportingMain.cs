@@ -147,7 +147,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if (UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check!=44 && UsersManagments.check!=47)
+            if ((UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check!=44 && UsersManagments.check!=47) || UsersManagments.check==63)
             {
                 //ReportParameter param = new ReportParameter();
                 //param.Name = "TehsilId";
@@ -681,6 +681,24 @@ namespace SDC_Application.AL
                  rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
                  //rp[1] = new ReportParameter("KhataId", this.KhataId);
                  this.SetCredentials("KhanakashDetail_Transposition", rp, false);
+
+             }
+             if (UsersManagments.check == 63) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("IntiqalPendingEnteredAttestedCanceledRemaing", rp, false);
+
+             }
+             if (UsersManagments.check == 64) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 //rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("KhanakashDetails", rp, false);
 
              }
         }

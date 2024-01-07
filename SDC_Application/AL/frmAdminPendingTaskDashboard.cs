@@ -23,6 +23,7 @@ namespace SDC_Application.AL
         Khatoonies khatooni = new Khatoonies();
         DataTable dtkj= new DataTable();
         Misal misal=new Misal();
+        public string intiqalTypeId { get; set; }
 
         public frmAdminPendingTaskDashboard()
         {
@@ -162,11 +163,13 @@ namespace SDC_Application.AL
                 {
                     btnImplementTask.Enabled = true;
                     btnPrintProposedChanges.Enabled = true;
+                    btnFinishTask.Enabled = true;
                 }
                 else
                 {
                     btnImplementTask.Enabled = false;
                     btnPrintProposedChanges.Enabled = false;
+                    btnFinishTask.Enabled = false;
                 }
 
                 foreach (DataGridViewRow row in dgAllPendingTasks.Rows)
@@ -247,7 +250,8 @@ namespace SDC_Application.AL
                 dgPendingMutations.Columns["InsertLoginName"].HeaderText = "اندراج کنندہ";
                 dgPendingMutations.Columns["InsertDate"].HeaderText = "بتاریخ";
                 dgPendingMutations.Columns["IntiqalId"].Visible = false;
-                dgPendingMutations.Columns["MozaId"].Visible = false;
+                dgPendingMutations.Columns["MozaId"].Visible = false; //IntiqalTypeId
+                //dgPendingMutations.Columns["IntiqalTypeId"].Visible = false;
             }
         }
 
@@ -257,12 +261,17 @@ namespace SDC_Application.AL
             {
                 txtIntiqalId.Text=dgPendingMutations.SelectedRows[0].Cells["IntiqalId"].Value.ToString();
                 txtMozaId.Text = dgPendingMutations.SelectedRows[0].Cells["MozaId"].Value.ToString();
-                if (txtIntiqalId.Text.Length > 5 && txtMozaId.Text.Length>4)
+                //this.intiqalTypeId = dgPendingMutations.SelectedRows[0].Cells["IntiqalTypeId"].Value.ToString();
+                if (txtIntiqalId.Text.Length > 5 && txtMozaId.Text.Length > 4)
                 {
                     btnImplementMutation.Enabled = true;
+                    btnPrintMutation.Enabled = true;
                 }
                 else
+                {
                     btnImplementMutation.Enabled = false;
+                    btnPrintMutation.Enabled = false;
+                }
 
                 foreach (DataGridViewRow row in dgPendingMutations.Rows)
                 {
@@ -273,6 +282,7 @@ namespace SDC_Application.AL
                     else
                         row.Cells["ColSelIntiqal"].Value = false;
                 }
+                btnCancelMutation.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -489,6 +499,88 @@ namespace SDC_Application.AL
                         MessageBox.Show(ex.Message);
                     }
                 }
+        }
+
+        private void btnFinishTask_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ ترامیم کو ختم کرنا چاہتے ہے؟", "ختم کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    try
+                    {
+                        if (txtRHZ_ChangeId.Text.Trim().Length > 5)
+                        {
+                            string retVal = rhz.RHZ_ChangeRequest_Cancel(txtRHZ_ChangeId.Text);
+                            if (retVal.Length > 5)
+                            {
+                                MessageBox.Show("انتخاب کردہ ریکارڈ ختم ہو چکا ہے۔");
+                                btnShowAllPendingTasks_Click(sender, e);
+                                btnImplementTask.Enabled = false;
+                            }
+
+                        }
+                        else
+                            MessageBox.Show("ختم کرنے کیلئے پہلے ریکارڈ کا انتخاب کریں", "ناقابل ختم", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCancelMutation_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال کینسل/ ہائیڈ کرنا چاہتے ہے؟", "کینسل / ہائیڈ کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    this.btnCancelMutation.Enabled = false;
+                    string retVal = Iq.IntiqalEnableDisable(txtIntiqalId.Text, "cancel", "", "");
+                    if (retVal == "1")
+                    {
+                        MessageBox.Show("انتقال کینسل / ہائیڈ ہو گیا");
+                        btnImplementMutation.Enabled = false;
+                        btnShowAllPendingMutations_Click(sender, e);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void btnPrintMutation_Click(object sender, EventArgs e)
+        {
+            frmIntiqalReport rpt = new frmIntiqalReport();
+            rpt.ShowDialog();
+            //frmSDCReportingMain TokenReport = new frmSDCReportingMain();
+            //TokenReport.IntiqalId = txtIntiqalId.Text;
+            //TokenReport.userId = UsersManagments.UserId.ToString();
+            //if (this.intiqalTypeId == "37")
+            //    UsersManagments.check = 18;
+            //else if (this.intiqalTypeId == "15")
+            //    UsersManagments.check = 19;
+            //else
+            //    UsersManagments.check = 4;
+            ////else if (radKhanaKasht.Checked)
+            ////    UsersManagments.check = 16;
+            ////else if (radkhanakashtmalkiat.Checked)
+            ////    UsersManagments.check = 17;
+            ////else if (radkhanakashtToMalkiat.Checked)
+            ////    UsersManagments.check = 45;
+            ////else if (radKhanaMalkiat.Checked)
+            ////    UsersManagments.check = 4;
+            //TokenReport.ShowDialog();     
         }
     }
 }

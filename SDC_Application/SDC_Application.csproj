@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>3.0.1.16</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>46</ApplicationRevision>
+    <ApplicationRevision>50</ApplicationRevision>
     <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1249,6 +1249,12 @@
     <Compile Include="AL\frmBulkROAttestation.designer.cs">
       <DependentUpon>frmBulkROAttestation.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsersMachinesAccessControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsersMachinesAccessControls.Designer.cs">
+      <DependentUpon>frmUsersMachinesAccessControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageCropResize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1815,6 +1821,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmBulkROAttestation.resx">
       <DependentUpon>frmBulkROAttestation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsersMachinesAccessControls.resx">
+      <DependentUpon>frmUsersMachinesAccessControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageCropResize.resx">
       <DependentUpon>ImageCropResize.cs</DependentUpon>

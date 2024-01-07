@@ -26,6 +26,9 @@ namespace SDC_Application.DL
         public string ver = "3.0.1.1";
         frmSelectTehsil mfrmSelectTehsil = new frmSelectTehsil();
         frmSystemRegistration mSystemRegistration = new frmSystemRegistration();
+        DataTable SystemInfo = new DataTable();
+        Users user = new Users();
+        String mac = "";
         #endregion
         public Login()
         {
@@ -37,8 +40,8 @@ namespace SDC_Application.DL
         private void Login_Load(object sender, EventArgs e)
         {
 
-            DataTable SystemInfo = new DataTable();
-            String mac = string.Join(",", mfrmSelectTehsil.getmacs().Cast<String>().Select(p => p.ToString()));
+           
+             mac = string.Join(",", mfrmSelectTehsil.getmacs().Cast<String>().Select(p => p.ToString()));
             SystemInfo = usm.GetSystemInfo(System.Environment.MachineName, mac);
 
             if (SystemInfo.Rows.Count > 0)
@@ -112,8 +115,24 @@ namespace SDC_Application.DL
         private void btnSaveLogin_Click_1(object sender, EventArgs e)
         {
 
-
-            GetLogin(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+            DataTable dt = new DataTable();
+            dt = user.GetMachineAccessControl("", mac);
+            if(dt!=null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    if (Convert.ToBoolean(dt.Rows[0]["isAllowedToLogin"].ToString()) && Convert.ToDateTime(dt.Rows[0]["LogOutTime"].ToString()).TimeOfDay >= (DateTime.Now.TimeOfDay) && (DateTime.Now.TimeOfDay) >= Convert.ToDateTime(dt.Rows[0]["LoginTime"].ToString()).TimeOfDay)
+                    {
+                        GetLogin(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+                    }
+                    else
+                        MessageBox.Show("You are not allowed to login to CLRMIS before (" + Convert.ToDateTime(dt.Rows[0]["LoginTime"].ToString()).TimeOfDay + ") and after (" + Convert.ToDateTime(dt.Rows[0]["LogOutTime"].ToString()).TimeOfDay.ToString() + ")");
+                }
+                else
+                    GetLogin(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+            }
+            else
+                GetLogin(txtUsername.Text.Trim(), txtPassword.Text.Trim());
             //try
             //{
             //    string login = txtUsername.Text.Trim();

@@ -210,6 +210,11 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_RHZ_Change_Implementation  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RHZ_ChangeId  + "," + Classess.UsersManagments.UserId.ToString() + ",'" + Classess.UsersManagments.UserName + "'";
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
+        public string RHZ_ChangeRequest_Cancel(string RHZ_ChangeId)
+        {
+            string spWithParam = "Proc_RHZ_Request_Cancel  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RHZ_ChangeId ;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
 
 
         #region Save Khassra Register Details 

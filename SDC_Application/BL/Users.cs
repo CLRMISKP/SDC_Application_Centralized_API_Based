@@ -170,5 +170,20 @@ namespace SDC_Application.BL
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
         }
+        public DataTable GetMachineAccessControl(string MachineName, string MacAddress)
+        {
+            string spWithParam = "Proc_Get_MachineAccesControl  '" + MachineName + "','" + MacAddress + "'";
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+        public DataTable GetSystemRegistrationLogs(string TehsilId)
+        {
+            string spWithParam = "Proc_Get_SystemRegistrationLog  " + TehsilId ;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+        public DataTable GetUsersForUserAccessControl(string TehsilId)
+        {
+            string spWithParam = "Proc_Get_UserProfileForUserAccessControl  " + TehsilId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
     }
 }

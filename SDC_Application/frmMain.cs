@@ -708,44 +708,12 @@ namespace SDC_Application
 
         private void createUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool isOpen = IsFrmOpen("frmUserManagement");
-            if (!isOpen)
-            {
-                frmUserManagement usermanagment = new frmUserManagement();
-              //  frmUserManagement
-                try
-                {
-                    usermanagment.MdiParent = this;
-                    usermanagment.WindowState = this.WindowState;
-                    usermanagment.Show();
-                    string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Users Management Form'");
-                }
-                catch (Exception ex)
-                {
-                    usermanagment.Dispose();
-                }
-            }
+            
         }
 
         private void creaTRolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool isOpen = IsFrmOpen("UserRolDefination");
-            if (!isOpen)
-            {
-                UserRolDefination RoleDep = new UserRolDefination();
-                //  frmUserManagement
-                try
-                {
-                    RoleDep.MdiParent = this;
-                    RoleDep.WindowState = this.WindowState;
-                    RoleDep.Show();
-                    string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Users Roles Definition Form'");
-                }
-                catch (Exception ex)
-                {
-                    RoleDep.Dispose();
-                }
-            }
+           
         }
 
         private void mnuTafseelKhatas_Click(object sender, EventArgs e)
@@ -2046,6 +2014,42 @@ namespace SDC_Application
 
         private void mnuKhanakashtDetail_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void mnuTaskNonAdmin_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmAdminPendingTaskDashboard");
+            if (!isOpen)
+            {
+
+                frmAdminPendingTaskDashboard obj = new frmAdminPendingTaskDashboard();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuMutationSummaryRptForRevMeeting_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 63;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void MnuKhanakashtSummary_Click(object sender, EventArgs e)
+        {
             bool isOpen = IsFrmOpen("frmSDCReportingMain");
 
             if (!isOpen)
@@ -2062,16 +2066,104 @@ namespace SDC_Application
             }
         }
 
-        private void mnuTaskNonAdmin_Click(object sender, EventArgs e)
+        private void mnuKhanakashtDetails_Click(object sender, EventArgs e)
         {
-            bool isOpen = IsFrmOpen("frmAdminPendingTaskDashboard");
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
             if (!isOpen)
             {
 
-                frmAdminPendingTaskDashboard obj = new frmAdminPendingTaskDashboard();
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 64;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();
+            }
+        }
+
+        private void mnuUserAccounts_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmUserManagement");
+            if (!isOpen)
+            {
+                frmUserManagement usermanagment = new frmUserManagement();
+                //  frmUserManagement
+                try
+                {
+                    usermanagment.MdiParent = this;
+                    usermanagment.WindowState = this.WindowState;
+                    usermanagment.Show();
+                    string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Users Management Form'");
+                }
+                catch (Exception ex)
+                {
+                    usermanagment.Dispose();
+                }
+            }
+        }
+
+        private void mnuUserRoles_Click_1(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("UserRolDefination");
+            if (!isOpen)
+            {
+                UserRolDefination RoleDep = new UserRolDefination();
+                //  frmUserManagement
+                try
+                {
+                    RoleDep.MdiParent = this;
+                    RoleDep.WindowState = this.WindowState;
+                    RoleDep.Show();
+                    string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Users Roles Definition Form'");
+                }
+                catch (Exception ex)
+                {
+                    RoleDep.Dispose();
+                }
+            }
+        }
+
+        private void mnuUserVisibility2_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmUsersVisibility");
+
+            if (!isOpen)
+            {
+                frmUsersVisibility fard = new frmUsersVisibility();
+                fard.MdiParent = this;
+                fard.WindowState = this.WindowState;
+                fard.Show();
+            }
+        }
+
+        private void mnuMachineAccessControl_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmUsersMachinesAccessControls");
+
+            if (!isOpen)
+            {
+                frmUsersMachinesAccessControls fard = new frmUsersMachinesAccessControls();
+                fard.TabIndex = 1;
+                fard.MdiParent = this;
+                fard.WindowState = this.WindowState;
+                fard.Show();
+            }
+        }
+
+        private void mnuUserAccessControl_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmUsersMachinesAccessControls");
+
+            if (!isOpen)
+            {
+                frmUsersMachinesAccessControls fard = new frmUsersMachinesAccessControls();
+                fard.TabIndex = 0;
+                fard.MdiParent = this;
+                fard.WindowState = this.WindowState;
+                fard.Show();
             }
         }
      
