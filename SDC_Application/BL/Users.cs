@@ -185,5 +185,17 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_UserProfileForUserAccessControl  " + TehsilId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
+        public string UpdateUserAccessControl(string UserId, string isAllowedOnWeekend, string LogInTime, string LogOutTime)
+        {
+            string spWithParam = "WEB_SP_Update_User_Access_Control  "  +  UserId + "," + isAllowedOnWeekend + ",'" + LogInTime + "','" + LogOutTime + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+
+        }
+        public string UpdateMachineAccessControl(string RegId, string isAllowedToLogin ,string isAllowedOnWeekend, string LogInTime, string LogOutTime)
+        {
+            string spWithParam = "WEB_SP_Update_Machine_Access_Control  " + RegId+","+isAllowedToLogin+ "," + isAllowedOnWeekend + ",'" + LogInTime + "','" + LogOutTime + "'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+
+        }
     }
 }

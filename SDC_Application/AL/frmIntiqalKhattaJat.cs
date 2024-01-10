@@ -1245,37 +1245,68 @@ namespace SDC_Application.AL
         #region Delete Seller
         private void btnDelSeller_Click(object sender, EventArgs e)
         {
-            string IntiqalSellerId = this.txtSellerID.Text.ToString();
-            try
+            if (chkDeleteAllBayan.Checked)
             {
-                if (IntiqalSellerId != "-1")
+                if (txtKhattaRecId.Text.ToString().Length > 5)
                 {
-                    if (MessageBox.Show(" کیا آپ حذف کرنا چاہتے ہیں:::::", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("  آپ نے تمام انتقال دہندہ خذف کرنے کی اپشن کا انتخاب کیا ہے۔  کیا آپ  تمام انتقال دہندہ حذف کرنا چاہتے ہیں ", "تمام انتقال دہندہ حذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        dt = Intiqal.DeleteIntiqalSeller(IntiqalSellerId);
-                        string IntiqalKhatooniRecId;
-                        if (dt != null)
+                        try
                         {
-                            txtSellerID.Text = "-1";
-                            proc_Get_Intiqal_Sellers_List_ByKhata(IntiqalKhataRecId, KhatoniRecid);
-                            CalculateSellerBuyerRaqbaHissa();
-                            btnDelSeller.Enabled = false;
-                            ClearAll();
+                            dt = Intiqal.DeleteIntiqalSellerAllBYKhata(txtKhattaRecId.Text.ToString());
+                            string IntiqalKhatooniRecId;
+                            if (dt != null)
+                            {
+                                txtSellerID.Text = "-1";
+                                proc_Get_Intiqal_Sellers_List_ByKhata(IntiqalKhataRecId, KhatoniRecid);
+                                CalculateSellerBuyerRaqbaHissa();
+                                btnDelSeller.Enabled = false;
+                                ClearAll();
 
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
 
                     }
                 }
-                else
+            }
+            else
+            {
+                string IntiqalSellerId = this.txtSellerID.Text.ToString();
+                try
                 {
-                    MessageBox.Show("ریکاڈکاانتخاب کریں", "ریکارڈ کا انتخاب کریں", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (IntiqalSellerId != "-1")
+                    {
+                        if (MessageBox.Show(" کیا آپ حذف کرنا چاہتے ہیں:::::", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            dt = Intiqal.DeleteIntiqalSeller(IntiqalSellerId);
+                            string IntiqalKhatooniRecId;
+                            if (dt != null)
+                            {
+                                txtSellerID.Text = "-1";
+                                proc_Get_Intiqal_Sellers_List_ByKhata(IntiqalKhataRecId, KhatoniRecid);
+                                CalculateSellerBuyerRaqbaHissa();
+                                btnDelSeller.Enabled = false;
+                                ClearAll();
+
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ریکاڈکاانتخاب کریں", "ریکارڈ کا انتخاب کریں", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
 
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         #endregion

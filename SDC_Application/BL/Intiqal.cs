@@ -1285,6 +1285,12 @@ namespace SDC_Application.BL
                 string spWithParam = "WEB_SP_DELETE_Intiqal_Sellers  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalSellerRecId;
                return dbobject. filldatatable_from_storedProcedure(spWithParam);
             }
+            public DataTable DeleteIntiqalSellerAllBYKhata(string IntiqalKhataRecId)
+            {
+
+                string spWithParam = "WEB_SP_DELETE_Intiqal_Sellers_All_By_Khata  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalKhataRecId;
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
             /// <summary>
             /// Deletes Intiqal Buyer record
             /// </summary>

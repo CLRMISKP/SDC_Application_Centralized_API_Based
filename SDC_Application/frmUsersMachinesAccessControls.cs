@@ -24,24 +24,9 @@ namespace SDC_Application
             try 
 	            {	        
 		            tabControl1.SelectedIndex = TabIndex;
-                        DataTable dt = user.GetSystemRegistrationLogs(Classess.UsersManagments._Tehsilid.ToString());
-                        DataTable dtUsers = user.GetUsersForUserAccessControl(Classess.UsersManagments._Tehsilid.ToString());
-                        if (dt != null)
-                        {
-                            if (dt.Rows.Count > 0)
-                            {
-                                gridSystems.DataSource = dt;
-                                gridSystems.Columns["RegId"].Visible = false;
-                            }
-                        }
-                        if (dtUsers != null)
-                        {
-                            if (dtUsers.Rows.Count > 0)
-                            {
-                                grdExistingUsers.DataSource = dtUsers;
-                                grdExistingUsers.Columns["UserId"].Visible = false;
-                            }
-                        }
+                    fillGridViewUsers();
+                    fillGridViewMachines();
+                       
 	            }
 	            catch (Exception ex)
 	            {
@@ -50,7 +35,31 @@ namespace SDC_Application
 	            }
             
         }
+        private void fillGridViewUsers()
+        {
+            DataTable dtUsers = user.GetUsersForUserAccessControl(Classess.UsersManagments._Tehsilid.ToString());
+            if (dtUsers != null)
+            {
+                if (dtUsers.Rows.Count > 0)
+                {
+                    grdExistingUsers.DataSource = dtUsers;
+                    grdExistingUsers.Columns["UserId"].Visible = false;
+                }
+            }
+        }
+        private void fillGridViewMachines()
+        {
+            DataTable dt = user.GetSystemRegistrationLogs(Classess.UsersManagments._Tehsilid.ToString());
 
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    gridSystems.DataSource = dt;
+                    gridSystems.Columns["RegId"].Visible = false;
+                }
+            }
+        }
         private void gridSystems_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -61,6 +70,7 @@ namespace SDC_Application
                     dtpMachineLogout.Text = gridSystems.SelectedRows[0].Cells["LogOutTime"].Value.ToString();
                     chkEnableSystemLogin.Checked = Convert.ToBoolean(gridSystems.SelectedRows[0].Cells["isAllowedToLogin"].Value);
                     chkMachineLoginOnWeekend.Checked = Convert.ToBoolean(gridSystems.SelectedRows[0].Cells["isAllowedOnWeekend"].Value);
+                    txtRegId.Text = gridSystems.SelectedRows[0].Cells["RegId"].Value.ToString();
                 }
                 foreach (DataGridViewRow row in gridSystems.Rows)
                 {
@@ -87,6 +97,7 @@ namespace SDC_Application
                     dtpLogout.Text = grdExistingUsers.SelectedRows[0].Cells["LogOutTime"].Value.ToString();
                     //chkLoginOnWeekend.Checked = Convert.ToBoolean(grdExistingUsers.SelectedRows[0].Cells["isAllowedToLogin"].Value);
                     chkLoginOnWeekend.Checked = Convert.ToBoolean(grdExistingUsers.SelectedRows[0].Cells["isAllowedOnWeekend"].Value);
+                    txtUserId.Text = grdExistingUsers.SelectedRows[0].Cells["UserId"].Value.ToString();
                 }
                 foreach (DataGridViewRow row in grdExistingUsers.Rows)
                 {
@@ -101,6 +112,33 @@ namespace SDC_Application
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSaveUser_Click(object sender, EventArgs e)
+        {
+            if (txtUserId.Text != "-1" && dtpLogin.MaskCompleted && dtpLogout.MaskCompleted)
+            {
+              string lastId=  user.UpdateUserAccessControl(txtUserId.Text, chkLoginOnWeekend.Checked ? "1" : "0", dtpLogin.Text, dtpLogout.Text);
+              if (lastId != null)
+              {
+                  fillGridViewUsers();
+              }
+
+            }
+            MessageBox.Show("Fill all  the required fields correctly before saving the record.");
+        }
+
+        private void btnSaveMachine_Click(object sender, EventArgs e)
+        {
+            if (txtRegId.Text != "-1" && dtpMachineLogin.MaskCompleted && dtpMachineLogout.MaskCompleted)
+            {
+                string lastId = user.UpdateMachineAccessControl(txtRegId.Text, chkEnableSystemLogin.Checked ? "1" : "0", chkMachineLoginOnWeekend.Checked?"1":"0",dtpMachineLogin.Text, dtpMachineLogout.Text);
+                if (lastId != null)
+                {
+                    fillGridViewMachines();
+                }
+            }
+            MessageBox.Show("Fill all  the required fields correctly before saving the record.");
         }
     }
 }

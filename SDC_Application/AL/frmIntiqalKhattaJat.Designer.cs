@@ -578,6 +578,7 @@
             this.txtMushNameChange = new System.Windows.Forms.TextBox();
             this.tabPageShajra = new System.Windows.Forms.TabPage();
             this.toolTipIntiqalKhatta = new System.Windows.Forms.ToolTip(this.components);
+            this.chkDeleteAllBayan = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1782,6 +1783,7 @@
             // 
             // gbSellersControls
             // 
+            this.gbSellersControls.Controls.Add(this.chkDeleteAllBayan);
             this.gbSellersControls.Controls.Add(this.btnLandTax);
             this.gbSellersControls.Controls.Add(this.label12);
             this.gbSellersControls.Controls.Add(this.groupBox22);
@@ -1814,6 +1816,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(1316, 19);
@@ -1971,6 +1974,7 @@
             // 
             // chkDeath
             // 
+            this.chkDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkDeath.AutoSize = true;
             this.chkDeath.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDeath.Location = new System.Drawing.Point(1127, 4);
@@ -6879,6 +6883,18 @@
             this.tabPageShajra.UseVisualStyleBackColor = true;
             this.tabPageShajra.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPageShajra_Paint);
             // 
+            // chkDeleteAllBayan
+            // 
+            this.chkDeleteAllBayan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkDeleteAllBayan.AutoSize = true;
+            this.chkDeleteAllBayan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
+            this.chkDeleteAllBayan.Location = new System.Drawing.Point(538, 64);
+            this.chkDeleteAllBayan.Name = "chkDeleteAllBayan";
+            this.chkDeleteAllBayan.Size = new System.Drawing.Size(186, 35);
+            this.chkDeleteAllBayan.TabIndex = 1044;
+            this.chkDeleteAllBayan.Text = "کھاتہ کے تمام مالکان خذف کریں";
+            this.chkDeleteAllBayan.UseVisualStyleBackColor = true;
+            // 
             // frmIntiqalKhattaJat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -7562,5 +7578,6 @@
         private System.Windows.Forms.Button btnAutoKhataCreate;
         private System.Windows.Forms.Button btnAutoSaveKhatooniKhassras;
         private System.Windows.Forms.CheckBox cbAddAllMalkan;
+        private System.Windows.Forms.CheckBox chkDeleteAllBayan;
     }
 }
