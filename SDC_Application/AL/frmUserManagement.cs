@@ -135,6 +135,7 @@ namespace SDC_Application.AL
             {
                 last = ObjUser.SaveUserRole(txtUserRoleId.Text, UsersManagments._Tehsilid.ToString(), txtUserId.Text, Roleid, userinsertedid, txtLoginId.Text, "0");
                 LoadRoleid(Roleid);
+                LoadExistingProfiles();
             }
             else
                 MessageBox.Show(" پہلے رول کا انتخاب کریں۔");
@@ -221,11 +222,11 @@ namespace SDC_Application.AL
          DataTable d = new DataTable();
                 dt = ObjUser.getRoleObjectdetails(roleid);
                 grdUserRoles.DataSource = dt;
-                this.grdUserRoles.Columns["ObjectId"].Visible = false;
-                this.grdUserRoles.Columns["RoleDetailId"].Visible = false;
+                grdUserRoles.Columns["ObjectId"].Visible = false;
+                grdUserRoles.Columns["RoleDetailId"].Visible = false;
                 grdUserRoles.Columns["ObjectId"].Visible = false;
                 grdUserRoles.Columns["ObjectActualName"].Visible = false;
-                this.grdUserRoles.Columns["RoleId"].Visible = false;
+                grdUserRoles.Columns["RoleId"].Visible = false;
         }
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
@@ -247,6 +248,31 @@ namespace SDC_Application.AL
             grdExistingUsers.Columns["Password"].Visible = false;
             grdExistingUsers.Columns["BiometricCaptured"].Visible = false;
         }
+
+        private void grdExistingUsers_Click(object sender, EventArgs e)
+        {
+            grdExistingUsers_DoubleClick(sender, e);
+        }
+
+        private void SelectItemByValueMember(string targetValueMember)
+        {
+            foreach (var item in cbUserRoles.Items)
+            {
+                DataRowView rowView = item as DataRowView;
+
+                //string currentValueMember = Convert.ToInt32(rowView[0]);
+                string currentValueMember = rowView[0].ToString();
+
+                if (currentValueMember == targetValueMember)
+                {
+                    cbUserRoles.SelectedItem = item;
+                    return;
+                }
+            }
+            cbUserRoles.SelectedIndex = -1;
+        }
+
+
         private void grdExistingUsers_DoubleClick(object sender, EventArgs e)
         {
             
@@ -255,6 +281,7 @@ namespace SDC_Application.AL
             txtLastName.Text = grdExistingUsers.CurrentRow.Cells["LastName"].Value.ToString();
             txtPassword.Text = grdExistingUsers.CurrentRow.Cells["Password"].Value.ToString();
             txtLoginId.Text = grdExistingUsers.CurrentRow.Cells["LoginName"].Value.ToString();
+            string RoleId = grdExistingUsers.CurrentRow.Cells["RoleId"].Value.ToString();
             btnFingerPrint.Enabled = grdExistingUsers.CurrentRow.Cells["BiometricCaptured"].Value.ToString() == "1" ? false : true;
             btnFingerHysoon.Enabled = grdExistingUsers.CurrentRow.Cells["BiometricCaptured"].Value.ToString() == "1" ? false : true;
             if (grdExistingUsers.CurrentRow.Cells["RecStatus"].Value != null)
@@ -271,6 +298,7 @@ namespace SDC_Application.AL
             }
             this.chbIsRO.Checked = Convert.ToBoolean(grdExistingUsers.CurrentRow.Cells["isRO"].Value);
             //cbUserRoles.SelectedValue=
+            /*
             DataTable dt = new DataTable();
             dt=ObjUser.getAdminRoleid(txtUserId.Text);
             if (dt != null)
@@ -287,6 +315,10 @@ namespace SDC_Application.AL
                 Role = iRole;
                 LoadRoleid(Role);
             }
+            */
+            SelectItemByValueMember(RoleId);
+            if (RoleId == "-1") LoadRoleid(RoleId);
+            //LoadRoleid(Role);
         }
 
         private void btnNewUser_Click(object sender, EventArgs e)
@@ -348,6 +380,24 @@ namespace SDC_Application.AL
             this.txtRole.Text = anyFirstRoleName;
 
         }
+
+        private void cbUserRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Check if an item is selected in the ComboBox
+            if (cbUserRoles.SelectedItem != null)
+            {
+                // Assuming the value member is in a column named "YourColumnName"
+                DataRow selectedRow = ((DataRowView)cbUserRoles.SelectedItem).Row;
+
+                // Extract the value from the desired column
+                int valueMember = Convert.ToInt32(selectedRow[0]);
+
+                // Call the LoadRoleid method with the selected value member
+                LoadRoleid(valueMember.ToString());
+            }
+        }
+
+
 
 
 
