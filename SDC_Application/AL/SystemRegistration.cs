@@ -184,6 +184,12 @@ namespace SDC_Application.AL
 
             String mac = string.Join("," ,  macList.Items.Cast<String>().Select(p=> p.ToString() ));
             String ip = string.Join(",", ipList.Items.Cast<String>().Select(p => p.ToString()));
+            if (cboCounter.SelectedItem == null)
+            {
+                MessageBox.Show("Kindly select the counter");
+                this.cboCounter.Focus();
+                return;
+            }
             String s = "CLRMIS_SystemRegistrationLog_ins '" + txtMachineName.Text.ToString() + "','" + mac + "','" + ip + "','" + txtUser.Text.ToString() + "','" + cmbTehsil.SelectedValue.ToString() + "','" + cboCounter.SelectedItem.ToString() + "'";
             ojbdb.ExecInsertUpdateStoredProcedure(s);
             MessageBox.Show("Registered Successfuly");
