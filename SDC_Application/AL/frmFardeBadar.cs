@@ -1491,6 +1491,7 @@ namespace SDC_Application.AL
                     txtFbId.Text = dtMisalDetails.Rows[0]["FB_Id"].ToString();
                     this.ConfirmationStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["ConfirmationStatus"].ToString());
                     this.AmaldaramadStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["AmaldaramadStatus"].ToString());
+                    bool Cancel = Convert.ToBoolean(dtMisalDetails.Rows[0]["Cancel"].ToString());
                     btnAmaldaramad.Enabled = true;
                     this.btnSaveGardawarRpt.Enabled = true;
                     this.btnSaveTehsildarRpt.Enabled = true;
@@ -1498,6 +1499,7 @@ namespace SDC_Application.AL
                     if (this.ConfirmationStatus)
                         {
                         btnAmaldaramad.Enabled = !AmaldaramadStatus;
+                        btnFbCancel.Enabled = !AmaldaramadStatus;
                         this.btnSaveGardawarRpt.Enabled = !AmaldaramadStatus;
                         this.btnSaveTehsildarRpt.Enabled = !AmaldaramadStatus;
                         btnConfirm.Enabled = false;
@@ -1511,14 +1513,27 @@ namespace SDC_Application.AL
                         if(UsersManagments._IsAdmin)
                             btnFbRevert.Enabled =true;
                         this.DisAbleControls();
+                        btnFbCancel.Enabled = false;
+                        btnAmaldaramad.Enabled = false;
                     }
                     else
                         {
                             btnFbRevert.Enabled = false;
+                            btnFbCancel.Enabled = true;
                         //this.tabKhataDetail.TabPages.Remove(gardawarTab);
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);
                         //btnConfirm.Enabled = true;
                         }
+                    if (Cancel)
+                    {
+                        this.DisAbleControls();
+                        btnFbCancel.Enabled = false;
+                        lblCancel.Text = "کینسل شدہ";
+                    }
+                    else
+                    {
+                        lblCancel.Text = "";
+                    }
                     this.LoadFBKhatajat(txtFbId.Text);
                     loadFbData(txtFbId.Text);
                     //Load Data for Afrad
@@ -4039,6 +4054,29 @@ namespace SDC_Application.AL
         {
             this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(txtFbId.Text, cboKhataNo.SelectedValue.ToString());
             this.FillGridviewMalkan(khewatMalikanByFB);
+        }
+
+        private void btnFbCancel_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("کیا اپ اس فرد بدر کو کینسل کرنا چاہتے ہیں۔؟", "Cancel  Fard e Badar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    if (txtFbId.Text.Trim() != "")
+                    {
+                        frmMisalBadarCacel misalAttestation = new frmMisalBadarCacel();
+                        misalAttestation.FB_Id = txtFbId.Text;
+                        misalAttestation.isE_FB = true;
+                        misalAttestation.FormClosed -= new FormClosedEventHandler(misalAttestation_FormClosed);
+                        misalAttestation.FormClosed += new FormClosedEventHandler(misalAttestation_FormClosed);
+                        misalAttestation.ShowDialog();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
     }

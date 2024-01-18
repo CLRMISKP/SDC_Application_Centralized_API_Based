@@ -205,6 +205,12 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
 
+        public DataTable GetIntiqalPendingAll()
+        {
+            string spWithParam = "Proc_Get_Intiqal_Pending_All  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString();
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+
         public string RHZ_ChangeImplementation(string RHZ_ChangeId)
         {
             string spWithParam = "Proc_RHZ_Change_Implementation  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RHZ_ChangeId  + "," + Classess.UsersManagments.UserId.ToString() + ",'" + Classess.UsersManagments.UserName + "'";

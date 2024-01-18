@@ -47,6 +47,8 @@
             this.dgPendingMutations = new System.Windows.Forms.DataGridView();
             this.ColSelIntiqal = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnPrintMutation = new System.Windows.Forms.Button();
+            this.btnCancelMutation = new System.Windows.Forms.Button();
             this.txtMozaId = new System.Windows.Forms.TextBox();
             this.txtIntiqalId = new System.Windows.Forms.TextBox();
             this.btnImplementMutation = new System.Windows.Forms.Button();
@@ -88,8 +90,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMouza = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.btnCancelMutation = new System.Windows.Forms.Button();
-            this.btnPrintMutation = new System.Windows.Forms.Button();
+            this.tabPendingMut = new System.Windows.Forms.TabPage();
+            this.dgPendingMutationsAll = new System.Windows.Forms.DataGridView();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnPrintAllMut = new System.Windows.Forms.Button();
+            this.btnCancelAllMut = new System.Windows.Forms.Button();
+            this.txtMozaIdAll = new System.Windows.Forms.TextBox();
+            this.txtIntiqalIdAllMut = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnLoadAllPendingMut = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ColSelIntiqalAll = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageRHZ.SuspendLayout();
@@ -108,6 +119,9 @@
             this.tabControl2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabPendingMut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPendingMutationsAll)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -144,6 +158,7 @@
             this.tabControl1.Controls.Add(this.tabPagePendingMutations);
             this.tabControl1.Controls.Add(this.tabPageAllIncompleteTask);
             this.tabControl1.Controls.Add(this.tabKhanakasht);
+            this.tabControl1.Controls.Add(this.tabPendingMut);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -343,6 +358,31 @@
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "تمام غیر عمل شدہ دستی انتقالات دیکھنے کیلئے بٹن کلک کریں";
+            // 
+            // btnPrintMutation
+            // 
+            this.btnPrintMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintMutation.BackgroundImage = global::SDC_Application.Resource1.Print3;
+            this.btnPrintMutation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintMutation.Enabled = false;
+            this.btnPrintMutation.Location = new System.Drawing.Point(323, 35);
+            this.btnPrintMutation.Name = "btnPrintMutation";
+            this.btnPrintMutation.Size = new System.Drawing.Size(53, 48);
+            this.btnPrintMutation.TabIndex = 209;
+            this.btnPrintMutation.UseVisualStyleBackColor = true;
+            this.btnPrintMutation.Click += new System.EventHandler(this.btnPrintMutation_Click);
+            // 
+            // btnCancelMutation
+            // 
+            this.btnCancelMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelMutation.Enabled = false;
+            this.btnCancelMutation.Location = new System.Drawing.Point(391, 37);
+            this.btnCancelMutation.Name = "btnCancelMutation";
+            this.btnCancelMutation.Size = new System.Drawing.Size(174, 44);
+            this.btnCancelMutation.TabIndex = 208;
+            this.btnCancelMutation.Text = "انتخاب کردہ انتقال کینسل کریں";
+            this.btnCancelMutation.UseVisualStyleBackColor = true;
+            this.btnCancelMutation.Click += new System.EventHandler(this.btnCancelMutation_Click);
             // 
             // txtMozaId
             // 
@@ -830,30 +870,133 @@
             this.lbl1.TabIndex = 60;
             this.lbl1.Text = "موضع";
             // 
-            // btnCancelMutation
+            // tabPendingMut
             // 
-            this.btnCancelMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelMutation.Enabled = false;
-            this.btnCancelMutation.Location = new System.Drawing.Point(391, 37);
-            this.btnCancelMutation.Name = "btnCancelMutation";
-            this.btnCancelMutation.Size = new System.Drawing.Size(174, 44);
-            this.btnCancelMutation.TabIndex = 208;
-            this.btnCancelMutation.Text = "انتخاب کردہ انتقال کینسل کریں";
-            this.btnCancelMutation.UseVisualStyleBackColor = true;
-            this.btnCancelMutation.Click += new System.EventHandler(this.btnCancelMutation_Click);
+            this.tabPendingMut.Controls.Add(this.dgPendingMutationsAll);
+            this.tabPendingMut.Controls.Add(this.groupBox8);
+            this.tabPendingMut.Controls.Add(this.panel4);
+            this.tabPendingMut.Location = new System.Drawing.Point(4, 40);
+            this.tabPendingMut.Name = "tabPendingMut";
+            this.tabPendingMut.Size = new System.Drawing.Size(1202, 528);
+            this.tabPendingMut.TabIndex = 4;
+            this.tabPendingMut.Text = "تمام زیر تجویز انتقالات";
+            this.tabPendingMut.UseVisualStyleBackColor = true;
             // 
-            // btnPrintMutation
+            // dgPendingMutationsAll
             // 
-            this.btnPrintMutation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintMutation.BackgroundImage = global::SDC_Application.Resource1.Print3;
-            this.btnPrintMutation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintMutation.Enabled = false;
-            this.btnPrintMutation.Location = new System.Drawing.Point(323, 35);
-            this.btnPrintMutation.Name = "btnPrintMutation";
-            this.btnPrintMutation.Size = new System.Drawing.Size(53, 48);
-            this.btnPrintMutation.TabIndex = 209;
-            this.btnPrintMutation.UseVisualStyleBackColor = true;
-            this.btnPrintMutation.Click += new System.EventHandler(this.btnPrintMutation_Click);
+            this.dgPendingMutationsAll.AllowUserToAddRows = false;
+            this.dgPendingMutationsAll.AllowUserToDeleteRows = false;
+            this.dgPendingMutationsAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgPendingMutationsAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPendingMutationsAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColSelIntiqalAll});
+            this.dgPendingMutationsAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPendingMutationsAll.Location = new System.Drawing.Point(0, 98);
+            this.dgPendingMutationsAll.Name = "dgPendingMutationsAll";
+            this.dgPendingMutationsAll.ReadOnly = true;
+            this.dgPendingMutationsAll.RowHeadersVisible = false;
+            this.dgPendingMutationsAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgPendingMutationsAll.Size = new System.Drawing.Size(1202, 384);
+            this.dgPendingMutationsAll.TabIndex = 9;
+            this.dgPendingMutationsAll.TabStop = false;
+            this.dgPendingMutationsAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPendingMutationsAll_CellClick);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnPrintAllMut);
+            this.groupBox8.Controls.Add(this.btnCancelAllMut);
+            this.groupBox8.Controls.Add(this.txtMozaIdAll);
+            this.groupBox8.Controls.Add(this.txtIntiqalIdAllMut);
+            this.groupBox8.Controls.Add(this.button3);
+            this.groupBox8.Controls.Add(this.btnLoadAllPendingMut);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox8.Location = new System.Drawing.Point(0, 0);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1202, 98);
+            this.groupBox8.TabIndex = 8;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "تمام غیر عمل شدہ دستی انتقالات دیکھنے کیلئے بٹن کلک کریں";
+            // 
+            // btnPrintAllMut
+            // 
+            this.btnPrintAllMut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintAllMut.BackgroundImage = global::SDC_Application.Resource1.Print3;
+            this.btnPrintAllMut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintAllMut.Enabled = false;
+            this.btnPrintAllMut.Location = new System.Drawing.Point(329, 35);
+            this.btnPrintAllMut.Name = "btnPrintAllMut";
+            this.btnPrintAllMut.Size = new System.Drawing.Size(53, 48);
+            this.btnPrintAllMut.TabIndex = 209;
+            this.btnPrintAllMut.UseVisualStyleBackColor = true;
+            this.btnPrintAllMut.Click += new System.EventHandler(this.btnPrintAllMut_Click);
+            // 
+            // btnCancelAllMut
+            // 
+            this.btnCancelAllMut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelAllMut.Enabled = false;
+            this.btnCancelAllMut.Location = new System.Drawing.Point(397, 37);
+            this.btnCancelAllMut.Name = "btnCancelAllMut";
+            this.btnCancelAllMut.Size = new System.Drawing.Size(174, 44);
+            this.btnCancelAllMut.TabIndex = 208;
+            this.btnCancelAllMut.Text = "انتخاب کردہ انتقال کینسل کریں";
+            this.btnCancelAllMut.UseVisualStyleBackColor = true;
+            this.btnCancelAllMut.Click += new System.EventHandler(this.btnCancelAllMut_Click);
+            // 
+            // txtMozaIdAll
+            // 
+            this.txtMozaIdAll.Location = new System.Drawing.Point(20, 37);
+            this.txtMozaIdAll.Name = "txtMozaIdAll";
+            this.txtMozaIdAll.Size = new System.Drawing.Size(76, 39);
+            this.txtMozaIdAll.TabIndex = 3;
+            this.txtMozaIdAll.Text = "-1";
+            this.txtMozaIdAll.Visible = false;
+            // 
+            // txtIntiqalIdAllMut
+            // 
+            this.txtIntiqalIdAllMut.Location = new System.Drawing.Point(102, 39);
+            this.txtIntiqalIdAllMut.Name = "txtIntiqalIdAllMut";
+            this.txtIntiqalIdAllMut.Size = new System.Drawing.Size(182, 39);
+            this.txtIntiqalIdAllMut.TabIndex = 2;
+            this.txtIntiqalIdAllMut.Text = "-1";
+            this.txtIntiqalIdAllMut.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(1094, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 46);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "انتخاب کردہ انتقال عمل کیلئے فعال کریں";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            // 
+            // btnLoadAllPendingMut
+            // 
+            this.btnLoadAllPendingMut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadAllPendingMut.Location = new System.Drawing.Point(595, 37);
+            this.btnLoadAllPendingMut.Name = "btnLoadAllPendingMut";
+            this.btnLoadAllPendingMut.Size = new System.Drawing.Size(179, 46);
+            this.btnLoadAllPendingMut.TabIndex = 0;
+            this.btnLoadAllPendingMut.Text = "تمام غیر عمل شدہ انتقالات دیکھیئے";
+            this.btnLoadAllPendingMut.UseVisualStyleBackColor = true;
+            this.btnLoadAllPendingMut.Click += new System.EventHandler(this.btnLoadAllPendingMut_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 482);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1202, 46);
+            this.panel4.TabIndex = 7;
+            // 
+            // ColSelIntiqalAll
+            // 
+            this.ColSelIntiqalAll.HeaderText = "انتخاب کریں";
+            this.ColSelIntiqalAll.Name = "ColSelIntiqalAll";
+            this.ColSelIntiqalAll.ReadOnly = true;
             // 
             // frmAdminPendingTaskDashboard
             // 
@@ -891,6 +1034,10 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabPendingMut.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPendingMutationsAll)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -959,5 +1106,16 @@
         private System.Windows.Forms.Button btnFinishTask;
         private System.Windows.Forms.Button btnCancelMutation;
         private System.Windows.Forms.Button btnPrintMutation;
+        private System.Windows.Forms.TabPage tabPendingMut;
+        private System.Windows.Forms.DataGridView dgPendingMutationsAll;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btnPrintAllMut;
+        private System.Windows.Forms.Button btnCancelAllMut;
+        private System.Windows.Forms.TextBox txtMozaIdAll;
+        private System.Windows.Forms.TextBox txtIntiqalIdAllMut;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLoadAllPendingMut;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelIntiqalAll;
     }
 }

@@ -254,6 +254,20 @@ namespace SDC_Application.AL
                 //dgPendingMutations.Columns["IntiqalTypeId"].Visible = false;
             }
         }
+        private void fillDgPendingMutationsAll()
+        {
+            if (dgPendingMutationsAll.Rows.Count > 0)
+            {
+                dgPendingMutationsAll.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                dgPendingMutationsAll.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                //dgPendingMutations.Columns["ChangeDetails"].HeaderText = "تفصیل ترمیم";
+                dgPendingMutationsAll.Columns["InsertLoginName"].HeaderText = "اندراج کنندہ";
+                dgPendingMutationsAll.Columns["InsertDate"].HeaderText = "بتاریخ";
+                dgPendingMutationsAll.Columns["IntiqalId"].Visible = false;
+                dgPendingMutationsAll.Columns["MozaId"].Visible = false; //IntiqalTypeId
+                //dgPendingMutations.Columns["IntiqalTypeId"].Visible = false;
+            }
+        }
 
         private void dgPendingMutations_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -581,6 +595,90 @@ namespace SDC_Application.AL
             ////else if (radKhanaMalkiat.Checked)
             ////    UsersManagments.check = 4;
             //TokenReport.ShowDialog();     
+        }
+
+        private void btnLoadAllPendingMut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dtPendingMutations = rhz.GetIntiqalPendingAll();
+                if (dtPendingMutations.Rows.Count > 0)
+                {
+                    dgPendingMutationsAll.DataSource = dtPendingMutations;
+                    fillDgPendingMutationsAll();
+                }
+                else
+                    dgPendingMutationsAll.DataSource = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgPendingMutationsAll_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtIntiqalIdAllMut.Text = dgPendingMutationsAll.SelectedRows[0].Cells["IntiqalId"].Value.ToString();
+                txtMozaIdAll.Text = dgPendingMutationsAll.SelectedRows[0].Cells["MozaId"].Value.ToString();
+                //this.intiqalTypeId = dgPendingMutations.SelectedRows[0].Cells["IntiqalTypeId"].Value.ToString();
+                if (txtIntiqalIdAllMut.Text.Length > 5 && txtMozaIdAll.Text.Length > 4)
+                {
+                    btnCancelAllMut.Enabled = true;
+                    btnPrintAllMut.Enabled = true;
+                }
+                else
+                {
+                    btnCancelAllMut.Enabled = false;
+                    btnPrintAllMut.Enabled = false;
+                }
+
+                foreach (DataGridViewRow row in dgPendingMutationsAll.Rows)
+                {
+                    if (row.Selected)
+                    {
+                        row.Cells["ColSelIntiqalAll"].Value = true;
+                    }
+                    else
+                        row.Cells["ColSelIntiqalAll"].Value = false;
+                }
+                //btnCancelMutation.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnPrintAllMut_Click(object sender, EventArgs e)
+        {
+            frmIntiqalReport rpt = new frmIntiqalReport();
+            rpt.ShowDialog();
+        }
+
+        private void btnCancelAllMut_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("کیا آپ انتخاب کردہ انتقال کینسل/ ہائیڈ کرنا چاہتے ہے؟", "کینسل / ہائیڈ کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    this.btnCancelMutation.Enabled = false;
+                    string retVal = Iq.IntiqalEnableDisable(txtIntiqalId.Text, "cancel", "", "");
+                    if (retVal == "1")
+                    {
+                        MessageBox.Show("انتقال کینسل / ہائیڈ ہو گیا");
+                        btnImplementMutation.Enabled = false;
+                        btnShowAllPendingMutations_Click(sender, e);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
         }
     }
 }
