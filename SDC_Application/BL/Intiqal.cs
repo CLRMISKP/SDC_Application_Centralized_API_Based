@@ -1079,7 +1079,7 @@ namespace SDC_Application.BL
             public string setIntiqalPendingReason(string IntiqalId, bool IntiqalPending, string IntiqalPendingReasonId,string UserId, string IntiqalPendingReasonRemarks)
             {
                string IntiqalPend=Convert.ToString(IntiqalPending);
-               string spWithParam = " Proc_Set_IntiqalPending  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalPend + "," +IntiqalPendingReasonId+","+UserId + ",N'" + IntiqalPendingReasonRemarks + "'";
+               string spWithParam = " Proc_Set_IntiqalPending  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + IntiqalPend + "," +"''"+IntiqalPendingReasonId+"''"+","+UserId + ",N'" + IntiqalPendingReasonRemarks + "'";
                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
             public string SaveintiqalKhatoniWithKhashtkaranDetail(string IntiqalKhatooniRecId, string intiqalId, string IntiqalKhataRecId, string IntiqalKhataId, string KhatoniId, string KashtkaranDetails, string UserID, string UserName)
