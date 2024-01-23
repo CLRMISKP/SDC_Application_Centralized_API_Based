@@ -636,7 +636,7 @@ namespace SDC_Application.AL
                     this.Cancelled = Convert.ToBoolean(data["Cancelled"]);
                     this.GardawarId = data["GardawarId"].ToString();
                     this.GardawarUserId = data["GardawarUserId"].ToString();
-
+                    btnIntiqalCancel.Enabled = true;
                     if (cboMoza.SelectedIndex != -1 && txtIntiqalNo.Text.Trim().Length > 0 && cboIntiqalInitiation.SelectedValue.ToString() == "2")
                     {
                         chkkhata = Iq.GetRegistryIntiqalKhataCheck(cboMoza.SelectedValue.ToString(), txtIntiqalNo.Text.Trim());

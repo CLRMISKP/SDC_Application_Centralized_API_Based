@@ -3783,11 +3783,11 @@ namespace SDC_Application.AL
         {
             try
             {
-                if (isGardawar.ToString() == "0" )
-                {
-                    MessageBox.Show("گرداور سے پڑتال کرائیں۔", "انتقال عمل درآمد", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                //if (isGardawar.ToString() == "0" )
+                //{
+                //    MessageBox.Show("گرداور سے پڑتال کرائیں۔", "انتقال عمل درآمد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
 
                 if(this.Teh_Report < 11)
                 {

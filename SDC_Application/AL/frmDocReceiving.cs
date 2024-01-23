@@ -738,7 +738,7 @@ namespace SDC_Application.AL
                     if (txtUpdateRecId.Text.ToString() != "-1")
                         
                     {
-                        string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtUpdateRegNo.Text, txtUpdateRecId.Text, dtUpdateRegDate.Value.Year, cmbRegMoza.SelectedValue.ToString(), cmbSR.SelectedValue.ToString());
+                        string Reg = Iq.CheckRegAlreadyReceivedForRecvReg(txtUpdateRegNo.Text, txtUpdateRecId.Text, dtUpdateRegDate.Value.Year, cmbRegUpdateMoza.SelectedValue.ToString(), cmbRegUpdateSR.SelectedValue.ToString());
                         if (Reg != "-1")
                         {
 
