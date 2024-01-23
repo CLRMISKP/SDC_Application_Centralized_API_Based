@@ -317,8 +317,8 @@ namespace SDC_Application.AL
             }
             */
             SelectItemByValueMember(RoleId);
-            if (RoleId == "-1") LoadRoleid(RoleId);
-            //LoadRoleid(Role);
+     LoadRoleid(RoleId);
+  
         }
 
         private void btnNewUser_Click(object sender, EventArgs e)
