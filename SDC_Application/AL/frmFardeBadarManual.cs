@@ -1483,6 +1483,7 @@ namespace SDC_Application.AL
                     this.ConfirmationStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["ConfirmationStatus"].ToString());
                     this.AmaldaramadStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["AmaldaramadStatus"].ToString());
                     this.isManualFb = Convert.ToBoolean(dtMisalDetails.Rows[0]["isManualFB"].ToString());
+                    bool Cancel = Convert.ToBoolean(dtMisalDetails.Rows[0]["Cancel"].ToString());
                     rbManualFb.Checked = isManualFb;
                     btnAmaldaramad.Enabled = false;
                     btnConfirm.Enabled = UsersManagments._IsAdmin ? !ConfirmationStatus : false;
@@ -1509,6 +1510,16 @@ namespace SDC_Application.AL
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);
                         //btnConfirm.Enabled = true;
                         }
+                    if (Cancel)
+                    {
+                        this.DisAbleControls();
+                        btnFbCancel.Enabled = false;
+                        lblCancel.Text = "کینسل شدہ";
+                    }
+                    else
+                    {
+                        lblCancel.Text = "";
+                    }
                    // if(UsersManagments.UserId.ToString()==
                     this.LoadFBKhatajat(txtFbId.Text);
                     loadFbData(txtFbId.Text);
@@ -3887,6 +3898,26 @@ namespace SDC_Application.AL
         private void btnNewBaya_Click(object sender, EventArgs e)
         {
             ResetBayanFields();
+        }
+
+        private void btnFbCancel_Click(object sender, EventArgs e)
+        {
+             if (DialogResult.Yes == MessageBox.Show("کیا اپ اس فرد بدر کو کینسل کرنا چاہتے ہیں۔؟", "Cancel  Fard e Badar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    if (txtFbId.Text.Trim() != "")
+                    {
+
+                        misalBL.UpdateFardBaderMainConfirmationAmaldaramad(txtFbId.Text.Trim(), "Cancel", "0", "0");
+                        btnSearchFB_Click(sender, e);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

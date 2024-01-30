@@ -1408,7 +1408,7 @@ namespace SDC_Application
 
                 //UsersManagments.check = 2;
                 frmSDCReportingMain obj = new frmSDCReportingMain();
-                UsersManagments.check = 32;
+                UsersManagments.check = 33;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;

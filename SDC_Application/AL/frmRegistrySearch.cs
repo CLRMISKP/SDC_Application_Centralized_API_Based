@@ -38,7 +38,7 @@ namespace SDC_Application.AL
         {
 
 
-            dt = objdb.filldatatable_from_storedProcedure("Proc_Self_Get_Registry_Status " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mouzaId + "," + regNo + "," + Entered + "," + Received);
+            dt = objdb.filldatatable_from_storedProcedure("Proc_Self_Get_Registry_Status " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + mouzaId + ",'" + regNo + "'," + Entered + "," + Received);
             DataTable outputTable = dt.Clone();
 
             for (int i = dt.Rows.Count - 1; i >= 0; i--)
@@ -92,7 +92,7 @@ namespace SDC_Application.AL
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 13)
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 13 && e.KeyChar!=47)
             {
                 e.Handled = true;
 

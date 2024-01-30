@@ -1685,7 +1685,7 @@ namespace SDC_Application.AL
                             {
                                 txtServiceName.DataSource = null;
                                 txtServiceName.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId '" + this.SelectedTokenId.ToString() + "' ");
+                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId '"+UsersManagments._Tehsilid.ToString()+"','" + this.SelectedTokenId.ToString() + "' ");
 
                                 if (dtPayment.Rows.Count > 0)
                                 {
