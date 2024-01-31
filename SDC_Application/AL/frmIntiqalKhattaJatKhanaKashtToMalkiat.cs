@@ -236,7 +236,7 @@ namespace SDC_Application.AL
                     this.gbBuyersControls.Enabled = false;
                     this.gbSubKhataControls.Enabled = false;
                     this.button12.Enabled = false;
-                    this.button13.Enabled = false;
+                    this.btnSaveChangeMalikanMalkiat.Enabled = false;
                     this.btnSaveKhatonichagne.Enabled = false;
                     this.btnDeleteKhatoonichange.Enabled = false;
                     this.btnDeleteKhassraNew.Enabled = false;
@@ -269,7 +269,7 @@ namespace SDC_Application.AL
                     this.gbBuyersControls.Enabled = false;
                     this.gbSubKhataControls.Enabled = false;
                     this.button12.Enabled = false;
-                    this.button13.Enabled = false;
+                    this.btnSaveChangeMalikanMalkiat.Enabled = false;
                     this.btnSaveKhatonichagne.Enabled = false;
                     this.btnDeleteKhatoonichange.Enabled = false;
                     this.btnDeleteKhassraNew.Enabled = false;
@@ -295,7 +295,7 @@ namespace SDC_Application.AL
                     this.gbBuyersControls.Enabled = false;
                     this.gbSubKhataControls.Enabled = false;
                     this.button12.Enabled = false;
-                    this.button13.Enabled = false;
+                    this.btnSaveChangeMalikanMalkiat.Enabled = false;
                     this.btnSaveKhatonichagne.Enabled = false;
                     this.btnDeleteKhatoonichange.Enabled = false;
                     this.btnDeleteKhassraNew.Enabled = false;
@@ -338,7 +338,7 @@ namespace SDC_Application.AL
                     this.gbBuyersControls.Enabled = false;
                     this.gbSubKhataControls.Enabled = false;
                     this.button12.Enabled = false;
-                    this.button13.Enabled = false;
+                    this.btnSaveChangeMalikanMalkiat.Enabled = false;
                     this.btnSaveKhatonichagne.Enabled = false;
                     this.btnDeleteKhatoonichange.Enabled = false;
                     this.btnDeleteKhassraNew.Enabled = false;
@@ -371,7 +371,7 @@ namespace SDC_Application.AL
                         this.gbBuyersControls.Enabled = false;
                         this.gbSubKhataControls.Enabled = false;
                         this.button12.Enabled = false;
-                        this.button13.Enabled = false;
+                        this.btnSaveChangeMalikanMalkiat.Enabled = false;
                         this.btnSaveKhatonichagne.Enabled = false;
                         this.btnDeleteKhatoonichange.Enabled = false;
                         this.btnDeleteKhassraNew.Enabled = false;
@@ -400,7 +400,7 @@ namespace SDC_Application.AL
                     this.gbBuyersControls.Enabled = false;
                     this.gbSubKhataControls.Enabled = false;
                     this.button12.Enabled = false;
-                    this.button13.Enabled = false;
+                    this.btnSaveChangeMalikanMalkiat.Enabled = false;
                     this.btnSaveKhatonichagne.Enabled = false;
                     this.btnDeleteKhatoonichange.Enabled = false;
                     this.btnDeleteKhassraNew.Enabled = false;
@@ -1264,17 +1264,39 @@ namespace SDC_Application.AL
                     if (e.ColumnIndex == g.CurrentRow.Cells["ColSel"].ColumnIndex)
                     {
                         g.CurrentRow.Cells["ColSel"].Value = 1;
-                        txtMushteryName.Text = g.CurrentRow.Cells["CompleteName"].Value.ToString();
-                        txtMushteryOldhissa.Text = g.CurrentRow.Cells["FardAreaPart"].Value.ToString();
+                        txtNameChange.Text = g.CurrentRow.Cells["PersonName"].Value.ToString();
+                        txtHisamuntaqialachangee.Text = g.CurrentRow.Cells["FardAreaPart"].Value.ToString();
+                        txtHisamuntaqialachangeevb.Text = "0";
                         //txtMushhteryHissaMuntaqla.Text = g.CurrentRow.Cells[""].Value.ToString();
-                        txtMushteryKanal.Text = g.CurrentRow.Cells["Farad_Kanal"].Value.ToString();
-                        txtMushteryMarla.Text = g.CurrentRow.Cells["Fard_Marla"].Value.ToString();
-                        txtMushterySarsai.Text = g.CurrentRow.Cells["Fard_Sarsai"].Value.ToString();
-                        txtMushteryFeet.Text = g.CurrentRow.Cells["Fard_Feet"].Value.ToString();
-                        txtMushteryFareeqId.Text = g.CurrentRow.Cells["MushtriFareeqId"].Value.ToString();
-                        txtMushteryPersonId.Text = g.CurrentRow.Cells["PersonId"].Value.ToString();
-                        txtMushteryKhewatTypeId.Text = g.CurrentRow.Cells["KhewatTypeId"].Value.ToString();
-                        txtSeqNo.Text = g.CurrentRow.Cells["SeqNo"].Value.ToString();
+                        string[] area = g.CurrentRow.Cells["Khewat_Area"].Value.ToString().Split('-');
+                        txtkanalchangee.Text = area[0]; //g.CurrentRow.Cells["Farad_Kanal"].Value.ToString();
+                        txtmarlachangee.Text = area[1]; //g.CurrentRow.Cells["Fard_Marla"].Value.ToString();
+                        txtsarsaichangee.Text =(float.Parse(area[2]!=null && area[2].Length>0? area[2]:"0")*30.25).ToString(); //g.CurrentRow.Cells["Fard_Sarsai"].Value.ToString();
+                        txtfeetchagee.Text = area[2]; //g.CurrentRow.Cells["Fard_Feet"].Value.ToString();
+                        txtKhewatGroupFareeqId.Text = g.CurrentRow.Cells["KhewatGroupFareeqId"].Value.ToString();
+                        txtPersonId.Text = g.CurrentRow.Cells["PersonId"].Value.ToString();
+                        txtKhewatTypeId.Text = g.CurrentRow.Cells["KhewatTypeId"].Value.ToString();
+                        txtSeqNoMalik.Text = g.CurrentRow.Cells["SeqNo"].Value.ToString();
+                        foreach (DataGridViewRow r in g.Rows)
+                        {
+                            if (r.Selected)
+                                r.Cells["ColSel"].Value = 1;
+                            else
+                                r.Cells["ColSel"].Value = 0;
+                        }
+
+                        //g.CurrentRow.Cells["ColSel"].Value = 1;
+                        //txtMushteryName.Text = g.CurrentRow.Cells["CompleteName"].Value.ToString();
+                        //txtMushteryOldhissa.Text = g.CurrentRow.Cells["FardAreaPart"].Value.ToString();
+                        ////txtMushhteryHissaMuntaqla.Text = g.CurrentRow.Cells[""].Value.ToString();
+                        //txtMushteryKanal.Text = g.CurrentRow.Cells["Farad_Kanal"].Value.ToString();
+                        //txtMushteryMarla.Text = g.CurrentRow.Cells["Fard_Marla"].Value.ToString();
+                        //txtMushterySarsai.Text = g.CurrentRow.Cells["Fard_Sarsai"].Value.ToString();
+                        //txtMushteryFeet.Text = g.CurrentRow.Cells["Fard_Feet"].Value.ToString();
+                        //txtMushteryFareeqId.Text = g.CurrentRow.Cells["MushtriFareeqId"].Value.ToString();
+                        //txtMushteryPersonId.Text = g.CurrentRow.Cells["PersonId"].Value.ToString();
+                        //txtMushteryKhewatTypeId.Text = g.CurrentRow.Cells["KhewatTypeId"].Value.ToString();
+                        //txtSeqNo.Text = g.CurrentRow.Cells["SeqNo"].Value.ToString();
 
                     }
                 }
@@ -4741,6 +4763,7 @@ namespace SDC_Application.AL
                 grdMushtrianMalinkanChange.Columns["PersonName"].HeaderText = "نام مالک";
                 grdMushtrianMalinkanChange.Columns["KhewatType"].HeaderText = "قسم ملکیت";
                 grdMushtrianMalinkanChange.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                grdMushtrianMalinkanChange.Columns["FardAreaPart"].HeaderText = "حصہ";
                 grdMushtrianMalinkanChange.Columns["KhewatGroupFareeqId"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["KhewatGroupId"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["PersonId"].Visible = false;
@@ -6011,6 +6034,39 @@ namespace SDC_Application.AL
             {
                 TextBox txt = sender as TextBox;
                 txt.SelectAll();
+            }
+        }
+
+        private void btnSaveChangeMalikanMalkiat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string KhewatGroupFareeqId = grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatGroupFareeqId"].Value.ToString();
+                string PersonId = grdMushtrianMalinkanChange.CurrentRow.Cells["PersonId"].Value.ToString();
+                decimal FardAreaPart = this.txtHisamuntaqialachangeevb.Text.Trim() != "" ? Convert.ToDecimal(this.txtHisamuntaqialachangeevb.Text.ToString()) : 0;
+                string fardkanal = this.txtkanalchangee.Text != "" ? this.txtkanalchangee.Text.ToString() : "0";
+                string fardmarla = this.txtmarlachangee.Text != "" ? this.txtmarlachangee.Text.ToString() : "0";
+                string fardsarsai = txtsarsaichangee.Text != "" ? this.txtsarsaichangee.Text.ToString() : "0";
+                decimal fardfeet = txtfeetchagee.Text.Trim() != "" ? Convert.ToDecimal(this.txtfeetchagee.Text.ToString()) : 0;
+                string KhewatTypeId = grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatTypeId"].Value.ToString();
+                string KhewatGroupId = grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatGroupId"].Value.ToString().Length < 5 ? RegisterHqDKhataId.ToString() : grdMushtrianMalinkanChange.CurrentRow.Cells["KhewatGroupId"].Value.ToString();
+                string Dar = grdMushtrianMalinkanChange.CurrentRow.Cells["DarNo"].Value.ToString();
+                string TotalDarPart = grdMushtrianMalinkanChange.CurrentRow.Cells["TotalDarPart"].Value.ToString();
+                string PersonDarPart = grdMushtrianMalinkanChange.CurrentRow.Cells["PersonDarPart"].Value.ToString();
+                string OfDarPart = grdMushtrianMalinkanChange.CurrentRow.Cells["OfDarPart"].Value.ToString();
+                string PersonNetPart = grdMushtrianMalinkanChange.CurrentRow.Cells["PersonNetPart"].Value.ToString();
+                string FardPart_Bata = grdMushtrianMalinkanChange.CurrentRow.Cells["FardPart_Bata"].Value.ToString();
+                //string RegisterHqDKhataIdd = RegisterHqDKhataId;
+                string lastid = taqseemnewkhata.WEB_SP_INSERT_KhewatGroupFareeqein(KhewatGroupFareeqId, KhewatGroupId, PersonId.ToString(), FardAreaPart.ToString(), fardkanal.ToString(), fardmarla.ToString(), fardsarsai.ToString(), fardfeet.ToString(), KhewatTypeId, RegisterHqDKhataId.ToString(), UsersManagments.UserId.ToString(), Dar, TotalDarPart, PersonDarPart, OfDarPart, UsersManagments.UserName, FardPart_Bata);
+                btnSaveChangeMalikan.Enabled = false;
+                btndeleteChangeMalikan.Enabled = false;
+                FillGridMalikanChange();
+                //GetKhataAreaHissa(this.cmbtaqseemChangeKhata.SelectedValue.ToString());
+                //txtSearchMalik_TextChanged(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
