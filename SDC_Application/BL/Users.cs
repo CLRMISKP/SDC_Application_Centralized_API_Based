@@ -138,6 +138,43 @@ namespace SDC_Application.BL
             return lastId;
         }
 
+        public string WEB_SP_INSERT_Users_Profile_withRoleId(string UserId, string TehsilId, string FirstName, string LastName, string LoginName, string Password, string InsertUserId, bool recstatus, byte[] FingerPrint, bool isRO,string RoleId,out string ErrorMsg )
+        {
+            string lastId = "";
+            SqlCommand mycomm = new SqlCommand();
+
+            mycomm.Parameters.AddWithValue("@UserId", UserId);
+            mycomm.Parameters.AddWithValue("@TehsilId", TehsilId);
+            mycomm.Parameters.AddWithValue("@FirstName", FirstName);
+            mycomm.Parameters.AddWithValue("@LastName", LastName);
+            mycomm.Parameters.AddWithValue("@LoginName", LoginName);
+            mycomm.Parameters.AddWithValue("@Password", Password);
+            mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
+            mycomm.Parameters.AddWithValue("@FingerPrint", (FingerPrint == null) ? (object)DBNull.Value : FingerPrint).SqlDbType = SqlDbType.Image;
+            mycomm.Parameters.AddWithValue("@RecordStatus", recstatus);
+            mycomm.Parameters.AddWithValue("@IsRevenueOfficer", isRO);
+            mycomm.Parameters.AddWithValue("@RoleId", RoleId);
+
+                        // Adding the output parameter for error message
+            SqlParameter errParam = new SqlParameter("@Err_Msg", SqlDbType.VarChar, -1) { Direction = ParameterDirection.Output };
+            mycomm.Parameters.Add(errParam);
+
+            try
+            {
+                lastId = dbobject.ExecStoredProcedure("WEB_SP_INSERT_Users_Profile_withRoleId", mycomm);
+                // Retrieve the output parameter value
+                ErrorMsg = errParam.Value.ToString();
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return lastId;
+        }
+
+
+
         public string WEB_Self_SP_Update_Users_TokenRole(string InsertUserId, string UserId, string TokenRole)
         {
             string lastId = "";
