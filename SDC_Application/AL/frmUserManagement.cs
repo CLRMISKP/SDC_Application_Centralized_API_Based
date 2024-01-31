@@ -28,8 +28,9 @@ namespace SDC_Application.AL
             InitializeComponent();
         }
 
-        private void SaveUserPrifile()
+        private bool SaveUserPrifile()
         {
+            bool resetFields = true;
             try
             {
                 ArrayList Labels = new ArrayList();
@@ -57,6 +58,11 @@ namespace SDC_Application.AL
                     string LoginId = txtLoginId.Text.ToString();
                     string Password =Crypto.getEncryptedCode(txtPassword.Text.ToString());
                     string ConfirmPassword =Crypto.getEncryptedCode(txtConfPassword.Text.ToString());
+                    if (Password != ConfirmPassword)
+                    {
+                        MessageBox.Show("Password will be unchanged as it does not matched with Confirmed");
+                        Password = "";
+                    }
                     string userid = UsersManagments.UserId.ToString();
                     string TehsilID =UsersManagments._Tehsilid.ToString();
                     bool isRO = chbIsRO.Checked;
@@ -70,16 +76,27 @@ namespace SDC_Application.AL
                     {
                         recstatus = true;
                     }
-                    
-                   
+                    int iSelectedValue = -1;
+                    if (this.cbUserRoles.SelectedIndex >= 0)
+                    {
+                        DataRowView drv = (DataRowView)this.cbUserRoles.SelectedItem;
+                        int.TryParse(drv["RoleId"].ToString(), out iSelectedValue);
+                    }
 
-                        string LastId = ObjUser.WEB_SP_INSERT_Users_Profile(UserId, TehsilID, FirstName, LastName, LoginId, Password, userid, recstatus,imgDataFinger, isRO);
-                        if (LastId != string.Empty)
-                        {
-                            MessageBox.Show("User has been submitted");
-                            txtUserId.Text = LastId;
-                            LoadExistingProfiles();
-                        }
+                    string Err_Msg = "";
+                    string LastId = ObjUser.WEB_SP_INSERT_Users_Profile_withRoleId(UserId, TehsilID, FirstName, LastName, LoginId, Password, userid, recstatus, imgDataFinger, isRO, ((DataRowView)this.cbUserRoles.SelectedItem)["RoleId"].ToString(), out Err_Msg);
+                    if(Err_Msg!=""){
+                        string [] ar = Err_Msg.Split('|');
+                        MessageBox.Show(ar[0]);
+                        if (ar.Length > 1 && ar[1] == "INVALID_PASS") this.txtConfPassword.Focus();
+                        resetFields = false;
+
+                    }else if (LastId != string.Empty)
+                    {                            
+                        txtUserId.Text = LastId;
+                        LoadExistingProfiles();
+                        MessageBox.Show("User has been submitted");
+                    }
                     
                 }
                 else
@@ -90,13 +107,14 @@ namespace SDC_Application.AL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                 
             }
+                return resetFields ;
         }
 
         private void btnSaveUser_Click(object sender, EventArgs e)
         {
-            SaveUserPrifile();
-            this.ResetFields();
+            if (SaveUserPrifile()) this.ResetFields();            
         }
 
         private void btnFingerPrint_Click(object sender, EventArgs e)
