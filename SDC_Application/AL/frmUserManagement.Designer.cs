@@ -492,6 +492,7 @@
             this.cbUserRoles.Name = "cbUserRoles";
             this.cbUserRoles.Size = new System.Drawing.Size(206, 30);
             this.cbUserRoles.TabIndex = 11;
+            this.cbUserRoles.SelectedIndexChanged += new System.EventHandler(this.cbUserRoles_SelectedIndexChanged);
             // 
             // lblCycleRoles
             // 
