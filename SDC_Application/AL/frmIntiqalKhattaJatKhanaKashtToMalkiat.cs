@@ -4731,12 +4731,25 @@ namespace SDC_Application.AL
             {
 
                 RegisterHqDKhataId = "0";
+                txtKhataNoChange.Clear();
+                txthissayChagne.Clear();
+                txtFeetChange.Clear();
+                txtKanalChange.Clear();
+                txtMarlayChange.Clear();
+                txtSarsasiChange.Clear();
             }
 
             FillGridMalikanChange();
             FillGridKhatooniChange();
             Fillkhatoniforkhasra();
             getkhasrajattotalarea();
+            
+            //GetKhataAreaHissa(this.cmbtaqseemChangeKhata.SelectedValue.ToString());
+            txtkolhisa.Text = txthissayChagne.Text != null ? txthissayChagne.Text : "0";
+            txtkolfeet.Text = txtFeetChange.Text != null ? txtFeetChange.Text : "0"; ;
+            txtkolkanal.Text = txtKanalChange.Text != null ? txtKanalChange.Text : "0";
+            txtkolmarala.Text = txtMarlayChange.Text != null ? txtMarlayChange.Text : "0";
+            txtkolsarsai.Text = txtSarsasiChange.Text != null ? txtSarsasiChange.Text : "0";
         }
 
         #endregion
@@ -4884,7 +4897,7 @@ namespace SDC_Application.AL
                 }
             }
             // MessageBox.Show();
-            float farq = float.Parse(this.txthissayChagne.Text) - sum;
+            float farq = float.Parse(this.txtNewKhataTotalParts.Text) - sum;
             this.txthissamaifarqbox18.Text = farq.ToString();
         }
 
@@ -4903,11 +4916,11 @@ namespace SDC_Application.AL
                 Taraf = txtTaraf.Text.ToString();
                 Pati = txtPati.Text.ToString();
                 string kNo = txtKhataNoChange.Text != "" ? txtKhataNoChange.Text.ToString() : "0";
-                string hissay = txthissayChagne.Text != "" ? txthissayChagne.Text.ToString() : "0";
-                string kannal = txtKanalChange.Text != "" ? txtKanalChange.Text.ToString() : "0";
-                string marala = txtMarlayChange.Text != "" ? txtMarlayChange.Text.ToString() : "0";
-                string sarsai = txtSarsasiChange.Text != "" ? txtSarsasiChange.Text.ToString() : "0";
-                string feet = txtFeetChange.Text != "" ? txtFeetChange.Text.ToString() : "0";
+                string hissay = txtNewKhataTotalParts.Text != "" ? txtNewKhataTotalParts.Text : "0";
+                string kannal = txtNewKhataTotalKanal.Text != "" ? txtNewKhataTotalKanal.Text.ToString() : "0";
+                string marala = txtNewKhataTotalMarla.Text != "" ? txtNewKhataTotalMarla.Text.ToString() : "0";
+                string sarsai = txtNewKhataTotalSarsai.Text != "" ? txtNewKhataTotalSarsai.Text.ToString() : "0";
+                string feet = txtNewKhataTotalFeet.Text != "" ? txtNewKhataTotalFeet.Text.ToString() : "0";
                 string malia = txtMaliaChange.Text != "" ? txtMaliaChange.Text.ToString() : "";
                 string kefiat = txtKefiyatChange.Text != "" ? txtKefiyatChange.Text.ToString() : "";
                 string Registerkid = taqseemnewkhata.WEB_SP_INSERT_HaqdaranZameenKhatajatSubKhatta(txtRegHaqKhataID.Text.ToString(), RegisterHqId, kNo, Taraf, Pati, hissay, kannal, marala, sarsai, feet, malia, kefiat, MozaId.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), txtparentKhataId.Text, ParentKhataID);
@@ -4942,11 +4955,11 @@ namespace SDC_Application.AL
                 txtRegHagDaranID.Text = dr["RegisterHaqdaranId"].ToString();
                 txtParentid.Text = dr["ParentKhattaId"].ToString();
                 txtKhataNoChange.Text = dr["KhataNo"].ToString();
-                txthissayChagne.Text = dr["TotalParts"].ToString();
-                txtKanalChange.Text = dr["Khata_Kanal"].ToString();
-                txtMarlayChange.Text = dr["Khata_Marla"].ToString();
-                txtSarsasiChange.Text = dr["Khata_Sarsai"].ToString();
-                txtFeetChange.Text = dr["Khata_Feet"].ToString();
+                txtNewKhataTotalParts.Text = dr["TotalParts"].ToString();
+                txtNewKhataTotalKanal.Text = dr["Khata_Kanal"].ToString();
+                txtNewKhataTotalMarla.Text = dr["Khata_Marla"].ToString();
+                txtNewKhataTotalSarsai.Text = dr["Khata_Sarsai"].ToString();
+                txtNewKhataTotalFeet.Text = dr["Khata_Feet"].ToString();
                 txtMaliaChange.Text = dr["Malia"].ToString();
                 txtKefiyatChange.Text = dr["Kyfiat"].ToString();
                 txtPati.Text = dr["Pati"].ToString();

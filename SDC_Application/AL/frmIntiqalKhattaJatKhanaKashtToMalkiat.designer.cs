@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -936,14 +936,14 @@
             this.grdKhatoniDetails.AllowUserToAddRows = false;
             this.grdKhatoniDetails.AllowUserToDeleteRows = false;
             this.grdKhatoniDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKhatoniDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKhatoniDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdKhatoniDetails.ColumnHeadersHeight = 38;
             this.grdKhatoniDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkkhatoni});
@@ -953,8 +953,8 @@
             this.grdKhatoniDetails.ReadOnly = true;
             this.grdKhatoniDetails.RowHeadersVisible = false;
             this.grdKhatoniDetails.RowHeadersWidth = 30;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdKhatoniDetails.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdKhatoniDetails.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdKhatoniDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdKhatoniDetails.Size = new System.Drawing.Size(362, 395);
             this.grdKhatoniDetails.TabIndex = 0;
@@ -4236,7 +4236,7 @@
             this.txtKefiyatChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.txtKefiyatChange.Location = new System.Drawing.Point(8, 331);
             this.txtKefiyatChange.Name = "txtKefiyatChange";
-            this.txtKefiyatChange.Size = new System.Drawing.Size(224, 15);
+            this.txtKefiyatChange.Size = new System.Drawing.Size(224, 58);
             this.txtKefiyatChange.TabIndex = 15;
             this.txtKefiyatChange.Text = "";
             this.txtKefiyatChange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboPersonSeller_KeyPress);
@@ -4372,7 +4372,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 40);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1210, 559);
+            this.tabPage7.Size = new System.Drawing.Size(1210, 574);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "مالکان";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -4393,7 +4393,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(15, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(176, 553);
+            this.panel6.Size = new System.Drawing.Size(176, 568);
             this.panel6.TabIndex = 19;
             // 
             // label131
@@ -4492,7 +4492,7 @@
             this.groupBox35.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox35.Location = new System.Drawing.Point(191, 3);
             this.groupBox35.Name = "groupBox35";
-            this.groupBox35.Size = new System.Drawing.Size(1016, 553);
+            this.groupBox35.Size = new System.Drawing.Size(1016, 568);
             this.groupBox35.TabIndex = 0;
             this.groupBox35.TabStop = false;
             // 
@@ -4505,7 +4505,7 @@
             this.gbSubKhataMalkan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSubKhataMalkan.Location = new System.Drawing.Point(3, 35);
             this.gbSubKhataMalkan.Name = "gbSubKhataMalkan";
-            this.gbSubKhataMalkan.Size = new System.Drawing.Size(1010, 515);
+            this.gbSubKhataMalkan.Size = new System.Drawing.Size(1010, 530);
             this.gbSubKhataMalkan.TabIndex = 31;
             // 
             // groupBox40
@@ -4514,7 +4514,7 @@
             this.groupBox40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox40.Location = new System.Drawing.Point(0, 173);
             this.groupBox40.Name = "groupBox40";
-            this.groupBox40.Size = new System.Drawing.Size(1008, 340);
+            this.groupBox40.Size = new System.Drawing.Size(1008, 355);
             this.groupBox40.TabIndex = 1010;
             this.groupBox40.TabStop = false;
             // 
@@ -4532,7 +4532,7 @@
             this.grdMushtrianMalinkanChange.ReadOnly = true;
             this.grdMushtrianMalinkanChange.RowTemplate.Height = 30;
             this.grdMushtrianMalinkanChange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1002, 302);
+            this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1002, 317);
             this.grdMushtrianMalinkanChange.TabIndex = 8;
             this.grdMushtrianMalinkanChange.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMushtrianMalinkanChange_CellClick);
             // 
@@ -6270,7 +6270,7 @@
             this.tabKhatooniBayan.Location = new System.Drawing.Point(4, 40);
             this.tabKhatooniBayan.Name = "tabKhatooniBayan";
             this.tabKhatooniBayan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhatooniBayan.Size = new System.Drawing.Size(1210, 559);
+            this.tabKhatooniBayan.Size = new System.Drawing.Size(1210, 574);
             this.tabKhatooniBayan.TabIndex = 4;
             this.tabKhatooniBayan.Text = "کھتونی بائعان";
             this.tabKhatooniBayan.UseVisualStyleBackColor = true;
@@ -6282,7 +6282,7 @@
             this.tabMushteriFareeqain.Location = new System.Drawing.Point(4, 40);
             this.tabMushteriFareeqain.Name = "tabMushteriFareeqain";
             this.tabMushteriFareeqain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMushteriFareeqain.Size = new System.Drawing.Size(1210, 559);
+            this.tabMushteriFareeqain.Size = new System.Drawing.Size(1210, 574);
             this.tabMushteriFareeqain.TabIndex = 1;
             this.tabMushteriFareeqain.Text = "کھتونی مشتریان";
             this.tabMushteriFareeqain.UseVisualStyleBackColor = true;
@@ -6307,7 +6307,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel17.Location = new System.Drawing.Point(82, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(176, 553);
+            this.panel17.Size = new System.Drawing.Size(176, 568);
             this.panel17.TabIndex = 19;
             // 
             // txtSeqNo
@@ -6439,7 +6439,7 @@
             this.groupBox28.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox28.Location = new System.Drawing.Point(258, 3);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(949, 553);
+            this.groupBox28.Size = new System.Drawing.Size(949, 568);
             this.groupBox28.TabIndex = 0;
             this.groupBox28.TabStop = false;
             // 
@@ -6452,7 +6452,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(3, 35);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(943, 515);
+            this.panel11.Size = new System.Drawing.Size(943, 530);
             this.panel11.TabIndex = 31;
             // 
             // groupBox23
@@ -6460,7 +6460,7 @@
             this.groupBox23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox23.Location = new System.Drawing.Point(0, 172);
             this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(941, 288);
+            this.groupBox23.Size = new System.Drawing.Size(941, 303);
             this.groupBox23.TabIndex = 1010;
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "محفوظ شدہ خانہ کاشت ملکان";
@@ -6721,7 +6721,7 @@
             this.groupBox31.Controls.Add(this.txthissamaifarqbox18);
             this.groupBox31.Controls.Add(this.label44);
             this.groupBox31.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox31.Location = new System.Drawing.Point(0, 460);
+            this.groupBox31.Location = new System.Drawing.Point(0, 475);
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.Size = new System.Drawing.Size(941, 53);
             this.groupBox31.TabIndex = 14;

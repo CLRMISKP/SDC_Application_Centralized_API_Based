@@ -31,19 +31,19 @@
         private void InitializeComponent()
             {
                 this.components = new System.ComponentModel.Container();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
                 System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFard));
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+                System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
                 this.label4 = new System.Windows.Forms.Label();
                 this.txtReciptTokenID = new System.Windows.Forms.TextBox();
                 this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -604,8 +604,8 @@
                 // 
                 this.GridViewFardKhatajat.AllowUserToAddRows = false;
                 this.GridViewFardKhatajat.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewFardKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+                dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewFardKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
                 this.GridViewFardKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewFardKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewFardKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -760,8 +760,8 @@
                 // 
                 this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
                 this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle26.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+                dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
                 this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1298,8 +1298,8 @@
                 // 
                 this.GridFardKhatoonies.AllowUserToAddRows = false;
                 this.GridFardKhatoonies.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle27.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridFardKhatoonies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+                dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridFardKhatoonies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
                 this.GridFardKhatoonies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridFardKhatoonies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridFardKhatoonies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1485,8 +1485,8 @@
                 // 
                 this.GridViewFardMushteri.AllowUserToAddRows = false;
                 this.GridViewFardMushteri.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle28.BackColor = System.Drawing.Color.AliceBlue;
-                this.GridViewFardMushteri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+                dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+                this.GridViewFardMushteri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
                 this.GridViewFardMushteri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.GridViewFardMushteri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.GridViewFardMushteri.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2425,7 +2425,7 @@
                 this.groupBox16.Size = new System.Drawing.Size(200, 162);
                 this.groupBox16.TabIndex = 209;
                 this.groupBox16.TabStop = false;
-                this.groupBox16.Text = "فرد مکمل کرنے کے بعد تصدیق کریں";
+                this.groupBox16.Text = "فرد مکمل کرنے کے بعد فائنل کریں";
                 // 
                 // btnConfirm
                 // 
@@ -3295,16 +3295,16 @@
                 this.grdRecipt.Location = new System.Drawing.Point(0, 271);
                 this.grdRecipt.Name = "grdRecipt";
                 this.grdRecipt.ReadOnly = true;
-                dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-                dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle29.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-                dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
-                dataGridViewCellStyle30.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle30;
+                dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+                dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle5.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+                dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdRecipt.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+                dataGridViewCellStyle6.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.grdRecipt.RowsDefaultCellStyle = dataGridViewCellStyle6;
                 this.grdRecipt.Size = new System.Drawing.Size(1279, 314);
                 this.grdRecipt.TabIndex = 67;
                 this.grdRecipt.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRecipt_CellDoubleClick);
@@ -4102,14 +4102,14 @@
                 this.grdScanedDocStatus.AllowUserToAddRows = false;
                 this.grdScanedDocStatus.AllowUserToDeleteRows = false;
                 this.grdScanedDocStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-                dataGridViewCellStyle31.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-                dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-                dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                this.grdScanedDocStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+                dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+                dataGridViewCellStyle7.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+                dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+                dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+                this.grdScanedDocStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
                 this.grdScanedDocStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.grdScanedDocStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PageNo,
@@ -4123,14 +4123,14 @@
             this.Delete,
             this.replace,
             this.replaceImage});
-                dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-                dataGridViewCellStyle32.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-                dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-                dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-                dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-                this.grdScanedDocStatus.DefaultCellStyle = dataGridViewCellStyle32;
+                dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+                dataGridViewCellStyle8.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+                dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+                dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+                this.grdScanedDocStatus.DefaultCellStyle = dataGridViewCellStyle8;
                 this.grdScanedDocStatus.Dock = System.Windows.Forms.DockStyle.Left;
                 this.grdScanedDocStatus.Location = new System.Drawing.Point(3, 35);
                 this.grdScanedDocStatus.Name = "grdScanedDocStatus";
@@ -4290,8 +4290,8 @@
                 // 
                 this.dgvIntiqalatDetails.AllowUserToAddRows = false;
                 this.dgvIntiqalatDetails.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle33.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvIntiqalatDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+                dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvIntiqalatDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
                 this.dgvIntiqalatDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvIntiqalatDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvIntiqalatDetails.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4337,8 +4337,8 @@
                 // 
                 this.dgvCancel.AllowUserToAddRows = false;
                 this.dgvCancel.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle34.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvCancel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
+                dataGridViewCellStyle10.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvCancel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
                 this.dgvCancel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvCancel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvCancel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4366,8 +4366,8 @@
                 // 
                 this.dgvRemaining.AllowUserToAddRows = false;
                 this.dgvRemaining.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle35.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgvRemaining.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
+                dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgvRemaining.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
                 this.dgvRemaining.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgvRemaining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgvRemaining.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4416,8 +4416,8 @@
                 // 
                 this.dgKhassrajat.AllowUserToAddRows = false;
                 this.dgKhassrajat.AllowUserToDeleteRows = false;
-                dataGridViewCellStyle36.BackColor = System.Drawing.Color.AliceBlue;
-                this.dgKhassrajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
+                dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
+                this.dgKhassrajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
                 this.dgKhassrajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 this.dgKhassrajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 this.dgKhassrajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

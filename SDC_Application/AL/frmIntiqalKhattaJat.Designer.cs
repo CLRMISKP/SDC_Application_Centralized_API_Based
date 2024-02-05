@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntiqalKhattaJat));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -129,6 +130,7 @@
             this.checkListNew = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colMutwafiKhataJat = new System.Windows.Forms.DataGridViewLinkColumn();
             this.gbSellersControls = new System.Windows.Forms.GroupBox();
+            this.chkDeleteAllBayan = new System.Windows.Forms.CheckBox();
             this.btnLandTax = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
@@ -578,7 +580,6 @@
             this.txtMushNameChange = new System.Windows.Forms.TextBox();
             this.tabPageShajra = new System.Windows.Forms.TabPage();
             this.toolTipIntiqalKhatta = new System.Windows.Forms.ToolTip(this.components);
-            this.chkDeleteAllBayan = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1146,7 +1147,7 @@
             // btnNewJuzviSalamKhassra
             // 
             this.btnNewJuzviSalamKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewJuzviSalamKhassra.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewJuzviSalamKhassra.Image = ((System.Drawing.Image)(resources.GetObject("btnNewJuzviSalamKhassra.Image")));
             this.btnNewJuzviSalamKhassra.Location = new System.Drawing.Point(326, 330);
             this.btnNewJuzviSalamKhassra.Name = "btnNewJuzviSalamKhassra";
             this.btnNewJuzviSalamKhassra.Size = new System.Drawing.Size(53, 50);
@@ -1157,7 +1158,7 @@
             // btnDeleteJuzviSalamKhassra
             // 
             this.btnDeleteJuzviSalamKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteJuzviSalamKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteJuzviSalamKhassra.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteJuzviSalamKhassra.Image")));
             this.btnDeleteJuzviSalamKhassra.Location = new System.Drawing.Point(196, 330);
             this.btnDeleteJuzviSalamKhassra.Name = "btnDeleteJuzviSalamKhassra";
             this.btnDeleteJuzviSalamKhassra.Size = new System.Drawing.Size(53, 50);
@@ -1180,7 +1181,7 @@
             // btnSaveJuzviSalamKhassra
             // 
             this.btnSaveJuzviSalamKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveJuzviSalamKhassra.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveJuzviSalamKhassra.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveJuzviSalamKhassra.Image")));
             this.btnSaveJuzviSalamKhassra.Location = new System.Drawing.Point(261, 330);
             this.btnSaveJuzviSalamKhassra.Name = "btnSaveJuzviSalamKhassra";
             this.btnSaveJuzviSalamKhassra.Size = new System.Drawing.Size(53, 50);
@@ -1251,7 +1252,7 @@
             // btnKhatoniSave
             // 
             this.btnKhatoniSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKhatoniSave.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnKhatoniSave.Image = ((System.Drawing.Image)(resources.GetObject("btnKhatoniSave.Image")));
             this.btnKhatoniSave.Location = new System.Drawing.Point(101, 96);
             this.btnKhatoniSave.Name = "btnKhatoniSave";
             this.btnKhatoniSave.Size = new System.Drawing.Size(53, 56);
@@ -1274,7 +1275,7 @@
             // btnDeleteKhatoni
             // 
             this.btnDeleteKhatoni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteKhatoni.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteKhatoni.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteKhatoni.Image")));
             this.btnDeleteKhatoni.Location = new System.Drawing.Point(36, 96);
             this.btnDeleteKhatoni.Name = "btnDeleteKhatoni";
             this.btnDeleteKhatoni.Size = new System.Drawing.Size(53, 56);
@@ -1284,7 +1285,7 @@
             // btnKhatoniClear
             // 
             this.btnKhatoniClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKhatoniClear.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnKhatoniClear.Image = ((System.Drawing.Image)(resources.GetObject("btnKhatoniClear.Image")));
             this.btnKhatoniClear.Location = new System.Drawing.Point(166, 96);
             this.btnKhatoniClear.Name = "btnKhatoniClear";
             this.btnKhatoniClear.Size = new System.Drawing.Size(53, 56);
@@ -1607,7 +1608,7 @@
             // btnNewKhatta
             // 
             this.btnNewKhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewKhatta.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewKhatta.Image = ((System.Drawing.Image)(resources.GetObject("btnNewKhatta.Image")));
             this.btnNewKhatta.Location = new System.Drawing.Point(255, 79);
             this.btnNewKhatta.Name = "btnNewKhatta";
             this.btnNewKhatta.Size = new System.Drawing.Size(53, 56);
@@ -1618,7 +1619,7 @@
             // btnSaveKhatta
             // 
             this.btnSaveKhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveKhatta.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveKhatta.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveKhatta.Image")));
             this.btnSaveKhatta.Location = new System.Drawing.Point(190, 79);
             this.btnSaveKhatta.Name = "btnSaveKhatta";
             this.btnSaveKhatta.Size = new System.Drawing.Size(53, 56);
@@ -1629,7 +1630,7 @@
             // btnDelIntiqalKhatta
             // 
             this.btnDelIntiqalKhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelIntiqalKhatta.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelIntiqalKhatta.Image = ((System.Drawing.Image)(resources.GetObject("btnDelIntiqalKhatta.Image")));
             this.btnDelIntiqalKhatta.Location = new System.Drawing.Point(125, 79);
             this.btnDelIntiqalKhatta.Name = "btnDelIntiqalKhatta";
             this.btnDelIntiqalKhatta.Size = new System.Drawing.Size(53, 56);
@@ -1801,10 +1802,22 @@
             this.gbSellersControls.TabIndex = 7;
             this.gbSellersControls.TabStop = false;
             // 
+            // chkDeleteAllBayan
+            // 
+            this.chkDeleteAllBayan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkDeleteAllBayan.AutoSize = true;
+            this.chkDeleteAllBayan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
+            this.chkDeleteAllBayan.Location = new System.Drawing.Point(538, 64);
+            this.chkDeleteAllBayan.Name = "chkDeleteAllBayan";
+            this.chkDeleteAllBayan.Size = new System.Drawing.Size(186, 35);
+            this.chkDeleteAllBayan.TabIndex = 1044;
+            this.chkDeleteAllBayan.Text = "کھاتہ کے تمام مالکان خذف کریں";
+            this.chkDeleteAllBayan.UseVisualStyleBackColor = true;
+            // 
             // btnLandTax
             // 
             this.btnLandTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLandTax.Image = global::SDC_Application.Resource1.AIT;
+            this.btnLandTax.Image = ((System.Drawing.Image)(resources.GetObject("btnLandTax.Image")));
             this.btnLandTax.Location = new System.Drawing.Point(742, 49);
             this.btnLandTax.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnLandTax.Name = "btnLandTax";
@@ -1869,7 +1882,7 @@
             // btnSaveMushtarika
             // 
             this.btnSaveMushtarika.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSaveMushtarika.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMushtarika.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveMushtarika.Image")));
             this.btnSaveMushtarika.Location = new System.Drawing.Point(11, 41);
             this.btnSaveMushtarika.Name = "btnSaveMushtarika";
             this.btnSaveMushtarika.Size = new System.Drawing.Size(50, 50);
@@ -2014,7 +2027,7 @@
             // 
             this.btnDelSeller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelSeller.Enabled = false;
-            this.btnDelSeller.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelSeller.Image = ((System.Drawing.Image)(resources.GetObject("btnDelSeller.Image")));
             this.btnDelSeller.Location = new System.Drawing.Point(815, 49);
             this.btnDelSeller.Name = "btnDelSeller";
             this.btnDelSeller.Size = new System.Drawing.Size(50, 50);
@@ -2026,7 +2039,7 @@
             // btnNewSeller
             // 
             this.btnNewSeller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewSeller.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewSeller.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSeller.Image")));
             this.btnNewSeller.Location = new System.Drawing.Point(941, 49);
             this.btnNewSeller.Name = "btnNewSeller";
             this.btnNewSeller.Size = new System.Drawing.Size(50, 50);
@@ -2037,7 +2050,7 @@
             // btnSaveSeller
             // 
             this.btnSaveSeller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveSeller.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveSeller.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveSeller.Image")));
             this.btnSaveSeller.Location = new System.Drawing.Point(878, 49);
             this.btnSaveSeller.Name = "btnSaveSeller";
             this.btnSaveSeller.Size = new System.Drawing.Size(50, 50);
@@ -2161,6 +2174,7 @@
             this.dtFardToken.Size = new System.Drawing.Size(110, 30);
             this.dtFardToken.TabIndex = 1019;
             this.dtFardToken.Tag = "4";
+            this.dtFardToken.ValueChanged += new System.EventHandler(this.dtFardToken_ValueChanged);
             // 
             // txtSellerID
             // 
@@ -2766,7 +2780,7 @@
             // 
             this.btnBuyerFamilySel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuyerFamilySel.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuyerFamilySel.Image = global::SDC_Application.Resource1.family_icon2;
+            this.btnBuyerFamilySel.Image = ((System.Drawing.Image)(resources.GetObject("btnBuyerFamilySel.Image")));
             this.btnBuyerFamilySel.Location = new System.Drawing.Point(1286, 7);
             this.btnBuyerFamilySel.Name = "btnBuyerFamilySel";
             this.btnBuyerFamilySel.Size = new System.Drawing.Size(54, 50);
@@ -2790,7 +2804,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Image = global::SDC_Application.Resource1.AIT;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(561, 6);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button3.Name = "button3";
@@ -2826,7 +2840,7 @@
             // 
             this.btnFamilySelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFamilySelection.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFamilySelection.Image = global::SDC_Application.Resource1.user_group_icon;
+            this.btnFamilySelection.Image = ((System.Drawing.Image)(resources.GetObject("btnFamilySelection.Image")));
             this.btnFamilySelection.Location = new System.Drawing.Point(1361, 6);
             this.btnFamilySelection.Name = "btnFamilySelection";
             this.btnFamilySelection.Size = new System.Drawing.Size(54, 50);
@@ -2839,7 +2853,7 @@
             // 
             this.btnNewBuyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewBuyer.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewBuyer.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewBuyer.Image = ((System.Drawing.Image)(resources.GetObject("btnNewBuyer.Image")));
             this.btnNewBuyer.Location = new System.Drawing.Point(944, 6);
             this.btnNewBuyer.Name = "btnNewBuyer";
             this.btnNewBuyer.Size = new System.Drawing.Size(54, 50);
@@ -2851,7 +2865,7 @@
             // 
             this.btnModifyBuyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModifyBuyer.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifyBuyer.Image = global::SDC_Application.Resource1.Modify;
+            this.btnModifyBuyer.Image = ((System.Drawing.Image)(resources.GetObject("btnModifyBuyer.Image")));
             this.btnModifyBuyer.Location = new System.Drawing.Point(822, 6);
             this.btnModifyBuyer.Name = "btnModifyBuyer";
             this.btnModifyBuyer.Size = new System.Drawing.Size(54, 50);
@@ -2864,7 +2878,7 @@
             // 
             this.btnSaveBuyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveBuyer.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveBuyer.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveBuyer.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveBuyer.Image")));
             this.btnSaveBuyer.Location = new System.Drawing.Point(883, 6);
             this.btnSaveBuyer.Name = "btnSaveBuyer";
             this.btnSaveBuyer.Size = new System.Drawing.Size(54, 50);
@@ -2875,7 +2889,7 @@
             // btncancelBuyer
             // 
             this.btncancelBuyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancelBuyer.BackgroundImage = global::SDC_Application.Resource1.Cancel1;
+            this.btncancelBuyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancelBuyer.BackgroundImage")));
             this.btncancelBuyer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btncancelBuyer.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelBuyer.Location = new System.Drawing.Point(640, 6);
@@ -2892,7 +2906,7 @@
             this.btnDelBuyer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelBuyer.Enabled = false;
             this.btnDelBuyer.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelBuyer.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelBuyer.Image = ((System.Drawing.Image)(resources.GetObject("btnDelBuyer.Image")));
             this.btnDelBuyer.Location = new System.Drawing.Point(761, 6);
             this.btnDelBuyer.Name = "btnDelBuyer";
             this.btnDelBuyer.Size = new System.Drawing.Size(54, 50);
@@ -3000,7 +3014,7 @@
             // 
             this.btnBuyerHissaBamutabiqraqba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuyerHissaBamutabiqraqba.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuyerHissaBamutabiqraqba.Image = global::SDC_Application.Resource1.Partition_icon2;
+            this.btnBuyerHissaBamutabiqraqba.Image = ((System.Drawing.Image)(resources.GetObject("btnBuyerHissaBamutabiqraqba.Image")));
             this.btnBuyerHissaBamutabiqraqba.Location = new System.Drawing.Point(248, 73);
             this.btnBuyerHissaBamutabiqraqba.Name = "btnBuyerHissaBamutabiqraqba";
             this.btnBuyerHissaBamutabiqraqba.Size = new System.Drawing.Size(54, 50);
@@ -3023,7 +3037,7 @@
             // 
             this.btnBuyerSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuyerSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuyerSearch.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnBuyerSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnBuyerSearch.Image")));
             this.btnBuyerSearch.Location = new System.Drawing.Point(1149, 78);
             this.btnBuyerSearch.Name = "btnBuyerSearch";
             this.btnBuyerSearch.Size = new System.Drawing.Size(40, 38);
@@ -3391,7 +3405,7 @@
             // btnsavemingroup
             // 
             this.btnsavemingroup.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnsavemingroup.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnsavemingroup.Image = ((System.Drawing.Image)(resources.GetObject("btnsavemingroup.Image")));
             this.btnsavemingroup.Location = new System.Drawing.Point(166, 61);
             this.btnsavemingroup.Name = "btnsavemingroup";
             this.btnsavemingroup.Size = new System.Drawing.Size(52, 48);
@@ -3569,7 +3583,7 @@
             // 
             this.btnDelMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelMinKhassra.Enabled = false;
-            this.btnDelMinKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMinKhassra.Image = ((System.Drawing.Image)(resources.GetObject("btnDelMinKhassra.Image")));
             this.btnDelMinKhassra.Location = new System.Drawing.Point(16, 59);
             this.btnDelMinKhassra.Name = "btnDelMinKhassra";
             this.btnDelMinKhassra.Size = new System.Drawing.Size(49, 50);
@@ -3670,7 +3684,7 @@
             // 
             this.btnSaveIntiqalMinKhassra.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSaveIntiqalMinKhassra.Enabled = false;
-            this.btnSaveIntiqalMinKhassra.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveIntiqalMinKhassra.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveIntiqalMinKhassra.Image")));
             this.btnSaveIntiqalMinKhassra.Location = new System.Drawing.Point(67, 59);
             this.btnSaveIntiqalMinKhassra.Name = "btnSaveIntiqalMinKhassra";
             this.btnSaveIntiqalMinKhassra.Size = new System.Drawing.Size(49, 50);
@@ -3880,7 +3894,7 @@
             // 
             this.btnDeleteMalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMalikan.Enabled = false;
-            this.btnDeleteMalikan.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteMalikan.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteMalikan.Image")));
             this.btnDeleteMalikan.Location = new System.Drawing.Point(4, 27);
             this.btnDeleteMalikan.Name = "btnDeleteMalikan";
             this.btnDeleteMalikan.Size = new System.Drawing.Size(49, 50);
@@ -3975,7 +3989,7 @@
             // 
             this.btnSaveMinFareeq.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSaveMinFareeq.Enabled = false;
-            this.btnSaveMinFareeq.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinFareeq.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveMinFareeq.Image")));
             this.btnSaveMinFareeq.Location = new System.Drawing.Point(53, 27);
             this.btnSaveMinFareeq.Name = "btnSaveMinFareeq";
             this.btnSaveMinFareeq.Size = new System.Drawing.Size(50, 50);
@@ -4337,7 +4351,7 @@
             // btnClearChange
             // 
             this.btnClearChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearChange.BackgroundImage = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnClearChange.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearChange.BackgroundImage")));
             this.btnClearChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClearChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.btnClearChange.Location = new System.Drawing.Point(837, 330);
@@ -4350,7 +4364,7 @@
             // btnDeleteChange
             // 
             this.btnDeleteChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteChange.BackgroundImage = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteChange.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteChange.BackgroundImage")));
             this.btnDeleteChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeleteChange.Location = new System.Drawing.Point(904, 331);
             this.btnDeleteChange.Name = "btnDeleteChange";
@@ -4372,7 +4386,7 @@
             // btnSaveChange
             // 
             this.btnSaveChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveChange.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveChange.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveChange.Image")));
             this.btnSaveChange.Location = new System.Drawing.Point(972, 331);
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.Size = new System.Drawing.Size(55, 47);
@@ -5055,7 +5069,7 @@
             // 
             // btndeleteChangeMalikan
             // 
-            this.btndeleteChangeMalikan.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btndeleteChangeMalikan.Image = ((System.Drawing.Image)(resources.GetObject("btndeleteChangeMalikan.Image")));
             this.btndeleteChangeMalikan.Location = new System.Drawing.Point(699, 27);
             this.btndeleteChangeMalikan.Name = "btndeleteChangeMalikan";
             this.btndeleteChangeMalikan.Size = new System.Drawing.Size(49, 50);
@@ -5103,7 +5117,7 @@
             // 
             // btnSaveChangeMalikan
             // 
-            this.btnSaveChangeMalikan.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveChangeMalikan.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveChangeMalikan.Image")));
             this.btnSaveChangeMalikan.Location = new System.Drawing.Point(759, 27);
             this.btnSaveChangeMalikan.Name = "btnSaveChangeMalikan";
             this.btnSaveChangeMalikan.Size = new System.Drawing.Size(50, 50);
@@ -5561,7 +5575,7 @@
             // 
             // btnSaveKhatonichagne
             // 
-            this.btnSaveKhatonichagne.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveKhatonichagne.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveKhatonichagne.Image")));
             this.btnSaveKhatonichagne.Location = new System.Drawing.Point(545, 27);
             this.btnSaveKhatonichagne.Name = "btnSaveKhatonichagne";
             this.btnSaveKhatonichagne.Size = new System.Drawing.Size(50, 50);
@@ -5571,7 +5585,7 @@
             // 
             // btnDeleteKhatoonichange
             // 
-            this.btnDeleteKhatoonichange.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteKhatoonichange.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteKhatoonichange.Image")));
             this.btnDeleteKhatoonichange.Location = new System.Drawing.Point(475, 27);
             this.btnDeleteKhatoonichange.Name = "btnDeleteKhatoonichange";
             this.btnDeleteKhatoonichange.Size = new System.Drawing.Size(49, 50);
@@ -5887,7 +5901,7 @@
             // btnsavenewkhasra
             // 
             this.btnsavenewkhasra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsavenewkhasra.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnsavenewkhasra.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenewkhasra.Image")));
             this.btnsavenewkhasra.Location = new System.Drawing.Point(953, 35);
             this.btnsavenewkhasra.Name = "btnsavenewkhasra";
             this.btnsavenewkhasra.Size = new System.Drawing.Size(49, 50);
@@ -5906,7 +5920,7 @@
             // btndeletenewKhassra
             // 
             this.btndeletenewKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndeletenewKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btndeletenewKhassra.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenewKhassra.Image")));
             this.btndeletenewKhassra.Location = new System.Drawing.Point(883, 35);
             this.btndeletenewKhassra.Name = "btndeletenewKhassra";
             this.btndeletenewKhassra.Size = new System.Drawing.Size(49, 50);
@@ -6662,7 +6676,7 @@
             // 
             // btndeleteChangeMushtryan
             // 
-            this.btndeleteChangeMushtryan.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btndeleteChangeMushtryan.Image = ((System.Drawing.Image)(resources.GetObject("btndeleteChangeMushtryan.Image")));
             this.btndeleteChangeMushtryan.Location = new System.Drawing.Point(474, 57);
             this.btndeleteChangeMushtryan.Name = "btndeleteChangeMushtryan";
             this.btndeleteChangeMushtryan.Size = new System.Drawing.Size(49, 50);
@@ -6818,7 +6832,7 @@
             // 
             // btnSaveChangeMushtryan
             // 
-            this.btnSaveChangeMushtryan.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveChangeMushtryan.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveChangeMushtryan.Image")));
             this.btnSaveChangeMushtryan.Location = new System.Drawing.Point(529, 57);
             this.btnSaveChangeMushtryan.Name = "btnSaveChangeMushtryan";
             this.btnSaveChangeMushtryan.Size = new System.Drawing.Size(50, 50);
@@ -6882,18 +6896,6 @@
             this.tabPageShajra.Text = "خاکہ";
             this.tabPageShajra.UseVisualStyleBackColor = true;
             this.tabPageShajra.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPageShajra_Paint);
-            // 
-            // chkDeleteAllBayan
-            // 
-            this.chkDeleteAllBayan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkDeleteAllBayan.AutoSize = true;
-            this.chkDeleteAllBayan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
-            this.chkDeleteAllBayan.Location = new System.Drawing.Point(538, 64);
-            this.chkDeleteAllBayan.Name = "chkDeleteAllBayan";
-            this.chkDeleteAllBayan.Size = new System.Drawing.Size(186, 35);
-            this.chkDeleteAllBayan.TabIndex = 1044;
-            this.chkDeleteAllBayan.Text = "کھاتہ کے تمام مالکان خذف کریں";
-            this.chkDeleteAllBayan.UseVisualStyleBackColor = true;
             // 
             // frmIntiqalKhattaJat
             // 
