@@ -46,7 +46,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCancel = new System.Windows.Forms.Label();
+            this.btnFbCancel = new System.Windows.Forms.Button();
+            this.btnFbRevert = new System.Windows.Forms.Button();
+            this.btnUploadDoc = new System.Windows.Forms.Button();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.chkMinKhataFb = new System.Windows.Forms.CheckBox();
+            this.btnPrintMisalBadar = new System.Windows.Forms.Button();
+            this.btnAmaldaramad = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.cmbMouza = new System.Windows.Forms.ComboBox();
             this.dtpDateTehsilDar = new System.Windows.Forms.DateTimePicker();
@@ -55,7 +63,10 @@
             this.lbl11 = new System.Windows.Forms.Label();
             this.txtFbId = new System.Windows.Forms.TextBox();
             this.cbFBDocuments = new System.Windows.Forms.ComboBox();
+            this.btnSearchFB = new System.Windows.Forms.Button();
+            this.btnSaveFardBadar = new System.Windows.Forms.Button();
             this.label73 = new System.Windows.Forms.Label();
+            this.btnNewFardBadar = new System.Windows.Forms.Button();
             this.txtFardBadarDocNO = new System.Windows.Forms.TextBox();
             this.txtFardBadarTafseel = new System.Windows.Forms.TextBox();
             this.label77 = new System.Windows.Forms.Label();
@@ -65,6 +76,9 @@
             this.dgFBKhatajat = new System.Windows.Forms.DataGridView();
             this.ColKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbKhattaControls = new System.Windows.Forms.GroupBox();
+            this.btnDelKhatta = new System.Windows.Forms.Button();
+            this.btnSaveKhata = new System.Windows.Forms.Button();
+            this.btnNewKhata = new System.Windows.Forms.Button();
             this.gbKhataRaqba = new System.Windows.Forms.GroupBox();
             this.txtKafyat = new System.Windows.Forms.TextBox();
             this.txtMalia = new System.Windows.Forms.TextBox();
@@ -132,6 +146,7 @@
             this.txtPersonName = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
             this.cboQismMalik = new System.Windows.Forms.ComboBox();
+            this.btnSearchPerson = new System.Windows.Forms.Button();
             this.label69 = new System.Windows.Forms.Label();
             this.txtSeqNo = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
@@ -176,6 +191,7 @@
             this.txtDrustKhassraKanal = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.btnSearchKhassra = new System.Windows.Forms.Button();
             this.label57 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.cboKhatoni = new System.Windows.Forms.ComboBox();
@@ -265,6 +281,7 @@
             this.gbKashtCurrent = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.cbKashtKhatooni = new System.Windows.Forms.ComboBox();
+            this.btnSelectKashtMalik = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.txtKashtMalikName = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -343,6 +360,7 @@
             this.txtpersonIdShajra = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.gbAfradRegisterControls = new System.Windows.Forms.Panel();
             this.txtFatherName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -361,6 +379,7 @@
             this.label79 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label78 = new System.Windows.Forms.Label();
+            this.btnSearchaFard = new System.Windows.Forms.Button();
             this.KhataMin = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.MinKhata = new System.Windows.Forms.TabPage();
@@ -369,6 +388,9 @@
             this.ColMinKhataSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbMinKhataButtons = new System.Windows.Forms.GroupBox();
             this.txtMinKhataId = new System.Windows.Forms.TextBox();
+            this.btnDelMinKhata = new System.Windows.Forms.Button();
+            this.btnSaveMinKhata = new System.Windows.Forms.Button();
+            this.btnNewMinKhata = new System.Windows.Forms.Button();
             this.gbMinKhataMain = new System.Windows.Forms.GroupBox();
             this.txtMinKhataKyfiat = new System.Windows.Forms.TextBox();
             this.txtMinKhataMalia = new System.Windows.Forms.TextBox();
@@ -399,6 +421,9 @@
             this.txtMinMalikPersonId = new System.Windows.Forms.TextBox();
             this.txtKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
             this.btnMalkanFromCurrentKhata = new System.Windows.Forms.Button();
+            this.btnNewMinMalik = new System.Windows.Forms.Button();
+            this.btnSaveMinMalik = new System.Windows.Forms.Button();
+            this.btnDelMalik = new System.Windows.Forms.Button();
             this.gbMinKhataMalkan = new System.Windows.Forms.GroupBox();
             this.cboKhewatType = new System.Windows.Forms.ComboBox();
             this.label100 = new System.Windows.Forms.Label();
@@ -420,6 +445,9 @@
             this.grdGetkhatonichange = new System.Windows.Forms.DataGridView();
             this.chkkk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.btnNewMinKhatooni = new System.Windows.Forms.Button();
+            this.btnDeleteKhatoonichange = new System.Windows.Forms.Button();
+            this.btnSaveKhatonichagne = new System.Windows.Forms.Button();
             this.gbMinKhatooni = new System.Windows.Forms.GroupBox();
             this.label88 = new System.Windows.Forms.Label();
             this.txtMinKhatooniId = new System.Windows.Forms.TextBox();
@@ -450,6 +478,9 @@
             this.label103 = new System.Windows.Forms.Label();
             this.txt_Feet_Khasra = new System.Windows.Forms.TextBox();
             this.txt_Sarsai_Khasra = new System.Windows.Forms.TextBox();
+            this.btnNewMinKhassra = new System.Windows.Forms.Button();
+            this.btnDelMinKhassra = new System.Windows.Forms.Button();
+            this.btnSaveMinKhassra = new System.Windows.Forms.Button();
             this.gbMinKhatoniKhassraSelec = new System.Windows.Forms.GroupBox();
             this.txtMinKhassraDetailId = new System.Windows.Forms.TextBox();
             this.label96 = new System.Windows.Forms.Label();
@@ -459,48 +490,22 @@
             this.gardawarTab = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSaveGardawarRpt = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtGardawarRpt = new System.Windows.Forms.TextBox();
             this.tehsilDarTb = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.btnSaveTehsildarRpt = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnFbCancel = new System.Windows.Forms.Button();
-            this.btnFbRevert = new System.Windows.Forms.Button();
-            this.btnUploadDoc = new System.Windows.Forms.Button();
-            this.btnShowScanImg = new System.Windows.Forms.Button();
-            this.btnPrintMisalBadar = new System.Windows.Forms.Button();
-            this.btnAmaldaramad = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnSearchFB = new System.Windows.Forms.Button();
-            this.btnSaveFardBadar = new System.Windows.Forms.Button();
-            this.btnNewFardBadar = new System.Windows.Forms.Button();
-            this.btnDelKhatta = new System.Windows.Forms.Button();
-            this.btnSaveKhata = new System.Windows.Forms.Button();
-            this.btnNewKhata = new System.Windows.Forms.Button();
-            this.btnSearchPerson = new System.Windows.Forms.Button();
-            this.btnSearchKhassra = new System.Windows.Forms.Button();
-            this.btnSelectKashtMalik = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSearchaFard = new System.Windows.Forms.Button();
-            this.btnDelMinKhata = new System.Windows.Forms.Button();
-            this.btnSaveMinKhata = new System.Windows.Forms.Button();
-            this.btnNewMinKhata = new System.Windows.Forms.Button();
-            this.btnNewMinMalik = new System.Windows.Forms.Button();
-            this.btnSaveMinMalik = new System.Windows.Forms.Button();
-            this.btnDelMalik = new System.Windows.Forms.Button();
-            this.btnNewMinKhatooni = new System.Windows.Forms.Button();
-            this.btnDeleteKhatoonichange = new System.Windows.Forms.Button();
-            this.btnSaveKhatonichagne = new System.Windows.Forms.Button();
-            this.btnNewMinKhassra = new System.Windows.Forms.Button();
-            this.btnDelMinKhassra = new System.Windows.Forms.Button();
-            this.btnSaveMinKhassra = new System.Windows.Forms.Button();
-            this.btnSaveGardawarRpt = new System.Windows.Forms.Button();
-            this.btnSaveTehsildarRpt = new System.Windows.Forms.Button();
-            this.lblCancel = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label108 = new System.Windows.Forms.Label();
+            this.txtKulHissaExisting = new System.Windows.Forms.TextBox();
+            this.label123 = new System.Windows.Forms.Label();
+            this.txtKulHissaCorrect = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -595,6 +600,7 @@
             this.panel7.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -684,6 +690,73 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تفصیل مثل";
             // 
+            // lblCancel
+            // 
+            this.lblCancel.AutoSize = true;
+            this.lblCancel.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCancel.ForeColor = System.Drawing.Color.Red;
+            this.lblCancel.Location = new System.Drawing.Point(147, 550);
+            this.lblCancel.Name = "lblCancel";
+            this.lblCancel.Size = new System.Drawing.Size(24, 38);
+            this.lblCancel.TabIndex = 213;
+            this.lblCancel.Text = ".";
+            // 
+            // btnFbCancel
+            // 
+            this.btnFbCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFbCancel.Image = global::SDC_Application.Resource1.fingerPrint_Cancel;
+            this.btnFbCancel.Location = new System.Drawing.Point(147, 484);
+            this.btnFbCancel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnFbCancel.Name = "btnFbCancel";
+            this.btnFbCancel.Size = new System.Drawing.Size(53, 50);
+            this.btnFbCancel.TabIndex = 212;
+            this.btnFbCancel.TabStop = false;
+            this.btnFbCancel.UseVisualStyleBackColor = true;
+            this.btnFbCancel.Click += new System.EventHandler(this.btnFbCancel_Click);
+            // 
+            // btnFbRevert
+            // 
+            this.btnFbRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFbRevert.Enabled = false;
+            this.btnFbRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
+            this.btnFbRevert.Location = new System.Drawing.Point(75, 484);
+            this.btnFbRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnFbRevert.Name = "btnFbRevert";
+            this.btnFbRevert.Size = new System.Drawing.Size(59, 50);
+            this.btnFbRevert.TabIndex = 209;
+            this.btnFbRevert.TabStop = false;
+            this.ttMisal.SetToolTip(this.btnFbRevert, "انتخاب کردہ فرد بدر ری ورٹ کریں");
+            this.btnFbRevert.UseVisualStyleBackColor = true;
+            this.btnFbRevert.Click += new System.EventHandler(this.btnFbRevert_Click);
+            // 
+            // btnUploadDoc
+            // 
+            this.btnUploadDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadDoc.Image = global::SDC_Application.Resource1.Attach_44;
+            this.btnUploadDoc.Location = new System.Drawing.Point(275, 484);
+            this.btnUploadDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnUploadDoc.Name = "btnUploadDoc";
+            this.btnUploadDoc.Size = new System.Drawing.Size(59, 50);
+            this.btnUploadDoc.TabIndex = 208;
+            this.btnUploadDoc.TabStop = false;
+            this.ttMisal.SetToolTip(this.btnUploadDoc, "انتخاب کردہ فرد بدر کے سکین دستاویزات اپلوڈ کرنے کیلئے کلک کریں");
+            this.btnUploadDoc.UseVisualStyleBackColor = true;
+            this.btnUploadDoc.Click += new System.EventHandler(this.btnUploadDoc_Click);
+            // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(207, 485);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 205;
+            this.ttMisal.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
+            // 
             // chkMinKhataFb
             // 
             this.chkMinKhataFb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -694,6 +767,49 @@
             this.chkMinKhataFb.TabIndex = 204;
             this.chkMinKhataFb.Text = "فرد بدر برائے من کھاتہ";
             this.chkMinKhataFb.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintMisalBadar
+            // 
+            this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
+            this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintMisalBadar.Location = new System.Drawing.Point(139, 422);
+            this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
+            this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
+            this.btnPrintMisalBadar.TabIndex = 202;
+            this.ttMisal.SetToolTip(this.btnPrintMisalBadar, " محفوظ شدہ کھاتہ حذف کریں");
+            this.btnPrintMisalBadar.UseVisualStyleBackColor = true;
+            this.btnPrintMisalBadar.Click += new System.EventHandler(this.btnPrintMisalBadar_Click);
+            // 
+            // btnAmaldaramad
+            // 
+            this.btnAmaldaramad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAmaldaramad.Enabled = false;
+            this.btnAmaldaramad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmaldaramad.Image = global::SDC_Application.Resource1.fingerPrint1;
+            this.btnAmaldaramad.Location = new System.Drawing.Point(82, 364);
+            this.btnAmaldaramad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnAmaldaramad.Name = "btnAmaldaramad";
+            this.btnAmaldaramad.Size = new System.Drawing.Size(53, 48);
+            this.btnAmaldaramad.TabIndex = 203;
+            this.ttMisal.SetToolTip(this.btnAmaldaramad, "مثل/فرد بدر فائنل کریں");
+            this.btnAmaldaramad.UseVisualStyleBackColor = true;
+            this.btnAmaldaramad.Click += new System.EventHandler(this.btnAmaldaramad_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirm.Enabled = false;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
+            this.btnConfirm.Location = new System.Drawing.Point(147, 364);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(53, 48);
+            this.btnConfirm.TabIndex = 202;
+            this.ttMisal.SetToolTip(this.btnConfirm, "مثل/فرد بدر فائنل کریں");
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // lbl1
             // 
@@ -792,6 +908,30 @@
             this.cbFBDocuments.ValueMember = "FB_Id";
             this.cbFBDocuments.SelectionChangeCommitted += new System.EventHandler(this.cbFBDocuments_SelectionChangeCommitted);
             // 
+            // btnSearchFB
+            // 
+            this.btnSearchFB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchFB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchFB.Image = global::SDC_Application.Resource1.search01;
+            this.btnSearchFB.Location = new System.Drawing.Point(90, 73);
+            this.btnSearchFB.Name = "btnSearchFB";
+            this.btnSearchFB.Size = new System.Drawing.Size(45, 33);
+            this.btnSearchFB.TabIndex = 38;
+            this.btnSearchFB.UseVisualStyleBackColor = true;
+            this.btnSearchFB.Click += new System.EventHandler(this.btnSearchFB_Click);
+            // 
+            // btnSaveFardBadar
+            // 
+            this.btnSaveFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveFardBadar.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveFardBadar.Location = new System.Drawing.Point(215, 364);
+            this.btnSaveFardBadar.Name = "btnSaveFardBadar";
+            this.btnSaveFardBadar.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveFardBadar.TabIndex = 41;
+            this.ttMisal.SetToolTip(this.btnSaveFardBadar, "ریکارڈ محفوظ کریں");
+            this.btnSaveFardBadar.UseVisualStyleBackColor = true;
+            this.btnSaveFardBadar.Click += new System.EventHandler(this.btnSaveFardBadar_Click);
+            // 
             // label73
             // 
             this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -801,6 +941,18 @@
             this.label73.Size = new System.Drawing.Size(50, 31);
             this.label73.TabIndex = 39;
             this.label73.Text = " تفصیل";
+            // 
+            // btnNewFardBadar
+            // 
+            this.btnNewFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewFardBadar.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewFardBadar.Location = new System.Drawing.Point(283, 364);
+            this.btnNewFardBadar.Name = "btnNewFardBadar";
+            this.btnNewFardBadar.Size = new System.Drawing.Size(53, 48);
+            this.btnNewFardBadar.TabIndex = 42;
+            this.ttMisal.SetToolTip(this.btnNewFardBadar, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewFardBadar.UseVisualStyleBackColor = true;
+            this.btnNewFardBadar.Click += new System.EventHandler(this.btnNewFardBadar_Click);
             // 
             // txtFardBadarDocNO
             // 
@@ -915,6 +1067,44 @@
             this.gbKhattaControls.Size = new System.Drawing.Size(1209, 76);
             this.gbKhattaControls.TabIndex = 118;
             this.gbKhattaControls.TabStop = false;
+            // 
+            // btnDelKhatta
+            // 
+            this.btnDelKhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelKhatta.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelKhatta.Location = new System.Drawing.Point(710, 20);
+            this.btnDelKhatta.Name = "btnDelKhatta";
+            this.btnDelKhatta.Size = new System.Drawing.Size(53, 48);
+            this.btnDelKhatta.TabIndex = 111;
+            this.ttMisal.SetToolTip(this.btnDelKhatta, " محفوظ شدہ کھاتہ حذف کریں");
+            this.btnDelKhatta.UseVisualStyleBackColor = true;
+            this.btnDelKhatta.Click += new System.EventHandler(this.btnDelKhatta_Click);
+            // 
+            // btnSaveKhata
+            // 
+            this.btnSaveKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveKhata.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveKhata.Location = new System.Drawing.Point(784, 20);
+            this.btnSaveKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveKhata.Name = "btnSaveKhata";
+            this.btnSaveKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveKhata.TabIndex = 200;
+            this.ttMisal.SetToolTip(this.btnSaveKhata, "کھاتہ محفوظ کریں");
+            this.btnSaveKhata.UseVisualStyleBackColor = true;
+            this.btnSaveKhata.Click += new System.EventHandler(this.btnSaveKhata_Click);
+            // 
+            // btnNewKhata
+            // 
+            this.btnNewKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewKhata.Location = new System.Drawing.Point(858, 20);
+            this.btnNewKhata.Name = "btnNewKhata";
+            this.btnNewKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnNewKhata.TabIndex = 201;
+            this.ttMisal.SetToolTip(this.btnNewKhata, "نئے کھاتے کیلئے کلک کریں");
+            this.btnNewKhata.UseVisualStyleBackColor = true;
+            this.btnNewKhata.Click += new System.EventHandler(this.btnNewKhata_Click);
             // 
             // gbKhataRaqba
             // 
@@ -1349,6 +1539,7 @@
             // panel20
             // 
             this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel20.Controls.Add(this.panel12);
             this.panel20.Controls.Add(this.GridViewKhewatMalikaan);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(5, 5);
@@ -1749,6 +1940,18 @@
             this.cboQismMalik.Size = new System.Drawing.Size(155, 31);
             this.cboQismMalik.TabIndex = 3;
             this.cboQismMalik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
+            // 
+            // btnSearchPerson
+            // 
+            this.btnSearchPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchPerson.Image = global::SDC_Application.Resource1.search01;
+            this.btnSearchPerson.Location = new System.Drawing.Point(564, 56);
+            this.btnSearchPerson.Name = "btnSearchPerson";
+            this.btnSearchPerson.Size = new System.Drawing.Size(31, 27);
+            this.btnSearchPerson.TabIndex = 229;
+            this.btnSearchPerson.UseVisualStyleBackColor = true;
+            this.btnSearchPerson.Click += new System.EventHandler(this.btnSearchPerson_Click);
             // 
             // label69
             // 
@@ -2226,6 +2429,18 @@
             this.label30.Size = new System.Drawing.Size(51, 31);
             this.label30.TabIndex = 408;
             this.label30.Text = "کھتونی:";
+            // 
+            // btnSearchKhassra
+            // 
+            this.btnSearchKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchKhassra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchKhassra.Image = global::SDC_Application.Resource1.search01;
+            this.btnSearchKhassra.Location = new System.Drawing.Point(707, 27);
+            this.btnSearchKhassra.Name = "btnSearchKhassra";
+            this.btnSearchKhassra.Size = new System.Drawing.Size(31, 27);
+            this.btnSearchKhassra.TabIndex = 230;
+            this.btnSearchKhassra.UseVisualStyleBackColor = true;
+            this.btnSearchKhassra.Click += new System.EventHandler(this.btnSearchKhassra_Click);
             // 
             // label57
             // 
@@ -3254,6 +3469,18 @@
             this.cbKashtKhatooni.TabIndex = 409;
             this.cbKashtKhatooni.ValueMember = "KhassraId";
             // 
+            // btnSelectKashtMalik
+            // 
+            this.btnSelectKashtMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelectKashtMalik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSelectKashtMalik.Image = global::SDC_Application.Resource1.search01;
+            this.btnSelectKashtMalik.Location = new System.Drawing.Point(499, 50);
+            this.btnSelectKashtMalik.Name = "btnSelectKashtMalik";
+            this.btnSelectKashtMalik.Size = new System.Drawing.Size(31, 27);
+            this.btnSelectKashtMalik.TabIndex = 2;
+            this.btnSelectKashtMalik.UseVisualStyleBackColor = true;
+            this.btnSelectKashtMalik.Click += new System.EventHandler(this.btnSelectKashtMalik_Click);
+            // 
             // label35
             // 
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -4142,6 +4369,18 @@
             this.txtSearch.Size = new System.Drawing.Size(249, 39);
             this.txtSearch.TabIndex = 28;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Image = global::SDC_Application.Resource1.search01;
+            this.btnSearch.Location = new System.Drawing.Point(831, 17);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(35, 34);
+            this.btnSearch.TabIndex = 29;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // gbAfradRegisterControls
             // 
             this.gbAfradRegisterControls.BackColor = System.Drawing.SystemColors.Control;
@@ -4383,6 +4622,19 @@
             this.label78.Text = "نام فرد / ادارہ/مرتہن:";
             this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSearchaFard
+            // 
+            this.btnSearchaFard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchaFard.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchaFard.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnSearchaFard.Location = new System.Drawing.Point(964, 39);
+            this.btnSearchaFard.Name = "btnSearchaFard";
+            this.btnSearchaFard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSearchaFard.Size = new System.Drawing.Size(37, 34);
+            this.btnSearchaFard.TabIndex = 55;
+            this.btnSearchaFard.UseVisualStyleBackColor = true;
+            this.btnSearchaFard.Click += new System.EventHandler(this.btnSearchaFard_Click);
+            // 
             // KhataMin
             // 
             this.KhataMin.Controls.Add(this.tabControl2);
@@ -4485,6 +4737,44 @@
             this.txtMinKhataId.TabIndex = 202;
             this.txtMinKhataId.Text = "-1";
             this.txtMinKhataId.Visible = false;
+            // 
+            // btnDelMinKhata
+            // 
+            this.btnDelMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelMinKhata.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMinKhata.Location = new System.Drawing.Point(690, 20);
+            this.btnDelMinKhata.Name = "btnDelMinKhata";
+            this.btnDelMinKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnDelMinKhata.TabIndex = 111;
+            this.ttMisal.SetToolTip(this.btnDelMinKhata, " محفوظ شدہ کھاتہ حذف کریں");
+            this.btnDelMinKhata.UseVisualStyleBackColor = true;
+            this.btnDelMinKhata.Click += new System.EventHandler(this.btnDelMinKhata_Click);
+            // 
+            // btnSaveMinKhata
+            // 
+            this.btnSaveMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveMinKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMinKhata.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinKhata.Location = new System.Drawing.Point(764, 20);
+            this.btnSaveMinKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveMinKhata.Name = "btnSaveMinKhata";
+            this.btnSaveMinKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveMinKhata.TabIndex = 200;
+            this.ttMisal.SetToolTip(this.btnSaveMinKhata, "کھاتہ محفوظ کریں");
+            this.btnSaveMinKhata.UseVisualStyleBackColor = true;
+            this.btnSaveMinKhata.Click += new System.EventHandler(this.btnSaveMinKhata_Click);
+            // 
+            // btnNewMinKhata
+            // 
+            this.btnNewMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMinKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinKhata.Location = new System.Drawing.Point(838, 20);
+            this.btnNewMinKhata.Name = "btnNewMinKhata";
+            this.btnNewMinKhata.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinKhata.TabIndex = 201;
+            this.ttMisal.SetToolTip(this.btnNewMinKhata, "نئے کھاتے کیلئے کلک کریں");
+            this.btnNewMinKhata.UseVisualStyleBackColor = true;
+            this.btnNewMinKhata.Click += new System.EventHandler(this.btnNewMinKhata_Click);
             // 
             // gbMinKhataMain
             // 
@@ -4861,6 +5151,37 @@
             this.btnMalkanFromCurrentKhata.UseVisualStyleBackColor = true;
             this.btnMalkanFromCurrentKhata.Click += new System.EventHandler(this.btnMalkanFromCurrentKhata_Click);
             // 
+            // btnNewMinMalik
+            // 
+            this.btnNewMinMalik.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinMalik.Location = new System.Drawing.Point(518, 24);
+            this.btnNewMinMalik.Name = "btnNewMinMalik";
+            this.btnNewMinMalik.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinMalik.TabIndex = 1032;
+            this.ttMisal.SetToolTip(this.btnNewMinMalik, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewMinMalik.UseVisualStyleBackColor = true;
+            this.btnNewMinMalik.Click += new System.EventHandler(this.btnNewMinMalik_Click);
+            // 
+            // btnSaveMinMalik
+            // 
+            this.btnSaveMinMalik.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinMalik.Location = new System.Drawing.Point(450, 24);
+            this.btnSaveMinMalik.Name = "btnSaveMinMalik";
+            this.btnSaveMinMalik.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveMinMalik.TabIndex = 1032;
+            this.btnSaveMinMalik.UseVisualStyleBackColor = true;
+            this.btnSaveMinMalik.Click += new System.EventHandler(this.btnSaveMinMalik_Click);
+            // 
+            // btnDelMalik
+            // 
+            this.btnDelMalik.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMalik.Location = new System.Drawing.Point(382, 24);
+            this.btnDelMalik.Name = "btnDelMalik";
+            this.btnDelMalik.Size = new System.Drawing.Size(53, 48);
+            this.btnDelMalik.TabIndex = 1031;
+            this.btnDelMalik.UseVisualStyleBackColor = true;
+            this.btnDelMalik.Click += new System.EventHandler(this.btnDelMalik_Click);
+            // 
             // gbMinKhataMalkan
             // 
             this.gbMinKhataMalkan.Controls.Add(this.cboKhewatType);
@@ -5108,6 +5429,37 @@
             this.groupBox20.Size = new System.Drawing.Size(1195, 83);
             this.groupBox20.TabIndex = 1017;
             this.groupBox20.TabStop = false;
+            // 
+            // btnNewMinKhatooni
+            // 
+            this.btnNewMinKhatooni.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinKhatooni.Location = new System.Drawing.Point(486, 22);
+            this.btnNewMinKhatooni.Name = "btnNewMinKhatooni";
+            this.btnNewMinKhatooni.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinKhatooni.TabIndex = 204;
+            this.ttMisal.SetToolTip(this.btnNewMinKhatooni, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewMinKhatooni.UseVisualStyleBackColor = true;
+            this.btnNewMinKhatooni.Click += new System.EventHandler(this.btnNewMinKhatooni_Click);
+            // 
+            // btnDeleteKhatoonichange
+            // 
+            this.btnDeleteKhatoonichange.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDeleteKhatoonichange.Location = new System.Drawing.Point(359, 21);
+            this.btnDeleteKhatoonichange.Name = "btnDeleteKhatoonichange";
+            this.btnDeleteKhatoonichange.Size = new System.Drawing.Size(49, 50);
+            this.btnDeleteKhatoonichange.TabIndex = 1016;
+            this.btnDeleteKhatoonichange.UseVisualStyleBackColor = true;
+            this.btnDeleteKhatoonichange.Click += new System.EventHandler(this.btnDeleteKhatoonichange_Click);
+            // 
+            // btnSaveKhatonichagne
+            // 
+            this.btnSaveKhatonichagne.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveKhatonichagne.Location = new System.Drawing.Point(422, 21);
+            this.btnSaveKhatonichagne.Name = "btnSaveKhatonichagne";
+            this.btnSaveKhatonichagne.Size = new System.Drawing.Size(50, 50);
+            this.btnSaveKhatonichagne.TabIndex = 1011;
+            this.btnSaveKhatonichagne.UseVisualStyleBackColor = true;
+            this.btnSaveKhatonichagne.Click += new System.EventHandler(this.btnSaveKhatonichagne_Click);
             // 
             // gbMinKhatooni
             // 
@@ -5454,6 +5806,40 @@
             this.txt_Sarsai_Khasra.Size = new System.Drawing.Size(49, 30);
             this.txt_Sarsai_Khasra.TabIndex = 10007;
             // 
+            // btnNewMinKhassra
+            // 
+            this.btnNewMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMinKhassra.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewMinKhassra.Location = new System.Drawing.Point(827, 114);
+            this.btnNewMinKhassra.Name = "btnNewMinKhassra";
+            this.btnNewMinKhassra.Size = new System.Drawing.Size(53, 48);
+            this.btnNewMinKhassra.TabIndex = 100010;
+            this.ttMisal.SetToolTip(this.btnNewMinKhassra, "نئے ریکارڈ کیلئے کلک کریں");
+            this.btnNewMinKhassra.UseVisualStyleBackColor = true;
+            this.btnNewMinKhassra.Click += new System.EventHandler(this.btnNewMinKhassra_Click);
+            // 
+            // btnDelMinKhassra
+            // 
+            this.btnDelMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelMinKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDelMinKhassra.Location = new System.Drawing.Point(687, 114);
+            this.btnDelMinKhassra.Name = "btnDelMinKhassra";
+            this.btnDelMinKhassra.Size = new System.Drawing.Size(53, 48);
+            this.btnDelMinKhassra.TabIndex = 100012;
+            this.btnDelMinKhassra.UseVisualStyleBackColor = true;
+            this.btnDelMinKhassra.Click += new System.EventHandler(this.btnDelMinKhassra_Click);
+            // 
+            // btnSaveMinKhassra
+            // 
+            this.btnSaveMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveMinKhassra.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveMinKhassra.Location = new System.Drawing.Point(757, 114);
+            this.btnSaveMinKhassra.Name = "btnSaveMinKhassra";
+            this.btnSaveMinKhassra.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveMinKhassra.TabIndex = 10009;
+            this.btnSaveMinKhassra.UseVisualStyleBackColor = true;
+            this.btnSaveMinKhassra.Click += new System.EventHandler(this.btnSaveMinKhassra_Click);
+            // 
             // gbMinKhatoniKhassraSelec
             // 
             this.gbMinKhatoniKhassraSelec.Controls.Add(this.txtMinKhassraDetailId);
@@ -5554,6 +5940,20 @@
             this.groupBox4.TabIndex = 56;
             this.groupBox4.TabStop = false;
             // 
+            // btnSaveGardawarRpt
+            // 
+            this.btnSaveGardawarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveGardawarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveGardawarRpt.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveGardawarRpt.Location = new System.Drawing.Point(396, 19);
+            this.btnSaveGardawarRpt.Name = "btnSaveGardawarRpt";
+            this.btnSaveGardawarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSaveGardawarRpt.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveGardawarRpt.TabIndex = 54;
+            this.ttMisal.SetToolTip(this.btnSaveGardawarRpt, "گرداور رپورٹ محفوظ کریں");
+            this.btnSaveGardawarRpt.UseVisualStyleBackColor = true;
+            this.btnSaveGardawarRpt.Click += new System.EventHandler(this.btnSaveGardawarRpt_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtGardawarRpt);
@@ -5604,6 +6004,20 @@
             this.groupBox12.TabIndex = 59;
             this.groupBox12.TabStop = false;
             // 
+            // btnSaveTehsildarRpt
+            // 
+            this.btnSaveTehsildarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveTehsildarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveTehsildarRpt.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveTehsildarRpt.Location = new System.Drawing.Point(413, 18);
+            this.btnSaveTehsildarRpt.Name = "btnSaveTehsildarRpt";
+            this.btnSaveTehsildarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSaveTehsildarRpt.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveTehsildarRpt.TabIndex = 57;
+            this.ttMisal.SetToolTip(this.btnSaveTehsildarRpt, "تحصیلدار رپورٹ محفو ظ کریں");
+            this.btnSaveTehsildarRpt.UseVisualStyleBackColor = true;
+            this.btnSaveTehsildarRpt.Click += new System.EventHandler(this.btnSaveTehsildarRpt_Click);
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.groupBox10);
@@ -5633,412 +6047,59 @@
             this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
             this.txtTehsildarRpt.TabIndex = 56;
             // 
-            // btnFbCancel
-            // 
-            this.btnFbCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFbCancel.Image = global::SDC_Application.Resource1.fingerPrint_Cancel;
-            this.btnFbCancel.Location = new System.Drawing.Point(147, 484);
-            this.btnFbCancel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnFbCancel.Name = "btnFbCancel";
-            this.btnFbCancel.Size = new System.Drawing.Size(53, 50);
-            this.btnFbCancel.TabIndex = 212;
-            this.btnFbCancel.TabStop = false;
-            this.btnFbCancel.UseVisualStyleBackColor = true;
-            this.btnFbCancel.Click += new System.EventHandler(this.btnFbCancel_Click);
-            // 
-            // btnFbRevert
-            // 
-            this.btnFbRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFbRevert.Enabled = false;
-            this.btnFbRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnFbRevert.Location = new System.Drawing.Point(75, 484);
-            this.btnFbRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnFbRevert.Name = "btnFbRevert";
-            this.btnFbRevert.Size = new System.Drawing.Size(59, 50);
-            this.btnFbRevert.TabIndex = 209;
-            this.btnFbRevert.TabStop = false;
-            this.ttMisal.SetToolTip(this.btnFbRevert, "انتخاب کردہ فرد بدر ری ورٹ کریں");
-            this.btnFbRevert.UseVisualStyleBackColor = true;
-            this.btnFbRevert.Click += new System.EventHandler(this.btnFbRevert_Click);
-            // 
-            // btnUploadDoc
-            // 
-            this.btnUploadDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUploadDoc.Image = global::SDC_Application.Resource1.Attach_44;
-            this.btnUploadDoc.Location = new System.Drawing.Point(275, 484);
-            this.btnUploadDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnUploadDoc.Name = "btnUploadDoc";
-            this.btnUploadDoc.Size = new System.Drawing.Size(59, 50);
-            this.btnUploadDoc.TabIndex = 208;
-            this.btnUploadDoc.TabStop = false;
-            this.ttMisal.SetToolTip(this.btnUploadDoc, "انتخاب کردہ فرد بدر کے سکین دستاویزات اپلوڈ کرنے کیلئے کلک کریں");
-            this.btnUploadDoc.UseVisualStyleBackColor = true;
-            this.btnUploadDoc.Click += new System.EventHandler(this.btnUploadDoc_Click);
-            // 
-            // btnShowScanImg
-            // 
-            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(207, 485);
-            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnShowScanImg.Name = "btnShowScanImg";
-            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
-            this.btnShowScanImg.TabIndex = 205;
-            this.ttMisal.SetToolTip(this.btnShowScanImg, "سکین دستاویز دیکھنے کیلئے کلک کریں");
-            this.btnShowScanImg.UseVisualStyleBackColor = true;
-            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
-            // 
-            // btnPrintMisalBadar
-            // 
-            this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
-            this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintMisalBadar.Location = new System.Drawing.Point(139, 422);
-            this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
-            this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
-            this.btnPrintMisalBadar.TabIndex = 202;
-            this.ttMisal.SetToolTip(this.btnPrintMisalBadar, " محفوظ شدہ کھاتہ حذف کریں");
-            this.btnPrintMisalBadar.UseVisualStyleBackColor = true;
-            this.btnPrintMisalBadar.Click += new System.EventHandler(this.btnPrintMisalBadar_Click);
-            // 
-            // btnAmaldaramad
-            // 
-            this.btnAmaldaramad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAmaldaramad.Enabled = false;
-            this.btnAmaldaramad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmaldaramad.Image = global::SDC_Application.Resource1.fingerPrint1;
-            this.btnAmaldaramad.Location = new System.Drawing.Point(82, 364);
-            this.btnAmaldaramad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnAmaldaramad.Name = "btnAmaldaramad";
-            this.btnAmaldaramad.Size = new System.Drawing.Size(53, 48);
-            this.btnAmaldaramad.TabIndex = 203;
-            this.ttMisal.SetToolTip(this.btnAmaldaramad, "مثل/فرد بدر فائنل کریں");
-            this.btnAmaldaramad.UseVisualStyleBackColor = true;
-            this.btnAmaldaramad.Click += new System.EventHandler(this.btnAmaldaramad_Click);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirm.Enabled = false;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
-            this.btnConfirm.Location = new System.Drawing.Point(147, 364);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(53, 48);
-            this.btnConfirm.TabIndex = 202;
-            this.ttMisal.SetToolTip(this.btnConfirm, "مثل/فرد بدر فائنل کریں");
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnSearchFB
-            // 
-            this.btnSearchFB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchFB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchFB.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearchFB.Location = new System.Drawing.Point(90, 73);
-            this.btnSearchFB.Name = "btnSearchFB";
-            this.btnSearchFB.Size = new System.Drawing.Size(45, 33);
-            this.btnSearchFB.TabIndex = 38;
-            this.btnSearchFB.UseVisualStyleBackColor = true;
-            this.btnSearchFB.Click += new System.EventHandler(this.btnSearchFB_Click);
-            // 
-            // btnSaveFardBadar
-            // 
-            this.btnSaveFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFardBadar.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveFardBadar.Location = new System.Drawing.Point(215, 364);
-            this.btnSaveFardBadar.Name = "btnSaveFardBadar";
-            this.btnSaveFardBadar.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveFardBadar.TabIndex = 41;
-            this.ttMisal.SetToolTip(this.btnSaveFardBadar, "ریکارڈ محفوظ کریں");
-            this.btnSaveFardBadar.UseVisualStyleBackColor = true;
-            this.btnSaveFardBadar.Click += new System.EventHandler(this.btnSaveFardBadar_Click);
-            // 
-            // btnNewFardBadar
-            // 
-            this.btnNewFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewFardBadar.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewFardBadar.Location = new System.Drawing.Point(283, 364);
-            this.btnNewFardBadar.Name = "btnNewFardBadar";
-            this.btnNewFardBadar.Size = new System.Drawing.Size(53, 48);
-            this.btnNewFardBadar.TabIndex = 42;
-            this.ttMisal.SetToolTip(this.btnNewFardBadar, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewFardBadar.UseVisualStyleBackColor = true;
-            this.btnNewFardBadar.Click += new System.EventHandler(this.btnNewFardBadar_Click);
-            // 
-            // btnDelKhatta
-            // 
-            this.btnDelKhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelKhatta.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelKhatta.Location = new System.Drawing.Point(710, 20);
-            this.btnDelKhatta.Name = "btnDelKhatta";
-            this.btnDelKhatta.Size = new System.Drawing.Size(53, 48);
-            this.btnDelKhatta.TabIndex = 111;
-            this.ttMisal.SetToolTip(this.btnDelKhatta, " محفوظ شدہ کھاتہ حذف کریں");
-            this.btnDelKhatta.UseVisualStyleBackColor = true;
-            this.btnDelKhatta.Click += new System.EventHandler(this.btnDelKhatta_Click);
-            // 
-            // btnSaveKhata
-            // 
-            this.btnSaveKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveKhata.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveKhata.Location = new System.Drawing.Point(784, 20);
-            this.btnSaveKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnSaveKhata.Name = "btnSaveKhata";
-            this.btnSaveKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveKhata.TabIndex = 200;
-            this.ttMisal.SetToolTip(this.btnSaveKhata, "کھاتہ محفوظ کریں");
-            this.btnSaveKhata.UseVisualStyleBackColor = true;
-            this.btnSaveKhata.Click += new System.EventHandler(this.btnSaveKhata_Click);
-            // 
-            // btnNewKhata
-            // 
-            this.btnNewKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewKhata.Location = new System.Drawing.Point(858, 20);
-            this.btnNewKhata.Name = "btnNewKhata";
-            this.btnNewKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnNewKhata.TabIndex = 201;
-            this.ttMisal.SetToolTip(this.btnNewKhata, "نئے کھاتے کیلئے کلک کریں");
-            this.btnNewKhata.UseVisualStyleBackColor = true;
-            this.btnNewKhata.Click += new System.EventHandler(this.btnNewKhata_Click);
-            // 
-            // btnSearchPerson
-            // 
-            this.btnSearchPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchPerson.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearchPerson.Location = new System.Drawing.Point(564, 56);
-            this.btnSearchPerson.Name = "btnSearchPerson";
-            this.btnSearchPerson.Size = new System.Drawing.Size(31, 27);
-            this.btnSearchPerson.TabIndex = 229;
-            this.btnSearchPerson.UseVisualStyleBackColor = true;
-            this.btnSearchPerson.Click += new System.EventHandler(this.btnSearchPerson_Click);
-            // 
-            // btnSearchKhassra
-            // 
-            this.btnSearchKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchKhassra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchKhassra.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearchKhassra.Location = new System.Drawing.Point(707, 27);
-            this.btnSearchKhassra.Name = "btnSearchKhassra";
-            this.btnSearchKhassra.Size = new System.Drawing.Size(31, 27);
-            this.btnSearchKhassra.TabIndex = 230;
-            this.btnSearchKhassra.UseVisualStyleBackColor = true;
-            this.btnSearchKhassra.Click += new System.EventHandler(this.btnSearchKhassra_Click);
-            // 
-            // btnSelectKashtMalik
-            // 
-            this.btnSelectKashtMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelectKashtMalik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSelectKashtMalik.Image = global::SDC_Application.Resource1.search01;
-            this.btnSelectKashtMalik.Location = new System.Drawing.Point(499, 50);
-            this.btnSelectKashtMalik.Name = "btnSelectKashtMalik";
-            this.btnSelectKashtMalik.Size = new System.Drawing.Size(31, 27);
-            this.btnSelectKashtMalik.TabIndex = 2;
-            this.btnSelectKashtMalik.UseVisualStyleBackColor = true;
-            this.btnSelectKashtMalik.Click += new System.EventHandler(this.btnSelectKashtMalik_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearch.Location = new System.Drawing.Point(831, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(35, 34);
-            this.btnSearch.TabIndex = 29;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnSearchaFard
-            // 
-            this.btnSearchaFard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchaFard.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchaFard.Image = global::SDC_Application.Resource1._1338735730_search_lense;
-            this.btnSearchaFard.Location = new System.Drawing.Point(964, 39);
-            this.btnSearchaFard.Name = "btnSearchaFard";
-            this.btnSearchaFard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearchaFard.Size = new System.Drawing.Size(37, 34);
-            this.btnSearchaFard.TabIndex = 55;
-            this.btnSearchaFard.UseVisualStyleBackColor = true;
-            this.btnSearchaFard.Click += new System.EventHandler(this.btnSearchaFard_Click);
-            // 
-            // btnDelMinKhata
-            // 
-            this.btnDelMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelMinKhata.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMinKhata.Location = new System.Drawing.Point(690, 20);
-            this.btnDelMinKhata.Name = "btnDelMinKhata";
-            this.btnDelMinKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnDelMinKhata.TabIndex = 111;
-            this.ttMisal.SetToolTip(this.btnDelMinKhata, " محفوظ شدہ کھاتہ حذف کریں");
-            this.btnDelMinKhata.UseVisualStyleBackColor = true;
-            this.btnDelMinKhata.Click += new System.EventHandler(this.btnDelMinKhata_Click);
-            // 
-            // btnSaveMinKhata
-            // 
-            this.btnSaveMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveMinKhata.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveMinKhata.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveMinKhata.Location = new System.Drawing.Point(764, 20);
-            this.btnSaveMinKhata.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnSaveMinKhata.Name = "btnSaveMinKhata";
-            this.btnSaveMinKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveMinKhata.TabIndex = 200;
-            this.ttMisal.SetToolTip(this.btnSaveMinKhata, "کھاتہ محفوظ کریں");
-            this.btnSaveMinKhata.UseVisualStyleBackColor = true;
-            this.btnSaveMinKhata.Click += new System.EventHandler(this.btnSaveMinKhata_Click);
-            // 
-            // btnNewMinKhata
-            // 
-            this.btnNewMinKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewMinKhata.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinKhata.Location = new System.Drawing.Point(838, 20);
-            this.btnNewMinKhata.Name = "btnNewMinKhata";
-            this.btnNewMinKhata.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinKhata.TabIndex = 201;
-            this.ttMisal.SetToolTip(this.btnNewMinKhata, "نئے کھاتے کیلئے کلک کریں");
-            this.btnNewMinKhata.UseVisualStyleBackColor = true;
-            this.btnNewMinKhata.Click += new System.EventHandler(this.btnNewMinKhata_Click);
-            // 
-            // btnNewMinMalik
-            // 
-            this.btnNewMinMalik.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinMalik.Location = new System.Drawing.Point(518, 24);
-            this.btnNewMinMalik.Name = "btnNewMinMalik";
-            this.btnNewMinMalik.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinMalik.TabIndex = 1032;
-            this.ttMisal.SetToolTip(this.btnNewMinMalik, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewMinMalik.UseVisualStyleBackColor = true;
-            this.btnNewMinMalik.Click += new System.EventHandler(this.btnNewMinMalik_Click);
-            // 
-            // btnSaveMinMalik
-            // 
-            this.btnSaveMinMalik.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveMinMalik.Location = new System.Drawing.Point(450, 24);
-            this.btnSaveMinMalik.Name = "btnSaveMinMalik";
-            this.btnSaveMinMalik.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveMinMalik.TabIndex = 1032;
-            this.btnSaveMinMalik.UseVisualStyleBackColor = true;
-            this.btnSaveMinMalik.Click += new System.EventHandler(this.btnSaveMinMalik_Click);
-            // 
-            // btnDelMalik
-            // 
-            this.btnDelMalik.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMalik.Location = new System.Drawing.Point(382, 24);
-            this.btnDelMalik.Name = "btnDelMalik";
-            this.btnDelMalik.Size = new System.Drawing.Size(53, 48);
-            this.btnDelMalik.TabIndex = 1031;
-            this.btnDelMalik.UseVisualStyleBackColor = true;
-            this.btnDelMalik.Click += new System.EventHandler(this.btnDelMalik_Click);
-            // 
-            // btnNewMinKhatooni
-            // 
-            this.btnNewMinKhatooni.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinKhatooni.Location = new System.Drawing.Point(486, 22);
-            this.btnNewMinKhatooni.Name = "btnNewMinKhatooni";
-            this.btnNewMinKhatooni.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinKhatooni.TabIndex = 204;
-            this.ttMisal.SetToolTip(this.btnNewMinKhatooni, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewMinKhatooni.UseVisualStyleBackColor = true;
-            this.btnNewMinKhatooni.Click += new System.EventHandler(this.btnNewMinKhatooni_Click);
-            // 
-            // btnDeleteKhatoonichange
-            // 
-            this.btnDeleteKhatoonichange.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDeleteKhatoonichange.Location = new System.Drawing.Point(359, 21);
-            this.btnDeleteKhatoonichange.Name = "btnDeleteKhatoonichange";
-            this.btnDeleteKhatoonichange.Size = new System.Drawing.Size(49, 50);
-            this.btnDeleteKhatoonichange.TabIndex = 1016;
-            this.btnDeleteKhatoonichange.UseVisualStyleBackColor = true;
-            this.btnDeleteKhatoonichange.Click += new System.EventHandler(this.btnDeleteKhatoonichange_Click);
-            // 
-            // btnSaveKhatonichagne
-            // 
-            this.btnSaveKhatonichagne.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveKhatonichagne.Location = new System.Drawing.Point(422, 21);
-            this.btnSaveKhatonichagne.Name = "btnSaveKhatonichagne";
-            this.btnSaveKhatonichagne.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveKhatonichagne.TabIndex = 1011;
-            this.btnSaveKhatonichagne.UseVisualStyleBackColor = true;
-            this.btnSaveKhatonichagne.Click += new System.EventHandler(this.btnSaveKhatonichagne_Click);
-            // 
-            // btnNewMinKhassra
-            // 
-            this.btnNewMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewMinKhassra.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewMinKhassra.Location = new System.Drawing.Point(827, 114);
-            this.btnNewMinKhassra.Name = "btnNewMinKhassra";
-            this.btnNewMinKhassra.Size = new System.Drawing.Size(53, 48);
-            this.btnNewMinKhassra.TabIndex = 100010;
-            this.ttMisal.SetToolTip(this.btnNewMinKhassra, "نئے ریکارڈ کیلئے کلک کریں");
-            this.btnNewMinKhassra.UseVisualStyleBackColor = true;
-            this.btnNewMinKhassra.Click += new System.EventHandler(this.btnNewMinKhassra_Click);
-            // 
-            // btnDelMinKhassra
-            // 
-            this.btnDelMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelMinKhassra.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDelMinKhassra.Location = new System.Drawing.Point(687, 114);
-            this.btnDelMinKhassra.Name = "btnDelMinKhassra";
-            this.btnDelMinKhassra.Size = new System.Drawing.Size(53, 48);
-            this.btnDelMinKhassra.TabIndex = 100012;
-            this.btnDelMinKhassra.UseVisualStyleBackColor = true;
-            this.btnDelMinKhassra.Click += new System.EventHandler(this.btnDelMinKhassra_Click);
-            // 
-            // btnSaveMinKhassra
-            // 
-            this.btnSaveMinKhassra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveMinKhassra.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveMinKhassra.Location = new System.Drawing.Point(757, 114);
-            this.btnSaveMinKhassra.Name = "btnSaveMinKhassra";
-            this.btnSaveMinKhassra.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveMinKhassra.TabIndex = 10009;
-            this.btnSaveMinKhassra.UseVisualStyleBackColor = true;
-            this.btnSaveMinKhassra.Click += new System.EventHandler(this.btnSaveMinKhassra_Click);
-            // 
-            // btnSaveGardawarRpt
-            // 
-            this.btnSaveGardawarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveGardawarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveGardawarRpt.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveGardawarRpt.Location = new System.Drawing.Point(396, 19);
-            this.btnSaveGardawarRpt.Name = "btnSaveGardawarRpt";
-            this.btnSaveGardawarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveGardawarRpt.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveGardawarRpt.TabIndex = 54;
-            this.ttMisal.SetToolTip(this.btnSaveGardawarRpt, "گرداور رپورٹ محفوظ کریں");
-            this.btnSaveGardawarRpt.UseVisualStyleBackColor = true;
-            this.btnSaveGardawarRpt.Click += new System.EventHandler(this.btnSaveGardawarRpt_Click);
-            // 
-            // btnSaveTehsildarRpt
-            // 
-            this.btnSaveTehsildarRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTehsildarRpt.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveTehsildarRpt.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveTehsildarRpt.Location = new System.Drawing.Point(413, 18);
-            this.btnSaveTehsildarRpt.Name = "btnSaveTehsildarRpt";
-            this.btnSaveTehsildarRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSaveTehsildarRpt.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveTehsildarRpt.TabIndex = 57;
-            this.ttMisal.SetToolTip(this.btnSaveTehsildarRpt, "تحصیلدار رپورٹ محفو ظ کریں");
-            this.btnSaveTehsildarRpt.UseVisualStyleBackColor = true;
-            this.btnSaveTehsildarRpt.Click += new System.EventHandler(this.btnSaveTehsildarRpt_Click);
-            // 
-            // lblCancel
-            // 
-            this.lblCancel.AutoSize = true;
-            this.lblCancel.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancel.ForeColor = System.Drawing.Color.Red;
-            this.lblCancel.Location = new System.Drawing.Point(147, 550);
-            this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(24, 38);
-            this.lblCancel.TabIndex = 213;
-            this.lblCancel.Text = ".";
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label108);
+            this.panel12.Controls.Add(this.txtKulHissaExisting);
+            this.panel12.Controls.Add(this.label123);
+            this.panel12.Controls.Add(this.txtKulHissaCorrect);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel12.Location = new System.Drawing.Point(0, 280);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1195, 50);
+            this.panel12.TabIndex = 2;
+            // 
+            // label108
+            // 
+            this.label108.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label108.Location = new System.Drawing.Point(921, 9);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(249, 31);
+            this.label108.TabIndex = 245;
+            this.label108.Text = "فرد بدر میں انتخاب کردہ مالکان کا قبل از درستگی حصہ";
+            // 
+            // txtKulHissaExisting
+            // 
+            this.txtKulHissaExisting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKulHissaExisting.Enabled = false;
+            this.txtKulHissaExisting.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKulHissaExisting.Location = new System.Drawing.Point(698, 7);
+            this.txtKulHissaExisting.Name = "txtKulHissaExisting";
+            this.txtKulHissaExisting.Size = new System.Drawing.Size(217, 34);
+            this.txtKulHissaExisting.TabIndex = 243;
+            // 
+            // label123
+            // 
+            this.label123.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label123.AutoSize = true;
+            this.label123.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label123.Location = new System.Drawing.Point(510, 9);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(95, 31);
+            this.label123.TabIndex = 242;
+            this.label123.Text = "بعد از درستگی حصہ";
+            // 
+            // txtKulHissaCorrect
+            // 
+            this.txtKulHissaCorrect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKulHissaCorrect.Enabled = false;
+            this.txtKulHissaCorrect.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKulHissaCorrect.Location = new System.Drawing.Point(262, 7);
+            this.txtKulHissaCorrect.Name = "txtKulHissaCorrect";
+            this.txtKulHissaCorrect.Size = new System.Drawing.Size(242, 34);
+            this.txtKulHissaCorrect.TabIndex = 244;
             // 
             // frmFardeBadar
             // 
@@ -6174,6 +6235,8 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6640,5 +6703,10 @@
         private System.Windows.Forms.Button btnPrevKhataFamily;
         private System.Windows.Forms.Button btnFbCancel;
         private System.Windows.Forms.Label lblCancel;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.TextBox txtKulHissaExisting;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.TextBox txtKulHissaCorrect;
     }
 }

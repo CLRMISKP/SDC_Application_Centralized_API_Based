@@ -826,40 +826,48 @@ namespace SDC_Application.AL
         private void btnSaveFard_Click(object sender, EventArgs e)
         {
             // Check if cboFardCaste.SelectedValue is null and if so, set it to the default value
-            if (cboFardCaste.SelectedValue == null)
+            if (cboFardAfradType.SelectedValue == null)
             {
-                // Assuming you want to set it to the first item in the combo box
-                if (cboFardCaste.Items.Count > 0)
-                {
-                    cboFardCaste.SelectedIndex = 0;
-                }
-                else
-                {
-                    MessageBox.Show("There are no items in the Caste combo box.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Exit the event handler as there is nothing to select
-                }
-            }
-
-            // The rest of your checks can now safely assume cboFardCaste.SelectedValue is not null
-            if ((txtFardCNIC.Text.Trim().Length == 13 || txtFardCNIC.Text.Trim().Length == 0 || txtFardCNIC.Text.Trim().Length == 1) &&
-                txtFardName.Text.Trim().Length > 0 &&
-                cboFardParent.SelectedValue.ToString().Length > 2 &&
-                cboFardRelation.Text.Length > 2 &&
-                cboFardGender.Text.Length > 2 &&
-                cboFardAfradType.SelectedValue.ToString() != "0" &&
-                cboFardCaste.SelectedValue.ToString() != "0" &&
-                txtSrNoChild.Text.Length > 0 &&
-                cboFardCaste.SelectedValue.ToString().Length > 3)
-            {
-                SaveFard();
-                FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
-                int count = grdFard.Rows.Count;
-                txtSrNoChild.Text = (count + 1).ToString();
-                cboFardCaste.SelectedValue = grdFardForFH.SelectedRows[0].Cells["QoamId"].Value;
+                MessageBox.Show("قسم فرد کی انتخاب کریں۔");
             }
             else
             {
-                MessageBox.Show("فرد خاندان کے تمام کوائف مکمل کریں", "نا مکمل کوائف", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (cboFardCaste.SelectedValue == null)
+                {
+
+                    // Assuming you want to set it to the first item in the combo box
+                    if (cboFardCaste.Items.Count > 0)
+                    {
+                        cboFardCaste.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("There are no items in the Caste combo box.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Exit the event handler as there is nothing to select
+                    }
+                }
+
+                // The rest of your checks can now safely assume cboFardCaste.SelectedValue is not null
+                if ((txtFardCNIC.Text.Trim().Length == 13 || txtFardCNIC.Text.Trim().Length == 0 || txtFardCNIC.Text.Trim().Length == 1) &&
+                    txtFardName.Text.Trim().Length > 0 &&
+                    cboFardParent.SelectedValue.ToString().Length > 2 &&
+                    cboFardRelation.Text.Length > 2 &&
+                    cboFardGender.Text.Length > 2 &&
+                    cboFardAfradType.SelectedValue.ToString() != "0" &&
+                    cboFardCaste.SelectedValue.ToString() != "0" &&
+                    txtSrNoChild.Text.Length > 0 &&
+                    cboFardCaste.SelectedValue.ToString().Length > 3)
+                {
+                    SaveFard();
+                    FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());
+                    int count = grdFard.Rows.Count;
+                    txtSrNoChild.Text = (count + 1).ToString();
+                    cboFardCaste.SelectedValue = grdFardForFH.SelectedRows[0].Cells["QoamId"].Value;
+                }
+                else
+                {
+                    MessageBox.Show("فرد خاندان کے تمام کوائف مکمل کریں", "نا مکمل کوائف", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
         }
 

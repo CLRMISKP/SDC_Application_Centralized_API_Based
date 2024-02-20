@@ -310,6 +310,10 @@ namespace SDC_Application.AL
                 {
                     this.GridViewKhewatMalikaan.Columns["KhewatTypeId"].Visible = false;
                 }
+                if (this.GridViewKhewatMalikaan.Columns.Contains("KhewatTypeId_Proposed"))
+                {
+                    this.GridViewKhewatMalikaan.Columns["KhewatTypeId_Proposed"].Visible = false;
+                }
                 if (this.GridViewKhewatMalikaan.Columns.Contains("FB_Exists"))
                 {
                     this.GridViewKhewatMalikaan.Columns["FB_Exists"].Visible = false;
@@ -1486,11 +1490,11 @@ namespace SDC_Application.AL
                     bool Cancel = Convert.ToBoolean(dtMisalDetails.Rows[0]["Cancel"].ToString());
                     rbManualFb.Checked = isManualFb;
                     btnAmaldaramad.Enabled = false;
-                    btnConfirm.Enabled = UsersManagments._IsAdmin ? !ConfirmationStatus : false;
+                    btnConfirm.Enabled = !ConfirmationStatus;
                    /// btnConfirm.Enabled = true;
                     if (this.ConfirmationStatus)
                         {
-                        btnAmaldaramad.Enabled = !AmaldaramadStatus;
+                        btnAmaldaramad.Enabled =UsersManagments._IsAdmin ? !AmaldaramadStatus:false;
                         disableControles();
                         //this.tabKhataDetail.TabPages.Remove(gardawarTab);
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);

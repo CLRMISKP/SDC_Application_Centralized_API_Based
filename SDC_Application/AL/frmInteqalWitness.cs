@@ -87,6 +87,14 @@ namespace SDC_Application.AL
                     MessageBox.Show("  شناختی کارڈ نمبر" + txtWitnessCNIC.Text.Replace("-", "") + " مزید گواہی نہیں دے سکتا۔ ", "   ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                DataTable dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_PersonDetail_By_NIC " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.txtWitnessCNIC.Text + "'");
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        this.txtPersonId.Text = dt.Rows[0]["PersonId"].ToString();
+                    }
+                }
                 string WitnessId = txtWitnessId.Text.ToString();
                 string IntiqalId = this.IntiqalId;
                 string WitnessPersonId = txtWitnessPersonId.Text.ToString();

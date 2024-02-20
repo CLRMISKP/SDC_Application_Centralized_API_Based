@@ -6300,6 +6300,12 @@ namespace SDC_Application.AL
         {
             txtKhattaRecId.Text = "-1";
             txtparentKhataId.Text = "-1";
+            string IntiqalNoONParentKhata = "0";
+            IntiqalNoONParentKhata = Intiqal.GetIntiqalOnParentKhata(cbokhataNo.SelectedValue.ToString(), this.IntiqalId);
+            if (IntiqalNoONParentKhata !="0")
+            {
+                MessageBox.Show(" انتخاب کردہ کھاتہ انتقال نمبر " + IntiqalNoONParentKhata + " من ہو چکا ہے۔ اگر اپنے اس کھاتہ میں انتقال کا اندراج کیا تو اسکا عمل نہیں ائیگا۔ ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             Fill_InteqalKhataGrid();
         }
 

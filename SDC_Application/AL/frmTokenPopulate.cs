@@ -84,6 +84,7 @@ namespace SDC_Application.AL
             grdToken.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
             grdToken.Columns["TokenPurpose_Urdu"].HeaderText = "مقصد";
             grdToken.Columns["Token_CurrentStatus"].HeaderText = "تصدیق شدہ";
+            grdToken.Columns["Relation"].Visible = false;
             grdToken.Columns["TokenId"].Visible = false;
             grdToken.Columns["TokenDate"].Visible = false;
             grdToken.Columns["TokenPurposeId"].Visible = false;

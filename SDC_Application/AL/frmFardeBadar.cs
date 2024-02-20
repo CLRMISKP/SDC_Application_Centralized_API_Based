@@ -775,6 +775,23 @@ namespace SDC_Application.AL
 
         #endregion
 
+        #region Get Total Hissa existing and after correction
+        private void GetHissaBeforeAfterCorrection()
+        {
+            float existingHissa = 0;
+            float ProposedHissa = 0;
+            foreach (DataGridViewRow row in GridViewKhewatMalikaan.Rows)
+            {
+
+                existingHissa = existingHissa + float.Parse(row.Cells["FardAreaPart"].Value.ToString());
+                ProposedHissa = ProposedHissa + float.Parse(row.Cells["FardAreaPart_Proposed"].Value.ToString());
+            }
+            txtKulHissaExisting.Text = Math.Round((decimal)existingHissa, 4).ToString();
+            txtKulHissaCorrect.Text = Math.Round((decimal)ProposedHissa, 4).ToString();
+
+        }
+        #endregion
+
         #region Form Load Event
 
         private void frmMisalMain_Load(object sender, EventArgs e)
@@ -942,6 +959,7 @@ namespace SDC_Application.AL
                      int idx = this.GridViewKhewatMalikaan.Rows.Count;
                      this.txtSeqNo.Text = (idx + 1).ToString();
                      btnPersonSave.Enabled = true;
+                     GetHissaBeforeAfterCorrection();
                  }
              }
              else
@@ -1120,7 +1138,7 @@ namespace SDC_Application.AL
                           this.FillGridviewMalkan(khewatMalikanByFB);
                           this.txtFbFareeqId.Text = "-1";
                           this.txtKhewatFreeqainGroupId.Text = "-1";
-
+                          GetHissaBeforeAfterCorrection();
                       }
                       else
                       {
@@ -2809,6 +2827,7 @@ namespace SDC_Application.AL
                 }
                 loadFbData(txtFbId.Text);
                 FillGridviewMinKhatas();
+                GetHissaBeforeAfterCorrection();
 
             }
             catch (Exception ex)

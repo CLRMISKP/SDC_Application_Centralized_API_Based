@@ -126,6 +126,7 @@ namespace SDC_Application.AL
             grdTokenData.Columns["TokenDate"].Visible = false;
             grdTokenData.Columns["ServiceTypeId"].Visible = false;
             grdTokenData.Columns["TokenId"].Visible = false;
+            //grdTokenData.Columns["PV_Status"].Visible = false;
 
             if (fromform == "1" || fromform == "2" || fromform == "3" || fromform == "4")
             {

@@ -463,6 +463,11 @@ namespace SDC_Application.BL
                 string spWithParam = "proc_Get_Moza_KhataJat_for_Intiqal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId;
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
+            public string GetIntiqalOnParentKhata(string ParentKhataId, string IntiqalId)
+            {
+                string spWithParam = "Proc_Get_KhataParentStatus  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + ParentKhataId + "," + IntiqalId;
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
 
             public DataTable GetKhatJatForStayOrder(string MozaId)
             {
@@ -1697,7 +1702,7 @@ namespace SDC_Application.BL
             public string CheckRegAlreadyEntered(string RegNo, int Y, string mozaId)
             {
                 string IntiqalNo = "0";
-                string spWithParam = " Proc_Self_Get_Intiqal_on_Registry " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Y+"," + mozaId;
+                string spWithParam = " Proc_Self_Get_Intiqal_on_Registry " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + RegNo + "'," + Y+"," + mozaId;
                 IntiqalNo = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return IntiqalNo;
             }
@@ -1705,7 +1710,7 @@ namespace SDC_Application.BL
             public string CheckRegAlreadyReceived(string RegNo, int Y, string mozaId)
             {
                 string ReceivingId = "0";
-                string spWithParam = "Proc_Self_Get_Registry_For_Intiqal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Y + "," + mozaId;
+                string spWithParam = "Proc_Self_Get_Registry_For_Intiqal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + RegNo + "'," + Y + "," + mozaId;
                 ReceivingId = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return ReceivingId;
             }
@@ -1713,7 +1718,7 @@ namespace SDC_Application.BL
             public string CheckRegAlreadyReceivedForRecvReg(string RegNo, string Id, int Y, string MozaId, string SRID)
             {
                 string RegId = "0";
-                string spWithParam = "Proc_Self_Check_Registry_Received_For_RecvReg  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + RegNo + "," + Id + "," + Y+","+MozaId+","+SRID;
+                string spWithParam = "Proc_Self_Check_Registry_Received_For_RecvReg  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + RegNo + "'," + Id + "," + Y+","+MozaId+","+SRID;
                 RegId = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return RegId;
             }
