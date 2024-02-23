@@ -177,6 +177,9 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuAdminRptInconKhatas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAdminRptInconKhatasTehsilwise = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuInconKhataHissasFarq = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -1046,10 +1049,13 @@
             // 
             // mnuInconsistentRpt
             // 
+            this.mnuInconsistentRpt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAdminRptInconKhatas,
+            this.mnuAdminRptInconKhatasTehsilwise,
+            this.mnuInconKhataHissasFarq});
             this.mnuInconsistentRpt.Name = "mnuInconsistentRpt";
             this.mnuInconsistentRpt.Size = new System.Drawing.Size(355, 42);
             this.mnuInconsistentRpt.Text = "11 - غیر متوازن کھاتہ جات";
-            this.mnuInconsistentRpt.Click += new System.EventHandler(this.mnuInconsistentRpt_Click);
             // 
             // mnuRhzRptAdmin
             // 
@@ -1433,6 +1439,27 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // mnuAdminRptInconKhatas
+            // 
+            this.mnuAdminRptInconKhatas.Name = "mnuAdminRptInconKhatas";
+            this.mnuAdminRptInconKhatas.Size = new System.Drawing.Size(286, 42);
+            this.mnuAdminRptInconKhatas.Text = "غیر متوازن کھاتہ جات موضع وار";
+            this.mnuAdminRptInconKhatas.Click += new System.EventHandler(this.mnuInconsistentRpt_Click);
+            // 
+            // mnuAdminRptInconKhatasTehsilwise
+            // 
+            this.mnuAdminRptInconKhatasTehsilwise.Name = "mnuAdminRptInconKhatasTehsilwise";
+            this.mnuAdminRptInconKhatasTehsilwise.Size = new System.Drawing.Size(286, 42);
+            this.mnuAdminRptInconKhatasTehsilwise.Text = "غیر متوازن کھاتہ جات تحصیل وار";
+            this.mnuAdminRptInconKhatasTehsilwise.Click += new System.EventHandler(this.mnuAdminRptInconKhatasTehsilwise_Click);
+            // 
+            // mnuInconKhataHissasFarq
+            // 
+            this.mnuInconKhataHissasFarq.Name = "mnuInconKhataHissasFarq";
+            this.mnuInconKhataHissasFarq.Size = new System.Drawing.Size(286, 42);
+            this.mnuInconKhataHissasFarq.Text = "غیر متوازن کھاتہ جات حصص فرق";
+            this.mnuInconKhataHissasFarq.Click += new System.EventHandler(this.mnuInconKhataHissasFarq_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1618,5 +1645,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMachineAccessControl;
         private System.Windows.Forms.ToolStripMenuItem mnuUserAccessControl;
         private System.Windows.Forms.ToolStripMenuItem mnuUserVisibility2;
+        private System.Windows.Forms.ToolStripMenuItem mnuAdminRptInconKhatas;
+        private System.Windows.Forms.ToolStripMenuItem mnuAdminRptInconKhatasTehsilwise;
+        private System.Windows.Forms.ToolStripMenuItem mnuInconKhataHissasFarq;
     }
 }

@@ -435,8 +435,8 @@ namespace SDC_Application.AL
 
         private void txtSearchCurrentKhewatFareeqain_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
-            {
+            //if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            //{
                 if (e.KeyChar == Convert.ToChar((Keys.Back)))
                 {
 
@@ -445,7 +445,7 @@ namespace SDC_Application.AL
                 {
                     e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
                 }
-            }
+            //}
         }
 
         #endregion
@@ -575,25 +575,25 @@ namespace SDC_Application.AL
                         {
                             //--- Existing Khatooni Fields ----
                             txtKhatooniLagan.Text = row["KhatooniLagan"].ToString();
-                            txtKhatooniLaganProp.Text = row["KhatooniLagan"].ToString();
-                            txtKhatooniNoProp.Text = row["KhatooniNo"].ToString();
+                            //txtKhatooniLaganProp.Text = row["KhatooniLagan"].ToString();
+                            //txtKhatooniNoProp.Text = row["KhatooniNo"].ToString();
                             txtWasailAbpashi.Text = row["Wasail_e_Abpashi"].ToString();
-                            txtWasailAbpashiProp.Text = row["Wasail_e_Abpashi"].ToString();
+                            //txtWasailAbpashiProp.Text = row["Wasail_e_Abpashi"].ToString();
                             txtKhatooniFullDetails.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
-                            txtKhatooniFullDetailsProp.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                            //txtKhatooniFullDetailsProp.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
                             chkBeahShoda.Checked = Convert.ToBoolean(row["Beahshuda"].ToString());
-                            chkBeahShudaProp.Checked = Convert.ToBoolean(row["Beahshuda"].ToString());
+                            //chkBeahShudaProp.Checked = Convert.ToBoolean(row["Beahshuda"].ToString());
                             txtKhatooniHissa.Text = row["Hissa"].ToString();
-                            txtKhatooniHissaProp.Text = row["Hissa"].ToString();
+                            //txtKhatooniHissaProp.Text = row["Hissa"].ToString();
                             txtKhatooniKanal.Text = row["Kanal"].ToString();
-                            txtKhatooniKanalProp.Text = row["Kanal"].ToString();
+                            //txtKhatooniKanalProp.Text = row["Kanal"].ToString();
                             txtKhatooniMarla.Text = row["Marla"].ToString();
-                            txtKhatooniMarlaProp.Text = row["Marla"].ToString();
+                            //txtKhatooniMarlaProp.Text = row["Marla"].ToString();
                             txtKhatooniSarsai.Text = row["Sarsai"].ToString();
-                            txtKhatooniSarsaiProp.Text = row["Sarsai"].ToString();
+                            //txtKhatooniSarsaiProp.Text = row["Sarsai"].ToString();
                             txtKhatooniFeet.Text = row["Feet"].ToString();
-                            txtKhatooniFeetProp.Text = row["Feet"].ToString();
-                            txtKhatooniRecId.Text = "-1";
+                            //txtKhatooniFeetProp.Text = row["Feet"].ToString();
+                            //txtKhatooniRecId.Text = "-1";
                             //--- Proposed Khatooni Fields ----
                             //if (KhatooniEditingDetails.Rows.Count > 0)
                             //{

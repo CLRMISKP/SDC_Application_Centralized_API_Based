@@ -701,6 +701,24 @@ namespace SDC_Application.AL
                  this.SetCredentials("KhanakashDetails", rp, false);
 
              }
+             if (UsersManagments.check == 65) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 //rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("AreaDifference_KhataKhewatKhatooniByTehsil", rp, false);
+
+             }
+             if (UsersManagments.check == 66) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 //rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("AreaDifference_KhataKhewatKhatooniHissasDiffByTehsil", rp, false);
+
+             }
         }
 
     }

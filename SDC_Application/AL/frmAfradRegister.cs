@@ -227,7 +227,7 @@ namespace SDC_Application.AL
 
             if (empty == null)
             {
-                if ((txtFamilyHeadCNIC.Text.Trim().Length == 13 || txtFamilyHeadCNIC.Text.Trim().Length == 0 || txtFamilyHeadCNIC.Text.Trim().Length == 1 ) && cboFamilyHeadCaste.SelectedValue.ToString().Length>3)
+                if ((txtFamilyHeadCNIC.Text.Trim().Length == 13 || txtFamilyHeadCNIC.Text.Trim().Length == 0 || txtFamilyHeadCNIC.Text.Trim().Length == 1 ) && cboFamilyHeadCaste.SelectedValue.ToString().Length>2)
                 {
                 
                     string PersonId = txtFamilyHeadId.Text.ToString();

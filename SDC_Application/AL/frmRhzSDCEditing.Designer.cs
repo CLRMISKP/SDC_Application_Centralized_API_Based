@@ -1745,7 +1745,7 @@
             // 
             this.txtKhatooniHissaProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniHissaProp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniHissaProp.Location = new System.Drawing.Point(721, 88);
+            this.txtKhatooniHissaProp.Location = new System.Drawing.Point(730, 88);
             this.txtKhatooniHissaProp.Name = "txtKhatooniHissaProp";
             this.txtKhatooniHissaProp.Size = new System.Drawing.Size(71, 30);
             this.txtKhatooniHissaProp.TabIndex = 333;
@@ -1756,7 +1756,7 @@
             this.label77.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label77.AutoSize = true;
             this.label77.Enabled = false;
-            this.label77.Location = new System.Drawing.Point(798, 88);
+            this.label77.Location = new System.Drawing.Point(807, 88);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(52, 31);
             this.label77.TabIndex = 328;
@@ -1766,7 +1766,7 @@
             // 
             this.txtKhatooniSarsaiProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniSarsaiProp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniSarsaiProp.Location = new System.Drawing.Point(311, 88);
+            this.txtKhatooniSarsaiProp.Location = new System.Drawing.Point(364, 88);
             this.txtKhatooniSarsaiProp.Name = "txtKhatooniSarsaiProp";
             this.txtKhatooniSarsaiProp.Size = new System.Drawing.Size(71, 30);
             this.txtKhatooniSarsaiProp.TabIndex = 336;
@@ -1777,7 +1777,7 @@
             this.label83.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label83.AutoSize = true;
             this.label83.Enabled = false;
-            this.label83.Location = new System.Drawing.Point(523, 88);
+            this.label83.Location = new System.Drawing.Point(566, 88);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(39, 31);
             this.label83.TabIndex = 329;
@@ -1787,7 +1787,7 @@
             // 
             this.txtKhatooniMarlaProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniMarlaProp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniMarlaProp.Location = new System.Drawing.Point(446, 88);
+            this.txtKhatooniMarlaProp.Location = new System.Drawing.Point(489, 88);
             this.txtKhatooniMarlaProp.Name = "txtKhatooniMarlaProp";
             this.txtKhatooniMarlaProp.Size = new System.Drawing.Size(71, 30);
             this.txtKhatooniMarlaProp.TabIndex = 335;
@@ -1798,7 +1798,7 @@
             this.label84.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label84.AutoSize = true;
             this.label84.Enabled = false;
-            this.label84.Location = new System.Drawing.Point(662, 88);
+            this.label84.Location = new System.Drawing.Point(687, 88);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(39, 31);
             this.label84.TabIndex = 330;
@@ -1808,7 +1808,7 @@
             // 
             this.txtKhatooniFeetProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniFeetProp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniFeetProp.Location = new System.Drawing.Point(152, 88);
+            this.txtKhatooniFeetProp.Location = new System.Drawing.Point(221, 88);
             this.txtKhatooniFeetProp.Name = "txtKhatooniFeetProp";
             this.txtKhatooniFeetProp.Size = new System.Drawing.Size(71, 30);
             this.txtKhatooniFeetProp.TabIndex = 337;
@@ -1819,7 +1819,7 @@
             this.label85.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label85.AutoSize = true;
             this.label85.Enabled = false;
-            this.label85.Location = new System.Drawing.Point(388, 88);
+            this.label85.Location = new System.Drawing.Point(441, 88);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(48, 31);
             this.label85.TabIndex = 331;
@@ -1829,7 +1829,7 @@
             // 
             this.txtKhatooniKanalProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniKanalProp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniKanalProp.Location = new System.Drawing.Point(585, 88);
+            this.txtKhatooniKanalProp.Location = new System.Drawing.Point(610, 88);
             this.txtKhatooniKanalProp.Name = "txtKhatooniKanalProp";
             this.txtKhatooniKanalProp.Size = new System.Drawing.Size(71, 30);
             this.txtKhatooniKanalProp.TabIndex = 334;
@@ -1840,7 +1840,7 @@
             this.label86.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label86.AutoSize = true;
             this.label86.Enabled = false;
-            this.label86.Location = new System.Drawing.Point(229, 88);
+            this.label86.Location = new System.Drawing.Point(298, 88);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(62, 31);
             this.label86.TabIndex = 332;
@@ -1932,10 +1932,10 @@
             // 
             this.txtKhatooniFullDetailsProp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniFullDetailsProp.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhatooniFullDetailsProp.Location = new System.Drawing.Point(17, 33);
+            this.txtKhatooniFullDetailsProp.Location = new System.Drawing.Point(3, 33);
             this.txtKhatooniFullDetailsProp.Name = "txtKhatooniFullDetailsProp";
             this.txtKhatooniFullDetailsProp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtKhatooniFullDetailsProp.Size = new System.Drawing.Size(576, 39);
+            this.txtKhatooniFullDetailsProp.Size = new System.Drawing.Size(590, 39);
             this.txtKhatooniFullDetailsProp.TabIndex = 204;
             this.tt.SetToolTip(this.txtKhatooniFullDetailsProp, "مجوزہ تفصیل حصہ داران و کاشتکاران");
             this.txtKhatooniFullDetailsProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
