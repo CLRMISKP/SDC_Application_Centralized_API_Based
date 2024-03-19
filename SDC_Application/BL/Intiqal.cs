@@ -19,6 +19,12 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_Intiqal_Zeretajwiz_Pending_By_Khatta " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + KhataId;
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
+        public DataTable GetSelfCamFingerImage(string IntiqalId)
+        {
+            string spWithParam = "Proc_Self_Get_Intiqal_PersonBothPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalId + "'";
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
 
         public DataTable GetAllIntiqalByPersonId(string PersonId)
         {
@@ -102,6 +108,11 @@ namespace SDC_Application.BL
             string spWithParam = "Proc_Get_Intiqal_PersonBothPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalId + "','" + PersonId + "'";
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
+        }
+        public string DeleteIntiqalPersonSnaps(string Personid, string IntiqalId, string UserId)
+        {
+            string spWithParam = "WEB_Self_SP_DELETE_Intiqal_PersonSnaps " + Personid + "," + IntiqalId + "," + UserId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
         public DataTable GetFingerImageSelf(string tokenId, string PersonId)

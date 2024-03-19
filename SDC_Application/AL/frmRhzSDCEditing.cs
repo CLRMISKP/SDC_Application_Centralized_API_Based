@@ -631,6 +631,29 @@ namespace SDC_Application.AL
                             //        //txtKhatooniFeet.Text = row["KhatooniFeet"].ToString();
                             //    }
                             //}
+                            bool khatooniExistsInEdit = false;
+                            foreach (DataGridViewRow r in dgKhatooniesEdit.Rows)
+                            {
+                                  if(r.Cells["KhatooniId"].Value.ToString()==cboKhatoonies.SelectedValue.ToString())  
+                                  {
+                                      khatooniExistsInEdit = true;
+                                      break;
+                                  }
+                            }
+                            if (!khatooniExistsInEdit)
+                            {
+                                txtKhatooniLaganProp.Text = row["KhatooniLagan"].ToString();
+                                txtKhatooniNoProp.Text = row["KhatooniNo"].ToString();
+                                txtWasailAbpashiProp.Text = row["Wasail_e_Abpashi"].ToString();
+                                txtKhatooniFullDetailsProp.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
+                                chkBeahShudaProp.Checked = Convert.ToBoolean(row["Beahshuda"].ToString());
+                                txtKhatooniHissaProp.Text = row["Hissa"].ToString();
+                                txtKhatooniKanalProp.Text = row["Kanal"].ToString();
+                                txtKhatooniMarlaProp.Text = row["Marla"].ToString();
+                                txtKhatooniSarsaiProp.Text = row["Sarsai"].ToString();
+                                txtKhatooniFeetProp.Text = row["Feet"].ToString();
+
+                            }
 
                         this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
                         FillMushteriFareeqainEdit();
@@ -1503,6 +1526,17 @@ namespace SDC_Application.AL
         {
             txtKhatooniNoProp.Text = rhz.Proc_Get_Max_Khatooni_No_By_Moza(cmbMouza.SelectedValue.ToString()).Rows[0][0].ToString();
             chkIsNewKhatooni.Checked = true;
+            txtKhatooniRecId.Text = "-1";
+            txtKhatooniLaganProp.Text ="";
+           // txtKhatooniNoProp.Text = "";
+            txtWasailAbpashiProp.Text = "";
+            txtKhatooniFullDetailsProp.Text = "";
+            chkBeahShudaProp.Checked = false;
+            txtKhatooniHissaProp.Text = "";
+            txtKhatooniKanalProp.Text = "";
+            txtKhatooniMarlaProp.Text = "";
+            txtKhatooniSarsaiProp.Text = "";
+            txtKhatooniFeetProp.Text = "";
 
         }
 

@@ -128,14 +128,23 @@
             this.mnuYearlyIntiqalatReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalaQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalMakhloot = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardBadarReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardbadarImp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardbadarCancel = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardbadarPending = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardbadarAll = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAntiCurruptionDrive = new System.Windows.Forms.ToolStripMenuItem();
             this.mnSubAntiCurIntiqal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubAntiCurFardat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOperationalReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubInitqalEntryByOperator = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardBadarEntryRpt = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTokenandService = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubStateLandReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInconsistentRpt = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAdminRptInconKhatas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAdminRptInconKhatasTehsilwise = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuInconKhataHissasFarq = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRhzRptAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOperatorReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDRA = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,9 +186,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuAdminRptInconKhatas = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAdminRptInconKhatasTehsilwise = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuInconKhataHissasFarq = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuInitqalforDawra = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -758,6 +765,7 @@
             this.mnuDraReport,
             this.mnuIntiqalReport,
             this.mnuYearlyIntiqalatReports,
+            this.mnuFardBadarReports,
             this.mnuAntiCurruptionDrive,
             this.mnuOperationalReports,
             this.mnuSubStateLandReport,
@@ -994,6 +1002,45 @@
             this.mnuSubYaksalMakhloot.Text = " - یک سالہ محلوط";
             this.mnuSubYaksalMakhloot.Click += new System.EventHandler(this.mnuSubYaksalMakhloot_Click);
             // 
+            // mnuFardBadarReports
+            // 
+            this.mnuFardBadarReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFardbadarImp,
+            this.mnuFardbadarCancel,
+            this.mnuFardbadarPending,
+            this.mnuFardbadarAll});
+            this.mnuFardBadarReports.Name = "mnuFardBadarReports";
+            this.mnuFardBadarReports.Size = new System.Drawing.Size(355, 42);
+            this.mnuFardBadarReports.Text = "8 - فرد بدرات رپورٹس";
+            // 
+            // mnuFardbadarImp
+            // 
+            this.mnuFardbadarImp.Name = "mnuFardbadarImp";
+            this.mnuFardbadarImp.Size = new System.Drawing.Size(300, 42);
+            this.mnuFardbadarImp.Text = " - تصدیق شدہ / عمل شدہ فرد بدرات";
+            this.mnuFardbadarImp.Click += new System.EventHandler(this.mnuFardbadarImp_Click);
+            // 
+            // mnuFardbadarCancel
+            // 
+            this.mnuFardbadarCancel.Name = "mnuFardbadarCancel";
+            this.mnuFardbadarCancel.Size = new System.Drawing.Size(300, 42);
+            this.mnuFardbadarCancel.Text = "-  کینسل شدہ فرد بدرات";
+            this.mnuFardbadarCancel.Click += new System.EventHandler(this.mnuFardbadarCancel_Click);
+            // 
+            // mnuFardbadarPending
+            // 
+            this.mnuFardbadarPending.Name = "mnuFardbadarPending";
+            this.mnuFardbadarPending.Size = new System.Drawing.Size(300, 42);
+            this.mnuFardbadarPending.Text = " - زیر تجویز فرد بدرات";
+            this.mnuFardbadarPending.Click += new System.EventHandler(this.mnuFardbadarPending_Click);
+            // 
+            // mnuFardbadarAll
+            // 
+            this.mnuFardbadarAll.Name = "mnuFardbadarAll";
+            this.mnuFardbadarAll.Size = new System.Drawing.Size(300, 42);
+            this.mnuFardbadarAll.Text = " - تمام اندراج شدہ فرد ندرات";
+            this.mnuFardbadarAll.Click += new System.EventHandler(this.mnuFardbadarAll_Click);
+            // 
             // mnuAntiCurruptionDrive
             // 
             this.mnuAntiCurruptionDrive.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1001,7 +1048,7 @@
             this.mnuSubAntiCurFardat});
             this.mnuAntiCurruptionDrive.Name = "mnuAntiCurruptionDrive";
             this.mnuAntiCurruptionDrive.Size = new System.Drawing.Size(355, 42);
-            this.mnuAntiCurruptionDrive.Text = "8 - انٹی کرپشن ڈرائو رپورٹس";
+            this.mnuAntiCurruptionDrive.Text = "9 - انٹی کرپشن ڈرائو رپورٹس";
             // 
             // mnSubAntiCurIntiqal
             // 
@@ -1021,10 +1068,11 @@
             // 
             this.mnuOperationalReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSubInitqalEntryByOperator,
-            this.mnuFardBadarEntryRpt});
+            this.mnuFardBadarEntryRpt,
+            this.mnuTokenandService});
             this.mnuOperationalReports.Name = "mnuOperationalReports";
             this.mnuOperationalReports.Size = new System.Drawing.Size(355, 42);
-            this.mnuOperationalReports.Text = "9 - اپریشنل سٹاف رپورٹس";
+            this.mnuOperationalReports.Text = "10 - اپریشنل سٹاف رپورٹس";
             // 
             // mnuSubInitqalEntryByOperator
             // 
@@ -1040,11 +1088,18 @@
             this.mnuFardBadarEntryRpt.Text = "- فرد بدر اندراج رپورٹ";
             this.mnuFardBadarEntryRpt.Click += new System.EventHandler(this.mnuFardBadarEntryRpt_Click);
             // 
+            // mnuTokenandService
+            // 
+            this.mnuTokenandService.Name = "mnuTokenandService";
+            this.mnuTokenandService.Size = new System.Drawing.Size(235, 42);
+            this.mnuTokenandService.Text = " - ٹوکن و سہولت تفصیل";
+            this.mnuTokenandService.Click += new System.EventHandler(this.mnuTokenandService_Click);
+            // 
             // mnuSubStateLandReport
             // 
             this.mnuSubStateLandReport.Name = "mnuSubStateLandReport";
             this.mnuSubStateLandReport.Size = new System.Drawing.Size(355, 42);
-            this.mnuSubStateLandReport.Text = "10 - سٹیٹ لینڈ رپورٹ";
+            this.mnuSubStateLandReport.Text = "11 - سٹیٹ لینڈ رپورٹ";
             this.mnuSubStateLandReport.Click += new System.EventHandler(this.mnuSubStateLandReport_Click);
             // 
             // mnuInconsistentRpt
@@ -1055,13 +1110,34 @@
             this.mnuInconKhataHissasFarq});
             this.mnuInconsistentRpt.Name = "mnuInconsistentRpt";
             this.mnuInconsistentRpt.Size = new System.Drawing.Size(355, 42);
-            this.mnuInconsistentRpt.Text = "11 - غیر متوازن کھاتہ جات";
+            this.mnuInconsistentRpt.Text = "12 - غیر متوازن کھاتہ جات";
+            // 
+            // mnuAdminRptInconKhatas
+            // 
+            this.mnuAdminRptInconKhatas.Name = "mnuAdminRptInconKhatas";
+            this.mnuAdminRptInconKhatas.Size = new System.Drawing.Size(286, 42);
+            this.mnuAdminRptInconKhatas.Text = "غیر متوازن کھاتہ جات موضع وار";
+            this.mnuAdminRptInconKhatas.Click += new System.EventHandler(this.mnuInconsistentRpt_Click);
+            // 
+            // mnuAdminRptInconKhatasTehsilwise
+            // 
+            this.mnuAdminRptInconKhatasTehsilwise.Name = "mnuAdminRptInconKhatasTehsilwise";
+            this.mnuAdminRptInconKhatasTehsilwise.Size = new System.Drawing.Size(286, 42);
+            this.mnuAdminRptInconKhatasTehsilwise.Text = "غیر متوازن کھاتہ جات تحصیل وار";
+            this.mnuAdminRptInconKhatasTehsilwise.Click += new System.EventHandler(this.mnuAdminRptInconKhatasTehsilwise_Click);
+            // 
+            // mnuInconKhataHissasFarq
+            // 
+            this.mnuInconKhataHissasFarq.Name = "mnuInconKhataHissasFarq";
+            this.mnuInconKhataHissasFarq.Size = new System.Drawing.Size(286, 42);
+            this.mnuInconKhataHissasFarq.Text = "غیر متوازن کھاتہ جات حصص فرق";
+            this.mnuInconKhataHissasFarq.Click += new System.EventHandler(this.mnuInconKhataHissasFarq_Click);
             // 
             // mnuRhzRptAdmin
             // 
             this.mnuRhzRptAdmin.Name = "mnuRhzRptAdmin";
             this.mnuRhzRptAdmin.Size = new System.Drawing.Size(355, 42);
-            this.mnuRhzRptAdmin.Text = " 12 - جمعبندی پرنٹ";
+            this.mnuRhzRptAdmin.Text = "13 - جمعبندی پرنٹ";
             this.mnuRhzRptAdmin.Click += new System.EventHandler(this.mnuRhzRptAdmin_Click);
             // 
             // mnuOperatorReports
@@ -1148,7 +1224,8 @@
             this.mnuCoBiometricNotAttested,
             this.mnuEnteredMutationsReport,
             this.mnuDePendingMutCo,
-            this.mnuRegEntryRptCo});
+            this.mnuRegEntryRptCo,
+            this.mnuInitqalforDawra});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
             this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
@@ -1439,26 +1516,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuAdminRptInconKhatas
+            // mnuInitqalforDawra
             // 
-            this.mnuAdminRptInconKhatas.Name = "mnuAdminRptInconKhatas";
-            this.mnuAdminRptInconKhatas.Size = new System.Drawing.Size(286, 42);
-            this.mnuAdminRptInconKhatas.Text = "غیر متوازن کھاتہ جات موضع وار";
-            this.mnuAdminRptInconKhatas.Click += new System.EventHandler(this.mnuInconsistentRpt_Click);
-            // 
-            // mnuAdminRptInconKhatasTehsilwise
-            // 
-            this.mnuAdminRptInconKhatasTehsilwise.Name = "mnuAdminRptInconKhatasTehsilwise";
-            this.mnuAdminRptInconKhatasTehsilwise.Size = new System.Drawing.Size(286, 42);
-            this.mnuAdminRptInconKhatasTehsilwise.Text = "غیر متوازن کھاتہ جات تحصیل وار";
-            this.mnuAdminRptInconKhatasTehsilwise.Click += new System.EventHandler(this.mnuAdminRptInconKhatasTehsilwise_Click);
-            // 
-            // mnuInconKhataHissasFarq
-            // 
-            this.mnuInconKhataHissasFarq.Name = "mnuInconKhataHissasFarq";
-            this.mnuInconKhataHissasFarq.Size = new System.Drawing.Size(286, 42);
-            this.mnuInconKhataHissasFarq.Text = "غیر متوازن کھاتہ جات حصص فرق";
-            this.mnuInconKhataHissasFarq.Click += new System.EventHandler(this.mnuInconKhataHissasFarq_Click);
+            this.mnuInitqalforDawra.Name = "mnuInitqalforDawra";
+            this.mnuInitqalforDawra.Size = new System.Drawing.Size(348, 42);
+            this.mnuInitqalforDawra.Text = "- انتقالات برائے دورہ";
+            this.mnuInitqalforDawra.Click += new System.EventHandler(this.mnuInitqalforDawra_Click);
             // 
             // frmMain
             // 
@@ -1648,5 +1711,12 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAdminRptInconKhatas;
         private System.Windows.Forms.ToolStripMenuItem mnuAdminRptInconKhatasTehsilwise;
         private System.Windows.Forms.ToolStripMenuItem mnuInconKhataHissasFarq;
+        private System.Windows.Forms.ToolStripMenuItem mnuFardBadarReports;
+        private System.Windows.Forms.ToolStripMenuItem mnuFardbadarImp;
+        private System.Windows.Forms.ToolStripMenuItem mnuFardbadarCancel;
+        private System.Windows.Forms.ToolStripMenuItem mnuFardbadarPending;
+        private System.Windows.Forms.ToolStripMenuItem mnuFardbadarAll;
+        private System.Windows.Forms.ToolStripMenuItem mnuTokenandService;
+        private System.Windows.Forms.ToolStripMenuItem mnuInitqalforDawra;
     }
 }

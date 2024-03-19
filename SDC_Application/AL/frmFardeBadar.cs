@@ -49,6 +49,7 @@ namespace SDC_Application.AL
         CommanFunctions cmnFn = new CommanFunctions();
         bool ConfirmationStatus = false;
         bool AmaldaramadStatus = false;
+        DataView view = new DataView();
         
         int registerNo = 0;
         string khatoniNo = "";
@@ -4101,6 +4102,14 @@ namespace SDC_Application.AL
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void txtSearchCurrentKhewatFareeqain_TextChanged(object sender, EventArgs e)
+        {
+            string filter = this.txtSearchCurrentKhewatFareeqain.Text.ToString();
+            view.RowFilter = "PersonName LIKE '%" + filter + "%'";
+            GridViewKhewatMalikaan.DataSource = view;
+            this.FillGridviewMalkan(view.ToTable() );
         }
 
     }

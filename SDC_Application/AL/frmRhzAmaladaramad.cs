@@ -361,7 +361,7 @@ namespace SDC_Application.AL
                 g.Columns["FardAreaPart"].HeaderText = "حصہ";
                 g.Columns["Khewat_Area"].HeaderText = "رقبہ";
                 g.Columns["PersonName"].HeaderText = "نام مالک";
-                g.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                g.Columns["CNIC"].HeaderText = "شناختی /پاسپورٹ نمبر";
                 g.Columns["KhewatType"].HeaderText = "قسم مالک";
                 g.Columns["FardPart_Bata"].Visible = false;
                 g.Columns["seqno"].HeaderText = "نمبر شمار";
@@ -922,7 +922,7 @@ namespace SDC_Application.AL
                 dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
                 dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
                 dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی/پاسپورٹ نمبر";
                 dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
                 dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
                 dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;

@@ -829,7 +829,7 @@ namespace SDC_Application.AL
                    }
                     else
                     {
-                        frmIntiqalPersonSnaps psnap = new frmIntiqalPersonSnaps();
+                        frmIntiqalPersonSnaps_old psnap = new frmIntiqalPersonSnaps_old();
                         psnap.IntiqalId = this.IntiqalId;
                         psnap.Attested = this.Attested;
                         psnap.Amaldaramad = this.AmalDaramad;

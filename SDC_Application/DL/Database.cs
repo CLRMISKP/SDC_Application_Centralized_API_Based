@@ -71,7 +71,7 @@ namespace SDC_Application.DL
             {
                 try
                 {
-                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=40;Connect Timeout=300;" + mySqlConnectionString + ";";
+                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=100;Connect Timeout=300;" + mySqlConnectionString + ";";
                     Connection.Open();
                 }
                 catch (Exception)
@@ -148,6 +148,7 @@ namespace SDC_Application.DL
 
             DataTable dt_storeProcedure = new DataTable();
             SqlCommand cmd = new SqlCommand(query, CreateConn());
+            cmd.CommandTimeout = 600;
             cmd.CommandType = CommandType.StoredProcedure;
             da.SelectCommand = cmd;
             da.Fill(dt_storeProcedure);
@@ -204,6 +205,7 @@ namespace SDC_Application.DL
                 SqlConnection con = CreateConn();
                 using (SqlCommand cmd = new SqlCommand(spWithParams, con))
                 {
+                    cmd.CommandTimeout = 600;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // set up the parameters                    
@@ -243,6 +245,7 @@ namespace SDC_Application.DL
             try
             {
                 SqlCommand cmd = new SqlCommand(str, CreateConn());
+                cmd.CommandTimeout = 600;
                 int retVal=cmd.ExecuteNonQuery();
                 CloseConn();
                 return retVal;
@@ -267,6 +270,7 @@ namespace SDC_Application.DL
             dr = null;
 
             SqlCommand cmd = new SqlCommand(str, CreateConn());
+            cmd.CommandTimeout = 600;
             dr = cmd.ExecuteReader();
             CloseConn();
             return dr;
@@ -291,6 +295,7 @@ namespace SDC_Application.DL
             {
                 string lastId = "0";
                 SqlCommand cmd = new SqlCommand(SpWithParams, CreateConn());
+                cmd.CommandTimeout = 600;
                 object retVal =cmd.ExecuteScalar();
                 lastId = retVal != null ? retVal.ToString() : "0";
                 CloseConn();
@@ -316,6 +321,7 @@ namespace SDC_Application.DL
             {
                 string lastId = "0";
                 SqlCommand cmd = c as SqlCommand;
+                cmd.CommandTimeout = 600;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = CreateConn();
                 cmd.CommandText = SpWithParams;
@@ -343,6 +349,7 @@ namespace SDC_Application.DL
             try
             {
                 SqlCommand cmd = new SqlCommand(SpWithParams, CreateConn());
+                cmd.CommandTimeout = 600;
                 int row = cmd.ExecuteNonQuery();
                 CloseConn();
             }

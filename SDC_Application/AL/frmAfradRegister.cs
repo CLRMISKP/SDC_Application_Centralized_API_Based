@@ -856,7 +856,7 @@ namespace SDC_Application.AL
                     cboFardAfradType.SelectedValue.ToString() != "0" &&
                     cboFardCaste.SelectedValue.ToString() != "0" &&
                     txtSrNoChild.Text.Length > 0 &&
-                    cboFardCaste.SelectedValue.ToString().Length > 3)
+                    cboFardCaste.SelectedValue.ToString().Length > 1)
                 {
                     SaveFard();
                     FillFardGrid(txtFardFamilyId.Text.ToString(), cboFardMauza.SelectedValue.ToString());

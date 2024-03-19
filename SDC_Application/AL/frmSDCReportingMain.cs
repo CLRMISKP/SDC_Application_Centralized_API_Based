@@ -147,7 +147,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if ((UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check!=44 && UsersManagments.check!=47) || UsersManagments.check==63)
+            if ((UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check != 44 && UsersManagments.check != 47) || UsersManagments.check == 63 || UsersManagments.check == 70 || UsersManagments.check == 71)
             {
                 //ReportParameter param = new ReportParameter();
                 //param.Name = "TehsilId";
@@ -717,6 +717,51 @@ namespace SDC_Application.AL
                  //rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
                  //rp[1] = new ReportParameter("KhataId", this.KhataId);
                  this.SetCredentials("AreaDifference_KhataKhewatKhatooniHissasDiffByTehsil", rp, false);
+
+             }
+             if (UsersManagments.check == 67) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("FardBadarImplementedReport", rp, false);
+
+             }
+             if (UsersManagments.check == 68) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("FardBadarCancelReport", rp, false);
+
+             }
+             if (UsersManagments.check == 69) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("FardBadarNotImplementedReport", rp, false);
+
+             }
+             if (UsersManagments.check == 70) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("TokensDetailReport", rp, false);
+
+             }
+             if (UsersManagments.check == 71) //Inconsistent Khata Jat
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("Intiqal_Entered_Pending_dem", rp, false);
 
              }
         }

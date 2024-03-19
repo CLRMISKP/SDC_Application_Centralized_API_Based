@@ -18,7 +18,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
 namespace SDC_Application.AL
 {
-    public partial class frmVerificationFinger : Form
+    public partial class frmVerificationFinger_old : Form
     {
         byte[] DeSerializee; 
         DPFP.Template Template = new DPFP.Template();
@@ -30,19 +30,19 @@ namespace SDC_Application.AL
         Image RetrunImgae1;
         DL.Database ObjDB = new DL.Database();
         DataTable dt;
-        public bool matched = false;
 
         public byte[] PersonFingerPrint { get; set; }
+        
 
-        public string name { get; set; }
-
-        public frmVerificationFinger()
+        public frmVerificationFinger_old()
         {
             InitializeComponent();
         }
 
         private void frmVerificationFinger_Load(object sender, EventArgs e)
         {
+            String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             //dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_Intiqal_PersonFingerPrintOnly " + 190010003 + "," + 19001000301 + "");
             //dt.Rows.Count.ToString();
@@ -57,7 +57,6 @@ namespace SDC_Application.AL
             //}
             Image RetrunImgae = MStream(this.PersonFingerPrint);
             pictureBox1.Image = Resource1.FingerprintImage;
-            lbPersonName.Text = name.ToString();
         }
         public Image MStream(byte[] img)
         {
@@ -95,19 +94,15 @@ namespace SDC_Application.AL
                 if (result.Verified)
                 {
                     MessageBox.Show("Machted"); //MakeReport("The fingerprint was VERIFIED.\n" + dt.Rows[x][0].ToString());
-                    matched = true;
-                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Not Matched", "Unable to Verify", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    matched = false;
                 }
             }
             else
             {
                 MessageBox.Show("مطلوبہ فنگر پرنٹ سسٹم میں محفوظ نہیں ہے۔۔۔", "Unable to Verify", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                matched = false;
             }
 
           

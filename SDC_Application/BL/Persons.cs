@@ -134,9 +134,9 @@ namespace SDC_Application.BL
             return objdatabase.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 
-        public string UpdatePersonCnic(string MozaId, string PersonId, string CNIC, string UserId)
+        public string UpdatePersonCnic(string MozaId, string PersonId, string CNIC, string UserId, string isPassport, string PassportCountry)
         {
-            string spWithParam = "WEB_SP_UPDATE_Person_CNIC " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId+","+PersonId+","+CNIC+","+UserId;
+            string spWithParam = "WEB_SP_UPDATE_Person_CNIC " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + "," + PersonId + ",'" + CNIC + "'," + UserId + "," + isPassport + ",N'" + PassportCountry+"'";
             return objdatabase.ExecInsertUpdateStoredProcedure(spWithParam);
         }
 

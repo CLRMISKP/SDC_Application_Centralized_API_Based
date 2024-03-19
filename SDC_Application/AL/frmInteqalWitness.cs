@@ -41,6 +41,7 @@ namespace SDC_Application.AL
                 btnDelWitness.Enabled = false;
                 btnNewWitness.Enabled = false;
             }
+          
         }
 
         #region GridView Fill Methods
@@ -76,9 +77,29 @@ namespace SDC_Application.AL
         }
 
         #endregion
+        bool isDowraAllowedToday()
+        {
+            try
+            {
+                int idValue = Convert.ToInt32(intiqal.GetDawraValidity(DateTime.Today.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+
+                return idValue == 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!isDowraAllowedToday())
+            {
+                string today = DateTime.Now.DayOfWeek.ToString();
+                MessageBox.Show("Dowra is not allowed on " + today);
+                return;
+            }
             if (txtWitnessFatherName.Text.Trim() != string.Empty && txtWittnessPersonName.Text.Trim() != string.Empty && txtWitnessCNIC.Text.Trim() != string.Empty)
             {
                 string R_CNIC = Pr.CheckCNICWitness(txtWitnessCNIC.Text.Replace("-",""));
@@ -320,7 +341,7 @@ namespace SDC_Application.AL
             else
             {
                 MessageBox.Show("شناختی کارڈ نمبر غلط ہیں- دوبارہ درج کریں", "Invalid CNIC Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtWitnessCNIC.Focus();
+                //txtWitnessCNIC.Focus();
             }
            
         }

@@ -1834,9 +1834,20 @@ namespace SDC_Application.AL
                     {
                         if (MalkiatKashkat)
                         {
-                            if (this.FardTokenId != "0" && this.FardTokenId != null)
+                            if ((this.FardTokenId != "0" && this.FardTokenId != null) || this. cmbFardTokenNo.DataSource!=null)
                             {
                                 //dt = Intiqal.GetRegistryIntiqalKhataMalikanByKhataIdByFardTokenId(IntiqalKhataId,this.FardTokenId);
+                                if (this.cmbFardTokenNo.DataSource != null)
+                                {
+                                    if(cmbFardTokenNo.SelectedValue.ToString().Length>5)
+                                    {
+                                        dt = Intiqal.GetRegistryIntiqalKhataMalikanByKhataIdByFardTokenId(IntiqalKhataId, cmbFardTokenNo.SelectedValue.ToString());
+                                    }
+                                    else
+                                        dt = Intiqal.GetRegistryIntiqalKhataMalikanByKhataIdByFardTokenId(IntiqalKhataId, FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
+                            
+                                }
+                                else
                                 dt = Intiqal.GetRegistryIntiqalKhataMalikanByKhataIdByFardTokenId(IntiqalKhataId, FardTokenId!=null && FardTokenId!="0"?FardTokenId:cmbFardTokenNo.SelectedValue.ToString());
                             }
                             else
@@ -1856,9 +1867,24 @@ namespace SDC_Application.AL
                                             String PersonId = Intiqal.GetPersonIdByKhewatgroupFareeqId(cboPersonSeller.SelectedValue.ToString());
                                             //dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(),this.FardTokenId);
                                             //dtFard = mnk.GetFardKhewatFareeqainRemainingAreaofFard(cboPersonSeller.SelectedValue.ToString(), PersonId, this.FardTokenId);
-                                            dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(), FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
-                                            dtFard = mnk.GetFardKhewatFareeqainRemainingAreaofFard(cboPersonSeller.SelectedValue.ToString(), PersonId, FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
-                                            
+                                            if (this.cmbFardTokenNo.DataSource != null)
+                                            {
+                                                if (cmbFardTokenNo.SelectedValue.ToString().Length > 5)
+                                                {
+                                                    dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(), cmbFardTokenNo.SelectedValue.ToString());
+                                                    dtFard = mnk.GetFardKhewatFareeqainRemainingAreaofFard(cboPersonSeller.SelectedValue.ToString(), PersonId, cmbFardTokenNo.SelectedValue.ToString());
+                                                }
+                                                else
+                                                {
+                                                    dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(), FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
+                                                    dtFard = mnk.GetFardKhewatFareeqainRemainingAreaofFard(cboPersonSeller.SelectedValue.ToString(), PersonId, FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
+                                                }
+                                            }
+                                            else
+                                            {
+                                                dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaRegistryIntiqal(cboPersonSeller.SelectedValue.ToString(), FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
+                                                dtFard = mnk.GetFardKhewatFareeqainRemainingAreaofFard(cboPersonSeller.SelectedValue.ToString(), PersonId, FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString());
+                                            }
                                         }
                                         else
                                         {
@@ -2138,14 +2164,39 @@ namespace SDC_Application.AL
                             foreach (DataGridViewRow row in GridSellerList.Rows)
                             {
 
-                                if (this.FardTokenId != "0")
+                                if (this.FardTokenId != "0" || cmbFardTokenNo.DataSource!=null)
                                 {
-                                    if (KhewatGroupFareeqId == row.Cells["KhewatGroupFareeqId"].Value.ToString() && txtSellerID.Text == "-1" && (FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString() )== row.Cells["FardTokenId"].Value.ToString())
+                                    if (this.cmbFardTokenNo.DataSource != null)
                                     {
-                                        isExists = true;
+                                        if (cmbFardTokenNo.SelectedValue.ToString().Length > 5)
+                                        {
+                                            if (KhewatGroupFareeqId == row.Cells["KhewatGroupFareeqId"].Value.ToString() && txtSellerID.Text == "-1" && cmbFardTokenNo.SelectedValue.ToString() == row.Cells["FardTokenId"].Value.ToString())
+                                            {
+                                                isExists = true;
 
-                                        MessageBox.Show("ریکارڈ پہلے سے موجود ہے", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        break;
+                                                MessageBox.Show("ریکارڈ پہلے سے موجود ہے", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                break;
+                                            }
+                                        }
+                                        else {
+                                            if (KhewatGroupFareeqId == row.Cells["KhewatGroupFareeqId"].Value.ToString() && txtSellerID.Text == "-1" && (FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString()) == row.Cells["FardTokenId"].Value.ToString())
+                                            {
+                                                isExists = true;
+
+                                                MessageBox.Show("ریکارڈ پہلے سے موجود ہے", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (KhewatGroupFareeqId == row.Cells["KhewatGroupFareeqId"].Value.ToString() && txtSellerID.Text == "-1" && (FardTokenId != null && FardTokenId != "0" ? FardTokenId : cmbFardTokenNo.SelectedValue.ToString()) == row.Cells["FardTokenId"].Value.ToString())
+                                        {
+                                            isExists = true;
+
+                                            MessageBox.Show("ریکارڈ پہلے سے موجود ہے", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            break;
+                                        }
                                     }
                                 }
                                 else
@@ -6599,7 +6650,7 @@ namespace SDC_Application.AL
             if (cmbFardTokenNo.SelectedIndex != 0)
             {
 
-                AutoFillCombo.FillCombo("proc_Self_Get_RegistryIntiqal_Khata_Malkan '" + IntiqalKhataId + "'" + "," + cmbFardTokenNo.SelectedValue.ToString(), cboPersonSeller, "personname", "KhewatGroupFareeqId");
+                AutoFillCombo.FillCombo("proc_Self_Get_RegistryIntiqal_Khata_Malkan "+UsersManagments._Tehsilid.ToString()+",'" + IntiqalKhataId + "'" + "," + cmbFardTokenNo.SelectedValue.ToString(), cboPersonSeller, "personname", "KhewatGroupFareeqId");
 
             }
 

@@ -17,6 +17,7 @@ namespace SDC_Application.AL
         public string retVal { get; set; }
         BL.frmToken objBusiness = new BL.frmToken();
         BL.Persons person=new BL.Persons();
+        LanguageManager.LanguageConverter lang = new LanguageManager.LanguageConverter();
         #endregion
         public frmPersonUpdateCNIC()
         {
@@ -82,20 +83,87 @@ namespace SDC_Application.AL
         
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCnic.Text.Length < 13)
+            if (!txtChkPassport.Checked)
             {
-                MessageBox.Show("13 ہندسوں پر مشتمل شناختی کارڈ نمبر کا اندراج کریں۔", "اندراج مالک شناختی کارڈ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtCnic.Text.Length < 13)
+                {
+                    MessageBox.Show("13 ہندسوں پر مشتمل شناختی کارڈ نمبر کا اندراج کریں۔", "اندراج مالک شناختی کارڈ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    retVal = person.UpdatePersonCnic(this.MozaId, this.PersonId, txtCnic.Text, Classess.UsersManagments.UserId.ToString(), txtChkPassport.Checked.ToString(), txtPassportContry.Text);
+                    if (retVal.Length > 5)
+                    {
+                        MessageBox.Show("شناختی کارڈ نمبر کا اندراج محفوظ ہوگیا۔", "اندراج مالک شناختی کارڈ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
             }
             else
             {
-                retVal = person.UpdatePersonCnic(this.MozaId, this.PersonId, txtCnic.Text, Classess.UsersManagments.UserId.ToString());
-                if (retVal.Length > 5)
+                if (txtPassportNo.Text.Trim().Length > 5 && txtChkPassport.Checked && txtPassportContry.Text.Trim().Length > 3)
                 {
-                    MessageBox.Show("شناختی کارڈ نمبر کا اندراج محفوظ ہوگیا۔", "اندراج مالک شناختی کارڈ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    retVal = person.UpdatePersonCnic(this.MozaId, this.PersonId, txtPassportNo.Text, Classess.UsersManagments.UserId.ToString(), txtChkPassport.Checked.ToString(), txtPassportContry.Text);
+                    if (retVal.Length > 5)
+                    {
+                        MessageBox.Show("پاسپورٹ نمبر کا اندراج محفوظ ہوگیا۔", "اندراج مالک پاسپورٹ نمبر", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }                    
+                }
+                else
+                {
+                    MessageBox.Show("کم از کم 7 ہندسوں پر مشتمل پاسپورٹ نمبر اور جاری کنندہ ملک کی اندراج کریں۔", "اندراج مالک پاسپورٹ نمبر", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
         #endregion
+
+        private void txtPassportContry_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            {
+                if (e.KeyChar == Convert.ToChar((Keys.Back)))
+                {
+
+                }
+                else
+                {
+                    e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
+                }
+            }
+            else if (e.KeyChar == 1)
+            {
+                TextBox txt = sender as TextBox;
+                txt.SelectAll();
+            }        
+        }
+
+        private void txtPassportNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtChkPassport_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtChkPassport.Checked)
+            {
+                lblPassportCont.Visible = true;
+                lblPassportNo.Visible = true;
+                txtPassportContry.Visible = true;
+                txtPassportNo.Visible = true;
+                lblCNIC.Visible = false;
+                txtCnic.Visible = false;
+                btnSave.Location = new Point(212, 92);
+            }
+            else {
+                lblPassportCont.Visible = false;
+                lblPassportNo.Visible = false;
+                txtPassportContry.Visible = false;
+                txtPassportNo.Visible = false;
+                lblCNIC.Visible = true;
+                txtCnic.Visible = true;
+                btnSave.Location = new Point(212, 40);//.X= 212;
+            }
+        }
     }
 }

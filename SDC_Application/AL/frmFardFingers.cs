@@ -496,7 +496,7 @@ namespace SDC_Application.AL
 
         private void btnVerifyFingerPrint_Click(object sender, EventArgs e)
         {
-            frmVerificationFinger verifyFingerPrint = new frmVerificationFinger();
+            frmVerificationFinger_old verifyFingerPrint = new frmVerificationFinger_old();
             verifyFingerPrint.PersonFingerPrint = imgDataFinger;
             verifyFingerPrint.ShowDialog();
         }

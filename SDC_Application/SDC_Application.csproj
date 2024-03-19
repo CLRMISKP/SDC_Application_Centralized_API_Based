@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>3.0.1.16</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>92</ApplicationRevision>
     <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -168,6 +168,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmIntiqalPersonSnaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalPersonSnaps.designer.cs">
+      <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmMisalBadarCacel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,12 @@
     </Compile>
     <Compile Include="AL\frmPersonUpdateCNIC.Designer.cs">
       <DependentUpon>frmPersonUpdateCNIC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmPicView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmPicView.designer.cs">
+      <DependentUpon>frmPicView.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmShortFardForOtherDistTehsil.cs">
       <SubType>Form</SubType>
@@ -878,11 +890,11 @@
     <Compile Include="AL\frmIntiqalMasterDefinitions.Designer.cs">
       <DependentUpon>frmIntiqalMasterDefinitions.cs</DependentUpon>
     </Compile>
-    <Compile Include="AL\frmIntiqalPersonSnaps.cs">
+    <Compile Include="AL\frmIntiqalPersonSnaps_old.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AL\frmIntiqalPersonSnaps.Designer.cs">
-      <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
+    <Compile Include="AL\frmIntiqalPersonSnaps_old.Designer.cs">
+      <DependentUpon>frmIntiqalPersonSnaps_old.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmIntiqalRevenueReports.cs">
       <SubType>Form</SubType>
@@ -1079,8 +1091,14 @@
     <Compile Include="AL\frmVerificationFinger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AL\frmVerificationFinger.Designer.cs">
+    <Compile Include="AL\frmVerificationFinger.designer.cs">
       <DependentUpon>frmVerificationFinger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmVerificationFinger_old.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmVerificationFinger_old.Designer.cs">
+      <DependentUpon>frmVerificationFinger_old.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmVidTut.cs">
       <SubType>Form</SubType>
@@ -1300,6 +1318,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmIntiqalPersonSnaps.resx">
+      <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmMisalBadarCacel.resx">
       <DependentUpon>frmMisalBadarCacel.cs</DependentUpon>
     </EmbeddedResource>
@@ -1320,6 +1341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmPersonUpdateCNIC.resx">
       <DependentUpon>frmPersonUpdateCNIC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmPicView.resx">
+      <DependentUpon>frmPicView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmShortFardForOtherDistTehsil.resx">
       <DependentUpon>frmShortFardForOtherDistTehsil.cs</DependentUpon>
@@ -1665,8 +1689,8 @@
     <EmbeddedResource Include="AL\frmIntiqalMasterDefinitions.resx">
       <DependentUpon>frmIntiqalMasterDefinitions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AL\frmIntiqalPersonSnaps.resx">
-      <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
+    <EmbeddedResource Include="AL\frmIntiqalPersonSnaps_old.resx">
+      <DependentUpon>frmIntiqalPersonSnaps_old.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalRevenueReports.resx">
@@ -1774,6 +1798,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmVerificationFinger.resx">
       <DependentUpon>frmVerificationFinger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmVerificationFinger_old.resx">
+      <DependentUpon>frmVerificationFinger_old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmVidTut.resx">
       <DependentUpon>frmVidTut.cs</DependentUpon>

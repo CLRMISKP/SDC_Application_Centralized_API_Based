@@ -1490,11 +1490,11 @@ namespace SDC_Application.AL
                     bool Cancel = Convert.ToBoolean(dtMisalDetails.Rows[0]["Cancel"].ToString());
                     rbManualFb.Checked = isManualFb;
                     btnAmaldaramad.Enabled = false;
-                    btnConfirm.Enabled = !ConfirmationStatus;
+                    btnConfirm.Enabled = UsersManagments._IsAdmin ? !ConfirmationStatus : false;//!ConfirmationStatus;
                    /// btnConfirm.Enabled = true;
                     if (this.ConfirmationStatus)
                         {
-                        btnAmaldaramad.Enabled =UsersManagments._IsAdmin ? !AmaldaramadStatus:false;
+                        btnAmaldaramad.Enabled = !AmaldaramadStatus;
                         disableControles();
                         //this.tabKhataDetail.TabPages.Remove(gardawarTab);
                         //this.tabKhataDetail.TabPages.Remove(tehsilDarTb);

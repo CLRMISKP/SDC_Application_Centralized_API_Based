@@ -772,7 +772,7 @@ namespace SDC_Application.AL
                        
                         //---- Check for Already Recieived transactional Fard and if exists get remaining Area and Hissa ----- //
                        DataTable dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaNewFard(cboKhewatGroupFareeq.SelectedValue.ToString());
-                       if (row["CNIC"].ToString().Length < 10 && row["PersonFamilyStatusId"].ToString()=="2")
+                       if (row["CNIC"].ToString().Length < 5 && row["PersonFamilyStatusId"].ToString()=="2")
                        {
                            MessageBox.Show("انتخاب کردہ مالک کے شناختی کارڈ نمبر کی اندراج کریں۔ آپ کے اسانی کے لئے رجسٹران حقداران زمین میں شناختی کارڈ اندراج کی سہولت دی گئی ہے۔","اندراج شناختی کارڈ");
                            break;
@@ -1946,7 +1946,7 @@ namespace SDC_Application.AL
         private void btnVerifyFingerPrint_Click(object sender, EventArgs e)
         {
             
-            frmVerificationFinger verifyFingerPrint = new frmVerificationFinger();
+            frmVerificationFinger_old verifyFingerPrint = new frmVerificationFinger_old();
             verifyFingerPrint.PersonFingerPrint = imgDataFinger;
             verifyFingerPrint.ShowDialog();
         
