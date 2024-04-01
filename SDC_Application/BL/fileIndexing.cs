@@ -54,7 +54,7 @@ namespace SDC_Application.BL
 
         public DataTable GetMozaByPatwarCircle(string TehsilId, string PatwarCircleId)
         {
-            string spWithParam = "Proc_Get_Moza_by_PatwarCircle " + TehsilId + ", " + PatwarCircleId + "";
+            string spWithParam = "Proc_Get_Moza_by_PatwarCircle " + UsersManagments._Tehsilid.ToString() + ", " + PatwarCircleId + "";
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
 
         }
@@ -76,7 +76,7 @@ namespace SDC_Application.BL
 
         public DataTable GetEntryQanoonGoi(string TehsilId)
         {
-            string spWithParam = "Proc_Entry_Qanoongois " + TehsilId + "";
+            string spWithParam = "Proc_Entry_Qanoongois " + UsersManagments._Tehsilid.ToString();
             return ojbdb.filldatatable_from_storedProcedure(spWithParam);
 
         }
