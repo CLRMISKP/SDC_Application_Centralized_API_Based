@@ -356,6 +356,11 @@ namespace SDC_Application.BL
                 string spWithParam = "Proc_Self_Intiqal_Warasat_MandarjaKhatajatWarsan " + Classess.UsersManagments._Tehsilid.ToString() + "," + khataid + "," + IntiqalId + "";
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
             }
+            public string SaveIntiqalKhataMalkanBadastoorKhata( string IntiqalId,string MozaId, string old_khataid,string newKhataId)
+            {
+                string spWithParam = "Proc_Self_Taqseem_Many " + Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "," + MozaId + ",'" + old_khataid + "','" + newKhataId + "'," + Classess.UsersManagments.UserId.ToString() + ",'" + Classess.UsersManagments.UserName.ToString() + "'";
+                return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            }
             public DataTable GetintiqalRahinSellersListByKhataRecId(string IntiqalKhataRecId, string IntiqalKhatooniRecid)
             {
 

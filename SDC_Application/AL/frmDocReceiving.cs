@@ -1238,7 +1238,7 @@ namespace SDC_Application.AL
                 try
                 {
 
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Registries_List_For_Registrar");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Registries_List_For_Registrar " +UsersManagments._Tehsilid.ToString());
 
                     DataTable outputTable = dt.Clone();
 

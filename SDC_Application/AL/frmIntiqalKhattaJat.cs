@@ -42,7 +42,7 @@ namespace SDC_Application.AL
         BindingSource bb = new BindingSource();
         Misal misalBL = new Misal();
         BL.TaqseemNewKhataJatMin taqseemnewkhata = new BL.TaqseemNewKhataJatMin();
-
+        DataTable dtIntiqalKhatas = new DataTable();
         //string KhewatGroupFareeqId;
 
         #region Varibles frmSellers
@@ -593,9 +593,9 @@ namespace SDC_Application.AL
         {
             try
             {
-                DataTable dt = new DataTable();
-                dt = inteq.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
-                GridViewInteqalKhattas.DataSource = dt;
+                
+                dtIntiqalKhatas = inteq.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
+                GridViewInteqalKhattas.DataSource = dtIntiqalKhatas;
                 GridViewInteqalKhattas.Columns["IntiqalId"].Visible = false;
                 GridViewInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
                 GridViewInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
@@ -6871,6 +6871,28 @@ namespace SDC_Application.AL
 		            MessageBox.Show(ex.Message);
 	            }
             
+        }
+
+        private void btnBadastoorMalikan_Click(object sender, EventArgs e)
+        {
+            if (cmbtaqseemChangeKhata.SelectedValue.ToString().Length > 5)
+            {
+                // show popup to select khatas to add malikan to badastoor khata
+                frmIntiqalSelectKhatajatForBadastoor frm = new frmIntiqalSelectKhatajatForBadastoor();
+                frm.dtKhatajat=this.dtIntiqalKhatas;
+                frm.BadastoorKhata = cmbtaqseemChangeKhata.Text;
+                frm.BadastoorKhataId = cmbtaqseemChangeKhata.SelectedValue.ToString();
+                frm.IntiqalId = this.IntiqalId;
+                frm.MozaId = this.MozaId.ToString();
+                frm.FormClosed -= new FormClosedEventHandler(frm_FormClosed);
+                frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                frm.ShowDialog();
+            }
+        }
+
+        void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cmbtaqseemChange_SelectionChangeCommitted(sender, e);
         }
     }
 }

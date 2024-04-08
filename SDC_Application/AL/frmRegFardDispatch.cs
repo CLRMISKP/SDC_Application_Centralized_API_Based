@@ -140,7 +140,7 @@ namespace SDC_Application.AL
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dt.Clear();
+            if (dt != null) dt.Clear();
             Proc_Get_SDC_TokenList_For_PaymentVoucher();
         }
 
@@ -150,7 +150,7 @@ namespace SDC_Application.AL
             try
             {
                 
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard '" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + "1" + "'");
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard "+UsersManagments._Tehsilid.ToString()+",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + "1" + "'");
                
                 DataTable outputTable = dt.Clone();
 
@@ -204,7 +204,7 @@ namespace SDC_Application.AL
             try
             {
 
-                dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Registrar_Dispatch " + DispatchId );
+                dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Registrar_Dispatch "+UsersManagments._Tehsilid.ToString()+"," + DispatchId );
 
                 DataTable outputTable = dt.Clone();
 

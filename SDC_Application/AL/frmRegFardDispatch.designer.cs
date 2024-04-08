@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -223,7 +224,7 @@
             this.LbFardatNos.Location = new System.Drawing.Point(622, 19);
             this.LbFardatNos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbFardatNos.Name = "LbFardatNos";
-            this.LbFardatNos.Size = new System.Drawing.Size(22, 30);
+            this.LbFardatNos.Size = new System.Drawing.Size(28, 38);
             this.LbFardatNos.TabIndex = 62;
             this.LbFardatNos.Text = "0";
             // 
@@ -234,7 +235,7 @@
             this.cbLetterNo.FormattingEnabled = true;
             this.cbLetterNo.Location = new System.Drawing.Point(935, 20);
             this.cbLetterNo.Name = "cbLetterNo";
-            this.cbLetterNo.Size = new System.Drawing.Size(183, 27);
+            this.cbLetterNo.Size = new System.Drawing.Size(183, 31);
             this.cbLetterNo.TabIndex = 61;
             this.cbLetterNo.SelectionChangeCommitted += new System.EventHandler(this.cbLetterNo_SelectionChangeCommitted);
             // 
@@ -249,7 +250,7 @@
             this.dtDispatchDate.Location = new System.Drawing.Point(744, 20);
             this.dtDispatchDate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtDispatchDate.Name = "dtDispatchDate";
-            this.dtDispatchDate.Size = new System.Drawing.Size(128, 29);
+            this.dtDispatchDate.Size = new System.Drawing.Size(128, 35);
             this.dtDispatchDate.TabIndex = 60;
             this.dtDispatchDate.Tag = "2";
             // 
@@ -263,7 +264,7 @@
             this.label35.Location = new System.Drawing.Point(654, 19);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(68, 30);
+            this.label35.Size = new System.Drawing.Size(87, 38);
             this.label35.TabIndex = 59;
             this.label35.Text = "کل فردات:";
             // 
@@ -277,7 +278,7 @@
             this.label3.Location = new System.Drawing.Point(879, 19);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 30);
+            this.label3.Size = new System.Drawing.Size(50, 38);
             this.label3.TabIndex = 55;
             this.label3.Text = "تاریخ";
             // 
@@ -291,7 +292,7 @@
             this.label4.Location = new System.Drawing.Point(1125, 19);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 30);
+            this.label4.Size = new System.Drawing.Size(61, 38);
             this.label4.TabIndex = 48;
             this.label4.Text = "لیٹر نمبر";
             // 
@@ -401,7 +402,7 @@
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(238, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 25);
+            this.label2.Size = new System.Drawing.Size(40, 31);
             this.label2.TabIndex = 75;
             this.label2.Text = "تاریخ";
             // 
@@ -411,7 +412,7 @@
             this.chkAllToSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAllToSave.Location = new System.Drawing.Point(527, 37);
             this.chkAllToSave.Name = "chkAllToSave";
-            this.chkAllToSave.Size = new System.Drawing.Size(77, 24);
+            this.chkAllToSave.Size = new System.Drawing.Size(97, 30);
             this.chkAllToSave.TabIndex = 2;
             this.chkAllToSave.Text = "تمام منتخب کریں";
             this.chkAllToSave.UseVisualStyleBackColor = true;
@@ -437,7 +438,7 @@
             this.label6.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(543, 4);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 25);
+            this.label6.Size = new System.Drawing.Size(58, 31);
             this.label6.TabIndex = 72;
             this.label6.Text = "ٹوکن نمبر";
             // 
@@ -450,7 +451,7 @@
             this.dateTime.Location = new System.Drawing.Point(72, 7);
             this.dateTime.Name = "dateTime";
             this.dateTime.RightToLeftLayout = true;
-            this.dateTime.Size = new System.Drawing.Size(160, 26);
+            this.dateTime.Size = new System.Drawing.Size(160, 30);
             this.dateTime.TabIndex = 74;
             this.dateTime.ValueChanged += new System.EventHandler(this.dateTime_ValueChanged);
             // 
@@ -473,7 +474,7 @@
             this.label7.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(425, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 25);
+            this.label7.Size = new System.Drawing.Size(30, 31);
             this.label7.TabIndex = 71;
             this.label7.Text = "نام";
             // 
@@ -527,6 +528,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdInsertedFardat.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdInsertedFardat.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.grdInsertedFardat.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdInsertedFardat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdInsertedFardat.Size = new System.Drawing.Size(639, 342);
             this.grdInsertedFardat.TabIndex = 3;
@@ -546,6 +550,7 @@
             this.panel3.Controls.Add(this.txtNameInserted);
             this.panel3.Controls.Add(this.chkAllDetails);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(639, 67);
@@ -558,7 +563,7 @@
             this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(422, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 30);
+            this.label1.Size = new System.Drawing.Size(70, 38);
             this.label1.TabIndex = 76;
             this.label1.Text = "ٹوکن نمبر";
             // 
@@ -581,7 +586,7 @@
             this.label8.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(304, 19);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 30);
+            this.label8.Size = new System.Drawing.Size(36, 38);
             this.label8.TabIndex = 75;
             this.label8.Text = "نام";
             // 
@@ -604,7 +609,7 @@
             this.chkAllDetails.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAllDetails.Location = new System.Drawing.Point(522, 38);
             this.chkAllDetails.Name = "chkAllDetails";
-            this.chkAllDetails.Size = new System.Drawing.Size(77, 24);
+            this.chkAllDetails.Size = new System.Drawing.Size(97, 30);
             this.chkAllDetails.TabIndex = 3;
             this.chkAllDetails.Text = "تمام منتخب کریں";
             this.chkAllDetails.UseVisualStyleBackColor = true;
