@@ -39,6 +39,14 @@ namespace SDC_Application.BL
             retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
             return retVal;
         }
+
+        public string getKhataNoListByPersonId(string PersonId, string MozaId)
+        {
+            string retVal = "";
+            string spWithParms = "Proc_Get_KhataNo_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PersonId + "," + MozaId ;
+            retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+            return retVal;
+        }
         public string DeleteFbKhatooniBaya(string BayaRecId)
         {
             string retVal = "";

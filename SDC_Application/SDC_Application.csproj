@@ -168,6 +168,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmRozanamchaRoInst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmRozanamchaRoInst.designer.cs">
+      <DependentUpon>frmRozanamchaRoInst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AL\frmAppUpdateListMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmAppUpdateListMessage.Designer.cs">
+      <DependentUpon>frmAppUpdateListMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalPersonSnaps.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1324,6 +1336,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmRozanamchaRoInst.resx">
+      <DependentUpon>frmRozanamchaRoInst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AL\frmAppUpdateListMessage.resx">
+      <DependentUpon>frmAppUpdateListMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalPersonSnaps.resx">
       <DependentUpon>frmIntiqalPersonSnaps.cs</DependentUpon>
     </EmbeddedResource>
@@ -2125,72 +2143,72 @@
   <ItemGroup>
     <PublishFile Include="EDSDK.dll">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="EDSDKLib">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="EDSDKLib.dll">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="FlashControlV71">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="ShockwaveFlashObjects">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="stdole">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="txtChangesTrack.txt">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

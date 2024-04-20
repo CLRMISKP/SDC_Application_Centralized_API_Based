@@ -1,6 +1,6 @@
 ﻿namespace SDC_Application.AL
 {
-    partial class frmGardawriAttestationByRO
+    partial class frmRozanamchaRoInst
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFingerHysoon = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtRoInst = new System.Windows.Forms.TextBox();
             this.gbSelectRO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSelectRO
@@ -56,7 +58,7 @@
             this.gbSelectRO.Name = "gbSelectRO";
             this.gbSelectRO.Padding = new System.Windows.Forms.Padding(4);
             this.gbSelectRO.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gbSelectRO.Size = new System.Drawing.Size(683, 108);
+            this.gbSelectRO.Size = new System.Drawing.Size(1119, 100);
             this.gbSelectRO.TabIndex = 3;
             this.gbSelectRO.TabStop = false;
             this.gbSelectRO.Text = "ریونیو افیسر کا انتخاب کریں";
@@ -80,7 +82,7 @@
             this.cboROs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboROs.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboROs.FormattingEnabled = true;
-            this.cboROs.Location = new System.Drawing.Point(364, 43);
+            this.cboROs.Location = new System.Drawing.Point(800, 43);
             this.cboROs.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.cboROs.Name = "cboROs";
             this.cboROs.Size = new System.Drawing.Size(211, 32);
@@ -92,7 +94,7 @@
             // lbl5
             // 
             this.lbl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl5.Location = new System.Drawing.Point(584, 47);
+            this.lbl5.Location = new System.Drawing.Point(1020, 47);
             this.lbl5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(88, 31);
@@ -105,7 +107,7 @@
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSave.Location = new System.Drawing.Point(327, 31);
+            this.btnSave.Location = new System.Drawing.Point(533, 28);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(70, 60);
@@ -116,7 +118,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(136, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(76, 40);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(217, 215);
@@ -129,12 +131,12 @@
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 381);
+            this.groupBox1.Location = new System.Drawing.Point(7, 402);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(683, 103);
+            this.groupBox1.Size = new System.Drawing.Size(1119, 96);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تصدیق کے بعد محفوظ کریں";
@@ -146,7 +148,7 @@
             this.btnFingerHysoon.ForeColor = System.Drawing.Color.White;
             this.btnFingerHysoon.Image = global::SDC_Application.Resource1.fingerPrint1;
             this.btnFingerHysoon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFingerHysoon.Location = new System.Drawing.Point(219, 31);
+            this.btnFingerHysoon.Location = new System.Drawing.Point(437, 28);
             this.btnFingerHysoon.Margin = new System.Windows.Forms.Padding(4);
             this.btnFingerHysoon.Name = "btnFingerHysoon";
             this.btnFingerHysoon.Size = new System.Drawing.Size(70, 60);
@@ -158,28 +160,53 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 114);
+            this.groupBox2.Location = new System.Drawing.Point(7, 106);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(683, 267);
+            this.groupBox2.Size = new System.Drawing.Size(399, 296);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "حیثیت تصدیق";
             // 
-            // frmGardawriAttestationByRO
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtRoInst);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(406, 106);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(10);
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox3.Size = new System.Drawing.Size(720, 296);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ہدایات";
+            // 
+            // txtRoInst
+            // 
+            this.txtRoInst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRoInst.Location = new System.Drawing.Point(10, 42);
+            this.txtRoInst.Multiline = true;
+            this.txtRoInst.Name = "txtRoInst";
+            this.txtRoInst.Size = new System.Drawing.Size(700, 244);
+            this.txtRoInst.TabIndex = 0;
+            this.txtRoInst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoInst_KeyPress);
+            // 
+            // frmRozanamchaRoInst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 490);
+            this.ClientSize = new System.Drawing.Size(1133, 504);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbSelectRO);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmGardawriAttestationByRO";
+            this.Name = "frmRozanamchaRoInst";
             this.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Text = "تصدیق گرداوری";
             this.Load += new System.EventHandler(this.frmVerificationFinger_Load);
@@ -188,6 +215,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -204,6 +233,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblRoName;
         private System.Windows.Forms.Button btnFingerHysoon;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtRoInst;
     }
 }

@@ -4112,5 +4112,22 @@ namespace SDC_Application.AL
             this.FillGridviewMalkan(view.ToTable() );
         }
 
+        private void btnPersonKhatajat_Click(object sender, EventArgs e)
+        {
+            if (this.SelectedPersonId.Length > 5)
+            {
+                try
+                {
+                    txtPersonKhataDetails.Text = fardBadarBL.getKhataNoListByPersonId(SelectedPersonId, cmbMouza.SelectedValue.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+                MessageBox.Show("کھاتہ جات لوڈ کرنے سے پہلے فرد کا انتخاب کریں۔");
+        }
+
     }
 }

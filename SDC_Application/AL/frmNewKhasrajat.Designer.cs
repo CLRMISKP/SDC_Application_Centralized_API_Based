@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtKhatooniNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtKhasraNo = new System.Windows.Forms.TextBox();
@@ -48,6 +50,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtKhatooniNo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtKhasraNo);
@@ -56,16 +60,35 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(633, 55);
+            this.panel1.Size = new System.Drawing.Size(673, 55);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(306, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 31);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "کھتونی نمبر";
+            // 
+            // txtKhatooniNo
+            // 
+            this.txtKhatooniNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKhatooniNo.Location = new System.Drawing.Point(188, 14);
+            this.txtKhatooniNo.Name = "txtKhatooniNo";
+            this.txtKhatooniNo.Size = new System.Drawing.Size(112, 39);
+            this.txtKhatooniNo.TabIndex = 4;
+            this.txtKhatooniNo.TextChanged += new System.EventHandler(this.txtKhatooniNo_TextChanged);
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 24);
+            this.label2.Location = new System.Drawing.Point(71, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 25);
+            this.label2.Size = new System.Drawing.Size(101, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "منتخب شدہ خسرے";
             // 
@@ -73,18 +96,18 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(376, 23);
+            this.label1.Location = new System.Drawing.Point(490, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 25);
+            this.label1.Size = new System.Drawing.Size(59, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "خسرہ نمبر";
             // 
             // txtKhasraNo
             // 
             this.txtKhasraNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhasraNo.Location = new System.Drawing.Point(199, 19);
+            this.txtKhasraNo.Location = new System.Drawing.Point(372, 13);
             this.txtKhasraNo.Name = "txtKhasraNo";
-            this.txtKhasraNo.Size = new System.Drawing.Size(171, 33);
+            this.txtKhasraNo.Size = new System.Drawing.Size(112, 39);
             this.txtKhasraNo.TabIndex = 1;
             this.txtKhasraNo.TextChanged += new System.EventHandler(this.txtKhasraNo_TextChanged);
             // 
@@ -92,9 +115,9 @@
             // 
             this.chkkhasrajat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkkhasrajat.AutoSize = true;
-            this.chkkhasrajat.Location = new System.Drawing.Point(541, 23);
+            this.chkkhasrajat.Location = new System.Drawing.Point(560, 23);
             this.chkkhasrajat.Name = "chkkhasrajat";
-            this.chkkhasrajat.Size = new System.Drawing.Size(89, 29);
+            this.chkkhasrajat.Size = new System.Drawing.Size(110, 35);
             this.chkkhasrajat.TabIndex = 0;
             this.chkkhasrajat.Text = "تمام منتخب کریں";
             this.chkkhasrajat.UseVisualStyleBackColor = true;
@@ -108,14 +131,14 @@
             this.panel5.Location = new System.Drawing.Point(0, 55);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(633, 323);
+            this.panel5.Size = new System.Drawing.Size(673, 323);
             this.panel5.TabIndex = 4;
             // 
             // checkedListBox1
             // 
             this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(-1, 0);
+            this.checkedListBox1.Location = new System.Drawing.Point(2, 0);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(200, 323);
             this.checkedListBox1.TabIndex = 1;
@@ -133,12 +156,12 @@
             this.grdKhasrajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chk});
             this.grdKhasrajat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.grdKhasrajat.Location = new System.Drawing.Point(199, 0);
+            this.grdKhasrajat.Location = new System.Drawing.Point(202, 0);
             this.grdKhasrajat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.grdKhasrajat.Name = "grdKhasrajat";
             this.grdKhasrajat.ReadOnly = true;
             this.grdKhasrajat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grdKhasrajat.Size = new System.Drawing.Size(434, 323);
+            this.grdKhasrajat.Size = new System.Drawing.Size(471, 323);
             this.grdKhasrajat.TabIndex = 0;
             this.grdKhasrajat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdKhasrajat_CellContentClick);
             // 
@@ -168,13 +191,13 @@
             this.panel3.Location = new System.Drawing.Point(0, 378);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(633, 102);
+            this.panel3.Size = new System.Drawing.Size(673, 102);
             this.panel3.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(362, 0);
+            this.btnSave.Location = new System.Drawing.Point(402, 0);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 42);
@@ -186,7 +209,7 @@
             // frmNewKhasrajat
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(633, 480);
+            this.ClientSize = new System.Drawing.Size(673, 480);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -218,5 +241,7 @@
         private System.Windows.Forms.TextBox txtKhasraNo;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtKhatooniNo;
     }
 }

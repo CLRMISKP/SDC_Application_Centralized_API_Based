@@ -259,7 +259,11 @@ namespace SDC_Application
                 mnucreateUsers.Visible = false;
                 mnuSupervisorMain.Visible = false;
             }
-           
+            if (DateTime.Now < new DateTime(2024, 04, 24))
+            {
+                frmAppUpdateListMessage appUp = new frmAppUpdateListMessage();
+                appUp.ShowDialog();
+            }
         }
 
         #endregion
@@ -2305,6 +2309,19 @@ namespace SDC_Application
                 obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuRoznamchaROorders_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmRozanamchaRoInst obj = new frmRozanamchaRoInst();
                 obj.Show();
             }
         }

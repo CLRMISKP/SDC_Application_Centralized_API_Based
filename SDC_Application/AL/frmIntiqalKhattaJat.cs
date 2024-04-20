@@ -1027,6 +1027,7 @@ namespace SDC_Application.AL
                         {
                             //string[] raqba = CommanFunctions.CalculatedAreaFromHisa(fhissay, shissay, fkanal, fmarla, fsarsai, fsft);
                             //string[] raqba = CommanFunctions.CalculatedAreaFromHisa(khissay, shissay, kkanal, kmarla, ksarsai, ksft);
+
                             string[] raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
                             txtFrokhtKanal.Text = raqba[0];
                             txtFrokhtMarla.Text = raqba[1];

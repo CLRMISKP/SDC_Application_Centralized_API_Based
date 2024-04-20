@@ -236,6 +236,12 @@ namespace SDC_Application.AL
             }
 
         }
+
+        private void txtKhatooniNo_TextChanged(object sender, EventArgs e)
+        {
+            string No = this.txtKhatooniNo.Text;
+            this.fillgrid_byfilter("KhatooniNo like '%" + No + "%'");
+        }
         
         
     }

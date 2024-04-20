@@ -33,6 +33,7 @@
             this.mnuMainFileIndexing = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuToken = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCovid19Booking = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRoznamchaROorders = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVucherReceipt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChallan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReceipt = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,6 +167,7 @@
             this.mnuEnteredMutationsReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDePendingMutCo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRegEntryRptCo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuInitqalforDawra = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZreport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaskNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
@@ -186,7 +188,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuInitqalforDawra = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -219,7 +220,8 @@
             // 
             this.mnuMainFileIndexing.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuToken,
-            this.menuCovid19Booking});
+            this.menuCovid19Booking,
+            this.mnuRoznamchaROorders});
             this.mnuMainFileIndexing.Name = "mnuMainFileIndexing";
             this.mnuMainFileIndexing.Size = new System.Drawing.Size(59, 42);
             this.mnuMainFileIndexing.Text = "ٹوکن";
@@ -227,17 +229,24 @@
             // mnuToken
             // 
             this.mnuToken.Name = "mnuToken";
-            this.mnuToken.Size = new System.Drawing.Size(151, 42);
+            this.mnuToken.Size = new System.Drawing.Size(221, 42);
             this.mnuToken.Text = "1 - ٹوکن";
             this.mnuToken.Click += new System.EventHandler(this.mnuFileIndexing_Click);
             // 
             // menuCovid19Booking
             // 
             this.menuCovid19Booking.Name = "menuCovid19Booking";
-            this.menuCovid19Booking.Size = new System.Drawing.Size(151, 42);
+            this.menuCovid19Booking.Size = new System.Drawing.Size(221, 42);
             this.menuCovid19Booking.Text = "2 - بکنگ";
             this.menuCovid19Booking.Visible = false;
             this.menuCovid19Booking.Click += new System.EventHandler(this.menuCovid19Booking_Click);
+            // 
+            // mnuRoznamchaROorders
+            // 
+            this.mnuRoznamchaROorders.Name = "mnuRoznamchaROorders";
+            this.mnuRoznamchaROorders.Size = new System.Drawing.Size(221, 42);
+            this.mnuRoznamchaROorders.Text = "2 - روزنامچہ ہدایات ";
+            this.mnuRoznamchaROorders.Click += new System.EventHandler(this.mnuRoznamchaROorders_Click);
             // 
             // mnuVucherReceipt
             // 
@@ -316,6 +325,7 @@
             this.mnuOtherDistrictTehsilFard.Name = "mnuOtherDistrictTehsilFard";
             this.mnuOtherDistrictTehsilFard.Size = new System.Drawing.Size(319, 42);
             this.mnuOtherDistrictTehsilFard.Text = "9 - دوسرے اضلاع و تحصیل کے فردات";
+            this.mnuOtherDistrictTehsilFard.Visible = false;
             this.mnuOtherDistrictTehsilFard.Click += new System.EventHandler(this.mnuOtherDistrictTehsilFard_Click);
             // 
             // ToolStripMenuMalkiatTafseel
@@ -1314,6 +1324,13 @@
             this.mnuRegEntryRptCo.Visible = false;
             this.mnuRegEntryRptCo.Click += new System.EventHandler(this.mnuRegEntryRptCo_Click);
             // 
+            // mnuInitqalforDawra
+            // 
+            this.mnuInitqalforDawra.Name = "mnuInitqalforDawra";
+            this.mnuInitqalforDawra.Size = new System.Drawing.Size(348, 42);
+            this.mnuInitqalforDawra.Text = "- انتقالات برائے دورہ";
+            this.mnuInitqalforDawra.Click += new System.EventHandler(this.mnuInitqalforDawra_Click);
+            // 
             // mnuRHZreport
             // 
             this.mnuRHZreport.Name = "mnuRHZreport";
@@ -1516,13 +1533,6 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuInitqalforDawra
-            // 
-            this.mnuInitqalforDawra.Name = "mnuInitqalforDawra";
-            this.mnuInitqalforDawra.Size = new System.Drawing.Size(348, 42);
-            this.mnuInitqalforDawra.Text = "- انتقالات برائے دورہ";
-            this.mnuInitqalforDawra.Click += new System.EventHandler(this.mnuInitqalforDawra_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1718,5 +1728,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFardbadarAll;
         private System.Windows.Forms.ToolStripMenuItem mnuTokenandService;
         private System.Windows.Forms.ToolStripMenuItem mnuInitqalforDawra;
+        private System.Windows.Forms.ToolStripMenuItem mnuRoznamchaROorders;
     }
 }

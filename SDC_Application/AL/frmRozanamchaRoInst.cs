@@ -18,11 +18,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
 namespace SDC_Application.AL
 {
-    public partial class frmGardawriAttestationByRO : Form
+    public partial class frmRozanamchaRoInst : Form
     {
         byte[] DeSerializee; 
         DPFP.Template Template = new DPFP.Template();
-       
+        LanguageManager.LanguageConverter lang = new LanguageManager.LanguageConverter();
         public string FPTempByte
         { get; set; }
         public bool Btn 
@@ -35,15 +35,9 @@ namespace SDC_Application.AL
 
         public byte[] PersonFingerPrint { get; set; }
 
-        public string KhassraId { get; set; }
-        public string Year { get; set; }
-        public string MozaId { get; set; }
-        public string fasleType { get; set; }
-        public bool AttStatus { get; set; }
-        public string GardawriId { get; set; }
 
 
-        public frmGardawriAttestationByRO()
+        public frmRozanamchaRoInst()
         {
             InitializeComponent();
         }
@@ -53,7 +47,7 @@ namespace SDC_Application.AL
 
 
             this.FillROsCombo();
-            this.AttStatus = false;
+            //this.AttStatus = false;
             //dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_Intiqal_PersonFingerPrintOnly " + 190010003 + "," + 19001000301 + "");
             //dt.Rows.Count.ToString();
             //foreach (DataRow row in dt.Rows)
@@ -165,22 +159,28 @@ namespace SDC_Application.AL
         {
             //string lastId=Intiqal.WEB_SP_Update_Intiqal_Verification(this.intiqalId.ToString(), cboROs.SelectedValue.ToString(), this.PersonFingerPrint);
             //ObjDB.ExecUpdateStoredProcedureWithNoRet("WEB_SP_Update_Verify_Intiqal_ByRO " + this.intiqalId.ToString() + "," + cboROs.SelectedValue.ToString()+","+this.PersonFingerPrint+"");
-            try
+            if (cboROs.SelectedValue.ToString().Length > 2 && txtRoInst.Text.Length > 10)
             {
-                if (DialogResult.Yes == MessageBox.Show("آپ اس گرداوری کو تصدیق کرنا چاہتے ہے۔؟", "تصدیق گرداوری", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                try
                 {
-                   string retVal= gardawri.UpdateGardawriConfirmationAttestation(cboROs.Text, cboROs.SelectedValue.ToString(),GardawriId);
-                   if (retVal != "Gardwari Amal not completed, encountered and error")
-                       this.AttStatus = true;
-                   else
-                       this.AttStatus = false;
+                    if (DialogResult.Yes == MessageBox.Show("آپ درج شدہ ہدایات محفوظ کرنا چاہتے ہیں۔ محفوظ کرنے کے بعد یہ احکامات نا قابل تبدیلی ہونگے۔؟", "تصدیق محفوظ ریکارڈ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                    {
+                        string retVal = gardawri.saveRoInstructions("-1",txtRoInst.Text, cboROs.SelectedValue.ToString(), Classess.UsersManagments.UserId.ToString(), Classess.UsersManagments.UserName);
+                        if (retVal.Length>0)
+                        {
+                            MessageBox.Show("ہدایات محفوظ ہو چکے ہیں۔");
+                        }
+                
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                this.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            this.Close();
+            else
+                MessageBox.Show("احکامات میں الفاظ کی تعداد کم سے کم دس ہونے چاہیئے۔");
         }
 
         private void btnFingerHysoon_Click(object sender, EventArgs e)
@@ -203,6 +203,21 @@ namespace SDC_Application.AL
             {
                 MessageBox.Show("Finger Print Matched to the Selected RO Finger Print, Click Ok to Proceed to Intiqal Attestation Process.", "Finger Print is Valid...", MessageBoxButtons.OK); //MakeReport("The fingerprint was VERIFIED.\n" + dt.Rows[x][0].ToString());
                 btnSave.Enabled = true;
+            }
+        }
+
+        private void txtRoInst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            {
+                if (e.KeyChar == Convert.ToChar((Keys.Back)))
+                {
+
+                }
+                else
+                {
+                    e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
+                }
             }
         }
         //private byte[] SerializeAndDeserialize(DPFP.FeatureSet obj)

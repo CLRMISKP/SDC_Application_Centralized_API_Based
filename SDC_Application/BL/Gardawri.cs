@@ -34,10 +34,10 @@ namespace SDC_Application.BL
             return retVal;
         }
 
-        public string SaveGardawriKashtFasal(string GardawriKashtFasalId,string TehsilId ,string GardawariId, string KhatooniId, string KhassraId, string KhassraTypeId, string KhassraSubTypeId, string KashtkaranTafseel, string FasalDetail, string WasileAbpashi, string Kayfiat, string InsertLoginName, string InsertUserId)
+        public string SaveGardawriKashtFasal(string GardawriKashtFasalId, string TehsilId, string GardawariId,  string KhataId, string KhatooniId, string KashtkaranTafseel, string KashtkaranTafseelProp, string FasalDetail, string WasileAbpashi, string Kayfiat, string InsertLoginName, string InsertUserId)
         {
             string retVal = "0";
-            string spWithParms = "WEB_SP_INSERT_GardawariKashtFasal '" + GardawriKashtFasalId + "','"+TehsilId+"','" + GardawariId + "','" + KhatooniId + "','" + KhassraId + "','" + KhassraTypeId + "','" + KhassraSubTypeId + "',N'" + KashtkaranTafseel + "',N'" + FasalDetail + "',N'" + WasileAbpashi + "',N'" + Kayfiat + "','" + InsertLoginName + "','" + InsertUserId.ToString() + "'";
+            string spWithParms = "WEB_SP_INSERT_GardawariKashtFasal " + GardawriKashtFasalId + "," + TehsilId + "," + GardawariId + "," + KhataId + "," + KhatooniId + ",N'" + KashtkaranTafseel + "',N'" + KashtkaranTafseelProp + "',N'" + FasalDetail + "',N'" + WasileAbpashi + "',N'" + Kayfiat + "','" + InsertLoginName + "'," + InsertUserId.ToString();
             retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
             return retVal;
         }
@@ -63,10 +63,14 @@ namespace SDC_Application.BL
         #region Delete Functions
         public string DeleteGardawri(string GardawriId)
         {
-            string spWithParms = "WEB_SP_Delete_Gradawari " + GardawriId;
+            string spWithParms = "WEB_SP_Delete_Gradawari " + GardawriId; 
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
         }
-
+        public string DeleteGardawriKashtTafseel(string GardawriKashtFasalId)
+        {
+            string spWithParms = "WEB_SP_Delete_Gradawari_KashtTafseel " + GardawriKashtFasalId; //WEB_SP_Delete_Gradawari_KashtTafseel 
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+        }
         public  string  DeleteGardawriKhassraDetail(string GardawriKhassraDetailId)
             {
                 string spWithParms = "WEB_SP_DELETE_GardawriKhassraDetailsTaghairat " + GardawriKhassraDetailId;
@@ -77,12 +81,21 @@ namespace SDC_Application.BL
 
         #region Gardawri Confirmation / Attestation
 
-        public void UpdateGardawriConfirmationAttestation(string Action, string AttestedUserId, string ConfirmationLoginName, string AttestedLoginName, string GardawriId)
+        public string UpdateGardawriConfirmationAttestation(string attestedUserId, string AttestedLoginName, string GardawriId)
         {
-            string spWithParms = "WEB_SP_Update_Gardawri_Confirmation_Amaldaramad  '" + Action + "'," + AttestedUserId + ",'" + ConfirmationLoginName + "','" + AttestedLoginName + "',"+GardawriId;
-            dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParms);
+            string spWithParms = "Proc_Gardwari_Amaldaramad  " + Classess.UsersManagments._Tehsilid.ToString() + "," + GardawriId + ",'" + AttestedLoginName + "',"+attestedUserId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
         }
-
+        public string saveRoInstructions(string instId, string Instructions, string RoId, string SdcoId, string insertLoginName)
+        {
+            string spWithParms = "Web_Sp_Insert_Roznamcha_Ro_Inst  " + Classess.UsersManagments._Tehsilid.ToString() + "," + instId + ",N'" + Instructions + "'," + RoId+","+SdcoId+",'"+insertLoginName+"'";
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+        }
+        public string UpdateGardawriFinalization(string ConfirmUserId, string ConfirmLoginName, string GardawriId)
+        {
+            string spWithParms = "Proc_Gardwari_Finalization  " + Classess.UsersManagments._Tehsilid.ToString() + "," + GardawriId + ",'" + ConfirmLoginName + "'," + ConfirmUserId;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
+        }
         #endregion
 
         #region Get Gardawri Details 
@@ -93,9 +106,9 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
 
-        public DataTable GetGardawriByGardawriKhatooniId(string GardwariId, string KhatoooniId)
+        public DataTable GetGardawriByGardawriKhatooniId(string GardwariId)
         {
-            string spWithParms = "Proc_Get_GradawariKashtFasal " + GardwariId + "," + KhatoooniId;
+            string spWithParms = "Proc_Get_GradawariKashtFasal " + GardwariId + "," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString();
             return dbobject.filldatatable_from_storedProcedure(spWithParms);
         }
 
