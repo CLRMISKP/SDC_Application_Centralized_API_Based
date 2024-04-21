@@ -761,7 +761,7 @@ namespace SDC_Application.AL
 
         private void cboKhewatGroupFareeq_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
+             try
             {
                 foreach (DataRow row in dtKhewatFareeqainByKhataId.Rows) //dtKhewatFareeqainByKhataId
                     
@@ -774,7 +774,13 @@ namespace SDC_Application.AL
                        DataTable dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaNewFard(cboKhewatGroupFareeq.SelectedValue.ToString());
                        if (row["CNIC"].ToString().Length < 5 && row["PersonFamilyStatusId"].ToString()=="2")
                        {
-                           MessageBox.Show("انتخاب کردہ مالک کے شناختی کارڈ نمبر کی اندراج کریں۔ آپ کے اسانی کے لئے رجسٹران حقداران زمین میں شناختی کارڈ اندراج کی سہولت دی گئی ہے۔","اندراج شناختی کارڈ");
+
+                           MessageBox.Show(" انتخاب کردہ مالک کے شناختی کارڈ نمبر کی اندراج کریں۔ آپ کے اسانی کے لئے رجسٹران حقداران زمین میں شناختی کارڈ اندراج کی سہولت دی گئی ہے۔ یا یہاں سے اندراج کر نے کے بعد کھاتہ نمبر پر کلک کر کے مالکان دوبارہ لوڈ کریں۔","اندراج شناختی کارڈ");
+                           frmPersonUpdateCNIC ucnic = new frmPersonUpdateCNIC();
+                           ucnic.lblPersonName.Text = row["PersonName"].ToString();
+                           ucnic.PersonId = row["PersonId"].ToString();
+                           ucnic.MozaId = this.SelectedMozaId;
+                           ucnic.ShowDialog();
                            break;
                        }
                         
@@ -962,11 +968,18 @@ namespace SDC_Application.AL
                         int skanal = Convert.ToInt32(txtKanalMuntaqal.Text);
                         int smarla = Convert.ToInt32(txtMarlaMuntaqla.Text);
                         float ssarsai = float.Parse(txtSarsaiMuntaqla.Text);
-                        float sfeet = float.Parse(txtSFTmuntaqla.Text);
+                        float sfeet = Math.Round(float.Parse(txtSFTmuntaqla.Text), 0) < Math.Round((float.Parse(txtSarsaiMuntaqla.Text) * (float)30.25), 0) ?(float)Math.Round((float.Parse(txtSarsaiMuntaqla.Text) * (float)30.25), 0) :(float)Math.Round(float.Parse(txtSFTmuntaqla.Text), 0);
                         float shissa = float.Parse(txtHissaMuntaqla.Text);
+                        string[] totalArea=txtKhewatFareeqRaqba.Text.Split('-');
+                        float Totalfeet= (float.Parse(totalArea[0])*20*(float)272.25)+(float.Parse(totalArea[1])*(float)272.25)+float.Parse(totalArea[2]);
+                        float TransFeet=(float.Parse(skanal.ToString())*20*(float)272.25)+(float.Parse(smarla.ToString())*(float)272.25)+sfeet;
                         if (float.Parse(txtKhewatFareeqHissa.Text) < shissa)
                         {
                             MessageBox.Show("حصہ منتقلہ کل حصص سے زیادہ ہے۔", "حصہ منتقلہ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else if(TransFeet>(Totalfeet+5))
+                        {
+                            MessageBox.Show("رقبہ منتقلہ کل رقبہ سے زیادہ ہے۔", "رقبہ منتقلہ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
