@@ -47,8 +47,59 @@ namespace SDC_Application.AL
 
             //  this.FormBorderStyle = FormBorderStyle.None;
             InitializeComponent();
+
+            // Add event handlers for the buttons
+            btnAddPic.Click += new EventHandler(btnAddPic_Click);
+            btnDeletePic.Click += new EventHandler(btnDeletePic_Click);
         }
-      
+
+        private byte[] personPic;
+
+        private void btnAddPic_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    personPic = System.IO.File.ReadAllBytes(filePath);
+
+                    using (var originalImage = Image.FromFile(filePath))
+                    {
+                        var scaledImage = ScaleImage(originalImage, pictureBox1.Width, pictureBox1.Height);
+                        pictureBox1.Image = scaledImage;
+                    }
+                }
+            }
+        }
+
+
+        private void btnDeletePic_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            personPic = null;
+        }
+
+        private Image ScaleImage(Image image, int maxWidth, int maxHeight)
+        {
+            var ratioX = (double)maxWidth / image.Width;
+            var ratioY = (double)maxHeight / image.Height;
+            var ratio = Math.Min(ratioX, ratioY);
+
+            var newWidth = (int)(image.Width * ratio);
+            var newHeight = (int)(image.Height * ratio);
+
+            var newImage = new Bitmap(newWidth, newHeight);
+
+            using (var graphics = Graphics.FromImage(newImage))
+            {
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+
+            return newImage;
+        }
+
         private void frmToken_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
@@ -361,7 +412,7 @@ namespace SDC_Application.AL
                 {
                     if (cbRelation.Text.Trim().Length > 0)
                     {
-                        if (Submit())
+                        if (SubmitWithPic())
                         {
 
                             this.labeltimetoken.Visible = true;
@@ -414,6 +465,28 @@ namespace SDC_Application.AL
             }
             return false;
         }
+
+        public bool SubmitWithPic()
+        {
+            try
+            {
+                if (MessageBox.Show("کیا آپ محفوظ کرنا چاہتے ہیں:::::", "محفوظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    TokenVerified = "False";
+                    TokenDuplicate = "False";
+                    WEB_SP_INSERT_SDC_Tokens_withPic(UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), TokenVerified, txttokenid, txtToken, status1, TokenDuplicate, cbRelation.Text, personPic);
+                    return true;
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message, "ٹوکن نمبر موجود ہے", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                return false;
+            }
+            return false;
+        }
+
+
         #endregion
 
         #region  verified for print
@@ -466,6 +539,7 @@ namespace SDC_Application.AL
             }
 
         }
+
         public void WEB_SP_INSERT_SDC_Tokens(string username, string UserID, string tokenverified, TextBox tokenid, TextBox tokenno, TextBox status,string TokenDuplicate, string Relation)
         {
 
@@ -503,6 +577,50 @@ namespace SDC_Application.AL
 
 
         }
+
+
+        public void WEB_SP_INSERT_SDC_Tokens_withPic(string username, string UserID, string tokenverified, TextBox tokenid, TextBox tokenno, TextBox status, string TokenDuplicate, string Relation, byte[] personPic)
+        {
+           // string datetoken = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); // Assuming current date time for token date
+
+            SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@TokenId", SqlDbType.VarChar) { Value = tokenid.Text.ToString() },
+                    new SqlParameter("@TehsilId", SqlDbType.Int) { Value = UsersManagments._Tehsilid },
+                    new SqlParameter("@LocationId", SqlDbType.Int) { Value = UsersManagments._LocationId },
+                    new SqlParameter("@TokenDate", SqlDbType.DateTime) { Value = datetoken },
+                    new SqlParameter("@TokenNo", SqlDbType.Int) { Value = Convert.ToInt32(tokenno.Text.ToString()) },
+                    new SqlParameter("@Visitor_Name", SqlDbType.NVarChar) { Value = txtVisitorName.Text.Trim().ToString() },
+                    new SqlParameter("@Visitor_FatherName", SqlDbType.NVarChar) { Value = txtFatherHusband.Text.Trim().ToString() },
+                    new SqlParameter("@Visitor_CNIC", SqlDbType.VarChar) { Value = this.txtCNCI.Text.Trim().ToString() },
+                    new SqlParameter("@Visitor_ContactNo", SqlDbType.VarChar) { Value = this.txtVisitorContactNo.Text.Trim().ToString() },
+                    new SqlParameter("@Visitor_TempAddress", SqlDbType.NVarChar) { Value = this.txtTempAddress.Text.ToString() },
+                    new SqlParameter("@Visitor_PermAddress", SqlDbType.NVarChar) { Value = this.txtParAdress.Text.ToString() },
+                    new SqlParameter("@ServiceTypeId", SqlDbType.VarChar) { Value = this.cmbServiceId.SelectedValue.ToString() },
+                    new SqlParameter("@TokenService_For_MozaId", SqlDbType.Int) { Value = Convert.ToInt32(this.cmbMouza.SelectedValue.ToString()) },
+                    new SqlParameter("@TokenPurposeId", SqlDbType.VarChar) { Value = this.cmbPurpose.SelectedValue.ToString() },
+                    new SqlParameter("@Token_Verified", SqlDbType.Bit) { Value = Convert.ToBoolean(tokenverified) },
+                    new SqlParameter("@Token_DuplicatePrint", SqlDbType.Bit) { Value = Convert.ToBoolean(TokenDuplicate) },
+                    new SqlParameter("@Token_CurrentStatus", SqlDbType.NVarChar) { Value = status.Text.ToString() },
+                    new SqlParameter("@InsertUserId", SqlDbType.Int) { Value = Convert.ToInt32(UserID) },
+                    new SqlParameter("@InsertLoginName", SqlDbType.NVarChar) { Value = username },
+                    new SqlParameter("@UpdateUserId", SqlDbType.Int) { Value = Convert.ToInt32(UserID) },
+                    new SqlParameter("@UpdateLoginName", SqlDbType.NVarChar) { Value = username },
+                    new SqlParameter("@Relation", SqlDbType.NVarChar) { Value = Relation },
+                    new SqlParameter("@personPic", SqlDbType.VarBinary) { Value = personPic }
+                };
+
+            dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_Tokens_withPic", parameters);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                txttokenid.Text = dr[0].ToString();
+                txtToken.Text = dr[1].ToString();
+                this.label12.Text = dr[1].ToString();
+            }
+        }
+
+
 
         #endregion
 
@@ -632,6 +750,19 @@ namespace SDC_Application.AL
             frmTokenPopulate Populate = sender as frmTokenPopulate;
             if (Populate.btn)
             {
+
+                // Set pictureBox1.Image to picSelected.Image if picSelected.Image is not null
+                if (Populate.picSelected.Image != null)
+                {
+                    var scaledImage = ScaleImage(Populate.picSelected.Image, pictureBox1.Width, pictureBox1.Height);
+                        pictureBox1.Image = scaledImage;
+                }
+                else
+                {
+                    this.pictureBox1.Image = null; // Clear pictureBox1 if picSelected.Image is null
+                }
+
+
                 this.cmbMouza.Text = Populate.Mouza;
                 this.txtToken.Text = Populate.TokenNo;
                 this.txtVisitorName.Text = Populate.NameVisitor;
@@ -811,15 +942,19 @@ namespace SDC_Application.AL
 
         private void btnNewToken_Click(object sender, EventArgs e)
         {
-
             clearTextFields();
             this.labeltimetoken.Visible = false;
             label1.Visible = false;
             this.cmbPurpose.Visible = false;
             this.lbl7.Visible = false;
 
+            // Clear the picture box
+            pictureBox1.Image = null;
 
+            // Clear the byte array
+            personPic = null; // Or new byte[0] if you prefer an empty array
 
+            // Additional reset actions if needed
         }
 
 
@@ -993,6 +1128,8 @@ namespace SDC_Application.AL
             //dgPersonTokenDetails.Columns["VoucherNo"].HeaderText = "چالان نمبر و تاریخ";
             //dgPersonTokenDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
             }
+
+
 
       
         }
