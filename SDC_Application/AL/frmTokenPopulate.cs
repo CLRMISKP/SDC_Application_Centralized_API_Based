@@ -48,6 +48,7 @@ namespace SDC_Application.AL
         public string fromform { get; set; }
         public string otherTehsilId { get; set; }
         public string Relation { get; set; }
+        public System.Windows.Forms.PictureBox picSelected = new PictureBox(); // Assuming picSelected is a PictureBox control
 
         public string ServiceTypeId { get; set; } // for filtering Token on basis of Service generated for
 
@@ -103,6 +104,28 @@ namespace SDC_Application.AL
             objdatagrid.colorrbackgrid(grdToken);
             objdatagrid.gridControls(grdToken);
             grdToken.Columns["Visitor_CNIC"].Width = 180;
+            grdToken.Columns["personPic"].Visible = true;
+            // Assuming you already have a DataGridView named grdToken
+
+
+            if (!grdToken.Columns.Contains("personPic"))
+            {
+                DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
+                imgColumn.Name = "personPic";
+                imgColumn.HeaderText = "Person Picture";
+                imgColumn.ImageLayout = DataGridViewImageCellLayout.Zoom; // Adjust image to fit cell
+                grdToken.Columns.Add(imgColumn);
+            }
+            else {
+
+                grdToken.Columns["personPic"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                grdToken.Columns["personPic"].DefaultCellStyle.NullValue = null; // Optional: Set a default image for empty cells
+                grdToken.Columns["personPic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center the image in the cell
+
+                // Adjust row height to fit the icon
+                grdToken.RowTemplate.Height = 50; // Set this to the desired icon size
+                ((DataGridViewImageColumn)grdToken.Columns["personPic"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+            }
         }
         private void grdToken_DoubleClick(object sender, EventArgs e)
         {
@@ -143,18 +166,18 @@ namespace SDC_Application.AL
                 //{
                 if (otherTehsilId.Length > 1)
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_OtherDistric_Tehsils " + otherTehsilId + ",'" + datetoken + "',"+UsersManagments._LocationId.ToString());
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_OtherDistric_Tehsils_withPics " + otherTehsilId + ",'" + datetoken + "'," + UsersManagments._LocationId.ToString());
                 }
                 else
                 {
                     if (fromform == "1")
                     {
                         //dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal '" + datetoken + "'," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
-                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal_withPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "'," + UsersManagments.SubSdcId.ToString());
                     }
                     else
                     {
-                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All_withPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'," + UsersManagments.SubSdcId.ToString());
                     }
                 }
                  
@@ -192,6 +215,25 @@ namespace SDC_Application.AL
 
         private void grdToken_DoubleClick_1(object sender, EventArgs e)
         {
+
+            if (grdToken.CurrentRow != null)
+            {
+                // Assuming picSelected is a PictureBox or similar control to display the image
+                if (grdToken.CurrentRow.Cells["personPic"].Value != DBNull.Value)
+                {
+                    byte[] imageBytes = (byte[])grdToken.CurrentRow.Cells["personPic"].Value;
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imageBytes))
+                    {
+                        this.picSelected.Image = System.Drawing.Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    this.picSelected.Image = null; // Clear the PictureBox if no image
+                }
+            }
+
+
             if (InteqalMain)
             {
                 this.TokenID = grdToken.CurrentRow.Cells["TokenId"].Value.ToString();

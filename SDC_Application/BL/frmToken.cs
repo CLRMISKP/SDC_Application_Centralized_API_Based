@@ -21,10 +21,19 @@ namespace SDC_Application.BL
         //{
         //    return ojbdb.fillDataTable(b);
         //}
+
+
+        public DataTable filldatatable_from_storedProcedure(String spName ,SqlParameter[] parameters)
+        {
+            return ojbdb.filldatatable_from_storedProcedure(spName,parameters);
+        }
+
+
            public DataTable filldatatable_from_storedProcedure(string b)
         {
                return ojbdb.filldatatable_from_storedProcedure(b);
-           }
+        }
+
            public DataTable viewGridData(string b)
         {
             return ojbdb.viewGridData(b);

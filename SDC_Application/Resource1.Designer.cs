@@ -323,6 +323,26 @@ namespace SDC_Application {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete1 {
+            get {
+                object obj = ResourceManager.GetObject("delete1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Document_icon {
             get {
                 object obj = ResourceManager.GetObject("Document-icon", resourceCulture);
@@ -446,6 +466,16 @@ namespace SDC_Application {
         internal static System.Drawing.Bitmap fingrPrint {
             get {
                 object obj = ResourceManager.GetObject("fingrPrint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fopen {
+            get {
+                object obj = ResourceManager.GetObject("fopen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
