@@ -1267,7 +1267,7 @@ namespace SDC_Application.BL
             /// Deletes intiqal main record
             /// </summary>
             /// <param name="IntiqalId"></param>
-            public void DeleteIntiqalMain(int IntiqalId)
+            public void DeleteIntiqalMain(string IntiqalId)
             {
                 //DataContext.WEB_SP_DELETE_Intiqal_Intiqal_Main(IntiqalId);
                 string spWithParam = "WEB_SP_DELETE_Intiqal_Intiqal_Main  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + "";

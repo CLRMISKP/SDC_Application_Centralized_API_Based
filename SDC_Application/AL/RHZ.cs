@@ -82,7 +82,7 @@ namespace SDC_Application.AL
                 {
                     MainKhata_New_Sel rptKhata = new MainKhata_New_Sel();
                     //rptKhata.SetDatabaseLogon("dlis", "$$UnhAbitat@@2013##", "172.88.10.6", "Peshawar");
-                    string server = "172.16.100.227";
+                    string server = "172.16.100.11";
                     string db = "CLRMIS";
                     rptKhata.SetDatabaseLogon("dlis", "$$#Un#hAbItAt@@2013##", server, db);
                     rptKhata.SetParameterValue("Moza", MozaId);

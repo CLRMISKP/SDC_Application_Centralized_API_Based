@@ -23,6 +23,8 @@ namespace SDC_Application.AL
         Khatoonies khatooni = new Khatoonies();
         DataTable dtkj= new DataTable();
         Misal misal=new Misal();
+        DataView dvPendingIntiqal = new DataView();
+        DataView dvPendingIntiqalAllPend = new DataView();
         public string intiqalTypeId { get; set; }
 
         public frmAdminPendingTaskDashboard()
@@ -227,9 +229,10 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dtPendingMutations = rhz.GetIntiqalPendingMissingAll();
+                dvPendingIntiqal = dtPendingMutations.AsDataView();
                 if (dtPendingMutations.Rows.Count > 0)
                 {
-                    dgPendingMutations.DataSource = dtPendingMutations;
+                    dgPendingMutations.DataSource = dvPendingIntiqal;
                     fillDgPendingMutations();
                 }
                 else
@@ -602,9 +605,10 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dtPendingMutations = rhz.GetIntiqalPendingAll();
+                dvPendingIntiqalAllPend = dtPendingMutations.AsDataView();
                 if (dtPendingMutations.Rows.Count > 0)
                 {
-                    dgPendingMutationsAll.DataSource = dtPendingMutations;
+                    dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
                     fillDgPendingMutationsAll();
                 }
                 else
@@ -679,6 +683,22 @@ namespace SDC_Application.AL
 
 
             }
+        }
+
+        private void txtSearchIntiqal_TextChanged(object sender, EventArgs e)
+        {
+            string filter = this.txtSearchIntiqal.Text.ToString();
+            dvPendingIntiqal.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
+            dgPendingMutations.DataSource = dvPendingIntiqal;
+            fillDgPendingMutations();
+        }
+
+        private void txtSearchIntiqalAllPending_TextChanged(object sender, EventArgs e)
+        {
+            string filter = this.txtSearchIntiqalAllPending.Text.ToString();
+            dvPendingIntiqalAllPend.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
+            dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
+                    fillDgPendingMutationsAll();
         }
     }
 }

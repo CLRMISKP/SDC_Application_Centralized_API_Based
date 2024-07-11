@@ -977,29 +977,29 @@ namespace SDC_Application.AL
         {
             try
             {
-                float khissayWOTM = txtKulHissayWOTminhay.Text.Trim() != "" ? float.Parse(txtKulHissayWOTminhay.Text.Trim()) : 0;
-                float khissay = txtKulHisay.Text.Trim() != "" ? float.Parse(txtKulHisay.Text.Trim()) : 0;
-                float shissay = txtFrokhtHisay.Text.Trim() != "" ? float.Parse(txtFrokhtHisay.Text.Trim()) : 0;
-                float fhissay = txtFardHissay.Text.Trim() != "" ? float.Parse(txtFardHissay.Text.Trim()) : 0;
+                decimal khissayWOTM = txtKulHissayWOTminhay.Text.Trim() != "" ? decimal.Parse(txtKulHissayWOTminhay.Text.Trim()) : 0;
+                decimal khissay = Math.Round(Convert.ToDecimal(txtKulHisay.Text.Trim() != "" ? decimal.Parse(txtKulHisay.Text.Trim()) : 0), 7);
+                decimal shissay = txtFrokhtHisay.Text.Trim() != "" ? decimal.Parse(txtFrokhtHisay.Text.Trim()) : 0;
+                decimal fhissay = txtFardHissay.Text.Trim() != "" ? decimal.Parse(txtFardHissay.Text.Trim()) : 0;
                
                 //Owners raqba
                 int kkanal = txtKullKanal.Text.Trim() != "" ? Convert.ToInt32(txtKullKanal.Text.Trim()) : 0;
                 int kmarla = txtKullMarla.Text.Trim() != "" ? Convert.ToInt32(txtKullMarla.Text.Trim()) : 0;
-                float ksarsai = txtKullSarsai.Text.Trim() != "" ? float.Parse(txtKullSarsai.Text.Trim()) : 0;
-                float ksft = txtKulFeet.Text.Trim() != "" ? float.Parse(txtKulFeet.Text.Trim()) : 0;
+                decimal ksarsai = txtKullSarsai.Text.Trim() != "" ? decimal.Parse(txtKullSarsai.Text.Trim()) : 0;
+                decimal ksft = txtKulFeet.Text.Trim() != "" ? decimal.Parse(txtKulFeet.Text.Trim()) : 0;
                 //decimal raqbainSft = (kkanal * 20 * (decimal)272.25) + (kmarla * (decimal)272.25) + ksft; //+ ((ksarsai / 9) * 272) sarsai not included in raqba
                
                 //Buyers Raqba
                 int bkanal = txtFrokhtKanal.Text.Trim() != "" ? Convert.ToInt32(txtFrokhtKanal.Text.Trim()) : 0;
                 int bmarla = txtFrokhtMarla.Text.Trim() != "" ? Convert.ToInt32(txtFrokhtMarla.Text.Trim()) : 0;
-                float bsarsai = txtFrokhtSarsai.Text.Trim() != "" ? float.Parse(txtFrokhtSarsai.Text.Trim()) : 0;
-                float bsft = txtFrokhtFeet.Text.Trim() != "" ? float.Parse(txtFrokhtFeet.Text.Trim()) : 0;
+                decimal bsarsai = txtFrokhtSarsai.Text.Trim() != "" ? decimal.Parse(txtFrokhtSarsai.Text.Trim()) : 0;
+                decimal bsft = txtFrokhtFeet.Text.Trim() != "" ? decimal.Parse(txtFrokhtFeet.Text.Trim()) : 0;
 
                 //Buyers Raqba of Fard
                 int fkanal = txtFardKanal.Text.Trim() != "" ? Convert.ToInt32(txtFardKanal.Text.Trim()) : 0;
                 int fmarla = txtFardMarla.Text.Trim() != "" ? Convert.ToInt32(txtFardMarla.Text.Trim()) : 0;
-                float fsarsai = txtFardSarsai.Text.Trim() != "" ? float.Parse(txtFardSarsai.Text.Trim()) : 0;
-                float fsft = txtFardFeet.Text.Trim() != "" ? float.Parse(txtFardFeet.Text.Trim()) : 0;
+                decimal fsarsai = txtFardSarsai.Text.Trim() != "" ? decimal.Parse(txtFardSarsai.Text.Trim()) : 0;
+                decimal fsft = txtFardFeet.Text.Trim() != "" ? decimal.Parse(txtFardFeet.Text.Trim()) : 0;
                 int mkhDecimal = shissay.ToString().Length - (((int)shissay).ToString().Length + 1); //CommanFunctions.GetDecimalPlaces(shissay); 
                 mkhDecimal = mkhDecimal > 0 ? mkhDecimal : 0;
                 if (txtFrokhtHisay.Text.Trim() != "" && txtFrokhtHisay.Text != "0")
@@ -1028,7 +1028,7 @@ namespace SDC_Application.AL
                             //string[] raqba = CommanFunctions.CalculatedAreaFromHisa(fhissay, shissay, fkanal, fmarla, fsarsai, fsft);
                             //string[] raqba = CommanFunctions.CalculatedAreaFromHisa(khissay, shissay, kkanal, kmarla, ksarsai, ksft);
 
-                            string[] raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
+                            string[] raqba = CommanFunctions.CalculatedAreaFromHisa((float)KhataHissa,(float)shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
                             txtFrokhtKanal.Text = raqba[0];
                             txtFrokhtMarla.Text = raqba[1];
                             txtFrokhtSarsai.Text = raqba[2];
@@ -1063,10 +1063,10 @@ namespace SDC_Application.AL
                                         }
                                     }
                                 }
-                                raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, Khassra_Kanal, Khassra_Marla, Khassra_Sarsai, Khassra_Feet);
+                                raqba = CommanFunctions.CalculatedAreaFromHisa((float)KhataHissa, (float)shissay, Khassra_Kanal, Khassra_Marla, Khassra_Sarsai, Khassra_Feet);
                             }
                             else
-                                raqba = CommanFunctions.CalculatedAreaFromHisa(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
+                                raqba = CommanFunctions.CalculatedAreaFromHisa((float)KhataHissa, (float)shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet);
                             txtFrokhtKanal.Text = raqba[0];
                             txtFrokhtMarla.Text = raqba[1];
                             txtFrokhtSarsai.Text = raqba[2];
@@ -1079,9 +1079,9 @@ namespace SDC_Application.AL
                 {
                     if (this.FardTokenId != "0" && this.FardTokenId != null)
                     {
-                        txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(khissay, shissay, kkanal, kmarla, ksarsai, ksft, bkanal, bmarla, bsarsai, bsft).ToString();
-                        fhissay = txtFardHissay.Text.Trim() != "" ? float.Parse(txtFardHissay.Text.Trim()) : 0;
-                        shissay = txtFrokhtHisay.Text.Trim() != "" ? float.Parse(txtFrokhtHisay.Text.Trim()) : 0;
+                        txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea((float)khissay, (float)shissay, kkanal, kmarla, (float)ksarsai, (float)ksft, bkanal, bmarla, (float)bsarsai, (float)bsft).ToString();
+                        fhissay = txtFardHissay.Text.Trim() != "" ? decimal.Parse(txtFardHissay.Text.Trim()) : 0;
+                        shissay = txtFrokhtHisay.Text.Trim() != "" ? decimal.Parse(txtFrokhtHisay.Text.Trim()) : 0;
                         if (shissay > fhissay)
                         {
                             MessageBox.Show("مالک اس فرد کے بقایا حصے سے زیادہ حصے فروخت نہیں کر سکتے", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1107,14 +1107,14 @@ namespace SDC_Application.AL
                                     }
                                 }
                             }
-                            txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(float.Parse( GridViewInteqalKhattas.SelectedRows[0].Cells["TotalParts"].Value.ToString()), shissay, Khassra_Kanal, Khassra_Marla, Khassra_Sarsai, Khassra_Feet, bkanal, bmarla, bsarsai, bsft).ToString();
+                            txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(float.Parse( GridViewInteqalKhattas.SelectedRows[0].Cells["TotalParts"].Value.ToString()), (float)shissay, Khassra_Kanal, Khassra_Marla,(float)Khassra_Sarsai, (float)Khassra_Feet, bkanal, bmarla,(float) bsarsai,(float)bsft).ToString();
                         }
                         else
-                        txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea(KhataHissa, shissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet, bkanal, bmarla, bsarsai, bsft).ToString();
+                        txtFrokhtHisay.Text = CommanFunctions.CalculatedHisaFromArea((float)KhataHissa, (float)shissay, KhataKanal, KhataMarla, (float)KhataSarsai, (float)KhataFeet, bkanal, bmarla, (float)bsarsai, (float)bsft).ToString();
 
-                        khissayWOTM = txtKulHissayWOTminhay.Text.Trim() != "" ? float.Parse(txtKulHissayWOTminhay.Text.Trim()) : 0;
-                        khissay = txtKulHisay.Text.Trim() != "" ? float.Parse(txtKulHisay.Text.Trim()) : 0;
-                        shissay = txtFrokhtHisay.Text.Trim() != "" ? float.Parse(txtFrokhtHisay.Text.Trim()) : 0;
+                        khissayWOTM = txtKulHissayWOTminhay.Text.Trim() != "" ? decimal.Parse(txtKulHissayWOTminhay.Text.Trim()) : 0;
+                        khissay = txtKulHisay.Text.Trim() != "" ? decimal.Parse(txtKulHisay.Text.Trim()) : 0;
+                        shissay = txtFrokhtHisay.Text.Trim() != "" ? decimal.Parse(txtFrokhtHisay.Text.Trim()) : 0;
                         if (shissay > khissay)
                         {
                             MessageBox.Show("مالک کل حصے سے زیادہ حصے فروخت نہیں کر سکتے ", "فروخت", MessageBoxButtons.OK, MessageBoxIcon.Stop);

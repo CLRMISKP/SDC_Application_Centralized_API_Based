@@ -3677,7 +3677,7 @@ namespace SDC_Application.AL
                         string[] Area = row["Khewat_Area"].ToString().Split('-');
                         string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
                                "-1",
-                               cbFBDocuments.SelectedValue.ToString(),
+                               cbFBDocuments.SelectedValue.ToString().Length<9? txtFbId.Text:cbFBDocuments.SelectedValue.ToString(),
                                 row["KhewatGroupFareeqId"].ToString(), //kgf_id,
                                row["KhewatGroupId"].ToString(), //kg_id,
                                "Fard_e_Badar",
@@ -3693,8 +3693,8 @@ namespace SDC_Application.AL
                                Area[0], //kanalProposed.ToString(),
                                Area[1], //marla.ToString(),
                                Area[1], //marlaProposed.ToString(),
-                               Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsai.ToString(),
-                               Math.Round((float.Parse(Area[2]) / (float)30.25), 5).ToString(), //sarsaiProposed.ToString(),
+                               Math.Round((decimal.Parse(Area[2]) / (decimal)30.25), 5).ToString(), //sarsai.ToString(),
+                               Math.Round((decimal.Parse(Area[2]) / (decimal)30.25), 5).ToString(), //sarsaiProposed.ToString(),
                                Area[2], //sft.ToString(),
                                Area[2], //sftProposed.ToString(),
                                UsersManagments.UserId.ToString(),

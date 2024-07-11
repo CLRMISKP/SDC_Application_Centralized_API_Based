@@ -26,6 +26,7 @@ namespace SDC_Application
         public string CNIC { get; set; }
         public bool  isforShajraFb { get; set; }
         public string PersonNameForFB { get; set; }
+        public int PersonFamilyStatusId { get; set; }
 
 
         public bool IsForKhata { get; set; }

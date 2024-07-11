@@ -37,11 +37,11 @@
     <ProductName>CLRMIS</ProductName>
     <PublisherName>Project Management Unit, Revenue &amp; Estate Department</PublisherName>
     <SuiteName>Land Records Management Information System</SuiteName>
-    <MinimumRequiredVersion>3.0.1.16</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.0.2.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>95</ApplicationRevision>
-    <ApplicationVersion>3.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>3.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -168,6 +168,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmIntiqalMissingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalMissingReport.designer.cs">
+      <DependentUpon>frmIntiqalMissingReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmRozanamchaRoInst.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1336,6 +1342,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmIntiqalMissingReport.resx">
+      <DependentUpon>frmIntiqalMissingReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmRozanamchaRoInst.resx">
       <DependentUpon>frmRozanamchaRoInst.cs</DependentUpon>
     </EmbeddedResource>

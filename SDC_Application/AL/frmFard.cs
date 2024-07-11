@@ -971,7 +971,7 @@ namespace SDC_Application.AL
                         float sfeet = Math.Round(float.Parse(txtSFTmuntaqla.Text), 0) < Math.Round((float.Parse(txtSarsaiMuntaqla.Text) * (float)30.25), 0) ?(float)Math.Round((float.Parse(txtSarsaiMuntaqla.Text) * (float)30.25), 0) :(float)Math.Round(float.Parse(txtSFTmuntaqla.Text), 0);
                         float shissa = float.Parse(txtHissaMuntaqla.Text);
                         string[] totalArea=txtKhewatFareeqRaqba.Text.Split('-');
-                        float Totalfeet= (float.Parse(totalArea[0])*20*(float)272.25)+(float.Parse(totalArea[1])*(float)272.25)+float.Parse(totalArea[2]);
+                        float Totalfeet= (float.Parse(totalArea[0])*20*(float)272.25)+(float.Parse(totalArea[1])*(float)272.25)+(float.Parse(totalArea[2])*(float)30.25);
                         float TransFeet=(float.Parse(skanal.ToString())*20*(float)272.25)+(float.Parse(smarla.ToString())*(float)272.25)+sfeet;
                         if (float.Parse(txtKhewatFareeqHissa.Text) < shissa)
                         {

@@ -669,7 +669,27 @@ namespace SDC_Application.AL
         {
             if (IntiqalId.Length>5)
             {
-               
+                if (radkhanakashtToMalkiat.Checked)
+                {
+                    frmIntiqalKhattaJatKhanaKashtToMalkiat frmIK = new frmIntiqalKhattaJatKhanaKashtToMalkiat();
+                    frmIK.IntiqalId = this.IntiqalId;
+                    frmIK.MozaId = this.MozaId;
+                    frmIK.isAttested = this.Attested;
+                    frmIK.isGardawar = this.GardawarId;
+                    frmIK.Teh_Report = this.Teh_Report;
+                    frmIK.isConfirmed = this.isConfirmed;
+                    frmIK.AmalDaramad = this.AmalDaramad;
+                    frmIK.MdiParent = this.ParentForm;
+                    frmIK.MalkiatKashkat = true;
+                    frmIK.MinhayeIntiqalId = this.MinhayeIntiqalId;
+
+                    frmIK.IntiqalTypeId = this.intiqalTypeId;
+                    frmIK.FardTokenId = this.fardTokenId;
+                    frmIK.intiqalIId = this.intiqalIId;
+                    frmIK.RegStatus = "0";
+
+                    frmIK.Show();
+                }
                 //bool MalkyatType;
                 if (radKhanaMalkiat.Checked)
                 {
@@ -1011,9 +1031,20 @@ namespace SDC_Application.AL
 
         private void btnDelMain_Click(object sender, EventArgs e)
         {
-            if (IntiqalId != "-1")
+            if (IntiqalId != "-1" && UsersManagments._IsAdmin)
             {
-                
+                if (MessageBox.Show(" کیا آپ انتقال حذف کرنا چاہتے ہیں ", " انتقال  حذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Iq.DeleteIntiqalMain(IntiqalId);
+                        MessageBox.Show("انتقال حذف ہو گیا ہے", "انتقال حذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        btnNewInteqal_Click(sender, e);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
             }
             else
             {

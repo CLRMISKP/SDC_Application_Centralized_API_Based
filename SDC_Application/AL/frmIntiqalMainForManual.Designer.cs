@@ -77,6 +77,7 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radkhanakashtToMalkiat = new System.Windows.Forms.RadioButton();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -167,19 +168,20 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.radkhanakashtToMalkiat);
             this.panel1.Controls.Add(this.radkhanakashtmalkiat);
             this.panel1.Controls.Add(this.radKhanaKasht);
             this.panel1.Controls.Add(this.radKhanaMalkiat);
-            this.panel1.Location = new System.Drawing.Point(451, 37);
+            this.panel1.Location = new System.Drawing.Point(285, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(373, 57);
+            this.panel1.Size = new System.Drawing.Size(539, 57);
             this.panel1.TabIndex = 3;
             // 
             // radkhanakashtmalkiat
             // 
             this.radkhanakashtmalkiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radkhanakashtmalkiat.AutoSize = true;
-            this.radkhanakashtmalkiat.Location = new System.Drawing.Point(232, 7);
+            this.radkhanakashtmalkiat.Location = new System.Drawing.Point(398, 7);
             this.radkhanakashtmalkiat.Name = "radkhanakashtmalkiat";
             this.radkhanakashtmalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radkhanakashtmalkiat.Size = new System.Drawing.Size(132, 42);
@@ -192,7 +194,7 @@
             // 
             this.radKhanaKasht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radKhanaKasht.AutoSize = true;
-            this.radKhanaKasht.Location = new System.Drawing.Point(134, 7);
+            this.radKhanaKasht.Location = new System.Drawing.Point(300, 7);
             this.radKhanaKasht.Name = "radKhanaKasht";
             this.radKhanaKasht.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radKhanaKasht.Size = new System.Drawing.Size(96, 42);
@@ -206,7 +208,7 @@
             this.radKhanaMalkiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radKhanaMalkiat.AutoSize = true;
             this.radKhanaMalkiat.Checked = true;
-            this.radKhanaMalkiat.Location = new System.Drawing.Point(34, 7);
+            this.radKhanaMalkiat.Location = new System.Drawing.Point(200, 7);
             this.radKhanaMalkiat.Name = "radKhanaMalkiat";
             this.radKhanaMalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radKhanaMalkiat.Size = new System.Drawing.Size(98, 42);
@@ -698,6 +700,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "آپریٹر نوٹ";
             // 
+            // radkhanakashtToMalkiat
+            // 
+            this.radkhanakashtToMalkiat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radkhanakashtToMalkiat.AutoSize = true;
+            this.radkhanakashtToMalkiat.Location = new System.Drawing.Point(34, 6);
+            this.radkhanakashtToMalkiat.Name = "radkhanakashtToMalkiat";
+            this.radkhanakashtToMalkiat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radkhanakashtToMalkiat.Size = new System.Drawing.Size(157, 42);
+            this.radkhanakashtToMalkiat.TabIndex = 94;
+            this.radkhanakashtToMalkiat.TabStop = true;
+            this.radkhanakashtToMalkiat.Text = "خانہ کاشت سے ملکیت";
+            this.radkhanakashtToMalkiat.UseVisualStyleBackColor = true;
+            // 
             // frmIntiqalMainForManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
@@ -778,5 +793,6 @@
         private System.Windows.Forms.Button btnRecivedDucoments;
         private System.Windows.Forms.Button btnShowScanImg;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.RadioButton radkhanakashtToMalkiat;
     }
 }

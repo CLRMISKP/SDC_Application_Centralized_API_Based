@@ -147,7 +147,10 @@ namespace SDC_Application.AL
                 this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
                 this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
                 this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
-                if (Math.Round(decimal.Parse(this.txtKhataMeezanKhewatFareeqainHissay.Text), 4) != Math.Round(decimal.Parse(this.txtKhataMeezanKulHissay.Text), 4))
+                decimal KhataHissas, malikanhissas;
+                Decimal.TryParse(this.txtKhataMeezanKhewatFareeqainHissay.Text, System.Globalization.NumberStyles.Float, null, out malikanhissas);
+                Decimal.TryParse(txtKhataMeezanKulHissay.Text, System.Globalization.NumberStyles.Float, null, out KhataHissas);
+                if (Math.Round(malikanhissas, 4) != Math.Round(KhataHissas, 4))
                 {
                     txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.Red;
                 }

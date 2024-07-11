@@ -1131,8 +1131,9 @@ namespace SDC_Application.AL
                 {
                     if (txtKhewatGroupFareeqId.Text.Length < 5)
                     {
+                        string TaskNo = txtSerialNo.Text;
                         string[] Area = cmnFn.CalculatedAreaFromHisa(float.Parse(txtKhataHissa.Text), float.Parse(txtPersonNetHissa.Text), Convert.ToInt32(txtKhataKanal.Text), Convert.ToInt32(txtKhataMarla.Text), float.Parse(txtKhataSarsai.Text != "" ? txtKhataSarsai.Text : "0"), float.Parse(txtKhataSFT.Text != "" ? txtKhataSFT.Text : "0"));
-                        retVal = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus(txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, txtPersonId.Text, txtPersonNetHissa.Text, Area[0] != null ? Area[0].ToString() : "0", Area[1] != null ? Area[1].ToString() : "0", Area[2] != null ? Area[2].ToString() : "0", Area[3] != null ? Area[3].ToString() : "0", cboQismMalik.SelectedValue.ToString(), this.KhataId, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtPersonHissaBata.Text, "Data Entry", "0");
+                        retVal = rhz.WEB_SP_INSERT_KhewatGroupFareeqeinWithRecStatus(txtKhewatGroupFareeqId.Text, txtKhewatGroupId.Text, txtPersonId.Text, txtPersonNetHissa.Text, Area[0] != null ? Area[0].ToString() : "0", Area[1] != null ? Area[1].ToString() : "0", Area[2] != null ? Area[2].ToString() : "0", Area[3] != null ? Area[3].ToString() : "0", cboQismMalik.SelectedValue.ToString(), this.KhataId, UsersManagments.UserId.ToString(), UsersManagments.UserName, txtPersonHissaBata.Text, "Data Entry ("+TaskNo+")", "0");
                         txtKhewatGroupFareeqId.Text = retVal;
                     }
                     else

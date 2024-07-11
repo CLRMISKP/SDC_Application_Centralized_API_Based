@@ -112,6 +112,7 @@
             this.mnuSubDraIntiqalatTaxes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubDraIntiqalPartTaxes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubDrFardTaxes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDRAIntiqalFeeDetailRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuIntiqalReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubInitqalatTehsildar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubIntiqalRegistryPending = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,6 +135,7 @@
             this.mnuFardbadarCancel = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardbadarPending = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardbadarAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEmpryFardBader = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAntiCurruptionDrive = new System.Windows.Forms.ToolStripMenuItem();
             this.mnSubAntiCurIntiqal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubAntiCurFardat = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,12 +143,15 @@
             this.mnuSubInitqalEntryByOperator = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardBadarEntryRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTokenandService = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMissingMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMonthlyTaxMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubStateLandReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInconsistentRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminRptInconKhatas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminRptInconKhatasTehsilwise = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInconKhataHissasFarq = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRhzRptAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLandOwnersWithAcre = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOperatorReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDRA = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubDraIntiqalatFee = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,6 +193,8 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuBayanHalfiIntiqalatNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBayabHalfiAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -780,7 +787,8 @@
             this.mnuOperationalReports,
             this.mnuSubStateLandReport,
             this.mnuInconsistentRpt,
-            this.mnuRhzRptAdmin});
+            this.mnuRhzRptAdmin,
+            this.mnuLandOwnersWithAcre});
             this.mnuReports.Name = "mnuReports";
             this.mnuReports.Size = new System.Drawing.Size(120, 42);
             this.mnuReports.Text = "ایڈمن رپورٹس";
@@ -789,7 +797,7 @@
             // mnuamnualMutReportWithLandTypendValue
             // 
             this.mnuamnualMutReportWithLandTypendValue.Name = "mnuamnualMutReportWithLandTypendValue";
-            this.mnuamnualMutReportWithLandTypendValue.Size = new System.Drawing.Size(355, 42);
+            this.mnuamnualMutReportWithLandTypendValue.Size = new System.Drawing.Size(412, 42);
             this.mnuamnualMutReportWithLandTypendValue.Text = "1- سالانہ انتقال رپورٹ بمعہ قسم زمین و زربیع";
             // 
             // mnuReportsRTS_RTI
@@ -798,7 +806,7 @@
             this.MnuSubRtsMutaions,
             this.mnuSubRtsFardats});
             this.mnuReportsRTS_RTI.Name = "mnuReportsRTS_RTI";
-            this.mnuReportsRTS_RTI.Size = new System.Drawing.Size(355, 42);
+            this.mnuReportsRTS_RTI.Size = new System.Drawing.Size(412, 42);
             this.mnuReportsRTS_RTI.Text = "2 - آر ٹی آیس رپورٹس";
             // 
             // MnuSubRtsMutaions
@@ -818,7 +826,7 @@
             // mnuReportMutForFBR
             // 
             this.mnuReportMutForFBR.Name = "mnuReportMutForFBR";
-            this.mnuReportMutForFBR.Size = new System.Drawing.Size(355, 42);
+            this.mnuReportMutForFBR.Size = new System.Drawing.Size(412, 42);
             this.mnuReportMutForFBR.Text = "3 - انتقال رپورٹ برائے ایف بی آر زربیع";
             this.mnuReportMutForFBR.Click += new System.EventHandler(this.mnuReportMutForFBR_Click);
             // 
@@ -828,7 +836,7 @@
             this.MnuKhanakashtSummary,
             this.mnuKhanakashtDetails});
             this.mnuKhanakashtDetail.Name = "mnuKhanakashtDetail";
-            this.mnuKhanakashtDetail.Size = new System.Drawing.Size(355, 42);
+            this.mnuKhanakashtDetail.Size = new System.Drawing.Size(412, 42);
             this.mnuKhanakashtDetail.Text = "4 - خانہ کاشت تفصیل";
             this.mnuKhanakashtDetail.Click += new System.EventHandler(this.mnuKhanakashtDetail_Click);
             // 
@@ -851,32 +859,40 @@
             this.mnuDraReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSubDraIntiqalatTaxes,
             this.mnuSubDraIntiqalPartTaxes,
-            this.mnuSubDrFardTaxes});
+            this.mnuSubDrFardTaxes,
+            this.mnuDRAIntiqalFeeDetailRpt});
             this.mnuDraReport.Name = "mnuDraReport";
-            this.mnuDraReport.Size = new System.Drawing.Size(355, 42);
+            this.mnuDraReport.Size = new System.Drawing.Size(412, 42);
             this.mnuDraReport.Text = "5- ڈی آر اے رپورٹس";
             this.mnuDraReport.Click += new System.EventHandler(this.mnuRHZAfraad_Click);
             // 
             // mnuSubDraIntiqalatTaxes
             // 
             this.mnuSubDraIntiqalatTaxes.Name = "mnuSubDraIntiqalatTaxes";
-            this.mnuSubDraIntiqalatTaxes.Size = new System.Drawing.Size(226, 42);
+            this.mnuSubDraIntiqalatTaxes.Size = new System.Drawing.Size(257, 42);
             this.mnuSubDraIntiqalatTaxes.Text = " - انتقالات ٹیکسیز";
             this.mnuSubDraIntiqalatTaxes.Click += new System.EventHandler(this.mnuSubDraIntiqalatTaxes_Click);
             // 
             // mnuSubDraIntiqalPartTaxes
             // 
             this.mnuSubDraIntiqalPartTaxes.Name = "mnuSubDraIntiqalPartTaxes";
-            this.mnuSubDraIntiqalPartTaxes.Size = new System.Drawing.Size(226, 42);
+            this.mnuSubDraIntiqalPartTaxes.Size = new System.Drawing.Size(257, 42);
             this.mnuSubDraIntiqalPartTaxes.Text = " -  انتقالات پرت ٹیکسیز";
             this.mnuSubDraIntiqalPartTaxes.Click += new System.EventHandler(this.mnuSubDraIntiqalPartTaxes_Click);
             // 
             // mnuSubDrFardTaxes
             // 
             this.mnuSubDrFardTaxes.Name = "mnuSubDrFardTaxes";
-            this.mnuSubDrFardTaxes.Size = new System.Drawing.Size(226, 42);
+            this.mnuSubDrFardTaxes.Size = new System.Drawing.Size(257, 42);
             this.mnuSubDrFardTaxes.Text = " - فرد ٹیکسیز ";
             this.mnuSubDrFardTaxes.Click += new System.EventHandler(this.mnuSubDrFardTaxes_Click);
+            // 
+            // mnuDRAIntiqalFeeDetailRpt
+            // 
+            this.mnuDRAIntiqalFeeDetailRpt.Name = "mnuDRAIntiqalFeeDetailRpt";
+            this.mnuDRAIntiqalFeeDetailRpt.Size = new System.Drawing.Size(257, 42);
+            this.mnuDRAIntiqalFeeDetailRpt.Text = "- انتقال ٹیکسیز تفصیلی رپورٹ";
+            this.mnuDRAIntiqalFeeDetailRpt.Click += new System.EventHandler(this.mnuDRAIntiqalFeeDetailRpt_Click);
             // 
             // mnuIntiqalReport
             // 
@@ -893,9 +909,10 @@
             this.mnuDePendingMut,
             this.mnuAdminRptAttMutAudit,
             this.MnuRegEntryRptsm,
-            this.mnuMutationSummaryRptForRevMeeting});
+            this.mnuMutationSummaryRptForRevMeeting,
+            this.mnuBayabHalfiAdmin});
             this.mnuIntiqalReport.Name = "mnuIntiqalReport";
-            this.mnuIntiqalReport.Size = new System.Drawing.Size(355, 42);
+            this.mnuIntiqalReport.Size = new System.Drawing.Size(412, 42);
             this.mnuIntiqalReport.Text = "6 - انتقالا ت رپورٹس";
             // 
             // mnuSubInitqalatTehsildar
@@ -995,7 +1012,7 @@
             this.mnuSubYaksalaQismZameen,
             this.mnuSubYaksalMakhloot});
             this.mnuYearlyIntiqalatReports.Name = "mnuYearlyIntiqalatReports";
-            this.mnuYearlyIntiqalatReports.Size = new System.Drawing.Size(355, 42);
+            this.mnuYearlyIntiqalatReports.Size = new System.Drawing.Size(412, 42);
             this.mnuYearlyIntiqalatReports.Text = "7 - یک سالہ رپورٹس";
             // 
             // mnuSubYaksalaQismZameen
@@ -1018,9 +1035,10 @@
             this.mnuFardbadarImp,
             this.mnuFardbadarCancel,
             this.mnuFardbadarPending,
-            this.mnuFardbadarAll});
+            this.mnuFardbadarAll,
+            this.mnuEmpryFardBader});
             this.mnuFardBadarReports.Name = "mnuFardBadarReports";
-            this.mnuFardBadarReports.Size = new System.Drawing.Size(355, 42);
+            this.mnuFardBadarReports.Size = new System.Drawing.Size(412, 42);
             this.mnuFardBadarReports.Text = "8 - فرد بدرات رپورٹس";
             // 
             // mnuFardbadarImp
@@ -1051,13 +1069,20 @@
             this.mnuFardbadarAll.Text = " - تمام اندراج شدہ فرد ندرات";
             this.mnuFardbadarAll.Click += new System.EventHandler(this.mnuFardbadarAll_Click);
             // 
+            // mnuEmpryFardBader
+            // 
+            this.mnuEmpryFardBader.Name = "mnuEmpryFardBader";
+            this.mnuEmpryFardBader.Size = new System.Drawing.Size(300, 42);
+            this.mnuEmpryFardBader.Text = "-خالی فرد بدرات صرف نمبر اندراج";
+            this.mnuEmpryFardBader.Click += new System.EventHandler(this.mnuEmpryFardBader_Click);
+            // 
             // mnuAntiCurruptionDrive
             // 
             this.mnuAntiCurruptionDrive.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnSubAntiCurIntiqal,
             this.mnuSubAntiCurFardat});
             this.mnuAntiCurruptionDrive.Name = "mnuAntiCurruptionDrive";
-            this.mnuAntiCurruptionDrive.Size = new System.Drawing.Size(355, 42);
+            this.mnuAntiCurruptionDrive.Size = new System.Drawing.Size(412, 42);
             this.mnuAntiCurruptionDrive.Text = "9 - انٹی کرپشن ڈرائو رپورٹس";
             // 
             // mnSubAntiCurIntiqal
@@ -1079,36 +1104,52 @@
             this.mnuOperationalReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSubInitqalEntryByOperator,
             this.mnuFardBadarEntryRpt,
-            this.mnuTokenandService});
+            this.mnuTokenandService,
+            this.mnuMissingMut,
+            this.mnuMonthlyTaxMut});
             this.mnuOperationalReports.Name = "mnuOperationalReports";
-            this.mnuOperationalReports.Size = new System.Drawing.Size(355, 42);
-            this.mnuOperationalReports.Text = "10 - اپریشنل سٹاف رپورٹس";
+            this.mnuOperationalReports.Size = new System.Drawing.Size(412, 42);
+            this.mnuOperationalReports.Text = "10 - اپریشنل سٹاف, ماہوار ٹیکس، گمشدہ انتقالات وغیرہ";
             // 
             // mnuSubInitqalEntryByOperator
             // 
             this.mnuSubInitqalEntryByOperator.Name = "mnuSubInitqalEntryByOperator";
-            this.mnuSubInitqalEntryByOperator.Size = new System.Drawing.Size(235, 42);
+            this.mnuSubInitqalEntryByOperator.Size = new System.Drawing.Size(313, 42);
             this.mnuSubInitqalEntryByOperator.Text = " - انتقال اندراج رپورٹ";
             this.mnuSubInitqalEntryByOperator.Click += new System.EventHandler(this.mnuSubInitqalEntryByOperator_Click);
             // 
             // mnuFardBadarEntryRpt
             // 
             this.mnuFardBadarEntryRpt.Name = "mnuFardBadarEntryRpt";
-            this.mnuFardBadarEntryRpt.Size = new System.Drawing.Size(235, 42);
+            this.mnuFardBadarEntryRpt.Size = new System.Drawing.Size(313, 42);
             this.mnuFardBadarEntryRpt.Text = "- فرد بدر اندراج رپورٹ";
             this.mnuFardBadarEntryRpt.Click += new System.EventHandler(this.mnuFardBadarEntryRpt_Click);
             // 
             // mnuTokenandService
             // 
             this.mnuTokenandService.Name = "mnuTokenandService";
-            this.mnuTokenandService.Size = new System.Drawing.Size(235, 42);
+            this.mnuTokenandService.Size = new System.Drawing.Size(313, 42);
             this.mnuTokenandService.Text = " - ٹوکن و سہولت تفصیل";
             this.mnuTokenandService.Click += new System.EventHandler(this.mnuTokenandService_Click);
+            // 
+            // mnuMissingMut
+            // 
+            this.mnuMissingMut.Name = "mnuMissingMut";
+            this.mnuMissingMut.Size = new System.Drawing.Size(313, 42);
+            this.mnuMissingMut.Text = "- گمشدہ انتقالات";
+            this.mnuMissingMut.Click += new System.EventHandler(this.mnuMissingMut_Click);
+            // 
+            // mnuMonthlyTaxMut
+            // 
+            this.mnuMonthlyTaxMut.Name = "mnuMonthlyTaxMut";
+            this.mnuMonthlyTaxMut.Size = new System.Drawing.Size(313, 42);
+            this.mnuMonthlyTaxMut.Text = "- ماہوار ٹیکس تفصیل انتقالات و فردات";
+            this.mnuMonthlyTaxMut.Click += new System.EventHandler(this.mnuMonthlyTaxMut_Click);
             // 
             // mnuSubStateLandReport
             // 
             this.mnuSubStateLandReport.Name = "mnuSubStateLandReport";
-            this.mnuSubStateLandReport.Size = new System.Drawing.Size(355, 42);
+            this.mnuSubStateLandReport.Size = new System.Drawing.Size(412, 42);
             this.mnuSubStateLandReport.Text = "11 - سٹیٹ لینڈ رپورٹ";
             this.mnuSubStateLandReport.Click += new System.EventHandler(this.mnuSubStateLandReport_Click);
             // 
@@ -1119,7 +1160,7 @@
             this.mnuAdminRptInconKhatasTehsilwise,
             this.mnuInconKhataHissasFarq});
             this.mnuInconsistentRpt.Name = "mnuInconsistentRpt";
-            this.mnuInconsistentRpt.Size = new System.Drawing.Size(355, 42);
+            this.mnuInconsistentRpt.Size = new System.Drawing.Size(412, 42);
             this.mnuInconsistentRpt.Text = "12 - غیر متوازن کھاتہ جات";
             // 
             // mnuAdminRptInconKhatas
@@ -1146,9 +1187,16 @@
             // mnuRhzRptAdmin
             // 
             this.mnuRhzRptAdmin.Name = "mnuRhzRptAdmin";
-            this.mnuRhzRptAdmin.Size = new System.Drawing.Size(355, 42);
+            this.mnuRhzRptAdmin.Size = new System.Drawing.Size(412, 42);
             this.mnuRhzRptAdmin.Text = "13 - جمعبندی پرنٹ";
             this.mnuRhzRptAdmin.Click += new System.EventHandler(this.mnuRhzRptAdmin_Click);
+            // 
+            // mnuLandOwnersWithAcre
+            // 
+            this.mnuLandOwnersWithAcre.Name = "mnuLandOwnersWithAcre";
+            this.mnuLandOwnersWithAcre.Size = new System.Drawing.Size(412, 42);
+            this.mnuLandOwnersWithAcre.Text = "14 - مالکان 8 کنال یا زیادہ رقبہ والے";
+            this.mnuLandOwnersWithAcre.Click += new System.EventHandler(this.mnuLandOwnersWithAcre_Click);
             // 
             // mnuOperatorReports
             // 
@@ -1235,7 +1283,8 @@
             this.mnuEnteredMutationsReport,
             this.mnuDePendingMutCo,
             this.mnuRegEntryRptCo,
-            this.mnuInitqalforDawra});
+            this.mnuInitqalforDawra,
+            this.mnuBayanHalfiIntiqalatNonAdmin});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
             this.mnuIntiqalat.Size = new System.Drawing.Size(197, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
@@ -1533,6 +1582,20 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // mnuBayanHalfiIntiqalatNonAdmin
+            // 
+            this.mnuBayanHalfiIntiqalatNonAdmin.Name = "mnuBayanHalfiIntiqalatNonAdmin";
+            this.mnuBayanHalfiIntiqalatNonAdmin.Size = new System.Drawing.Size(348, 42);
+            this.mnuBayanHalfiIntiqalatNonAdmin.Text = " - بیان حلفی ماہانہ انتقالات ";
+            this.mnuBayanHalfiIntiqalatNonAdmin.Click += new System.EventHandler(this.mnuBayanHalfiIntiqalatNonAdmin_Click);
+            // 
+            // mnuBayabHalfiAdmin
+            // 
+            this.mnuBayabHalfiAdmin.Name = "mnuBayabHalfiAdmin";
+            this.mnuBayabHalfiAdmin.Size = new System.Drawing.Size(404, 42);
+            this.mnuBayabHalfiAdmin.Text = " - بیان حلفی ماہانہ انتقالات ";
+            this.mnuBayabHalfiAdmin.Click += new System.EventHandler(this.mnuBayabHalfiAdmin_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1729,5 +1792,12 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTokenandService;
         private System.Windows.Forms.ToolStripMenuItem mnuInitqalforDawra;
         private System.Windows.Forms.ToolStripMenuItem mnuRoznamchaROorders;
+        private System.Windows.Forms.ToolStripMenuItem mnuDRAIntiqalFeeDetailRpt;
+        private System.Windows.Forms.ToolStripMenuItem mnuLandOwnersWithAcre;
+        private System.Windows.Forms.ToolStripMenuItem mnuEmpryFardBader;
+        private System.Windows.Forms.ToolStripMenuItem mnuMissingMut;
+        private System.Windows.Forms.ToolStripMenuItem mnuMonthlyTaxMut;
+        private System.Windows.Forms.ToolStripMenuItem mnuBayanHalfiIntiqalatNonAdmin;
+        private System.Windows.Forms.ToolStripMenuItem mnuBayabHalfiAdmin;
     }
 }
