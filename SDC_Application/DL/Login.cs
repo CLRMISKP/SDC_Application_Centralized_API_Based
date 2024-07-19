@@ -39,9 +39,10 @@ namespace SDC_Application.DL
         
         private void Login_Load(object sender, EventArgs e)
         {
-
-           
-             mac = string.Join(",", mfrmSelectTehsil.getmacs().Cast<String>().Select(p => p.ToString()));
+            String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
+            if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text; DataGridViewHelper.addHelpterToAllFormGridViews(this);
+            mac = string.Join(",", mfrmSelectTehsil.getmacs().Cast<String>().Select(p => p.ToString()));
+            usm.currentPcMacs = mac;
             SystemInfo = usm.GetSystemInfo(System.Environment.MachineName, mac);
 
             if (SystemInfo.Rows.Count > 0)
@@ -194,12 +195,13 @@ namespace SDC_Application.DL
           
             try
             {
-              var  macAddr =
-                                       (
+                var macAddr = this.mac;
+                                       /*(
                                            from nic in NetworkInterface.GetAllNetworkInterfaces()
                                            where nic.OperationalStatus == OperationalStatus.Up
                                            select nic.GetPhysicalAddress().ToString()
-                                       ).FirstOrDefault();
+                                       ).FirstOrDefault();*/
+
               string lastId = objDb.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Login_Details " + UsersManagments.UserId + "," + UsersManagments._Tehsilid + ",'" + UsersManagments.UserName + "','" + macAddr.ToString() + "',1");
               UsersManagments.LoginRecId = lastId;
             }
@@ -234,6 +236,7 @@ namespace SDC_Application.DL
                // string login = txtUsername.Text.Trim();
                // string password = txtPassword.Text.Trim();
                 string encPass = Crypto.getEncryptedCode(Password);
+
 
                 DataTable usr = usm.Authenticated(UserName, encPass, UsersManagments._Tehsilid.ToString(), ver);
 
