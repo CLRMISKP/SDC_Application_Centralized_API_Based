@@ -13,15 +13,25 @@ public class WifiUtils
 
         foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
         {
-            Wlan.WlanAvailableNetwork[] networks = wlanIface.GetAvailableNetworkList(0);
-            foreach (Wlan.WlanAvailableNetwork network in networks)
+            try
             {
-                string ssid = Encoding.ASCII.GetString(network.dot11Ssid.SSID).TrimEnd('\0');
-                if (!string.IsNullOrEmpty(ssid))
+                Wlan.WlanAvailableNetwork[] networks = wlanIface.GetAvailableNetworkList(0);
+                foreach (Wlan.WlanAvailableNetwork network in networks)
                 {
-                    ssidList.Add(ssid);
+                    string ssid = Encoding.ASCII.GetString(network.dot11Ssid.SSID).TrimEnd('\0');
+                    if (!string.IsNullOrEmpty(ssid))
+                    {
+                        ssidList.Add(ssid);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+
+                //throw;
+            }
+            
+
         }
 
         return ssidList.ToArray();
