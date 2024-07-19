@@ -187,6 +187,37 @@ namespace SDC_Application.DL
 
         }
 
+        public DataTable filldatatable_from_storedProcedure(string storedProcedureName, SqlParameter[] parameters)
+        {
+            try
+            {
+                DataTable dt_storeProcedure = new DataTable();
+                using (SqlConnection conn = CreateConn())
+                {
+                    using (SqlCommand cmd = new SqlCommand(storedProcedureName, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddRange(parameters);
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt_storeProcedure);
+                        }
+                    }
+                }
+                return dt_storeProcedure;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                CloseConn();
+            }
+        }
+
         public DataTable filldatatable_from_storedProcedureWithReturnVals(string spWithParams , out int RetVal , out string ErrorMsg)
         {
             CloseConn();
