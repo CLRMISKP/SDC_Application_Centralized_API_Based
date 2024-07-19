@@ -29,6 +29,8 @@ namespace SDC_Application.DL
         DataTable SystemInfo = new DataTable();
         Users user = new Users();
         String mac = "";
+        String visibleWifis = "";
+
         #endregion
         public Login()
         {
@@ -39,6 +41,9 @@ namespace SDC_Application.DL
         
         private void Login_Load(object sender, EventArgs e)
         {
+
+            visibleWifis = new WifiUtils().GetVisibleWifiSSIDs_CSV();
+
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text; DataGridViewHelper.addHelpterToAllFormGridViews(this);
             mac = string.Join(",", mfrmSelectTehsil.getmacs().Cast<String>().Select(p => p.ToString()));
@@ -202,12 +207,12 @@ namespace SDC_Application.DL
                                            select nic.GetPhysicalAddress().ToString()
                                        ).FirstOrDefault();*/
 
-              string lastId = objDb.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Login_Details " + UsersManagments.UserId + "," + UsersManagments._Tehsilid + ",'" + UsersManagments.UserName + "','" + macAddr.ToString() + "',1");
+              string lastId = objDb.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Login_Details_withWifis " + UsersManagments.UserId + "," + UsersManagments._Tehsilid + ",'" + UsersManagments.UserName + "','" + macAddr.ToString() + "',1"+",'"+this.visibleWifis + "'");
               UsersManagments.LoginRecId = lastId;
             }
             catch (Exception)
             {
-                string lastId = objDb.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Login_Details " + UsersManagments.UserId + "," + UsersManagments._Tehsilid + ",'" + UsersManagments.UserName + "','undefined', 1");
+                string lastId = objDb.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Login_Details_withWifis " + UsersManagments.UserId + "," + UsersManagments._Tehsilid + ",'" + UsersManagments.UserName + "','undefined', 1,NULL");
                 UsersManagments.LoginRecId = lastId;
             }
            
@@ -309,7 +314,9 @@ namespace SDC_Application.DL
             }
         }
 
-   
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }
