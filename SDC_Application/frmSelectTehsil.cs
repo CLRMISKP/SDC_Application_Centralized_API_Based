@@ -71,18 +71,21 @@ namespace SDC_Application
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
-        public String[] getmacs() {
-
+        public String[] getmacs()
+        {
             String[] aaa =
-                        (
-                            from nic in System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces()
-                           // where nic.OperationalStatus == System.Net.NetworkInformation.OperationalStatus.Up
-                            select nic.GetPhysicalAddress().ToString()
-                        ).ToArray();
+                (
+                    from nic in NetworkInterface.GetAllNetworkInterfaces()
+                    let macAddress = nic.GetPhysicalAddress().ToString()
+                    where !macAddress.StartsWith("00090F") && !macAddress.StartsWith("005056")
+                    select macAddress
+                ).ToArray();
 
-            //foreach(String str in aaa) Console.WriteLine(str);
+            // Optionally print each MAC address (commented out)
+            // foreach(String str in aaa) Console.WriteLine(str);
+
+            // Return the array of MAC addresses
             return aaa;
-        
         }
         public String getmac_default()
         {
