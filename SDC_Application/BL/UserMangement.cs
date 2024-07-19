@@ -12,7 +12,7 @@ namespace SDC_Application.BL
     class UserMangement
     {
         #region Class Variables
-
+        public String currentPcMacs = "";
         Database ojbdb = new Database();
 
         #endregion
