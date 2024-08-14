@@ -14,10 +14,10 @@ namespace SDC_Application.BL
 
         #region Save Misal Main
 
-        public string SaveFardBadarMain(string FB_Id, int MozaId, string FbDocumentNo, string GardawarDate, string ConfirmationDate, string FardBadarDetail, int InsertUserId, string InsertLoginName, int isManualFb)
+        public string SaveFardBadarMain(string FB_Id, int MozaId, string FbDocumentNo, string GardawarDate, string ConfirmationDate, string FardBadarDetail, int InsertUserId, string InsertLoginName, int isManualFb, string IntiqalDetails)
         {
             string retVal = "";
-            string spWithParms = "WEB_SP_INSERT_FardBadar_Main_Misal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_Id + "," + MozaId.ToString() + ",'" + FbDocumentNo + "','" + DateTime.Now.ToShortDateString() + "','" + GardawarDate + "','" + ConfirmationDate + "',0,'" + DateTime.Now.ToShortDateString() + "',N'" + FardBadarDetail + "'," + InsertUserId.ToString() + ",'" + InsertLoginName + "',"+isManualFb.ToString();
+            string spWithParms = "WEB_SP_INSERT_FardBadar_Main_Misal  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + FB_Id + "," + MozaId.ToString() + ",'" + FbDocumentNo + "','" + DateTime.Now.ToShortDateString() + "','" + GardawarDate + "','" + ConfirmationDate + "',0,'" + DateTime.Now.ToShortDateString() + "',N'" + FardBadarDetail + "'," + InsertUserId.ToString() + ",'" + InsertLoginName + "',"+isManualFb.ToString()+",'"+IntiqalDetails+"'";
             retVal=dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
             return retVal;
         }

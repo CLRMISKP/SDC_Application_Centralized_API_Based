@@ -363,6 +363,10 @@ namespace SDC_Application.AL
                     radKhanaMalkiat.Checked = (bool)(data["IntiqalKhanaMalkiat"]!=""?data["IntiqalKhanaMalkiat"]:false);
                     radKhanaKasht.Checked = (bool)(data["IntiqalKhanaKasht"]!=""?data["IntiqalKhanaKasht"]:false);
                     this.radkhanakashtmalkiat.Checked = (bool)(data["IntiqalKhanaMalkiatKasht"]!=""?data["IntiqalKhanaMalkiatKasht"]:false);
+                    if ((bool)(data["IntiqalKhanaMalkiatKasht"]) == false && (bool)(data["IntiqalKhanaMalkiat"]) == false && (bool)(data["IntiqalKhanaKasht"]) == false)
+                    {
+                        radkhanakashtToMalkiat.Checked = true;
+                    }
                     dtpIntiqalAndrajDate.Value = Convert.ToDateTime(data["IntiqalAndrajDate"]);
                     dtpTasdiq.Value = Convert.ToDateTime(data["IntiqalAttestationDate"]);
                     cboIntiqalType.SelectedValue = data["IntiqalTypeId"];
@@ -1657,7 +1661,9 @@ namespace SDC_Application.AL
                 TokenReport.FormClosed += new FormClosedEventHandler(TokenReport_FormClosed);
                 TokenReport.IntiqalId = this.IntiqalId;
                 TokenReport.userId = UsersManagments.UserId.ToString();
-                if (this.cboIntiqalType.Text.Contains("ثت"))
+                if (radkhanakashtToMalkiat.Checked)
+                    UsersManagments.check = 45;
+                else if (this.cboIntiqalType.Text.Contains("ثت"))
                     UsersManagments.check = 18;
                 else if (this.cboIntiqalType.Text.Contains("تقسیم"))
                     UsersManagments.check = 19;

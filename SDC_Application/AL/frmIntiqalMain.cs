@@ -1931,6 +1931,11 @@ txtLandValue.Enabled = false;
                     IntiqalAtt.FormClosed -= new FormClosedEventHandler(IntiqalCancel_FormClosed);
                     IntiqalAtt.FormClosed += new FormClosedEventHandler(IntiqalCancel_FormClosed);
                     IntiqalAtt.ShowDialog();
+                    //frmIntiqalCancellationByRO IntiqalAtt = new frmIntiqalCancellationByRO();
+                    //IntiqalAtt.intiqalId = this.IntiqalId;
+                    //IntiqalAtt.FormClosed -= new FormClosedEventHandler(IntiqalCancel_FormClosed);
+                    //IntiqalAtt.FormClosed += new FormClosedEventHandler(IntiqalCancel_FormClosed);
+                    //IntiqalAtt.ShowDialog();
 
                 }
                 catch (Exception ex)

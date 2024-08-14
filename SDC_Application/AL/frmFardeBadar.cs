@@ -1430,10 +1430,11 @@ namespace SDC_Application.AL
                try 
 	                {	        
 		                string fbId=txtFbId.Text.Trim()!=""?txtFbId.Text.Trim():"-1";
-                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName);
+                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, txtIntiqalNos.Text.Trim());
                         txtFbId.Text = LastId;
                         MessageBox.Show("فرد بدر اندراج ہو گیا ہے۔", "");
                         this.txtFardBadarDocNO.Clear();
+                        txtIntiqalNos.Clear();
                         this.dtpDateGardawari.Value = DateTime.Now;
                         this.dtpDateTehsilDar.Value = DateTime.Now;
                         this.txtFardBadarDocNO.Focus();
@@ -1511,6 +1512,7 @@ namespace SDC_Application.AL
                     this.ConfirmationStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["ConfirmationStatus"].ToString());
                     this.AmaldaramadStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["AmaldaramadStatus"].ToString());
                     bool Cancel = Convert.ToBoolean(dtMisalDetails.Rows[0]["Cancel"].ToString());
+                    txtIntiqalNos.Text = dtMisalDetails.Rows[0]["IntiqalDetails"].ToString();
                     btnAmaldaramad.Enabled = true;
                     this.btnSaveGardawarRpt.Enabled = true;
                     this.btnSaveTehsildarRpt.Enabled = true;
@@ -4127,6 +4129,14 @@ namespace SDC_Application.AL
             }
             else
                 MessageBox.Show("کھاتہ جات لوڈ کرنے سے پہلے فرد کا انتخاب کریں۔");
+        }
+
+        private void txtIntiqalNos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '/' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
         }
 
     }

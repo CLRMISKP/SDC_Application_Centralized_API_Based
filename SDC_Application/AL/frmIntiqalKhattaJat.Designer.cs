@@ -30,13 +30,13 @@ namespace SDC_Application.AL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntiqalKhattaJat));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -371,6 +371,7 @@ namespace SDC_Application.AL
             this.label122 = new System.Windows.Forms.Label();
             this.label123 = new System.Windows.Forms.Label();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
+            this.btnBadastoorMalikan = new System.Windows.Forms.Button();
             this.btnAutoKhataCreate = new System.Windows.Forms.Button();
             this.label120 = new System.Windows.Forms.Label();
             this.cmbtaqseemChangeKhata = new System.Windows.Forms.ComboBox();
@@ -580,7 +581,6 @@ namespace SDC_Application.AL
             this.txtMushNameChange = new System.Windows.Forms.TextBox();
             this.tabPageShajra = new System.Windows.Forms.TabPage();
             this.toolTipIntiqalKhatta = new System.Windows.Forms.ToolTip(this.components);
-            this.btnBadastoorMalikan = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -721,7 +721,7 @@ namespace SDC_Application.AL
             this.txtHiddenKewatGroupFareeqID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHiddenKewatGroupFareeqID.Location = new System.Drawing.Point(500, 10);
             this.txtHiddenKewatGroupFareeqID.Name = "txtHiddenKewatGroupFareeqID";
-            this.txtHiddenKewatGroupFareeqID.Size = new System.Drawing.Size(106, 33);
+            this.txtHiddenKewatGroupFareeqID.Size = new System.Drawing.Size(106, 39);
             this.txtHiddenKewatGroupFareeqID.TabIndex = 1039;
             this.txtHiddenKewatGroupFareeqID.Visible = false;
             // 
@@ -730,7 +730,7 @@ namespace SDC_Application.AL
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(92, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 25);
+            this.label6.Size = new System.Drawing.Size(87, 31);
             this.label6.TabIndex = 1038;
             this.label6.Text = "txtKhataID";
             // 
@@ -739,7 +739,7 @@ namespace SDC_Application.AL
             this.txtKhataID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhataID.Location = new System.Drawing.Point(359, 11);
             this.txtKhataID.Name = "txtKhataID";
-            this.txtKhataID.Size = new System.Drawing.Size(135, 33);
+            this.txtKhataID.Size = new System.Drawing.Size(135, 39);
             this.txtKhataID.TabIndex = 1037;
             // 
             // label4
@@ -747,7 +747,7 @@ namespace SDC_Application.AL
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(471, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
+            this.label4.Size = new System.Drawing.Size(152, 31);
             this.label4.TabIndex = 1036;
             this.label4.Text = "txtIntiqalKhataRecId";
             // 
@@ -776,7 +776,7 @@ namespace SDC_Application.AL
             this.txtHiddenKhataRecID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHiddenKhataRecID.Location = new System.Drawing.Point(790, 14);
             this.txtHiddenKhataRecID.Name = "txtHiddenKhataRecID";
-            this.txtHiddenKhataRecID.Size = new System.Drawing.Size(135, 33);
+            this.txtHiddenKhataRecID.Size = new System.Drawing.Size(135, 39);
             this.txtHiddenKhataRecID.TabIndex = 1034;
             // 
             // txtHiddenPersonID
@@ -784,7 +784,7 @@ namespace SDC_Application.AL
             this.txtHiddenPersonID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHiddenPersonID.Location = new System.Drawing.Point(931, 14);
             this.txtHiddenPersonID.Name = "txtHiddenPersonID";
-            this.txtHiddenPersonID.Size = new System.Drawing.Size(135, 33);
+            this.txtHiddenPersonID.Size = new System.Drawing.Size(135, 39);
             this.txtHiddenPersonID.TabIndex = 1032;
             // 
             // tabControl1
@@ -813,11 +813,11 @@ namespace SDC_Application.AL
             this.tabPage1.Controls.Add(this.groupBox13);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 40);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.tabPage1.Size = new System.Drawing.Size(1457, 693);
+            this.tabPage1.Size = new System.Drawing.Size(1457, 687);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "کھاتہ نمبر";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -830,7 +830,7 @@ namespace SDC_Application.AL
             this.gbJuzviSalamKhassraEntry.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbJuzviSalamKhassraEntry.Location = new System.Drawing.Point(64, 6);
             this.gbJuzviSalamKhassraEntry.Name = "gbJuzviSalamKhassraEntry";
-            this.gbJuzviSalamKhassraEntry.Size = new System.Drawing.Size(534, 681);
+            this.gbJuzviSalamKhassraEntry.Size = new System.Drawing.Size(534, 675);
             this.gbJuzviSalamKhassraEntry.TabIndex = 10;
             this.gbJuzviSalamKhassraEntry.TabStop = false;
             this.gbJuzviSalamKhassraEntry.Text = "اندراج خسرہ جات برائے سالم/جزوی خسرہ انتقال";
@@ -840,9 +840,9 @@ namespace SDC_Application.AL
             // 
             this.groupBox36.Controls.Add(this.GridviewSaveSalamJuzviKhassra);
             this.groupBox36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox36.Location = new System.Drawing.Point(3, 421);
+            this.groupBox36.Location = new System.Drawing.Point(3, 427);
             this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Size = new System.Drawing.Size(528, 257);
+            this.groupBox36.Size = new System.Drawing.Size(528, 245);
             this.groupBox36.TabIndex = 18;
             this.groupBox36.TabStop = false;
             this.groupBox36.Text = "محفوظ شدہ خسرہ جات";
@@ -852,27 +852,27 @@ namespace SDC_Application.AL
             this.GridviewSaveSalamJuzviKhassra.AllowUserToAddRows = false;
             this.GridviewSaveSalamJuzviKhassra.AllowUserToDeleteRows = false;
             this.GridviewSaveSalamJuzviKhassra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridviewSaveSalamJuzviKhassra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridviewSaveSalamJuzviKhassra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridviewSaveSalamJuzviKhassra.ColumnHeadersHeight = 38;
             this.GridviewSaveSalamJuzviKhassra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn2});
             this.GridviewSaveSalamJuzviKhassra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridviewSaveSalamJuzviKhassra.Location = new System.Drawing.Point(3, 29);
+            this.GridviewSaveSalamJuzviKhassra.Location = new System.Drawing.Point(3, 35);
             this.GridviewSaveSalamJuzviKhassra.Name = "GridviewSaveSalamJuzviKhassra";
             this.GridviewSaveSalamJuzviKhassra.ReadOnly = true;
             this.GridviewSaveSalamJuzviKhassra.RowHeadersVisible = false;
             this.GridviewSaveSalamJuzviKhassra.RowHeadersWidth = 30;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridviewSaveSalamJuzviKhassra.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridviewSaveSalamJuzviKhassra.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.GridviewSaveSalamJuzviKhassra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridviewSaveSalamJuzviKhassra.Size = new System.Drawing.Size(522, 225);
+            this.GridviewSaveSalamJuzviKhassra.Size = new System.Drawing.Size(522, 207);
             this.GridviewSaveSalamJuzviKhassra.TabIndex = 1;
             this.GridviewSaveSalamJuzviKhassra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridviewSaveSalamJuzviKhassra_CellClick);
             // 
@@ -908,7 +908,7 @@ namespace SDC_Application.AL
             this.groupBox35.Controls.Add(this.label113);
             this.groupBox35.Controls.Add(this.btnSaveJuzviSalamKhassra);
             this.groupBox35.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox35.Location = new System.Drawing.Point(3, 29);
+            this.groupBox35.Location = new System.Drawing.Point(3, 35);
             this.groupBox35.Name = "groupBox35";
             this.groupBox35.Size = new System.Drawing.Size(528, 392);
             this.groupBox35.TabIndex = 17;
@@ -919,7 +919,7 @@ namespace SDC_Application.AL
             this.txtsalamjuzviKhassraRecId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalamjuzviKhassraRecId.Location = new System.Drawing.Point(415, 344);
             this.txtsalamjuzviKhassraRecId.Name = "txtsalamjuzviKhassraRecId";
-            this.txtsalamjuzviKhassraRecId.Size = new System.Drawing.Size(79, 26);
+            this.txtsalamjuzviKhassraRecId.Size = new System.Drawing.Size(79, 30);
             this.txtsalamjuzviKhassraRecId.TabIndex = 10022;
             this.txtsalamjuzviKhassraRecId.Text = "-1";
             this.txtsalamjuzviKhassraRecId.Visible = false;
@@ -929,7 +929,7 @@ namespace SDC_Application.AL
             this.txtsalamjuzviAreaTypeId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalamjuzviAreaTypeId.Location = new System.Drawing.Point(61, 360);
             this.txtsalamjuzviAreaTypeId.Name = "txtsalamjuzviAreaTypeId";
-            this.txtsalamjuzviAreaTypeId.Size = new System.Drawing.Size(49, 26);
+            this.txtsalamjuzviAreaTypeId.Size = new System.Drawing.Size(49, 30);
             this.txtsalamjuzviAreaTypeId.TabIndex = 10021;
             this.txtsalamjuzviAreaTypeId.Text = "-1";
             this.txtsalamjuzviAreaTypeId.Visible = false;
@@ -939,7 +939,7 @@ namespace SDC_Application.AL
             this.txtsalamjuzviKhatooniId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalamjuzviKhatooniId.Location = new System.Drawing.Point(5, 359);
             this.txtsalamjuzviKhatooniId.Name = "txtsalamjuzviKhatooniId";
-            this.txtsalamjuzviKhatooniId.Size = new System.Drawing.Size(49, 26);
+            this.txtsalamjuzviKhatooniId.Size = new System.Drawing.Size(49, 30);
             this.txtsalamjuzviKhatooniId.TabIndex = 10020;
             this.txtsalamjuzviKhatooniId.Text = "-1";
             this.txtsalamjuzviKhatooniId.Visible = false;
@@ -949,7 +949,7 @@ namespace SDC_Application.AL
             this.txtsalamjuzviKhassraDetailId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalamjuzviKhassraDetailId.Location = new System.Drawing.Point(61, 330);
             this.txtsalamjuzviKhassraDetailId.Name = "txtsalamjuzviKhassraDetailId";
-            this.txtsalamjuzviKhassraDetailId.Size = new System.Drawing.Size(49, 26);
+            this.txtsalamjuzviKhassraDetailId.Size = new System.Drawing.Size(49, 30);
             this.txtsalamjuzviKhassraDetailId.TabIndex = 10019;
             this.txtsalamjuzviKhassraDetailId.Text = "-1";
             this.txtsalamjuzviKhassraDetailId.Visible = false;
@@ -959,7 +959,7 @@ namespace SDC_Application.AL
             this.txtsalamjuzviKhassraId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsalamjuzviKhassraId.Location = new System.Drawing.Point(6, 330);
             this.txtsalamjuzviKhassraId.Name = "txtsalamjuzviKhassraId";
-            this.txtsalamjuzviKhassraId.Size = new System.Drawing.Size(49, 26);
+            this.txtsalamjuzviKhassraId.Size = new System.Drawing.Size(49, 30);
             this.txtsalamjuzviKhassraId.TabIndex = 10018;
             this.txtsalamjuzviKhassraId.Text = "-1";
             this.txtsalamjuzviKhassraId.Visible = false;
@@ -979,27 +979,27 @@ namespace SDC_Application.AL
             this.gridviewSalamjuzviKhassraList.AllowUserToAddRows = false;
             this.gridviewSalamjuzviKhassraList.AllowUserToDeleteRows = false;
             this.gridviewSalamjuzviKhassraList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridviewSalamjuzviKhassraList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridviewSalamjuzviKhassraList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridviewSalamjuzviKhassraList.ColumnHeadersHeight = 38;
             this.gridviewSalamjuzviKhassraList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColSelKhassra});
             this.gridviewSalamjuzviKhassraList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridviewSalamjuzviKhassraList.Location = new System.Drawing.Point(3, 29);
+            this.gridviewSalamjuzviKhassraList.Location = new System.Drawing.Point(3, 35);
             this.gridviewSalamjuzviKhassraList.Name = "gridviewSalamjuzviKhassraList";
             this.gridviewSalamjuzviKhassraList.ReadOnly = true;
             this.gridviewSalamjuzviKhassraList.RowHeadersVisible = false;
             this.gridviewSalamjuzviKhassraList.RowHeadersWidth = 30;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridviewSalamjuzviKhassraList.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridviewSalamjuzviKhassraList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridviewSalamjuzviKhassraList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridviewSalamjuzviKhassraList.Size = new System.Drawing.Size(494, 145);
+            this.gridviewSalamjuzviKhassraList.Size = new System.Drawing.Size(494, 139);
             this.gridviewSalamjuzviKhassraList.TabIndex = 1;
             this.gridviewSalamjuzviKhassraList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewSalamjuzviKhassraList_CellClick);
             // 
@@ -1016,7 +1016,7 @@ namespace SDC_Application.AL
             this.label121.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label121.Location = new System.Drawing.Point(437, 242);
             this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(62, 30);
+            this.label121.Size = new System.Drawing.Size(80, 38);
             this.label121.TabIndex = 10016;
             this.label121.Text = "سالم/جزوی";
             // 
@@ -1026,7 +1026,7 @@ namespace SDC_Application.AL
             this.label115.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label115.Location = new System.Drawing.Point(45, 242);
             this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(32, 30);
+            this.label115.Size = new System.Drawing.Size(41, 38);
             this.label115.TabIndex = 10011;
             this.label115.Text = "فٹ";
             // 
@@ -1035,7 +1035,7 @@ namespace SDC_Application.AL
             this.txtMinKhassraSft.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinKhassraSft.Location = new System.Drawing.Point(36, 279);
             this.txtMinKhassraSft.Name = "txtMinKhassraSft";
-            this.txtMinKhassraSft.Size = new System.Drawing.Size(49, 26);
+            this.txtMinKhassraSft.Size = new System.Drawing.Size(49, 30);
             this.txtMinKhassraSft.TabIndex = 10015;
             // 
             // label116
@@ -1044,7 +1044,7 @@ namespace SDC_Application.AL
             this.label116.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label116.Location = new System.Drawing.Point(93, 242);
             this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(45, 30);
+            this.label116.Size = new System.Drawing.Size(58, 38);
             this.label116.TabIndex = 10009;
             this.label116.Text = "سرسائی";
             // 
@@ -1053,7 +1053,7 @@ namespace SDC_Application.AL
             this.txtMinKhassraSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinKhassraSarsai.Location = new System.Drawing.Point(93, 279);
             this.txtMinKhassraSarsai.Name = "txtMinKhassraSarsai";
-            this.txtMinKhassraSarsai.Size = new System.Drawing.Size(68, 26);
+            this.txtMinKhassraSarsai.Size = new System.Drawing.Size(68, 30);
             this.txtMinKhassraSarsai.TabIndex = 10014;
             // 
             // label117
@@ -1062,7 +1062,7 @@ namespace SDC_Application.AL
             this.label117.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label117.Location = new System.Drawing.Point(167, 242);
             this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(36, 30);
+            this.label117.Size = new System.Drawing.Size(46, 38);
             this.label117.TabIndex = 10010;
             this.label117.Text = "مرلہ";
             // 
@@ -1073,7 +1073,7 @@ namespace SDC_Application.AL
             this.label118.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label118.Location = new System.Drawing.Point(271, 243);
             this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(76, 30);
+            this.label118.Size = new System.Drawing.Size(96, 38);
             this.label118.TabIndex = 10007;
             this.label118.Text = "من خسرہ نمبر";
             // 
@@ -1082,7 +1082,7 @@ namespace SDC_Application.AL
             this.txtMinKhassraKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinKhassraKanal.Location = new System.Drawing.Point(214, 279);
             this.txtMinKhassraKanal.Name = "txtMinKhassraKanal";
-            this.txtMinKhassraKanal.Size = new System.Drawing.Size(44, 26);
+            this.txtMinKhassraKanal.Size = new System.Drawing.Size(44, 30);
             this.txtMinKhassraKanal.TabIndex = 10012;
             // 
             // txtMinKhassraNewKhassraNo
@@ -1090,7 +1090,7 @@ namespace SDC_Application.AL
             this.txtMinKhassraNewKhassraNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinKhassraNewKhassraNo.Location = new System.Drawing.Point(268, 279);
             this.txtMinKhassraNewKhassraNo.Name = "txtMinKhassraNewKhassraNo";
-            this.txtMinKhassraNewKhassraNo.Size = new System.Drawing.Size(91, 26);
+            this.txtMinKhassraNewKhassraNo.Size = new System.Drawing.Size(91, 30);
             this.txtMinKhassraNewKhassraNo.TabIndex = 10006;
             this.txtMinKhassraNewKhassraNo.TabStop = false;
             // 
@@ -1099,7 +1099,7 @@ namespace SDC_Application.AL
             this.txtMinKhassraMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinKhassraMarla.Location = new System.Drawing.Point(169, 279);
             this.txtMinKhassraMarla.Name = "txtMinKhassraMarla";
-            this.txtMinKhassraMarla.Size = new System.Drawing.Size(37, 26);
+            this.txtMinKhassraMarla.Size = new System.Drawing.Size(37, 30);
             this.txtMinKhassraMarla.TabIndex = 10013;
             // 
             // label119
@@ -1108,7 +1108,7 @@ namespace SDC_Application.AL
             this.label119.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label119.Location = new System.Drawing.Point(215, 242);
             this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(36, 30);
+            this.label119.Size = new System.Drawing.Size(46, 38);
             this.label119.TabIndex = 10008;
             this.label119.Text = "کنال";
             // 
@@ -1121,7 +1121,7 @@ namespace SDC_Application.AL
             this.cmbKhatooniListforKhassras.FormattingEnabled = true;
             this.cmbKhatooniListforKhassras.Location = new System.Drawing.Point(325, 29);
             this.cmbKhatooniListforKhassras.Name = "cmbKhatooniListforKhassras";
-            this.cmbKhatooniListforKhassras.Size = new System.Drawing.Size(120, 27);
+            this.cmbKhatooniListforKhassras.Size = new System.Drawing.Size(120, 31);
             this.cmbKhatooniListforKhassras.TabIndex = 9;
             this.cmbKhatooniListforKhassras.ValueMember = "RegisterHqDKhataId";
             this.cmbKhatooniListforKhassras.SelectionChangeCommitted += new System.EventHandler(this.cmbKhatooniListforKhassras_SelectionChangeCommitted);
@@ -1139,7 +1139,7 @@ namespace SDC_Application.AL
             "جزوی"});
             this.cmbJuzviSalamList.Location = new System.Drawing.Point(403, 278);
             this.cmbJuzviSalamList.Name = "cmbJuzviSalamList";
-            this.cmbJuzviSalamList.Size = new System.Drawing.Size(91, 27);
+            this.cmbJuzviSalamList.Size = new System.Drawing.Size(91, 31);
             this.cmbJuzviSalamList.TabIndex = 16;
             this.cmbJuzviSalamList.ValueMember = "RegisterHqDKhataId";
             this.cmbJuzviSalamList.SelectionChangeCommitted += new System.EventHandler(this.cmbJuzviSalamList_SelectionChangeCommitted);
@@ -1196,7 +1196,7 @@ namespace SDC_Application.AL
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox13.Location = new System.Drawing.Point(598, 6);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(274, 681);
+            this.groupBox13.Size = new System.Drawing.Size(274, 675);
             this.groupBox13.TabIndex = 9;
             this.groupBox13.TabStop = false;
             // 
@@ -1204,7 +1204,7 @@ namespace SDC_Application.AL
             // 
             this.groupBox4.Controls.Add(this.panel5);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(3, 29);
+            this.groupBox4.Location = new System.Drawing.Point(3, 35);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox4.Size = new System.Drawing.Size(268, 204);
@@ -1221,9 +1221,9 @@ namespace SDC_Application.AL
             this.panel5.Controls.Add(this.btnDeleteKhatoni);
             this.panel5.Controls.Add(this.btnKhatoniClear);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(10, 36);
+            this.panel5.Location = new System.Drawing.Point(10, 42);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(248, 158);
+            this.panel5.Size = new System.Drawing.Size(248, 152);
             this.panel5.TabIndex = 10;
             // 
             // cmbKhatoniNo
@@ -1235,7 +1235,7 @@ namespace SDC_Application.AL
             this.cmbKhatoniNo.FormattingEnabled = true;
             this.cmbKhatoniNo.Location = new System.Drawing.Point(12, 40);
             this.cmbKhatoniNo.Name = "cmbKhatoniNo";
-            this.cmbKhatoniNo.Size = new System.Drawing.Size(120, 27);
+            this.cmbKhatoniNo.Size = new System.Drawing.Size(120, 31);
             this.cmbKhatoniNo.TabIndex = 3;
             this.cmbKhatoniNo.ValueMember = "RegisterHqDKhataId";
             this.cmbKhatoniNo.SelectedIndexChanged += new System.EventHandler(this.cmbKhatoniNo_SelectedIndexChanged);
@@ -1245,7 +1245,7 @@ namespace SDC_Application.AL
             this.txtIntiqalKhatooniRecId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIntiqalKhatooniRecId.Location = new System.Drawing.Point(3, 3);
             this.txtIntiqalKhatooniRecId.Name = "txtIntiqalKhatooniRecId";
-            this.txtIntiqalKhatooniRecId.Size = new System.Drawing.Size(228, 26);
+            this.txtIntiqalKhatooniRecId.Size = new System.Drawing.Size(228, 30);
             this.txtIntiqalKhatooniRecId.TabIndex = 9;
             this.txtIntiqalKhatooniRecId.Text = "-1";
             // 
@@ -1308,14 +1308,14 @@ namespace SDC_Application.AL
             this.grdKhatoniDetails.AllowUserToAddRows = false;
             this.grdKhatoniDetails.AllowUserToDeleteRows = false;
             this.grdKhatoniDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKhatoniDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKhatoniDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdKhatoniDetails.ColumnHeadersHeight = 38;
             this.grdKhatoniDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkkhatoni});
@@ -1324,8 +1324,8 @@ namespace SDC_Application.AL
             this.grdKhatoniDetails.ReadOnly = true;
             this.grdKhatoniDetails.RowHeadersVisible = false;
             this.grdKhatoniDetails.RowHeadersWidth = 30;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdKhatoniDetails.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdKhatoniDetails.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdKhatoniDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdKhatoniDetails.Size = new System.Drawing.Size(248, 404);
             this.grdKhatoniDetails.TabIndex = 0;
@@ -1347,7 +1347,7 @@ namespace SDC_Application.AL
             this.groupBox6.Location = new System.Drawing.Point(872, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox6.Size = new System.Drawing.Size(582, 681);
+            this.groupBox6.Size = new System.Drawing.Size(582, 675);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             // 
@@ -1357,10 +1357,10 @@ namespace SDC_Application.AL
             this.gbIntiqalKhatajat.Controls.Add(this.groupBox10);
             this.gbIntiqalKhatajat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbIntiqalKhatajat.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbIntiqalKhatajat.Location = new System.Drawing.Point(0, 204);
+            this.gbIntiqalKhatajat.Location = new System.Drawing.Point(0, 210);
             this.gbIntiqalKhatajat.Name = "gbIntiqalKhatajat";
             this.gbIntiqalKhatajat.Padding = new System.Windows.Forms.Padding(0);
-            this.gbIntiqalKhatajat.Size = new System.Drawing.Size(582, 410);
+            this.gbIntiqalKhatajat.Size = new System.Drawing.Size(582, 398);
             this.gbIntiqalKhatajat.TabIndex = 38;
             this.gbIntiqalKhatajat.TabStop = false;
             this.gbIntiqalKhatajat.Text = "انتقال کھاتہ جات";
@@ -1379,14 +1379,14 @@ namespace SDC_Application.AL
             this.Sellers,
             this.Buyers});
             this.GridViewInteqalKhattas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridViewInteqalKhattas.Location = new System.Drawing.Point(0, 30);
+            this.GridViewInteqalKhattas.Location = new System.Drawing.Point(0, 37);
             this.GridViewInteqalKhattas.MultiSelect = false;
             this.GridViewInteqalKhattas.Name = "GridViewInteqalKhattas";
             this.GridViewInteqalKhattas.ReadOnly = true;
             this.GridViewInteqalKhattas.RowHeadersVisible = false;
             this.GridViewInteqalKhattas.RowTemplate.Height = 30;
             this.GridViewInteqalKhattas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewInteqalKhattas.Size = new System.Drawing.Size(582, 380);
+            this.GridViewInteqalKhattas.Size = new System.Drawing.Size(582, 361);
             this.GridViewInteqalKhattas.TabIndex = 1;
             this.GridViewInteqalKhattas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewInteqalKhattas_CellClick);
             this.GridViewInteqalKhattas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewInteqalKhattas_CellContentClick);
@@ -1466,9 +1466,9 @@ namespace SDC_Application.AL
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(327, 50);
+            this.checkBox1.Location = new System.Drawing.Point(310, 50);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 34);
+            this.checkBox1.Size = new System.Drawing.Size(87, 42);
             this.checkBox1.TabIndex = 22;
             this.checkBox1.Text = "زیر التواء";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -1507,7 +1507,7 @@ namespace SDC_Application.AL
             this.groupBox7.Controls.Add(this.gbKhataMainContols);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(0, 26);
+            this.groupBox7.Location = new System.Drawing.Point(0, 32);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox7.Size = new System.Drawing.Size(582, 178);
@@ -1532,9 +1532,9 @@ namespace SDC_Application.AL
             this.gbKhataMainContols.Controls.Add(this.cbokhataNo);
             this.gbKhataMainContols.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbKhataMainContols.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbKhataMainContols.Location = new System.Drawing.Point(0, 30);
+            this.gbKhataMainContols.Location = new System.Drawing.Point(0, 37);
             this.gbKhataMainContols.Name = "gbKhataMainContols";
-            this.gbKhataMainContols.Size = new System.Drawing.Size(582, 148);
+            this.gbKhataMainContols.Size = new System.Drawing.Size(582, 141);
             this.gbKhataMainContols.TabIndex = 6;
             // 
             // btnWarisanManderjaKhata
@@ -1555,7 +1555,7 @@ namespace SDC_Application.AL
             this.cbAllKhatajat.AutoSize = true;
             this.cbAllKhatajat.Location = new System.Drawing.Point(6, 17);
             this.cbAllKhatajat.Name = "cbAllKhatajat";
-            this.cbAllKhatajat.Size = new System.Drawing.Size(100, 34);
+            this.cbAllKhatajat.Size = new System.Drawing.Size(124, 42);
             this.cbAllKhatajat.TabIndex = 225;
             this.cbAllKhatajat.Text = "تمام کھاتہ جات";
             this.cbAllKhatajat.UseVisualStyleBackColor = true;
@@ -1581,7 +1581,7 @@ namespace SDC_Application.AL
             this.cbJuzviKhata.AutoSize = true;
             this.cbJuzviKhata.Location = new System.Drawing.Point(138, 87);
             this.cbJuzviKhata.Name = "cbJuzviKhata";
-            this.cbJuzviKhata.Size = new System.Drawing.Size(82, 34);
+            this.cbJuzviKhata.Size = new System.Drawing.Size(103, 42);
             this.cbJuzviKhata.TabIndex = 10;
             this.cbJuzviKhata.Text = "جزوی کھاتہ";
             this.cbJuzviKhata.UseVisualStyleBackColor = true;
@@ -1592,7 +1592,7 @@ namespace SDC_Application.AL
             this.txtKhattaRecId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhattaRecId.Location = new System.Drawing.Point(2, 24);
             this.txtKhattaRecId.Name = "txtKhattaRecId";
-            this.txtKhattaRecId.Size = new System.Drawing.Size(121, 26);
+            this.txtKhattaRecId.Size = new System.Drawing.Size(121, 30);
             this.txtKhattaRecId.TabIndex = 9;
             this.txtKhattaRecId.Text = "-1";
             this.txtKhattaRecId.Visible = false;
@@ -1650,7 +1650,7 @@ namespace SDC_Application.AL
             this.cbokhataNo.FormattingEnabled = true;
             this.cbokhataNo.Location = new System.Drawing.Point(277, 21);
             this.cbokhataNo.Name = "cbokhataNo";
-            this.cbokhataNo.Size = new System.Drawing.Size(172, 27);
+            this.cbokhataNo.Size = new System.Drawing.Size(172, 31);
             this.cbokhataNo.TabIndex = 3;
             this.cbokhataNo.ValueMember = "RegisterHqDKhataId";
             this.cbokhataNo.SelectionChangeCommitted += new System.EventHandler(this.cbokhataNo_SelectionChangeCommitted);
@@ -1662,7 +1662,7 @@ namespace SDC_Application.AL
             this.gbAmalDaramad.Controls.Add(this.label61);
             this.gbAmalDaramad.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gbAmalDaramad.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAmalDaramad.Location = new System.Drawing.Point(0, 614);
+            this.gbAmalDaramad.Location = new System.Drawing.Point(0, 608);
             this.gbAmalDaramad.Name = "gbAmalDaramad";
             this.gbAmalDaramad.Padding = new System.Windows.Forms.Padding(0);
             this.gbAmalDaramad.Size = new System.Drawing.Size(582, 67);
@@ -1727,11 +1727,11 @@ namespace SDC_Application.AL
             this.tabPage3.Controls.Add(this.GridSellersList);
             this.tabPage3.Controls.Add(this.label222);
             this.tabPage3.Controls.Add(this.groupBox11);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 40);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.tabPage3.Size = new System.Drawing.Size(1457, 693);
+            this.tabPage3.Size = new System.Drawing.Size(1457, 687);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "بائعان/متوفی/دہندہ";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1752,7 +1752,7 @@ namespace SDC_Application.AL
             this.GridSellerList.RowHeadersVisible = false;
             this.GridSellerList.RowTemplate.Height = 30;
             this.GridSellerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridSellerList.Size = new System.Drawing.Size(1451, 329);
+            this.GridSellerList.Size = new System.Drawing.Size(1451, 323);
             this.GridSellerList.TabIndex = 10;
             this.GridSellerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridSellerList1_CellClick);
             this.GridSellerList.SelectionChanged += new System.EventHandler(this.GridSellerList1_SelectionChanged);
@@ -1773,7 +1773,7 @@ namespace SDC_Application.AL
             this.colMutwafiKhataJat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMutwafiKhataJat.Text = "متوفی/متوفیہ کے ملکیتی کھاتہ جات";
             this.colMutwafiKhataJat.UseColumnTextForLinkValue = true;
-            this.colMutwafiKhataJat.Width = 146;
+            this.colMutwafiKhataJat.Width = 178;
             // 
             // gbSellersControls
             // 
@@ -1800,9 +1800,9 @@ namespace SDC_Application.AL
             this.chkDeleteAllBayan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkDeleteAllBayan.AutoSize = true;
             this.chkDeleteAllBayan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
-            this.chkDeleteAllBayan.Location = new System.Drawing.Point(571, 64);
+            this.chkDeleteAllBayan.Location = new System.Drawing.Point(538, 64);
             this.chkDeleteAllBayan.Name = "chkDeleteAllBayan";
-            this.chkDeleteAllBayan.Size = new System.Drawing.Size(153, 29);
+            this.chkDeleteAllBayan.Size = new System.Drawing.Size(186, 35);
             this.chkDeleteAllBayan.TabIndex = 1044;
             this.chkDeleteAllBayan.Text = "کھاتہ کے تمام مالکان خذف کریں";
             this.chkDeleteAllBayan.UseVisualStyleBackColor = true;
@@ -1827,7 +1827,7 @@ namespace SDC_Application.AL
             this.label12.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(1316, 19);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 30);
+            this.label12.Size = new System.Drawing.Size(123, 38);
             this.label12.TabIndex = 1042;
             this.label12.Text = "بائعان تلاش کریں";
             // 
@@ -1858,7 +1858,7 @@ namespace SDC_Application.AL
             this.txtHissaMuntaqila.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHissaMuntaqila.Location = new System.Drawing.Point(67, 55);
             this.txtHissaMuntaqila.Name = "txtHissaMuntaqila";
-            this.txtHissaMuntaqila.Size = new System.Drawing.Size(92, 26);
+            this.txtHissaMuntaqila.Size = new System.Drawing.Size(92, 30);
             this.txtHissaMuntaqila.TabIndex = 1043;
             // 
             // chkHissaTransferred
@@ -1867,7 +1867,7 @@ namespace SDC_Application.AL
             this.chkHissaTransferred.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHissaTransferred.Location = new System.Drawing.Point(67, 18);
             this.chkHissaTransferred.Name = "chkHissaTransferred";
-            this.chkHissaTransferred.Size = new System.Drawing.Size(69, 29);
+            this.chkHissaTransferred.Size = new System.Drawing.Size(84, 35);
             this.chkHissaTransferred.TabIndex = 1045;
             this.chkHissaTransferred.Text = "حصہ منتقلہ";
             this.chkHissaTransferred.UseVisualStyleBackColor = true;
@@ -1889,7 +1889,7 @@ namespace SDC_Application.AL
             this.txtMushterkaSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushterkaSarsai.Location = new System.Drawing.Point(165, 56);
             this.txtMushterkaSarsai.Name = "txtMushterkaSarsai";
-            this.txtMushterkaSarsai.Size = new System.Drawing.Size(60, 26);
+            this.txtMushterkaSarsai.Size = new System.Drawing.Size(60, 30);
             this.txtMushterkaSarsai.TabIndex = 1042;
             // 
             // lblMushterkaSarsai
@@ -1909,7 +1909,7 @@ namespace SDC_Application.AL
             this.txtMushterkamarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushterkamarla.Location = new System.Drawing.Point(240, 56);
             this.txtMushterkamarla.Name = "txtMushterkamarla";
-            this.txtMushterkamarla.Size = new System.Drawing.Size(60, 26);
+            this.txtMushterkamarla.Size = new System.Drawing.Size(60, 30);
             this.txtMushterkamarla.TabIndex = 1041;
             // 
             // lblMushterkaMarla
@@ -1929,7 +1929,7 @@ namespace SDC_Application.AL
             this.txtMushterkaKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushterkaKanal.Location = new System.Drawing.Point(317, 56);
             this.txtMushterkaKanal.Name = "txtMushterkaKanal";
-            this.txtMushterkaKanal.Size = new System.Drawing.Size(60, 26);
+            this.txtMushterkaKanal.Size = new System.Drawing.Size(60, 30);
             this.txtMushterkaKanal.TabIndex = 1040;
             // 
             // lblMushterkaKanal
@@ -1975,7 +1975,7 @@ namespace SDC_Application.AL
             this.dateDeath.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateDeath.Location = new System.Drawing.Point(9, 28);
             this.dateDeath.Name = "dateDeath";
-            this.dateDeath.Size = new System.Drawing.Size(125, 26);
+            this.dateDeath.Size = new System.Drawing.Size(125, 30);
             this.dateDeath.TabIndex = 1033;
             // 
             // chkDeath
@@ -1983,10 +1983,10 @@ namespace SDC_Application.AL
             this.chkDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkDeath.AutoSize = true;
             this.chkDeath.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDeath.Location = new System.Drawing.Point(1142, 4);
+            this.chkDeath.Location = new System.Drawing.Point(1127, 4);
             this.chkDeath.Name = "chkDeath";
             this.chkDeath.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chkDeath.Size = new System.Drawing.Size(60, 34);
+            this.chkDeath.Size = new System.Drawing.Size(75, 42);
             this.chkDeath.TabIndex = 1032;
             this.chkDeath.Text = "وفات";
             this.chkDeath.UseVisualStyleBackColor = true;
@@ -1998,7 +1998,7 @@ namespace SDC_Application.AL
             this.chkMushtharaqa.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMushtharaqa.Location = new System.Drawing.Point(404, 20);
             this.chkMushtharaqa.Name = "chkMushtharaqa";
-            this.chkMushtharaqa.Size = new System.Drawing.Size(117, 34);
+            this.chkMushtharaqa.Size = new System.Drawing.Size(145, 42);
             this.chkMushtharaqa.TabIndex = 1011;
             this.chkMushtharaqa.Text = "مشترکہ رقبہ منتقلہ:";
             this.chkMushtharaqa.UseVisualStyleBackColor = true;
@@ -2011,7 +2011,7 @@ namespace SDC_Application.AL
             this.txtSearchSeller.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchSeller.Location = new System.Drawing.Point(1270, 60);
             this.txtSearchSeller.Name = "txtSearchSeller";
-            this.txtSearchSeller.Size = new System.Drawing.Size(173, 37);
+            this.txtSearchSeller.Size = new System.Drawing.Size(173, 44);
             this.txtSearchSeller.TabIndex = 1020;
             this.txtSearchSeller.TextChanged += new System.EventHandler(this.txtSearchSeller_TextChanged_1);
             this.txtSearchSeller.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchSeller_KeyPress);
@@ -2060,7 +2060,7 @@ namespace SDC_Application.AL
             this.GridSellersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumnforGrid});
             this.GridSellersList.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GridSellersList.Location = new System.Drawing.Point(3, 634);
+            this.GridSellersList.Location = new System.Drawing.Point(3, 628);
             this.GridSellersList.Name = "GridSellersList";
             this.GridSellersList.ReadOnly = true;
             this.GridSellersList.RowHeadersVisible = false;
@@ -2098,9 +2098,9 @@ namespace SDC_Application.AL
             this.cbAddAllMalkan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAddAllMalkan.AutoSize = true;
             this.cbAddAllMalkan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
-            this.cbAddAllMalkan.Location = new System.Drawing.Point(1030, 151);
+            this.cbAddAllMalkan.Location = new System.Drawing.Point(983, 151);
             this.cbAddAllMalkan.Name = "cbAddAllMalkan";
-            this.cbAddAllMalkan.Size = new System.Drawing.Size(224, 29);
+            this.cbAddAllMalkan.Size = new System.Drawing.Size(271, 35);
             this.cbAddAllMalkan.TabIndex = 1035;
             this.cbAddAllMalkan.Text = "کھاتہ کے تمام مالکان سالم حصے کے ساتھ محفوظ کریں";
             this.cbAddAllMalkan.UseVisualStyleBackColor = true;
@@ -2148,7 +2148,7 @@ namespace SDC_Application.AL
             this.cmbFardTokenNo.FormattingEnabled = true;
             this.cmbFardTokenNo.Location = new System.Drawing.Point(6, 27);
             this.cmbFardTokenNo.Name = "cmbFardTokenNo";
-            this.cmbFardTokenNo.Size = new System.Drawing.Size(115, 27);
+            this.cmbFardTokenNo.Size = new System.Drawing.Size(115, 31);
             this.cmbFardTokenNo.TabIndex = 1021;
             this.cmbFardTokenNo.Tag = "1";
             this.cmbFardTokenNo.ValueMember = "fardTokenId";
@@ -2165,7 +2165,7 @@ namespace SDC_Application.AL
             this.dtFardToken.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtFardToken.Name = "dtFardToken";
             this.dtFardToken.RightToLeftLayout = true;
-            this.dtFardToken.Size = new System.Drawing.Size(110, 26);
+            this.dtFardToken.Size = new System.Drawing.Size(110, 30);
             this.dtFardToken.TabIndex = 1019;
             this.dtFardToken.Tag = "4";
             this.dtFardToken.ValueChanged += new System.EventHandler(this.dtFardToken_ValueChanged);
@@ -2175,7 +2175,7 @@ namespace SDC_Application.AL
             this.txtSellerID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSellerID.Location = new System.Drawing.Point(636, 15);
             this.txtSellerID.Name = "txtSellerID";
-            this.txtSellerID.Size = new System.Drawing.Size(81, 33);
+            this.txtSellerID.Size = new System.Drawing.Size(81, 39);
             this.txtSellerID.TabIndex = 1033;
             this.txtSellerID.Text = "-1";
             this.txtSellerID.Visible = false;
@@ -2184,7 +2184,7 @@ namespace SDC_Application.AL
             // 
             this.txtHidenMustariFareeqID.Location = new System.Drawing.Point(923, 15);
             this.txtHidenMustariFareeqID.Name = "txtHidenMustariFareeqID";
-            this.txtHidenMustariFareeqID.Size = new System.Drawing.Size(83, 33);
+            this.txtHidenMustariFareeqID.Size = new System.Drawing.Size(83, 39);
             this.txtHidenMustariFareeqID.TabIndex = 1033;
             this.txtHidenMustariFareeqID.Visible = false;
             // 
@@ -2211,7 +2211,7 @@ namespace SDC_Application.AL
             this.cboPersonSeller.IntegralHeight = false;
             this.cboPersonSeller.Location = new System.Drawing.Point(21, 35);
             this.cboPersonSeller.Name = "cboPersonSeller";
-            this.cboPersonSeller.Size = new System.Drawing.Size(321, 27);
+            this.cboPersonSeller.Size = new System.Drawing.Size(321, 31);
             this.cboPersonSeller.TabIndex = 1018;
             this.cboPersonSeller.TabStop = false;
             this.cboPersonSeller.ValueMember = "PersonId";
@@ -2296,7 +2296,7 @@ namespace SDC_Application.AL
             this.txtFrokhtFeet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrokhtFeet.Location = new System.Drawing.Point(10, 56);
             this.txtFrokhtFeet.Name = "txtFrokhtFeet";
-            this.txtFrokhtFeet.Size = new System.Drawing.Size(65, 26);
+            this.txtFrokhtFeet.Size = new System.Drawing.Size(65, 30);
             this.txtFrokhtFeet.TabIndex = 46;
             this.txtFrokhtFeet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2306,7 +2306,7 @@ namespace SDC_Application.AL
             this.txtFrokhtHisay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrokhtHisay.Location = new System.Drawing.Point(302, 56);
             this.txtFrokhtHisay.Name = "txtFrokhtHisay";
-            this.txtFrokhtHisay.Size = new System.Drawing.Size(103, 26);
+            this.txtFrokhtHisay.Size = new System.Drawing.Size(103, 30);
             this.txtFrokhtHisay.TabIndex = 42;
             this.txtFrokhtHisay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFrokhtHisay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
@@ -2318,7 +2318,7 @@ namespace SDC_Application.AL
             this.txtFrokhtKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrokhtKanal.Location = new System.Drawing.Point(229, 56);
             this.txtFrokhtKanal.Name = "txtFrokhtKanal";
-            this.txtFrokhtKanal.Size = new System.Drawing.Size(65, 26);
+            this.txtFrokhtKanal.Size = new System.Drawing.Size(65, 30);
             this.txtFrokhtKanal.TabIndex = 43;
             this.txtFrokhtKanal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFrokhtKanal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtMarla_KeyPress);
@@ -2329,7 +2329,7 @@ namespace SDC_Application.AL
             this.txtFrokhtMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrokhtMarla.Location = new System.Drawing.Point(156, 56);
             this.txtFrokhtMarla.Name = "txtFrokhtMarla";
-            this.txtFrokhtMarla.Size = new System.Drawing.Size(65, 26);
+            this.txtFrokhtMarla.Size = new System.Drawing.Size(65, 30);
             this.txtFrokhtMarla.TabIndex = 44;
             this.txtFrokhtMarla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFrokhtMarla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtMarla_KeyPress);
@@ -2340,7 +2340,7 @@ namespace SDC_Application.AL
             this.txtFrokhtSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrokhtSarsai.Location = new System.Drawing.Point(83, 56);
             this.txtFrokhtSarsai.Name = "txtFrokhtSarsai";
-            this.txtFrokhtSarsai.Size = new System.Drawing.Size(65, 26);
+            this.txtFrokhtSarsai.Size = new System.Drawing.Size(65, 30);
             this.txtFrokhtSarsai.TabIndex = 45;
             this.txtFrokhtSarsai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFrokhtSarsai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
@@ -2393,7 +2393,7 @@ namespace SDC_Application.AL
             this.txtKulHissayWOTminhay.Location = new System.Drawing.Point(269, -16);
             this.txtKulHissayWOTminhay.Name = "txtKulHissayWOTminhay";
             this.txtKulHissayWOTminhay.ReadOnly = true;
-            this.txtKulHissayWOTminhay.Size = new System.Drawing.Size(106, 26);
+            this.txtKulHissayWOTminhay.Size = new System.Drawing.Size(106, 30);
             this.txtKulHissayWOTminhay.TabIndex = 1039;
             this.txtKulHissayWOTminhay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKulHissayWOTminhay.Visible = false;
@@ -2426,7 +2426,7 @@ namespace SDC_Application.AL
             this.txtFardFeet.Location = new System.Drawing.Point(8, 92);
             this.txtFardFeet.Name = "txtFardFeet";
             this.txtFardFeet.ReadOnly = true;
-            this.txtFardFeet.Size = new System.Drawing.Size(61, 26);
+            this.txtFardFeet.Size = new System.Drawing.Size(61, 30);
             this.txtFardFeet.TabIndex = 1035;
             this.txtFardFeet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2438,7 +2438,7 @@ namespace SDC_Application.AL
             this.txtFardSarsai.Location = new System.Drawing.Point(75, 92);
             this.txtFardSarsai.Name = "txtFardSarsai";
             this.txtFardSarsai.ReadOnly = true;
-            this.txtFardSarsai.Size = new System.Drawing.Size(61, 26);
+            this.txtFardSarsai.Size = new System.Drawing.Size(61, 30);
             this.txtFardSarsai.TabIndex = 1033;
             this.txtFardSarsai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2463,7 +2463,7 @@ namespace SDC_Application.AL
             this.txtFardMarla.Location = new System.Drawing.Point(142, 92);
             this.txtFardMarla.Name = "txtFardMarla";
             this.txtFardMarla.ReadOnly = true;
-            this.txtFardMarla.Size = new System.Drawing.Size(61, 26);
+            this.txtFardMarla.Size = new System.Drawing.Size(61, 30);
             this.txtFardMarla.TabIndex = 1032;
             this.txtFardMarla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2475,7 +2475,7 @@ namespace SDC_Application.AL
             this.txtFardHissay.Location = new System.Drawing.Point(280, 92);
             this.txtFardHissay.Name = "txtFardHissay";
             this.txtFardHissay.ReadOnly = true;
-            this.txtFardHissay.Size = new System.Drawing.Size(95, 26);
+            this.txtFardHissay.Size = new System.Drawing.Size(95, 30);
             this.txtFardHissay.TabIndex = 1034;
             this.txtFardHissay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2497,7 +2497,7 @@ namespace SDC_Application.AL
             this.txtKulFeet.Location = new System.Drawing.Point(8, 60);
             this.txtKulFeet.Name = "txtKulFeet";
             this.txtKulFeet.ReadOnly = true;
-            this.txtKulFeet.Size = new System.Drawing.Size(61, 26);
+            this.txtKulFeet.Size = new System.Drawing.Size(61, 30);
             this.txtKulFeet.TabIndex = 1030;
             this.txtKulFeet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2519,7 +2519,7 @@ namespace SDC_Application.AL
             this.txtKullSarsai.Location = new System.Drawing.Point(75, 60);
             this.txtKullSarsai.Name = "txtKullSarsai";
             this.txtKullSarsai.ReadOnly = true;
-            this.txtKullSarsai.Size = new System.Drawing.Size(61, 26);
+            this.txtKullSarsai.Size = new System.Drawing.Size(61, 30);
             this.txtKullSarsai.TabIndex = 1028;
             this.txtKullSarsai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2564,7 +2564,7 @@ namespace SDC_Application.AL
             this.txtKullMarla.Location = new System.Drawing.Point(142, 60);
             this.txtKullMarla.Name = "txtKullMarla";
             this.txtKullMarla.ReadOnly = true;
-            this.txtKullMarla.Size = new System.Drawing.Size(61, 26);
+            this.txtKullMarla.Size = new System.Drawing.Size(61, 30);
             this.txtKullMarla.TabIndex = 1027;
             this.txtKullMarla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2586,7 +2586,7 @@ namespace SDC_Application.AL
             this.txtKulHisay.Location = new System.Drawing.Point(280, 60);
             this.txtKulHisay.Name = "txtKulHisay";
             this.txtKulHisay.ReadOnly = true;
-            this.txtKulHisay.Size = new System.Drawing.Size(95, 26);
+            this.txtKulHisay.Size = new System.Drawing.Size(95, 30);
             this.txtKulHisay.TabIndex = 1029;
             this.txtKulHisay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2594,7 +2594,7 @@ namespace SDC_Application.AL
             // 
             this.groupBox11.BackColor = System.Drawing.Color.Transparent;
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox11.Location = new System.Drawing.Point(3, 648);
+            this.groupBox11.Location = new System.Drawing.Point(3, 642);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(1451, 39);
             this.groupBox11.TabIndex = 1;
@@ -2604,10 +2604,10 @@ namespace SDC_Application.AL
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.groupBox8);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 40);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Size = new System.Drawing.Size(1457, 693);
+            this.tabPage2.Size = new System.Drawing.Size(1457, 687);
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = " مشتری/وارث/گریندہ";
             // 
@@ -2621,7 +2621,7 @@ namespace SDC_Application.AL
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(5, 5);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1447, 683);
+            this.groupBox8.Size = new System.Drawing.Size(1447, 677);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             // 
@@ -2634,12 +2634,12 @@ namespace SDC_Application.AL
             this.GridBuyersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chk1});
             this.GridBuyersList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridBuyersList.Location = new System.Drawing.Point(3, 220);
+            this.GridBuyersList.Location = new System.Drawing.Point(3, 226);
             this.GridBuyersList.Name = "GridBuyersList";
             this.GridBuyersList.ReadOnly = true;
             this.GridBuyersList.RowTemplate.Height = 30;
             this.GridBuyersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridBuyersList.Size = new System.Drawing.Size(1441, 382);
+            this.GridBuyersList.Size = new System.Drawing.Size(1441, 370);
             this.GridBuyersList.TabIndex = 2;
             this.GridBuyersList.SelectionChanged += new System.EventHandler(this.GridBuyersList_SelectionChanged);
             // 
@@ -2661,7 +2661,7 @@ namespace SDC_Application.AL
             this.panel12.Controls.Add(this.label56);
             this.panel12.Controls.Add(this.label55);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(3, 602);
+            this.panel12.Location = new System.Drawing.Point(3, 596);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1441, 78);
             this.panel12.TabIndex = 227;
@@ -2673,7 +2673,7 @@ namespace SDC_Application.AL
             this.txtRaqbaDiff.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRaqbaDiff.Location = new System.Drawing.Point(248, 21);
             this.txtRaqbaDiff.Name = "txtRaqbaDiff";
-            this.txtRaqbaDiff.Size = new System.Drawing.Size(166, 29);
+            this.txtRaqbaDiff.Size = new System.Drawing.Size(166, 34);
             this.txtRaqbaDiff.TabIndex = 7;
             // 
             // txtHissaDiff
@@ -2683,7 +2683,7 @@ namespace SDC_Application.AL
             this.txtHissaDiff.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHissaDiff.Location = new System.Drawing.Point(480, 21);
             this.txtHissaDiff.Name = "txtHissaDiff";
-            this.txtHissaDiff.Size = new System.Drawing.Size(273, 29);
+            this.txtHissaDiff.Size = new System.Drawing.Size(273, 34);
             this.txtHissaDiff.TabIndex = 6;
             // 
             // label58
@@ -2693,7 +2693,7 @@ namespace SDC_Application.AL
             this.label58.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.Location = new System.Drawing.Point(418, 19);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(59, 30);
+            this.label58.Size = new System.Drawing.Size(75, 38);
             this.label58.TabIndex = 5;
             this.label58.Text = "رقبہ فرق:";
             // 
@@ -2704,7 +2704,7 @@ namespace SDC_Application.AL
             this.label57.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.Location = new System.Drawing.Point(761, 21);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(63, 30);
+            this.label57.Size = new System.Drawing.Size(79, 38);
             this.label57.TabIndex = 4;
             this.label57.Text = " حصہ فرق:";
             // 
@@ -2715,7 +2715,7 @@ namespace SDC_Application.AL
             this.txtIntiqalRaqba.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIntiqalRaqba.Location = new System.Drawing.Point(830, 22);
             this.txtIntiqalRaqba.Name = "txtIntiqalRaqba";
-            this.txtIntiqalRaqba.Size = new System.Drawing.Size(119, 29);
+            this.txtIntiqalRaqba.Size = new System.Drawing.Size(119, 34);
             this.txtIntiqalRaqba.TabIndex = 3;
             // 
             // txtIntiqalHissay
@@ -2725,7 +2725,7 @@ namespace SDC_Application.AL
             this.txtIntiqalHissay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIntiqalHissay.Location = new System.Drawing.Point(1054, 22);
             this.txtIntiqalHissay.Name = "txtIntiqalHissay";
-            this.txtIntiqalHissay.Size = new System.Drawing.Size(267, 29);
+            this.txtIntiqalHissay.Size = new System.Drawing.Size(267, 34);
             this.txtIntiqalHissay.TabIndex = 2;
             // 
             // label56
@@ -2735,7 +2735,7 @@ namespace SDC_Application.AL
             this.label56.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.Location = new System.Drawing.Point(955, 21);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(97, 30);
+            this.label56.Size = new System.Drawing.Size(123, 38);
             this.label56.TabIndex = 1;
             this.label56.Text = "رقبہ برائے انتقال:";
             // 
@@ -2746,7 +2746,7 @@ namespace SDC_Application.AL
             this.label55.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.Location = new System.Drawing.Point(1317, 20);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(100, 30);
+            this.label55.Size = new System.Drawing.Size(126, 38);
             this.label55.TabIndex = 0;
             this.label55.Text = "حصہ برائے انتقال:";
             // 
@@ -2765,7 +2765,7 @@ namespace SDC_Application.AL
             this.PanelBuyersControl.Controls.Add(this.btncancelBuyer);
             this.PanelBuyersControl.Controls.Add(this.btnDelBuyer);
             this.PanelBuyersControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelBuyersControl.Location = new System.Drawing.Point(3, 156);
+            this.PanelBuyersControl.Location = new System.Drawing.Point(3, 162);
             this.PanelBuyersControl.Name = "PanelBuyersControl";
             this.PanelBuyersControl.Size = new System.Drawing.Size(1441, 64);
             this.PanelBuyersControl.TabIndex = 225;
@@ -2790,7 +2790,7 @@ namespace SDC_Application.AL
             this.txtSearchBuyers.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBuyers.Location = new System.Drawing.Point(1028, 8);
             this.txtSearchBuyers.Name = "txtSearchBuyers";
-            this.txtSearchBuyers.Size = new System.Drawing.Size(184, 37);
+            this.txtSearchBuyers.Size = new System.Drawing.Size(184, 44);
             this.txtSearchBuyers.TabIndex = 1044;
             this.txtSearchBuyers.TextChanged += new System.EventHandler(this.txtSearchBuyers_TextChanged);
             this.txtSearchBuyers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlagan_KeyPress);
@@ -2936,7 +2936,7 @@ namespace SDC_Application.AL
             this.gbBuyersControls.Controls.Add(this.label31);
             this.gbBuyersControls.Controls.Add(this.txtKharidKanal);
             this.gbBuyersControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbBuyersControls.Location = new System.Drawing.Point(3, 29);
+            this.gbBuyersControls.Location = new System.Drawing.Point(3, 35);
             this.gbBuyersControls.Name = "gbBuyersControls";
             this.gbBuyersControls.Size = new System.Drawing.Size(1441, 127);
             this.gbBuyersControls.TabIndex = 226;
@@ -2953,7 +2953,7 @@ namespace SDC_Application.AL
             this.cmbRishta.IntegralHeight = false;
             this.cmbRishta.Location = new System.Drawing.Point(355, 86);
             this.cmbRishta.Name = "cmbRishta";
-            this.cmbRishta.Size = new System.Drawing.Size(119, 27);
+            this.cmbRishta.Size = new System.Drawing.Size(119, 31);
             this.cmbRishta.TabIndex = 1021;
             this.cmbRishta.ValueMember = "PersonId";
             this.cmbRishta.Visible = false;
@@ -2965,7 +2965,7 @@ namespace SDC_Application.AL
             this.lbRishta.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRishta.Location = new System.Drawing.Point(424, 45);
             this.lbRishta.Name = "lbRishta";
-            this.lbRishta.Size = new System.Drawing.Size(35, 30);
+            this.lbRishta.Size = new System.Drawing.Size(46, 38);
             this.lbRishta.TabIndex = 1022;
             this.lbRishta.Text = "رشتہ";
             this.lbRishta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2978,7 +2978,7 @@ namespace SDC_Application.AL
             this.txtBuyerHIsaBata.Location = new System.Drawing.Point(1054, 84);
             this.txtBuyerHIsaBata.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtBuyerHIsaBata.Name = "txtBuyerHIsaBata";
-            this.txtBuyerHIsaBata.Size = new System.Drawing.Size(63, 26);
+            this.txtBuyerHIsaBata.Size = new System.Drawing.Size(63, 30);
             this.txtBuyerHIsaBata.TabIndex = 248;
             // 
             // label24
@@ -3023,7 +3023,7 @@ namespace SDC_Application.AL
             this.txthiddnPersonId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthiddnPersonId.Location = new System.Drawing.Point(308, 5);
             this.txthiddnPersonId.Name = "txthiddnPersonId";
-            this.txthiddnPersonId.Size = new System.Drawing.Size(100, 26);
+            this.txthiddnPersonId.Size = new System.Drawing.Size(100, 30);
             this.txthiddnPersonId.TabIndex = 247;
             this.txthiddnPersonId.Visible = false;
             // 
@@ -3045,7 +3045,7 @@ namespace SDC_Application.AL
             this.txthiddenBuyerRecId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthiddenBuyerRecId.Location = new System.Drawing.Point(202, 5);
             this.txthiddenBuyerRecId.Name = "txthiddenBuyerRecId";
-            this.txthiddenBuyerRecId.Size = new System.Drawing.Size(100, 26);
+            this.txthiddenBuyerRecId.Size = new System.Drawing.Size(100, 30);
             this.txthiddenBuyerRecId.TabIndex = 246;
             this.txthiddenBuyerRecId.Text = "-1";
             this.txthiddenBuyerRecId.Visible = false;
@@ -3090,7 +3090,7 @@ namespace SDC_Application.AL
             this.txtKharidFeet.Location = new System.Drawing.Point(647, 86);
             this.txtKharidFeet.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtKharidFeet.Name = "txtKharidFeet";
-            this.txtKharidFeet.Size = new System.Drawing.Size(64, 26);
+            this.txtKharidFeet.Size = new System.Drawing.Size(64, 30);
             this.txtKharidFeet.TabIndex = 6;
             // 
             // label27
@@ -3111,7 +3111,7 @@ namespace SDC_Application.AL
             this.txtKharidSarsai.Location = new System.Drawing.Point(719, 86);
             this.txtKharidSarsai.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtKharidSarsai.Name = "txtKharidSarsai";
-            this.txtKharidSarsai.Size = new System.Drawing.Size(64, 26);
+            this.txtKharidSarsai.Size = new System.Drawing.Size(64, 30);
             this.txtKharidSarsai.TabIndex = 5;
             this.txtKharidSarsai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
             // 
@@ -3123,7 +3123,7 @@ namespace SDC_Application.AL
             this.txtnameKharidar.Location = new System.Drawing.Point(1194, 76);
             this.txtnameKharidar.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtnameKharidar.Name = "txtnameKharidar";
-            this.txtnameKharidar.Size = new System.Drawing.Size(210, 37);
+            this.txtnameKharidar.Size = new System.Drawing.Size(210, 44);
             this.txtnameKharidar.TabIndex = 38;
             this.txtnameKharidar.TabStop = false;
             this.txtnameKharidar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnameKharidar_KeyPress);
@@ -3136,7 +3136,7 @@ namespace SDC_Application.AL
             this.cboKhewatType.FormattingEnabled = true;
             this.cboKhewatType.Location = new System.Drawing.Point(480, 85);
             this.cboKhewatType.Name = "cboKhewatType";
-            this.cboKhewatType.Size = new System.Drawing.Size(159, 27);
+            this.cboKhewatType.Size = new System.Drawing.Size(159, 31);
             this.cboKhewatType.TabIndex = 32;
             this.cboKhewatType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboKhewatType_KeyPress);
             // 
@@ -3158,7 +3158,7 @@ namespace SDC_Application.AL
             this.txtKharidMarla.Location = new System.Drawing.Point(791, 86);
             this.txtKharidMarla.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtKharidMarla.Name = "txtKharidMarla";
-            this.txtKharidMarla.Size = new System.Drawing.Size(64, 26);
+            this.txtKharidMarla.Size = new System.Drawing.Size(64, 30);
             this.txtKharidMarla.TabIndex = 4;
             this.txtKharidMarla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtMarla_KeyPress);
             // 
@@ -3169,7 +3169,7 @@ namespace SDC_Application.AL
             this.txtKharidHisay.Location = new System.Drawing.Point(935, 86);
             this.txtKharidHisay.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtKharidHisay.Name = "txtKharidHisay";
-            this.txtKharidHisay.Size = new System.Drawing.Size(106, 26);
+            this.txtKharidHisay.Size = new System.Drawing.Size(106, 30);
             this.txtKharidHisay.TabIndex = 2;
             this.txtKharidHisay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtSarsai_KeyPress);
             this.txtKharidHisay.Leave += new System.EventHandler(this.txtKharidHisay_Leave);
@@ -3203,18 +3203,18 @@ namespace SDC_Application.AL
             this.txtKharidKanal.Location = new System.Drawing.Point(863, 86);
             this.txtKharidKanal.Margin = new System.Windows.Forms.Padding(8, 5, 5, 8);
             this.txtKharidKanal.Name = "txtKharidKanal";
-            this.txtKharidKanal.Size = new System.Drawing.Size(64, 26);
+            this.txtKharidKanal.Size = new System.Drawing.Size(64, 30);
             this.txtKharidKanal.TabIndex = 3;
             this.txtKharidKanal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrokhtMarla_KeyPress);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
+            this.tabPage4.Location = new System.Drawing.Point(4, 40);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.tabPage4.Size = new System.Drawing.Size(1457, 693);
+            this.tabPage4.Size = new System.Drawing.Size(1457, 687);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "تقسیم";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -3231,7 +3231,7 @@ namespace SDC_Application.AL
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox1.Size = new System.Drawing.Size(1451, 681);
+            this.groupBox1.Size = new System.Drawing.Size(1451, 675);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -3241,9 +3241,9 @@ namespace SDC_Application.AL
             this.panel8.Controls.Add(this.groupBox17);
             this.panel8.Controls.Add(this.groupBox19);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1027, 32);
+            this.panel8.Location = new System.Drawing.Point(1027, 38);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(421, 643);
+            this.panel8.Size = new System.Drawing.Size(421, 631);
             this.panel8.TabIndex = 31;
             // 
             // panel9
@@ -3252,7 +3252,7 @@ namespace SDC_Application.AL
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 119);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(421, 322);
+            this.panel9.Size = new System.Drawing.Size(421, 310);
             this.panel9.TabIndex = 28;
             // 
             // groupBox18
@@ -3277,13 +3277,13 @@ namespace SDC_Application.AL
             this.Khata_TotalParts,
             this.Khata_Area});
             this.GridIntiqalKhattaJatforMin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridIntiqalKhattaJatforMin.Location = new System.Drawing.Point(10, 36);
+            this.GridIntiqalKhattaJatforMin.Location = new System.Drawing.Point(10, 42);
             this.GridIntiqalKhattaJatforMin.Name = "GridIntiqalKhattaJatforMin";
             this.GridIntiqalKhattaJatforMin.ReadOnly = true;
             this.GridIntiqalKhattaJatforMin.RowHeadersVisible = false;
             this.GridIntiqalKhattaJatforMin.RowTemplate.Height = 30;
             this.GridIntiqalKhattaJatforMin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridIntiqalKhattaJatforMin.Size = new System.Drawing.Size(401, 139);
+            this.GridIntiqalKhattaJatforMin.Size = new System.Drawing.Size(401, 133);
             this.GridIntiqalKhattaJatforMin.TabIndex = 1;
             this.GridIntiqalKhattaJatforMin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridIntiqalKhattaJatforMin_CellClick);
             this.GridIntiqalKhattaJatforMin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridIntiqalKhattaJatforMin_CellContentClick);
@@ -3333,7 +3333,7 @@ namespace SDC_Application.AL
             this.txtGroupMinId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtGroupMinId.Location = new System.Drawing.Point(326, 59);
             this.txtGroupMinId.Name = "txtGroupMinId";
-            this.txtGroupMinId.Size = new System.Drawing.Size(88, 33);
+            this.txtGroupMinId.Size = new System.Drawing.Size(88, 39);
             this.txtGroupMinId.TabIndex = 26;
             this.txtGroupMinId.Visible = false;
             // 
@@ -3343,7 +3343,7 @@ namespace SDC_Application.AL
             this.txtMinGroupId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMinGroupId.Location = new System.Drawing.Point(256, 61);
             this.txtMinGroupId.Name = "txtMinGroupId";
-            this.txtMinGroupId.Size = new System.Drawing.Size(67, 33);
+            this.txtMinGroupId.Size = new System.Drawing.Size(67, 39);
             this.txtMinGroupId.TabIndex = 25;
             this.txtMinGroupId.Text = "-1";
             this.txtMinGroupId.Visible = false;
@@ -3354,7 +3354,7 @@ namespace SDC_Application.AL
             this.txtkhataRecId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtkhataRecId.Location = new System.Drawing.Point(10, 59);
             this.txtkhataRecId.Name = "txtkhataRecId";
-            this.txtkhataRecId.Size = new System.Drawing.Size(109, 33);
+            this.txtkhataRecId.Size = new System.Drawing.Size(109, 39);
             this.txtkhataRecId.TabIndex = 24;
             this.txtkhataRecId.Visible = false;
             // 
@@ -3363,9 +3363,9 @@ namespace SDC_Application.AL
             this.chkBadasthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkBadasthor.AutoSize = true;
             this.chkBadasthor.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBadasthor.Location = new System.Drawing.Point(56, 23);
+            this.chkBadasthor.Location = new System.Drawing.Point(40, 23);
             this.chkBadasthor.Name = "chkBadasthor";
-            this.chkBadasthor.Size = new System.Drawing.Size(63, 34);
+            this.chkBadasthor.Size = new System.Drawing.Size(79, 42);
             this.chkBadasthor.TabIndex = 20;
             this.chkBadasthor.Text = "بدستور";
             this.chkBadasthor.UseVisualStyleBackColor = true;
@@ -3379,7 +3379,7 @@ namespace SDC_Application.AL
             this.lblYabs.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYabs.Location = new System.Drawing.Point(125, 23);
             this.lblYabs.Name = "lblYabs";
-            this.lblYabs.Size = new System.Drawing.Size(20, 30);
+            this.lblYabs.Size = new System.Drawing.Size(26, 38);
             this.lblYabs.TabIndex = 19;
             this.lblYabs.Text = "یا";
             this.lblYabs.Visible = false;
@@ -3392,7 +3392,7 @@ namespace SDC_Application.AL
             this.cboMinGroups.FormattingEnabled = true;
             this.cboMinGroups.Location = new System.Drawing.Point(153, 25);
             this.cboMinGroups.Name = "cboMinGroups";
-            this.cboMinGroups.Size = new System.Drawing.Size(97, 27);
+            this.cboMinGroups.Size = new System.Drawing.Size(97, 31);
             this.cboMinGroups.TabIndex = 18;
             this.cboMinGroups.SelectedIndexChanged += new System.EventHandler(this.cboMinGroups_SelectedIndexChanged);
             // 
@@ -3412,9 +3412,9 @@ namespace SDC_Application.AL
             this.chknewkhatta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chknewkhatta.AutoSize = true;
             this.chknewkhatta.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chknewkhatta.Location = new System.Drawing.Point(321, 19);
+            this.chknewkhatta.Location = new System.Drawing.Point(300, 19);
             this.chknewkhatta.Name = "chknewkhatta";
-            this.chknewkhatta.Size = new System.Drawing.Size(81, 34);
+            this.chknewkhatta.Size = new System.Drawing.Size(102, 42);
             this.chknewkhatta.TabIndex = 0;
             this.chknewkhatta.Text = "نیامن کھاتا";
             this.chknewkhatta.UseVisualStyleBackColor = true;
@@ -3427,7 +3427,7 @@ namespace SDC_Application.AL
             this.txtmingroup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmingroup.Location = new System.Drawing.Point(153, 26);
             this.txtmingroup.Name = "txtmingroup";
-            this.txtmingroup.Size = new System.Drawing.Size(98, 26);
+            this.txtmingroup.Size = new System.Drawing.Size(98, 30);
             this.txtmingroup.TabIndex = 1;
             // 
             // label65
@@ -3437,7 +3437,7 @@ namespace SDC_Application.AL
             this.label65.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label65.Location = new System.Drawing.Point(254, 20);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(72, 30);
+            this.label65.Size = new System.Drawing.Size(91, 38);
             this.label65.TabIndex = 11;
             this.label65.Text = "من گروپ  :";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3449,7 +3449,7 @@ namespace SDC_Application.AL
             this.groupBox19.Controls.Add(this.btnAmalDaramadTaqseem);
             this.groupBox19.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox19.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(0, 441);
+            this.groupBox19.Location = new System.Drawing.Point(0, 429);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Size = new System.Drawing.Size(421, 202);
             this.groupBox19.TabIndex = 27;
@@ -3568,7 +3568,7 @@ namespace SDC_Application.AL
             // 
             this.txtOldKhatoniId.Location = new System.Drawing.Point(6, 17);
             this.txtOldKhatoniId.Name = "txtOldKhatoniId";
-            this.txtOldKhatoniId.Size = new System.Drawing.Size(20, 37);
+            this.txtOldKhatoniId.Size = new System.Drawing.Size(20, 44);
             this.txtOldKhatoniId.TabIndex = 107;
             this.txtOldKhatoniId.Text = "-1";
             this.txtOldKhatoniId.Visible = false;
@@ -3592,7 +3592,7 @@ namespace SDC_Application.AL
             this.label82.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label82.Location = new System.Drawing.Point(253, 46);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(32, 30);
+            this.label82.Size = new System.Drawing.Size(41, 38);
             this.label82.TabIndex = 28;
             this.label82.Text = "فٹ";
             // 
@@ -3602,7 +3602,7 @@ namespace SDC_Application.AL
             this.txtAreaType.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAreaType.Location = new System.Drawing.Point(548, 69);
             this.txtAreaType.Name = "txtAreaType";
-            this.txtAreaType.Size = new System.Drawing.Size(80, 37);
+            this.txtAreaType.Size = new System.Drawing.Size(80, 44);
             this.txtAreaType.TabIndex = 29;
             // 
             // txtSftMuntaqila
@@ -3610,7 +3610,7 @@ namespace SDC_Application.AL
             this.txtSftMuntaqila.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSftMuntaqila.Location = new System.Drawing.Point(241, 81);
             this.txtSftMuntaqila.Name = "txtSftMuntaqila";
-            this.txtSftMuntaqila.Size = new System.Drawing.Size(50, 26);
+            this.txtSftMuntaqila.Size = new System.Drawing.Size(50, 30);
             this.txtSftMuntaqila.TabIndex = 10005;
             // 
             // btnkhasrajat
@@ -3631,7 +3631,7 @@ namespace SDC_Application.AL
             this.label67.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label67.Location = new System.Drawing.Point(733, 17);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(71, 30);
+            this.label67.Size = new System.Drawing.Size(90, 38);
             this.label67.TabIndex = 13;
             this.label67.Text = "خسرہ جات   :";
             // 
@@ -3641,7 +3641,7 @@ namespace SDC_Application.AL
             this.label76.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label76.Location = new System.Drawing.Point(303, 46);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(45, 30);
+            this.label76.Size = new System.Drawing.Size(58, 38);
             this.label76.TabIndex = 26;
             this.label76.Text = "سرسائی";
             // 
@@ -3652,7 +3652,7 @@ namespace SDC_Application.AL
             this.label81.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label81.Location = new System.Drawing.Point(560, 36);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(59, 30);
+            this.label81.Size = new System.Drawing.Size(76, 38);
             this.label81.TabIndex = 30;
             this.label81.Text = "قسم اراضی";
             // 
@@ -3661,7 +3661,7 @@ namespace SDC_Application.AL
             this.txtSarsaiMuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSarsaiMuntaqla.Location = new System.Drawing.Point(299, 81);
             this.txtSarsaiMuntaqla.Name = "txtSarsaiMuntaqla";
-            this.txtSarsaiMuntaqla.Size = new System.Drawing.Size(50, 26);
+            this.txtSarsaiMuntaqla.Size = new System.Drawing.Size(50, 30);
             this.txtSarsaiMuntaqla.TabIndex = 10004;
             // 
             // label72
@@ -3670,7 +3670,7 @@ namespace SDC_Application.AL
             this.label72.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.Location = new System.Drawing.Point(316, 18);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(57, 30);
+            this.label72.Size = new System.Drawing.Size(72, 38);
             this.label72.TabIndex = 14;
             this.label72.Text = "رقبہ منتقلہ";
             // 
@@ -3692,7 +3692,7 @@ namespace SDC_Application.AL
             this.label77.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label77.Location = new System.Drawing.Point(358, 46);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(36, 30);
+            this.label77.Size = new System.Drawing.Size(46, 38);
             this.label77.TabIndex = 27;
             this.label77.Text = "مرلہ";
             // 
@@ -3702,7 +3702,7 @@ namespace SDC_Application.AL
             this.label70.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.Location = new System.Drawing.Point(201, 46);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(32, 30);
+            this.label70.Size = new System.Drawing.Size(41, 38);
             this.label70.TabIndex = 8;
             this.label70.Text = "من";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3714,7 +3714,7 @@ namespace SDC_Application.AL
             this.label69.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.Location = new System.Drawing.Point(131, 46);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(47, 30);
+            this.label69.Size = new System.Drawing.Size(61, 38);
             this.label69.TabIndex = 7;
             this.label69.Text = "نیا خسرہ";
             // 
@@ -3723,7 +3723,7 @@ namespace SDC_Application.AL
             this.txtKanalMuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKanalMuntaqla.Location = new System.Drawing.Point(398, 81);
             this.txtKanalMuntaqla.Name = "txtKanalMuntaqla";
-            this.txtKanalMuntaqla.Size = new System.Drawing.Size(50, 26);
+            this.txtKanalMuntaqla.Size = new System.Drawing.Size(50, 30);
             this.txtKanalMuntaqla.TabIndex = 10002;
             // 
             // txtoldkhasra
@@ -3732,7 +3732,7 @@ namespace SDC_Application.AL
             this.txtoldkhasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtoldkhasra.Location = new System.Drawing.Point(744, 81);
             this.txtoldkhasra.Name = "txtoldkhasra";
-            this.txtoldkhasra.Size = new System.Drawing.Size(68, 26);
+            this.txtoldkhasra.Size = new System.Drawing.Size(68, 30);
             this.txtoldkhasra.TabIndex = 3;
             // 
             // txtnewkhasra
@@ -3741,7 +3741,7 @@ namespace SDC_Application.AL
             this.txtnewkhasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnewkhasra.Location = new System.Drawing.Point(122, 81);
             this.txtnewkhasra.Name = "txtnewkhasra";
-            this.txtnewkhasra.Size = new System.Drawing.Size(66, 26);
+            this.txtnewkhasra.Size = new System.Drawing.Size(66, 30);
             this.txtnewkhasra.TabIndex = 4;
             this.txtnewkhasra.TabStop = false;
             // 
@@ -3750,7 +3750,7 @@ namespace SDC_Application.AL
             this.txtMarlaMuntaqla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarlaMuntaqla.Location = new System.Drawing.Point(357, 81);
             this.txtMarlaMuntaqla.Name = "txtMarlaMuntaqla";
-            this.txtMarlaMuntaqla.Size = new System.Drawing.Size(33, 26);
+            this.txtMarlaMuntaqla.Size = new System.Drawing.Size(33, 30);
             this.txtMarlaMuntaqla.TabIndex = 10003;
             // 
             // txtmin
@@ -3758,7 +3758,7 @@ namespace SDC_Application.AL
             this.txtmin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmin.Location = new System.Drawing.Point(196, 81);
             this.txtmin.Name = "txtmin";
-            this.txtmin.Size = new System.Drawing.Size(37, 26);
+            this.txtmin.Size = new System.Drawing.Size(37, 30);
             this.txtmin.TabIndex = 10006;
             this.txtmin.Leave += new System.EventHandler(this.txtmin_Leave);
             // 
@@ -3768,7 +3768,7 @@ namespace SDC_Application.AL
             this.label68.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label68.Location = new System.Drawing.Point(751, 46);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(58, 30);
+            this.label68.Size = new System.Drawing.Size(76, 38);
             this.label68.TabIndex = 9;
             this.label68.Text = "پرانہ خسرہ";
             // 
@@ -3778,7 +3778,7 @@ namespace SDC_Application.AL
             this.label75.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label75.Location = new System.Drawing.Point(406, 47);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(36, 30);
+            this.label75.Size = new System.Drawing.Size(46, 38);
             this.label75.TabIndex = 25;
             this.label75.Text = "کنال";
             // 
@@ -3789,7 +3789,7 @@ namespace SDC_Application.AL
             this.label71.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.Location = new System.Drawing.Point(669, 46);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(32, 30);
+            this.label71.Size = new System.Drawing.Size(41, 38);
             this.label71.TabIndex = 16;
             this.label71.Text = "رقبہ";
             // 
@@ -3799,7 +3799,7 @@ namespace SDC_Application.AL
             this.txtarea.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtarea.Location = new System.Drawing.Point(636, 81);
             this.txtarea.Name = "txtarea";
-            this.txtarea.Size = new System.Drawing.Size(100, 26);
+            this.txtarea.Size = new System.Drawing.Size(100, 30);
             this.txtarea.TabIndex = 6;
             // 
             // cboTaqseemType
@@ -3811,7 +3811,7 @@ namespace SDC_Application.AL
             "سالم"});
             this.cboTaqseemType.Location = new System.Drawing.Point(456, 69);
             this.cboTaqseemType.Name = "cboTaqseemType";
-            this.cboTaqseemType.Size = new System.Drawing.Size(84, 38);
+            this.cboTaqseemType.Size = new System.Drawing.Size(84, 44);
             this.cboTaqseemType.TabIndex = 10001;
             // 
             // label74
@@ -3820,7 +3820,7 @@ namespace SDC_Application.AL
             this.label74.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.Location = new System.Drawing.Point(477, 35);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(39, 30);
+            this.label74.Size = new System.Drawing.Size(50, 38);
             this.label74.TabIndex = 21;
             this.label74.Text = "تقسیم";
             // 
@@ -3828,7 +3828,7 @@ namespace SDC_Application.AL
             // 
             this.textBox11.Location = new System.Drawing.Point(-144, 120);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 33);
+            this.textBox11.Size = new System.Drawing.Size(100, 39);
             this.textBox11.TabIndex = 18;
             // 
             // gridkhasrajat
@@ -3903,7 +3903,7 @@ namespace SDC_Application.AL
             this.label66.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label66.Location = new System.Drawing.Point(112, 12);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(32, 30);
+            this.label66.Size = new System.Drawing.Size(41, 38);
             this.label66.TabIndex = 37;
             this.label66.Text = "فٹ";
             // 
@@ -3912,7 +3912,7 @@ namespace SDC_Application.AL
             this.txtMinFareeqSft.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinFareeqSft.Location = new System.Drawing.Point(106, 49);
             this.txtMinFareeqSft.Name = "txtMinFareeqSft";
-            this.txtMinFareeqSft.Size = new System.Drawing.Size(40, 26);
+            this.txtMinFareeqSft.Size = new System.Drawing.Size(40, 30);
             this.txtMinFareeqSft.TabIndex = 1005;
             // 
             // label83
@@ -3921,7 +3921,7 @@ namespace SDC_Application.AL
             this.label83.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label83.Location = new System.Drawing.Point(158, 12);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(45, 30);
+            this.label83.Size = new System.Drawing.Size(58, 38);
             this.label83.TabIndex = 35;
             this.label83.Text = "سرسائی";
             // 
@@ -3930,7 +3930,7 @@ namespace SDC_Application.AL
             this.txtMinFareeqSarsai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinFareeqSarsai.Location = new System.Drawing.Point(154, 49);
             this.txtMinFareeqSarsai.Name = "txtMinFareeqSarsai";
-            this.txtMinFareeqSarsai.Size = new System.Drawing.Size(50, 26);
+            this.txtMinFareeqSarsai.Size = new System.Drawing.Size(50, 30);
             this.txtMinFareeqSarsai.TabIndex = 1004;
             // 
             // label84
@@ -3939,7 +3939,7 @@ namespace SDC_Application.AL
             this.label84.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label84.Location = new System.Drawing.Point(303, 47);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(57, 30);
+            this.label84.Size = new System.Drawing.Size(72, 38);
             this.label84.TabIndex = 33;
             this.label84.Text = "رقبہ منتقلہ";
             // 
@@ -3949,7 +3949,7 @@ namespace SDC_Application.AL
             this.label85.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.Location = new System.Drawing.Point(211, 12);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(36, 30);
+            this.label85.Size = new System.Drawing.Size(46, 38);
             this.label85.TabIndex = 36;
             this.label85.Text = "مرلہ";
             // 
@@ -3958,7 +3958,7 @@ namespace SDC_Application.AL
             this.txtMinFareeqKanal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinFareeqKanal.Location = new System.Drawing.Point(249, 49);
             this.txtMinFareeqKanal.Name = "txtMinFareeqKanal";
-            this.txtMinFareeqKanal.Size = new System.Drawing.Size(50, 26);
+            this.txtMinFareeqKanal.Size = new System.Drawing.Size(50, 30);
             this.txtMinFareeqKanal.TabIndex = 1002;
             // 
             // txtMinFareeqMarla
@@ -3966,7 +3966,7 @@ namespace SDC_Application.AL
             this.txtMinFareeqMarla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinFareeqMarla.Location = new System.Drawing.Point(210, 49);
             this.txtMinFareeqMarla.Name = "txtMinFareeqMarla";
-            this.txtMinFareeqMarla.Size = new System.Drawing.Size(33, 26);
+            this.txtMinFareeqMarla.Size = new System.Drawing.Size(33, 30);
             this.txtMinFareeqMarla.TabIndex = 1003;
             // 
             // label86
@@ -3975,7 +3975,7 @@ namespace SDC_Application.AL
             this.label86.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label86.Location = new System.Drawing.Point(259, 13);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(36, 30);
+            this.label86.Size = new System.Drawing.Size(46, 38);
             this.label86.TabIndex = 34;
             this.label86.Text = "کنال";
             // 
@@ -4039,7 +4039,7 @@ namespace SDC_Application.AL
             // 
             this.txtMinFareeqRecId.Location = new System.Drawing.Point(199, 17);
             this.txtMinFareeqRecId.Name = "txtMinFareeqRecId";
-            this.txtMinFareeqRecId.Size = new System.Drawing.Size(20, 33);
+            this.txtMinFareeqRecId.Size = new System.Drawing.Size(20, 39);
             this.txtMinFareeqRecId.TabIndex = 106;
             this.txtMinFareeqRecId.Text = "-1";
             this.txtMinFareeqRecId.Visible = false;
@@ -4048,7 +4048,7 @@ namespace SDC_Application.AL
             // 
             this.txtMinKhassraId.Location = new System.Drawing.Point(171, 17);
             this.txtMinKhassraId.Name = "txtMinKhassraId";
-            this.txtMinKhassraId.Size = new System.Drawing.Size(20, 33);
+            this.txtMinKhassraId.Size = new System.Drawing.Size(20, 39);
             this.txtMinKhassraId.TabIndex = 33;
             this.txtMinKhassraId.Text = "-1";
             this.txtMinKhassraId.Visible = false;
@@ -4057,7 +4057,7 @@ namespace SDC_Application.AL
             // 
             this.txtAreaTypeId.Location = new System.Drawing.Point(62, 17);
             this.txtAreaTypeId.Name = "txtAreaTypeId";
-            this.txtAreaTypeId.Size = new System.Drawing.Size(20, 33);
+            this.txtAreaTypeId.Size = new System.Drawing.Size(20, 39);
             this.txtAreaTypeId.TabIndex = 34;
             this.txtAreaTypeId.Text = "-1";
             this.txtAreaTypeId.Visible = false;
@@ -4066,7 +4066,7 @@ namespace SDC_Application.AL
             // 
             this.txtOldKhattaId.Location = new System.Drawing.Point(141, 17);
             this.txtOldKhattaId.Name = "txtOldKhattaId";
-            this.txtOldKhattaId.Size = new System.Drawing.Size(24, 33);
+            this.txtOldKhattaId.Size = new System.Drawing.Size(24, 39);
             this.txtOldKhattaId.TabIndex = 20;
             this.txtOldKhattaId.Text = "-1";
             this.txtOldKhattaId.Visible = false;
@@ -4075,7 +4075,7 @@ namespace SDC_Application.AL
             // 
             this.txtOldKhassraDetailId.Location = new System.Drawing.Point(115, 17);
             this.txtOldKhassraDetailId.Name = "txtOldKhassraDetailId";
-            this.txtOldKhassraDetailId.Size = new System.Drawing.Size(20, 33);
+            this.txtOldKhassraDetailId.Size = new System.Drawing.Size(20, 39);
             this.txtOldKhassraDetailId.TabIndex = 32;
             this.txtOldKhassraDetailId.Text = "-1";
             this.txtOldKhassraDetailId.Visible = false;
@@ -4086,7 +4086,7 @@ namespace SDC_Application.AL
             this.txtMinKulRaqba.Location = new System.Drawing.Point(406, 21);
             this.txtMinKulRaqba.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMinKulRaqba.Name = "txtMinKulRaqba";
-            this.txtMinKulRaqba.Size = new System.Drawing.Size(116, 26);
+            this.txtMinKulRaqba.Size = new System.Drawing.Size(116, 30);
             this.txtMinKulRaqba.TabIndex = 105;
             // 
             // label79
@@ -4096,7 +4096,7 @@ namespace SDC_Application.AL
             this.label79.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label79.Location = new System.Drawing.Point(528, 19);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(56, 30);
+            this.label79.Size = new System.Drawing.Size(70, 38);
             this.label79.TabIndex = 104;
             this.label79.Text = "کل رقبہ :";
             // 
@@ -4104,7 +4104,7 @@ namespace SDC_Application.AL
             // 
             this.txtIntiqalMinKhasraRecId.Location = new System.Drawing.Point(85, 17);
             this.txtIntiqalMinKhasraRecId.Name = "txtIntiqalMinKhasraRecId";
-            this.txtIntiqalMinKhasraRecId.Size = new System.Drawing.Size(24, 33);
+            this.txtIntiqalMinKhasraRecId.Size = new System.Drawing.Size(24, 39);
             this.txtIntiqalMinKhasraRecId.TabIndex = 19;
             this.txtIntiqalMinKhasraRecId.Text = "-1";
             this.txtIntiqalMinKhasraRecId.Visible = false;
@@ -4115,7 +4115,7 @@ namespace SDC_Application.AL
             this.txtMinKulHissay.Location = new System.Drawing.Point(598, 21);
             this.txtMinKulHissay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMinKulHissay.Name = "txtMinKulHissay";
-            this.txtMinKulHissay.Size = new System.Drawing.Size(125, 26);
+            this.txtMinKulHissay.Size = new System.Drawing.Size(125, 30);
             this.txtMinKulHissay.TabIndex = 103;
             // 
             // label78
@@ -4133,7 +4133,7 @@ namespace SDC_Application.AL
             // 
             this.txtOldKhassraId.Location = new System.Drawing.Point(36, 17);
             this.txtOldKhassraId.Name = "txtOldKhassraId";
-            this.txtOldKhassraId.Size = new System.Drawing.Size(20, 33);
+            this.txtOldKhassraId.Size = new System.Drawing.Size(20, 39);
             this.txtOldKhassraId.TabIndex = 31;
             this.txtOldKhassraId.Text = "-1";
             this.txtOldKhassraId.Visible = false;
@@ -4142,7 +4142,7 @@ namespace SDC_Application.AL
             // 
             this.txtIntiqalMinGroupId.Location = new System.Drawing.Point(6, 17);
             this.txtIntiqalMinGroupId.Name = "txtIntiqalMinGroupId";
-            this.txtIntiqalMinGroupId.Size = new System.Drawing.Size(24, 33);
+            this.txtIntiqalMinGroupId.Size = new System.Drawing.Size(24, 39);
             this.txtIntiqalMinGroupId.TabIndex = 17;
             this.txtIntiqalMinGroupId.Text = "-1";
             this.txtIntiqalMinGroupId.Visible = false;
@@ -4153,7 +4153,7 @@ namespace SDC_Application.AL
             this.txtkhatoni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkhatoni.Location = new System.Drawing.Point(284, 21);
             this.txtkhatoni.Name = "txtkhatoni";
-            this.txtkhatoni.Size = new System.Drawing.Size(56, 26);
+            this.txtkhatoni.Size = new System.Drawing.Size(56, 30);
             this.txtkhatoni.TabIndex = 5;
             // 
             // label73
@@ -4163,7 +4163,7 @@ namespace SDC_Application.AL
             this.label73.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.Location = new System.Drawing.Point(345, 19);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(49, 30);
+            this.label73.Size = new System.Drawing.Size(61, 38);
             this.label73.TabIndex = 15;
             this.label73.Text = "کھتونی:";
             this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4209,7 +4209,7 @@ namespace SDC_Application.AL
             this.label62.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.Location = new System.Drawing.Point(445, 47);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(60, 30);
+            this.label62.Size = new System.Drawing.Size(75, 38);
             this.label62.TabIndex = 7;
             this.label62.Text = "حصہ منتقلہ";
             // 
@@ -4219,7 +4219,7 @@ namespace SDC_Application.AL
             this.label63.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label63.Location = new System.Drawing.Point(770, 40);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(54, 30);
+            this.label63.Size = new System.Drawing.Size(68, 38);
             this.label63.TabIndex = 8;
             this.label63.Text = "نام مالک";
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4230,7 +4230,7 @@ namespace SDC_Application.AL
             this.txtoldHisa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtoldHisa.Location = new System.Drawing.Point(509, 49);
             this.txtoldHisa.Name = "txtoldHisa";
-            this.txtoldHisa.Size = new System.Drawing.Size(79, 26);
+            this.txtoldHisa.Size = new System.Drawing.Size(79, 30);
             this.txtoldHisa.TabIndex = 5;
             this.txtoldHisa.TabStop = false;
             // 
@@ -4239,7 +4239,7 @@ namespace SDC_Application.AL
             this.txtHisatransfer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHisatransfer.Location = new System.Drawing.Point(364, 49);
             this.txtHisatransfer.Name = "txtHisatransfer";
-            this.txtHisatransfer.Size = new System.Drawing.Size(76, 26);
+            this.txtHisatransfer.Size = new System.Drawing.Size(76, 30);
             this.txtHisatransfer.TabIndex = 1001;
             // 
             // label64
@@ -4248,7 +4248,7 @@ namespace SDC_Application.AL
             this.label64.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label64.Location = new System.Drawing.Point(592, 47);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(54, 30);
+            this.label64.Size = new System.Drawing.Size(69, 38);
             this.label64.TabIndex = 9;
             this.label64.Text = "پرانا حصہ";
             // 
@@ -4258,17 +4258,17 @@ namespace SDC_Application.AL
             this.txtnamemalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnamemalik.Location = new System.Drawing.Point(649, 40);
             this.txtnamemalik.Name = "txtnamemalik";
-            this.txtnamemalik.Size = new System.Drawing.Size(121, 37);
+            this.txtnamemalik.Size = new System.Drawing.Size(121, 44);
             this.txtnamemalik.TabIndex = 4;
             this.txtnamemalik.TabStop = false;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tabControl2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 34);
+            this.tabPage5.Location = new System.Drawing.Point(4, 40);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1457, 693);
+            this.tabPage5.Size = new System.Drawing.Size(1457, 687);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "تقسیم و اشتراک";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -4286,16 +4286,16 @@ namespace SDC_Application.AL
             this.tabControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl2.RightToLeftLayout = true;
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1451, 687);
+            this.tabControl2.Size = new System.Drawing.Size(1451, 681);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.groupBox5);
-            this.tabPage6.Location = new System.Drawing.Point(4, 34);
+            this.tabPage6.Location = new System.Drawing.Point(4, 40);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1443, 649);
+            this.tabPage6.Size = new System.Drawing.Size(1443, 637);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "کھاتہ نمبر";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -4309,7 +4309,7 @@ namespace SDC_Application.AL
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1437, 643);
+            this.groupBox5.Size = new System.Drawing.Size(1437, 631);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             // 
@@ -4335,9 +4335,9 @@ namespace SDC_Application.AL
             this.gbSubKhataControls.Controls.Add(this.label99);
             this.gbSubKhataControls.Controls.Add(this.txtMarlayChange);
             this.gbSubKhataControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSubKhataControls.Location = new System.Drawing.Point(3, 118);
+            this.gbSubKhataControls.Location = new System.Drawing.Point(3, 124);
             this.gbSubKhataControls.Name = "gbSubKhataControls";
-            this.gbSubKhataControls.Size = new System.Drawing.Size(1431, 416);
+            this.gbSubKhataControls.Size = new System.Drawing.Size(1431, 398);
             this.gbSubKhataControls.TabIndex = 41;
             this.gbSubKhataControls.TabStop = false;
             this.gbSubKhataControls.Text = "انتقال کھاتہ جات";
@@ -4394,7 +4394,7 @@ namespace SDC_Application.AL
             this.txthissayChagne.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.txthissayChagne.Location = new System.Drawing.Point(934, 51);
             this.txthissayChagne.Name = "txthissayChagne";
-            this.txthissayChagne.Size = new System.Drawing.Size(137, 33);
+            this.txthissayChagne.Size = new System.Drawing.Size(137, 39);
             this.txthissayChagne.TabIndex = 9;
             this.txthissayChagne.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFeetChange_KeyPress);
             // 
@@ -4405,7 +4405,7 @@ namespace SDC_Application.AL
             this.label101.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label101.Location = new System.Drawing.Point(1077, 112);
             this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(38, 25);
+            this.label101.Size = new System.Drawing.Size(46, 31);
             this.label101.TabIndex = 7;
             this.label101.Text = "کیفیت";
             // 
@@ -4416,7 +4416,7 @@ namespace SDC_Application.AL
             this.label95.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label95.Location = new System.Drawing.Point(1077, 51);
             this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(42, 25);
+            this.label95.Size = new System.Drawing.Size(52, 31);
             this.label95.TabIndex = 1;
             this.label95.Text = "کل حصے";
             // 
@@ -4435,7 +4435,7 @@ namespace SDC_Application.AL
             this.txtKhataNoChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhataNoChange.Location = new System.Drawing.Point(1147, 51);
             this.txtKhataNoChange.Name = "txtKhataNoChange";
-            this.txtKhataNoChange.Size = new System.Drawing.Size(176, 33);
+            this.txtKhataNoChange.Size = new System.Drawing.Size(176, 39);
             this.txtKhataNoChange.TabIndex = 8;
             // 
             // label96
@@ -4445,7 +4445,7 @@ namespace SDC_Application.AL
             this.label96.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label96.Location = new System.Drawing.Point(877, 51);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(32, 25);
+            this.label96.Size = new System.Drawing.Size(39, 31);
             this.label96.TabIndex = 2;
             this.label96.Text = " کنال";
             // 
@@ -4456,7 +4456,7 @@ namespace SDC_Application.AL
             this.label100.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label100.Location = new System.Drawing.Point(1339, 112);
             this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(30, 25);
+            this.label100.Size = new System.Drawing.Size(35, 31);
             this.label100.TabIndex = 6;
             this.label100.Text = "مالیہ";
             // 
@@ -4467,7 +4467,7 @@ namespace SDC_Application.AL
             this.label94.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label94.Location = new System.Drawing.Point(1329, 58);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(45, 25);
+            this.label94.Size = new System.Drawing.Size(54, 31);
             this.label94.TabIndex = 0;
             this.label94.Text = "کھاتا نمبر";
             // 
@@ -4477,7 +4477,7 @@ namespace SDC_Application.AL
             this.txtFeetChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.txtFeetChange.Location = new System.Drawing.Point(225, 51);
             this.txtFeetChange.Name = "txtFeetChange";
-            this.txtFeetChange.Size = new System.Drawing.Size(100, 33);
+            this.txtFeetChange.Size = new System.Drawing.Size(100, 39);
             this.txtFeetChange.TabIndex = 13;
             this.txtFeetChange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFeetChange_KeyPress);
             // 
@@ -4487,7 +4487,7 @@ namespace SDC_Application.AL
             this.txtKanalChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.txtKanalChange.Location = new System.Drawing.Point(752, 51);
             this.txtKanalChange.Name = "txtKanalChange";
-            this.txtKanalChange.Size = new System.Drawing.Size(123, 33);
+            this.txtKanalChange.Size = new System.Drawing.Size(123, 39);
             this.txtKanalChange.TabIndex = 10;
             // 
             // label97
@@ -4497,7 +4497,7 @@ namespace SDC_Application.AL
             this.label97.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label97.Location = new System.Drawing.Point(688, 51);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(38, 25);
+            this.label97.Size = new System.Drawing.Size(46, 31);
             this.label97.TabIndex = 3;
             this.label97.Text = "مرلے";
             // 
@@ -4507,7 +4507,7 @@ namespace SDC_Application.AL
             this.txtSarsasiChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.txtSarsasiChange.Location = new System.Drawing.Point(414, 51);
             this.txtSarsasiChange.Name = "txtSarsasiChange";
-            this.txtSarsasiChange.Size = new System.Drawing.Size(99, 33);
+            this.txtSarsasiChange.Size = new System.Drawing.Size(99, 39);
             this.txtSarsasiChange.TabIndex = 12;
             // 
             // label98
@@ -4517,7 +4517,7 @@ namespace SDC_Application.AL
             this.label98.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label98.Location = new System.Drawing.Point(521, 51);
             this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(40, 25);
+            this.label98.Size = new System.Drawing.Size(48, 31);
             this.label98.TabIndex = 4;
             this.label98.Text = "سرسائی";
             // 
@@ -4528,7 +4528,7 @@ namespace SDC_Application.AL
             this.label99.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label99.Location = new System.Drawing.Point(331, 51);
             this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(50, 25);
+            this.label99.Size = new System.Drawing.Size(62, 31);
             this.label99.TabIndex = 5;
             this.label99.Text = "مربع فٹ";
             // 
@@ -4538,7 +4538,7 @@ namespace SDC_Application.AL
             this.txtMarlayChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.txtMarlayChange.Location = new System.Drawing.Point(590, 51);
             this.txtMarlayChange.Name = "txtMarlayChange";
-            this.txtMarlayChange.Size = new System.Drawing.Size(96, 33);
+            this.txtMarlayChange.Size = new System.Drawing.Size(96, 39);
             this.txtMarlayChange.TabIndex = 11;
             // 
             // gbTaqseemIshterakAmalDaramad
@@ -4548,7 +4548,7 @@ namespace SDC_Application.AL
             this.gbTaqseemIshterakAmalDaramad.Controls.Add(this.label123);
             this.gbTaqseemIshterakAmalDaramad.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gbTaqseemIshterakAmalDaramad.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTaqseemIshterakAmalDaramad.Location = new System.Drawing.Point(3, 534);
+            this.gbTaqseemIshterakAmalDaramad.Location = new System.Drawing.Point(3, 522);
             this.gbTaqseemIshterakAmalDaramad.Name = "gbTaqseemIshterakAmalDaramad";
             this.gbTaqseemIshterakAmalDaramad.Size = new System.Drawing.Size(1431, 106);
             this.gbTaqseemIshterakAmalDaramad.TabIndex = 40;
@@ -4582,7 +4582,7 @@ namespace SDC_Application.AL
             this.label123.AutoSize = true;
             this.label123.Location = new System.Drawing.Point(1169, 41);
             this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(83, 30);
+            this.label123.Size = new System.Drawing.Size(107, 38);
             this.label123.TabIndex = 16;
             this.label123.Text = "موجودہ حیثیت:";
             // 
@@ -4605,13 +4605,25 @@ namespace SDC_Application.AL
             this.groupBox29.Controls.Add(this.txtRegHagDaranID);
             this.groupBox29.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox29.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox29.Location = new System.Drawing.Point(3, 29);
+            this.groupBox29.Location = new System.Drawing.Point(3, 35);
             this.groupBox29.Name = "groupBox29";
             this.groupBox29.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox29.Size = new System.Drawing.Size(1431, 89);
             this.groupBox29.TabIndex = 37;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "انتخاب کھاتہ";
+            // 
+            // btnBadastoorMalikan
+            // 
+            this.btnBadastoorMalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBadastoorMalikan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBadastoorMalikan.Location = new System.Drawing.Point(504, 38);
+            this.btnBadastoorMalikan.Name = "btnBadastoorMalikan";
+            this.btnBadastoorMalikan.Size = new System.Drawing.Size(136, 39);
+            this.btnBadastoorMalikan.TabIndex = 38;
+            this.btnBadastoorMalikan.Text = "بدستور کھاتہ مالکان";
+            this.btnBadastoorMalikan.UseVisualStyleBackColor = true;
+            this.btnBadastoorMalikan.Click += new System.EventHandler(this.btnBadastoorMalikan_Click);
             // 
             // btnAutoKhataCreate
             // 
@@ -4630,7 +4642,7 @@ namespace SDC_Application.AL
             this.label120.AutoSize = true;
             this.label120.Location = new System.Drawing.Point(649, 34);
             this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(65, 30);
+            this.label120.Size = new System.Drawing.Size(83, 38);
             this.label120.TabIndex = 18;
             this.label120.Text = "Parentid";
             this.label120.Visible = false;
@@ -4643,7 +4655,7 @@ namespace SDC_Application.AL
             this.cmbtaqseemChangeKhata.FormattingEnabled = true;
             this.cmbtaqseemChangeKhata.Location = new System.Drawing.Point(934, 38);
             this.cmbtaqseemChangeKhata.Name = "cmbtaqseemChangeKhata";
-            this.cmbtaqseemChangeKhata.Size = new System.Drawing.Size(177, 27);
+            this.cmbtaqseemChangeKhata.Size = new System.Drawing.Size(177, 31);
             this.cmbtaqseemChangeKhata.TabIndex = 30;
             this.cmbtaqseemChangeKhata.SelectedIndexChanged += new System.EventHandler(this.cmbtaqseemChangeKhata_SelectedIndexChanged);
             this.cmbtaqseemChangeKhata.SelectionChangeCommitted += new System.EventHandler(this.cmbtaqseemChange_SelectionChangeCommitted);
@@ -4652,7 +4664,7 @@ namespace SDC_Application.AL
             // 
             this.txtparentKhataId.Location = new System.Drawing.Point(735, 31);
             this.txtparentKhataId.Name = "txtparentKhataId";
-            this.txtparentKhataId.Size = new System.Drawing.Size(75, 37);
+            this.txtparentKhataId.Size = new System.Drawing.Size(75, 44);
             this.txtparentKhataId.TabIndex = 19;
             this.txtparentKhataId.Text = "-1";
             this.txtparentKhataId.Visible = false;
@@ -4662,9 +4674,9 @@ namespace SDC_Application.AL
             this.chkNewKhataChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkNewKhataChange.AutoSize = true;
             this.chkNewKhataChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNewKhataChange.Location = new System.Drawing.Point(1151, 32);
+            this.chkNewKhataChange.Location = new System.Drawing.Point(1135, 32);
             this.chkNewKhataChange.Name = "chkNewKhataChange";
-            this.chkNewKhataChange.Size = new System.Drawing.Size(62, 34);
+            this.chkNewKhataChange.Size = new System.Drawing.Size(78, 42);
             this.chkNewKhataChange.TabIndex = 27;
             this.chkNewKhataChange.Text = "نیا کھاتا";
             this.chkNewKhataChange.UseVisualStyleBackColor = true;
@@ -4674,7 +4686,7 @@ namespace SDC_Application.AL
             // 
             this.txtPati.Location = new System.Drawing.Point(10, 31);
             this.txtPati.Name = "txtPati";
-            this.txtPati.Size = new System.Drawing.Size(52, 37);
+            this.txtPati.Size = new System.Drawing.Size(52, 44);
             this.txtPati.TabIndex = 14;
             this.txtPati.Visible = false;
             // 
@@ -4683,7 +4695,7 @@ namespace SDC_Application.AL
             this.label102.AutoSize = true;
             this.label102.Location = new System.Drawing.Point(116, 34);
             this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(62, 30);
+            this.label102.Size = new System.Drawing.Size(81, 38);
             this.label102.TabIndex = 17;
             this.label102.Text = "intiqalId";
             this.label102.Visible = false;
@@ -4692,7 +4704,7 @@ namespace SDC_Application.AL
             // 
             this.txtTaraf.Location = new System.Drawing.Point(68, 27);
             this.txtTaraf.Name = "txtTaraf";
-            this.txtTaraf.Size = new System.Drawing.Size(45, 37);
+            this.txtTaraf.Size = new System.Drawing.Size(45, 44);
             this.txtTaraf.TabIndex = 13;
             this.txtTaraf.Visible = false;
             // 
@@ -4703,7 +4715,7 @@ namespace SDC_Application.AL
             this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(943, 38);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(168, 26);
+            this.textBox4.Size = new System.Drawing.Size(168, 30);
             this.textBox4.TabIndex = 36;
             // 
             // label37
@@ -4711,7 +4723,7 @@ namespace SDC_Application.AL
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(269, 28);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(86, 30);
+            this.label37.Size = new System.Drawing.Size(109, 38);
             this.label37.TabIndex = 16;
             this.label37.Text = "reghaqdarid";
             this.label37.Visible = false;
@@ -4721,7 +4733,7 @@ namespace SDC_Application.AL
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(431, 29);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(119, 30);
+            this.label33.Size = new System.Drawing.Size(152, 38);
             this.label33.TabIndex = 15;
             this.label33.Text = "reghaqdarkhataid";
             this.label33.Visible = false;
@@ -4730,7 +4742,7 @@ namespace SDC_Application.AL
             // 
             this.txtParentid.Location = new System.Drawing.Point(188, 34);
             this.txtParentid.Name = "txtParentid";
-            this.txtParentid.Size = new System.Drawing.Size(100, 37);
+            this.txtParentid.Size = new System.Drawing.Size(100, 44);
             this.txtParentid.TabIndex = 12;
             this.txtParentid.Text = "-1";
             this.txtParentid.Visible = false;
@@ -4739,7 +4751,7 @@ namespace SDC_Application.AL
             // 
             this.txtRegHaqKhataID.Location = new System.Drawing.Point(540, 29);
             this.txtRegHaqKhataID.Name = "txtRegHaqKhataID";
-            this.txtRegHaqKhataID.Size = new System.Drawing.Size(100, 37);
+            this.txtRegHaqKhataID.Size = new System.Drawing.Size(100, 44);
             this.txtRegHaqKhataID.TabIndex = 10;
             this.txtRegHaqKhataID.Text = "-1";
             this.txtRegHaqKhataID.Visible = false;
@@ -4748,7 +4760,7 @@ namespace SDC_Application.AL
             // 
             this.txtRegHagDaranID.Location = new System.Drawing.Point(360, 28);
             this.txtRegHagDaranID.Name = "txtRegHagDaranID";
-            this.txtRegHagDaranID.Size = new System.Drawing.Size(100, 37);
+            this.txtRegHagDaranID.Size = new System.Drawing.Size(100, 44);
             this.txtRegHagDaranID.TabIndex = 11;
             this.txtRegHagDaranID.Text = "-1";
             this.txtRegHagDaranID.Visible = false;
@@ -4760,7 +4772,7 @@ namespace SDC_Application.AL
             this.tabPage7.Controls.Add(this.groupBox37);
             this.tabPage7.Controls.Add(this.groupBox34);
             this.tabPage7.Controls.Add(this.panel17);
-            this.tabPage7.Location = new System.Drawing.Point(4, 34);
+            this.tabPage7.Location = new System.Drawing.Point(4, 40);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(1443, 643);
@@ -4788,12 +4800,12 @@ namespace SDC_Application.AL
             this.grdMushtrianMalinkanChange.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chk_change_Malikan});
             this.grdMushtrianMalinkanChange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdMushtrianMalinkanChange.Location = new System.Drawing.Point(3, 29);
+            this.grdMushtrianMalinkanChange.Location = new System.Drawing.Point(3, 35);
             this.grdMushtrianMalinkanChange.Name = "grdMushtrianMalinkanChange";
             this.grdMushtrianMalinkanChange.ReadOnly = true;
             this.grdMushtrianMalinkanChange.RowTemplate.Height = 30;
             this.grdMushtrianMalinkanChange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1325, 299);
+            this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1325, 293);
             this.grdMushtrianMalinkanChange.TabIndex = 7;
             this.grdMushtrianMalinkanChange.SelectionChanged += new System.EventHandler(this.grdMushtrianMalinkanChange_SelectionChanged);
             this.grdMushtrianMalinkanChange.DoubleClick += new System.EventHandler(this.grdMushtrianMalinkanChange_DoubleClick);
@@ -4832,7 +4844,7 @@ namespace SDC_Application.AL
             this.label152.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label152.Location = new System.Drawing.Point(487, 40);
             this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(74, 25);
+            this.label152.Size = new System.Drawing.Size(89, 31);
             this.label152.TabIndex = 1025;
             this.label152.Text = "مالکان کے حصے :";
             // 
@@ -4843,7 +4855,7 @@ namespace SDC_Application.AL
             this.label43.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.Location = new System.Drawing.Point(720, 40);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(74, 25);
+            this.label43.Size = new System.Drawing.Size(91, 31);
             this.label43.TabIndex = 1024;
             this.label43.Text = "کھاتے کے حصے :";
             // 
@@ -4855,7 +4867,7 @@ namespace SDC_Application.AL
             this.txtMalkanArea.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMalkanArea.Name = "txtMalkanArea";
             this.txtMalkanArea.ReadOnly = true;
-            this.txtMalkanArea.Size = new System.Drawing.Size(125, 26);
+            this.txtMalkanArea.Size = new System.Drawing.Size(125, 30);
             this.txtMalkanArea.TabIndex = 1023;
             this.txtMalkanArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -4866,7 +4878,7 @@ namespace SDC_Application.AL
             this.label151.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label151.Location = new System.Drawing.Point(964, 40);
             this.label151.Name = "label151";
-            this.label151.Size = new System.Drawing.Size(66, 25);
+            this.label151.Size = new System.Drawing.Size(78, 31);
             this.label151.TabIndex = 1022;
             this.label151.Text = "مالکان کا رقبہ :";
             // 
@@ -4878,7 +4890,7 @@ namespace SDC_Application.AL
             this.txtKhataArea.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKhataArea.Name = "txtKhataArea";
             this.txtKhataArea.ReadOnly = true;
-            this.txtKhataArea.Size = new System.Drawing.Size(125, 26);
+            this.txtKhataArea.Size = new System.Drawing.Size(125, 30);
             this.txtKhataArea.TabIndex = 1021;
             this.txtKhataArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -4890,7 +4902,7 @@ namespace SDC_Application.AL
             this.txtMalikanHissay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMalikanHissay.Name = "txtMalikanHissay";
             this.txtMalikanHissay.ReadOnly = true;
-            this.txtMalikanHissay.Size = new System.Drawing.Size(107, 26);
+            this.txtMalikanHissay.Size = new System.Drawing.Size(107, 30);
             this.txtMalikanHissay.TabIndex = 1019;
             this.txtMalikanHissay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -4901,7 +4913,7 @@ namespace SDC_Application.AL
             this.label42.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(1190, 40);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(66, 25);
+            this.label42.Size = new System.Drawing.Size(80, 31);
             this.label42.TabIndex = 1018;
             this.label42.Text = "کھاتے کا رقبہ :";
             // 
@@ -4913,7 +4925,7 @@ namespace SDC_Application.AL
             this.txtKhataHissay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKhataHissay.Name = "txtKhataHissay";
             this.txtKhataHissay.ReadOnly = true;
-            this.txtKhataHissay.Size = new System.Drawing.Size(118, 26);
+            this.txtKhataHissay.Size = new System.Drawing.Size(118, 30);
             this.txtKhataHissay.TabIndex = 1017;
             this.txtKhataHissay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -4924,7 +4936,7 @@ namespace SDC_Application.AL
             this.txthissamaifarq.Location = new System.Drawing.Point(181, 40);
             this.txthissamaifarq.Name = "txthissamaifarq";
             this.txthissamaifarq.ReadOnly = true;
-            this.txthissamaifarq.Size = new System.Drawing.Size(104, 26);
+            this.txthissamaifarq.Size = new System.Drawing.Size(104, 30);
             this.txthissamaifarq.TabIndex = 1015;
             // 
             // label44
@@ -4934,7 +4946,7 @@ namespace SDC_Application.AL
             this.label44.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(297, 40);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(48, 25);
+            this.label44.Size = new System.Drawing.Size(59, 31);
             this.label44.TabIndex = 1016;
             this.label44.Text = "حصہ فرق";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4977,7 +4989,7 @@ namespace SDC_Application.AL
             // 
             this.textBox8.Location = new System.Drawing.Point(205, 33);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(20, 33);
+            this.textBox8.Size = new System.Drawing.Size(20, 39);
             this.textBox8.TabIndex = 106;
             this.textBox8.Text = "-1";
             this.textBox8.Visible = false;
@@ -4997,7 +5009,7 @@ namespace SDC_Application.AL
             // 
             this.textBox9.Location = new System.Drawing.Point(177, 33);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(20, 33);
+            this.textBox9.Size = new System.Drawing.Size(20, 39);
             this.textBox9.TabIndex = 33;
             this.textBox9.Text = "-1";
             this.textBox9.Visible = false;
@@ -5006,9 +5018,9 @@ namespace SDC_Application.AL
             // 
             this.chkselectallchangemalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkselectallchangemalikan.AutoSize = true;
-            this.chkselectallchangemalikan.Location = new System.Drawing.Point(1236, 35);
+            this.chkselectallchangemalikan.Location = new System.Drawing.Point(1215, 35);
             this.chkselectallchangemalikan.Name = "chkselectallchangemalikan";
-            this.chkselectallchangemalikan.Size = new System.Drawing.Size(89, 29);
+            this.chkselectallchangemalikan.Size = new System.Drawing.Size(110, 35);
             this.chkselectallchangemalikan.TabIndex = 1007;
             this.chkselectallchangemalikan.Text = "تمام منتخب کریں";
             this.chkselectallchangemalikan.UseVisualStyleBackColor = true;
@@ -5019,7 +5031,7 @@ namespace SDC_Application.AL
             // 
             this.textBox10.Location = new System.Drawing.Point(68, 33);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(20, 33);
+            this.textBox10.Size = new System.Drawing.Size(20, 39);
             this.textBox10.TabIndex = 34;
             this.textBox10.Text = "-1";
             this.textBox10.Visible = false;
@@ -5030,7 +5042,7 @@ namespace SDC_Application.AL
             this.label114.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label114.Location = new System.Drawing.Point(1141, 37);
             this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(54, 25);
+            this.label114.Size = new System.Drawing.Size(67, 31);
             this.label114.TabIndex = 1009;
             this.label114.Text = "تلاش کریں";
             // 
@@ -5038,7 +5050,7 @@ namespace SDC_Application.AL
             // 
             this.textBox12.Location = new System.Drawing.Point(147, 33);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(24, 33);
+            this.textBox12.Size = new System.Drawing.Size(24, 39);
             this.textBox12.TabIndex = 20;
             this.textBox12.Text = "-1";
             this.textBox12.Visible = false;
@@ -5048,7 +5060,7 @@ namespace SDC_Application.AL
             this.txtSearchMalik.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchMalik.Location = new System.Drawing.Point(1000, 37);
             this.txtSearchMalik.Name = "txtSearchMalik";
-            this.txtSearchMalik.Size = new System.Drawing.Size(135, 26);
+            this.txtSearchMalik.Size = new System.Drawing.Size(135, 30);
             this.txtSearchMalik.TabIndex = 1010;
             this.txtSearchMalik.TextChanged += new System.EventHandler(this.txtSearchMalik_TextChanged);
             this.txtSearchMalik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttafsel_KeyPress);
@@ -5057,7 +5069,7 @@ namespace SDC_Application.AL
             // 
             this.textBox13.Location = new System.Drawing.Point(121, 33);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(20, 33);
+            this.textBox13.Size = new System.Drawing.Size(20, 39);
             this.textBox13.TabIndex = 32;
             this.textBox13.Text = "-1";
             this.textBox13.Visible = false;
@@ -5076,7 +5088,7 @@ namespace SDC_Application.AL
             // 
             this.textBox15.Location = new System.Drawing.Point(91, 33);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(24, 33);
+            this.textBox15.Size = new System.Drawing.Size(24, 39);
             this.textBox15.TabIndex = 19;
             this.textBox15.Text = "-1";
             this.textBox15.Visible = false;
@@ -5085,7 +5097,7 @@ namespace SDC_Application.AL
             // 
             this.textBox17.Location = new System.Drawing.Point(42, 33);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(20, 33);
+            this.textBox17.Size = new System.Drawing.Size(20, 39);
             this.textBox17.TabIndex = 31;
             this.textBox17.Text = "-1";
             this.textBox17.Visible = false;
@@ -5105,7 +5117,7 @@ namespace SDC_Application.AL
             // 
             this.textBox18.Location = new System.Drawing.Point(11, 33);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(24, 33);
+            this.textBox18.Size = new System.Drawing.Size(24, 39);
             this.textBox18.TabIndex = 17;
             this.textBox18.Text = "-1";
             this.textBox18.Visible = false;
@@ -5152,9 +5164,9 @@ namespace SDC_Application.AL
             // 
             this.chbDellAllMalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbDellAllMalikan.AutoSize = true;
-            this.chbDellAllMalikan.Location = new System.Drawing.Point(72, 87);
+            this.chbDellAllMalikan.Location = new System.Drawing.Point(51, 87);
             this.chbDellAllMalikan.Name = "chbDellAllMalikan";
-            this.chbDellAllMalikan.Size = new System.Drawing.Size(99, 29);
+            this.chbDellAllMalikan.Size = new System.Drawing.Size(120, 35);
             this.chbDellAllMalikan.TabIndex = 1014;
             this.chbDellAllMalikan.Text = "تمام حذف کریں؟";
             this.chbDellAllMalikan.UseVisualStyleBackColor = true;
@@ -5175,7 +5187,7 @@ namespace SDC_Application.AL
             this.txtNameChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameChange.Location = new System.Drawing.Point(934, 39);
             this.txtNameChange.Name = "txtNameChange";
-            this.txtNameChange.Size = new System.Drawing.Size(121, 33);
+            this.txtNameChange.Size = new System.Drawing.Size(121, 39);
             this.txtNameChange.TabIndex = 4;
             this.txtNameChange.TabStop = false;
             // 
@@ -5185,7 +5197,7 @@ namespace SDC_Application.AL
             this.label47.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(871, 43);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(46, 25);
+            this.label47.Size = new System.Drawing.Size(57, 31);
             this.label47.TabIndex = 9;
             this.label47.Text = "پرانا حصہ";
             // 
@@ -5194,7 +5206,7 @@ namespace SDC_Application.AL
             this.txtHisamuntaqialachangeevb.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHisamuntaqialachangeevb.Location = new System.Drawing.Point(636, 39);
             this.txtHisamuntaqialachangeevb.Name = "txtHisamuntaqialachangeevb";
-            this.txtHisamuntaqialachangeevb.Size = new System.Drawing.Size(76, 33);
+            this.txtHisamuntaqialachangeevb.Size = new System.Drawing.Size(76, 39);
             this.txtHisamuntaqialachangeevb.TabIndex = 1001;
             // 
             // btnishtarakhisabamutabiq
@@ -5213,7 +5225,7 @@ namespace SDC_Application.AL
             this.txtHisamuntaqialachangee.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHisamuntaqialachangee.Location = new System.Drawing.Point(786, 39);
             this.txtHisamuntaqialachangee.Name = "txtHisamuntaqialachangee";
-            this.txtHisamuntaqialachangee.Size = new System.Drawing.Size(79, 33);
+            this.txtHisamuntaqialachangee.Size = new System.Drawing.Size(79, 39);
             this.txtHisamuntaqialachangee.TabIndex = 5;
             this.txtHisamuntaqialachangee.TabStop = false;
             // 
@@ -5223,7 +5235,7 @@ namespace SDC_Application.AL
             this.label46.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.Location = new System.Drawing.Point(1061, 43);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(47, 25);
+            this.label46.Size = new System.Drawing.Size(57, 31);
             this.label46.TabIndex = 8;
             this.label46.Text = "نام مالک";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5234,7 +5246,7 @@ namespace SDC_Application.AL
             this.label45.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(718, 43);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(50, 25);
+            this.label45.Size = new System.Drawing.Size(62, 31);
             this.label45.TabIndex = 7;
             this.label45.Text = "حصہ منتقلہ";
             // 
@@ -5256,7 +5268,7 @@ namespace SDC_Application.AL
             this.label39.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.Location = new System.Drawing.Point(592, 43);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(31, 25);
+            this.label39.Size = new System.Drawing.Size(38, 31);
             this.label39.TabIndex = 34;
             this.label39.Text = "کنال";
             // 
@@ -5266,7 +5278,7 @@ namespace SDC_Application.AL
             this.label34.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(277, 43);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(28, 25);
+            this.label34.Size = new System.Drawing.Size(34, 31);
             this.label34.TabIndex = 37;
             this.label34.Text = "فٹ";
             // 
@@ -5275,7 +5287,7 @@ namespace SDC_Application.AL
             this.txtmarlachangee.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarlachangee.Location = new System.Drawing.Point(453, 39);
             this.txtmarlachangee.Name = "txtmarlachangee";
-            this.txtmarlachangee.Size = new System.Drawing.Size(33, 33);
+            this.txtmarlachangee.Size = new System.Drawing.Size(33, 39);
             this.txtmarlachangee.TabIndex = 1003;
             // 
             // txtkanalchangee
@@ -5283,7 +5295,7 @@ namespace SDC_Application.AL
             this.txtkanalchangee.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkanalchangee.Location = new System.Drawing.Point(536, 39);
             this.txtkanalchangee.Name = "txtkanalchangee";
-            this.txtkanalchangee.Size = new System.Drawing.Size(50, 33);
+            this.txtkanalchangee.Size = new System.Drawing.Size(50, 39);
             this.txtkanalchangee.TabIndex = 1002;
             // 
             // txtfeetchagee
@@ -5291,7 +5303,7 @@ namespace SDC_Application.AL
             this.txtfeetchagee.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfeetchagee.Location = new System.Drawing.Point(198, 39);
             this.txtfeetchagee.Name = "txtfeetchagee";
-            this.txtfeetchagee.Size = new System.Drawing.Size(73, 33);
+            this.txtfeetchagee.Size = new System.Drawing.Size(73, 39);
             this.txtfeetchagee.TabIndex = 1005;
             // 
             // label38
@@ -5300,7 +5312,7 @@ namespace SDC_Application.AL
             this.label38.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(492, 43);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(31, 25);
+            this.label38.Size = new System.Drawing.Size(38, 31);
             this.label38.TabIndex = 36;
             this.label38.Text = "مرلہ";
             // 
@@ -5310,7 +5322,7 @@ namespace SDC_Application.AL
             this.label35.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(399, 43);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(40, 25);
+            this.label35.Size = new System.Drawing.Size(48, 31);
             this.label35.TabIndex = 35;
             this.label35.Text = "سرسائی";
             // 
@@ -5319,7 +5331,7 @@ namespace SDC_Application.AL
             this.txtsarsaichangee.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsarsaichangee.Location = new System.Drawing.Point(317, 39);
             this.txtsarsaichangee.Name = "txtsarsaichangee";
-            this.txtsarsaichangee.Size = new System.Drawing.Size(76, 33);
+            this.txtsarsaichangee.Size = new System.Drawing.Size(76, 39);
             this.txtsarsaichangee.TabIndex = 1004;
             // 
             // panel17
@@ -5346,7 +5358,7 @@ namespace SDC_Application.AL
             this.label107.AutoSize = true;
             this.label107.Location = new System.Drawing.Point(12, 164);
             this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(53, 25);
+            this.label107.Size = new System.Drawing.Size(65, 31);
             this.label107.TabIndex = 24;
             this.label107.Text = "کل سرسایی";
             this.label107.Visible = false;
@@ -5356,7 +5368,7 @@ namespace SDC_Application.AL
             this.label106.AutoSize = true;
             this.label106.Location = new System.Drawing.Point(20, 208);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(42, 25);
+            this.label106.Size = new System.Drawing.Size(52, 31);
             this.label106.TabIndex = 23;
             this.label106.Text = "کل فٹ";
             this.label106.Visible = false;
@@ -5366,7 +5378,7 @@ namespace SDC_Application.AL
             this.label105.AutoSize = true;
             this.label105.Location = new System.Drawing.Point(23, 77);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(45, 25);
+            this.label105.Size = new System.Drawing.Size(56, 31);
             this.label105.TabIndex = 22;
             this.label105.Text = "کل کنال";
             this.label105.Visible = false;
@@ -5376,7 +5388,7 @@ namespace SDC_Application.AL
             this.label104.AutoSize = true;
             this.label104.Location = new System.Drawing.Point(20, 122);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(45, 25);
+            this.label104.Size = new System.Drawing.Size(56, 31);
             this.label104.TabIndex = 21;
             this.label104.Text = "کل مرلہ";
             this.label104.Visible = false;
@@ -5386,7 +5398,7 @@ namespace SDC_Application.AL
             this.label103.AutoSize = true;
             this.label103.Location = new System.Drawing.Point(24, 30);
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(44, 25);
+            this.label103.Size = new System.Drawing.Size(55, 31);
             this.label103.TabIndex = 20;
             this.label103.Text = "کل حصہ";
             this.label103.Visible = false;
@@ -5395,7 +5407,7 @@ namespace SDC_Application.AL
             // 
             this.txtkolkanal.Location = new System.Drawing.Point(74, 74);
             this.txtkolkanal.Name = "txtkolkanal";
-            this.txtkolkanal.Size = new System.Drawing.Size(100, 33);
+            this.txtkolkanal.Size = new System.Drawing.Size(100, 39);
             this.txtkolkanal.TabIndex = 2;
             this.txtkolkanal.Visible = false;
             // 
@@ -5403,7 +5415,7 @@ namespace SDC_Application.AL
             // 
             this.txtkolfeet.Location = new System.Drawing.Point(74, 204);
             this.txtkolfeet.Name = "txtkolfeet";
-            this.txtkolfeet.Size = new System.Drawing.Size(100, 33);
+            this.txtkolfeet.Size = new System.Drawing.Size(100, 39);
             this.txtkolfeet.TabIndex = 5;
             this.txtkolfeet.Visible = false;
             // 
@@ -5411,7 +5423,7 @@ namespace SDC_Application.AL
             // 
             this.txtkolhisa.Location = new System.Drawing.Point(74, 29);
             this.txtkolhisa.Name = "txtkolhisa";
-            this.txtkolhisa.Size = new System.Drawing.Size(100, 33);
+            this.txtkolhisa.Size = new System.Drawing.Size(100, 39);
             this.txtkolhisa.TabIndex = 1;
             this.txtkolhisa.Visible = false;
             // 
@@ -5419,7 +5431,7 @@ namespace SDC_Application.AL
             // 
             this.txtkolsarsai.Location = new System.Drawing.Point(74, 161);
             this.txtkolsarsai.Name = "txtkolsarsai";
-            this.txtkolsarsai.Size = new System.Drawing.Size(100, 33);
+            this.txtkolsarsai.Size = new System.Drawing.Size(100, 39);
             this.txtkolsarsai.TabIndex = 4;
             this.txtkolsarsai.Visible = false;
             // 
@@ -5427,14 +5439,14 @@ namespace SDC_Application.AL
             // 
             this.txtkolmarala.Location = new System.Drawing.Point(74, 117);
             this.txtkolmarala.Name = "txtkolmarala";
-            this.txtkolmarala.Size = new System.Drawing.Size(100, 33);
+            this.txtkolmarala.Size = new System.Drawing.Size(100, 39);
             this.txtkolmarala.TabIndex = 3;
             this.txtkolmarala.Visible = false;
             // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.panel13);
-            this.tabPage8.Location = new System.Drawing.Point(4, 34);
+            this.tabPage8.Location = new System.Drawing.Point(4, 40);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(1443, 643);
@@ -5485,12 +5497,12 @@ namespace SDC_Application.AL
             this.grdGetkhatonichange.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkkk});
             this.grdGetkhatonichange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdGetkhatonichange.Location = new System.Drawing.Point(3, 29);
+            this.grdGetkhatonichange.Location = new System.Drawing.Point(3, 35);
             this.grdGetkhatonichange.Name = "grdGetkhatonichange";
             this.grdGetkhatonichange.ReadOnly = true;
             this.grdGetkhatonichange.RowTemplate.Height = 30;
             this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdGetkhatonichange.Size = new System.Drawing.Size(1419, 337);
+            this.grdGetkhatonichange.Size = new System.Drawing.Size(1419, 331);
             this.grdGetkhatonichange.TabIndex = 7;
             this.grdGetkhatonichange.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGetkhatonichange_CellClick);
             this.grdGetkhatonichange.DoubleClick += new System.EventHandler(this.grdGetkhatonichange_DoubleClick);
@@ -5553,7 +5565,7 @@ namespace SDC_Application.AL
             // 
             this.txtNewkhatooniId.Location = new System.Drawing.Point(33, 27);
             this.txtNewkhatooniId.Name = "txtNewkhatooniId";
-            this.txtNewkhatooniId.Size = new System.Drawing.Size(100, 33);
+            this.txtNewkhatooniId.Size = new System.Drawing.Size(100, 39);
             this.txtNewkhatooniId.TabIndex = 1008;
             this.txtNewkhatooniId.Visible = false;
             // 
@@ -5622,9 +5634,9 @@ namespace SDC_Application.AL
             // 
             this.chbDellAllKhatoonies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbDellAllKhatoonies.AutoSize = true;
-            this.chbDellAllKhatoonies.Location = new System.Drawing.Point(372, 120);
+            this.chbDellAllKhatoonies.Location = new System.Drawing.Point(351, 120);
             this.chbDellAllKhatoonies.Name = "chbDellAllKhatoonies";
-            this.chbDellAllKhatoonies.Size = new System.Drawing.Size(99, 29);
+            this.chbDellAllKhatoonies.Size = new System.Drawing.Size(120, 35);
             this.chbDellAllKhatoonies.TabIndex = 1043;
             this.chbDellAllKhatoonies.Text = "تمام حذف کریں؟";
             this.chbDellAllKhatoonies.UseVisualStyleBackColor = true;
@@ -5634,7 +5646,7 @@ namespace SDC_Application.AL
             this.txtKhatooniFeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniFeet.Location = new System.Drawing.Point(75, 66);
             this.txtKhatooniFeet.Name = "txtKhatooniFeet";
-            this.txtKhatooniFeet.Size = new System.Drawing.Size(83, 33);
+            this.txtKhatooniFeet.Size = new System.Drawing.Size(83, 39);
             this.txtKhatooniFeet.TabIndex = 1042;
             // 
             // txtKhatooniSarsai
@@ -5642,7 +5654,7 @@ namespace SDC_Application.AL
             this.txtKhatooniSarsai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniSarsai.Location = new System.Drawing.Point(161, 66);
             this.txtKhatooniSarsai.Name = "txtKhatooniSarsai";
-            this.txtKhatooniSarsai.Size = new System.Drawing.Size(83, 33);
+            this.txtKhatooniSarsai.Size = new System.Drawing.Size(83, 39);
             this.txtKhatooniSarsai.TabIndex = 1041;
             // 
             // txtKhatooniMarla
@@ -5650,7 +5662,7 @@ namespace SDC_Application.AL
             this.txtKhatooniMarla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniMarla.Location = new System.Drawing.Point(250, 66);
             this.txtKhatooniMarla.Name = "txtKhatooniMarla";
-            this.txtKhatooniMarla.Size = new System.Drawing.Size(83, 33);
+            this.txtKhatooniMarla.Size = new System.Drawing.Size(83, 39);
             this.txtKhatooniMarla.TabIndex = 1040;
             // 
             // txtKhatooniKanal
@@ -5658,7 +5670,7 @@ namespace SDC_Application.AL
             this.txtKhatooniKanal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniKanal.Location = new System.Drawing.Point(339, 66);
             this.txtKhatooniKanal.Name = "txtKhatooniKanal";
-            this.txtKhatooniKanal.Size = new System.Drawing.Size(83, 33);
+            this.txtKhatooniKanal.Size = new System.Drawing.Size(83, 39);
             this.txtKhatooniKanal.TabIndex = 1039;
             // 
             // label148
@@ -5668,7 +5680,7 @@ namespace SDC_Application.AL
             this.label148.Font = new System.Drawing.Font("Alvi Nastaleeq", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label148.Location = new System.Drawing.Point(351, 22);
             this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(33, 26);
+            this.label148.Size = new System.Drawing.Size(42, 34);
             this.label148.TabIndex = 1038;
             this.label148.Text = "کنال";
             // 
@@ -5679,7 +5691,7 @@ namespace SDC_Application.AL
             this.label147.Font = new System.Drawing.Font("Alvi Nastaleeq", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label147.Location = new System.Drawing.Point(267, 22);
             this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(32, 26);
+            this.label147.Size = new System.Drawing.Size(41, 34);
             this.label147.TabIndex = 1037;
             this.label147.Text = "مرلہ";
             // 
@@ -5690,7 +5702,7 @@ namespace SDC_Application.AL
             this.label145.Font = new System.Drawing.Font("Alvi Nastaleeq", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label145.Location = new System.Drawing.Point(175, 22);
             this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(41, 26);
+            this.label145.Size = new System.Drawing.Size(53, 34);
             this.label145.TabIndex = 1036;
             this.label145.Text = "سرسائی";
             // 
@@ -5701,7 +5713,7 @@ namespace SDC_Application.AL
             this.label139.Font = new System.Drawing.Font("Alvi Nastaleeq", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label139.Location = new System.Drawing.Point(98, 22);
             this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(29, 26);
+            this.label139.Size = new System.Drawing.Size(37, 34);
             this.label139.TabIndex = 1035;
             this.label139.Text = "فٹ";
             // 
@@ -5712,7 +5724,7 @@ namespace SDC_Application.AL
             this.label133.Font = new System.Drawing.Font("Alvi Nastaleeq", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label133.Location = new System.Drawing.Point(447, 20);
             this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(31, 26);
+            this.label133.Size = new System.Drawing.Size(40, 34);
             this.label133.TabIndex = 1034;
             this.label133.Text = "حصہ";
             // 
@@ -5721,7 +5733,7 @@ namespace SDC_Application.AL
             this.txtKhatooniHissa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooniHissa.Location = new System.Drawing.Point(429, 66);
             this.txtKhatooniHissa.Name = "txtKhatooniHissa";
-            this.txtKhatooniHissa.Size = new System.Drawing.Size(83, 33);
+            this.txtKhatooniHissa.Size = new System.Drawing.Size(83, 39);
             this.txtKhatooniHissa.TabIndex = 1033;
             // 
             // textBox1
@@ -5729,7 +5741,7 @@ namespace SDC_Application.AL
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(57, 24);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(52, 33);
+            this.textBox1.Size = new System.Drawing.Size(52, 39);
             this.textBox1.TabIndex = 1032;
             this.textBox1.Visible = false;
             // 
@@ -5752,7 +5764,7 @@ namespace SDC_Application.AL
             this.label126.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label126.Location = new System.Drawing.Point(1355, 35);
             this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(53, 25);
+            this.label126.Size = new System.Drawing.Size(64, 31);
             this.label126.TabIndex = 1009;
             this.label126.Text = "کھتونی نمبر";
             // 
@@ -5774,7 +5786,7 @@ namespace SDC_Application.AL
             this.label111.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label111.Location = new System.Drawing.Point(1106, 35);
             this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(123, 25);
+            this.label111.Size = new System.Drawing.Size(152, 31);
             this.label111.TabIndex = 8;
             this.label111.Text = "تفصیل حصہ داران وکاشتکاران";
             this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5784,7 +5796,7 @@ namespace SDC_Application.AL
             this.txtKhatooninumchagee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhatooninumchagee.Location = new System.Drawing.Point(1264, 69);
             this.txtKhatooninumchagee.Name = "txtKhatooninumchagee";
-            this.txtKhatooninumchagee.Size = new System.Drawing.Size(149, 33);
+            this.txtKhatooninumchagee.Size = new System.Drawing.Size(149, 39);
             this.txtKhatooninumchagee.TabIndex = 8;
             // 
             // txtlagan
@@ -5805,7 +5817,7 @@ namespace SDC_Application.AL
             this.label112.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label112.Location = new System.Drawing.Point(887, 18);
             this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(30, 25);
+            this.label112.Size = new System.Drawing.Size(37, 31);
             this.label112.TabIndex = 9;
             this.label112.Text = "لگان";
             // 
@@ -5816,7 +5828,7 @@ namespace SDC_Application.AL
             this.label110.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label110.Location = new System.Drawing.Point(649, 18);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(62, 25);
+            this.label110.Size = new System.Drawing.Size(75, 31);
             this.label110.TabIndex = 7;
             this.label110.Text = "وسائل آبپاشی";
             // 
@@ -5826,10 +5838,10 @@ namespace SDC_Application.AL
             this.tabPage9.Controls.Add(this.groupBox26);
             this.tabPage9.Controls.Add(this.gbSubKhataKhassras);
             this.tabPage9.Controls.Add(this.groupBox2);
-            this.tabPage9.Location = new System.Drawing.Point(4, 34);
+            this.tabPage9.Location = new System.Drawing.Point(4, 40);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1443, 643);
+            this.tabPage9.Size = new System.Drawing.Size(1443, 637);
             this.tabPage9.TabIndex = 3;
             this.tabPage9.Text = "خسرہ جات";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -5840,7 +5852,7 @@ namespace SDC_Application.AL
             this.groupBox32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox32.Location = new System.Drawing.Point(3, 260);
             this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Size = new System.Drawing.Size(1437, 280);
+            this.groupBox32.Size = new System.Drawing.Size(1437, 274);
             this.groupBox32.TabIndex = 33;
             this.groupBox32.TabStop = false;
             this.groupBox32.Text = "اندراج شدہ نمبرات خسرہ";
@@ -5854,12 +5866,12 @@ namespace SDC_Application.AL
             this.grdNewKhasrajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chk});
             this.grdNewKhasrajat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdNewKhasrajat.Location = new System.Drawing.Point(3, 29);
+            this.grdNewKhasrajat.Location = new System.Drawing.Point(3, 35);
             this.grdNewKhasrajat.Name = "grdNewKhasrajat";
             this.grdNewKhasrajat.ReadOnly = true;
             this.grdNewKhasrajat.RowTemplate.Height = 30;
             this.grdNewKhasrajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdNewKhasrajat.Size = new System.Drawing.Size(1431, 248);
+            this.grdNewKhasrajat.Size = new System.Drawing.Size(1431, 236);
             this.grdNewKhasrajat.TabIndex = 12;
             this.grdNewKhasrajat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNewKhasrajat_CellContentClick);
             this.grdNewKhasrajat.DoubleClick += new System.EventHandler(this.grdNewKhasrajat_DoubleClick);
@@ -5908,7 +5920,7 @@ namespace SDC_Application.AL
             // 
             this.t1sarsai.Location = new System.Drawing.Point(324, 46);
             this.t1sarsai.Name = "t1sarsai";
-            this.t1sarsai.Size = new System.Drawing.Size(34, 33);
+            this.t1sarsai.Size = new System.Drawing.Size(34, 39);
             this.t1sarsai.TabIndex = 10012;
             this.t1sarsai.Visible = false;
             // 
@@ -5940,7 +5952,7 @@ namespace SDC_Application.AL
             this.textBox23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox23.Location = new System.Drawing.Point(570, 35);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(100, 33);
+            this.textBox23.Size = new System.Drawing.Size(100, 39);
             this.textBox23.TabIndex = 107;
             this.textBox23.Text = "-1";
             this.textBox23.Visible = false;
@@ -5949,7 +5961,7 @@ namespace SDC_Application.AL
             // 
             this.t1marla.Location = new System.Drawing.Point(317, 21);
             this.t1marla.Name = "t1marla";
-            this.t1marla.Size = new System.Drawing.Size(41, 33);
+            this.t1marla.Size = new System.Drawing.Size(41, 39);
             this.t1marla.TabIndex = 10011;
             this.t1marla.Visible = false;
             // 
@@ -5960,7 +5972,7 @@ namespace SDC_Application.AL
             this.label51.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(6, 20);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(64, 30);
+            this.label51.Size = new System.Drawing.Size(82, 38);
             this.label51.TabIndex = 10007;
             this.label51.Text = "khasraid";
             this.label51.Visible = false;
@@ -5969,7 +5981,7 @@ namespace SDC_Application.AL
             // 
             this.t1kanal.Location = new System.Drawing.Point(262, 53);
             this.t1kanal.Name = "t1kanal";
-            this.t1kanal.Size = new System.Drawing.Size(56, 33);
+            this.t1kanal.Size = new System.Drawing.Size(56, 39);
             this.t1kanal.TabIndex = 10010;
             this.t1kanal.Visible = false;
             // 
@@ -5980,7 +5992,7 @@ namespace SDC_Application.AL
             this.label91.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label91.Location = new System.Drawing.Point(112, 53);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(99, 30);
+            this.label91.Size = new System.Drawing.Size(127, 38);
             this.label91.TabIndex = 10008;
             this.label91.Text = "khasradetailid";
             this.label91.Visible = false;
@@ -5990,7 +6002,7 @@ namespace SDC_Application.AL
             this.txtkhasratypeid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkhasratypeid.Location = new System.Drawing.Point(238, 21);
             this.txtkhasratypeid.Name = "txtkhasratypeid";
-            this.txtkhasratypeid.Size = new System.Drawing.Size(70, 26);
+            this.txtkhasratypeid.Size = new System.Drawing.Size(70, 30);
             this.txtkhasratypeid.TabIndex = 10009;
             this.txtkhasratypeid.Visible = false;
             // 
@@ -6001,7 +6013,7 @@ namespace SDC_Application.AL
             this.label90.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label90.Location = new System.Drawing.Point(200, 25);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(32, 30);
+            this.label90.Size = new System.Drawing.Size(41, 38);
             this.label90.TabIndex = 16;
             this.label90.Text = "رقبہ";
             this.label90.Visible = false;
@@ -6012,7 +6024,7 @@ namespace SDC_Application.AL
             this.label54.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(229, 52);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(32, 30);
+            this.label54.Size = new System.Drawing.Size(41, 38);
             this.label54.TabIndex = 8;
             this.label54.Text = "من";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6024,7 +6036,7 @@ namespace SDC_Application.AL
             this.txthiddenkhasraid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthiddenkhasraid.Location = new System.Drawing.Point(6, 61);
             this.txthiddenkhasraid.Name = "txthiddenkhasraid";
-            this.txthiddenkhasraid.Size = new System.Drawing.Size(100, 26);
+            this.txthiddenkhasraid.Size = new System.Drawing.Size(100, 30);
             this.txthiddenkhasraid.TabIndex = 6;
             this.txthiddenkhasraid.Visible = false;
             // 
@@ -6033,7 +6045,7 @@ namespace SDC_Application.AL
             this.txthiddendetailid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthiddendetailid.Location = new System.Drawing.Point(94, 25);
             this.txthiddendetailid.Name = "txthiddendetailid";
-            this.txthiddendetailid.Size = new System.Drawing.Size(100, 26);
+            this.txthiddendetailid.Size = new System.Drawing.Size(100, 30);
             this.txthiddendetailid.TabIndex = 10006;
             this.txthiddendetailid.Visible = false;
             // 
@@ -6069,9 +6081,9 @@ namespace SDC_Application.AL
             this.chbDellAllKhassrajat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbDellAllKhassrajat.AutoSize = true;
             this.chbDellAllKhassrajat.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbDellAllKhassrajat.Location = new System.Drawing.Point(509, 25);
+            this.chbDellAllKhassrajat.Location = new System.Drawing.Point(488, 25);
             this.chbDellAllKhassrajat.Name = "chbDellAllKhassrajat";
-            this.chbDellAllKhassrajat.Size = new System.Drawing.Size(99, 29);
+            this.chbDellAllKhassrajat.Size = new System.Drawing.Size(120, 35);
             this.chbDellAllKhassrajat.TabIndex = 10013;
             this.chbDellAllKhassrajat.Text = "تمام حذف کریں؟";
             this.chbDellAllKhassrajat.UseVisualStyleBackColor = true;
@@ -6083,7 +6095,7 @@ namespace SDC_Application.AL
             this.cmbAreaTypesTaqseem.FormattingEnabled = true;
             this.cmbAreaTypesTaqseem.Location = new System.Drawing.Point(163, 87);
             this.cmbAreaTypesTaqseem.Name = "cmbAreaTypesTaqseem";
-            this.cmbAreaTypesTaqseem.Size = new System.Drawing.Size(233, 38);
+            this.cmbAreaTypesTaqseem.Size = new System.Drawing.Size(233, 44);
             this.cmbAreaTypesTaqseem.TabIndex = 10012;
             // 
             // label125
@@ -6094,7 +6106,7 @@ namespace SDC_Application.AL
             this.label125.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label125.Location = new System.Drawing.Point(403, 90);
             this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(59, 30);
+            this.label125.Size = new System.Drawing.Size(76, 38);
             this.label125.TabIndex = 10011;
             this.label125.Text = "قسم اراضی";
             // 
@@ -6106,7 +6118,7 @@ namespace SDC_Application.AL
             this.label49.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F);
             this.label49.Location = new System.Drawing.Point(1317, 32);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(92, 25);
+            this.label49.Size = new System.Drawing.Size(114, 31);
             this.label49.TabIndex = 10009;
             this.label49.Text = "کھتونی کا انتخاب کریں";
             // 
@@ -6117,7 +6129,7 @@ namespace SDC_Application.AL
             this.cmbkhatoonisnew.FormattingEnabled = true;
             this.cmbkhatoonisnew.Location = new System.Drawing.Point(1078, 25);
             this.cmbkhatoonisnew.Name = "cmbkhatoonisnew";
-            this.cmbkhatoonisnew.Size = new System.Drawing.Size(216, 38);
+            this.cmbkhatoonisnew.Size = new System.Drawing.Size(216, 44);
             this.cmbkhatoonisnew.TabIndex = 10008;
             this.cmbkhatoonisnew.SelectedIndexChanged += new System.EventHandler(this.cmbkhatoonisnew_SelectedIndexChanged);
             this.cmbkhatoonisnew.SelectionChangeCommitted += new System.EventHandler(this.cmbkhatoonisnew_SelectionChangeCommitted);
@@ -6129,7 +6141,7 @@ namespace SDC_Application.AL
             this.label48.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.Location = new System.Drawing.Point(563, 90);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(32, 30);
+            this.label48.Size = new System.Drawing.Size(41, 38);
             this.label48.TabIndex = 28;
             this.label48.Text = "فٹ";
             // 
@@ -6139,7 +6151,7 @@ namespace SDC_Application.AL
             this.txt_Feet_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Feet_Khasra.Location = new System.Drawing.Point(486, 94);
             this.txt_Feet_Khasra.Name = "txt_Feet_Khasra";
-            this.txt_Feet_Khasra.Size = new System.Drawing.Size(70, 26);
+            this.txt_Feet_Khasra.Size = new System.Drawing.Size(70, 30);
             this.txt_Feet_Khasra.TabIndex = 10005;
             // 
             // label50
@@ -6149,7 +6161,7 @@ namespace SDC_Application.AL
             this.label50.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.Location = new System.Drawing.Point(722, 90);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(45, 30);
+            this.label50.Size = new System.Drawing.Size(58, 38);
             this.label50.TabIndex = 26;
             this.label50.Text = "سرسائی";
             // 
@@ -6159,7 +6171,7 @@ namespace SDC_Application.AL
             this.txt_Sarsai_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Sarsai_Khasra.Location = new System.Drawing.Point(611, 94);
             this.txt_Sarsai_Khasra.Name = "txt_Sarsai_Khasra";
-            this.txt_Sarsai_Khasra.Size = new System.Drawing.Size(104, 26);
+            this.txt_Sarsai_Khasra.Size = new System.Drawing.Size(104, 30);
             this.txt_Sarsai_Khasra.TabIndex = 10004;
             // 
             // label53
@@ -6169,7 +6181,7 @@ namespace SDC_Application.AL
             this.label53.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.Location = new System.Drawing.Point(820, 90);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(36, 30);
+            this.label53.Size = new System.Drawing.Size(46, 38);
             this.label53.TabIndex = 27;
             this.label53.Text = "مرلہ";
             // 
@@ -6181,7 +6193,7 @@ namespace SDC_Application.AL
             this.label59.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label59.Location = new System.Drawing.Point(1153, 90);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(57, 30);
+            this.label59.Size = new System.Drawing.Size(72, 38);
             this.label59.TabIndex = 7;
             this.label59.Text = " خسرہ نمبر";
             // 
@@ -6191,7 +6203,7 @@ namespace SDC_Application.AL
             this.txt_kanal_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_kanal_Khasra.Location = new System.Drawing.Point(872, 94);
             this.txt_kanal_Khasra.Name = "txt_kanal_Khasra";
-            this.txt_kanal_Khasra.Size = new System.Drawing.Size(92, 26);
+            this.txt_kanal_Khasra.Size = new System.Drawing.Size(92, 30);
             this.txt_kanal_Khasra.TabIndex = 10002;
             // 
             // txthiddenKhasarno
@@ -6201,7 +6213,7 @@ namespace SDC_Application.AL
             this.txthiddenKhasarno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthiddenKhasarno.Location = new System.Drawing.Point(1232, 94);
             this.txthiddenKhasarno.Name = "txthiddenKhasarno";
-            this.txthiddenKhasarno.Size = new System.Drawing.Size(116, 26);
+            this.txthiddenKhasarno.Size = new System.Drawing.Size(116, 30);
             this.txthiddenKhasarno.TabIndex = 3;
             this.txthiddenKhasarno.Visible = false;
             // 
@@ -6211,7 +6223,7 @@ namespace SDC_Application.AL
             this.OldKhassraNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OldKhassraNo.Location = new System.Drawing.Point(1024, 94);
             this.OldKhassraNo.Name = "OldKhassraNo";
-            this.OldKhassraNo.Size = new System.Drawing.Size(122, 26);
+            this.OldKhassraNo.Size = new System.Drawing.Size(122, 30);
             this.OldKhassraNo.TabIndex = 4;
             this.OldKhassraNo.TabStop = false;
             // 
@@ -6221,7 +6233,7 @@ namespace SDC_Application.AL
             this.txt_Marala_Khasra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Marala_Khasra.Location = new System.Drawing.Point(776, 94);
             this.txt_Marala_Khasra.Name = "txt_Marala_Khasra";
-            this.txt_Marala_Khasra.Size = new System.Drawing.Size(37, 26);
+            this.txt_Marala_Khasra.Size = new System.Drawing.Size(37, 30);
             this.txt_Marala_Khasra.TabIndex = 10003;
             // 
             // label60
@@ -6231,7 +6243,7 @@ namespace SDC_Application.AL
             this.label60.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label60.Location = new System.Drawing.Point(1355, 90);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(58, 30);
+            this.label60.Size = new System.Drawing.Size(76, 38);
             this.label60.TabIndex = 9;
             this.label60.Text = "پرانہ خسرہ";
             this.label60.Visible = false;
@@ -6243,7 +6255,7 @@ namespace SDC_Application.AL
             this.label89.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.Location = new System.Drawing.Point(971, 90);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(36, 30);
+            this.label89.Size = new System.Drawing.Size(46, 38);
             this.label89.TabIndex = 25;
             this.label89.Text = "کنال";
             // 
@@ -6254,7 +6266,7 @@ namespace SDC_Application.AL
             this.groupBox2.Controls.Add(this.label93);
             this.groupBox2.Controls.Add(this.label92);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(3, 540);
+            this.groupBox2.Location = new System.Drawing.Point(3, 534);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1437, 100);
             this.groupBox2.TabIndex = 31;
@@ -6312,7 +6324,7 @@ namespace SDC_Application.AL
             // tabMushtaryan
             // 
             this.tabMushtaryan.Controls.Add(this.groupBox38);
-            this.tabMushtaryan.Location = new System.Drawing.Point(4, 34);
+            this.tabMushtaryan.Location = new System.Drawing.Point(4, 40);
             this.tabMushtaryan.Name = "tabMushtaryan";
             this.tabMushtaryan.Padding = new System.Windows.Forms.Padding(3);
             this.tabMushtaryan.Size = new System.Drawing.Size(1443, 643);
@@ -6336,9 +6348,9 @@ namespace SDC_Application.AL
             this.panel6.Controls.Add(this.dgvMushtryan);
             this.panel6.Controls.Add(this.groupBox39);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 186);
+            this.panel6.Location = new System.Drawing.Point(3, 192);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1431, 448);
+            this.panel6.Size = new System.Drawing.Size(1431, 442);
             this.panel6.TabIndex = 107;
             // 
             // dgvMushtryan
@@ -6355,7 +6367,7 @@ namespace SDC_Application.AL
             this.dgvMushtryan.ReadOnly = true;
             this.dgvMushtryan.RowTemplate.Height = 30;
             this.dgvMushtryan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMushtryan.Size = new System.Drawing.Size(1431, 350);
+            this.dgvMushtryan.Size = new System.Drawing.Size(1431, 344);
             this.dgvMushtryan.TabIndex = 7;
             // 
             // chk_change_Mushtryan
@@ -6377,7 +6389,7 @@ namespace SDC_Application.AL
             this.groupBox39.Controls.Add(this.txtKHThissaDiff);
             this.groupBox39.Controls.Add(this.label136);
             this.groupBox39.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox39.Location = new System.Drawing.Point(0, 350);
+            this.groupBox39.Location = new System.Drawing.Point(0, 344);
             this.groupBox39.Name = "groupBox39";
             this.groupBox39.Size = new System.Drawing.Size(1431, 98);
             this.groupBox39.TabIndex = 14;
@@ -6390,7 +6402,7 @@ namespace SDC_Application.AL
             this.txtMushHissa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMushHissa.Name = "txtMushHissa";
             this.txtMushHissa.ReadOnly = true;
-            this.txtMushHissa.Size = new System.Drawing.Size(137, 26);
+            this.txtMushHissa.Size = new System.Drawing.Size(137, 30);
             this.txtMushHissa.TabIndex = 109;
             this.txtMushHissa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -6401,7 +6413,7 @@ namespace SDC_Application.AL
             this.label149.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label149.Location = new System.Drawing.Point(833, 41);
             this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(68, 25);
+            this.label149.Size = new System.Drawing.Size(83, 31);
             this.label149.TabIndex = 108;
             this.label149.Text = "کھتونی کا حصہ :";
             // 
@@ -6412,7 +6424,7 @@ namespace SDC_Application.AL
             this.txtKHThissa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKHThissa.Name = "txtKHThissa";
             this.txtKHThissa.ReadOnly = true;
-            this.txtKHThissa.Size = new System.Drawing.Size(125, 26);
+            this.txtKHThissa.Size = new System.Drawing.Size(125, 30);
             this.txtKHThissa.TabIndex = 107;
             this.txtKHThissa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -6434,7 +6446,7 @@ namespace SDC_Application.AL
             this.txtMushArea.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMushArea.Name = "txtMushArea";
             this.txtMushArea.ReadOnly = true;
-            this.txtMushArea.Size = new System.Drawing.Size(137, 26);
+            this.txtMushArea.Size = new System.Drawing.Size(137, 30);
             this.txtMushArea.TabIndex = 105;
             this.txtMushArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -6445,7 +6457,7 @@ namespace SDC_Application.AL
             this.label134.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label134.Location = new System.Drawing.Point(1321, 41);
             this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(66, 25);
+            this.label134.Size = new System.Drawing.Size(79, 31);
             this.label134.TabIndex = 104;
             this.label134.Text = "کھتونی کا رقبہ :";
             // 
@@ -6456,7 +6468,7 @@ namespace SDC_Application.AL
             this.txtKHTarea.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtKHTarea.Name = "txtKHTarea";
             this.txtKHTarea.ReadOnly = true;
-            this.txtKHTarea.Size = new System.Drawing.Size(125, 26);
+            this.txtKHTarea.Size = new System.Drawing.Size(125, 30);
             this.txtKHTarea.TabIndex = 103;
             this.txtKHTarea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -6477,7 +6489,7 @@ namespace SDC_Application.AL
             this.txtKHThissaDiff.Location = new System.Drawing.Point(35, 49);
             this.txtKHThissaDiff.Name = "txtKHThissaDiff";
             this.txtKHThissaDiff.ReadOnly = true;
-            this.txtKHThissaDiff.Size = new System.Drawing.Size(104, 26);
+            this.txtKHThissaDiff.Size = new System.Drawing.Size(104, 30);
             this.txtKHThissaDiff.TabIndex = 5;
             // 
             // label136
@@ -6487,7 +6499,7 @@ namespace SDC_Application.AL
             this.label136.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label136.Location = new System.Drawing.Point(164, 44);
             this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(48, 25);
+            this.label136.Size = new System.Drawing.Size(59, 31);
             this.label136.TabIndex = 15;
             this.label136.Text = "حصہ فرق";
             this.label136.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6533,7 +6545,7 @@ namespace SDC_Application.AL
             this.panel1.Controls.Add(this.txtMushHisachange);
             this.panel1.Controls.Add(this.txtMushNameChange);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 29);
+            this.panel1.Location = new System.Drawing.Point(3, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1431, 157);
             this.panel1.TabIndex = 31;
@@ -6544,7 +6556,7 @@ namespace SDC_Application.AL
             this.label21.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(1075, 95);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(54, 25);
+            this.label21.Size = new System.Drawing.Size(67, 31);
             this.label21.TabIndex = 1009;
             this.label21.Text = "تلاش کریں";
             // 
@@ -6554,7 +6566,7 @@ namespace SDC_Application.AL
             this.label140.Font = new System.Drawing.Font("Alvi Nastaleeq", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label140.Location = new System.Drawing.Point(125, 75);
             this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(33, 16);
+            this.label140.Size = new System.Drawing.Size(38, 18);
             this.label140.TabIndex = 24;
             this.label140.Text = "کل سرسائی";
             this.label140.Visible = false;
@@ -6563,7 +6575,7 @@ namespace SDC_Application.AL
             // 
             this.txtKKulFeet.Location = new System.Drawing.Point(184, 105);
             this.txtKKulFeet.Name = "txtKKulFeet";
-            this.txtKKulFeet.Size = new System.Drawing.Size(10, 33);
+            this.txtKKulFeet.Size = new System.Drawing.Size(10, 39);
             this.txtKKulFeet.TabIndex = 5;
             this.txtKKulFeet.Visible = false;
             // 
@@ -6571,7 +6583,7 @@ namespace SDC_Application.AL
             // 
             this.txtKKulSarsai.Location = new System.Drawing.Point(144, 104);
             this.txtKKulSarsai.Name = "txtKKulSarsai";
-            this.txtKKulSarsai.Size = new System.Drawing.Size(10, 33);
+            this.txtKKulSarsai.Size = new System.Drawing.Size(10, 39);
             this.txtKKulSarsai.TabIndex = 4;
             this.txtKKulSarsai.Visible = false;
             // 
@@ -6579,7 +6591,7 @@ namespace SDC_Application.AL
             // 
             this.txtKKulMarla.Location = new System.Drawing.Point(102, 101);
             this.txtKKulMarla.Name = "txtKKulMarla";
-            this.txtKKulMarla.Size = new System.Drawing.Size(10, 33);
+            this.txtKKulMarla.Size = new System.Drawing.Size(10, 39);
             this.txtKKulMarla.TabIndex = 3;
             this.txtKKulMarla.Visible = false;
             // 
@@ -6589,7 +6601,7 @@ namespace SDC_Application.AL
             this.label141.Font = new System.Drawing.Font("Alvi Nastaleeq", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label141.Location = new System.Drawing.Point(174, 75);
             this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(26, 16);
+            this.label141.Size = new System.Drawing.Size(30, 18);
             this.label141.TabIndex = 23;
             this.label141.Text = "کل فٹ";
             this.label141.Visible = false;
@@ -6599,14 +6611,14 @@ namespace SDC_Application.AL
             this.txtMushtriTaqseemSearch.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushtriTaqseemSearch.Location = new System.Drawing.Point(934, 95);
             this.txtMushtriTaqseemSearch.Name = "txtMushtriTaqseemSearch";
-            this.txtMushtriTaqseemSearch.Size = new System.Drawing.Size(126, 28);
+            this.txtMushtriTaqseemSearch.Size = new System.Drawing.Size(126, 33);
             this.txtMushtriTaqseemSearch.TabIndex = 1010;
             // 
             // txtKKulKanal
             // 
             this.txtKKulKanal.Location = new System.Drawing.Point(75, 104);
             this.txtKKulKanal.Name = "txtKKulKanal";
-            this.txtKKulKanal.Size = new System.Drawing.Size(10, 33);
+            this.txtKKulKanal.Size = new System.Drawing.Size(10, 39);
             this.txtKKulKanal.TabIndex = 2;
             this.txtKKulKanal.Visible = false;
             // 
@@ -6623,9 +6635,9 @@ namespace SDC_Application.AL
             // 
             this.chbDelAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbDelAll.AutoSize = true;
-            this.chbDelAll.Location = new System.Drawing.Point(495, 7);
+            this.chbDelAll.Location = new System.Drawing.Point(474, 7);
             this.chbDelAll.Name = "chbDelAll";
-            this.chbDelAll.Size = new System.Drawing.Size(99, 29);
+            this.chbDelAll.Size = new System.Drawing.Size(120, 35);
             this.chbDelAll.TabIndex = 1007;
             this.chbDelAll.Text = "تمام حذف کریں؟";
             this.chbDelAll.UseVisualStyleBackColor = true;
@@ -6634,7 +6646,7 @@ namespace SDC_Application.AL
             // 
             this.txtKKulHissa.Location = new System.Drawing.Point(39, 101);
             this.txtKKulHissa.Name = "txtKKulHissa";
-            this.txtKKulHissa.Size = new System.Drawing.Size(10, 33);
+            this.txtKKulHissa.Size = new System.Drawing.Size(10, 39);
             this.txtKKulHissa.TabIndex = 1;
             this.txtKKulHissa.Visible = false;
             // 
@@ -6644,7 +6656,7 @@ namespace SDC_Application.AL
             this.label143.Font = new System.Drawing.Font("Alvi Nastaleeq", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label143.Location = new System.Drawing.Point(88, 73);
             this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(28, 16);
+            this.label143.Size = new System.Drawing.Size(33, 18);
             this.label143.TabIndex = 21;
             this.label143.Text = "کل مرلہ";
             this.label143.Visible = false;
@@ -6655,7 +6667,7 @@ namespace SDC_Application.AL
             this.label142.Font = new System.Drawing.Font("Alvi Nastaleeq", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label142.Location = new System.Drawing.Point(54, 74);
             this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(28, 16);
+            this.label142.Size = new System.Drawing.Size(33, 18);
             this.label142.TabIndex = 22;
             this.label142.Text = "کل کنال";
             this.label142.Visible = false;
@@ -6664,7 +6676,7 @@ namespace SDC_Application.AL
             // 
             this.textBox24.Location = new System.Drawing.Point(9, 3);
             this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(24, 33);
+            this.textBox24.Size = new System.Drawing.Size(24, 39);
             this.textBox24.TabIndex = 17;
             this.textBox24.Text = "-1";
             this.textBox24.Visible = false;
@@ -6682,7 +6694,7 @@ namespace SDC_Application.AL
             // 
             this.textBox2.Location = new System.Drawing.Point(202, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(20, 33);
+            this.textBox2.Size = new System.Drawing.Size(20, 39);
             this.textBox2.TabIndex = 106;
             this.textBox2.Text = "-1";
             this.textBox2.Visible = false;
@@ -6693,7 +6705,7 @@ namespace SDC_Application.AL
             this.label144.Font = new System.Drawing.Font("Alvi Nastaleeq", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label144.Location = new System.Drawing.Point(23, 78);
             this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(27, 16);
+            this.label144.Size = new System.Drawing.Size(32, 18);
             this.label144.TabIndex = 20;
             this.label144.Text = "کل حصہ";
             this.label144.Visible = false;
@@ -6704,7 +6716,7 @@ namespace SDC_Application.AL
             this.label127.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label127.Location = new System.Drawing.Point(622, 14);
             this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(28, 25);
+            this.label127.Size = new System.Drawing.Size(34, 31);
             this.label127.TabIndex = 37;
             this.label127.Text = "فٹ";
             // 
@@ -6712,7 +6724,7 @@ namespace SDC_Application.AL
             // 
             this.textBox21.Location = new System.Drawing.Point(39, 3);
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(20, 33);
+            this.textBox21.Size = new System.Drawing.Size(20, 39);
             this.textBox21.TabIndex = 31;
             this.textBox21.Text = "-1";
             this.textBox21.Visible = false;
@@ -6722,7 +6734,7 @@ namespace SDC_Application.AL
             this.txtMushFeetchange.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushFeetchange.Location = new System.Drawing.Point(607, 51);
             this.txtMushFeetchange.Name = "txtMushFeetchange";
-            this.txtMushFeetchange.Size = new System.Drawing.Size(73, 26);
+            this.txtMushFeetchange.Size = new System.Drawing.Size(73, 30);
             this.txtMushFeetchange.TabIndex = 1005;
             // 
             // label128
@@ -6731,7 +6743,7 @@ namespace SDC_Application.AL
             this.label128.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label128.Location = new System.Drawing.Point(698, 14);
             this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(40, 25);
+            this.label128.Size = new System.Drawing.Size(48, 31);
             this.label128.TabIndex = 35;
             this.label128.Text = "سرسائی";
             // 
@@ -6739,7 +6751,7 @@ namespace SDC_Application.AL
             // 
             this.textBox19.Location = new System.Drawing.Point(88, 3);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(24, 33);
+            this.textBox19.Size = new System.Drawing.Size(24, 39);
             this.textBox19.TabIndex = 19;
             this.textBox19.Text = "-1";
             this.textBox19.Visible = false;
@@ -6749,7 +6761,7 @@ namespace SDC_Application.AL
             this.txtMushsarsaichange.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushsarsaichange.Location = new System.Drawing.Point(686, 52);
             this.txtMushsarsaichange.Name = "txtMushsarsaichange";
-            this.txtMushsarsaichange.Size = new System.Drawing.Size(76, 26);
+            this.txtMushsarsaichange.Size = new System.Drawing.Size(76, 30);
             this.txtMushsarsaichange.TabIndex = 1004;
             // 
             // label129
@@ -6758,7 +6770,7 @@ namespace SDC_Application.AL
             this.label129.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label129.Location = new System.Drawing.Point(873, 50);
             this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(48, 25);
+            this.label129.Size = new System.Drawing.Size(58, 31);
             this.label129.TabIndex = 33;
             this.label129.Text = "رقبہ منتقلہ";
             // 
@@ -6766,7 +6778,7 @@ namespace SDC_Application.AL
             // 
             this.textBox7.Location = new System.Drawing.Point(118, 3);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(20, 33);
+            this.textBox7.Size = new System.Drawing.Size(20, 39);
             this.textBox7.TabIndex = 32;
             this.textBox7.Text = "-1";
             this.textBox7.Visible = false;
@@ -6777,7 +6789,7 @@ namespace SDC_Application.AL
             this.label130.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label130.Location = new System.Drawing.Point(771, 14);
             this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(31, 25);
+            this.label130.Size = new System.Drawing.Size(38, 31);
             this.label130.TabIndex = 36;
             this.label130.Text = "مرلہ";
             // 
@@ -6785,7 +6797,7 @@ namespace SDC_Application.AL
             // 
             this.textBox6.Location = new System.Drawing.Point(144, 3);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(24, 33);
+            this.textBox6.Size = new System.Drawing.Size(24, 39);
             this.textBox6.TabIndex = 20;
             this.textBox6.Text = "-1";
             this.textBox6.Visible = false;
@@ -6795,7 +6807,7 @@ namespace SDC_Application.AL
             this.txtMushkanalchange.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushkanalchange.Location = new System.Drawing.Point(817, 52);
             this.txtMushkanalchange.Name = "txtMushkanalchange";
-            this.txtMushkanalchange.Size = new System.Drawing.Size(50, 26);
+            this.txtMushkanalchange.Size = new System.Drawing.Size(50, 30);
             this.txtMushkanalchange.TabIndex = 1002;
             // 
             // txtMushmarlachange
@@ -6803,7 +6815,7 @@ namespace SDC_Application.AL
             this.txtMushmarlachange.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushmarlachange.Location = new System.Drawing.Point(773, 52);
             this.txtMushmarlachange.Name = "txtMushmarlachange";
-            this.txtMushmarlachange.Size = new System.Drawing.Size(33, 26);
+            this.txtMushmarlachange.Size = new System.Drawing.Size(33, 30);
             this.txtMushmarlachange.TabIndex = 1003;
             // 
             // label131
@@ -6812,7 +6824,7 @@ namespace SDC_Application.AL
             this.label131.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label131.Location = new System.Drawing.Point(817, 14);
             this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(31, 25);
+            this.label131.Size = new System.Drawing.Size(38, 31);
             this.label131.TabIndex = 34;
             this.label131.Text = "کنال";
             // 
@@ -6820,7 +6832,7 @@ namespace SDC_Application.AL
             // 
             this.textBox3.Location = new System.Drawing.Point(174, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(20, 33);
+            this.textBox3.Size = new System.Drawing.Size(20, 39);
             this.textBox3.TabIndex = 33;
             this.textBox3.Text = "-1";
             this.textBox3.Visible = false;
@@ -6840,7 +6852,7 @@ namespace SDC_Application.AL
             this.label137.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label137.Location = new System.Drawing.Point(1071, 50);
             this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(50, 25);
+            this.label137.Size = new System.Drawing.Size(62, 31);
             this.label137.TabIndex = 7;
             this.label137.Text = "حصہ منتقلہ";
             // 
@@ -6848,7 +6860,7 @@ namespace SDC_Application.AL
             // 
             this.textBox5.Location = new System.Drawing.Point(65, 3);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(20, 33);
+            this.textBox5.Size = new System.Drawing.Size(20, 39);
             this.textBox5.TabIndex = 34;
             this.textBox5.Text = "-1";
             this.textBox5.Visible = false;
@@ -6859,7 +6871,7 @@ namespace SDC_Application.AL
             this.label138.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label138.Location = new System.Drawing.Point(1367, 43);
             this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(47, 25);
+            this.label138.Size = new System.Drawing.Size(57, 31);
             this.label138.TabIndex = 8;
             this.label138.Text = "نام مالک";
             this.label138.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6869,7 +6881,7 @@ namespace SDC_Application.AL
             this.txtMushHisachange.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushHisachange.Location = new System.Drawing.Point(934, 52);
             this.txtMushHisachange.Name = "txtMushHisachange";
-            this.txtMushHisachange.Size = new System.Drawing.Size(126, 26);
+            this.txtMushHisachange.Size = new System.Drawing.Size(126, 30);
             this.txtMushHisachange.TabIndex = 1001;
             // 
             // txtMushNameChange
@@ -6878,35 +6890,23 @@ namespace SDC_Application.AL
             this.txtMushNameChange.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMushNameChange.Location = new System.Drawing.Point(1137, 43);
             this.txtMushNameChange.Name = "txtMushNameChange";
-            this.txtMushNameChange.Size = new System.Drawing.Size(224, 33);
+            this.txtMushNameChange.Size = new System.Drawing.Size(224, 39);
             this.txtMushNameChange.TabIndex = 4;
             this.txtMushNameChange.TabStop = false;
             // 
             // tabPageShajra
             // 
-            this.tabPageShajra.Location = new System.Drawing.Point(4, 34);
+            this.tabPageShajra.Location = new System.Drawing.Point(4, 40);
             this.tabPageShajra.Name = "tabPageShajra";
-            this.tabPageShajra.Size = new System.Drawing.Size(1457, 693);
+            this.tabPageShajra.Size = new System.Drawing.Size(1457, 687);
             this.tabPageShajra.TabIndex = 7;
             this.tabPageShajra.Text = "خاکہ";
             this.tabPageShajra.UseVisualStyleBackColor = true;
             this.tabPageShajra.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPageShajra_Paint);
             // 
-            // btnBadastoorMalikan
-            // 
-            this.btnBadastoorMalikan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBadastoorMalikan.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBadastoorMalikan.Location = new System.Drawing.Point(504, 38);
-            this.btnBadastoorMalikan.Name = "btnBadastoorMalikan";
-            this.btnBadastoorMalikan.Size = new System.Drawing.Size(136, 39);
-            this.btnBadastoorMalikan.TabIndex = 38;
-            this.btnBadastoorMalikan.Text = "بدستور کھاتہ مالکان";
-            this.btnBadastoorMalikan.UseVisualStyleBackColor = true;
-            this.btnBadastoorMalikan.Click += new System.EventHandler(this.btnBadastoorMalikan_Click);
-            // 
             // frmIntiqalKhattaJat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 733);
             this.Controls.Add(this.panel3);

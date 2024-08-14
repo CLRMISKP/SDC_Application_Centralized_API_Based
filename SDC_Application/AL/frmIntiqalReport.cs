@@ -265,6 +265,10 @@ namespace SDC_Application.AL
                 {
                     this.SetCredentials("IntiqalMain", rp, false);
                 }
+                else if (rbMalkiatToKasht.Checked)
+                {
+                    this.SetCredentials("IntiqalMainPart_Baeh_ADC_KhanaKasht_To_Malkiat", rp, false);
+                }
 
             }
         }

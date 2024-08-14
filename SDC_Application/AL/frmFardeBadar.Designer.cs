@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -511,6 +511,8 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
+            this.txtIntiqalNos = new System.Windows.Forms.TextBox();
+            this.label125 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -664,6 +666,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIntiqalNos);
+            this.groupBox1.Controls.Add(this.label125);
             this.groupBox1.Controls.Add(this.lblCancel);
             this.groupBox1.Controls.Add(this.btnFbCancel);
             this.groupBox1.Controls.Add(this.btnFbRevert);
@@ -712,7 +716,7 @@
             // 
             this.btnFbCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFbCancel.Image = global::SDC_Application.Resource1.fingerPrint_Cancel;
-            this.btnFbCancel.Location = new System.Drawing.Point(147, 484);
+            this.btnFbCancel.Location = new System.Drawing.Point(147, 526);
             this.btnFbCancel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnFbCancel.Name = "btnFbCancel";
             this.btnFbCancel.Size = new System.Drawing.Size(53, 50);
@@ -726,7 +730,7 @@
             this.btnFbRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFbRevert.Enabled = false;
             this.btnFbRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnFbRevert.Location = new System.Drawing.Point(75, 484);
+            this.btnFbRevert.Location = new System.Drawing.Point(75, 526);
             this.btnFbRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnFbRevert.Name = "btnFbRevert";
             this.btnFbRevert.Size = new System.Drawing.Size(59, 50);
@@ -740,7 +744,7 @@
             // 
             this.btnUploadDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUploadDoc.Image = global::SDC_Application.Resource1.Attach_44;
-            this.btnUploadDoc.Location = new System.Drawing.Point(275, 484);
+            this.btnUploadDoc.Location = new System.Drawing.Point(275, 526);
             this.btnUploadDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnUploadDoc.Name = "btnUploadDoc";
             this.btnUploadDoc.Size = new System.Drawing.Size(59, 50);
@@ -755,7 +759,7 @@
             this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(207, 485);
+            this.btnShowScanImg.Location = new System.Drawing.Point(207, 527);
             this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnShowScanImg.Name = "btnShowScanImg";
             this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
@@ -768,7 +772,7 @@
             // 
             this.chkMinKhataFb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkMinKhataFb.AutoSize = true;
-            this.chkMinKhataFb.Location = new System.Drawing.Point(191, 432);
+            this.chkMinKhataFb.Location = new System.Drawing.Point(191, 474);
             this.chkMinKhataFb.Name = "chkMinKhataFb";
             this.chkMinKhataFb.Size = new System.Drawing.Size(147, 35);
             this.chkMinKhataFb.TabIndex = 204;
@@ -780,7 +784,7 @@
             this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
             this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintMisalBadar.Location = new System.Drawing.Point(139, 422);
+            this.btnPrintMisalBadar.Location = new System.Drawing.Point(139, 464);
             this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
             this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
             this.btnPrintMisalBadar.TabIndex = 202;
@@ -794,7 +798,7 @@
             this.btnAmaldaramad.Enabled = false;
             this.btnAmaldaramad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAmaldaramad.Image = global::SDC_Application.Resource1.fingerPrint1;
-            this.btnAmaldaramad.Location = new System.Drawing.Point(82, 364);
+            this.btnAmaldaramad.Location = new System.Drawing.Point(82, 406);
             this.btnAmaldaramad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAmaldaramad.Name = "btnAmaldaramad";
             this.btnAmaldaramad.Size = new System.Drawing.Size(53, 48);
@@ -809,7 +813,7 @@
             this.btnConfirm.Enabled = false;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
-            this.btnConfirm.Location = new System.Drawing.Point(147, 364);
+            this.btnConfirm.Location = new System.Drawing.Point(147, 406);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(53, 48);
@@ -850,7 +854,7 @@
             this.dtpDateTehsilDar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDateTehsilDar.CustomFormat = "dd/MM/yyyy";
             this.dtpDateTehsilDar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateTehsilDar.Location = new System.Drawing.Point(90, 208);
+            this.dtpDateTehsilDar.Location = new System.Drawing.Point(90, 250);
             this.dtpDateTehsilDar.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpDateTehsilDar.Name = "dtpDateTehsilDar";
             this.dtpDateTehsilDar.Size = new System.Drawing.Size(183, 39);
@@ -862,7 +866,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(279, 208);
+            this.label3.Location = new System.Drawing.Point(279, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 31);
             this.label3.TabIndex = 48;
@@ -874,7 +878,7 @@
             this.dtpDateGardawari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDateGardawari.CustomFormat = "dd/MM/yyyy";
             this.dtpDateGardawari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateGardawari.Location = new System.Drawing.Point(90, 159);
+            this.dtpDateGardawari.Location = new System.Drawing.Point(90, 201);
             this.dtpDateGardawari.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpDateGardawari.Name = "dtpDateGardawari";
             this.dtpDateGardawari.Size = new System.Drawing.Size(183, 39);
@@ -885,7 +889,7 @@
             // 
             this.lbl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl11.AutoSize = true;
-            this.lbl11.Location = new System.Drawing.Point(279, 159);
+            this.lbl11.Location = new System.Drawing.Point(279, 201);
             this.lbl11.Name = "lbl11";
             this.lbl11.Size = new System.Drawing.Size(43, 31);
             this.lbl11.TabIndex = 46;
@@ -907,7 +911,7 @@
             this.cbFBDocuments.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbFBDocuments.DisplayMember = "FB_DocumentNo";
             this.cbFBDocuments.FormattingEnabled = true;
-            this.cbFBDocuments.Location = new System.Drawing.Point(90, 112);
+            this.cbFBDocuments.Location = new System.Drawing.Point(90, 154);
             this.cbFBDocuments.Name = "cbFBDocuments";
             this.cbFBDocuments.Size = new System.Drawing.Size(183, 39);
             this.cbFBDocuments.TabIndex = 43;
@@ -931,7 +935,7 @@
             // 
             this.btnSaveFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveFardBadar.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveFardBadar.Location = new System.Drawing.Point(215, 364);
+            this.btnSaveFardBadar.Location = new System.Drawing.Point(215, 406);
             this.btnSaveFardBadar.Name = "btnSaveFardBadar";
             this.btnSaveFardBadar.Size = new System.Drawing.Size(53, 48);
             this.btnSaveFardBadar.TabIndex = 41;
@@ -943,9 +947,9 @@
             // 
             this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(279, 223);
+            this.label73.Location = new System.Drawing.Point(279, 265);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(50, 31);
+            this.label73.Size = new System.Drawing.Size(48, 31);
             this.label73.TabIndex = 39;
             this.label73.Text = " تفصیل";
             // 
@@ -953,7 +957,7 @@
             // 
             this.btnNewFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewFardBadar.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewFardBadar.Location = new System.Drawing.Point(283, 364);
+            this.btnNewFardBadar.Location = new System.Drawing.Point(283, 406);
             this.btnNewFardBadar.Name = "btnNewFardBadar";
             this.btnNewFardBadar.Size = new System.Drawing.Size(53, 48);
             this.btnNewFardBadar.TabIndex = 42;
@@ -973,7 +977,7 @@
             // txtFardBadarTafseel
             // 
             this.txtFardBadarTafseel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFardBadarTafseel.Location = new System.Drawing.Point(89, 257);
+            this.txtFardBadarTafseel.Location = new System.Drawing.Point(89, 299);
             this.txtFardBadarTafseel.Multiline = true;
             this.txtFardBadarTafseel.Name = "txtFardBadarTafseel";
             this.txtFardBadarTafseel.Size = new System.Drawing.Size(241, 100);
@@ -1038,8 +1042,8 @@
             // 
             this.dgFBKhatajat.AllowUserToAddRows = false;
             this.dgFBKhatajat.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
             this.dgFBKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFBKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFBKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1049,8 +1053,8 @@
             this.dgFBKhatajat.MultiSelect = false;
             this.dgFBKhatajat.Name = "dgFBKhatajat";
             this.dgFBKhatajat.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle50;
             this.dgFBKhatajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFBKhatajat.Size = new System.Drawing.Size(1203, 188);
             this.dgFBKhatajat.TabIndex = 1;
@@ -1576,8 +1580,8 @@
             // 
             this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
             this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.AliceBlue;
+            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
             this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1587,8 +1591,8 @@
             this.GridViewKhewatMalikaan.MultiSelect = false;
             this.GridViewKhewatMalikaan.Name = "GridViewKhewatMalikaan";
             this.GridViewKhewatMalikaan.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle52;
             this.GridViewKhewatMalikaan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridViewKhewatMalikaan.Size = new System.Drawing.Size(1195, 292);
             this.GridViewKhewatMalikaan.TabIndex = 0;
@@ -2812,8 +2816,8 @@
             // 
             this.gridviewKhatooniMeezan.AllowUserToAddRows = false;
             this.gridviewKhatooniMeezan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle53.BackColor = System.Drawing.Color.AliceBlue;
+            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle53;
             this.gridviewKhatooniMeezan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridviewKhatooniMeezan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewKhatooniMeezan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2823,8 +2827,8 @@
             this.gridviewKhatooniMeezan.MultiSelect = false;
             this.gridviewKhatooniMeezan.Name = "gridviewKhatooniMeezan";
             this.gridviewKhatooniMeezan.ReadOnly = true;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle54;
             this.gridviewKhatooniMeezan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridviewKhatooniMeezan.Size = new System.Drawing.Size(1177, 294);
             this.gridviewKhatooniMeezan.TabIndex = 0;
@@ -3356,8 +3360,8 @@
             // 
             this.dgMushteriFareeqain.AllowUserToAddRows = false;
             this.dgMushteriFareeqain.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle55.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle55;
             this.dgMushteriFareeqain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMushteriFareeqain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMushteriFareeqain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -3367,8 +3371,8 @@
             this.dgMushteriFareeqain.MultiSelect = false;
             this.dgMushteriFareeqain.Name = "dgMushteriFareeqain";
             this.dgMushteriFareeqain.ReadOnly = true;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle56;
             this.dgMushteriFareeqain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMushteriFareeqain.Size = new System.Drawing.Size(1177, 283);
             this.dgMushteriFareeqain.TabIndex = 0;
@@ -4536,6 +4540,7 @@
             this.txtFatherName.Size = new System.Drawing.Size(137, 28);
             this.txtFatherName.TabIndex = 62;
             this.txtFatherName.Visible = false;
+            this.txtFatherName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
             // 
             // label37
             // 
@@ -4803,8 +4808,8 @@
             // 
             this.DgMinKhataList.AllowUserToAddRows = false;
             this.DgMinKhataList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
             this.DgMinKhataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMinKhataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMinKhataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -4814,8 +4819,8 @@
             this.DgMinKhataList.MultiSelect = false;
             this.DgMinKhataList.Name = "DgMinKhataList";
             this.DgMinKhataList.ReadOnly = true;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle58;
             this.DgMinKhataList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgMinKhataList.Size = new System.Drawing.Size(1183, 250);
             this.DgMinKhataList.TabIndex = 1;
@@ -5148,8 +5153,8 @@
             // 
             this.dgMinKhataMalkan.AllowUserToAddRows = false;
             this.dgMinKhataMalkan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle59.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle59;
             this.dgMinKhataMalkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMinKhataMalkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMinKhataMalkan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -5159,8 +5164,8 @@
             this.dgMinKhataMalkan.MultiSelect = false;
             this.dgMinKhataMalkan.Name = "dgMinKhataMalkan";
             this.dgMinKhataMalkan.ReadOnly = true;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle60;
             this.dgMinKhataMalkan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMinKhataMalkan.Size = new System.Drawing.Size(1175, 263);
             this.dgMinKhataMalkan.TabIndex = 0;
@@ -6162,6 +6167,28 @@
             this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
             this.txtTehsildarRpt.TabIndex = 56;
             // 
+            // txtIntiqalNos
+            // 
+            this.txtIntiqalNos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIntiqalNos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIntiqalNos.Location = new System.Drawing.Point(89, 113);
+            this.txtIntiqalNos.Name = "txtIntiqalNos";
+            this.txtIntiqalNos.Size = new System.Drawing.Size(184, 30);
+            this.txtIntiqalNos.TabIndex = 214;
+            this.ttMisal.SetToolTip(this.txtIntiqalNos, "اگر فرد بدر میں انتقال کی حوالہ دینے کی ضرورت ہو تو انتقال نمبر درج کریں ۔ اگر ان" +
+                    "تقال ایک سے زدہ ہو تو کوما ڈال کر انتقالات درج کریں۔");
+            this.txtIntiqalNos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntiqalNos_KeyPress);
+            // 
+            // label125
+            // 
+            this.label125.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(275, 113);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(71, 31);
+            this.label125.TabIndex = 215;
+            this.label125.Text = "بحوالہ انتقال";
+            // 
             // frmFardeBadar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -6777,5 +6804,7 @@
         private System.Windows.Forms.Label label124;
         private System.Windows.Forms.TextBox txtSearchCurrentKhewatFareeqain;
         private System.Windows.Forms.Button btnPersonKhatajat;
+        private System.Windows.Forms.TextBox txtIntiqalNos;
+        private System.Windows.Forms.Label label125;
     }
 }

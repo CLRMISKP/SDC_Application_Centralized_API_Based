@@ -412,7 +412,7 @@ namespace SDC_Application.AL
                 {
                     if (cbRelation.Text.Trim().Length > 0)
                     {
-                        if (SubmitWithPic())
+                        if (Submit())
                         {
 
                             this.labeltimetoken.Visible = true;

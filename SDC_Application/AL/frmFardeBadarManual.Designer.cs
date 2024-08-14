@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -496,6 +494,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exportToExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
+            this.txtIntiqalNos = new System.Windows.Forms.TextBox();
+            this.label125 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -641,6 +641,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIntiqalNos);
+            this.groupBox1.Controls.Add(this.label125);
             this.groupBox1.Controls.Add(this.lblCancel);
             this.groupBox1.Controls.Add(this.btnFbCancel);
             this.groupBox1.Controls.Add(this.btnFbRevert);
@@ -680,7 +682,7 @@
             this.lblCancel.AutoSize = true;
             this.lblCancel.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCancel.ForeColor = System.Drawing.Color.Red;
-            this.lblCancel.Location = new System.Drawing.Point(190, 488);
+            this.lblCancel.Location = new System.Drawing.Point(190, 533);
             this.lblCancel.Name = "lblCancel";
             this.lblCancel.Size = new System.Drawing.Size(24, 38);
             this.lblCancel.TabIndex = 214;
@@ -690,7 +692,7 @@
             // 
             this.btnFbCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFbCancel.Image = global::SDC_Application.Resource1.fingerPrint_Cancel;
-            this.btnFbCancel.Location = new System.Drawing.Point(292, 418);
+            this.btnFbCancel.Location = new System.Drawing.Point(292, 463);
             this.btnFbCancel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnFbCancel.Name = "btnFbCancel";
             this.btnFbCancel.Size = new System.Drawing.Size(53, 50);
@@ -704,7 +706,7 @@
             this.btnFbRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFbRevert.Enabled = false;
             this.btnFbRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnFbRevert.Location = new System.Drawing.Point(224, 416);
+            this.btnFbRevert.Location = new System.Drawing.Point(224, 461);
             this.btnFbRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnFbRevert.Name = "btnFbRevert";
             this.btnFbRevert.Size = new System.Drawing.Size(59, 50);
@@ -718,7 +720,7 @@
             // 
             this.btnUploadDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUploadDoc.Image = global::SDC_Application.Resource1.Attach_44;
-            this.btnUploadDoc.Location = new System.Drawing.Point(154, 416);
+            this.btnUploadDoc.Location = new System.Drawing.Point(154, 461);
             this.btnUploadDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnUploadDoc.Name = "btnUploadDoc";
             this.btnUploadDoc.Size = new System.Drawing.Size(59, 50);
@@ -733,7 +735,7 @@
             this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(85, 418);
+            this.btnShowScanImg.Location = new System.Drawing.Point(85, 463);
             this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnShowScanImg.Name = "btnShowScanImg";
             this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
@@ -746,7 +748,7 @@
             // 
             this.rbManualFb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbManualFb.AutoSize = true;
-            this.rbManualFb.Location = new System.Drawing.Point(153, 138);
+            this.rbManualFb.Location = new System.Drawing.Point(153, 183);
             this.rbManualFb.Name = "rbManualFb";
             this.rbManualFb.Size = new System.Drawing.Size(90, 35);
             this.rbManualFb.TabIndex = 205;
@@ -758,7 +760,7 @@
             this.rbMisal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMisal.AutoSize = true;
             this.rbMisal.Checked = true;
-            this.rbMisal.Location = new System.Drawing.Point(270, 138);
+            this.rbMisal.Location = new System.Drawing.Point(270, 183);
             this.rbMisal.Name = "rbMisal";
             this.rbMisal.Size = new System.Drawing.Size(58, 35);
             this.rbMisal.TabIndex = 204;
@@ -772,7 +774,7 @@
             this.btnAmaldaramad.Enabled = false;
             this.btnAmaldaramad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAmaldaramad.Image = global::SDC_Application.Resource1.Approve_icon2;
-            this.btnAmaldaramad.Location = new System.Drawing.Point(85, 352);
+            this.btnAmaldaramad.Location = new System.Drawing.Point(85, 397);
             this.btnAmaldaramad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAmaldaramad.Name = "btnAmaldaramad";
             this.btnAmaldaramad.Size = new System.Drawing.Size(53, 49);
@@ -786,7 +788,7 @@
             this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
             this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintMisalBadar.Location = new System.Drawing.Point(85, 129);
+            this.btnPrintMisalBadar.Location = new System.Drawing.Point(85, 174);
             this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
             this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
             this.btnPrintMisalBadar.TabIndex = 202;
@@ -800,7 +802,7 @@
             this.btnConfirm.Enabled = false;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
-            this.btnConfirm.Location = new System.Drawing.Point(154, 352);
+            this.btnConfirm.Location = new System.Drawing.Point(154, 397);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(53, 49);
@@ -841,7 +843,7 @@
             this.dtpDateTehsilDar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDateTehsilDar.CustomFormat = "dd/MM/yyyy";
             this.dtpDateTehsilDar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateTehsilDar.Location = new System.Drawing.Point(119, 511);
+            this.dtpDateTehsilDar.Location = new System.Drawing.Point(119, 556);
             this.dtpDateTehsilDar.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpDateTehsilDar.Name = "dtpDateTehsilDar";
             this.dtpDateTehsilDar.Size = new System.Drawing.Size(143, 39);
@@ -853,7 +855,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(270, 511);
+            this.label3.Location = new System.Drawing.Point(270, 556);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 31);
             this.label3.TabIndex = 48;
@@ -865,7 +867,7 @@
             this.dtpDateGardawari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDateGardawari.CustomFormat = "dd/MM/yyyy";
             this.dtpDateGardawari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateGardawari.Location = new System.Drawing.Point(106, 485);
+            this.dtpDateGardawari.Location = new System.Drawing.Point(106, 530);
             this.dtpDateGardawari.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dtpDateGardawari.Name = "dtpDateGardawari";
             this.dtpDateGardawari.Size = new System.Drawing.Size(143, 39);
@@ -877,7 +879,7 @@
             // 
             this.lbl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl11.AutoSize = true;
-            this.lbl11.Location = new System.Drawing.Point(257, 485);
+            this.lbl11.Location = new System.Drawing.Point(257, 530);
             this.lbl11.Name = "lbl11";
             this.lbl11.Size = new System.Drawing.Size(43, 31);
             this.lbl11.TabIndex = 46;
@@ -899,7 +901,7 @@
             this.cbFBDocuments.DisplayMember = "FB_DocumentNo";
             this.cbFBDocuments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFBDocuments.FormattingEnabled = true;
-            this.cbFBDocuments.Location = new System.Drawing.Point(202, 443);
+            this.cbFBDocuments.Location = new System.Drawing.Point(202, 488);
             this.cbFBDocuments.Name = "cbFBDocuments";
             this.cbFBDocuments.Size = new System.Drawing.Size(143, 39);
             this.cbFBDocuments.TabIndex = 43;
@@ -914,7 +916,7 @@
             this.btnSearchFB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearchFB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearchFB.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearchFB.Location = new System.Drawing.Point(134, 79);
+            this.btnSearchFB.Location = new System.Drawing.Point(134, 83);
             this.btnSearchFB.Name = "btnSearchFB";
             this.btnSearchFB.Size = new System.Drawing.Size(45, 33);
             this.btnSearchFB.TabIndex = 38;
@@ -926,7 +928,7 @@
             // 
             this.btnSaveFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveFardBadar.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveFardBadar.Location = new System.Drawing.Point(223, 352);
+            this.btnSaveFardBadar.Location = new System.Drawing.Point(223, 397);
             this.btnSaveFardBadar.Name = "btnSaveFardBadar";
             this.btnSaveFardBadar.Size = new System.Drawing.Size(53, 49);
             this.btnSaveFardBadar.TabIndex = 41;
@@ -938,9 +940,9 @@
             // 
             this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(271, 178);
+            this.label73.Location = new System.Drawing.Point(271, 223);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(50, 31);
+            this.label73.Size = new System.Drawing.Size(48, 31);
             this.label73.TabIndex = 39;
             this.label73.Text = " تفصیل";
             // 
@@ -948,7 +950,7 @@
             // 
             this.btnNewFardBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewFardBadar.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewFardBadar.Location = new System.Drawing.Point(292, 352);
+            this.btnNewFardBadar.Location = new System.Drawing.Point(292, 397);
             this.btnNewFardBadar.Name = "btnNewFardBadar";
             this.btnNewFardBadar.Size = new System.Drawing.Size(53, 49);
             this.btnNewFardBadar.TabIndex = 42;
@@ -960,7 +962,7 @@
             // 
             this.txtFardBadarDocNO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFardBadarDocNO.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFardBadarDocNO.Location = new System.Drawing.Point(185, 79);
+            this.txtFardBadarDocNO.Location = new System.Drawing.Point(185, 83);
             this.txtFardBadarDocNO.Name = "txtFardBadarDocNO";
             this.txtFardBadarDocNO.Size = new System.Drawing.Size(92, 30);
             this.txtFardBadarDocNO.TabIndex = 36;
@@ -968,7 +970,7 @@
             // txtFardBadarTafseel
             // 
             this.txtFardBadarTafseel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFardBadarTafseel.Location = new System.Drawing.Point(123, 215);
+            this.txtFardBadarTafseel.Location = new System.Drawing.Point(123, 260);
             this.txtFardBadarTafseel.Multiline = true;
             this.txtFardBadarTafseel.Name = "txtFardBadarTafseel";
             this.txtFardBadarTafseel.Size = new System.Drawing.Size(201, 121);
@@ -980,9 +982,9 @@
             // 
             this.label77.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(280, 77);
+            this.label77.Location = new System.Drawing.Point(280, 81);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(66, 31);
+            this.label77.Size = new System.Drawing.Size(64, 31);
             this.label77.TabIndex = 37;
             this.label77.Text = " فردبدرنمبر";
             // 
@@ -1032,8 +1034,8 @@
             // 
             this.dgFBKhatajat.AllowUserToAddRows = false;
             this.dgFBKhatajat.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
             this.dgFBKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFBKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFBKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1043,8 +1045,8 @@
             this.dgFBKhatajat.MultiSelect = false;
             this.dgFBKhatajat.Name = "dgFBKhatajat";
             this.dgFBKhatajat.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle38;
             this.dgFBKhatajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFBKhatajat.Size = new System.Drawing.Size(1243, 161);
             this.dgFBKhatajat.TabIndex = 1;
@@ -1561,35 +1563,19 @@
             // 
             this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
             this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.AliceBlue;
+            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
             this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridViewKhewatMalikaan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCheck});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridViewKhewatMalikaan.DefaultCellStyle = dataGridViewCellStyle5;
             this.GridViewKhewatMalikaan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewKhewatMalikaan.Location = new System.Drawing.Point(0, 0);
             this.GridViewKhewatMalikaan.MultiSelect = false;
             this.GridViewKhewatMalikaan.Name = "GridViewKhewatMalikaan";
             this.GridViewKhewatMalikaan.ReadOnly = true;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.GridViewKhewatMalikaan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GridViewKhewatMalikaan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridViewKhewatMalikaan.Size = new System.Drawing.Size(1235, 253);
@@ -2758,8 +2744,8 @@
             // 
             this.gridviewKhatooniMeezan.AllowUserToAddRows = false;
             this.gridviewKhatooniMeezan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.AliceBlue;
+            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.gridviewKhatooniMeezan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridviewKhatooniMeezan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewKhatooniMeezan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2769,8 +2755,8 @@
             this.gridviewKhatooniMeezan.MultiSelect = false;
             this.gridviewKhatooniMeezan.Name = "gridviewKhatooniMeezan";
             this.gridviewKhatooniMeezan.ReadOnly = true;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.gridviewKhatooniMeezan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridviewKhatooniMeezan.Size = new System.Drawing.Size(1217, 267);
             this.gridviewKhatooniMeezan.TabIndex = 0;
@@ -3306,8 +3292,8 @@
             // 
             this.dgMushteriFareeqain.AllowUserToAddRows = false;
             this.dgMushteriFareeqain.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dgMushteriFareeqain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMushteriFareeqain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMushteriFareeqain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -3317,8 +3303,8 @@
             this.dgMushteriFareeqain.MultiSelect = false;
             this.dgMushteriFareeqain.Name = "dgMushteriFareeqain";
             this.dgMushteriFareeqain.ReadOnly = true;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle44;
             this.dgMushteriFareeqain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMushteriFareeqain.Size = new System.Drawing.Size(1217, 256);
             this.dgMushteriFareeqain.TabIndex = 0;
@@ -4743,8 +4729,8 @@
             // 
             this.DgMinKhataList.AllowUserToAddRows = false;
             this.DgMinKhataList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
             this.DgMinKhataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMinKhataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMinKhataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -4754,8 +4740,8 @@
             this.DgMinKhataList.MultiSelect = false;
             this.DgMinKhataList.Name = "DgMinKhataList";
             this.DgMinKhataList.ReadOnly = true;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle46;
             this.DgMinKhataList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgMinKhataList.Size = new System.Drawing.Size(1223, 223);
             this.DgMinKhataList.TabIndex = 1;
@@ -5088,8 +5074,8 @@
             // 
             this.dgMinKhataMalkan.AllowUserToAddRows = false;
             this.dgMinKhataMalkan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle47;
             this.dgMinKhataMalkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMinKhataMalkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMinKhataMalkan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -5099,8 +5085,8 @@
             this.dgMinKhataMalkan.MultiSelect = false;
             this.dgMinKhataMalkan.Name = "dgMinKhataMalkan";
             this.dgMinKhataMalkan.ReadOnly = true;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle48;
             this.dgMinKhataMalkan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMinKhataMalkan.Size = new System.Drawing.Size(1215, 236);
             this.dgMinKhataMalkan.TabIndex = 0;
@@ -5978,6 +5964,28 @@
             this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
             this.exportToExcelToolStripMenuItem.Text = "Export To Excel";
             // 
+            // txtIntiqalNos
+            // 
+            this.txtIntiqalNos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIntiqalNos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIntiqalNos.Location = new System.Drawing.Point(94, 129);
+            this.txtIntiqalNos.Name = "txtIntiqalNos";
+            this.txtIntiqalNos.Size = new System.Drawing.Size(184, 30);
+            this.txtIntiqalNos.TabIndex = 216;
+            this.ttMisal.SetToolTip(this.txtIntiqalNos, "اگر فرد بدر میں انتقال کی حوالہ دینے کی ضرورت ہو تو انتقال نمبر درج کریں ۔ اگر ان" +
+                    "تقال ایک سے زدہ ہو تو کوما ڈال کر انتقالات درج کریں۔");
+            this.txtIntiqalNos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntiqalNos_KeyPress);
+            // 
+            // label125
+            // 
+            this.label125.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(280, 129);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(71, 31);
+            this.label125.TabIndex = 217;
+            this.label125.Text = "بحوالہ انتقال";
+            // 
             // frmFardeBadarManual
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -6566,5 +6574,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelBayanEdit;
         private System.Windows.Forms.Button btnFbCancel;
         private System.Windows.Forms.Label lblCancel;
+        private System.Windows.Forms.TextBox txtIntiqalNos;
+        private System.Windows.Forms.Label label125;
     }
 }

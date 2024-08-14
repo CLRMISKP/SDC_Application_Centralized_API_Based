@@ -2450,6 +2450,60 @@ namespace SDC_Application
                 obj.Show();
             }
         }
+
+        private void mnuSubInitqalEntryByOperatorNonAdmin_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 42;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuFardBadarEntryRptNonAdmin_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 58;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuTokenandServiceNonAdmin_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 70;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
      
     }
 }

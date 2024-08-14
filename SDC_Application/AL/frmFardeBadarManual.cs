@@ -1401,12 +1401,13 @@ namespace SDC_Application.AL
                    {
                    string fbId=txtFbId.Text.Trim()!=""?txtFbId.Text.Trim():"-1";
                         int isManualFb=rbManualFb.Checked?1:0;
-                        string LastId = misalBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, isManualFb);
+                        string LastId = misalBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, isManualFb, txtIntiqalNos.Text.Trim());
                         txtFbId.Text = LastId;
                         if (txtFbId.Text.Length > 5)
                         {
                             MessageBox.Show("مثل / فرد بدر اندراج ہو گیا ہے۔", "");
                             this.txtFardBadarDocNO.Clear();
+                            txtIntiqalNos.Clear();
                             this.dtpDateGardawari.Value = DateTime.Now;
                             this.dtpDateTehsilDar.Value = DateTime.Now;
                             this.txtFardBadarDocNO.Focus();
@@ -1488,6 +1489,7 @@ namespace SDC_Application.AL
                     this.AmaldaramadStatus = Convert.ToBoolean(dtMisalDetails.Rows[0]["AmaldaramadStatus"].ToString());
                     this.isManualFb = Convert.ToBoolean(dtMisalDetails.Rows[0]["isManualFB"].ToString());
                     bool Cancel = Convert.ToBoolean(dtMisalDetails.Rows[0]["Cancel"].ToString());
+                    txtIntiqalNos.Text = dtMisalDetails.Rows[0]["IntiqalDetails"].ToString();
                     rbManualFb.Checked = isManualFb;
                     btnAmaldaramad.Enabled = false;
                     btnConfirm.Enabled = UsersManagments._IsAdmin ? !ConfirmationStatus : false;//!ConfirmationStatus;
@@ -3921,6 +3923,14 @@ namespace SDC_Application.AL
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void txtIntiqalNos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '/' && e.KeyChar != ',')
+            {
+                e.Handled = true;
             }
         }
     }

@@ -2757,5 +2757,18 @@ namespace SDC_Application.AL
                 MessageBox.Show("محفوظ شدہ بائع کا انتخاب کریں۔");
         }
 
+        private void txtDrustNaam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar((Keys.Back)))
+            {
+
+            }
+            else
+            {
+                e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
+            }
+        }
+
+
     }
 }

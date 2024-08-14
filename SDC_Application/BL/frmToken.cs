@@ -25,7 +25,8 @@ namespace SDC_Application.BL
 
         public DataTable filldatatable_from_storedProcedure(String spName ,SqlParameter[] parameters)
         {
-            return ojbdb.filldatatable_from_storedProcedure(spName,parameters);
+            //return ojbdb.filldatatable_from_storedProcedure(spName,parameters);
+            return null;
         }
 
 

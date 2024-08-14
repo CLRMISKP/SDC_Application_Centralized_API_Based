@@ -44,6 +44,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbMalkiatToKasht = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.rbIntiqalOldType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbIntiqalOldType.AutoSize = true;
             this.rbIntiqalOldType.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbIntiqalOldType.Location = new System.Drawing.Point(203, 42);
+            this.rbIntiqalOldType.Location = new System.Drawing.Point(186, 40);
             this.rbIntiqalOldType.Margin = new System.Windows.Forms.Padding(4);
             this.rbIntiqalOldType.Name = "rbIntiqalOldType";
             this.rbIntiqalOldType.Size = new System.Drawing.Size(123, 42);
@@ -66,7 +67,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(133, 40);
+            this.button1.Location = new System.Drawing.Point(98, 39);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 44);
@@ -79,7 +80,7 @@
             this.rbKasht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbKasht.AutoSize = true;
             this.rbKasht.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbKasht.Location = new System.Drawing.Point(618, 42);
+            this.rbKasht.Location = new System.Drawing.Point(774, 42);
             this.rbKasht.Margin = new System.Windows.Forms.Padding(4);
             this.rbKasht.Name = "rbKasht";
             this.rbKasht.Size = new System.Drawing.Size(96, 42);
@@ -93,7 +94,7 @@
             this.rbMalkiat.AutoSize = true;
             this.rbMalkiat.Checked = true;
             this.rbMalkiat.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMalkiat.Location = new System.Drawing.Point(714, 42);
+            this.rbMalkiat.Location = new System.Drawing.Point(870, 42);
             this.rbMalkiat.Margin = new System.Windows.Forms.Padding(4);
             this.rbMalkiat.Name = "rbMalkiat";
             this.rbMalkiat.Size = new System.Drawing.Size(98, 42);
@@ -112,7 +113,7 @@
             this.cmbIntiqalNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIntiqalNo.FormattingEnabled = true;
             this.cmbIntiqalNo.IntegralHeight = false;
-            this.cmbIntiqalNo.Location = new System.Drawing.Point(815, 46);
+            this.cmbIntiqalNo.Location = new System.Drawing.Point(971, 46);
             this.cmbIntiqalNo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbIntiqalNo.Name = "cmbIntiqalNo";
             this.cmbIntiqalNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -125,7 +126,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1216, 42);
+            this.label1.Location = new System.Drawing.Point(1372, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 38);
@@ -137,7 +138,7 @@
             this.rbMalkiatKasht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMalkiatKasht.AutoSize = true;
             this.rbMalkiatKasht.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMalkiatKasht.Location = new System.Drawing.Point(326, 42);
+            this.rbMalkiatKasht.Location = new System.Drawing.Point(482, 42);
             this.rbMalkiatKasht.Margin = new System.Windows.Forms.Padding(4);
             this.rbMalkiatKasht.Name = "rbMalkiatKasht";
             this.rbMalkiatKasht.Size = new System.Drawing.Size(140, 42);
@@ -156,7 +157,7 @@
             this.cmbMouza.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMouza.FormattingEnabled = true;
             this.cmbMouza.IntegralHeight = false;
-            this.cmbMouza.Location = new System.Drawing.Point(1027, 46);
+            this.cmbMouza.Location = new System.Drawing.Point(1183, 46);
             this.cmbMouza.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMouza.Name = "cmbMouza";
             this.cmbMouza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -170,7 +171,7 @@
             this.rbWirasat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbWirasat.AutoSize = true;
             this.rbWirasat.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbWirasat.Location = new System.Drawing.Point(466, 42);
+            this.rbWirasat.Location = new System.Drawing.Point(622, 42);
             this.rbWirasat.Margin = new System.Windows.Forms.Padding(4);
             this.rbWirasat.Name = "rbWirasat";
             this.rbWirasat.Size = new System.Drawing.Size(81, 42);
@@ -183,7 +184,7 @@
             this.lbl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(1679, 36);
+            this.lbl1.Location = new System.Drawing.Point(1835, 36);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(62, 38);
@@ -195,7 +196,7 @@
             this.rbTaqseem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbTaqseem.AutoSize = true;
             this.rbTaqseem.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTaqseem.Location = new System.Drawing.Point(547, 42);
+            this.rbTaqseem.Location = new System.Drawing.Point(703, 42);
             this.rbTaqseem.Margin = new System.Windows.Forms.Padding(4);
             this.rbTaqseem.Name = "rbTaqseem";
             this.rbTaqseem.Size = new System.Drawing.Size(71, 42);
@@ -211,11 +212,12 @@
             this.rvIntiqalReport.Margin = new System.Windows.Forms.Padding(4);
             this.rvIntiqalReport.Name = "rvIntiqalReport";
             this.rvIntiqalReport.ShowParameterPrompts = false;
-            this.rvIntiqalReport.Size = new System.Drawing.Size(1272, 426);
+            this.rvIntiqalReport.Size = new System.Drawing.Size(1428, 426);
             this.rvIntiqalReport.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbMalkiatToKasht);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.rbIntiqalOldType);
             this.groupBox1.Controls.Add(this.button1);
@@ -233,7 +235,7 @@
             this.groupBox1.Location = new System.Drawing.Point(7, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(1278, 100);
+            this.groupBox1.Size = new System.Drawing.Size(1434, 100);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "انتقال کا انتخاب کریں";
@@ -243,7 +245,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(952, 44);
+            this.label2.Location = new System.Drawing.Point(1108, 44);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 38);
@@ -257,14 +259,28 @@
             this.groupBox3.Location = new System.Drawing.Point(7, 106);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(1278, 447);
+            this.groupBox3.Size = new System.Drawing.Size(1434, 447);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
+            // 
+            // rbMalkiatToKasht
+            // 
+            this.rbMalkiatToKasht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbMalkiatToKasht.AutoSize = true;
+            this.rbMalkiatToKasht.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMalkiatToKasht.Location = new System.Drawing.Point(319, 42);
+            this.rbMalkiatToKasht.Margin = new System.Windows.Forms.Padding(4);
+            this.rbMalkiatToKasht.Name = "rbMalkiatToKasht";
+            this.rbMalkiatToKasht.Size = new System.Drawing.Size(157, 42);
+            this.rbMalkiatToKasht.TabIndex = 61;
+            this.rbMalkiatToKasht.Text = "خانہ کاشت سے ملکیت";
+            this.rbMalkiatToKasht.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbMalkiatToKasht.UseVisualStyleBackColor = true;
             // 
             // frmIntiqalReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1292, 559);
+            this.ClientSize = new System.Drawing.Size(1448, 559);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -299,6 +315,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rbMalkiatToKasht;
 
 
 

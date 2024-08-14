@@ -2323,7 +2323,7 @@
             // btnSaveTafseel
             // 
             this.btnSaveTafseel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTafseel.Location = new System.Drawing.Point(264, 49);
+            this.btnSaveTafseel.Location = new System.Drawing.Point(266, 49);
             this.btnSaveTafseel.Name = "btnSaveTafseel";
             this.btnSaveTafseel.Size = new System.Drawing.Size(92, 33);
             this.btnSaveTafseel.TabIndex = 515;
@@ -2333,7 +2333,7 @@
             // btnGetTafseel
             // 
             this.btnGetTafseel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGetTafseel.Location = new System.Drawing.Point(263, 7);
+            this.btnGetTafseel.Location = new System.Drawing.Point(265, 7);
             this.btnGetTafseel.Name = "btnGetTafseel";
             this.btnGetTafseel.Size = new System.Drawing.Size(94, 33);
             this.btnGetTafseel.TabIndex = 513;
@@ -2349,7 +2349,7 @@
             this.txtKulTafsilKasht.Location = new System.Drawing.Point(8, 7);
             this.txtKulTafsilKasht.Multiline = true;
             this.txtKulTafsilKasht.Name = "txtKulTafsilKasht";
-            this.txtKulTafsilKasht.Size = new System.Drawing.Size(362, 75);
+            this.txtKulTafsilKasht.Size = new System.Drawing.Size(364, 75);
             this.txtKulTafsilKasht.TabIndex = 1;
             // 
             // panel16

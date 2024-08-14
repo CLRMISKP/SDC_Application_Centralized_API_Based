@@ -3658,6 +3658,7 @@
             this.txtDrustNaam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDrustNaam.Size = new System.Drawing.Size(137, 28);
             this.txtDrustNaam.TabIndex = 52;
+            this.txtDrustNaam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDrustNaam_KeyPress);
             // 
             // label81
             // 
