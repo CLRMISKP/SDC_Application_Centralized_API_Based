@@ -1339,6 +1339,7 @@
     </Compile>
     <Compile Include="TokenReport.cs">
       <DependentUpon>TokenReport.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TokenReport.Designer.cs">
       <AutoGen>True</AutoGen>

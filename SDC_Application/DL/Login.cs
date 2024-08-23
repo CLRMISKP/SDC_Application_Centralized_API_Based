@@ -42,7 +42,7 @@ namespace SDC_Application.DL
         private void Login_Load(object sender, EventArgs e)
         {
 
-            visibleWifis = new WifiUtils().GetVisibleWifiSSIDs_CSV();
+            //visibleWifis = new WifiUtils().GetVisibleWifiSSIDs_CSV();
 
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text; DataGridViewHelper.addHelpterToAllFormGridViews(this);
