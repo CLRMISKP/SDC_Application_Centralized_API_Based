@@ -572,7 +572,10 @@
             "شوہر",
             "ہمشیرہ",
             "برادر",
-            "نمائندہ"});
+            "نمائندہ",
+            "بنام",
+            "بھتیجا",
+            "بانھجا"});
             this.cbRelation.Location = new System.Drawing.Point(67, 97);
             this.cbRelation.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cbRelation.Name = "cbRelation";

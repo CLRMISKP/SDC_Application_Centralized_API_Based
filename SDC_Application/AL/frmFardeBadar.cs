@@ -3467,6 +3467,7 @@ namespace SDC_Application.AL
                     this.txt_kanal_Khasra.Text = g.CurrentRow.Cells["Kanal"].Value.ToString();
                     this.txt_Marala_Khasra.Text = g.CurrentRow.Cells["Marla"].Value.ToString();
                     this.txtMinKhassraNo.Text = g.CurrentRow.Cells["KhassraNo"].Value.ToString();
+                    this.txtKhassraNoMinOld.Text = g.CurrentRow.Cells["KhassraNo"].Value.ToString();
                     this.txtMinKhassraDetailId.Text = g.CurrentRow.Cells["KhassraDetailId"].Value.ToString();
                     this.txt_Sarsai_Khasra.Text = g.CurrentRow.Cells["Sarsai"].Value.ToString();
                     this.txt_Feet_Khasra.Text = g.CurrentRow.Cells["Feet"].Value.ToString();
@@ -3493,6 +3494,10 @@ namespace SDC_Application.AL
 
         private void btnSaveMinKhassra_Click(object sender, EventArgs e)
         {
+            if (txtKhassraNoMinOld.Text.Trim() != this.txtMinKhassraNo.Text.Trim())
+            {
+                string KhassraNo = MinKhataMethods.WEB_SP_INSERT_KhassraRegistert(txtMinKhassraId.Text, cmbMouza.SelectedValue.ToString(), "0", txtMinKhassraNo.Text.Trim(), "", UsersManagments.UserId.ToString(), UsersManagments.UserName, cmbkhatoonisnew.SelectedValue.ToString());
+            }
             string KhassrDetailId=MinKhataMethods.WEB_SP_INSERT_KhassraRegisterDetail(txtMinKhassraDetailId.Text, txtMinKhassraId.Text, cmbMinKhewattypes.SelectedValue.ToString(), txt_kanal_Khasra.Text, txt_Marala_Khasra.Text, txt_Sarsai_Khasra.Text, txt_Feet_Khasra.Text, UsersManagments.UserId.ToString());
             FillKhasraJatNew();
             ClearFormControls(gbMinKhataKhassras);
