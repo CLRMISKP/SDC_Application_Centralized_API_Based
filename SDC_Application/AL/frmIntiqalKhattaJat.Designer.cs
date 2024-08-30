@@ -1818,6 +1818,7 @@ namespace SDC_Application.AL
             this.btnLandTax.TabIndex = 1043;
             this.btnLandTax.TabStop = false;
             this.btnLandTax.UseVisualStyleBackColor = true;
+            this.btnLandTax.Visible = false;
             this.btnLandTax.Click += new System.EventHandler(this.btnLandTax_Click);
             // 
             // label12
@@ -4775,7 +4776,7 @@ namespace SDC_Application.AL
             this.tabPage7.Location = new System.Drawing.Point(4, 40);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1443, 643);
+            this.tabPage7.Size = new System.Drawing.Size(1443, 637);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "مالکان";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -4786,7 +4787,7 @@ namespace SDC_Application.AL
             this.groupBox28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox28.Location = new System.Drawing.Point(109, 218);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(1331, 331);
+            this.groupBox28.Size = new System.Drawing.Size(1331, 325);
             this.groupBox28.TabIndex = 22;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "اندراج شدہ کھاتہ مالکان";
@@ -4805,7 +4806,7 @@ namespace SDC_Application.AL
             this.grdMushtrianMalinkanChange.ReadOnly = true;
             this.grdMushtrianMalinkanChange.RowTemplate.Height = 30;
             this.grdMushtrianMalinkanChange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1325, 293);
+            this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1325, 287);
             this.grdMushtrianMalinkanChange.TabIndex = 7;
             this.grdMushtrianMalinkanChange.SelectionChanged += new System.EventHandler(this.grdMushtrianMalinkanChange_SelectionChanged);
             this.grdMushtrianMalinkanChange.DoubleClick += new System.EventHandler(this.grdMushtrianMalinkanChange_DoubleClick);
@@ -4830,7 +4831,7 @@ namespace SDC_Application.AL
             this.groupBox31.Controls.Add(this.label44);
             this.groupBox31.Controls.Add(this.btnRaqbaBamutabiqHissa);
             this.groupBox31.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox31.Location = new System.Drawing.Point(109, 549);
+            this.groupBox31.Location = new System.Drawing.Point(109, 543);
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.Size = new System.Drawing.Size(1331, 91);
             this.groupBox31.TabIndex = 14;
@@ -5350,7 +5351,7 @@ namespace SDC_Application.AL
             this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel17.Location = new System.Drawing.Point(3, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(106, 637);
+            this.panel17.Size = new System.Drawing.Size(106, 631);
             this.panel17.TabIndex = 19;
             // 
             // label107
@@ -5449,7 +5450,7 @@ namespace SDC_Application.AL
             this.tabPage8.Location = new System.Drawing.Point(4, 40);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1443, 643);
+            this.tabPage8.Size = new System.Drawing.Size(1443, 637);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "کھتونی";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -5461,7 +5462,7 @@ namespace SDC_Application.AL
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(3, 3);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1437, 637);
+            this.panel13.Size = new System.Drawing.Size(1437, 631);
             this.panel13.TabIndex = 32;
             // 
             // gbSubKhataKhatooni
@@ -5474,7 +5475,7 @@ namespace SDC_Application.AL
             this.gbSubKhataKhatooni.Location = new System.Drawing.Point(0, 0);
             this.gbSubKhataKhatooni.Name = "gbSubKhataKhatooni";
             this.gbSubKhataKhatooni.Padding = new System.Windows.Forms.Padding(4, 1, 4, 2);
-            this.gbSubKhataKhatooni.Size = new System.Drawing.Size(1435, 635);
+            this.gbSubKhataKhatooni.Size = new System.Drawing.Size(1435, 629);
             this.gbSubKhataKhatooni.TabIndex = 1007;
             // 
             // groupBox15
@@ -5483,7 +5484,7 @@ namespace SDC_Application.AL
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(4, 262);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(1425, 369);
+            this.groupBox15.Size = new System.Drawing.Size(1425, 363);
             this.groupBox15.TabIndex = 1012;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "تفصیل درج شدہ کھتونی";
@@ -5502,7 +5503,7 @@ namespace SDC_Application.AL
             this.grdGetkhatonichange.ReadOnly = true;
             this.grdGetkhatonichange.RowTemplate.Height = 30;
             this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdGetkhatonichange.Size = new System.Drawing.Size(1419, 331);
+            this.grdGetkhatonichange.Size = new System.Drawing.Size(1419, 325);
             this.grdGetkhatonichange.TabIndex = 7;
             this.grdGetkhatonichange.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGetkhatonichange_CellClick);
             this.grdGetkhatonichange.DoubleClick += new System.EventHandler(this.grdGetkhatonichange_DoubleClick);
@@ -6327,7 +6328,7 @@ namespace SDC_Application.AL
             this.tabMushtaryan.Location = new System.Drawing.Point(4, 40);
             this.tabMushtaryan.Name = "tabMushtaryan";
             this.tabMushtaryan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMushtaryan.Size = new System.Drawing.Size(1443, 643);
+            this.tabMushtaryan.Size = new System.Drawing.Size(1443, 637);
             this.tabMushtaryan.TabIndex = 5;
             this.tabMushtaryan.Text = "مشتریان";
             this.tabMushtaryan.UseVisualStyleBackColor = true;
@@ -6339,7 +6340,7 @@ namespace SDC_Application.AL
             this.groupBox38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox38.Location = new System.Drawing.Point(3, 3);
             this.groupBox38.Name = "groupBox38";
-            this.groupBox38.Size = new System.Drawing.Size(1437, 637);
+            this.groupBox38.Size = new System.Drawing.Size(1437, 631);
             this.groupBox38.TabIndex = 2;
             this.groupBox38.TabStop = false;
             // 
@@ -6350,7 +6351,7 @@ namespace SDC_Application.AL
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 192);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1431, 442);
+            this.panel6.Size = new System.Drawing.Size(1431, 436);
             this.panel6.TabIndex = 107;
             // 
             // dgvMushtryan
@@ -6367,7 +6368,7 @@ namespace SDC_Application.AL
             this.dgvMushtryan.ReadOnly = true;
             this.dgvMushtryan.RowTemplate.Height = 30;
             this.dgvMushtryan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMushtryan.Size = new System.Drawing.Size(1431, 344);
+            this.dgvMushtryan.Size = new System.Drawing.Size(1431, 338);
             this.dgvMushtryan.TabIndex = 7;
             // 
             // chk_change_Mushtryan
@@ -6389,7 +6390,7 @@ namespace SDC_Application.AL
             this.groupBox39.Controls.Add(this.txtKHThissaDiff);
             this.groupBox39.Controls.Add(this.label136);
             this.groupBox39.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox39.Location = new System.Drawing.Point(0, 344);
+            this.groupBox39.Location = new System.Drawing.Point(0, 338);
             this.groupBox39.Name = "groupBox39";
             this.groupBox39.Size = new System.Drawing.Size(1431, 98);
             this.groupBox39.TabIndex = 14;
