@@ -1217,9 +1217,9 @@ namespace SDC_Application.AL
             this.txtFrokhtSarsai.Text = "";
             this.txtFrokhtMarla.Text = "";
 
-            this.txtMushterkaKanal.Text = "";
-            this.txtMushterkaSarsai.Text = "";
-            this.lblMushterkaMarla.Text = "";
+            //this.txtMushterkaKanal.Text = "";
+            //this.txtMushterkaSarsai.Text = "";
+            //this.txtMushterkamarla.Text = "";
 
             this.txtFardHissay.Text = "";
             this.txtFardKanal.Text = "";
@@ -1262,6 +1262,7 @@ namespace SDC_Application.AL
                                 proc_Get_Intiqal_Sellers_List_ByKhata(IntiqalKhataRecId, KhatoniRecid);
                                 CalculateSellerBuyerRaqbaHissa();
                                 btnDelSeller.Enabled = false;
+                                chkDeleteAllBayan.Checked = false;
                                 ClearAll();
 
                             }
@@ -1666,7 +1667,13 @@ namespace SDC_Application.AL
         {
             try
             {
-                if (chkHissaTransferred.Checked && float.Parse(txtMushterkaSarsai.Text.Trim()) >= 0 && txtHissaMuntaqila.Text.Trim().Length > 0 && float.Parse(txtHissaMuntaqila.Text.Trim()) > KhataHissa)
+                 if (chkHissaTransferred.Checked && txtHissaMuntaqila.Text.Trim().Length ==0)
+                {
+
+                    MessageBox.Show(" منتقل کردہ حصہ کا اندراج کریں۔", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else if (chkHissaTransferred.Checked &&  txtHissaMuntaqila.Text.Trim().Length > 0 && float.Parse(txtHissaMuntaqila.Text.Trim()) > KhataHissa)
                 {
 
                     MessageBox.Show(" منتقل کردہ حصہ کھاتے کے کل حصے سے زیادہ ہے۔", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1728,7 +1735,7 @@ namespace SDC_Application.AL
                             float mmrSft = mmrSarsai * (float)30.25;
                             string chkMushtharaqachecked = this.chkMushtharaqa.Checked.ToString();
                             float TotalHissaMuniaqila = txtHissaMuntaqila.Text.Trim() != "" ? float.Parse(txtHissaMuntaqila.Text.Trim()) : 0;
-                            if (chkHissaTransferred.Checked && float.Parse(txtMushterkaSarsai.Text.Trim()) >= 0 && txtHissaMuntaqila.Text.Trim().Length > 0)
+                            if (chkHissaTransferred.Checked &&  txtHissaMuntaqila.Text.Trim().Length > 0)
                             {
 
                                 Intiqal.SetMushtarkaRaqbaMuntiqlaByHissa(IntiqalKhataRecId, TotalHissaMuniaqila.ToString(), mmrKanal.ToString(), mmrMarla.ToString(), mmrSarsai.ToString(), mmrSft.ToString());
@@ -6894,6 +6901,33 @@ namespace SDC_Application.AL
         void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
             cmbtaqseemChange_SelectionChangeCommitted(sender, e);
+        }
+
+        private void chkHissaTransferred_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txtMushterkaKanal.Clear();
+            txtMushterkamarla.Clear();
+            txtMushterkaSarsai.Clear();
+
+            if (chkHissaTransferred.Checked)
+            {
+                txtHissaMuntaqila.Clear();
+                txtHissaMuntaqila.Enabled = true;
+
+                txtMushterkaKanal.Enabled = false;
+                txtMushterkamarla.Enabled = false;
+                txtMushterkaSarsai.Enabled = false;
+
+            }
+            else
+            {
+                txtHissaMuntaqila.Clear();
+                txtHissaMuntaqila.Enabled = false;
+
+                txtMushterkaKanal.Enabled = true;
+                txtMushterkamarla.Enabled = true;
+                txtMushterkaSarsai.Enabled = true;
+            }
         }
     }
 }
