@@ -206,6 +206,10 @@ namespace SDC_Application.AL
                     btnConfirm.Enabled =!Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
                     btnUnConfirm.Enabled= Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
                     txtOperatorReport.Text = dt.Rows[0]["OperatorReport"].ToString();
+                    if (UsersManagments.UserId.ToString() == dt.Rows[0]["InsertUserId"].ToString() || dt.Rows[0]["InsertUserId"].ToString()=="0")
+                        rvIntiqalReport.ShowPrintButton = true;
+                    else
+                        rvIntiqalReport.ShowPrintButton = false;
                     this.gbKhatajat.Enabled = !isConfirm;
                     gbKhatooni.Enabled = !isConfirm;
                     gbKhewatFareeqain.Enabled = !isConfirm;

@@ -263,11 +263,11 @@ namespace SDC_Application.AL
                 string personid =row.Cells["PersonId"].Value.ToString();
                 string fardareapart =  row.Cells["FardAreaPart"].Value.ToString();// txtFardHissa.Text.Trim() != "" ? float.Parse(this.txtFardHissa.Text.ToString()) : 0;
                 string[] area = cmnFns.CalculatedAreaFromHisa(float.Parse(KhataHissasArea.Rows[0]["TotalParts"].ToString()), float.Parse(fardareapart), Convert.ToInt32(KhataHissasArea.Rows[0]["Khata_Kanal"].ToString()), Convert.ToInt32(KhataHissasArea.Rows[0]["Khata_Marla"].ToString()), float.Parse(KhataHissasArea.Rows[0]["Khata_Sarsai"].ToString()), float.Parse(KhataHissasArea.Rows[0]["Khata_Feet"].ToString()));
-                string fardkanal = area[0];// row.Cells["FardAreaPart"].Value.ToString();
-                string fardmarla = area[1];// row.Cells["FardAreaPart"].Value.ToString();// following condition get sarsai for the area part
-                float fardsarsai =float.Parse( area[2]);// row.Cells["FardAreaPart"].Value.ToString() != "" ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
+                string fardkanal = area[0]!=null?area[0]:"0";// row.Cells["FardAreaPart"].Value.ToString();
+                string fardmarla = area[1]!=null?area[1]:"0";// row.Cells["FardAreaPart"].Value.ToString();// following condition get sarsai for the area part
+                float fardsarsai =float.Parse( area[2]!=null?area[2]:"0");// row.Cells["FardAreaPart"].Value.ToString() != "" ? float.Parse(row.Cells["FardAreaPart"].Value.ToString()) : 0;
                 //MessageBox.Show(float.Parse("3.25"));
-                float fardfeet = float.Parse(area[3]);// fardsarsai > 0 ? fardsarsai * float.Parse("30.25") : float.Parse("0.0");
+                float fardfeet = float.Parse(area[3]!=null?area[3]:"0");// fardsarsai > 0 ? fardsarsai * float.Parse("30.25") : float.Parse("0.0");
                
                 string personPartBata=row.Cells["FardAreaPart"].Value.ToString();
                 string khewattypeid = row.Cells["KhewatTypeId"].Value.ToString() ;
