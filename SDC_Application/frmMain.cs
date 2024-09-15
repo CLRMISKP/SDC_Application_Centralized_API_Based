@@ -259,7 +259,7 @@ namespace SDC_Application
                 mnucreateUsers.Visible = false;
                 mnuSupervisorMain.Visible = false;
             }
-            if (DateTime.Now < new DateTime(2024, 04, 24))
+            if (DateTime.Now < new DateTime(2024, 09, 18))
             {
                 frmAppUpdateListMessage appUp = new frmAppUpdateListMessage();
                 appUp.ShowDialog();

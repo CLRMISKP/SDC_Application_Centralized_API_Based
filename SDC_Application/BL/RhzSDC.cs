@@ -137,10 +137,10 @@ namespace SDC_Application.BL
         }
 
         #region Save New Name through AfardRegister_Edit
-        public string SaveProposedNameToShajra(string PersonRecId, string RHZ_ChangeId,string PersonId,string QoamIdProp,string CNICProp,string ProposedName,string  EditMode, string UserId, string LoginName)
+        public string SaveProposedNameToShajra(string PersonRecId, string RHZ_ChangeId,string PersonId,string QoamIdProp,string CNICProp,string ProposedName,string  EditMode, string UserId, string LoginName, string RelationProp)
         {
             string retVal = "";
-            string spWithParms = "WEB_SP_INSERT_AfradRegister_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+PersonRecId + "," + RHZ_ChangeId + "," +  PersonId + "," + QoamIdProp + "," + CNICProp+ ",N'" + ProposedName + "','" + EditMode + "'," + UserId + ",'"+LoginName+"'";
+            string spWithParms = "WEB_SP_INSERT_AfradRegister_Edit  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+PersonRecId + "," + RHZ_ChangeId + "," +  PersonId + "," + QoamIdProp + "," + CNICProp+ ",N'" + ProposedName + "','" + EditMode + "'," + UserId + ",'"+LoginName+"',N'"+RelationProp+"'";
             retVal = dbobject.ExecInsertUpdateStoredProcedure(spWithParms);
             return retVal;
         }

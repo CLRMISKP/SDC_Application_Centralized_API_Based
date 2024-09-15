@@ -27,7 +27,7 @@ namespace SDC_Application
         public bool  isforShajraFb { get; set; }
         public string PersonNameForFB { get; set; }
         public int PersonFamilyStatusId { get; set; }
-
+        public string Relation { get; set; }
 
         public bool IsForKhata { get; set; }
         public string KhataId { get; set; }
@@ -133,6 +133,7 @@ namespace SDC_Application
                 GridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ نمبر";
                 GridViewPersons.Columns["QoamId"].Visible = false;
                 GridViewPersons.Columns["PersonName"].Visible = false;
+                GridViewPersons.Columns["Relation"].Visible = false;
                 GridViewPersons.Columns["FamilyNo"].HeaderText = "خاندان نمبر";
             }
             else
@@ -207,6 +208,7 @@ namespace SDC_Application
                    this.QoamId = GridViewPersons.SelectedRows[0].Cells["QoamId"].Value.ToString();
                    this.CNIC = GridViewPersons.SelectedRows[0].Cells["CNIC"].Value.ToString();
                    this.PersonNameForFB = GridViewPersons.SelectedRows[0].Cells["PersonName"].Value.ToString();
+                   this.Relation = GridViewPersons.SelectedRows[0].Cells["Relation"].Value.ToString();
                }
                 
                 this.Close();

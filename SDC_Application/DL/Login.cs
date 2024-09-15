@@ -23,7 +23,7 @@ namespace SDC_Application.DL
 
         UserMangement usm = new UserMangement();
         Database objDb = new Database();
-        public string ver = "3.0.1.1";
+        public string ver = "3.0.2.21";
         frmSelectTehsil mfrmSelectTehsil = new frmSelectTehsil();
         frmSystemRegistration mSystemRegistration = new frmSystemRegistration();
         DataTable SystemInfo = new DataTable();

@@ -2099,6 +2099,7 @@ namespace SDC_Application.AL
                 }
                 this.txtDrustNaam.Text = ap.PersonNameForFB;
                 this.txtfbShajraOldName.Text = ap.PersonNameForFB;
+                this.cboFardRelation.Text = ap.Relation;
                 this.txtName.Text = ap.PersonName;
                 if (SelectedPersonId.Length > 5)
                 {
@@ -2142,7 +2143,7 @@ namespace SDC_Application.AL
             string cnicProp = txtDrustNIC.Text.Trim().Length>5 ? txtDrustNIC.Text : "0";
             try
             {
-                string lastId = rhz.SaveProposedNameToShajra(txtPersonRecId.Text, txtRHZ_ChangeId.Text, this.SelectedPersonId, this.cbQoam.SelectedValue.ToString(),cnicProp, this.txtDrustNaam.Text, "Edited", UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                string lastId = rhz.SaveProposedNameToShajra(txtPersonRecId.Text, txtRHZ_ChangeId.Text, this.SelectedPersonId, this.cbQoam.SelectedValue.ToString(),cnicProp, this.txtDrustNaam.Text, "Edited", UsersManagments.UserId.ToString(), UsersManagments.UserName, cboFardRelation.Text.Trim());
                 if (lastId.Length>5)
                 {
                     MessageBox.Show("نام درستگی محفوظ ہوگیاہے۔", "ریکارڈ محفوظ ہو گیا", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2154,6 +2155,7 @@ namespace SDC_Application.AL
                     cbQoamExisted.SelectedValue = 0;
                     txtNIC.Clear();
                     txtDrustNIC.Clear();
+                    cboFardRelation.SelectedText = "";
                     this.FillDgFBAfrad();
                 }
             }
@@ -2183,6 +2185,8 @@ namespace SDC_Application.AL
                 dgFBAfrad.Columns["CNICProp"].HeaderText = "مجوزہ شناختی کارڈ";
                 dgFBAfrad.Columns["Qoam"].HeaderText = "موجودہ قوم";
                 dgFBAfrad.Columns["QoamProp"].HeaderText = "مجوزہ قوم";
+                dgFBAfrad.Columns["Relation"].HeaderText = "رشتہ";
+                dgFBAfrad.Columns["RelationProp"].HeaderText = "مجوزہ رشتہ";
                 //loadFbData(txtFardBadarDocNO.Text);FamilyNameProposed
             }
         }
