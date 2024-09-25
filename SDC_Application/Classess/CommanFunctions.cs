@@ -69,7 +69,8 @@ namespace SDC_Application.Classess
             decimal PersonRaqba = Feet;
             if (PersonRaqba >= (decimal)272.25)
             {
-                sft = PersonRaqba % (decimal)272.25;
+
+                sft = PersonRaqba % (decimal)272.25 ;
                 retMarla = Convert.ToInt32((PersonRaqba - sft) / (decimal)272.25);
 
                 if (retMarla >= 20)
@@ -87,6 +88,7 @@ namespace SDC_Application.Classess
             {
                 retMarla = 0;
                 retKanal = 0;
+                sft = PersonRaqba;
 
             }
             if (sft > 0)

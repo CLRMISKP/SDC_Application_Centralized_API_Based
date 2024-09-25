@@ -259,7 +259,7 @@ namespace SDC_Application
                 mnucreateUsers.Visible = false;
                 mnuSupervisorMain.Visible = false;
             }
-            if (DateTime.Now < new DateTime(2024, 09, 18))
+            if (DateTime.Now < new DateTime(2024, 09, 27))
             {
                 frmAppUpdateListMessage appUp = new frmAppUpdateListMessage();
                 appUp.ShowDialog();
@@ -2497,6 +2497,24 @@ namespace SDC_Application
                 //UsersManagments.check = 2;
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 70;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuQismZameen_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 78;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;

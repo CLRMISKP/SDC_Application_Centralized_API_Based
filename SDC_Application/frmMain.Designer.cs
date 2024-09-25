@@ -177,6 +177,10 @@
             this.mnuBayanHalfiIntiqalatNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZreport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaskNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuOperationalReportsNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSubInitqalEntryByOperatorNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFardBadarEntryRptNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTokenandServiceNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZ = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZamaldaramad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZzerekar = new System.Windows.Forms.ToolStripMenuItem();
@@ -195,10 +199,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuOperationalReportsNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSubInitqalEntryByOperatorNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFardBadarEntryRptNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTokenandServiceNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -1217,7 +1218,8 @@
             this.mnuIntiqalat,
             this.mnuRHZreport,
             this.mnuTaskNonAdmin,
-            this.mnuOperationalReportsNonAdmin});
+            this.mnuOperationalReportsNonAdmin,
+            this.mnuQismZameen});
             this.mnuOperatorReports.Name = "mnuOperatorReports";
             this.mnuOperatorReports.Size = new System.Drawing.Size(78, 42);
             this.mnuOperatorReports.Text = "رپورٹس";
@@ -1415,6 +1417,37 @@
             this.mnuTaskNonAdmin.Visible = false;
             this.mnuTaskNonAdmin.Click += new System.EventHandler(this.mnuTaskNonAdmin_Click);
             // 
+            // mnuOperationalReportsNonAdmin
+            // 
+            this.mnuOperationalReportsNonAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSubInitqalEntryByOperatorNonAdmin,
+            this.mnuFardBadarEntryRptNonAdmin,
+            this.mnuTokenandServiceNonAdmin});
+            this.mnuOperationalReportsNonAdmin.Name = "mnuOperationalReportsNonAdmin";
+            this.mnuOperationalReportsNonAdmin.Size = new System.Drawing.Size(378, 42);
+            this.mnuOperationalReportsNonAdmin.Text = " اپریشنل سٹاف, ماہوار ٹیکس، گمشدہ انتقالات وغیرہ";
+            // 
+            // mnuSubInitqalEntryByOperatorNonAdmin
+            // 
+            this.mnuSubInitqalEntryByOperatorNonAdmin.Name = "mnuSubInitqalEntryByOperatorNonAdmin";
+            this.mnuSubInitqalEntryByOperatorNonAdmin.Size = new System.Drawing.Size(235, 42);
+            this.mnuSubInitqalEntryByOperatorNonAdmin.Text = " - انتقال اندراج رپورٹ";
+            this.mnuSubInitqalEntryByOperatorNonAdmin.Click += new System.EventHandler(this.mnuSubInitqalEntryByOperatorNonAdmin_Click);
+            // 
+            // mnuFardBadarEntryRptNonAdmin
+            // 
+            this.mnuFardBadarEntryRptNonAdmin.Name = "mnuFardBadarEntryRptNonAdmin";
+            this.mnuFardBadarEntryRptNonAdmin.Size = new System.Drawing.Size(235, 42);
+            this.mnuFardBadarEntryRptNonAdmin.Text = "- فرد بدر اندراج رپورٹ";
+            this.mnuFardBadarEntryRptNonAdmin.Click += new System.EventHandler(this.mnuFardBadarEntryRptNonAdmin_Click);
+            // 
+            // mnuTokenandServiceNonAdmin
+            // 
+            this.mnuTokenandServiceNonAdmin.Name = "mnuTokenandServiceNonAdmin";
+            this.mnuTokenandServiceNonAdmin.Size = new System.Drawing.Size(235, 42);
+            this.mnuTokenandServiceNonAdmin.Text = " - ٹوکن و سہولت تفصیل";
+            this.mnuTokenandServiceNonAdmin.Click += new System.EventHandler(this.mnuTokenandServiceNonAdmin_Click);
+            // 
             // mnuRHZ
             // 
             this.mnuRHZ.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1601,36 +1634,12 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuOperationalReportsNonAdmin
+            // mnuQismZameen
             // 
-            this.mnuOperationalReportsNonAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuSubInitqalEntryByOperatorNonAdmin,
-            this.mnuFardBadarEntryRptNonAdmin,
-            this.mnuTokenandServiceNonAdmin});
-            this.mnuOperationalReportsNonAdmin.Name = "mnuOperationalReportsNonAdmin";
-            this.mnuOperationalReportsNonAdmin.Size = new System.Drawing.Size(378, 42);
-            this.mnuOperationalReportsNonAdmin.Text = " اپریشنل سٹاف, ماہوار ٹیکس، گمشدہ انتقالات وغیرہ";
-            // 
-            // mnuSubInitqalEntryByOperatorNonAdmin
-            // 
-            this.mnuSubInitqalEntryByOperatorNonAdmin.Name = "mnuSubInitqalEntryByOperatorNonAdmin";
-            this.mnuSubInitqalEntryByOperatorNonAdmin.Size = new System.Drawing.Size(235, 42);
-            this.mnuSubInitqalEntryByOperatorNonAdmin.Text = " - انتقال اندراج رپورٹ";
-            this.mnuSubInitqalEntryByOperatorNonAdmin.Click += new System.EventHandler(this.mnuSubInitqalEntryByOperatorNonAdmin_Click);
-            // 
-            // mnuFardBadarEntryRptNonAdmin
-            // 
-            this.mnuFardBadarEntryRptNonAdmin.Name = "mnuFardBadarEntryRptNonAdmin";
-            this.mnuFardBadarEntryRptNonAdmin.Size = new System.Drawing.Size(235, 42);
-            this.mnuFardBadarEntryRptNonAdmin.Text = "- فرد بدر اندراج رپورٹ";
-            this.mnuFardBadarEntryRptNonAdmin.Click += new System.EventHandler(this.mnuFardBadarEntryRptNonAdmin_Click);
-            // 
-            // mnuTokenandServiceNonAdmin
-            // 
-            this.mnuTokenandServiceNonAdmin.Name = "mnuTokenandServiceNonAdmin";
-            this.mnuTokenandServiceNonAdmin.Size = new System.Drawing.Size(235, 42);
-            this.mnuTokenandServiceNonAdmin.Text = " - ٹوکن و سہولت تفصیل";
-            this.mnuTokenandServiceNonAdmin.Click += new System.EventHandler(this.mnuTokenandServiceNonAdmin_Click);
+            this.mnuQismZameen.Name = "mnuQismZameen";
+            this.mnuQismZameen.Size = new System.Drawing.Size(378, 42);
+            this.mnuQismZameen.Text = "قسم زمین مع رقبہ و قطعات";
+            this.mnuQismZameen.Click += new System.EventHandler(this.mnuQismZameen_Click);
             // 
             // frmMain
             // 
@@ -1839,5 +1848,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSubInitqalEntryByOperatorNonAdmin;
         private System.Windows.Forms.ToolStripMenuItem mnuFardBadarEntryRptNonAdmin;
         private System.Windows.Forms.ToolStripMenuItem mnuTokenandServiceNonAdmin;
+        private System.Windows.Forms.ToolStripMenuItem mnuQismZameen;
     }
 }

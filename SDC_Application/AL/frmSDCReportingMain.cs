@@ -809,6 +809,15 @@ namespace SDC_Application.AL
                  this.SetCredentials("DRA_Attested_Mutation_Bayan_Halfi", rp, false);
 
              }
+             if (UsersManagments.check == 78) //Qism Zameen Wise Report
+             {
+                 ReportParameter[] rp = new ReportParameter[2]; //FardBadarEnteredNumberOnly
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSDCId", UsersManagments.SubSdcId.ToString());
+                 //rp[1] = new ReportParameter("KhataId", this.KhataId);
+                 this.SetCredentials("QismZameenAreaMozaWise", rp, false);
+
+             }
         }
 
     }
