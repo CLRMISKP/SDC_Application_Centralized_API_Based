@@ -47,3 +47,8 @@ D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Release\SDC_Ap
 D:\Office Data\Land System\SDC_Application_Centralized\Common\bin\Release\SDC_Application.Common.pdb
 D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.dll
 D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.pdb
+E:\CLRMIS\SDC_Application_Centralized\Common\bin\Release\SDC_Application.Common.dll
+E:\CLRMIS\SDC_Application_Centralized\Common\bin\Release\SDC_Application.Common.pdb
+E:\CLRMIS\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.csprojResolveAssemblyReference.cache
+E:\CLRMIS\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.dll
+E:\CLRMIS\SDC_Application_Centralized\Common\obj\Release\SDC_Application.Common.pdb

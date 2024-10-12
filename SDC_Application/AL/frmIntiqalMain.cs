@@ -185,6 +185,7 @@ namespace SDC_Application.AL
         {
             
             SaveIntiqal();
+            btnSearchInteqal_Click(sender, e);
            
         }
 

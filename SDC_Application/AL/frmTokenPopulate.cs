@@ -104,7 +104,7 @@ namespace SDC_Application.AL
             objdatagrid.colorrbackgrid(grdToken);
             objdatagrid.gridControls(grdToken);
             grdToken.Columns["Visitor_CNIC"].Width = 180;
-            grdToken.Columns["personPic"].Visible = true;
+            grdToken.Columns["personPic"].Visible = false;
             // Assuming you already have a DataGridView named grdToken
 
 

@@ -93,7 +93,7 @@ namespace SDC_Application.AL
         #region Fill RO Combo
         private void FillROsCombo()
         {
-            dt = objdb.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString());
+            dt = objdb.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
             DataRow row = dt.NewRow();
             row["UserId"] = "0";
             row["CompleteName"] = "--انتخاب کریں--";

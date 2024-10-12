@@ -169,3 +169,18 @@ D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\L
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.Common.dll
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.Common.pdb
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
