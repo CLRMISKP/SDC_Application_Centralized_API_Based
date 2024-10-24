@@ -43,6 +43,7 @@ namespace SDC_Application.AL
         LanguageConverter lang = new LanguageConverter();
         CommanFunctions cfs = new CommanFunctions();
         public string KhataId { get; set; }
+        public string ScanDataPath { get; set; }
 
         #endregion
 
@@ -53,6 +54,7 @@ namespace SDC_Application.AL
 
         private void frmRhzAmaladaramad_Load(object sender, EventArgs e)
         {
+            ScanDataPath = System.Configuration.ConfigurationSettings.AppSettings["ScanData"];
             objauto.FillCombo("Proc_Get_Moza_List "+UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
         }
 
@@ -731,7 +733,7 @@ namespace SDC_Application.AL
             if (cmbMouza.SelectedValue.ToString().Length > 3 && cbokhataNo.SelectedValue.ToString().Length > 5)
             {
                 string[] khataNo = cbokhataNo.Text.Split('/');
-                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
+                string url = @""+ScanDataPath+"?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=11&recordNo=" + khataNo[0];
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;
                 iv.Show();

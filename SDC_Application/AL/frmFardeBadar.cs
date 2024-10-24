@@ -57,6 +57,7 @@ namespace SDC_Application.AL
 
         public string IndexedKhattaNo { get; set; }
         private string SelectedPersonId { get; set; }
+        public string ScanDataPath { get; set; }
 
         #region Class Variables for Shajra Malik name Changes
 
@@ -798,6 +799,7 @@ namespace SDC_Application.AL
         private void frmMisalMain_Load(object sender, EventArgs e)
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
+            ScanDataPath = System.Configuration.ConfigurationSettings.AppSettings["ScanData"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
@@ -3686,7 +3688,7 @@ namespace SDC_Application.AL
                                "-1",
                                cbFBDocuments.SelectedValue.ToString().Length<9? txtFbId.Text:cbFBDocuments.SelectedValue.ToString(),
                                 row["KhewatGroupFareeqId"].ToString(), //kgf_id,
-                               row["KhewatGroupId"].ToString(), //kg_id,
+                               "0",//row["KhewatGroupId"].ToString(), //kg_id,
                                "Fard_e_Badar",
                                "0",
                                row["seqno"].ToString(), //sqNo.ToString(),
@@ -3725,7 +3727,7 @@ namespace SDC_Application.AL
             if (cmbMouza.SelectedValue.ToString().Length > 3 && txtFardBadarDocNO.Text.Length > 0)
             {
                 string FbNo = txtFardBadarDocNO.Text.Split('/').First();
-                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + FbNo;
+                string url = @""+ScanDataPath+"?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + FbNo;
                 //System.Diagnostics.Process.Start(url); http://172.16.100.11:8087/Images?mozaId=15168&documentTypeId=11&recordNo=141
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;
@@ -3756,7 +3758,7 @@ namespace SDC_Application.AL
                         string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
                         string FardBadarNo = txtFardBadarDocNO.Text.Split('/').First();
 
-                        message = fi.UploadFileToServer(@path, "http://172.16.100.227/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        message = fi.UploadFileToServer(@path, ScanDataPath + "/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
                         imageNo = imageNo + 1;
                         //I want to get the directory path Picturebox.Imagelocation is not working for me
                     }

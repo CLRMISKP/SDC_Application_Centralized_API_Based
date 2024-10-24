@@ -51,7 +51,7 @@ namespace SDC_Application.AL
         bool ConfirmationStatus = false;
         bool AmaldaramadStatus = false;
         bool isManualFb = false;
-        
+        public string ScanDataPath { get; set; }
         int registerNo = 0;
         string khatoniNo = "";
         string seqNo = "";
@@ -228,6 +228,7 @@ namespace SDC_Application.AL
 
             //Tested with EXEC Proc_Get_KhewatFareeqeinGroup_By_Khata_FB_Proposed 15141140004
             //Returns no rows
+            ScanDataPath = System.Configuration.ConfigurationSettings.AppSettings["ScanData"];
             this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(txtFbId.Text.Trim(), cboKhataNo.SelectedValue.ToString());
             //khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataId(txtFbKhataId.Text.Trim());
             this.FillKhatoniListbyKhattaId();
@@ -3510,7 +3511,7 @@ namespace SDC_Application.AL
             if (cmbMouza.SelectedValue.ToString().Length > 3 && txtFardBadarDocNO.Text.Length > 0)
             {
                 string FbNo = txtFardBadarDocNO.Text.Split('/').First();
-                string url = @"http://172.16.100.227/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + FbNo;
+                string url = @""+ScanDataPath+"?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + FbNo;
                 //string url = @"https://kplr.gkp.pk:5002/Images?mozaId=" + cmbMouza.SelectedValue.ToString() + "&documentTypeId=13&recordNo=" + txtFardBadarDocNO.Text;
                 //System.Diagnostics.Process.Start(url); --http://172.16.100.227/Images?mozaId=
                 //frmDocumentImageViewer iv = new frmDocumentImageViewer();
@@ -3546,7 +3547,7 @@ namespace SDC_Application.AL
                         string path = file; //Path.GetDirectoryName(openFD.FileName)+"/"+file;
                         string FardBadarNo = txtFardBadarDocNO.Text.Split('/').First();
 
-                        message = fi.UploadFileToServer(@path, "http://172.16.100.227/Images/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
+                        message = fi.UploadFileToServer(@path, ScanDataPath+"/Uploads", Convert.ToInt32(cmbMouza.SelectedValue.ToString()), 13, Convert.ToInt32(FardBadarNo), imageNo, DateTime.Parse(DateTime.Now.ToShortDateString()));
                         imageNo = imageNo + 1;
                         //I want to get the directory path Picturebox.Imagelocation is not working for me
                     }
@@ -3586,7 +3587,7 @@ namespace SDC_Application.AL
                            "-1",
                            txtFbId.Text,
                             row["KhewatGroupFareeqId"].ToString(), //kgf_id,
-                           row["KhewatGroupId"].ToString(), //kg_id,
+                           "0", //kg_id,
                            "Fard_e_Badar",
                            "0",
                            row["seqno"].ToString(), //sqNo.ToString(),

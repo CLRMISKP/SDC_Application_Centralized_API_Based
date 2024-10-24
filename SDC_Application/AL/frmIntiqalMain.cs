@@ -47,6 +47,7 @@ namespace SDC_Application.AL
         public string userId { get; set; }
         public string intiqalTypeId { get; set; }
         public string intiqalIId { get; set; }
+        public string ScanDataPath { get; set; }
 
         /// <summary>
         /// get or set entry mode
@@ -166,6 +167,7 @@ namespace SDC_Application.AL
         {
 
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
+            ScanDataPath = System.Configuration.ConfigurationSettings.AppSettings["ScanData"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             tooltip();
@@ -2275,7 +2277,8 @@ txtLandValue.Enabled = false;
             if (cboMoza.SelectedValue.ToString().Length > 3 && txtIntiqalNo.Text.Length > 0)
             {
                 string IntiqalNo = txtIntiqalNo.Text.Split('/').First();
-                string url = @"http://172.16.100.227/Images?mozaId=" + cboMoza.SelectedValue.ToString() + "&documentTypeId=12&recordNo=" + IntiqalNo;
+                string url = @""+ScanDataPath+"?mozaId=" + cboMoza.SelectedValue.ToString() + "&documentTypeId=12&recordNo=" + IntiqalNo;
+                //string url = @"http://172.16.100.227/Images?mozaId=" + cboMoza.SelectedValue.ToString() + "&documentTypeId=12&recordNo=" + IntiqalNo;
                 //System.Diagnostics.Process.Start(url);
                 frmImageViewerBrowser iv = new frmImageViewerBrowser();
                 iv.url = url;

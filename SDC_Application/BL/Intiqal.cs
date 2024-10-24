@@ -1655,6 +1655,12 @@ namespace SDC_Application.BL
                 dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
 
             }
+            public void UpdateMushteriRaqbaByHissa(string MushtriFareeqId, string NetHissa, string Kanal, string Marla, string Sarsai, string Sft)//, string IntiqalID, string SeqNo)
+            {
+                string spWithParam = "WEB_SP_INSERT_MushteriFareeqein_Update_NetPart  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MushtriFareeqId + "," + NetHissa + "," + Kanal + "," + Marla + "," + Sarsai + "," + Sft;
+                dbobject.ExecUpdateStoredProcedureWithNoRet(spWithParam);
+
+            }
 
         #endregion
 
