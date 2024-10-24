@@ -204,7 +204,7 @@ namespace SDC_Application.AL
             try
             {
                 objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
-                objauto.FillCombo("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString(), cmbRO, "CompleteName", "UserId");
+                objauto.FillCombo("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString(), cmbRO, "CompleteName", "UserId");
             }
             catch (Exception ex)
             {

@@ -71,7 +71,7 @@ namespace SDC_Application.AL
 
         private void FillROsCombo()
         {
-            dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString());
+            dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
             DataRow row = dt.NewRow();
             row["UserId"] = "0";
             row["CompleteName"] = "--انتخاب کریں--";

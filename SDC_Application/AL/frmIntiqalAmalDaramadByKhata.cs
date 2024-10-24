@@ -187,6 +187,8 @@ namespace SDC_Application.AL
                  dgSellersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
                  dgSellersBeforeAmal.Columns["KhewatGroupFareeqId"].Visible = false;
                  dgSellersBeforeAmal.Columns["KhewatType"].Visible = false;
+                 dgSellersBeforeAmal.Columns["FardTokenId"].Visible = false;
+                 dgSellersBeforeAmal.Columns["FardTokenDate"].Visible = false;
                  dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].Width=60;
                  dgSellersBeforeAmal.Columns["Seller_Total_Area"].Width=60;
                  dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].Width=60;

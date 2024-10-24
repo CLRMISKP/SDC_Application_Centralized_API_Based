@@ -91,3 +91,11 @@ D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\
 D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.dll
 D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.xml
 D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.pdb
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.dll
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.pdb
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.xml
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.Resources.resources
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.vbproj.GenerateResource.Cache
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.dll
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.xml
+E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.pdb
