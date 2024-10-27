@@ -80,7 +80,7 @@
             this.lbl1.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.Location = new System.Drawing.Point(591, 23);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(42, 30);
+            this.lbl1.Size = new System.Drawing.Size(55, 38);
             this.lbl1.TabIndex = 51;
             this.lbl1.Text = "موضع";
             // 
@@ -95,7 +95,7 @@
             this.cmbMouza.Location = new System.Drawing.Point(395, 22);
             this.cmbMouza.Name = "cmbMouza";
             this.cmbMouza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbMouza.Size = new System.Drawing.Size(190, 27);
+            this.cmbMouza.Size = new System.Drawing.Size(190, 31);
             this.cmbMouza.TabIndex = 50;
             this.cmbMouza.SelectionChangeCommitted += new System.EventHandler(this.cmbMouza_SelectionChangeCommitted);
             this.cmbMouza.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMouza_KeyPress);
@@ -106,7 +106,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(302, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 19);
+            this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "خسرہ نمبر:";
             // 
@@ -126,7 +126,7 @@
             this.txtKhassraNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKhassraNo.Location = new System.Drawing.Point(151, 23);
             this.txtKhassraNo.Name = "txtKhassraNo";
-            this.txtKhassraNo.Size = new System.Drawing.Size(145, 26);
+            this.txtKhassraNo.Size = new System.Drawing.Size(145, 30);
             this.txtKhassraNo.TabIndex = 0;
             // 
             // GridViewKhassras
@@ -141,10 +141,11 @@
             this.GridViewKhassras.ReadOnly = true;
             this.GridViewKhassras.Size = new System.Drawing.Size(679, 257);
             this.GridViewKhassras.TabIndex = 3;
+            this.GridViewKhassras.DoubleClick += new System.EventHandler(this.GridViewKhassras_DoubleClick);
             // 
             // frmKhassraSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 409);
             this.Controls.Add(this.GridViewKhassras);

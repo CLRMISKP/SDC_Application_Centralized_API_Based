@@ -23,7 +23,7 @@ namespace SDC_Application.DL
 
         UserMangement usm = new UserMangement();
         Database objDb = new Database();
-        public string ver = "3.0.2.21";
+        public string ver =  "3.0.2.34";
         frmSelectTehsil mfrmSelectTehsil = new frmSelectTehsil();
         frmSystemRegistration mSystemRegistration = new frmSystemRegistration();
         DataTable SystemInfo = new DataTable();
@@ -35,7 +35,7 @@ namespace SDC_Application.DL
         public Login()
         {
             InitializeComponent();
-            this.Text = "سروس ڈیلیوری سنٹر سسٹم   " + "( Vesion "+ver+" )";
+            this.Text = "سروس ڈیلیوری سنٹر سسٹم   " + "( Version "+ver+" )";
         }
 
         

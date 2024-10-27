@@ -53,7 +53,7 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(88, 34);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(272, 34);
             this.txtUsername.TabIndex = 3;
@@ -62,7 +62,7 @@
             // 
             this.btnSaveLogin.Image = global::SDC_Application.Resource1.unlock;
             this.btnSaveLogin.Location = new System.Drawing.Point(136, 145);
-            this.btnSaveLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveLogin.Name = "btnSaveLogin";
             this.btnSaveLogin.Size = new System.Drawing.Size(77, 71);
             this.btnSaveLogin.TabIndex = 5;
@@ -81,10 +81,10 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(521, 233);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(567, 233);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -92,7 +92,7 @@
             // 
             this.button2.Image = global::SDC_Application.Resource1.icon_refresh;
             this.button2.Location = new System.Drawing.Point(244, 145);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 71);
             this.button2.TabIndex = 6;
@@ -102,7 +102,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(88, 94);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(272, 34);
             this.txtPassword.TabIndex = 4;
@@ -126,10 +126,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SDC_Application.Resource1.secrecy_icon1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(521, 233);
+            this.ClientSize = new System.Drawing.Size(567, 233);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

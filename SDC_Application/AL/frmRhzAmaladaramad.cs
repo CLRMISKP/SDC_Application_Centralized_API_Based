@@ -101,6 +101,12 @@ namespace SDC_Application.AL
         {
             this.txtParentKhata.Clear();
             this.ClearKhatooniControls();
+            txtKhataMeezanKhassraRaqba.Clear();
+            txtKhataMeezanKhewatFareeqainHissay.Clear();
+            this.txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White;
+            txtKhataMeezanKhewatFareeqainRaqba.Clear();
+            txtKhataMeezanKulHissay.Clear();
+            txtKhataMeezanRaqba.Clear();
             this.dgKhewatFareeqainAll.DataSource = null;
             foreach (DataRow row in dtkj.Rows)
             {
@@ -140,23 +146,33 @@ namespace SDC_Application.AL
 
         #region Load Data By Khatta Id
 
-        private void LoadKhewatFareeqainMeezan(string KhataId)
-        {
+        private void LoadKhewatFareeqainMeezan(string KhataId)        {
+            
             DataTable dtKhewatFareeqainMeezan = khatooni.GetKhewatFareeqainMeezan(KhataId);
             foreach (DataRow row in dtKhewatFareeqainMeezan.Rows)
             {
                 this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
                 this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
-                this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
-                this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
-                decimal KhataHissas, malikanhissas;
-                Decimal.TryParse(this.txtKhataMeezanKhewatFareeqainHissay.Text, System.Globalization.NumberStyles.Float, null, out malikanhissas);
-                Decimal.TryParse(txtKhataMeezanKulHissay.Text, System.Globalization.NumberStyles.Float, null, out KhataHissas);
-                if (Math.Round(malikanhissas, 4) != Math.Round(KhataHissas, 4))
+                //this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
+                //this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
+                //decimal KhataHissas, malikanhissas;
+                //Decimal.TryParse(this.txtKhataMeezanKhewatFareeqainHissay.Text, System.Globalization.NumberStyles.Float, null, out malikanhissas);
+                //Decimal.TryParse(txtKhataMeezanKulHissay.Text, System.Globalization.NumberStyles.Float, null, out KhataHissas);
+
+                double KhataSQFT = (double.Parse(txtKhataKanal.Text) * 20 * (double)272.25) + (double.Parse(txtKhataMarla.Text) * (double)272.25) + double.Parse(txtKhataSFT.Text);
+                double differenceInSQFT = KhataSQFT / double.Parse(txtKhataMeezanKulHissay.Text) * Math.Abs(double.Parse(txtKhataMeezanKhewatFareeqainHissay.Text) - double.Parse(txtKhataMeezanKulHissay.Text)); // Calculate Raqba Difference
+              
+               // if (Math.Round(malikanhissas, 4) != Math.Round(KhataHissas, 4))
+                if (Math.Round(differenceInSQFT, 0) >= 30  )
                 {
                     txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.Red;
+                    txtKhataMeezanKhewatFareeqainHissay.ForeColor = Color.White;
                 }
-                else { txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White; }
+                else 
+                { 
+                    txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White;
+                    txtKhataMeezanKhewatFareeqainHissay.ForeColor = Color.Black;
+                }
             }
 
             txtKhataMeezanKhassraRaqba.Text=intiqal.GetKhassraTotalRaqbaByKhattaId(KhataId);
@@ -541,6 +557,7 @@ namespace SDC_Application.AL
 
                     this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
                     this.GetKhatooniBayan(cboKhatoonies.SelectedValue.ToString());
+                    btnLoadKhassras_Click(sender, e);
                 }
                 else
                 {
@@ -1471,6 +1488,42 @@ namespace SDC_Application.AL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnSearchKhassra_Click(object sender, EventArgs e)
+        {
+            frmKhassraSearch obj = new frmKhassraSearch();
+            if (cmbMouza.SelectedIndex > 0)
+            {
+                obj.MozaId = cmbMouza.SelectedValue.ToString();
+            }
+            obj.CallFor = 1;
+            obj.FormClosed -= new FormClosedEventHandler(Sp_FormClosed);
+            obj.FormClosed += new FormClosedEventHandler(Sp_FormClosed);
+            obj.ShowDialog();
+        }
+
+
+        void Sp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            frmKhassraSearch ap = sender as frmKhassraSearch;
+            if (ap.KhataId != "-1")
+            {
+                if (cmbMouza.SelectedValue.ToString() != ap.MozaId)
+                {
+                    cmbMouza.SelectedValue = ap.MozaId;
+                    cmbMouza_SelectionChangeCommitted(sender, e);
+                    cbokhataNo.SelectedValue = ap.KhataId;
+                    cbokhataNo_SelectionChangeCommitted(sender, e);
+                }
+                else if (cbokhataNo.SelectedValue.ToString() != ap.KhataId)
+                {
+                    cbokhataNo.SelectedValue = ap.KhataId;
+                    cbokhataNo_SelectionChangeCommitted(sender, e);
+                }
+            }
+        }
+
        
     }
 }

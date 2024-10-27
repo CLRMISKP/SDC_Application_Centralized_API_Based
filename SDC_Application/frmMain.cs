@@ -52,7 +52,7 @@ namespace SDC_Application
         public frmMain()
         {
             InitializeComponent();
-            this.Text = "سروس ڈیلیوری سنٹر سسٹم   " + "( Vesion " + UsersManagments._Ver + " )";
+            this.Text = "سروس ڈیلیوری سنٹر سسٹم   " + "( Version " + UsersManagments._Ver + " )";
         }
 
         #endregion

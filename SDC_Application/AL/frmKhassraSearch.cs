@@ -20,9 +20,12 @@ namespace SDC_Application.AL
         Misal misalBl = new Misal();
         BL.frmToken objBusiness = new BL.frmToken();
         LanguageConverter lang = new LanguageConverter();
-        public string  MozaId { get; set; }
+       // public string  MozaId { get; set; }
         DataTable Khassras = new DataTable();
         Intiqal intiqal = new Intiqal();
+        public string MozaId = "-1";
+        public string KhataId = "-1";
+        public int CallFor;
 
         #endregion
 
@@ -41,6 +44,7 @@ namespace SDC_Application.AL
             GridViewKhassras.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
             GridViewKhassras.Columns["KhatooniId"].Visible = false;
             GridViewKhassras.Columns["KhassraId"].Visible = false;
+            GridViewKhassras.Columns["RegisterHqDKhataId"].Visible = false;
         }
 
         private void cmbMouza_KeyPress(object sender, KeyPressEventArgs e)
@@ -75,6 +79,26 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
+            if (MozaId != "-1")
+            {
+                cmbMouza.SelectedValue = MozaId;
+                //this.Fill_Khata_DropDown();
+            }
+          
+        }
+
+        private void GridViewKhassras_DoubleClick(object sender, EventArgs e)
+        {
+            if (GridViewKhassras.Rows.Count > 0 && CallFor == 1)
+            {
+                KhataId = GridViewKhassras.CurrentRow.Cells["RegisterHqDKhataId"].Value.ToString();
+                if (KhataId != "-1")
+                {
+                    this.Close();
+                }
+
+            }
+  
         }
     }
 }
