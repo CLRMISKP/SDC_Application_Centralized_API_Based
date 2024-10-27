@@ -952,9 +952,9 @@ namespace SDC_Application.AL
 
         #region Save malik entry
 
-        private float calculateNetPart(string valueInBata)
+        private double calculateNetPart(string valueInBata)
         {
-            float NetPart = 0;
+            double NetPart = 0;
             try
             {
                 if (valueInBata.Contains('/'))
@@ -980,7 +980,7 @@ namespace SDC_Application.AL
                 }
                 else
                 {
-                    NetPart = float.Parse(valueInBata);
+                    NetPart = double.Parse(valueInBata);
                 }
             }
             catch (Exception ex)

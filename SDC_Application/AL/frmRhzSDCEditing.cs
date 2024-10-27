@@ -1301,9 +1301,9 @@ namespace SDC_Application.AL
         {
             this.txtPersonNetHissa.Text = this.calculateNetPart(this.txtPersonHissaBata.Text.Trim().Length > 0 ? txtPersonHissaBata.Text.Trim() : "0").ToString();
         }
-        private float calculateNetPart(string valueInBata)
+        private double calculateNetPart(string valueInBata)
         {
-            float NetPart = 0;
+            double NetPart = 0;
             try
             {
                 if (valueInBata.Contains('/'))
@@ -1329,7 +1329,7 @@ namespace SDC_Application.AL
                 }
                 else
                 {
-                    NetPart = float.Parse(valueInBata);
+                    NetPart = double.Parse(valueInBata);
                 }
             }
             catch (Exception ex)

@@ -763,9 +763,9 @@ namespace SDC_Application.AL
 
         #region Save malik entry
 
-        private float calculateNetPart()
+        private double calculateNetPart()
         {
-            float NetPart = 0;
+            double NetPart = 0;
             try
             {
                 if (txtPersonNetHissa.Text.Trim().Contains('/'))
@@ -791,7 +791,7 @@ namespace SDC_Application.AL
                 }
                 else
                 {
-                    NetPart = float.Parse(txtPersonNetHissa.Text.Trim());
+                    NetPart = double.Parse(txtPersonNetHissa.Text.Trim());
                 }
             }
             catch (Exception ex)
