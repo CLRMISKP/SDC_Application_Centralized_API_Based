@@ -478,6 +478,7 @@
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.gbMinKhataKhassras = new System.Windows.Forms.GroupBox();
+            this.txtKhassraNoMinOld = new System.Windows.Forms.TextBox();
             this.cmbMinKhewattypes = new System.Windows.Forms.ComboBox();
             this.label101 = new System.Windows.Forms.Label();
             this.label102 = new System.Windows.Forms.Label();
@@ -513,7 +514,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtTehsildarRpt = new System.Windows.Forms.TextBox();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.txtKhassraNoMinOld = new System.Windows.Forms.TextBox();
+            this.btnDeleteMalikAll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -1725,6 +1726,7 @@
             // groupBox7
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.btnDeleteMalikAll);
             this.groupBox7.Controls.Add(this.label124);
             this.groupBox7.Controls.Add(this.txtSearchCurrentKhewatFareeqain);
             this.groupBox7.Controls.Add(this.btnPrevKhataFamily);
@@ -1763,7 +1765,7 @@
             // 
             this.btnPrevKhataFamily.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrevKhataFamily.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevKhataFamily.Location = new System.Drawing.Point(225, 15);
+            this.btnPrevKhataFamily.Location = new System.Drawing.Point(277, 15);
             this.btnPrevKhataFamily.Name = "btnPrevKhataFamily";
             this.btnPrevKhataFamily.Size = new System.Drawing.Size(129, 37);
             this.btnPrevKhataFamily.TabIndex = 240;
@@ -1788,7 +1790,7 @@
             // 
             this.btnNewFbMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewFbMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewFbMalik.Location = new System.Drawing.Point(495, 15);
+            this.btnNewFbMalik.Location = new System.Drawing.Point(547, 15);
             this.btnNewFbMalik.Name = "btnNewFbMalik";
             this.btnNewFbMalik.Size = new System.Drawing.Size(83, 37);
             this.btnNewFbMalik.TabIndex = 237;
@@ -1800,7 +1802,7 @@
             // 
             this.btnPersonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPersonSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonSave.Location = new System.Drawing.Point(594, 15);
+            this.btnPersonSave.Location = new System.Drawing.Point(646, 15);
             this.btnPersonSave.Name = "btnPersonSave";
             this.btnPersonSave.Size = new System.Drawing.Size(83, 37);
             this.btnPersonSave.TabIndex = 236;
@@ -1812,7 +1814,7 @@
             // 
             this.btnDeleteMalik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMalik.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMalik.Location = new System.Drawing.Point(397, 15);
+            this.btnDeleteMalik.Location = new System.Drawing.Point(449, 15);
             this.btnDeleteMalik.Name = "btnDeleteMalik";
             this.btnDeleteMalik.Size = new System.Drawing.Size(83, 37);
             this.btnDeleteMalik.TabIndex = 238;
@@ -5825,6 +5827,17 @@
             this.gbMinKhataKhassras.TabIndex = 100013;
             this.gbMinKhataKhassras.TabStop = false;
             // 
+            // txtKhassraNoMinOld
+            // 
+            this.txtKhassraNoMinOld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKhassraNoMinOld.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhassraNoMinOld.Location = new System.Drawing.Point(6, 31);
+            this.txtKhassraNoMinOld.Name = "txtKhassraNoMinOld";
+            this.txtKhassraNoMinOld.Size = new System.Drawing.Size(131, 30);
+            this.txtKhassraNoMinOld.TabIndex = 10012;
+            this.txtKhassraNoMinOld.TabStop = false;
+            this.txtKhassraNoMinOld.Visible = false;
+            // 
             // cmbMinKhewattypes
             // 
             this.cmbMinKhewattypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -6191,16 +6204,18 @@
             this.txtTehsildarRpt.Size = new System.Drawing.Size(793, 225);
             this.txtTehsildarRpt.TabIndex = 56;
             // 
-            // txtKhassraNoMinOld
+            // btnDeleteMalikAll
             // 
-            this.txtKhassraNoMinOld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhassraNoMinOld.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhassraNoMinOld.Location = new System.Drawing.Point(6, 31);
-            this.txtKhassraNoMinOld.Name = "txtKhassraNoMinOld";
-            this.txtKhassraNoMinOld.Size = new System.Drawing.Size(131, 30);
-            this.txtKhassraNoMinOld.TabIndex = 10012;
-            this.txtKhassraNoMinOld.TabStop = false;
-            this.txtKhassraNoMinOld.Visible = false;
+            this.btnDeleteMalikAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteMalikAll.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteMalikAll.Location = new System.Drawing.Point(139, 15);
+            this.btnDeleteMalikAll.Name = "btnDeleteMalikAll";
+            this.btnDeleteMalikAll.Size = new System.Drawing.Size(123, 37);
+            this.btnDeleteMalikAll.TabIndex = 243;
+            this.btnDeleteMalikAll.TabStop = false;
+            this.btnDeleteMalikAll.Text = "تمام مالکان خذف کریں";
+            this.btnDeleteMalikAll.UseVisualStyleBackColor = true;
+            this.btnDeleteMalikAll.Click += new System.EventHandler(this.btnDeleteMalikAll_Click);
             // 
             // frmFardeBadar
             // 
@@ -6820,5 +6835,6 @@
         private System.Windows.Forms.TextBox txtIntiqalNos;
         private System.Windows.Forms.Label label125;
         private System.Windows.Forms.TextBox txtKhassraNoMinOld;
+        private System.Windows.Forms.Button btnDeleteMalikAll;
     }
 }

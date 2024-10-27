@@ -3934,5 +3934,29 @@ namespace SDC_Application.AL
                 e.Handled = true;
             }
         }
+
+        private void btnDeleteMalikAll_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ تمام مالکان ریکارڈ خذف کرنا چاہتے ہے؟", "خذف کرنے کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    foreach (DataGridViewRow r in GridViewKhewatMalikaan.Rows)
+                    {
+                        string fbFareeqId = r.Cells["FB_FareeqeinId"].Value.ToString();
+                        string retVal = fardBadarBL.DeleteFbKhewatGroupFareeq(fbFareeqId);
+                    }
+                    this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(txtFbId.Text, cboKhataNo.SelectedValue.ToString());
+                    this.FillGridviewMalkan(khewatMalikanByFB);
+                    this.txtFbFareeqId.Text = "-1";
+                    this.txtKhewatFreeqainGroupId.Text = "-1";
+                    GetHissaBeforeAfterCorrection();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }
