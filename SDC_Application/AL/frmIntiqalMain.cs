@@ -1035,6 +1035,7 @@ namespace SDC_Application.AL
                     frmIK.IntiqalTypeId = this.intiqalTypeId;
                     frmIK.FardTokenId = this.fardTokenId;
                     frmIK.intiqalIId = this.intiqalIId;
+                    frmIK.intiqalType = this.cboIntiqalType.Text;
 
                     frmIK.Show();
                 }

@@ -514,6 +514,11 @@ namespace SDC_Application.BL
                 return dbobject.filldatatable_from_storedProcedure(spWithParam);
             }
 
+            public DataTable GetTaqseemIntiqalComparision(string intiqalId)
+            {
+                string spWithParam = "proc_Self_Get_Taqseem_Intiqal_Comparision " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + intiqalId + " ";
+                return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            }
             public DataTable GetKhataJatofKhatooniesForRegistryintiqalByFardTokenId(string fardTokenId)
             {
                 string spWithParam = "proc_Self_Get_Khatajat_of_Khatoonies_for_RegistryIntiqal_By_FardTokenId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + fardTokenId;

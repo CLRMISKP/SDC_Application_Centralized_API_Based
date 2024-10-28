@@ -22,6 +22,7 @@ namespace SDC_Application.AL
         public bool isConfirmed { get; set; }
         public string MinhayeIntiqalId { get; set; }
         public string IntiqalTypeId { get; set; }
+        public string intiqalType { get; set; }
         public string BS_AreaHissa { get; set; }
         public string RegStatus { get; set; }
         string datetoken;
@@ -40,6 +41,7 @@ namespace SDC_Application.AL
         DataTable dtKhatooniAreaHissa = new DataTable();
         DataTable TokenList = new DataTable();
         BindingSource bb = new BindingSource();
+        BindingSource cc = new BindingSource();
         Misal misalBL = new Misal();
         BL.TaqseemNewKhataJatMin taqseemnewkhata = new BL.TaqseemNewKhataJatMin();
         DataTable dtIntiqalKhatas = new DataTable();
@@ -441,7 +443,10 @@ namespace SDC_Application.AL
                     tabControl1.TabPages.Remove(tabPageShajra);
                 //}
                 ////========== end =============================================================
-
+                    if (!(intiqalType.Contains("تقسیم")))
+                    {
+                        tabControl1.TabPages.Remove(tabPageMalikanArea);
+                    }
                     fillIntiqalkhatajatList(this.MozaId.ToString());
 
                 if (this.FardTokenId != "0")
@@ -6666,26 +6671,6 @@ namespace SDC_Application.AL
 
 
 
-        private void txtSearchComp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
-            {
-                if (e.KeyChar == Convert.ToChar((Keys.Back)))
-                {
-
-                }
-                else
-                {
-                    e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
-                }
-            }
-            else if (e.KeyChar == 1)
-            {
-                TextBox txt = sender as TextBox;
-                txt.SelectAll();
-            }
-        }
-
 
 
         private void panel16_Paint(object sender, PaintEventArgs e)
@@ -6929,6 +6914,108 @@ namespace SDC_Application.AL
                 txtMushterkaSarsai.Enabled = true;
             }
         }
+
+        private void btnComparision_Click(object sender, EventArgs e)
+        {
+            gvComparision.DataSource = null;
+
+            FillComparisionGrid();
+        }
+
+        #region Fill Comparision Grid
+
+        public void FillComparisionGrid()
+        {
+            try
+            {
+
+                DataTable dt1 = new DataTable();
+
+                dt1 = inteq.GetTaqseemIntiqalComparision(this.IntiqalId);
+                if (dt1 != null)
+                {
+                    cc.DataSource = dt1;
+                    gvComparision.DataSource = cc;
+                    gvComparision.DataSource = dt1;
+                    CompareGrid();
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void CompareGrid()
+        {
+            gvComparision.Columns["oldPersonId"].Visible = false;
+            gvComparision.Columns["newPersonId"].Visible = false;
+
+            gvComparision.Columns["OldName"].HeaderText = "پرانے کھاتوں میں نام";
+            gvComparision.Columns["OldArea"].HeaderText = "پرانے کھاتوں میں رقبہ";
+            gvComparision.Columns["NewName"].HeaderText = "نئے کھاتوں میں نام";
+            gvComparision.Columns["NewArea"].HeaderText = "نئے کھاتوں میں رقبہ";
+            gvComparision.Columns["diff"].HeaderText = "فرق sqft";
+       
+
+            this.setRowNumber(gvComparision);
+        }
+        #endregion
+
+        private void txtSearchComp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            {
+                if (e.KeyChar == Convert.ToChar((Keys.Back)))
+                {
+
+                }
+                else
+                {
+                    e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
+                }
+            }
+            else if (e.KeyChar == 1)
+            {
+                TextBox txt = sender as TextBox;
+                txt.SelectAll();
+            }
+        }
+
+        private void txtSearchComp_TextChanged(object sender, EventArgs e)
+        {
+            cc.Filter = string.Format("OldName LIKE '%{0}%' ", txtSearchComp.Text);
+        }
+
+        private void gvComparision_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (gvComparision.Columns.Contains("diff"))
+            {
+
+                foreach (DataGridViewRow Myrow in gvComparision.Rows)
+                {
+
+                    try
+                    {
+
+                        if (Convert.ToInt32(Myrow.Cells["diff"].Value) > 1 || Convert.ToInt32(Myrow.Cells["diff"].Value) < -1)// Or your condition 
+                        {
+                            Myrow.DefaultCellStyle.BackColor = Color.Red;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+            }
+        }
+
+       
     }
 }
 
