@@ -718,7 +718,7 @@ namespace SDC_Application.AL
             TokenReport.RegFardDispatchMainId = this.DispatchId;
             TokenReport.userId = UsersManagments.UserId.ToString();
            
-                UsersManagments.check = 23;
+                UsersManagments.check = 79;
            
             TokenReport.ShowDialog();     
         }

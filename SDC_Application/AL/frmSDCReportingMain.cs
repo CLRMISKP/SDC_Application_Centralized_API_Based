@@ -818,6 +818,14 @@ namespace SDC_Application.AL
                  this.SetCredentials("QismZameenAreaMozaWise", rp, false);
 
              }
+
+             if (UsersManagments.check == 79) //Registry Fardat for Registrar Report
+             {
+                 ReportParameter[] rp = new ReportParameter[1];
+                 rp[0] = new ReportParameter("RegFardDispatchMainId", this.RegFardDispatchMainId);
+                 this.SetCredentials("RegistrarFardatMain", rp, false);
+
+             }
         }
 
     }
