@@ -540,6 +540,11 @@ namespace SDC_Application.AL
                     DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
                     foreach (DataRow row in KhatooniDetail.Rows)
                     {
+                        txtKhatooniHissa.Clear();
+                        txtKhatooniKanal.Clear();
+                        txtKhatooniMarla.Clear();
+                        txtKhatooniSarsai.Clear();
+                        txtKhatooniFeet.Clear();
                         txtKhatooniLagan.Text = row["KhatooniLagan"].ToString();
                         txtWasailAbpashi.Text = row["Wasail_e_Abpashi"].ToString();
                         txtKhatooniFullDeatils.Text = row["KhatooniKashtkaranFullDetail_New"].ToString();
