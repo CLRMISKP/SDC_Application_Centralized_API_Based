@@ -22,7 +22,7 @@ namespace SDC_Application.AL
         public bool isConfirmed { get; set; }
         public string MinhayeIntiqalId { get; set; }
         public string IntiqalTypeId { get; set; }
-        public string intiqalType { get; set; }
+        public string intiqalType ="";
         public string BS_AreaHissa { get; set; }
         public string RegStatus { get; set; }
         string datetoken;
