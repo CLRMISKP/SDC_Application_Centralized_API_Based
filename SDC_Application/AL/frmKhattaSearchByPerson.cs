@@ -41,7 +41,6 @@ namespace SDC_Application.AL
         {
             String showFormName = System.Configuration.ConfigurationSettings.AppSettings["showFormName"];
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
-
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             cmbMouza.Focus();
         }
@@ -119,22 +118,48 @@ namespace SDC_Application.AL
 
         private void btnPopulate_Click(object sender, EventArgs e)
         {
+            dataGridViewPersons.DataSource = null;
             dgKhewatFreeqDetails.DataSource = null;
             grdPersonKatajats.DataSource = null;
-            if ((txtVisitorName.Text.Trim() != "" || txtFatherName.Text.Trim()!="") && Convert.ToInt32(cmbMouza.SelectedValue)>0)
+            this.Persons.Clear();
+            if ((txtVisitorName.Text.Trim() != "" || txtFatherName.Text.Trim() != "" ) && Convert.ToInt32(cmbMouza.SelectedValue) > 0) // search on moza and (name or father name)
             {
                 this.MozaID = cmbMouza.SelectedValue.ToString();
                 this.PersonName = txtVisitorName.Text.Trim();
                 this.FatherName = txtFatherName.Text.Trim();
-                this.Persons.Clear();
-                //this.Persons = objBusiness.filldatatable_from_storedProcedure("Proc_Get_Searched_Afrad_List " + this.MozaID + ",1, N'" + PersonName + "'");
+                txtCNIC.Clear();
+
                 this.Persons = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Searched_Afrad_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + ",1, N'" + PersonName + "',N'" + FatherName + "'");
+
+            }
+            else if (txtCNIC.Text.Trim().Length > 3 && txtCNIC.Text.Trim().Length < 14)  // Search on cnic by providing cnic nubmer from 4 to 13 digists. Both in select moza or whole tehsil
+            {
+                 txtVisitorName.Clear();
+                 txtFatherName.Clear();
+                if(cmbMouza.SelectedIndex>0)
+                {
+                   this.MozaID = cmbMouza.SelectedValue.ToString();
+                }
+                else
+                {
+                    this.MozaID = "-1";
+                }
+
+
+                this.Persons = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Searched_Afrad_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + ",1, N'" + PersonName + "',N'" + FatherName + "'," + txtCNIC.Text.ToString() + "," + UsersManagments.SubSdcId.ToString());  
+            }
+            else if ((txtCNIC.Text.Trim().Length > 0) && (txtCNIC.Text.Trim().Length < 4 || txtCNIC.Text.Trim().Length > 13))
+            {
+                MessageBox.Show("شناختی کارڈ نمبر درست نہیں ہے ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
                 if (this.Persons != null)
                 {
                     this.FillPersonGridview(Persons);
                 }
                // Proc_Get_Person_KhataJats();
-            }
+            
         }
 
         #region Fill Person Gridview
@@ -152,6 +177,17 @@ namespace SDC_Application.AL
                 this.dataGridViewPersons.Columns["QoamId"].Visible = false;
                 this.dataGridViewPersons.Columns["PersonName"].Visible = false;
                 this.dataGridViewPersons.Columns["FatherName"].Visible = false;
+                
+                if (txtCNIC.Text.Trim().Length > 0)
+                {
+                    this.dataGridViewPersons.Columns["CNIC"].Visible = true;
+                    this.dataGridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ";
+                    if(this.MozaID != "-1")
+                    {
+                        this.dataGridViewPersons.Columns["موضع"].Visible = false;
+                    }
+                  
+                }
 
             }
         }
@@ -587,6 +623,16 @@ namespace SDC_Application.AL
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
+        }
+
+        private void txtCNIC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 13)
+            {
+                e.Handled = true;
+            }
+            txtVisitorName.Clear();
+            txtFatherName.Clear();
         }
 
 
