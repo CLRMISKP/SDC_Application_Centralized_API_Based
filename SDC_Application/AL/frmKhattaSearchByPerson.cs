@@ -43,12 +43,19 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+UsersManagments.SubSdcId.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             cmbMouza.Focus();
+            tooltip();
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //   this.SearchedKhattaDataBinding.DataSource = client.GetKhattajatByPersonId(CurrentUser.MozaId.ToString(), this.PersonId).ToList();
         }
 
+        #region Tooltip
+        public void tooltip()
+        {
+            toolTip1.SetToolTip(txtCNIC, " شناختی کارڈ نمبر کے ذریعے تحصیل میں یا کسی موضع میں تلاش کریں");
+        }
+        #endregion
         public void Proc_Get_Person_KhataJats()
         {
 

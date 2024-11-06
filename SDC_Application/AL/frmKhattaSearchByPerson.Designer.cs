@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalKhattajat = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTotalRaqba = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCNIC = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnGoshwaraMalkiat = new System.Windows.Forms.Button();
             this.txtFatherName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,8 +54,7 @@
             this.dgKhewatFreeqDetails = new System.Windows.Forms.DataGridView();
             this.dataGridViewPersons = new System.Windows.Forms.DataGridView();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtCNIC = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -144,6 +146,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1382, 79);
             this.panel1.TabIndex = 3;
+            // 
+            // txtCNIC
+            // 
+            this.txtCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCNIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNIC.Location = new System.Drawing.Point(504, 16);
+            this.txtCNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtCNIC.MaxLength = 13;
+            this.txtCNIC.Name = "txtCNIC";
+            this.txtCNIC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtCNIC.Size = new System.Drawing.Size(161, 30);
+            this.txtCNIC.TabIndex = 52;
+            this.txtCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNIC_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(671, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 38);
+            this.label3.TabIndex = 53;
+            this.label3.Text = ":شناختی کارڈ";
             // 
             // btnGoshwaraMalkiat
             // 
@@ -390,32 +418,6 @@
             this.colChk.ReadOnly = true;
             this.colChk.Width = 80;
             // 
-            // txtCNIC
-            // 
-            this.txtCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCNIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCNIC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCNIC.Location = new System.Drawing.Point(504, 16);
-            this.txtCNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtCNIC.MaxLength = 13;
-            this.txtCNIC.Name = "txtCNIC";
-            this.txtCNIC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCNIC.Size = new System.Drawing.Size(161, 30);
-            this.txtCNIC.TabIndex = 52;
-            this.txtCNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNIC_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(671, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 38);
-            this.label3.TabIndex = 53;
-            this.label3.Text = ":شناختی کارڈ";
-            // 
             // frmKhattaSearchByPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -477,5 +479,6 @@
         private System.Windows.Forms.Button btnGoshwaraMalkiat;
         public System.Windows.Forms.TextBox txtCNIC;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
