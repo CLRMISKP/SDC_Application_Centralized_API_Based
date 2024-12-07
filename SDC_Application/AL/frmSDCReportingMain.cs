@@ -826,6 +826,22 @@ namespace SDC_Application.AL
                  this.SetCredentials("RegistrarFardatMain", rp, false);
 
              }
+             if (UsersManagments.check == 80) //Registry Fardat for Registrar Report
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 this.SetCredentials("IntiqalImplementedPendingDataEntryManual", rp, false);
+
+             }
+             if (UsersManagments.check == 81) //Registry Fardat for Registrar Report
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                 rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                 this.SetCredentials("DRA_Attested_Mutation_and_Fardat_Bayan_Halfi", rp, false);
+
+             }
         }
 
     }
