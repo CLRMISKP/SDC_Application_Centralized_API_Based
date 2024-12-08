@@ -75,7 +75,6 @@
             this.lbl2.TabIndex = 2;
             this.lbl2.Text = "label2";
             this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl2.Visible = false;
             // 
             // lbl3
             // 
@@ -88,7 +87,6 @@
             this.lbl3.TabIndex = 3;
             this.lbl3.Text = "label2";
             this.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl3.Visible = false;
             // 
             // lbl4
             // 
