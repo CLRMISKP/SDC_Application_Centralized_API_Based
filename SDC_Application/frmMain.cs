@@ -1878,20 +1878,7 @@ namespace SDC_Application
 
         private void mnuDePendingMut_Click(object sender, EventArgs e)
         {
-            bool isOpen = IsFrmOpen("frmSDCReportingMain");
-
-            if (!isOpen)
-            {
-
-                //UsersManagments.check = 2;
-                frmSDCReportingMain obj = new frmSDCReportingMain();
-                UsersManagments.check = 56;
-                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
-                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
-                obj.MdiParent = this;
-                obj.WindowState = this.WindowState;
-                obj.Show();
-            }
+           
         }
 
         private void mnuDePendingMutCo_Click(object sender, EventArgs e)
@@ -2515,6 +2502,60 @@ namespace SDC_Application
                 //UsersManagments.check = 2;
                 frmSDCReportingMain obj = new frmSDCReportingMain();
                 UsersManagments.check = 78;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void DataEntryPendingMut_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 56;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void DataEntryAllMut_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 80;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuPeshDivProforma_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 81;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
