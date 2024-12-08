@@ -4742,7 +4742,7 @@ namespace SDC_Application.AL
         {
             if (this.txtPVID.Text != "-1")
             {
-                UsersManagments.check = 80;
+                UsersManagments.check = 82;
                 frmSDCReportingMain sdcReports = new frmSDCReportingMain();
                 sdcReports.PVID = this.txtPVID.Text;
                 sdcReports.MozaId = cmbMouza.SelectedValue.ToString();
