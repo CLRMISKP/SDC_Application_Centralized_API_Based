@@ -147,7 +147,7 @@ namespace SDC_Application.AL
              //You can add Parameter if need
             ReportParameter[] rp = new ReportParameter[1];
             rp = r;
-            if ((UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check != 44 && UsersManagments.check != 47) || UsersManagments.check == 63 || UsersManagments.check >69 )
+            if ((UsersManagments.check > 24 && UsersManagments.check < 60 && UsersManagments.check != 51 && UsersManagments.check != 50 && UsersManagments.check != 44 && UsersManagments.check != 47) || UsersManagments.check == 63 || (UsersManagments.check >69 && UsersManagments.check!=80) )
             {
                 //ReportParameter param = new ReportParameter();
                 //param.Name = "TehsilId";
@@ -824,6 +824,15 @@ namespace SDC_Application.AL
                  ReportParameter[] rp = new ReportParameter[1];
                  rp[0] = new ReportParameter("RegFardDispatchMainId", this.RegFardDispatchMainId);
                  this.SetCredentials("RegistrarFardatMain", rp, false);
+
+             }
+
+             if (UsersManagments.check == 80) // Fard i Badar Challan
+             {
+                 ReportParameter[] rp = new ReportParameter[2];
+                 rp[0] = new ReportParameter("TokenId", this.TokenID);
+                 rp[1] = new ReportParameter("tehsilid", UsersManagments._Tehsilid.ToString());
+                 this.SetCredentials("FardBadarTaxBankChallan", rp, false);
 
              }
         }

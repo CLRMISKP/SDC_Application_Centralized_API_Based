@@ -39,8 +39,14 @@ namespace SDC_Application.AL
         DataTable GetTotalRaqba = new DataTable();
         DataTable fbAfradListProposed = new DataTable();
         DataTable fbMushteriFareeqain = new DataTable();
+        DataTable dt = new DataTable();
+        DataTable dtGrd = new DataTable();
+        DataTable dtPayment = new DataTable();
+        DataTable dtReceipt = new DataTable();
+
         DataTable dtKhewatFareeqainForBayan = new DataTable();
         TaqseemNewKhataJatMin MinKhataMethods = new TaqseemNewKhataJatMin();
+        datagrid_controls objdatagird = new datagrid_controls();
         Intiqal intiqal=new Intiqal();
         DataView dvMinKhataMalkan = new DataView();
         RhzSDC rhz = new RhzSDC();
@@ -50,7 +56,7 @@ namespace SDC_Application.AL
         bool ConfirmationStatus = false;
         bool AmaldaramadStatus = false;
         DataView view = new DataView();
-        
+        double servicecostperunit = 0;
         int registerNo = 0;
         string khatoniNo = "";
         string seqNo = "";
@@ -58,6 +64,11 @@ namespace SDC_Application.AL
         public string IndexedKhattaNo { get; set; }
         private string SelectedPersonId { get; set; }
         public string ScanDataPath { get; set; }
+        public string TokenId { get; set; }
+
+        BL.frmToken objbusines = new BL.frmToken();
+        BL.frmRecipt objfrmRecipt = new BL.frmRecipt();
+        BL.frmVoucher objVoucher = new BL.frmVoucher();
 
         #region Class Variables for Shajra Malik name Changes
 
@@ -811,6 +822,8 @@ namespace SDC_Application.AL
             this.FillQoamCombo();
             Fill_ComboKhewatTypes();
             //this.FillMisalMian();
+
+      
         }
 
         #endregion
@@ -1429,23 +1442,41 @@ namespace SDC_Application.AL
         
         private void btnSaveFardBadar_Click(object sender, EventArgs e)
         {
-               try 
-	                {	        
-		                string fbId=txtFbId.Text.Trim()!=""?txtFbId.Text.Trim():"-1";
-                        string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, txtIntiqalNos.Text.Trim());
-                        txtFbId.Text = LastId;
-                        MessageBox.Show("فرد بدر اندراج ہو گیا ہے۔", "");
-                        this.txtFardBadarDocNO.Clear();
-                        txtIntiqalNos.Clear();
-                        this.dtpDateGardawari.Value = DateTime.Now;
-                        this.dtpDateTehsilDar.Value = DateTime.Now;
-                        this.txtFardBadarDocNO.Focus();
-                        this.txtFbId.Text = "-1";
-	                }
-	                catch (Exception ex)
-	                {
-		                MessageBox.Show(ex.Message);
-	                }
+            if (txtTokenNo.Text.Trim().Length > 0)
+            {
+                try
+                {
+                    string fbId = txtFbId.Text.Trim() != "" ? txtFbId.Text.Trim() : "-1";
+                    string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, this.TokenId.ToString() ,txtIntiqalNos.Text.Trim());
+                    if (LastId == "-1")
+                    {
+                        MessageBox.Show("فرد بدر نمبر  " + txtFardBadarDocNO.Text.Trim() + "پہلے سے موجود ہے ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (LastId == "-2")
+                    {
+                        MessageBox.Show("اس ٹوکن پر پہلے سے فرد بدر موجود ہے ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    txtFbId.Text = LastId;
+                    MessageBox.Show("فرد بدر اندراج ہو گیا ہے۔", "");
+                    //this.txtFardBadarDocNO.Clear();
+                    //txtIntiqalNos.Clear();
+                    this.dtpDateGardawari.Value = DateTime.Now;
+                    this.dtpDateTehsilDar.Value = DateTime.Now;
+                    this.txtFardBadarDocNO.Focus();
+                    this.txtFbId.Text = "-1";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                btnSearchFB_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("ٹوکن کا انتخاب کریں", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         		 
 	    #endregion
@@ -1455,6 +1486,14 @@ namespace SDC_Application.AL
         private void btnNewFardBadar_Click(object sender, EventArgs e)
         {
             this.txtFbId.Text = "-1";
+            TokenId = "-1";
+            txtKhattaId.Text = "-1";
+            txtTokenNo.Clear();
+            dtTokenDate.Value = DateTime.Now;
+            cmbMouza.SelectedIndex = 0;
+            cmbMouza.Enabled = true;
+            if (cboKhataNo.Items.Count > 0)
+                cboKhataNo.SelectedIndex = 0;
             this.txtFardBadarTafseel.Clear();
             this.dtpDateGardawari.Value = DateTime.Now;
             this.dtpDateTehsilDar.Value = DateTime.Now;
@@ -1462,16 +1501,18 @@ namespace SDC_Application.AL
             this.txtFardBadarDocNO.Focus();
             ClearFardBaderDetails();
             this.btnSaveFardBadar.Enabled = true;
+            txtFardBadarDocNO.Enabled = true;
             //this.DisAbleControls();
         }
 
         private void ClearFardBaderDetails()
         {
+            dgFBKhatajat.DataSource = null;
             this.khewatMalikanByFB= null;
             this.GetKhatoonisFB= null;
             this.KhatooniKhassrasAreaDetailsFB = null;
             //this.GetMozaFamilyListBindingSource.DataSource = null;
-            this.cboKhataNo.SelectedValue = 0;
+          
             this.cboKhatoni.SelectedValue = 0;
             //this.ClearFormControls(gbBabat);
             this.ClearFormControls(gbKhataMain);
@@ -1519,6 +1560,20 @@ namespace SDC_Application.AL
                     this.btnSaveGardawarRpt.Enabled = true;
                     this.btnSaveTehsildarRpt.Enabled = true;
                     btnConfirm.Enabled = true;
+
+                    if (dtMisalDetails.Rows[0]["tokenid"].ToString() == "-1")
+                    {
+                        TokenId = "-1";
+                        txtTokenNo.Clear();
+                        dtTokenDate.Value = DateTime.Now;
+                    }
+                    else
+                    {
+                        TokenId = dtMisalDetails.Rows[0]["tokenid"].ToString();
+                        txtTokenNo.Text = dtMisalDetails.Rows[0]["TokenNo"].ToString();
+                        dtTokenDate.Value = Convert.ToDateTime(dtMisalDetails.Rows[0]["TokenDate"].ToString());
+                    }
+
                     if (this.ConfirmationStatus)
                         {
                         btnAmaldaramad.Enabled = !AmaldaramadStatus;
@@ -3565,6 +3620,63 @@ namespace SDC_Application.AL
             }
         }
 
+        public void CalulateBuyerHissa_FromArea()
+        {
+            try
+            {
+                float khissay;
+                float fhissay;
+
+
+                int KhataKanal;
+                int KhataMarla;
+                float KhataSarsai;
+                float KhataFeet;
+
+               
+
+                if (chbIsKhataMeezanChange.Checked)
+                {
+                    khissay = txtDrustKulHissay.Text.Trim() != "" ? float.Parse(txtDrustKulHissay.Text.Trim()) : 0;
+                    fhissay = txtDrustHissa.Text.Trim() != "" ? float.Parse(txtDrustHissa.Text.Trim()) : 0;
+
+
+                    KhataKanal = txtDrustKanal.Text.Trim() != "" ? int.Parse(txtDrustKanal.Text.Trim()) : 0;
+                    KhataMarla = txtDrustMarla.Text.Trim() != "" ? int.Parse(txtDrustMarla.Text.Trim()) : 0;
+                    KhataSarsai = txtDrustSarsai.Text.Trim() != "" ? float.Parse(txtDrustSarsai.Text.Trim()) : 0;
+                    KhataFeet = txtDrustFeet.Text.Trim() != "" ? float.Parse(txtDrustFeet.Text.Trim()) : 0;
+                }
+                else
+                {
+                    khissay = txtKulHisay.Text.Trim() != "" ? float.Parse(txtKulHisay.Text.Trim()) : 0;
+                    fhissay = txtDrustHissa.Text.Trim() != "" ? float.Parse(txtDrustHissa.Text.Trim()) : 0;
+
+
+                    KhataKanal = txtKanal.Text.Trim() != "" ? int.Parse(txtKanal.Text.Trim()) : 0;
+                    KhataMarla = txtMarla.Text.Trim() != "" ? int.Parse(txtMarla.Text.Trim()) : 0;
+                    KhataSarsai = txtSarsai.Text.Trim() != "" ? float.Parse(txtSarsai.Text.Trim()) : 0;
+                    KhataFeet = txtFeet.Text.Trim() != "" ? float.Parse(txtFeet.Text.Trim()) : 0;
+                }
+
+
+                //Buyers Raqba
+                int bkanal = this.txtDrustPersonKanal.Text.Trim() != "" ? Convert.ToInt32(txtDrustPersonKanal.Text.Trim()) : 0;
+                int bmarla = txtDrustPersonMarla.Text.Trim() != "" ? Convert.ToInt32(txtDrustPersonMarla.Text.Trim()) : 0;
+                float bsarsai = txtDrustPersonSarsai.Text.Trim() != "" ? float.Parse(txtDrustPersonSarsai.Text.Trim()) : 0;
+                float bsft = txtDrustPersonFeet.Text.Trim() != "" ? float.Parse(txtDrustPersonFeet.Text.Trim()) : 0;
+
+                txtDrustHissa.Text = cmnFn.CalculatedHisaFromArea(khissay, fhissay, KhataKanal, KhataMarla, KhataSarsai, KhataFeet, bkanal, bmarla, bsarsai, bsft).ToString();
+                GetBataPart(txtDrustHissa.Text);
+
+
+
+                //************* END ****************************
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnHissaRaqba_Click(object sender, EventArgs e)
         {
             if (txtDrustHissa.Text.Length > 0)
@@ -3575,6 +3687,9 @@ namespace SDC_Application.AL
                 txtDrustPersonSarsai.Text = Area[2] != null ? Area[2].ToString() : "0";
                 txtDrustPersonFeet.Text = Area[3] != null ? Area[3].ToString() : "0";
             }
+
+            CommanFunctions Cfun = new CommanFunctions();
+            CalulateBuyerHissa_FromArea();
         }
 
         private void btnNewMushtri_Click(object sender, EventArgs e)
@@ -4169,6 +4284,551 @@ namespace SDC_Application.AL
                 }
             }
         }
+
+        private void btnSrchToken_Click(object sender, EventArgs e)
+        {
+            this.btnNewFardBadar_Click(sender, e);
+
+            frmTokenPopulate Populate = new frmTokenPopulate();
+
+            Populate.fromform = "2";
+            Populate.FormClosed -= new FormClosedEventHandler(Populate_FormClosed);
+            Populate.FormClosed += new FormClosedEventHandler(Populate_FormClosed);
+            Populate.InteqalMain = true;
+            Populate.ShowDialog();
+        }
+
+        private void Populate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmTokenPopulate Populate = sender as frmTokenPopulate;
+            this.TokenId = Populate.TokenID;
+            txtTokenNo.Text = Populate.TokenNo;
+            txtHiddenServiceTypeId.Text = Populate.ServiceType;
+            this.cmbMouza.SelectedValue = (Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0";
+            FillMisalMian();
+            this.FillKhataJaatByMoza();
+            string lastNo = intiqal.GetNextFBNoForMoza((Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0", Populate.TokenID);
+
+            this.cmbMouza.Enabled = false;
+            long MaxNo = 0;
+            if (long.TryParse(lastNo, out MaxNo))
+            {
+                this.txtFardBadarDocNO.Text = MaxNo.ToString();
+                btnSaveFardBadar.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("سسٹم اگلے فرد بدر نمبر پیدا کرنے میں ناکام راہا۔ خود سے نیا انتقال نمبر کا اندراج کریں-", "انتقال نمبر غلطی", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbMouza.Enabled = true;
+                cmbMouza.SelectedIndex = 0;
+                txtFardBadarDocNO.Enabled = false;
+            }
+
+        }
+
+        public void calldataGrid()
+        {
+
+            try
+            {
+
+                dtPayment = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId " + UsersManagments._Tehsilid.ToString() + ",'" + this.txtPVID.Text + "'");
+
+                grdVoucherDetails.DataSource = dtPayment;
+                objVoucher.VoucherGridSelf(grdVoucherDetails);
+                grdVoucherDetails.Columns["ServiceCostAmount"].Width = 100;
+                grdVoucherDetails.Columns["IntiqalTaxId"].Visible = false;
+
+                if (grdVoucherDetails.Rows.Count > 0)
+                {
+                    objdatagird.SumDataGridColumn(grdVoucherDetails, txtTotalCostVoucher, "ServiceCostAmount");
+                }
+
+
+                grdVoucherDetails.ColumnHeadersHeight = 35;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+       
+
+      
+        private void getPaymentVoucherMaster()
+        {
+            dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + this.TokenId.ToString() + "'," + "P");
+
+            if (dtPayment.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtPayment.Rows)
+                {
+                    dtTokenDate.Text = dr["TokenDate"].ToString();
+                    txtVisitorName.Text = dr["Visitor_Name"].ToString();
+                    txtVisitorFatherName.Text = dr["Visitor_FatherName"].ToString();
+
+                    txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
+                    txtServiceName.Text = dr["TokenPurpose_Urdu"].ToString();
+
+                    this.txtVoucherNo.Text = dr["PV_No"].ToString();
+                    dtChallan.Text = dr["PV_Date"].ToString();
+                    txtPVID.Text = dr["PVID"].ToString();
+                    txtPVNo.Text = dr["PV_No"].ToString();
+                    bool pvstatus = Convert.ToBoolean(dr["PV_Verified_Status"]);
+
+                    Proc_Self_Get_SDC_Services_For_PaymentVoucher_FB();
+
+                    btnMasterSave.Enabled = false;
+
+                    txtQuantity.Enabled = true;
+
+                    calldataGrid();
+
+                    if (pvstatus)
+                    {
+
+                        btnSaveFBChallanDetail.Enabled = false;
+
+                        chkMasterVoucherUpdate.Checked = true;
+                        chkMasterVoucherUpdate.Enabled = false;
+                        lbPaymentTasdeeq.Text = "تصدیق شدہ";
+
+                    }
+                    else
+                    {
+                        btnSaveFBChallanDetail.Enabled = true;
+                        chkMasterVoucherUpdate.Enabled = true;
+
+                        chkMasterVoucherUpdate.Checked = false;
+                        lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+                    }
+
+                }
+            }
+        }
+        private void tabKhataDetail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             switch (tabKhataDetail.SelectedIndex)
+            {
+                case 8:
+                    {
+                        
+
+                        if (txtFbId.Text.Trim().Length > 0 && txtFbId.Text != "-1")
+                        {
+                            if (txtTokenNo.Text.Trim().Length > 0)
+                            {
+                                dtTokenDate.Value = DateTime.Now;
+                                txtVisitorName.Clear();
+                                txtVisitorFatherName.Clear();
+
+                                txtService.Clear();
+                                txtServiceName.Clear();
+
+                                this.txtVoucherNo.Clear();
+                                dtChallan.Value = DateTime.Now;
+                                txtPVID.Text = "-1";
+                                txtPVNo.Text = "-1";
+                                servicecostperunit = 0;
+
+                                btnMasterSave.Enabled = true;
+                                
+                                txtTotalRs.Clear();
+                                txtQuantity.Clear();
+                                // txtVoucherDetailsLastID.Text = "-1";
+                                txtTotalCostVoucher.Clear();
+                                grdVoucherDetails.DataSource = null;
+
+
+                                getPaymentVoucherMaster();
+
+                                //else
+                                //{
+
+                                //    if (dtPayment.Rows.Count > 0)
+                                //    {
+                                //        foreach (DataRow dr in dtPayment.Rows)
+                                //        {
+
+                                //            dtTokenDate.Text = dr["TokenDate"].ToString();
+                                //            txtVisitorName.Text = dr["Visitor_Name"].ToString();
+                                //            txtVisitorFatherName.Text = dr["Visitor_FatherName"].ToString();
+
+                                //            txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
+
+                                //            txtPVID.Text = "-1";
+                                //            txtPVNo.Text = "-1";
+                                //            this.txtVoucherNo.Clear();
+                                //            dtChallan.Value = DateTime.Now;
+
+                                //            btnSave.Enabled = false;
+                                //            txtQuantity.Enabled = false;
+
+                                //            btnMasterSave.Enabled = true;
+
+
+                                //            chkMasterVoucherUpdate.Enabled = true;
+                                //            chkMasterVoucherUpdate.Checked = false;
+                                //            lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+
+                                //        }
+                                //    }
+
+                                //}
+                            }
+                            else
+                            {
+                                MessageBox.Show("اس فرد بدر کا ٹوکن موجود نہیں ہے", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                this.tabKhataDetail.SelectedIndex = 0;
+
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("فرد بدر لوڈ کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.tabKhataDetail.SelectedIndex = 0;
+
+                        }
+                        break;
+                    }
+
+             
+               }
+        }
+
+        public void Proc_Self_Get_SDC_Services_For_PaymentVoucher_FB()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = intiqal.Proc_Self_Get_SDC_Services_For_PaymentVoucher_FB(txtHiddenServiceTypeId.Text);
+                foreach (DataRow d in dt.Rows)
+                {
+                    txtServiceName.Text = d["SDCServiceName_Urdu"].ToString();
+                    servicecostperunit = Convert.ToDouble(d["ServiceCostPerUnit"].ToString());
+                    txtNotificationUnitID.Text = d["TaxNotificationDetailId"].ToString();
+                    txtMasterCostunitID.Text = d["SDCUnitId"].ToString();
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnMasterSave_Click(object sender, EventArgs e)
+        {
+            dt = objbusines.filldatatable_from_storedProcedure("WEB_SP_INSERT_SDC_PaymentVoucherMaster '"
+               + "-1" + "','"
+               + UsersManagments._Tehsilid.ToString() + "','"
+               + "-1" + "','"
+               + this.dtChallan.Value.ToShortDateString() + "','"
+               + this.TokenId.ToString() + "','"
+               + this.cmbMouza.SelectedValue.ToString() + "','"
+                + "Generated" + "',N'" + "" + "','"
+               + UsersManagments.UserId.ToString() + "','"
+               + UsersManagments.UserName.ToString() + "','',''");
+
+            getPaymentVoucherMaster();
+            
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    txtPVID.Text = dr[0].ToString();
+            //    this.txtPVNo.Text = dr[1].ToString();
+            //    this.txtVoucherNo.Text = dr[1].ToString();
+            //    if (txtPVID.Text != "")
+            //    {
+
+            //        btnMasterSave.Enabled = false;
+            //        btnSaveFBChallanDetail.Enabled = true;
+            //        txtQuantity.Enabled = true;
+            //        servicecostperunit = 0;
+            //        Proc_Self_Get_SDC_Services_For_PaymentVoucher_FB();
+
+            //    }
+            //}
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (txtQuantity.Text.Trim() != string.Empty)
+            {
+                double amount = Convert.ToDouble(servicecostperunit) * Convert.ToDouble(this.txtQuantity.Text.ToString());
+                this.txtTotalRs.Text = amount.ToString();
+            }
+            else
+            {
+                this.txtTotalRs.Clear();
+            }
+        }
+
+        public bool Submit()
+        {
+
+            try
+            {
+
+
+                insert_update();
+                return true;
+
+            }
+
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message, "", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                return false;
+            }
+
+        }
+
+        public void InsertioninVocherDetails()
+        {
+            string VocherDetailId = this.txtVoucherDetailsLastID.Text.ToString();
+            string PVID = this.txtPVID.Text.ToString();
+            string SeqNo = this.txtSequenceID.Text.ToString();
+            string Notificationunitid = this.txtNotificationUnitID.Text.ToString();
+            string costunitid = txtMasterCostunitID.Text.ToString();
+            string txtquntity = txtQuantity.Text.ToString();
+            string totalamount = txtTotalRs.Text.ToString();
+            string PVdetails = txtPVDetatils.Text.ToString();
+
+
+
+
+            if (txtVoucherDetailsLastID.Text.ToString() == "-1")
+            {
+                dt = objVoucher.SaveVocherDetails("-1", PVID, "-1", "NULL", "NULL", Notificationunitid, costunitid, servicecostperunit.ToString(), txtquntity, totalamount, PVdetails, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+
+            }
+            else
+            {
+                dt = objVoucher.SaveVocherDetails(VocherDetailId, PVID, SeqNo, "NULL", "NULL", Notificationunitid, costunitid, servicecostperunit.ToString(), txtquntity, totalamount, PVdetails, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString(), UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+            }
+
+
+
+        }
+        public void insert_update()
+        {
+
+            try
+            {
+                if (txtPVID.Text != "")
+                {
+                    InsertioninVocherDetails();
+
+
+                    calldataGrid();
+                }
+                else
+                {
+
+                }
+            }
+
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+        }
+        private void btnSaveFBChallanDetail_Click(object sender, EventArgs e)
+        {
+            if (txtServiceName.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("- سہولت کا انتخاب کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            else if (txtQuantity.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("- صفحات کا اندراج کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            else if (txtTotalRs.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("- رقم کا اندراج کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (grdVoucherDetails.Rows.Count > 0 && txtVoucherDetailsLastID.Text == "-1")
+            {
+                MessageBox.Show("ریکارڈ پہلے سے داخل ہے ", "ریکارڈ", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            else
+            {
+
+                if (Submit())
+                {
+                    txtVoucherDetailsLastID.Text = "-1";
+                    txtSequenceID.Text = "-1";
+
+                    txtServiceName.Clear();
+                    txtTotalRs.Clear();
+                    txtQuantity.Clear();
+
+                }
+
+            }
+        }
+
+        private void grdVoucherDetails_DoubleClick(object sender, EventArgs e)
+        {
+            if (grdVoucherDetails.Rows.Count > 0)
+            {
+                txtVoucherDetailsLastID.Text = grdVoucherDetails.CurrentRow.Cells["PVDetailId"].Value.ToString();
+                txtSequenceID.Text = grdVoucherDetails.CurrentRow.Cells["PVDetailSeqNo"].Value.ToString();
+                txtQuantity.Text = grdVoucherDetails.CurrentRow.Cells["ServiceQuantity"].Value.ToString();
+
+                txtTotalRs.Text = grdVoucherDetails.CurrentRow.Cells["ServiceCostAmount"].Value.ToString();
+                txtServiceName.Text = grdVoucherDetails.CurrentRow.Cells["SDCServiceName_Urdu"].Value.ToString();
+                txtPVDetatils.Text = grdVoucherDetails.CurrentRow.Cells["PVDetailRemarks"].Value.ToString();
+                this.txtPVDetatils.SelectedText = this.txtPVDetatils.Text;
+
+                txtNotificationUnitID.Text = grdVoucherDetails.CurrentRow.Cells["TaxNotificationDetailId"].Value.ToString();
+                txtMasterCostunitID.Text = grdVoucherDetails.CurrentRow.Cells["SDCUnitId"].Value.ToString();
+                txtUnit.Text = grdVoucherDetails.CurrentRow.Cells["SDCUnitName_Urdu"].Value.ToString();
+                servicecostperunit = Convert.ToDouble(grdVoucherDetails.CurrentRow.Cells["ServiceCostPerUnit"].Value.ToString());
+            }
+        }
+
+        private void chkMasterVoucherUpdate_Click(object sender, EventArgs e)
+        {
+            if (chkMasterVoucherUpdate.Checked && txtPVID.Text != "" && grdVoucherDetails.Rows.Count > 0)
+            {
+                try
+                {
+                    if (MessageBox.Show("کیا آپ تصدیق کرنا چاہتے ہیں:::::", "تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (objbusines.filldatatable_from_storedProcedure("WEB_SP_UPDATE_SDC_PaymentVoucherMaster " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + this.txtPVID.Text + "','" + chkMasterVoucherUpdate.Checked + "','" + this.txtTotalCostVoucher.Text.ToString() + "'") != null)
+                        {
+
+                            chkMasterVoucherUpdate.Enabled = false;
+                            btnSaveFBChallanDetail.Enabled = false;
+                            btnMasterSave.Enabled = false;
+
+                            lbPaymentTasdeeq.Text = "تصدیق شدہ";
+                        }
+                    }
+                    else
+                    {
+                        chkMasterVoucherUpdate.Checked = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("تصدیق کے لیے  ریکارڈز خالی ہیں", "تصدیق", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                chkMasterVoucherUpdate.Checked = false;
+            }
+        }
+
+        private void btnPrintVoucher_Click(object sender, EventArgs e)
+        {
+            if (this.txtPVID.Text != "-1")
+            {
+                UsersManagments.check = 80;
+                frmSDCReportingMain sdcReports = new frmSDCReportingMain();
+                sdcReports.PVID = this.txtPVID.Text;
+                sdcReports.MozaId = cmbMouza.SelectedValue.ToString();
+                sdcReports.TokenID = this.TokenId;
+                sdcReports.Tehsilid = UsersManagments._Tehsilid.ToString();
+                sdcReports.ShowDialog();
+
+            }
+
+
+            
+        }
+
+        private void GetBataPart(string NetPart)
+        {
+            if (NetPart.Length > 0)
+            {
+                string val = NetPart;
+                if (val.Contains('.'))
+                {
+                    string[] parts = val.Split('.');
+
+                    if (parts[0].ToString() == "" || Convert.ToInt32(parts[0]) == 0)
+                    {
+                        parts[0] = "0";
+                    }
+
+                    if (parts[1].ToString() == "" || Convert.ToInt32(parts[1]) == 0)
+                    {
+                        parts[1] = "0";
+                    }
+
+                    if (parts[0] != "0")
+                    {
+                        if (parts[1] != "0")
+                        {
+                            txtDrustHissaBata.Text = Convert.ToInt32(parts[0]).ToString() + parts[1].ToString() + "/1";
+                            for (int i = 1; i <= parts[1].ToString().Length; i++)
+                            {
+                                txtDrustHissaBata.Text = txtDrustHissaBata.Text + "0";
+                            }
+                        }
+                        else
+                        {
+                            txtDrustHissaBata.Text = Convert.ToInt32(parts[0]).ToString();
+                        }
+                    }
+                    else
+                    {
+                        if (parts[1] != "0")
+                        {
+                            txtDrustHissaBata.Text = Convert.ToInt32(parts[1]).ToString() + "/1";
+                            for (int i = 1; i <= parts[1].ToString().Length; i++)
+                            {
+                                txtDrustHissaBata.Text = txtDrustHissaBata.Text + "0";
+                            }
+                        }
+                        else
+                        {
+                            txtDrustHissaBata.Text = Convert.ToInt32(parts[0]).ToString();
+                        }
+                    }
+
+
+
+
+                }
+                else
+                {
+                    txtDrustHissaBata.Text = val;
+                }
+            }
+        }
+
+        private void btnHissabamutabiqRaqba_Click(object sender, EventArgs e)
+        {
+            txtDrustPersonKanal.Text = txtDrustPersonKanal.Text.Trim().Length > 0 ? txtDrustPersonKanal.Text.Trim() : "0";
+            txtDrustPersonMarla.Text = txtDrustPersonMarla.Text.Trim().Length > 0 ? txtDrustPersonMarla.Text.Trim() : "0";
+            txtDrustPersonSarsai.Text = txtDrustPersonSarsai.Text.Trim().Length > 0 ? txtDrustPersonSarsai.Text.Trim() : "0";
+            txtDrustPersonFeet.Text = txtDrustPersonFeet.Text.Trim().Length > 0 ? txtDrustPersonFeet.Text.Trim() : "0";
+      
+            CommanFunctions Cfun = new CommanFunctions();
+            CalulateBuyerHissa_FromArea();
+        }
+
+      
 
     }
 }

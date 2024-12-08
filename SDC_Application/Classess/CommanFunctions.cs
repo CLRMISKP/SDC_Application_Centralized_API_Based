@@ -15,6 +15,7 @@ namespace SDC_Application.Classess
           decimal RaqbaToSft=((((Kanal*20)+Marla)*(decimal)272.25)+(Sarsai*(decimal)30.25));
           return RaqbaToSft;
         }
+
         public string SFTtoRqba(int Kanal, int Marla, decimal Sarsai)
         {
             string[] raqba = new string[3];
@@ -111,7 +112,8 @@ namespace SDC_Application.Classess
             float bHissay = 0;
             if (raqbainSft != 0 && bRaqbaInSft != 0)
             {
-                bHissay = (KulHissay * bRaqbaInSft) / raqbainSft;
+                
+                bHissay = (float)Math.Round((KulHissay * bRaqbaInSft) / raqbainSft, 6);
             }
             return bHissay;
         }

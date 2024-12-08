@@ -181,8 +181,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.lblTimer);
@@ -424,14 +424,14 @@
             this.groupBox6.Location = new System.Drawing.Point(174, 419);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(424, 133);
+            this.groupBox6.Size = new System.Drawing.Size(424, 135);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(67, 91);
+            this.label13.Location = new System.Drawing.Point(81, 98);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 31);
             this.label13.TabIndex = 38;
@@ -478,7 +478,7 @@
             this.cmbPurpose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPurpose.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPurpose.FormattingEnabled = true;
-            this.cmbPurpose.Location = new System.Drawing.Point(63, 63);
+            this.cmbPurpose.Location = new System.Drawing.Point(63, 62);
             this.cmbPurpose.Name = "cmbPurpose";
             this.cmbPurpose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbPurpose.Size = new System.Drawing.Size(251, 39);

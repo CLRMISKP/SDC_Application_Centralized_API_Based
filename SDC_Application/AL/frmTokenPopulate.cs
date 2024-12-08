@@ -175,6 +175,10 @@ namespace SDC_Application.AL
                         //dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal '" + datetoken + "'," + SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
                         dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Intiqal_withPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "'," + UsersManagments.SubSdcId.ToString());
                     }
+                    else if (fromform == "2")
+                    {
+                        dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDCToken_Detail_Only_Fard_i_Badar_withPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + datetoken + "'," + UsersManagments.SubSdcId.ToString());
+                    }
                     else
                     {
                         dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All_withPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'," + UsersManagments.SubSdcId.ToString());

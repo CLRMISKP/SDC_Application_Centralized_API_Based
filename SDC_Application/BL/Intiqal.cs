@@ -79,6 +79,20 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
+
+        public DataTable Proc_Self_Get_SDC_Services_For_PaymentVoucher_FB(string serviceTypeId)
+        {
+            string spWithParam = "Proc_Self_Get_SDC_Services_For_PaymentVoucher_FB " + serviceTypeId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+
+        }
+
+        public string GetNextFBNoForMoza(string MozaId, string TokenId)
+        {
+            string spWithParam = "Proc_Get_Intiqal_Next_FB_No_By_Moza " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId + ",'" + TokenId + "'";
+            string lastNo = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+            return lastNo;
+        }
         public DataTable Proc_Get_KhassrasTotalArea_By_KhataId(string khataid)//, string IntiqalID, string SeqNo)
         {
             string spWithParam = "Proc_Get_KhassrasTotalArea_By_KhataId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + khataid;

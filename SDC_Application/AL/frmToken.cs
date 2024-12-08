@@ -976,6 +976,10 @@ namespace SDC_Application.AL
                 {
                     objauto.FillCombo("Proc_Get_SDC_TokenPurpose_Fard " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbPurpose, "TokenPurpose_Urdu", "TokenPurposeId");
                 }
+                else if (cmbServiceId.Text.Contains("بدر"))
+                {
+                    objauto.FillCombo("Proc_Get_SDC_TokenPurpose_FB " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbPurpose, "TokenPurpose_Urdu", "TokenPurposeId");
+                }
                 else
                 {
                     objauto.FillCombo("Proc_Get_SDC_TokenPurpose_Intiqal " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbPurpose, "TokenPurpose_Urdu", "TokenPurposeId");

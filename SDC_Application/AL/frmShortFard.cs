@@ -2447,6 +2447,11 @@ namespace SDC_Application.AL
 
         private void btnPrintVoucher_Click_1(object sender, EventArgs e)
         {
+            if (this.txtFardType.Text.Contains("فرد بدر"))
+            {
+                MessageBox.Show("فرد بدر ٹیب سے چالان پرنٹ کریں", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (this.txtPVID.Text != "-1")
             {
                 UsersManagments.check = 2;
