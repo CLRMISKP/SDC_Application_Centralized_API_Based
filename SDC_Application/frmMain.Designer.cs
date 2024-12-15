@@ -203,6 +203,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mnuKhataLockUnlockDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -1146,7 +1147,8 @@
             this.mnuFardBadarEntryRpt,
             this.mnuTokenandService,
             this.mnuMissingMut,
-            this.mnuMonthlyTaxMut});
+            this.mnuMonthlyTaxMut,
+            this.mnuKhataLockUnlockDetail});
             this.mnuOperationalReports.Name = "mnuOperationalReports";
             this.mnuOperationalReports.Size = new System.Drawing.Size(412, 42);
             this.mnuOperationalReports.Text = "10 - اپریشنل سٹاف, ماہوار ٹیکس، گمشدہ انتقالات وغیرہ";
@@ -1669,6 +1671,13 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
+            // mnuKhataLockUnlockDetail
+            // 
+            this.mnuKhataLockUnlockDetail.Name = "mnuKhataLockUnlockDetail";
+            this.mnuKhataLockUnlockDetail.Size = new System.Drawing.Size(313, 42);
+            this.mnuKhataLockUnlockDetail.Text = "- کھاتہ جات لاک / ان لاک تفصیل";
+            this.mnuKhataLockUnlockDetail.Click += new System.EventHandler(this.mnuKhataLockUnlockDetail_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1880,5 +1889,6 @@
         private System.Windows.Forms.ToolStripMenuItem DataEntryPendingMut;
         private System.Windows.Forms.ToolStripMenuItem DataEntryAllMut;
         private System.Windows.Forms.ToolStripMenuItem mnuPeshDivProforma;
+        private System.Windows.Forms.ToolStripMenuItem mnuKhataLockUnlockDetail;
     }
 }

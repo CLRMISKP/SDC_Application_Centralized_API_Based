@@ -855,6 +855,13 @@ namespace SDC_Application.AL
                     this.SetCredentials("FardBadarTaxBankChallan", rp, false);
 
                 }
+                if (UsersManagments.check == 83) //Khata Lock Details
+                {
+                    ReportParameter[] rp = new ReportParameter[1];
+                    rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                    this.SetCredentials("KhataLockDetails", rp, false);
+
+                }
             }
 
         }

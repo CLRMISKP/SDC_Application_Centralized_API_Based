@@ -1450,7 +1450,7 @@ namespace SDC_Application.AL
                     string LastId = fardBadarBL.SaveFardBadarMain(fbId, Convert.ToInt32(cmbMouza.SelectedValue.ToString()), txtFardBadarDocNO.Text.Trim(), dtpDateGardawari.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), dtpDateTehsilDar.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()), txtFardBadarTafseel.Text, UsersManagments.UserId, UsersManagments.UserName, this.TokenId.ToString() ,txtIntiqalNos.Text.Trim());
                     if (LastId == "-1")
                     {
-                        MessageBox.Show("فرد بدر نمبر  " + txtFardBadarDocNO.Text.Trim() + "پہلے سے موجود ہے ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("فرد بدر نمبر  " + txtFardBadarDocNO.Text.Trim() + "پہلے سے موجود ہے , رپورٹ میں اگر تبدیلی کی گئی ہو تو رپورٹ محفوظ کر دی گئی ہے۔ ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     else if (LastId == "-2")
