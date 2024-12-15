@@ -113,6 +113,7 @@
             this.mnuSubDraIntiqalPartTaxes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubDrFardTaxes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDRAIntiqalFeeDetailRpt = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPeshDivProforma = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuIntiqalReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubInitqalatTehsildar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubIntiqalRegistryPending = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,6 +125,8 @@
             this.mnuSubBiometricCapturedNotAttestIntiqalat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubNotAttestedMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDePendingMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.DataEntryPendingMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.DataEntryAllMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminRptAttMutAudit = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuRegEntryRptsm = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMutationSummaryRptForRevMeeting = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,9 +203,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DataEntryPendingMut = new System.Windows.Forms.ToolStripMenuItem();
-            this.DataEntryAllMut = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPeshDivProforma = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -903,6 +903,13 @@
             this.mnuDRAIntiqalFeeDetailRpt.Text = "- انتقال ٹیکسیز تفصیلی رپورٹ";
             this.mnuDRAIntiqalFeeDetailRpt.Click += new System.EventHandler(this.mnuDRAIntiqalFeeDetailRpt_Click);
             // 
+            // mnuPeshDivProforma
+            // 
+            this.mnuPeshDivProforma.Name = "mnuPeshDivProforma";
+            this.mnuPeshDivProforma.Size = new System.Drawing.Size(275, 42);
+            this.mnuPeshDivProforma.Text = "- انتقالات پشاور ڈویژن پروفارما";
+            this.mnuPeshDivProforma.Click += new System.EventHandler(this.mnuPeshDivProforma_Click);
+            // 
             // mnuIntiqalReport
             // 
             this.mnuIntiqalReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -994,8 +1001,22 @@
             this.DataEntryAllMut});
             this.mnuDePendingMut.Name = "mnuDePendingMut";
             this.mnuDePendingMut.Size = new System.Drawing.Size(404, 42);
-            this.mnuDePendingMut.Text = "- ڈیٹا انٹری نامکمل انتقالات";
+            this.mnuDePendingMut.Text = "- ڈیٹا انٹری  انتقالات";
             this.mnuDePendingMut.Click += new System.EventHandler(this.mnuDePendingMut_Click);
+            // 
+            // DataEntryPendingMut
+            // 
+            this.DataEntryPendingMut.Name = "DataEntryPendingMut";
+            this.DataEntryPendingMut.Size = new System.Drawing.Size(297, 42);
+            this.DataEntryPendingMut.Text = "- ڈیٹا انٹری نامکمل انتقالات";
+            this.DataEntryPendingMut.Click += new System.EventHandler(this.DataEntryPendingMut_Click);
+            // 
+            // DataEntryAllMut
+            // 
+            this.DataEntryAllMut.Name = "DataEntryAllMut";
+            this.DataEntryAllMut.Size = new System.Drawing.Size(297, 42);
+            this.DataEntryAllMut.Text = "- ڈیٹا انٹری عمل دارمد شدہ انتقالات";
+            this.DataEntryAllMut.Click += new System.EventHandler(this.DataEntryAllMut_Click);
             // 
             // mnuAdminRptAttMutAudit
             // 
@@ -1647,27 +1668,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
-            // 
-            // DataEntryPendingMut
-            // 
-            this.DataEntryPendingMut.Name = "DataEntryPendingMut";
-            this.DataEntryPendingMut.Size = new System.Drawing.Size(246, 42);
-            this.DataEntryPendingMut.Text = "- ڈیٹا انٹری نامکمل انتقالات";
-            this.DataEntryPendingMut.Click += new System.EventHandler(this.DataEntryPendingMut_Click);
-            // 
-            // DataEntryAllMut
-            // 
-            this.DataEntryAllMut.Name = "DataEntryAllMut";
-            this.DataEntryAllMut.Size = new System.Drawing.Size(246, 42);
-            this.DataEntryAllMut.Text = "- ڈیٹا انٹری تمام انتقالات";
-            this.DataEntryAllMut.Click += new System.EventHandler(this.DataEntryAllMut_Click);
-            // 
-            // mnuPeshDivProforma
-            // 
-            this.mnuPeshDivProforma.Name = "mnuPeshDivProforma";
-            this.mnuPeshDivProforma.Size = new System.Drawing.Size(275, 42);
-            this.mnuPeshDivProforma.Text = "- انتقالات پشاور ڈویژن پروفارما";
-            this.mnuPeshDivProforma.Click += new System.EventHandler(this.mnuPeshDivProforma_Click);
             // 
             // frmMain
             // 

@@ -259,11 +259,31 @@ namespace SDC_Application
                 mnucreateUsers.Visible = false;
                 mnuSupervisorMain.Visible = false;
             }
+            if (UsersManagments._RoleName == "Reports")
+            {
+                mnuMainFileIndexing.Visible = false;
+                mnuVucherReceipt.Visible = false;
+                ToolStripMenuMalkiatTafseel.Visible = false;
+                mnujamaBandi.Visible = false;
+                mnuMutations.Visible = false;
+                mnuCalcultorMain.Visible = false;
+                mnuSupervisorMain.Visible = false;
+                ToolStripMenuCorrection.Visible = false;
+                mnuOperationalReports.Visible = false;
+                mnuSubStateLandReport.Visible = false;
+                mnuInconsistentRpt.Visible = false;
+                mnuRhzRptAdmin.Visible = false;
+                mnuLandOwnersWithAcre.Visible = false;
+                mnuOperatorReports.Visible = false;
+                mnuRHZ.Visible = false;
+                mnuReports.Visible = true;
+            }
             if (DateTime.Now < new DateTime(2024, 12, 11))
             {
                 frmAppUpdateListMessage appUp = new frmAppUpdateListMessage();
                 appUp.ShowDialog();
             }
+
         }
 
         #endregion

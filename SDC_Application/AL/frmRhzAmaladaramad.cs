@@ -341,7 +341,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                this.dtKhewatFareeqain = khatas.Proc_Self_Get_KhewatFareeqeinByKhataId(this.KhataId);
+                this.dtKhewatFareeqain = khatas.Proc_Self_Get_KhewatFareeqeinByKhataId(cbokhataNo.SelectedValue.ToString());
                 this.dgKhewatFareeqainAll.DataSource = null;
                 this.dgKhewatFareeqainAll.DataSource = dtKhewatFareeqain;
                 view = new DataView(dtKhewatFareeqain);
