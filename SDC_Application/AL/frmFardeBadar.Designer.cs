@@ -136,6 +136,7 @@
             this.gbKhewatGroupFareeq = new System.Windows.Forms.GroupBox();
             this.txtFbFareeqId = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnHissabamutabiqRaqba = new System.Windows.Forms.Button();
             this.btnDeleteMalikAll = new System.Windows.Forms.Button();
             this.label124 = new System.Windows.Forms.Label();
             this.txtSearchCurrentKhewatFareeqain = new System.Windows.Forms.TextBox();
@@ -559,7 +560,6 @@
             this.txtService = new System.Windows.Forms.TextBox();
             this.btnMasterSave = new System.Windows.Forms.Button();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnHissabamutabiqRaqba = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -849,7 +849,7 @@
             this.txtIntiqalNos.Size = new System.Drawing.Size(184, 30);
             this.txtIntiqalNos.TabIndex = 214;
             this.ttMisal.SetToolTip(this.txtIntiqalNos, "اگر فرد بدر میں انتقال کی حوالہ دینے کی ضرورت ہو تو انتقال نمبر درج کریں ۔ اگر ان" +
-        "تقال ایک سے زدہ ہو تو کوما ڈال کر انتقالات درج کریں۔");
+                    "تقال ایک سے زدہ ہو تو کوما ڈال کر انتقالات درج کریں۔");
             this.txtIntiqalNos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntiqalNos_KeyPress);
             // 
             // label125
@@ -891,10 +891,10 @@
             this.btnFbRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFbRevert.Enabled = false;
             this.btnFbRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnFbRevert.Location = new System.Drawing.Point(75, 585);
+            this.btnFbRevert.Location = new System.Drawing.Point(75, 586);
             this.btnFbRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnFbRevert.Name = "btnFbRevert";
-            this.btnFbRevert.Size = new System.Drawing.Size(59, 63);
+            this.btnFbRevert.Size = new System.Drawing.Size(59, 49);
             this.btnFbRevert.TabIndex = 209;
             this.btnFbRevert.TabStop = false;
             this.ttMisal.SetToolTip(this.btnFbRevert, "انتخاب کردہ فرد بدر ری ورٹ کریں");
@@ -1880,6 +1880,20 @@
             this.groupBox7.TabIndex = 239;
             this.groupBox7.TabStop = false;
             // 
+            // btnHissabamutabiqRaqba
+            // 
+            this.btnHissabamutabiqRaqba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHissabamutabiqRaqba.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHissabamutabiqRaqba.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHissabamutabiqRaqba.Location = new System.Drawing.Point(12, 15);
+            this.btnHissabamutabiqRaqba.Name = "btnHissabamutabiqRaqba";
+            this.btnHissabamutabiqRaqba.Size = new System.Drawing.Size(113, 37);
+            this.btnHissabamutabiqRaqba.TabIndex = 244;
+            this.btnHissabamutabiqRaqba.TabStop = false;
+            this.btnHissabamutabiqRaqba.Text = "حصہ بمطابق رقبہ";
+            this.btnHissabamutabiqRaqba.UseVisualStyleBackColor = false;
+            this.btnHissabamutabiqRaqba.Click += new System.EventHandler(this.btnHissabamutabiqRaqba_Click);
+            // 
             // btnDeleteMalikAll
             // 
             this.btnDeleteMalikAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2603,6 +2617,7 @@
             this.cboAreaTypeProp.Name = "cboAreaTypeProp";
             this.cboAreaTypeProp.Size = new System.Drawing.Size(162, 30);
             this.cboAreaTypeProp.TabIndex = 29;
+            this.cboAreaTypeProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
             // 
             // label29
             // 
@@ -6869,20 +6884,6 @@
             this.btnMasterSave.TabIndex = 46;
             this.btnMasterSave.UseVisualStyleBackColor = true;
             this.btnMasterSave.Click += new System.EventHandler(this.btnMasterSave_Click);
-            // 
-            // btnHissabamutabiqRaqba
-            // 
-            this.btnHissabamutabiqRaqba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHissabamutabiqRaqba.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnHissabamutabiqRaqba.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHissabamutabiqRaqba.Location = new System.Drawing.Point(12, 15);
-            this.btnHissabamutabiqRaqba.Name = "btnHissabamutabiqRaqba";
-            this.btnHissabamutabiqRaqba.Size = new System.Drawing.Size(113, 37);
-            this.btnHissabamutabiqRaqba.TabIndex = 244;
-            this.btnHissabamutabiqRaqba.TabStop = false;
-            this.btnHissabamutabiqRaqba.Text = "حصہ بمطابق رقبہ";
-            this.btnHissabamutabiqRaqba.UseVisualStyleBackColor = false;
-            this.btnHissabamutabiqRaqba.Click += new System.EventHandler(this.btnHissabamutabiqRaqba_Click);
             // 
             // frmFardeBadar
             // 

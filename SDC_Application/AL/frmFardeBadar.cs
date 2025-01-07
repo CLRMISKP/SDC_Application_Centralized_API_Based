@@ -256,8 +256,8 @@ namespace SDC_Application.AL
                 
             }
             //---- Khassra Area Details
-            this.KhatooniKhassrasAreaDetailsFB = fardBadarBL.GetKhassrajatDetailByFbId(txtFbId.Text, cboKhataNo.SelectedValue.ToString());
-            this.FillGridviewKhassrasByKhatooni(KhatooniKhassrasAreaDetailsFB);
+            //this.KhatooniKhassrasAreaDetailsFB = fardBadarBL.GetKhassrajatDetailByFbId(txtFbId.Text, cboKhataNo.SelectedValue.ToString());
+            //this.FillGridviewKhassrasByKhatooni(KhatooniKhassrasAreaDetailsFB);
 
             // Load Khatoni details if khatoni changed occured in the searched fard bader
             int RegHaqKhattaId = Convert.ToInt32(cboKhataNo.SelectedValue);
@@ -375,7 +375,7 @@ namespace SDC_Application.AL
                 this.gridViewKhassraAreaDetails.Columns["AreaTypeId"].Visible = false;
                 this.gridViewKhassraAreaDetails.Columns["AreaTypeIdProp"].Visible = false;
                 this.gridViewKhassraAreaDetails.Columns["FB_KhassraId"].Visible = false;
-
+                this.gridViewKhassraAreaDetails.Columns["FB_Exists"].Visible = false;
                 ////// Set Grid columns Names ///////////
 
                 this.gridViewKhassraAreaDetails.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
@@ -388,7 +388,8 @@ namespace SDC_Application.AL
                 this.gridViewKhassraAreaDetails.Columns["Kanal_Proposed"].HeaderText = "درست کنال";
                 this.gridViewKhassraAreaDetails.Columns["Marla_Proposed"].HeaderText = "درست مرلہ";
                 this.gridViewKhassraAreaDetails.Columns["Sarsai_Proposed"].HeaderText = "درست سرسائی";
-                this.gridViewKhassraAreaDetails.Columns["Feet_Proposed"].HeaderText = " درست مربع فٹ";
+                this.gridViewKhassraAreaDetails.Columns["Feet_Proposed"].HeaderText = " درست مربع فٹ"; //AreaTypeProp
+                this.gridViewKhassraAreaDetails.Columns["AreaTypeProp"].HeaderText = " درست قسم زمین"; 
             }
         }
 
@@ -1266,26 +1267,28 @@ namespace SDC_Application.AL
         {
             try
             {
-                string khatoniid =this.txtKhatooniIdofKhassra.Text;
-                string khasraDetailId = txtKhassraDetailId.Text;
-                string khasrano = txtKhassraNo.Text;
-                string KhassranoProposed = txtDrustKhassraNo.Text.Trim();
-                string aretype = cboAreaType.SelectedValue.ToString();
-                string k = txtKhassraKanal.Text.Trim() != "" ? txtKhassraKanal.Text.Trim() : "0";
-                string kp = txtDrustKhassraKanal.Text.Trim() != "" ? txtDrustKhassraKanal.Text.Trim() : "0";
-                string m = txtKhassraMarla.Text.Trim() != "" ?txtKhassraMarla.Text.Trim() : "0";
-                string mp = txtDrustKhassraMarla.Text.Trim() != "" ?txtDrustKhassraMarla.Text.Trim() : "0";
-                string s = txtKhassraSarsai.Text.Trim() != "" ? txtKhassraSarsai.Text.Trim() :"0";
-                string sp = txtDrustKhassraSarsai.Text.Trim() != "" ? txtDrustKhassraSarsai.Text.Trim() :"0";
-                string f = Math.Round(Convert.ToDecimal(txtKhassraSarsai.Text.Trim())*(decimal)30.25).ToString();
-                string fp = Math.Round(Convert.ToDecimal(txtKhassraSarsai.Text.Trim())*(decimal)30.25).ToString();
+                if (this.cboKhatoni.SelectedValue.ToString().Length > 5 && cboAreaTypeProp.SelectedValue.ToString().Length > 2 && txtDrustKhassraNo.Text.Trim().Length > 0)
+                {
+                    string khatoniid = this.cboKhatoni.SelectedValue.ToString();
+                    string khasraDetailId = txtKhassraDetailId.Text;
+                    string khasrano = txtKhassraNo.Text;
+                    string KhassranoProposed = txtDrustKhassraNo.Text.Trim();
+                    string aretype = cboAreaType.SelectedValue.ToString();
+                    string k = txtKhassraKanal.Text.Trim() != "" ? txtKhassraKanal.Text.Trim() : "0";
+                    string kp = txtDrustKhassraKanal.Text.Trim() != "" ? txtDrustKhassraKanal.Text.Trim() : "0";
+                    string m = txtKhassraMarla.Text.Trim() != "" ? txtKhassraMarla.Text.Trim() : "0";
+                    string mp = txtDrustKhassraMarla.Text.Trim() != "" ? txtDrustKhassraMarla.Text.Trim() : "0";
+                    string s = txtKhassraSarsai.Text.Trim() != "" ? txtKhassraSarsai.Text.Trim() : "0";
+                    string sp = txtDrustKhassraSarsai.Text.Trim() != "" ? txtDrustKhassraSarsai.Text.Trim() : "0";
+                    string f = Math.Round(Convert.ToDecimal(txtKhassraSarsai.Text.Trim().Length == 0 ? "0" : txtKhassraSarsai.Text.Trim()) * (decimal)30.25).ToString();
+                    string fp = Math.Round(Convert.ToDecimal(txtDrustKhassraSarsai.Text.Trim().Length == 0 ? "0" : txtDrustKhassraSarsai.Text.Trim()) * (decimal)30.25).ToString();
 
-                string FbId = txtFbId.Text;
-                string FbKhasraDetailId = txtFbKhassraDetailId.Text;
-                string FbKhassraId = txtFbKhassraId.Text;
-                   
-                string khasraId= txtKhassraId.Text;
-                    string lastId = fardBadarBL.SaveFBKhassraRegister(FbKhassraId, FbKhasraDetailId, FbId,khasraId,cmbMouza.SelectedValue.ToString(),txtKhassraNo.Text.Trim(), KhassranoProposed, khasraDetailId,khatoniid, aretype, cboAreaTypeProp.SelectedValue.ToString(), k,kp, m,mp, s,sp, f,fp, UsersManagments.UserId.ToString(), UsersManagments.UserName);
+                    string FbId = txtFbId.Text;
+                    string FbKhasraDetailId = txtFbKhassraDetailId.Text;
+                    string FbKhassraId = txtFbKhassraId.Text;
+
+                    string khasraId = txtKhassraId.Text;
+                    string lastId = fardBadarBL.SaveFBKhassraRegister(FbKhassraId, FbKhasraDetailId, FbId, khasraId, cmbMouza.SelectedValue.ToString(), txtKhassraNo.Text.Trim(), KhassranoProposed, khasraDetailId, khatoniid, aretype, cboAreaTypeProp.SelectedValue.ToString(), k, kp, m, mp, s, sp, f, fp, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                     if (lastId != "-1")
                     {
                         this.txtKhassraNo.ReadOnly = false;
@@ -1304,13 +1307,17 @@ namespace SDC_Application.AL
                         txtDrustKhassraSarsai.Clear();
                         txtDrustKhassraNo.Clear();
                         txtKhassraNo.Focus();
-                        this.KhatooniKhassrasAreaDetailsFB = fardBadarBL.GetKhassrajatDetailByFbId( FbId, cboKhataNo.SelectedValue.ToString());
+                        KhatooniKhassrasAreaDetailsFB = misalBL.GetKhatoniKhassraAreaDetailFB(txtFbId.Text, int.Parse(khatoniid));
                         this.FillGridviewKhassrasByKhatooni(KhatooniKhassrasAreaDetailsFB);
+                        this.GetKhassrasCount();
                     }
                     else
                     {
                         MessageBox.Show("یہ خسرہ پہلے سے موجود ہے");
                     }
+                }
+                else
+                    MessageBox.Show("خسرہ کے تمام کوئف پر کریں");
             }
             catch (Exception ex)
             {
@@ -1935,7 +1942,7 @@ namespace SDC_Application.AL
         private void cboKhatoni_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int khatooniId=Convert.ToInt32(cboKhatoni.SelectedValue);
-            //KhatooniKhassrasAreaDetailsFB = misalBL.GetKhatoniKhassraAreaDetailFB(txtFbId.Text, khatooniId);
+            KhatooniKhassrasAreaDetailsFB = misalBL.GetKhatoniKhassraAreaDetailFB(txtFbId.Text, khatooniId);
             this.FillGridviewKhassrasByKhatooni(KhatooniKhassrasAreaDetailsFB);
             this.GetKhassrasCount();
 
