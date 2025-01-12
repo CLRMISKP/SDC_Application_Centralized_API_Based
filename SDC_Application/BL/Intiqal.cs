@@ -1782,6 +1782,14 @@ namespace SDC_Application.BL
                 IntiqalNo = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
                 return IntiqalNo;
             }
+
+            public string ReturnAttestedOrCancelledIntiqal(string IntiqalId, string RoId, string RevertComments)
+            {
+                string IntiqalNo = "0";
+                string spWithParam = "Proc_Intiqal_RemoveFP_Or_Enable_Cancelled  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + IntiqalId + ", " + RoId + ",N'" + RevertComments + "'";
+                IntiqalNo = dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+                return IntiqalNo;
+            }
             //
             #endregion
             #region Intiqal Cancel, non cancel

@@ -40,7 +40,7 @@
     <MinimumRequiredVersion>3.0.2.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>45</ApplicationRevision>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>3.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -171,6 +171,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmIntiqalRemoveFPorEnableCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmIntiqalRemoveFPorEnableCancel.Designer.cs">
+      <DependentUpon>frmIntiqalRemoveFPorEnableCancel.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalMissingReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1346,6 +1352,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TokenReport.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmIntiqalRemoveFPorEnableCancel.resx">
+      <DependentUpon>frmIntiqalRemoveFPorEnableCancel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalMissingReport.resx">
       <DependentUpon>frmIntiqalMissingReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -2063,6 +2072,7 @@
     <None Include="Resources\AIT.png" />
     <None Include="Resources\Approved.png" />
     <None Include="Resources\Approve_icon2.png" />
+    <None Include="Resources\fingerPrint11.png" />
     <Content Include="SDC_Icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

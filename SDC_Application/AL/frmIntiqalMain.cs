@@ -672,10 +672,13 @@ namespace SDC_Application.AL
                         this.btnIntiqalCancel.Enabled = false;
                         this.btnIntiqalTasdiqDate.Enabled = false;
                         this.btnSave.Enabled = false;
+                        if (!AmalDaramad)
+                            this.btnIntiqalRemoveFP.Enabled = true;
                     }
                     else
                     {
                         this.btnROattestation.Enabled = true;
+                        this.btnIntiqalRemoveFP.Enabled = false;
                         //this.btnIntiqalCancel.Enabled = true;
                         //this.btnSave.Enabled = true;
                         if (AmalDaramad)
@@ -737,6 +740,7 @@ namespace SDC_Application.AL
                         btnRoznamcha.Enabled = false;
                         btnIntiqalPersonSnaps.Enabled = false;
                         btnChkGainTax.Enabled = false;
+                        btnIntiqalRemoveFP.Enabled = true;
                     }
                     else
                     {
@@ -2287,6 +2291,41 @@ txtLandValue.Enabled = false;
             }
             else
                 MessageBox.Show("موضع اور انتقال نمبر درج کرکے سکین دستاویز دیکھئے۔");
+        }
+
+        private void btnIntiqalRemoveFP_Click(object sender, EventArgs e)
+        {
+            if (this.IntiqalId != string.Empty && this.IntiqalId != "-1")
+            {
+                try
+                {
+
+                    frmIntiqalRemoveFPorEnableCancel IntiqalAttCancReturn = new frmIntiqalRemoveFPorEnableCancel();
+                    IntiqalAttCancReturn.intiqalId = this.IntiqalId;
+                    IntiqalAttCancReturn.FormClosed -= new FormClosedEventHandler(IntiqalAttCancReturn_FormClosed);
+                    IntiqalAttCancReturn.FormClosed += new FormClosedEventHandler(IntiqalAttCancReturn_FormClosed);
+                    IntiqalAttCancReturn.ShowDialog();
+                    //frmIntiqalCancellationByRO IntiqalAtt = new frmIntiqalCancellationByRO();
+                    //IntiqalAtt.intiqalId = this.IntiqalId;
+                    //IntiqalAtt.FormClosed -= new FormClosedEventHandler(IntiqalCancel_FormClosed);
+                    //IntiqalAtt.FormClosed += new FormClosedEventHandler(IntiqalCancel_FormClosed);
+                    //IntiqalAtt.ShowDialog();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("انتقال لوڈ کریں", "انتقال لوڈ کریں", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void IntiqalAttCancReturn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            btnSearchInteqal_Click(sender, e);
         }
 
       

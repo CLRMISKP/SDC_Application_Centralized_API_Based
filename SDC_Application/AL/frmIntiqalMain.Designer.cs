@@ -123,6 +123,8 @@
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            this.btnIntiqalRemoveFP = new System.Windows.Forms.Button();
+            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.btnLandTax = new System.Windows.Forms.Button();
             this.btnRoznamcha = new System.Windows.Forms.Button();
             this.btnChkGainTax = new System.Windows.Forms.Button();
@@ -149,7 +151,6 @@
             this.btnMinhayeIntiqal = new System.Windows.Forms.Button();
             this.btnSrchToken = new System.Windows.Forms.Button();
             this.btnSearchInteqal = new System.Windows.Forms.Button();
-            this.btnShowScanImg = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.panelCurrentStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1275,6 +1276,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnIntiqalRemoveFP);
             this.groupBox1.Controls.Add(this.btnShowScanImg);
             this.groupBox1.Controls.Add(this.btnLandTax);
             this.groupBox1.Controls.Add(this.btnRoznamcha);
@@ -1327,6 +1329,35 @@
             this.label2.TabIndex = 75;
             this.label2.Text = "آپریٹر نوٹ:";
             // 
+            // btnIntiqalRemoveFP
+            // 
+            this.btnIntiqalRemoveFP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntiqalRemoveFP.Enabled = false;
+            this.btnIntiqalRemoveFP.Image = global::SDC_Application.Resource1.fingerPrint11;
+            this.btnIntiqalRemoveFP.Location = new System.Drawing.Point(170, 36);
+            this.btnIntiqalRemoveFP.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnIntiqalRemoveFP.Name = "btnIntiqalRemoveFP";
+            this.btnIntiqalRemoveFP.Size = new System.Drawing.Size(59, 50);
+            this.btnIntiqalRemoveFP.TabIndex = 207;
+            this.btnIntiqalRemoveFP.TabStop = false;
+            this.toolTip.SetToolTip(this.btnIntiqalRemoveFP, "تصدیق تحصیلدار  یا خارج شدہ واپس کریں");
+            this.btnIntiqalRemoveFP.UseVisualStyleBackColor = true;
+            this.btnIntiqalRemoveFP.Click += new System.EventHandler(this.btnIntiqalRemoveFP_Click);
+            // 
+            // btnShowScanImg
+            // 
+            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
+            this.btnShowScanImg.Location = new System.Drawing.Point(1015, 37);
+            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShowScanImg.Name = "btnShowScanImg";
+            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
+            this.btnShowScanImg.TabIndex = 206;
+            this.toolTip.SetToolTip(this.btnShowScanImg, "انتخاب کردہ انتقال کے ساتھ سکین اپلوڈ شدہ دستاویزات دیکھئے");
+            this.btnShowScanImg.UseVisualStyleBackColor = true;
+            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
+            // 
             // btnLandTax
             // 
             this.btnLandTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1369,6 +1400,7 @@
             this.btnChkGainTax.TabStop = false;
             this.toolTip.SetToolTip(this.btnChkGainTax, "گین ٹیکس چیک کریں");
             this.btnChkGainTax.UseVisualStyleBackColor = true;
+            this.btnChkGainTax.Visible = false;
             this.btnChkGainTax.Click += new System.EventHandler(this.btnChkGainTax_Click);
             // 
             // btnGirdawar
@@ -1376,7 +1408,7 @@
             this.btnGirdawar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGirdawar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGirdawar.Image = global::SDC_Application.Resource1.Gardawar;
-            this.btnGirdawar.Location = new System.Drawing.Point(295, 37);
+            this.btnGirdawar.Location = new System.Drawing.Point(300, 37);
             this.btnGirdawar.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnGirdawar.Name = "btnGirdawar";
             this.btnGirdawar.Size = new System.Drawing.Size(59, 50);
@@ -1390,7 +1422,7 @@
             // 
             this.btnIntiqalRevert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalRevert.Image = global::SDC_Application.Resource1.rsz_button___revert1;
-            this.btnIntiqalRevert.Location = new System.Drawing.Point(101, 36);
+            this.btnIntiqalRevert.Location = new System.Drawing.Point(40, 36);
             this.btnIntiqalRevert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalRevert.Name = "btnIntiqalRevert";
             this.btnIntiqalRevert.Size = new System.Drawing.Size(59, 50);
@@ -1404,7 +1436,7 @@
             // 
             this.btnIntiqalCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalCancel.Image = global::SDC_Application.Resource1.fingerPrint_Cancel;
-            this.btnIntiqalCancel.Location = new System.Drawing.Point(165, 36);
+            this.btnIntiqalCancel.Location = new System.Drawing.Point(105, 36);
             this.btnIntiqalCancel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalCancel.Name = "btnIntiqalCancel";
             this.btnIntiqalCancel.Size = new System.Drawing.Size(59, 50);
@@ -1418,7 +1450,7 @@
             // 
             this.btnROattestation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnROattestation.Image = global::SDC_Application.Resource1.fingerPrint1;
-            this.btnROattestation.Location = new System.Drawing.Point(232, 36);
+            this.btnROattestation.Location = new System.Drawing.Point(235, 36);
             this.btnROattestation.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnROattestation.Name = "btnROattestation";
             this.btnROattestation.Size = new System.Drawing.Size(59, 50);
@@ -1432,7 +1464,7 @@
             // 
             this.btnIntiqalAmalDaramadByKhata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalAmalDaramadByKhata.Image = global::SDC_Application.Resource1.partitions_icon;
-            this.btnIntiqalAmalDaramadByKhata.Location = new System.Drawing.Point(360, 36);
+            this.btnIntiqalAmalDaramadByKhata.Location = new System.Drawing.Point(365, 36);
             this.btnIntiqalAmalDaramadByKhata.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalAmalDaramadByKhata.Name = "btnIntiqalAmalDaramadByKhata";
             this.btnIntiqalAmalDaramadByKhata.Size = new System.Drawing.Size(59, 50);
@@ -1447,7 +1479,7 @@
             this.btnIntiqalTasdiqDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalTasdiqDate.BackgroundImage = global::SDC_Application.Resource1.time_machine_icon;
             this.btnIntiqalTasdiqDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIntiqalTasdiqDate.Location = new System.Drawing.Point(425, 36);
+            this.btnIntiqalTasdiqDate.Location = new System.Drawing.Point(430, 36);
             this.btnIntiqalTasdiqDate.Name = "btnIntiqalTasdiqDate";
             this.btnIntiqalTasdiqDate.Size = new System.Drawing.Size(59, 50);
             this.btnIntiqalTasdiqDate.TabIndex = 8;
@@ -1460,7 +1492,7 @@
             this.print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.print.BackgroundImage = global::SDC_Application.Resource1.Print31;
             this.print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.print.Location = new System.Drawing.Point(491, 36);
+            this.print.Location = new System.Drawing.Point(495, 36);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(59, 50);
             this.print.TabIndex = 7;
@@ -1471,7 +1503,7 @@
             // 
             this.btnBankChallan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBankChallan.Image = global::SDC_Application.Resource1.Bank;
-            this.btnBankChallan.Location = new System.Drawing.Point(555, 36);
+            this.btnBankChallan.Location = new System.Drawing.Point(560, 36);
             this.btnBankChallan.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnBankChallan.Name = "btnBankChallan";
             this.btnBankChallan.Size = new System.Drawing.Size(59, 50);
@@ -1485,7 +1517,7 @@
             // 
             this.btnIntiqalTaxes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalTaxes.Image = global::SDC_Application.Resource1.TaxRes;
-            this.btnIntiqalTaxes.Location = new System.Drawing.Point(620, 37);
+            this.btnIntiqalTaxes.Location = new System.Drawing.Point(625, 37);
             this.btnIntiqalTaxes.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalTaxes.Name = "btnIntiqalTaxes";
             this.btnIntiqalTaxes.Size = new System.Drawing.Size(59, 50);
@@ -1499,7 +1531,7 @@
             // 
             this.btnIntiqalWitness.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalWitness.Image = global::SDC_Application.Resource1.Client_list;
-            this.btnIntiqalWitness.Location = new System.Drawing.Point(813, 36);
+            this.btnIntiqalWitness.Location = new System.Drawing.Point(820, 36);
             this.btnIntiqalWitness.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalWitness.Name = "btnIntiqalWitness";
             this.btnIntiqalWitness.Size = new System.Drawing.Size(59, 50);
@@ -1512,7 +1544,7 @@
             // 
             this.btnRecivedDucoments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRecivedDucoments.Image = global::SDC_Application.Resource1.Attach_44;
-            this.btnRecivedDucoments.Location = new System.Drawing.Point(949, 36);
+            this.btnRecivedDucoments.Location = new System.Drawing.Point(950, 36);
             this.btnRecivedDucoments.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnRecivedDucoments.Name = "btnRecivedDucoments";
             this.btnRecivedDucoments.Size = new System.Drawing.Size(59, 50);
@@ -1526,7 +1558,7 @@
             // 
             this.btnTaqseem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTaqseem.Image = global::SDC_Application.Resource1.Modify;
-            this.btnTaqseem.Location = new System.Drawing.Point(748, 36);
+            this.btnTaqseem.Location = new System.Drawing.Point(755, 36);
             this.btnTaqseem.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnTaqseem.Name = "btnTaqseem";
             this.btnTaqseem.Size = new System.Drawing.Size(59, 50);
@@ -1539,7 +1571,7 @@
             // 
             this.btnIntiqalDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalDoc.Image = global::SDC_Application.Resource1.CheckAll;
-            this.btnIntiqalDoc.Location = new System.Drawing.Point(883, 36);
+            this.btnIntiqalDoc.Location = new System.Drawing.Point(885, 36);
             this.btnIntiqalDoc.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalDoc.Name = "btnIntiqalDoc";
             this.btnIntiqalDoc.Size = new System.Drawing.Size(59, 50);
@@ -1553,7 +1585,7 @@
             // 
             this.btnIntiqalPersonSnaps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIntiqalPersonSnaps.Image = global::SDC_Application.Resource1.user_group_icon;
-            this.btnIntiqalPersonSnaps.Location = new System.Drawing.Point(685, 36);
+            this.btnIntiqalPersonSnaps.Location = new System.Drawing.Point(690, 36);
             this.btnIntiqalPersonSnaps.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnIntiqalPersonSnaps.Name = "btnIntiqalPersonSnaps";
             this.btnIntiqalPersonSnaps.Size = new System.Drawing.Size(59, 50);
@@ -1682,20 +1714,6 @@
             this.btnSearchInteqal.TabIndex = 2;
             this.btnSearchInteqal.UseVisualStyleBackColor = true;
             this.btnSearchInteqal.Click += new System.EventHandler(this.btnSearchInteqal_Click);
-            // 
-            // btnShowScanImg
-            // 
-            this.btnShowScanImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowScanImg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowScanImg.Image = global::SDC_Application.Resource1.Documents_List_res;
-            this.btnShowScanImg.Location = new System.Drawing.Point(1017, 37);
-            this.btnShowScanImg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnShowScanImg.Name = "btnShowScanImg";
-            this.btnShowScanImg.Size = new System.Drawing.Size(53, 48);
-            this.btnShowScanImg.TabIndex = 206;
-            this.toolTip.SetToolTip(this.btnShowScanImg, "انتخاب کردہ انتقال کے ساتھ سکین اپلوڈ شدہ دستاویزات دیکھئے");
-            this.btnShowScanImg.UseVisualStyleBackColor = true;
-            this.btnShowScanImg.Click += new System.EventHandler(this.btnShowScanImg_Click);
             // 
             // frmIntiqalMain
             // 
@@ -1862,5 +1880,6 @@
         private System.Windows.Forms.RadioButton radkhanakashtToMalkiat;
         private System.Windows.Forms.Label lbDtRegistry;
         private System.Windows.Forms.Button btnShowScanImg;
+        private System.Windows.Forms.Button btnIntiqalRemoveFP;
     }
 }

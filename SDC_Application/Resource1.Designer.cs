@@ -443,6 +443,16 @@ namespace SDC_Application {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fingerPrint11 {
+            get {
+                object obj = ResourceManager.GetObject("fingerPrint11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fingerprint2 {
             get {
                 object obj = ResourceManager.GetObject("fingerprint2", resourceCulture);
