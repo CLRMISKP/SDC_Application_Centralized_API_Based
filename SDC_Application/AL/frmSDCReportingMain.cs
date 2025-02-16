@@ -862,6 +862,21 @@ namespace SDC_Application.AL
                     this.SetCredentials("KhataLockDetails", rp, false);
 
                 }
+                if (UsersManagments.check == 84) //Khata Lock Details
+                {
+                    ReportParameter[] rp = new ReportParameter[1];
+                    rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                    this.SetCredentials("AikSala_Type_By_AreaType", rp, false);
+
+                }
+                if (UsersManagments.check == 85) //Registry Fardat for Registrar Report
+                {
+                    ReportParameter[] rp = new ReportParameter[2];
+                    rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                    rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                    this.SetCredentials("Entered_Mutation_After_Operationalization", rp, false);
+
+                }
             }
 
         }

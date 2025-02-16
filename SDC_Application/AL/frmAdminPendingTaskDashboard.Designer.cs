@@ -96,6 +96,8 @@
             this.dgPendingMutationsAll = new System.Windows.Forms.DataGridView();
             this.ColSelIntiqalAll = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtSearchIntiqalAllPending = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnPrintAllMut = new System.Windows.Forms.Button();
             this.btnCancelAllMut = new System.Windows.Forms.Button();
             this.txtMozaIdAll = new System.Windows.Forms.TextBox();
@@ -103,8 +105,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnLoadAllPendingMut = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtSearchIntiqalAllPending = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.rbKhewatMalikPrevious = new System.Windows.Forms.RadioButton();
+            this.rbKhewatMalikCurrent = new System.Windows.Forms.RadioButton();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.rbKhatooniMalikPrevious = new System.Windows.Forms.RadioButton();
+            this.rbKhatooniMalikCurrent = new System.Windows.Forms.RadioButton();
+            this.dgKhewatFareeqainAll = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgMushteriFareeqainAll = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtMushteriFareeqId = new System.Windows.Forms.TextBox();
+            this.txtKhewatGroupFareeqId = new System.Windows.Forms.TextBox();
+            this.txtSearchKhanakasht = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSearchCurrentKhewatFareeqain = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageRHZ.SuspendLayout();
@@ -121,11 +137,17 @@
             this.groupBox4.SuspendLayout();
             this.tabKhanakasht.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabKhewatFareeqain.SuspendLayout();
+            this.tabMushtriFareeqain.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPendingMut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPendingMutationsAll)).BeginInit();
             this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhewatFareeqainAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainAll)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -579,7 +601,7 @@
             this.tabKhanakasht.Padding = new System.Windows.Forms.Padding(3);
             this.tabKhanakasht.Size = new System.Drawing.Size(1202, 528);
             this.tabKhanakasht.TabIndex = 3;
-            this.tabKhanakasht.Text = "کھاتہ، کھتونی حیثیت";
+            this.tabKhanakasht.Text = "کھاتہ، کھتونی  مالکان حیثیت";
             this.tabKhanakasht.UseVisualStyleBackColor = true;
             // 
             // tabControl2
@@ -593,10 +615,11 @@
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(1196, 286);
             this.tabControl2.TabIndex = 2;
-            this.tabControl2.Visible = false;
             // 
             // tabKhewatFareeqain
             // 
+            this.tabKhewatFareeqain.Controls.Add(this.dgKhewatFareeqainAll);
+            this.tabKhewatFareeqain.Controls.Add(this.groupBox9);
             this.tabKhewatFareeqain.Location = new System.Drawing.Point(4, 40);
             this.tabKhewatFareeqain.Name = "tabKhewatFareeqain";
             this.tabKhewatFareeqain.Padding = new System.Windows.Forms.Padding(3);
@@ -607,6 +630,8 @@
             // 
             // tabMushtriFareeqain
             // 
+            this.tabMushtriFareeqain.Controls.Add(this.dgMushteriFareeqainAll);
+            this.tabMushtriFareeqain.Controls.Add(this.groupBox10);
             this.tabMushtriFareeqain.Location = new System.Drawing.Point(4, 40);
             this.tabMushtriFareeqain.Name = "tabMushtriFareeqain";
             this.tabMushtriFareeqain.Padding = new System.Windows.Forms.Padding(3);
@@ -951,6 +976,26 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "تمام غیر عمل شدہ دستی انتقالات دیکھنے کیلئے بٹن کلک کریں";
             // 
+            // txtSearchIntiqalAllPending
+            // 
+            this.txtSearchIntiqalAllPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchIntiqalAllPending.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchIntiqalAllPending.Location = new System.Drawing.Point(982, 46);
+            this.txtSearchIntiqalAllPending.Name = "txtSearchIntiqalAllPending";
+            this.txtSearchIntiqalAllPending.Size = new System.Drawing.Size(119, 30);
+            this.txtSearchIntiqalAllPending.TabIndex = 213;
+            this.txtSearchIntiqalAllPending.TextChanged += new System.EventHandler(this.txtSearchIntiqalAllPending_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1107, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 31);
+            this.label3.TabIndex = 212;
+            this.label3.Text = "تلاش کریں";
+            // 
             // btnPrintAllMut
             // 
             this.btnPrintAllMut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1026,25 +1071,191 @@
             this.panel4.Size = new System.Drawing.Size(1202, 46);
             this.panel4.TabIndex = 7;
             // 
-            // txtSearchIntiqalAllPending
+            // groupBox9
             // 
-            this.txtSearchIntiqalAllPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchIntiqalAllPending.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchIntiqalAllPending.Location = new System.Drawing.Point(982, 46);
-            this.txtSearchIntiqalAllPending.Name = "txtSearchIntiqalAllPending";
-            this.txtSearchIntiqalAllPending.Size = new System.Drawing.Size(119, 30);
-            this.txtSearchIntiqalAllPending.TabIndex = 213;
-            this.txtSearchIntiqalAllPending.TextChanged += new System.EventHandler(this.txtSearchIntiqalAllPending_TextChanged);
+            this.groupBox9.Controls.Add(this.label8);
+            this.groupBox9.Controls.Add(this.txtSearchCurrentKhewatFareeqain);
+            this.groupBox9.Controls.Add(this.txtKhewatGroupFareeqId);
+            this.groupBox9.Controls.Add(this.rbKhewatMalikPrevious);
+            this.groupBox9.Controls.Add(this.rbKhewatMalikCurrent);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1182, 65);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "نیچے گریڈ سے مالک کا انتخاب کر کے  حیثیت تبدیل کریں";
             // 
-            // label3
+            // rbKhewatMalikPrevious
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1107, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 31);
-            this.label3.TabIndex = 212;
-            this.label3.Text = "تلاش کریں";
+            this.rbKhewatMalikPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbKhewatMalikPrevious.AutoSize = true;
+            this.rbKhewatMalikPrevious.Location = new System.Drawing.Point(581, 23);
+            this.rbKhewatMalikPrevious.Name = "rbKhewatMalikPrevious";
+            this.rbKhewatMalikPrevious.Size = new System.Drawing.Size(60, 35);
+            this.rbKhewatMalikPrevious.TabIndex = 321;
+            this.rbKhewatMalikPrevious.TabStop = true;
+            this.rbKhewatMalikPrevious.Text = "سابقہ";
+            this.rbKhewatMalikPrevious.UseVisualStyleBackColor = true;
+            this.rbKhewatMalikPrevious.Click += new System.EventHandler(this.rbKhewatMalikPrevious_Click);
+            // 
+            // rbKhewatMalikCurrent
+            // 
+            this.rbKhewatMalikCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbKhewatMalikCurrent.AutoSize = true;
+            this.rbKhewatMalikCurrent.Location = new System.Drawing.Point(652, 23);
+            this.rbKhewatMalikCurrent.Name = "rbKhewatMalikCurrent";
+            this.rbKhewatMalikCurrent.Size = new System.Drawing.Size(70, 35);
+            this.rbKhewatMalikCurrent.TabIndex = 320;
+            this.rbKhewatMalikCurrent.TabStop = true;
+            this.rbKhewatMalikCurrent.Text = "موجودہ";
+            this.rbKhewatMalikCurrent.UseVisualStyleBackColor = true;
+            this.rbKhewatMalikCurrent.Click += new System.EventHandler(this.rbKhewatMalikCurrent_Click);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.txtSearchKhanakasht);
+            this.groupBox10.Controls.Add(this.label10);
+            this.groupBox10.Controls.Add(this.txtMushteriFareeqId);
+            this.groupBox10.Controls.Add(this.rbKhatooniMalikPrevious);
+            this.groupBox10.Controls.Add(this.rbKhatooniMalikCurrent);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox10.Location = new System.Drawing.Point(3, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1182, 64);
+            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "نیچے گریڈ سے خانہ کاشت مالک کا انتخاب کر کے  حیثیت تبدیل کریں";
+            // 
+            // rbKhatooniMalikPrevious
+            // 
+            this.rbKhatooniMalikPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbKhatooniMalikPrevious.AutoSize = true;
+            this.rbKhatooniMalikPrevious.Location = new System.Drawing.Point(539, 21);
+            this.rbKhatooniMalikPrevious.Name = "rbKhatooniMalikPrevious";
+            this.rbKhatooniMalikPrevious.Size = new System.Drawing.Size(60, 35);
+            this.rbKhatooniMalikPrevious.TabIndex = 321;
+            this.rbKhatooniMalikPrevious.TabStop = true;
+            this.rbKhatooniMalikPrevious.Text = "سابقہ";
+            this.rbKhatooniMalikPrevious.UseVisualStyleBackColor = true;
+            this.rbKhatooniMalikPrevious.Click += new System.EventHandler(this.rbKhatooniMalikPrevious_Click);
+            // 
+            // rbKhatooniMalikCurrent
+            // 
+            this.rbKhatooniMalikCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbKhatooniMalikCurrent.AutoSize = true;
+            this.rbKhatooniMalikCurrent.Location = new System.Drawing.Point(610, 21);
+            this.rbKhatooniMalikCurrent.Name = "rbKhatooniMalikCurrent";
+            this.rbKhatooniMalikCurrent.Size = new System.Drawing.Size(70, 35);
+            this.rbKhatooniMalikCurrent.TabIndex = 320;
+            this.rbKhatooniMalikCurrent.TabStop = true;
+            this.rbKhatooniMalikCurrent.Text = "موجودہ";
+            this.rbKhatooniMalikCurrent.UseVisualStyleBackColor = true;
+            this.rbKhatooniMalikCurrent.Click += new System.EventHandler(this.rbKhatooniMalikCurrent_Click);
+            // 
+            // dgKhewatFareeqainAll
+            // 
+            this.dgKhewatFareeqainAll.AllowUserToAddRows = false;
+            this.dgKhewatFareeqainAll.AllowUserToDeleteRows = false;
+            this.dgKhewatFareeqainAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgKhewatFareeqainAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKhewatFareeqainAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn2});
+            this.dgKhewatFareeqainAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgKhewatFareeqainAll.Location = new System.Drawing.Point(3, 68);
+            this.dgKhewatFareeqainAll.Name = "dgKhewatFareeqainAll";
+            this.dgKhewatFareeqainAll.ReadOnly = true;
+            this.dgKhewatFareeqainAll.RowHeadersVisible = false;
+            this.dgKhewatFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgKhewatFareeqainAll.Size = new System.Drawing.Size(1182, 171);
+            this.dgKhewatFareeqainAll.TabIndex = 10;
+            this.dgKhewatFareeqainAll.TabStop = false;
+            this.dgKhewatFareeqainAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhewatFareeqainAll_CellClick);
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            // 
+            // dgMushteriFareeqainAll
+            // 
+            this.dgMushteriFareeqainAll.AllowUserToAddRows = false;
+            this.dgMushteriFareeqainAll.AllowUserToDeleteRows = false;
+            this.dgMushteriFareeqainAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMushteriFareeqainAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMushteriFareeqainAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn3});
+            this.dgMushteriFareeqainAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgMushteriFareeqainAll.Location = new System.Drawing.Point(3, 67);
+            this.dgMushteriFareeqainAll.Name = "dgMushteriFareeqainAll";
+            this.dgMushteriFareeqainAll.ReadOnly = true;
+            this.dgMushteriFareeqainAll.RowHeadersVisible = false;
+            this.dgMushteriFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgMushteriFareeqainAll.Size = new System.Drawing.Size(1182, 172);
+            this.dgMushteriFareeqainAll.TabIndex = 11;
+            this.dgMushteriFareeqainAll.TabStop = false;
+            this.dgMushteriFareeqainAll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMushteriFareeqainAll_CellClick);
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            // 
+            // txtMushteriFareeqId
+            // 
+            this.txtMushteriFareeqId.Location = new System.Drawing.Point(10, 20);
+            this.txtMushteriFareeqId.Name = "txtMushteriFareeqId";
+            this.txtMushteriFareeqId.Size = new System.Drawing.Size(100, 39);
+            this.txtMushteriFareeqId.TabIndex = 322;
+            this.txtMushteriFareeqId.Text = "-1";
+            this.txtMushteriFareeqId.Visible = false;
+            // 
+            // txtKhewatGroupFareeqId
+            // 
+            this.txtKhewatGroupFareeqId.Location = new System.Drawing.Point(10, 19);
+            this.txtKhewatGroupFareeqId.Name = "txtKhewatGroupFareeqId";
+            this.txtKhewatGroupFareeqId.Size = new System.Drawing.Size(100, 39);
+            this.txtKhewatGroupFareeqId.TabIndex = 323;
+            this.txtKhewatGroupFareeqId.Text = "-1";
+            this.txtKhewatGroupFareeqId.Visible = false;
+            // 
+            // txtSearchKhanakasht
+            // 
+            this.txtSearchKhanakasht.Location = new System.Drawing.Point(6, 21);
+            this.txtSearchKhanakasht.Name = "txtSearchKhanakasht";
+            this.txtSearchKhanakasht.Size = new System.Drawing.Size(209, 39);
+            this.txtSearchKhanakasht.TabIndex = 324;
+            this.txtSearchKhanakasht.TextChanged += new System.EventHandler(this.txtSearchKhanakasht_TextChanged);
+            this.txtSearchKhanakasht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(221, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 31);
+            this.label10.TabIndex = 323;
+            this.label10.Text = "تلاش کریں";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(232, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 31);
+            this.label8.TabIndex = 325;
+            this.label8.Text = "تلاش کریں";
+            // 
+            // txtSearchCurrentKhewatFareeqain
+            // 
+            this.txtSearchCurrentKhewatFareeqain.Location = new System.Drawing.Point(17, 20);
+            this.txtSearchCurrentKhewatFareeqain.Name = "txtSearchCurrentKhewatFareeqain";
+            this.txtSearchCurrentKhewatFareeqain.Size = new System.Drawing.Size(209, 39);
+            this.txtSearchCurrentKhewatFareeqain.TabIndex = 324;
+            this.txtSearchCurrentKhewatFareeqain.TextChanged += new System.EventHandler(this.txtSearchCurrentKhewatFareeqain_TextChanged);
+            this.txtSearchCurrentKhewatFareeqain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCurrentKhewatFareeqain_KeyPress);
             // 
             // frmAdminPendingTaskDashboard
             // 
@@ -1078,6 +1289,8 @@
             this.groupBox4.PerformLayout();
             this.tabKhanakasht.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabKhewatFareeqain.ResumeLayout(false);
+            this.tabMushtriFareeqain.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1086,6 +1299,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgPendingMutationsAll)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhewatFareeqainAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMushteriFareeqainAll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1169,5 +1388,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearchIntiqalAllPending;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.RadioButton rbKhewatMalikPrevious;
+        private System.Windows.Forms.RadioButton rbKhewatMalikCurrent;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.RadioButton rbKhatooniMalikPrevious;
+        private System.Windows.Forms.RadioButton rbKhatooniMalikCurrent;
+        private System.Windows.Forms.DataGridView dgKhewatFareeqainAll;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridView dgMushteriFareeqainAll;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.TextBox txtMushteriFareeqId;
+        private System.Windows.Forms.TextBox txtKhewatGroupFareeqId;
+        private System.Windows.Forms.TextBox txtSearchKhanakasht;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSearchCurrentKhewatFareeqain;
     }
 }

@@ -389,7 +389,7 @@ namespace SDC_Application.BL
             }
             public string GetDawraValidity(string Date)
             {
-                string spWithParam = "select dbo.getFnDowra ( " + Classess.UsersManagments._Tehsilid.ToString() + ",'" + Date + "')";
+                string spWithParam = "select dbo.getFnDowra ( " + Classess.UsersManagments._Tehsilid.ToString() + ",'" + Date + "',"+Classess.UsersManagments.SubSdcId+")";
                 return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
 
             }

@@ -1851,9 +1851,10 @@ namespace SDC_Application.AL
                     foreach (DataRow dr in PersonPics.Rows)
                     {
 
-
-                        pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
-                        imgDataFinger = (byte[])dr["PersonFingerPrint"];
+                        if(dr["PersonFingerPrint"].ToString().Length>10)
+                            pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
+                        if (dr["PersonFingerPrint"].ToString().Length > 10)
+                            imgDataFinger = (byte[])dr["PersonFingerPrint"];
                         txtIntPersonImageid.Text = dr["FardPersonFingerId"].ToString();
                         pboxPicture.Image = dr["PersonPic"] != DBNull.Value ? MStream((byte[])dr["PersonPic"]) : null;
 

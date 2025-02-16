@@ -232,6 +232,7 @@ namespace SDC_Application.AL
                     // Add parameters to the stored procedure
                     command.Parameters.AddWithValue("@TehsilId", Tehsilid);
                     command.Parameters.AddWithValue("@Dated", dated);
+                    command.Parameters.AddWithValue("@SubSdcId", UsersManagments.SubSdcId);
 
                     // Execute the stored procedure and retrieve the result set
                     SqlDataReader reader = command.ExecuteReader();
@@ -281,6 +282,7 @@ namespace SDC_Application.AL
                     command.Parameters.AddWithValue("@DaysOfMonth", daysOfMonth);
                     command.Parameters.AddWithValue("@Dated", dated);
                     command.Parameters.Add("@Err_Msg", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    command.Parameters.AddWithValue("@SubSdcId", UsersManagments.SubSdcId);
 
                     // Execute the stored procedure
                     command.ExecuteNonQuery();

@@ -108,6 +108,16 @@ namespace SDC_Application.BL
             string spWithParam = "Web_Sp_Update_Khata_RecStatus  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhataId + "," + Status;
             return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
         }
+        public string UpdateKhewatMalikRecStatus(string KhewatGroupFareeqId, string Status)
+        {
+            string spWithParam = "Web_Sp_Update_KhewatMalik_RecStatus  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + KhewatGroupFareeqId + "," + Status;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string UpdateKhatooniMalikRecStatus(string MushteriFareeqId, string Status)
+        {
+            string spWithParam = "Web_Sp_Update_KhatooniMalik_RecStatus  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MushteriFareeqId + "," + Status;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
 
         public DataTable GetRHZChangeSummary()
         {

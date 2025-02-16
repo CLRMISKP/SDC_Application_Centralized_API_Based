@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using SDC_Application.Classess;
 using SDC_Application.BL;
+using SDC_Application.LanguageManager;
 
 namespace SDC_Application.AL
 {
@@ -25,6 +26,11 @@ namespace SDC_Application.AL
         Misal misal=new Misal();
         DataView dvPendingIntiqal = new DataView();
         DataView dvPendingIntiqalAllPend = new DataView();
+        DataTable dtKhewatFareeqain = new DataTable();
+        TaqseemNewKhataJatMin khatas = new TaqseemNewKhataJatMin();
+        DataView view;
+        DataView viewMF;
+        LanguageConverter lang = new LanguageConverter();
         public string intiqalTypeId { get; set; }
 
         public frmAdminPendingTaskDashboard()
@@ -425,7 +431,19 @@ namespace SDC_Application.AL
         private void cbokhataNo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             auto.FillCombo("Proc_Get_Khatoonis  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + cbokhataNo.SelectedValue.ToString(), cboKhatoonies, "KhatooniNo", "KhatooniId");
-            
+
+            try
+            {
+                this.dtKhewatFareeqain = khatas.Proc_Self_Get_KhewatFareeqeinByKhataId(cbokhataNo.SelectedValue.ToString());
+                this.dgKhewatFareeqainAll.DataSource = null;
+                this.dgKhewatFareeqainAll.DataSource = dtKhewatFareeqain;
+                view = new DataView(dtKhewatFareeqain);
+                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cboKhatoonies_SelectionChangeCommitted(object sender, EventArgs e)
@@ -443,6 +461,7 @@ namespace SDC_Application.AL
                     txtKhatooniFeet.Text = row["KhatooniFeet"].ToString().Length>0?row["KhatooniFeet"].ToString():"0";
                 }
             }
+            this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
         }
 
         private void chkBeahShoda_CheckedChanged(object sender, EventArgs e)
@@ -699,6 +718,305 @@ namespace SDC_Application.AL
             dvPendingIntiqalAllPend.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
             dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
                     fillDgPendingMutationsAll();
+        }
+        #region Fill Gridview Malkan by Khata
+
+        private void PopulateGridViewKhewatMalkanAll(DataGridView g, Boolean All)
+        {
+            try
+            {
+
+                g.Columns["FardAreaPart"].HeaderText = "حصہ";
+                g.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                g.Columns["PersonName"].HeaderText = "نام مالک";
+                g.Columns["CNIC"].HeaderText = "شناختی /پاسپورٹ نمبر";
+                g.Columns["KhewatType"].HeaderText = "قسم مالک";
+                g.Columns["FardPart_Bata"].Visible = false;
+                g.Columns["seqno"].HeaderText = "نمبر شمار";
+                g.Columns["KhewatGroupFareeqId"].Visible = false;
+                g.Columns["KhewatGroupId"].Visible = false;
+                g.Columns["PersonId"].Visible = false;
+                g.Columns["KhewatTypeId"].Visible = false;
+                g.Columns["RecStatus"].HeaderText = "حالت";
+                g.Columns["PersonName"].DisplayIndex = 2;
+                g.Columns["KhewatType"].DisplayIndex = 3;
+                g.Columns["seqno"].DisplayIndex = 1;
+                if (!g.Columns.Contains("ColCnicUpdate"))
+                {
+                    DataGridViewLinkColumn col = new DataGridViewLinkColumn();
+                    col.Name = "ColCnicUpdate";
+                    g.Columns.Add(col);
+                    g.Columns["ColCnicUpdate"].HeaderText = "اندراج شناختی کارڈ";
+
+                }
+                g.Columns["ColCnicUpdate"].DisplayIndex = g.Columns.Count - 1;
+
+                foreach (DataGridViewRow row in g.Rows)
+                {
+                    if (row.Cells["CNIC"].Value.ToString().Length > 5)
+                    {
+
+                    }
+                    else
+                    {
+                        row.Cells["ColCnicUpdate"].Value = "اندراج شناختی کارڈ";
+                    }
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        #endregion
+
+        private void dgKhewatFareeqainAll_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridView g = sender as DataGridView;
+                foreach (DataGridViewRow row in g.Rows)
+                {
+                    if (dgKhewatFareeqainAll.SelectedRows.Count > 0)
+                    {
+                        if (row.Selected)
+                        {
+                            row.Cells[0].Value = 1;
+                            txtKhewatGroupFareeqId.Text = row.Cells["KhewatGroupFareeqId"].Value.ToString();
+                            if (row.Cells["RecStatus"].Value.ToString() == "موجودہ")
+                                rbKhewatMalikCurrent.Checked = true;
+                            else
+                                rbKhewatMalikPrevious.Checked = true;
+                        }
+                        else
+                        {
+                            row.Cells[0].Value = 0;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void rbKhewatMalikCurrent_Click(object sender, EventArgs e)
+        {
+            if (txtKhewatGroupFareeqId.Text.Length > 5)
+            {
+                ChangeKhewatMalikStatus();
+                cbokhataNo_SelectionChangeCommitted(sender, e);
+            }
+        }
+
+        private void rbKhewatMalikPrevious_Click(object sender, EventArgs e)
+        {
+            if (txtKhewatGroupFareeqId.Text.Length > 5)
+            {
+                ChangeKhewatMalikStatus();
+                cbokhataNo_SelectionChangeCommitted(sender, e);
+            }
+        }
+        private void ChangeKhewatMalikStatus()
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ مالک کی حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    if (rbKhewatMalikCurrent.Checked)
+                    {
+                        string status = rhz.UpdateKhewatMalikRecStatus(txtKhewatGroupFareeqId.Text, rbKhewatMalikCurrent.Checked ? "1" : "0");
+                        MessageBox.Show("انتخاب کردہ مالک کی حیثیت تبدیل ہو چکا ہے۔");
+                    }
+                    else if (rbKhewatMalikPrevious.Checked)
+                    {
+                        string status = rhz.UpdateKhewatMalikRecStatus(txtKhewatGroupFareeqId.Text, rbKhewatMalikCurrent.Checked ? "1" : "0");
+                        MessageBox.Show("انتخاب کردہ مالک کی حیثیت تبدیل ہو چکا ہے۔");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void GetKhatooniMushteryan(string KhatooniId)
+        {
+            try
+            {
+                //DataTable mushteryanCUrrent = khatooni.Get_MushtriFareeqein_By_KhatooniId(KhatooniId);
+                DataTable mushteryanCUrrent = khatooni.Get_MushtriFareeqein_By_Khatooni_All_Status(KhatooniId);
+                dgMushteriFareeqainAll.DataSource = mushteryanCUrrent;
+                viewMF = new DataView(mushteryanCUrrent);
+                PopulateGrid(dgMushteriFareeqainAll);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #region MushterFareeqain Gridview Population
+        private void PopulateGrid(DataGridView g)
+        {
+            try
+            {
+                g.Columns["FardAreaPart"].HeaderText = "حصہ";
+                g.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
+                g.Columns["CompleteName"].HeaderText = "نام مالک";
+                g.Columns["KhewatType"].HeaderText = "قسم مالک";
+                g.Columns["FardPart_Bata"].Visible = false;
+                g.Columns["seqno"].HeaderText = "نمبر شمار";
+                g.Columns["MushtriFareeqId"].Visible = false;
+                g.Columns["KhatooniId"].Visible = false;
+                g.Columns["PersonId"].Visible = false;
+                g.Columns["KhewatTypeId"].Visible = false;
+                g.Columns["RecStatus"].HeaderText = "حالت";
+                g.Columns["CompleteName"].DisplayIndex = 2;
+                g.Columns["KhewatType"].DisplayIndex = 3;
+                g.Columns["seqno"].DisplayIndex = 1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
+        private void dgMushteriFareeqainAll_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridView g = sender as DataGridView;
+                foreach (DataGridViewRow row in g.Rows)
+                {
+                    if (g.SelectedRows.Count > 0)
+                    {
+                        if (row.Selected)
+                        {
+                            row.Cells[0].Value = 1;
+                            txtMushteriFareeqId.Text = row.Cells["MushtriFareeqId"].Value.ToString();
+                            if (row.Cells["RecStatus"].Value.ToString() == "موجودہ")
+                                rbKhatooniMalikCurrent.Checked = true;
+                            else
+                                rbKhatooniMalikPrevious.Checked = true;
+
+
+                        }
+                        else
+                        {
+                            row.Cells[0].Value = 0;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void rbKhatooniMalikCurrent_Click(object sender, EventArgs e)
+        {
+            if (txtMushteriFareeqId.Text.Length > 5)
+            {
+                ChangeKhatooniMalikStatus();
+                cboKhatoonies_SelectionChangeCommitted(sender, e);
+            }
+        }
+
+        private void rbKhatooniMalikPrevious_Click(object sender, EventArgs e)
+        {
+            if (txtMushteriFareeqId.Text.Length > 5)
+            {
+                ChangeKhatooniMalikStatus();
+                cboKhatoonies_SelectionChangeCommitted(sender, e);
+            }
+        }
+        private void ChangeKhatooniMalikStatus()
+        {
+            if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ مالک کی حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    if (rbKhewatMalikCurrent.Checked)
+                    {
+                        string status = rhz.UpdateKhatooniMalikRecStatus(txtMushteriFareeqId.Text, rbKhatooniMalikCurrent.Checked ? "1" : "0");
+                        MessageBox.Show("انتخاب کردہ مالک کی حیثیت تبدیل ہو چکا ہے۔");
+                    }
+                    else if (rbKhewatMalikPrevious.Checked)
+                    {
+                        string status = rhz.UpdateKhatooniMalikRecStatus(txtMushteriFareeqId.Text, rbKhatooniMalikCurrent.Checked ? "1" : "0");
+                        MessageBox.Show("انتخاب کردہ مالک کی حیثیت تبدیل ہو چکا ہے۔");
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void txtSearchKhanakasht_TextChanged(object sender, EventArgs e)
+        {
+            string filter = this.txtSearchKhanakasht.Text.ToString();
+            viewMF.RowFilter = "CompleteName LIKE '%" + filter + "%'";
+            this.dgMushteriFareeqainAll.DataSource = viewMF;
+            this.PopulateGridViewMushteryanAll();
+        }
+        #region Fill Gridview Mushteryan by Khata
+
+        private void PopulateGridViewMushteryanAll()
+        {
+            dgMushteriFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
+            dgMushteriFareeqainAll.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
+            dgMushteriFareeqainAll.Columns["CompleteName"].HeaderText = "نام مالک";
+            dgMushteriFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
+            dgMushteriFareeqainAll.Columns["FardPart_Bata"].Visible = false;
+            dgMushteriFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
+            dgMushteriFareeqainAll.Columns["MushtriFareeqId"].Visible = false;
+            dgMushteriFareeqainAll.Columns["KhatooniId"].Visible = false;
+            dgMushteriFareeqainAll.Columns["PersonId"].Visible = false;
+            dgMushteriFareeqainAll.Columns["KhewatTypeId"].Visible = false;
+            dgMushteriFareeqainAll.Columns["RecStatus"].HeaderText = "حالت";
+            dgMushteriFareeqainAll.Columns["CompleteName"].DisplayIndex = 2;
+            dgMushteriFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
+            dgMushteriFareeqainAll.Columns["seqno"].DisplayIndex = 1;
+
+        }
+
+        #endregion
+
+        private void txtSearchCurrentKhewatFareeqain_TextChanged(object sender, EventArgs e)
+        {
+            string filter = this.txtSearchCurrentKhewatFareeqain.Text.ToString();
+            view.RowFilter = "PersonName LIKE '%" + filter + "%'";
+            dgKhewatFareeqainAll.DataSource = view;
+            this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+        }
+
+        private void txtSearchCurrentKhewatFareeqain_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)
+            {
+                if (e.KeyChar == Convert.ToChar((Keys.Back)))
+                {
+
+                }
+                else
+                {
+                    e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
+                }
+            }
         }
     }
 }

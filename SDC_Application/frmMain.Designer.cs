@@ -134,6 +134,7 @@
             this.mnuYearlyIntiqalatReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalaQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalMakhloot = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEkSalaFromInitqalEntryQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardBadarReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardbadarImp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFardbadarCancel = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,6 +150,7 @@
             this.mnuTokenandService = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMissingMut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMonthlyTaxMut = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuKhataLockUnlockDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubStateLandReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInconsistentRpt = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminRptInconKhatas = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,7 +205,7 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuKhataLockUnlockDetail = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSdcEnteredMutation = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -927,7 +929,8 @@
             this.mnuAdminRptAttMutAudit,
             this.MnuRegEntryRptsm,
             this.mnuMutationSummaryRptForRevMeeting,
-            this.mnuBayabHalfiAdmin});
+            this.mnuBayabHalfiAdmin,
+            this.mnuSdcEnteredMutation});
             this.mnuIntiqalReport.Name = "mnuIntiqalReport";
             this.mnuIntiqalReport.Size = new System.Drawing.Size(412, 42);
             this.mnuIntiqalReport.Text = "6 - انتقالا ت رپورٹس";
@@ -1051,7 +1054,8 @@
             // 
             this.mnuYearlyIntiqalatReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSubYaksalaQismZameen,
-            this.mnuSubYaksalMakhloot});
+            this.mnuSubYaksalMakhloot,
+            this.mnuEkSalaFromInitqalEntryQismZameen});
             this.mnuYearlyIntiqalatReports.Name = "mnuYearlyIntiqalatReports";
             this.mnuYearlyIntiqalatReports.Size = new System.Drawing.Size(412, 42);
             this.mnuYearlyIntiqalatReports.Text = "7 - یک سالہ رپورٹس";
@@ -1059,16 +1063,23 @@
             // mnuSubYaksalaQismZameen
             // 
             this.mnuSubYaksalaQismZameen.Name = "mnuSubYaksalaQismZameen";
-            this.mnuSubYaksalaQismZameen.Size = new System.Drawing.Size(225, 42);
+            this.mnuSubYaksalaQismZameen.Size = new System.Drawing.Size(343, 42);
             this.mnuSubYaksalaQismZameen.Text = " - یک سالہ بہ قسم زمین";
             this.mnuSubYaksalaQismZameen.Click += new System.EventHandler(this.mnuSubYaksalaQismZameen_Click);
             // 
             // mnuSubYaksalMakhloot
             // 
             this.mnuSubYaksalMakhloot.Name = "mnuSubYaksalMakhloot";
-            this.mnuSubYaksalMakhloot.Size = new System.Drawing.Size(225, 42);
+            this.mnuSubYaksalMakhloot.Size = new System.Drawing.Size(343, 42);
             this.mnuSubYaksalMakhloot.Text = " - یک سالہ محلوط";
             this.mnuSubYaksalMakhloot.Click += new System.EventHandler(this.mnuSubYaksalMakhloot_Click);
+            // 
+            // mnuEkSalaFromInitqalEntryQismZameen
+            // 
+            this.mnuEkSalaFromInitqalEntryQismZameen.Name = "mnuEkSalaFromInitqalEntryQismZameen";
+            this.mnuEkSalaFromInitqalEntryQismZameen.Size = new System.Drawing.Size(343, 42);
+            this.mnuEkSalaFromInitqalEntryQismZameen.Text = "- یک سالہ بمطابق قسم زمین از انتقال اندراج";
+            this.mnuEkSalaFromInitqalEntryQismZameen.Click += new System.EventHandler(this.mnuEkSalaFromInitqalEntryQismZameen_Click);
             // 
             // mnuFardBadarReports
             // 
@@ -1187,6 +1198,13 @@
             this.mnuMonthlyTaxMut.Size = new System.Drawing.Size(313, 42);
             this.mnuMonthlyTaxMut.Text = "- ماہوار ٹیکس تفصیل انتقالات و فردات";
             this.mnuMonthlyTaxMut.Click += new System.EventHandler(this.mnuMonthlyTaxMut_Click);
+            // 
+            // mnuKhataLockUnlockDetail
+            // 
+            this.mnuKhataLockUnlockDetail.Name = "mnuKhataLockUnlockDetail";
+            this.mnuKhataLockUnlockDetail.Size = new System.Drawing.Size(313, 42);
+            this.mnuKhataLockUnlockDetail.Text = "- کھاتہ جات لاک / ان لاک تفصیل";
+            this.mnuKhataLockUnlockDetail.Click += new System.EventHandler(this.mnuKhataLockUnlockDetail_Click);
             // 
             // mnuSubStateLandReport
             // 
@@ -1671,12 +1689,13 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuKhataLockUnlockDetail
+            // mnuSdcEnteredMutation
             // 
-            this.mnuKhataLockUnlockDetail.Name = "mnuKhataLockUnlockDetail";
-            this.mnuKhataLockUnlockDetail.Size = new System.Drawing.Size(313, 42);
-            this.mnuKhataLockUnlockDetail.Text = "- کھاتہ جات لاک / ان لاک تفصیل";
-            this.mnuKhataLockUnlockDetail.Click += new System.EventHandler(this.mnuKhataLockUnlockDetail_Click);
+            this.mnuSdcEnteredMutation.Name = "mnuSdcEnteredMutation";
+            this.mnuSdcEnteredMutation.Size = new System.Drawing.Size(404, 42);
+            this.mnuSdcEnteredMutation.Text = "- ایس ڈی سی میں درج شدہ انتقلات";
+            this.mnuSdcEnteredMutation.ToolTipText = "وہ انتقلات جو موضع اپریشنل ہونے کے بعد درج ہوے، مینول اور کمپیوٹرائزڈ دونوں";
+            this.mnuSdcEnteredMutation.Click += new System.EventHandler(this.mnuSdcEnteredMutation_Click);
             // 
             // frmMain
             // 
@@ -1890,5 +1909,7 @@
         private System.Windows.Forms.ToolStripMenuItem DataEntryAllMut;
         private System.Windows.Forms.ToolStripMenuItem mnuPeshDivProforma;
         private System.Windows.Forms.ToolStripMenuItem mnuKhataLockUnlockDetail;
+        private System.Windows.Forms.ToolStripMenuItem mnuEkSalaFromInitqalEntryQismZameen;
+        private System.Windows.Forms.ToolStripMenuItem mnuSdcEnteredMutation;
     }
 }
