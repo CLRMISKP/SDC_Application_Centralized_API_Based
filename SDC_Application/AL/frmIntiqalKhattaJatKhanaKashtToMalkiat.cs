@@ -2462,7 +2462,7 @@ namespace SDC_Application.AL
                 //Calculate Sold Hissay and Raqba
                 foreach (DataGridViewRow row in GridSellerList1.Rows)
                 {
-                    hissay += row.Cells["Seller_Sold_Hissa"].Value != null ? Convert.ToDecimal(row.Cells["Seller_Sold_Hissa"].Value.ToString()) : 0;
+                    hissay += row.Cells["Seller_Sold_Hissa"].Value != null ? decimal.Parse(row.Cells["Seller_Sold_Hissa"].Value.ToString(), System.Globalization.NumberStyles.Float) : 0; //Convert.ToDecimal(row.Cells["Seller_Sold_Hissa"].Value.ToString()) : 0;
                     kanal += row.Cells["Seller_Sold_Kanal"].Value != null ? Convert.ToInt32(row.Cells["Seller_Sold_Kanal"].Value.ToString()) : 0;
                     marlas += row.Cells["Seller_Sold_Marla"].Value != null ? Convert.ToInt32(row.Cells["Seller_Sold_Marla"].Value.ToString()) : 0;
                     sars = 0;//sars += row.Cells[16].Value != null ? Convert.ToDecimal(row.Cells[16].Value.ToString()) : 0;
@@ -2528,7 +2528,7 @@ namespace SDC_Application.AL
 
                 foreach (DataGridViewRow row in GridBuyersList.Rows)
                 {
-                    bhissay += row.Cells["Buyer_Hissa"].Value != null ? Convert.ToDecimal(row.Cells["Buyer_Hissa"].Value.ToString()) : 0;
+                    bhissay += row.Cells["Buyer_Hissa"].Value != null ? decimal.Parse(row.Cells["Buyer_Hissa"].Value.ToString(), System.Globalization.NumberStyles.Float):0;// Convert.ToDecimal(row.Cells["Buyer_Hissa"].Value.ToString()) : 0;
                     bKanal += row.Cells["Buyer_Kanal"].Value != null ? Convert.ToInt32(row.Cells["Buyer_Kanal"].Value.ToString()) : 0;
                     bMarla += row.Cells["Buyer_Marla"].Value != null ? Convert.ToInt32(row.Cells["Buyer_Marla"].Value.ToString()) : 0;
                     bSars = 0;//bSars += row.Cells["Buyer_Sarsai"].Value != null ? Convert.ToDecimal(row.Cells["Buyer_Sarsai"].Value.ToString()) : 0;
