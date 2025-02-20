@@ -106,6 +106,24 @@ namespace SDC_Application.AL
 
             }
         }
+
+        private void chbSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbSelectAll.Checked)
+            {
+                foreach (DataGridViewRow row in grdKhatooni.Rows)
+                {
+                    row.Cells["chk"].Value = 1;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in grdKhatooni.Rows)
+                {
+                    row.Cells["chk"].Value = 0;
+                }
+            }
+        }
         
         }
     }

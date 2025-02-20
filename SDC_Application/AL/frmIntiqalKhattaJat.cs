@@ -105,6 +105,7 @@ namespace SDC_Application.AL
         LanguageConverter lang = new LanguageConverter();
         Intiqal Intiqal = new Intiqal();
         DataTable dt = new DataTable();
+        DataView dvTaqseemKhatoonies; 
         DataTable Mushdt = new DataTable();
         bool GridSelection = true;
         #endregion
@@ -4711,24 +4712,8 @@ namespace SDC_Application.AL
                 string khataid = RegisterHqDKhataId;
                 //dt = taqseemnewkhata.Proc_Get_Khatoonis(RegisterHqDKhataId.ToString());
                 dt = taqseemnewkhata.Proc_Self_Get_Khatoonis(RegisterHqDKhataId.ToString());
-                grdGetkhatonichange.DataSource = dt;
-                grdGetkhatonichange.ReadOnly = false;
-                grdGetkhatonichange.Columns[1].ReadOnly = true;
-                grdGetkhatonichange.Columns[2].ReadOnly = true;
-                grdGetkhatonichange.Columns[3].ReadOnly = true;
-                grdGetkhatonichange.Columns[4].ReadOnly = true;
-                grdGetkhatonichange.Columns[5].ReadOnly = true;
-                grdGetkhatonichange.Columns["KhatooniId"].Visible = false;
-                grdGetkhatonichange.Columns["RegisterHqDKhataId"].Visible = false;
-                grdGetkhatonichange.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-                grdGetkhatonichange.Columns["Khatooni_Hissa"].HeaderText = "حصہ";
-                grdGetkhatonichange.Columns["Khatooni_Kanal"].HeaderText = "کنال";
-                grdGetkhatonichange.Columns["Khatooni_Marla"].HeaderText = "مرلہ";
-                grdGetkhatonichange.Columns["Khatooni_Sarsai"].HeaderText = "سرسائی";
-                grdGetkhatonichange.Columns["Khatooni_Feet"].HeaderText = "فٹ";
-                grdGetkhatonichange.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "تفصیل حصہ داران وکاشتکاران";
-                grdGetkhatonichange.Columns["KhatooniLagan"].HeaderText = "لگان";
-                grdGetkhatonichange.Columns["Wasail_e_Abpashi"].HeaderText = "وسایل آبپاشی";
+                dvTaqseemKhatoonies = new DataView(dt);
+                FillKhatooniGrid();
             }
             catch (Exception)
             {
@@ -4736,6 +4721,27 @@ namespace SDC_Application.AL
                 throw;
             }
 
+        }
+        private void FillKhatooniGrid()
+        {
+            grdGetkhatonichange.DataSource = dvTaqseemKhatoonies;
+            grdGetkhatonichange.ReadOnly = false;
+            grdGetkhatonichange.Columns[1].ReadOnly = true;
+            grdGetkhatonichange.Columns[2].ReadOnly = true;
+            grdGetkhatonichange.Columns[3].ReadOnly = true;
+            grdGetkhatonichange.Columns[4].ReadOnly = true;
+            grdGetkhatonichange.Columns[5].ReadOnly = true;
+            grdGetkhatonichange.Columns["KhatooniId"].Visible = false;
+            grdGetkhatonichange.Columns["RegisterHqDKhataId"].Visible = false;
+            grdGetkhatonichange.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+            grdGetkhatonichange.Columns["Khatooni_Hissa"].HeaderText = "حصہ";
+            grdGetkhatonichange.Columns["Khatooni_Kanal"].HeaderText = "کنال";
+            grdGetkhatonichange.Columns["Khatooni_Marla"].HeaderText = "مرلہ";
+            grdGetkhatonichange.Columns["Khatooni_Sarsai"].HeaderText = "سرسائی";
+            grdGetkhatonichange.Columns["Khatooni_Feet"].HeaderText = "فٹ";
+            grdGetkhatonichange.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "تفصیل حصہ داران وکاشتکاران";
+            grdGetkhatonichange.Columns["KhatooniLagan"].HeaderText = "لگان";
+            grdGetkhatonichange.Columns["Wasail_e_Abpashi"].HeaderText = "وسایل آبپاشی";
         }
 
         #endregion
@@ -6843,8 +6849,8 @@ namespace SDC_Application.AL
                     KhataNoNew = KhataNo == cmbtaqseemChangeKhata.Text ? "0" : cmbtaqseemChangeKhata.Text;
                     if (cmbtaqseemChangeKhata.SelectedValue.ToString().Length > 2)
                     {
-                        if (grdGetkhatonichange.DataSource == null || grdGetkhatonichange.Rows.Count == 0)
-                        {
+                        //if (grdGetkhatonichange.DataSource == null || grdGetkhatonichange.Rows.Count == 0)
+                        //{
                            string retVal= taqseemnewkhata.SaveAutoKhatooniesInKhassraIntiqal(txtKhattaRecId.Text, cmbtaqseemChangeKhata.SelectedValue.ToString(), KhataNoNew, UsersManagments.UserId.ToString(), UsersManagments.UserName);
                            if (retVal.Length > 5)
                            {
@@ -6852,9 +6858,9 @@ namespace SDC_Application.AL
                                Fillkhatoniforkhasra();
                                ClearKhatooni();
                            }
-                        }
-                        else
-                            MessageBox.Show("کھتونی ریکارڈ پہلے سے موجود ہے۔");
+                        //}
+                        //else
+                            //MessageBox.Show("کھتونی ریکارڈ پہلے سے موجود ہے۔");
                     }
                     else
                         MessageBox.Show("کھاتے کا انتخاب کریں۔");
@@ -7013,6 +7019,13 @@ namespace SDC_Application.AL
 
                 }
             }
+        }
+
+        private void txtSearchKhatooni_TextChanged(object sender, EventArgs e)
+        {
+            string filter = txtSearchKhatooni.Text.Trim();
+            dvTaqseemKhatoonies.RowFilter = "KhatooniNo LIKE '%" + filter + "%'";
+            FillKhatooniGrid();
         }
 
        

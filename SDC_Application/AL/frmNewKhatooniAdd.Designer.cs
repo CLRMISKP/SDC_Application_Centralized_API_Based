@@ -34,17 +34,21 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnselect = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chbSelectAll = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdKhatooni)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.grdKhatooni);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -63,10 +67,10 @@
             this.grdKhatooni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chk});
             this.grdKhatooni.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdKhatooni.Location = new System.Drawing.Point(3, 75);
+            this.grdKhatooni.Location = new System.Drawing.Point(0, 0);
             this.grdKhatooni.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.grdKhatooni.Name = "grdKhatooni";
-            this.grdKhatooni.Size = new System.Drawing.Size(569, 430);
+            this.grdKhatooni.Size = new System.Drawing.Size(569, 421);
             this.grdKhatooni.TabIndex = 2;
             // 
             // chk
@@ -112,16 +116,35 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // groupBox2
+            // panel1
             // 
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(3, 32);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBox2.Size = new System.Drawing.Size(569, 43);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
+            this.panel1.Controls.Add(this.chbSelectAll);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(569, 46);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.grdKhatooni);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(569, 421);
+            this.panel2.TabIndex = 4;
+            // 
+            // chbSelectAll
+            // 
+            this.chbSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbSelectAll.AutoSize = true;
+            this.chbSelectAll.Location = new System.Drawing.Point(408, 5);
+            this.chbSelectAll.Name = "chbSelectAll";
+            this.chbSelectAll.Size = new System.Drawing.Size(157, 35);
+            this.chbSelectAll.TabIndex = 0;
+            this.chbSelectAll.Text = "تمام کھتونی کا انتخاب کریں";
+            this.chbSelectAll.UseVisualStyleBackColor = true;
+            this.chbSelectAll.CheckedChanged += new System.EventHandler(this.chbSelectAll_CheckedChanged);
             // 
             // frmNewKhatooniAdd
             // 
@@ -137,6 +160,9 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdKhatooni)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -146,9 +172,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView grdKhatooni;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnselect;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chk;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox chbSelectAll;
     }
 }
