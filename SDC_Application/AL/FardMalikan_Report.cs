@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using SDC_Application.AL;
 using SDC_Application.Classess;
+using SDC_Application.BL;
 
 namespace SDC_Application
 {
@@ -113,8 +114,17 @@ namespace SDC_Application
 
                         FardMalkan_Pwa ojbktg = new FardMalkan_Pwa();
                         ojbktg.SetDatabaseLogon(DB_UserName, DB_Password, ReportServer_Ip, ReportServer_DB_Name);
-                        ojbktg.SetParameterValue("TokenID", TokenID);                        
+                        ojbktg.SetParameterValue("TokenID", TokenID);
                         crystalReportViewer1.ReportSource = ojbktg;
+                        //FardMalkan_Rzr ojbktg = new FardMalkan_Rzr();
+                        ////ojbktg.SetDatabaseLogon(DB_UserName, DB_Password, ReportServer_Ip, ReportServer_DB_Name);
+                        //TestDS testDs=new TestDS();
+                        //SDC_Application.BL.TestDSTableAdapters.vw_TokenKhatas_For_FardTableAdapter TokenKhataTableAdapter =
+                        //    new SDC_Application.BL.TestDSTableAdapters.vw_TokenKhatas_For_FardTableAdapter();
+                        //TokenKhataTableAdapter.Fill(testDs.vw_TokenKhatas_For_Fard,long.Parse(TokenID));
+                        //ojbktg.SetDataSource(testDs);
+                        //ojbktg.SetParameterValue("TokenID", TokenID);
+                        //crystalReportViewer1.ReportSource = ojbktg;
                     }
                 
             }

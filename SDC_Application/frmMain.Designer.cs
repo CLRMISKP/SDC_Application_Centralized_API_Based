@@ -40,7 +40,7 @@
             this.ToolStripBankChalan = new System.Windows.Forms.ToolStripMenuItem();
             this.تفصیلاتبنکیسڈیسیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMShortFard = new System.Windows.Forms.ToolStripMenuItem();
-            this.فردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTransFard = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMDetailedFard = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSearchFardat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOtherDistrictTehsilFard = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,6 +131,7 @@
             this.MnuRegEntryRptsm = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMutationSummaryRptForRevMeeting = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBayabHalfiAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSdcEnteredMutation = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuYearlyIntiqalatReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalaQismZameen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSubYaksalMakhloot = new System.Windows.Forms.ToolStripMenuItem();
@@ -180,6 +181,7 @@
             this.mnuRegEntryRptCo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInitqalforDawra = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBayanHalfiIntiqalatNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNonAdminInitqalRptBoRFormat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRHZreport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaskNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOperationalReportsNonAdmin = new System.Windows.Forms.ToolStripMenuItem();
@@ -205,7 +207,6 @@
             this.lblSDCTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mnuSdcEnteredMutation = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -274,7 +275,7 @@
             this.ToolStripBankChalan,
             this.تفصیلاتبنکیسڈیسیToolStripMenuItem,
             this.TSMShortFard,
-            this.فردToolStripMenuItem,
+            this.mnuTransFard,
             this.TSMDetailedFard,
             this.mnuSearchFardat,
             this.mnuOtherDistrictTehsilFard});
@@ -317,12 +318,12 @@
             this.TSMShortFard.Text = "5 - مختصر فرد";
             this.TSMShortFard.Click += new System.EventHandler(this.TSMShortFard_Click);
             // 
-            // فردToolStripMenuItem
+            // mnuTransFard
             // 
-            this.فردToolStripMenuItem.Name = "فردToolStripMenuItem";
-            this.فردToolStripMenuItem.Size = new System.Drawing.Size(319, 42);
-            this.فردToolStripMenuItem.Text = "6- ٹرانزیکشنل فرد";
-            this.فردToolStripMenuItem.Click += new System.EventHandler(this.فردToolStripMenuItem_Click);
+            this.mnuTransFard.Name = "mnuTransFard";
+            this.mnuTransFard.Size = new System.Drawing.Size(319, 42);
+            this.mnuTransFard.Text = "6- ٹرانزیکشنل فرد";
+            this.mnuTransFard.Click += new System.EventHandler(this.فردToolStripMenuItem_Click);
             // 
             // TSMDetailedFard
             // 
@@ -1050,6 +1051,14 @@
             this.mnuBayabHalfiAdmin.Text = " - بیان حلفی ماہانہ انتقالات ";
             this.mnuBayabHalfiAdmin.Click += new System.EventHandler(this.mnuBayabHalfiAdmin_Click);
             // 
+            // mnuSdcEnteredMutation
+            // 
+            this.mnuSdcEnteredMutation.Name = "mnuSdcEnteredMutation";
+            this.mnuSdcEnteredMutation.Size = new System.Drawing.Size(404, 42);
+            this.mnuSdcEnteredMutation.Text = "- ایس ڈی سی میں درج شدہ انتقلات";
+            this.mnuSdcEnteredMutation.ToolTipText = "وہ انتقلات جو موضع اپریشنل ہونے کے بعد درج ہوے، مینول اور کمپیوٹرائزڈ دونوں";
+            this.mnuSdcEnteredMutation.Click += new System.EventHandler(this.mnuSdcEnteredMutation_Click);
+            // 
             // mnuYearlyIntiqalatReports
             // 
             this.mnuYearlyIntiqalatReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1346,7 +1355,8 @@
             this.mnuDePendingMutCo,
             this.mnuRegEntryRptCo,
             this.mnuInitqalforDawra,
-            this.mnuBayanHalfiIntiqalatNonAdmin});
+            this.mnuBayanHalfiIntiqalatNonAdmin,
+            this.mnuNonAdminInitqalRptBoRFormat});
             this.mnuIntiqalat.Name = "mnuIntiqalat";
             this.mnuIntiqalat.Size = new System.Drawing.Size(378, 42);
             this.mnuIntiqalat.Text = "انتقالات رپورٹس";
@@ -1354,7 +1364,7 @@
             // mnuSubIntiqalatTehsildar
             // 
             this.mnuSubIntiqalatTehsildar.Name = "mnuSubIntiqalatTehsildar";
-            this.mnuSubIntiqalatTehsildar.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubIntiqalatTehsildar.Size = new System.Drawing.Size(404, 42);
             this.mnuSubIntiqalatTehsildar.Text = " - تحصیلدار انتقالات رپورٹ ";
             this.mnuSubIntiqalatTehsildar.Visible = false;
             this.mnuSubIntiqalatTehsildar.Click += new System.EventHandler(this.mnuSubInitqalatTehsildar_Click);
@@ -1362,7 +1372,7 @@
             // mnuSubIntiqalatPendingRegistry
             // 
             this.mnuSubIntiqalatPendingRegistry.Name = "mnuSubIntiqalatPendingRegistry";
-            this.mnuSubIntiqalatPendingRegistry.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubIntiqalatPendingRegistry.Size = new System.Drawing.Size(404, 42);
             this.mnuSubIntiqalatPendingRegistry.Text = " - رجسٹری انتقالات زیر تجویز ";
             this.mnuSubIntiqalatPendingRegistry.Visible = false;
             this.mnuSubIntiqalatPendingRegistry.Click += new System.EventHandler(this.mnuSubIntiqalRegistryPending_Click);
@@ -1370,7 +1380,7 @@
             // mnuSubIntiqalatonRegistry
             // 
             this.mnuSubIntiqalatonRegistry.Name = "mnuSubIntiqalatonRegistry";
-            this.mnuSubIntiqalatonRegistry.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubIntiqalatonRegistry.Size = new System.Drawing.Size(404, 42);
             this.mnuSubIntiqalatonRegistry.Text = " -  رجسٹری انتقالات تفصیل";
             this.mnuSubIntiqalatonRegistry.Visible = false;
             this.mnuSubIntiqalatonRegistry.Click += new System.EventHandler(this.MnuSubREgistryIntiqalatDaily_Click);
@@ -1378,7 +1388,7 @@
             // mnuSubIntiqalatAttested
             // 
             this.mnuSubIntiqalatAttested.Name = "mnuSubIntiqalatAttested";
-            this.mnuSubIntiqalatAttested.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubIntiqalatAttested.Size = new System.Drawing.Size(404, 42);
             this.mnuSubIntiqalatAttested.Text = " - تصدیق شدہ انتقالات";
             this.mnuSubIntiqalatAttested.Visible = false;
             this.mnuSubIntiqalatAttested.Click += new System.EventHandler(this.mnuSubAttestedMutaions_Click);
@@ -1386,7 +1396,7 @@
             // mnuSubIntiqalatCancel
             // 
             this.mnuSubIntiqalatCancel.Name = "mnuSubIntiqalatCancel";
-            this.mnuSubIntiqalatCancel.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubIntiqalatCancel.Size = new System.Drawing.Size(404, 42);
             this.mnuSubIntiqalatCancel.Text = " - خارج شدہ انتقالات";
             this.mnuSubIntiqalatCancel.Visible = false;
             this.mnuSubIntiqalatCancel.Click += new System.EventHandler(this.mnuSubCancelledInital_Click);
@@ -1394,7 +1404,7 @@
             // mnuSubIntiqalatAttNotImp
             // 
             this.mnuSubIntiqalatAttNotImp.Name = "mnuSubIntiqalatAttNotImp";
-            this.mnuSubIntiqalatAttNotImp.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubIntiqalatAttNotImp.Size = new System.Drawing.Size(404, 42);
             this.mnuSubIntiqalatAttNotImp.Text = " - تصدیق شدہ  غیر عمل شدہ انتقلات";
             this.mnuSubIntiqalatAttNotImp.Visible = false;
             this.mnuSubIntiqalatAttNotImp.Click += new System.EventHandler(this.mnuSubIntiqalatAttestedNotImplemented_Click);
@@ -1402,35 +1412,35 @@
             // mnuSubUnAttestedMutOPM
             // 
             this.mnuSubUnAttestedMutOPM.Name = "mnuSubUnAttestedMutOPM";
-            this.mnuSubUnAttestedMutOPM.Size = new System.Drawing.Size(348, 42);
+            this.mnuSubUnAttestedMutOPM.Size = new System.Drawing.Size(404, 42);
             this.mnuSubUnAttestedMutOPM.Text = " - غیر تصدیق شدہ انتقالات";
             this.mnuSubUnAttestedMutOPM.Click += new System.EventHandler(this.mnuSubUnAttestedMutOPM_Click);
             // 
             // mnuCoBiometricNotAttested
             // 
             this.mnuCoBiometricNotAttested.Name = "mnuCoBiometricNotAttested";
-            this.mnuCoBiometricNotAttested.Size = new System.Drawing.Size(348, 42);
+            this.mnuCoBiometricNotAttested.Size = new System.Drawing.Size(404, 42);
             this.mnuCoBiometricNotAttested.Text = " - بائیو مٹرک شدہ، غیر تصدیق شدہ انتقالات";
             this.mnuCoBiometricNotAttested.Click += new System.EventHandler(this.mnuCoBiometricNotAttested_Click);
             // 
             // mnuEnteredMutationsReport
             // 
             this.mnuEnteredMutationsReport.Name = "mnuEnteredMutationsReport";
-            this.mnuEnteredMutationsReport.Size = new System.Drawing.Size(348, 42);
+            this.mnuEnteredMutationsReport.Size = new System.Drawing.Size(404, 42);
             this.mnuEnteredMutationsReport.Text = "- درج شدہ انتقالات ";
             this.mnuEnteredMutationsReport.Click += new System.EventHandler(this.mnuEnteredMutationsReport_Click);
             // 
             // mnuDePendingMutCo
             // 
             this.mnuDePendingMutCo.Name = "mnuDePendingMutCo";
-            this.mnuDePendingMutCo.Size = new System.Drawing.Size(348, 42);
+            this.mnuDePendingMutCo.Size = new System.Drawing.Size(404, 42);
             this.mnuDePendingMutCo.Text = "- ڈیٹا انٹری نامکمل انتقالات";
             this.mnuDePendingMutCo.Click += new System.EventHandler(this.mnuDePendingMutCo_Click);
             // 
             // mnuRegEntryRptCo
             // 
             this.mnuRegEntryRptCo.Name = "mnuRegEntryRptCo";
-            this.mnuRegEntryRptCo.Size = new System.Drawing.Size(348, 42);
+            this.mnuRegEntryRptCo.Size = new System.Drawing.Size(404, 42);
             this.mnuRegEntryRptCo.Text = " - رجسٹری اندراج تفصیل";
             this.mnuRegEntryRptCo.Visible = false;
             this.mnuRegEntryRptCo.Click += new System.EventHandler(this.mnuRegEntryRptCo_Click);
@@ -1438,16 +1448,23 @@
             // mnuInitqalforDawra
             // 
             this.mnuInitqalforDawra.Name = "mnuInitqalforDawra";
-            this.mnuInitqalforDawra.Size = new System.Drawing.Size(348, 42);
+            this.mnuInitqalforDawra.Size = new System.Drawing.Size(404, 42);
             this.mnuInitqalforDawra.Text = "- انتقالات برائے دورہ";
             this.mnuInitqalforDawra.Click += new System.EventHandler(this.mnuInitqalforDawra_Click);
             // 
             // mnuBayanHalfiIntiqalatNonAdmin
             // 
             this.mnuBayanHalfiIntiqalatNonAdmin.Name = "mnuBayanHalfiIntiqalatNonAdmin";
-            this.mnuBayanHalfiIntiqalatNonAdmin.Size = new System.Drawing.Size(348, 42);
+            this.mnuBayanHalfiIntiqalatNonAdmin.Size = new System.Drawing.Size(404, 42);
             this.mnuBayanHalfiIntiqalatNonAdmin.Text = " - بیان حلفی ماہانہ انتقالات ";
             this.mnuBayanHalfiIntiqalatNonAdmin.Click += new System.EventHandler(this.mnuBayanHalfiIntiqalatNonAdmin_Click);
+            // 
+            // mnuNonAdminInitqalRptBoRFormat
+            // 
+            this.mnuNonAdminInitqalRptBoRFormat.Name = "mnuNonAdminInitqalRptBoRFormat";
+            this.mnuNonAdminInitqalRptBoRFormat.Size = new System.Drawing.Size(404, 42);
+            this.mnuNonAdminInitqalRptBoRFormat.Text = "- انتقالات رپورٹ برائے ریونیو میٹنگ وبورڈ اف ریونیو";
+            this.mnuNonAdminInitqalRptBoRFormat.Click += new System.EventHandler(this.mnuNonAdminInitqalRptBoRFormat_Click);
             // 
             // mnuRHZreport
             // 
@@ -1689,14 +1706,6 @@
             this.panel2.Size = new System.Drawing.Size(53, 48);
             this.panel2.TabIndex = 0;
             // 
-            // mnuSdcEnteredMutation
-            // 
-            this.mnuSdcEnteredMutation.Name = "mnuSdcEnteredMutation";
-            this.mnuSdcEnteredMutation.Size = new System.Drawing.Size(404, 42);
-            this.mnuSdcEnteredMutation.Text = "- ایس ڈی سی میں درج شدہ انتقلات";
-            this.mnuSdcEnteredMutation.ToolTipText = "وہ انتقلات جو موضع اپریشنل ہونے کے بعد درج ہوے، مینول اور کمپیوٹرائزڈ دونوں";
-            this.mnuSdcEnteredMutation.Click += new System.EventHandler(this.mnuSdcEnteredMutation_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1797,7 +1806,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFardeBadar;
         private System.Windows.Forms.ToolStripMenuItem ڈیشبورڈToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripPicIndexing;
-        private System.Windows.Forms.ToolStripMenuItem فردToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuTransFard;
         private System.Windows.Forms.ToolStripMenuItem mnuKhassraGardawri;
         private System.Windows.Forms.ToolStripMenuItem mnuDocReceiving;
         private System.Windows.Forms.ToolStripMenuItem mnuKhassraValuation;
@@ -1911,5 +1920,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuKhataLockUnlockDetail;
         private System.Windows.Forms.ToolStripMenuItem mnuEkSalaFromInitqalEntryQismZameen;
         private System.Windows.Forms.ToolStripMenuItem mnuSdcEnteredMutation;
+        private System.Windows.Forms.ToolStripMenuItem mnuNonAdminInitqalRptBoRFormat;
     }
 }

@@ -361,7 +361,22 @@ namespace SDC_Application
             this.ToolStripMenuCorrection.Visible = isMenuVisible("frmFardBadar");
             this.mnuKhataLock.Visible = isMenuVisible("frmKhattaLocking");
             this.mnuMalkanSearchandMerging.Visible = isMenuVisible("frmMalkanSearchingMerging");
-            //this.mnuInsertLoginDetails.Visible = isMenuVisible("frmUserLogs");\
+            this.TSMShortFard.Visible = isMenuVisible("TSMShortFard");
+            this.TSMDetailedFard.Visible = isMenuVisible("TSMDetailedFard");
+            this.mnuTransFard.Visible = isMenuVisible("mnuTransFard");
+            this.mnuSearchFardat.Visible = isMenuVisible("mnuSearchFardat");
+            this.mnuDocReceiving.Visible = isMenuVisible("mnuDocReceiving");
+            this.TSMStayOrder.Visible = isMenuVisible("TSMStayOrder");
+            this.TSMFardatForSR.Visible = isMenuVisible("TSMFardatForSR");
+            this.TSMRegSearch.Visible = isMenuVisible("TSMRegSearch");
+            this.TSMGardawarVerification.Visible = isMenuVisible("TSMGardawarVerification");
+            this.tsmBultROAttestation.Visible = isMenuVisible("tsmBultROAttestation");
+            this.mnuQabzulWasool.Visible = isMenuVisible("mnuQabzulWasool");
+            this.mnuIntiqalatInKhata.Visible = isMenuVisible("mnuIntiqalatInKhata");
+            this.mnuRhzSDCEditing.Visible = isMenuVisible("mnuRhzSDCEditing");
+            this.mnuIntiqalManual.Visible = isMenuVisible("mnuIntiqalManual");
+            this.mnuKhassraGardawri.Visible = isMenuVisible("mnuKhassraGardawri");
+            //---- Reports -----//
             this.mnuSubDraFardatFee.Visible = isMenuVisible("DRA_FardFee_dem");
             this.mnuSubDraIntiqalatFee.Visible = isMenuVisible("DRA_IntiqalTax_dem");
             this.mnuSubDraIntiqalatParthFee.Visible = isMenuVisible("DRA_IntiqalParthFee_dem");
@@ -378,6 +393,7 @@ namespace SDC_Application
             this.mnuRHZreport.Visible = isMenuVisible("mnuRHZreport");//
             this.mnuRegEntryRptCo.Visible = isMenuVisible("mnuRegEntryRptCo");//
             this.mnuTaskNonAdmin.Visible = isMenuVisible("frmAdminPendingTaskDashboard");
+            this.mnuNonAdminInitqalRptBoRFormat.Visible = isMenuVisible("mnuNonAdminInitqalRptBoRFormat");
             //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem"); IntiqalBoimetricCapturedNotAttestedReport
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
@@ -2630,6 +2646,24 @@ namespace SDC_Application
                 UsersManagments.check = 85;
                 obj.Tehsilid = UsersManagments._Tehsilid.ToString();
                 obj.SubSdcId= UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuNonAdminInitqalRptBoRFormat_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 63;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
                 obj.MdiParent = this;
                 obj.WindowState = this.WindowState;
                 obj.Show();

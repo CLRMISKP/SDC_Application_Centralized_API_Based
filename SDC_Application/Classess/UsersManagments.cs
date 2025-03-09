@@ -35,7 +35,9 @@ namespace SDC_Application.Classess
         public static string Misal { get; set; }
         public static string Implementation { get; set; }
         public static int SubSdcId { get; set; }
-
+        public static string MAC { get; set; }
+        public static string IpAddress { get; set; }
+        public static string MachineName { get; set; }
         public static int ServiceTypeId
         {
             get { return _ServiceTypeId; }

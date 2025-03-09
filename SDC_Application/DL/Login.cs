@@ -59,6 +59,9 @@ namespace SDC_Application.DL
                     UsersManagments._Tehsilid = v;
                     UsersManagments._rptPort = SDC_Application.Classess.Crypto.Decrypt(ConfigurationSettings.AppSettings["rptport"]);
                     UsersManagments._LocationId = Convert.ToInt32(SystemInfo.Rows[0]["RegId"]);
+                    UsersManagments.MAC = SystemInfo.Rows[0]["MacAddress"].ToString();
+                    UsersManagments.MachineName = SystemInfo.Rows[0]["MachineName"].ToString();
+                    UsersManagments.IpAddress = SystemInfo.Rows[0]["IPAddress"].ToString();
                 }
             }
             else

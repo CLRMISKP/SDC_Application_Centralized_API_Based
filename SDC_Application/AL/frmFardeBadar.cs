@@ -1974,7 +1974,7 @@ namespace SDC_Application.AL
                             txtFbKhassraDetailId.Text = row.Cells["FB_KhassraRegisterDetailId"].Value.ToString();
                             // txtkh.Text = row.Cells["RegisterHqDKhataId"].Value.ToString();
                             cboAreaType.SelectedValue = row.Cells["AreaTypeId"].Value.ToString();
-                            cboAreaTypeProp.SelectedValue = row.Cells["AreaTypeIdProp"].Value.ToString();
+                            cboAreaTypeProp.SelectedValue = row.Cells["AreaTypeIdProp"].Value.ToString().Length>0?row.Cells["AreaTypeIdProp"].Value.ToString():"0";
                             txtKhassraKanal.Text = row.Cells["Kanal"].Value.ToString();
                             txtKhassraMarla.Text = row.Cells["Marla"].Value.ToString();
                             txtKhassraSarsai.Text = row.Cells["Sarsai"].Value.ToString();
