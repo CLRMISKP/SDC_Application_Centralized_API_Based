@@ -81,7 +81,6 @@ D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.Common.pdb
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.pdb
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.xml
-D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csprojResolveAssemblyReference.cache
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.khasraControl.resources
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.KhatooniControl.resources
 D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\LandInfo.ControlsLib.KhewatControl.resources
@@ -134,3 +133,7 @@ C:\Users\Administrator\Documents\GitHub\SDC_Application_Centralized\ControlsLib\
 C:\Users\Administrator\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.dll
 C:\Users\Administrator\Documents\GitHub\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.AssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Application.ControlsLib.csproj.CoreCompileInputs.cache
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\obj\Debug\SDC_Appl.664E9EE7.Up2Date
+D:\Office Data\Land System\SDC_Application_Centralized\ControlsLib\bin\Debug\SDC_Application.LanguageManager.dll.config

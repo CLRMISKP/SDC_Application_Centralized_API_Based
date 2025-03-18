@@ -99,3 +99,13 @@ E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_A
 E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.dll
 E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.xml
 E:\CLRMIS\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\SDC_Application.LanguageManager.dll.config
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\Newtonsoft.Json.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\System.IO.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\System.Runtime.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\System.Threading.Tasks.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\Newtonsoft.Json.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\System.IO.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\System.Runtime.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Release\System.Threading.Tasks.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Release\SDC_Application.LanguageManager.vbproj.App.config

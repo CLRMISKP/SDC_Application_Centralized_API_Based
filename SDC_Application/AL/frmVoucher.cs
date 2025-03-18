@@ -12,6 +12,8 @@ using SDC_Application.BL;
 using SDC_Application.DL;
 using System.Collections;
 using SDC_Application.LanguageManager;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 namespace SDC_Application.AL
 {
     public partial class frmVoucher : Form
@@ -39,6 +41,7 @@ namespace SDC_Application.AL
         BindingSource bs = new BindingSource();
         LanguageConverter lang = new LanguageConverter();
         int check;
+        PaymirApiHandler handler;
         #endregion
 
         public frmVoucher()
@@ -57,8 +60,8 @@ namespace SDC_Application.AL
             tooltip_for_voucher();
             this.btnAddTazIntiqal.Enabled = false;
             this.timer1.Start();
+            handler = new PaymirApiHandler("PMR-SRV-0007", "AW7g5467gfu&TfPLE757hE67zHhG875GtfEREUYjhi", "SRV-0007");
 
-          
             try
             {
                 calldataGrid();
@@ -242,8 +245,8 @@ namespace SDC_Application.AL
                     {
                         if (Submit())
                         {
-                            txtVoucherDetailsLastID.Text = "-1";
-                            txtSequenceID.Text = "-1";
+
+                            
                             ClearFormsGroupsFields.ClearGroupBoxControls(groupBox2);
                             txtServiceName.SelectedIndex = 0;
                             //MessageBox.Show("ریکارڈ محفوظ ھوچکا ہے", "محفوظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -251,7 +254,9 @@ namespace SDC_Application.AL
                             objdatagrid.SumDataGridColumn(grdVoucherDetails, txtTotalCostVoucher, "ServiceCostAmount");
                             chkMasterVoucherUpdate.Checked = false;
                             chkMasterVoucherUpdate.Enabled = true;
-                           
+                            paymirRequestResponse(txtVoucherDetailsLastID.Text);
+                            txtVoucherDetailsLastID.Text = "-1";
+                            txtSequenceID.Text = "-1";
 
                         }
                     }
@@ -300,7 +305,9 @@ namespace SDC_Application.AL
                     foreach (DataRow dr in dt.Rows)
                     {
                         txtVoucherDetailsLastID.Text = dr["LastID"].ToString();
+
                     }
+
 
                     calldataGrid();
                 }
@@ -983,6 +990,59 @@ namespace SDC_Application.AL
             //mFardForPersonalRecord_Cr.TokenId = this.txtTokenID.Text;
             //mFardForPersonalRecord_Cr.MozaId = this.txtMozaID.Text;
             //mFardForPersonalRecord_Cr.ShowDialog();
+        }
+        private async void updatePaymirDetail(string PaymirChalanDetails, string pvDetailId)
+        {
+            // 1. Call the async method and await the response
+            HttpResponseMessage response = await handler.PushVoucherJsonAsync(PaymirChalanDetails);
+
+            // 2. Read the content from the response
+            string responseContent = await response.Content.ReadAsStringAsync();
+
+            // 3. Save Paymir Response and request to Paymir transaction table
+            objbusines.UpdatePaymirRequestResponse(pvDetailId, PaymirChalanDetails, responseContent);
+            
+        }
+        private void paymirRequestResponse(string pvDetailId)
+        {
+            DataTable dtPaymirDetails = objbusines.GetPaymirDetailForRequestPosting(pvDetailId);
+            string PaymirRequest = @"
+                                [{
+                                  ""dptPaymentID"": ""++"",
+                                  ""trackingNumber"": ""REDS-0001-23"",
+                                  ""citizenCNIC"": ""32200-1234567-8"",
+                                  ""departmentName"": ""Service Tribunal Department"",
+                                  ""serviceName"": ""Security Fee"",
+                                  ""serviceTypeName"": ""Security Fee"",
+                                  ""statusCode"": 0,
+                                  ""statusMsg"": ""Payment not paid yet"",
+                                  ""feeAmount"": ""431.00"",
+                                  ""ePayExpireDate"": ""2025-07-01T16:51:45.04"",
+                                  ""serviceKey"": ""SRV-0007"",
+                                  ""VoucherAgainst"": ""CNIC"",
+                                  ""Tag"": ""B01418"",
+                                  ""serviceD"": ""59a38978d2a3e2b9c682ca11208f12800f16b10e845c546117b4128d11aed57a""
+                                }]";
+            // Parse the JSON string into a JArray
+            JArray jsonArray = JArray.Parse(PaymirRequest);
+
+            // Access the first object in the array
+            JObject firstObject = (JObject)jsonArray[0];
+
+            // Update values against the tags
+            firstObject["dptPaymentID"] = dtPaymirDetails.Rows[0]["dptPaymentID"].ToString(); // Update dptPaymentID
+            firstObject["statusCode"] = 1; // Update statusCode
+            firstObject["statusMsg"] = "Payment not paid yet"; // Update statusMsg
+            firstObject["feeAmount"] = dtPaymirDetails.Rows[0]["FeeAmount"].ToString(); // Update feeAmount
+            firstObject["citizenCNIC"] = dtPaymirDetails.Rows[0]["Visitor_CNIC"].ToString();
+            firstObject["departmentName"] = dtPaymirDetails.Rows[0]["departmentName"].ToString();
+            firstObject["serviceName"] = txtService.Text;
+            firstObject["serviceTypeName"] = txtServiceName.Text;
+            firstObject["ePayExpireDate"] = dtPaymirDetails.Rows[0]["ePayExpireDate"].ToString();
+
+            // Serialize the JArray back to a JSON string
+            PaymirRequest = jsonArray.ToString();
+            updatePaymirDetail(PaymirRequest, pvDetailId);
         }
 
     }

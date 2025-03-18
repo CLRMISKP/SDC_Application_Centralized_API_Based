@@ -11,6 +11,8 @@ using System.Data;
 using System.Data.SqlClient;
 using SDC_Application.DL;
 using SDC_Application.AL;
+using Microsoft.VisualBasic.ApplicationServices;
+using Org.BouncyCastle.Asn1.Cmp;
 
 namespace SDC_Application.BL
 {
@@ -194,6 +196,17 @@ namespace SDC_Application.BL
         public void VoucherGridAddtoTextFields(DataGridView grdVoucherDetails)
         {
 
+
+        }
+        public DataTable GetPaymirDetailForRequestPosting(string PvDetailId)
+        {
+            string spam = "Proc_Get_PyamirDetailForRequestPosting '" + PvDetailId + "'";
+            return ojbdb.filldatatable_from_storedProcedure(spam);
+        }
+        public void UpdatePaymirRequestResponse(string PVDetailId, string PaymirRequest, string PaymirResponse)
+        {
+            string spWithParams = "Web_Sp_Update_Payment_Request_Response '" + PVDetailId + "','" + PaymirRequest + "','" + PaymirResponse + "'";
+            ojbdb.ExecUpdateStoredProcedureWithNoRet(spWithParams);
 
         }
 

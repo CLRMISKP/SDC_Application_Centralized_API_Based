@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized\\sdc_application\\al\\frmvoucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmvoucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized\\sdc_application\\al\\frmvoucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmvoucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized\\sdc_application\\bl\\frmvoucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\bl\\frmvoucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized\\sdc_application\\bl\\intiqal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\bl\\intiqal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized\\sdc_application\\al\\frmintiqalmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmintiqalmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized\\sdc_application\\al\\frmintiqalmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmintiqalmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized\\sdc_application\\classess\\paymirapihandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\classess\\paymirapihandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmVoucher.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\BL\\frmVoucher.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\BL\\frmVoucher.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\BL\\frmVoucher.cs",
+              "RelativeToolTip": "SDC_Application\\BL\\frmVoucher.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAtwNAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T06:10:13.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Intiqal.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\BL\\Intiqal.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\BL\\Intiqal.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\BL\\Intiqal.cs",
+              "RelativeToolTip": "SDC_Application\\BL\\Intiqal.cs",
+              "ViewState": "AgIAAA4BAAAAAAAAAADgvyMBAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T05:57:00.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmIntiqalMain.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmIntiqalMain.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmIntiqalMain.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmIntiqalMain.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmIntiqalMain.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAArwBkCAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T05:56:47.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmIntiqalMain.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmIntiqalMain.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmIntiqalMain.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmIntiqalMain.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmIntiqalMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T05:56:45.435Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmVoucher.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmVoucher.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmVoucher.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmVoucher.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmVoucher.cs",
+              "ViewState": "AgIAAP0DAAAAAAAAAAAuwBAEAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T10:48:57.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmVoucher.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmVoucher.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmVoucher.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\AL\\frmVoucher.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmVoucher.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T10:48:54.739Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PaymirApiHandler.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\Classess\\PaymirApiHandler.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\Classess\\PaymirApiHandler.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized\\SDC_Application\\Classess\\PaymirApiHandler.cs",
+              "RelativeToolTip": "SDC_Application\\Classess\\PaymirApiHandler.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T09:59:06.926Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

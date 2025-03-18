@@ -55,3 +55,16 @@ C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageM
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.dll
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.xml
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.vbproj.AssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.vbproj.CoreCompileInputs.cache
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\SDC_Application.LanguageManager.dll.config
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\Newtonsoft.Json.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\System.IO.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\System.Runtime.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\System.Threading.Tasks.dll
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\Newtonsoft.Json.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\System.IO.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\System.Runtime.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\bin\Debug\System.Threading.Tasks.xml
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Application.LanguageManager.vbproj.App.config
+D:\Office Data\Land System\SDC_Application_Centralized\LandInfo.LanguageManager\obj\Debug\SDC_Appl.B9092500.Up2Date

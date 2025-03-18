@@ -28,3 +28,5 @@ C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\Common\bin\Debug\S
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\Common\bin\Debug\SDC_Application.Common.pdb
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.dll
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.csproj.AssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.csproj.CoreCompileInputs.cache
