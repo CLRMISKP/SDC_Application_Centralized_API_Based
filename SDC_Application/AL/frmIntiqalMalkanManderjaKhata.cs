@@ -70,15 +70,17 @@ namespace SDC_Application.AL
             {
 
                 Khatajat = rhz.GetKhatajatAll(MozaId.ToString());
-                DataRow inteqKj = Khatajat.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = "کھاتے کا انتخاب کریں";
-                Khatajat.Rows.InsertAt(inteqKj, 0);
-                cbKhatas.DataSource = Khatajat;
-                cbKhatas.DisplayMember = "KhataNo";
-                cbKhatas.ValueMember = "RegisterHqDKhataId";
-                cbKhatas.SelectedValue = 0;
-
+                if (Khatajat != null)
+                {
+                    DataRow inteqKj = Khatajat.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = "کھاتے کا انتخاب کریں";
+                    Khatajat.Rows.InsertAt(inteqKj, 0);
+                    cbKhatas.DataSource = Khatajat;
+                    cbKhatas.DisplayMember = "KhataNo";
+                    cbKhatas.ValueMember = "RegisterHqDKhataId";
+                    cbKhatas.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -94,21 +96,23 @@ namespace SDC_Application.AL
                 int khatooniid = cbKhatooni.SelectedValue != null ? Convert.ToInt32(this.cbKhatooni.SelectedValue.ToString()) : 0;
                 malikan = rhz.Proc_Get_MushtriFareeqeinBy_KhatooniId_Taqseem(khatooniid.ToString());
                 this.GridViewMalikan.DataSource = malikan;
-                this.GridViewMalikan.Columns["PersonName"].HeaderText = "نام مالک";
-                this.GridViewMalikan.Columns["FardAreaPart"].HeaderText = "حصہ";
-                this.GridViewMalikan.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                this.GridViewMalikan.Columns["PersonName"].DisplayIndex = 1;
-                this.GridViewMalikan.Columns["PersonId"].Visible = false;
-                this.GridViewMalikan.Columns["KhatooniId"].Visible = false;
-                this.GridViewMalikan.Columns["MushtriFareeqId"].Visible = false;
-                this.GridViewMalikan.Columns["Kanal"].Visible = false;
-                this.GridViewMalikan.Columns["marla"].Visible = false;
-                this.GridViewMalikan.Columns["sarsai"].Visible = false;
-                this.GridViewMalikan.Columns["Feet"].Visible = false;
-                this.GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
-                this.GridViewMalikan.Columns["KhewatType"].Visible = false;
-                //this.GetMalikanbyKhataIdDataSource.DataSource = client.GetKhewatMalikanByKhataId(khataid);
-
+                if (malikan != null)
+                {
+                    this.GridViewMalikan.Columns["PersonName"].HeaderText = "نام مالک";
+                    this.GridViewMalikan.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    this.GridViewMalikan.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                    this.GridViewMalikan.Columns["PersonName"].DisplayIndex = 1;
+                    this.GridViewMalikan.Columns["PersonId"].Visible = false;
+                    this.GridViewMalikan.Columns["KhatooniId"].Visible = false;
+                    this.GridViewMalikan.Columns["MushtriFareeqId"].Visible = false;
+                    this.GridViewMalikan.Columns["Kanal"].Visible = false;
+                    this.GridViewMalikan.Columns["marla"].Visible = false;
+                    this.GridViewMalikan.Columns["sarsai"].Visible = false;
+                    this.GridViewMalikan.Columns["Feet"].Visible = false;
+                    this.GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
+                    this.GridViewMalikan.Columns["KhewatType"].Visible = false;
+                    //this.GetMalikanbyKhataIdDataSource.DataSource = client.GetKhewatMalikanByKhataId(khataid);
+                }
             }
             catch (Exception ex)
             {
@@ -131,20 +135,22 @@ namespace SDC_Application.AL
                 int khataid = cbKhatas.SelectedValue != null ? Convert.ToInt32(this.cbKhatas.SelectedValue.ToString()) : 0;
                 malikan = rhz.Proc_Get_KhewatFareeqeinBy_KhataId(khataid.ToString());
                 this.GridViewMalikan.DataSource = malikan;
-                this.GridViewMalikan.Columns["PersonName"].HeaderText="نام مالک";
-                this.GridViewMalikan.Columns["FardAreaPart"].HeaderText="حصہ";
-                this.GridViewMalikan.Columns["Khewat_Area"].HeaderText="رقبہ";
-                this.GridViewMalikan.Columns["PersonName"].DisplayIndex = 1;
-                this.GridViewMalikan.Columns["PersonId"].Visible=false;
-                this.GridViewMalikan.Columns["KhewatGroupId"].Visible=false;
-                this.GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible=false;
-                this.GridViewMalikan.Columns["Kanal"].Visible=false;
-                this.GridViewMalikan.Columns["marla"].Visible=false;
-                this.GridViewMalikan.Columns["sarsai"].Visible=false;
-                this.GridViewMalikan.Columns["KhewatTypeId"].Visible=false;
-                this.GridViewMalikan.Columns["KhewatType"].Visible=false;
-                this.GridViewMalikan.Columns["RegisterHqDKhataId"].Visible=false;
-                //this.GetMalikanbyKhataIdDataSource.DataSource = client.GetKhewatMalikanByKhataId(khataid);
+                if(malikan!=null)
+                {
+                    this.GridViewMalikan.Columns["PersonName"].HeaderText = "نام مالک";
+                    this.GridViewMalikan.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    this.GridViewMalikan.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                    this.GridViewMalikan.Columns["PersonName"].DisplayIndex = 1;
+                    this.GridViewMalikan.Columns["PersonId"].Visible = false;
+                    this.GridViewMalikan.Columns["KhewatGroupId"].Visible = false;
+                    this.GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible = false;
+                    this.GridViewMalikan.Columns["Kanal"].Visible = false;
+                    this.GridViewMalikan.Columns["marla"].Visible = false;
+                    this.GridViewMalikan.Columns["sarsai"].Visible = false;
+                    this.GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
+                    this.GridViewMalikan.Columns["KhewatType"].Visible = false;
+                    this.GridViewMalikan.Columns["RegisterHqDKhataId"].Visible = false;
+                }
 
             }
             catch (Exception ex)
@@ -220,20 +226,22 @@ namespace SDC_Application.AL
             }
             this.GridViewMalikanSelect.DataSource = null;
             this.GridViewMalikanSelect.DataSource = this.malikanSel;
-            this.GridViewMalikanSelect.Columns["PersonName"].HeaderText = "نام مالک";
-            this.GridViewMalikanSelect.Columns["FardAreaPart"].HeaderText = "حصہ";
-            this.GridViewMalikanSelect.Columns["Khewat_Area"].HeaderText = "رقبہ";
-            this.GridViewMalikanSelect.Columns["PersonName"].DisplayIndex = 1;
-            this.GridViewMalikanSelect.Columns["PersonId"].Visible = false;
-            this.GridViewMalikanSelect.Columns["KhewatGroupId"].Visible = false;
-            this.GridViewMalikanSelect.Columns["KhewatGroupFareeqId"].Visible = false;
-            this.GridViewMalikanSelect.Columns["Kanal"].Visible = false;
-            this.GridViewMalikanSelect.Columns["marla"].Visible = false;
-            this.GridViewMalikanSelect.Columns["sarsai"].Visible = false;
-            this.GridViewMalikanSelect.Columns["KhewatTypeId"].Visible = false;
-            this.GridViewMalikanSelect.Columns["KhewatType"].Visible = false;
-            this.GridViewMalikanSelect.Columns["RegisterHqDKhataId"].Visible = false;
-
+            if (this.malikanSel != null)
+            {
+                this.GridViewMalikanSelect.Columns["PersonName"].HeaderText = "نام مالک";
+                this.GridViewMalikanSelect.Columns["FardAreaPart"].HeaderText = "حصہ";
+                this.GridViewMalikanSelect.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                this.GridViewMalikanSelect.Columns["PersonName"].DisplayIndex = 1;
+                this.GridViewMalikanSelect.Columns["PersonId"].Visible = false;
+                this.GridViewMalikanSelect.Columns["KhewatGroupId"].Visible = false;
+                this.GridViewMalikanSelect.Columns["KhewatGroupFareeqId"].Visible = false;
+                this.GridViewMalikanSelect.Columns["Kanal"].Visible = false;
+                this.GridViewMalikanSelect.Columns["marla"].Visible = false;
+                this.GridViewMalikanSelect.Columns["sarsai"].Visible = false;
+                this.GridViewMalikanSelect.Columns["KhewatTypeId"].Visible = false;
+                this.GridViewMalikanSelect.Columns["KhewatType"].Visible = false;
+                this.GridViewMalikanSelect.Columns["RegisterHqDKhataId"].Visible = false;
+            }
         }
         #endregion
 

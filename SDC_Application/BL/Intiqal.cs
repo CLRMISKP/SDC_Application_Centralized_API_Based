@@ -5,13 +5,14 @@ using System.Text;
 using System.Data;
 using SDC_Application.DL;
 using System.Data.SqlClient;
+using SDC_Application.Classess;
 
 namespace SDC_Application.BL
 {
     class Intiqal
     {
         DL.Database dbobject=new Database();
-
+        APIClient client = new APIClient();
         #region Get Intiqal list Pending By Khata
 
         public DataTable GetIntiqalZeretajwizPendingByKhata(string KhataId)
@@ -117,11 +118,12 @@ namespace SDC_Application.BL
             return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
         }
-        public DataTable GetCamFingerImage(string IntiqalId,string PersonId)
+        public List<IntiqalPersonImages> GetCamFingerImage(string IntiqalId,string PersonId)
         {
-            string spWithParam = "Proc_Get_Intiqal_PersonBothPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalId + "','" + PersonId + "'";
-            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            //string spWithParam = "Proc_Get_Intiqal_PersonBothPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + IntiqalId + "','" + PersonId + "'";
+            //return dbobject.filldatatable_from_storedProcedure(spWithParam);
 
+           return client.GetIntiqalPersonImages(SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), IntiqalId, PersonId, UsersManagments.userToken);
         }
         public string DeleteIntiqalPersonSnaps(string Personid, string IntiqalId, string UserId)
         {

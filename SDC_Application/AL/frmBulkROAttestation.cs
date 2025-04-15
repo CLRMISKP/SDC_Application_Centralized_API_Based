@@ -36,7 +36,7 @@ namespace SDC_Application.AL
         public byte[] PersonFingerPrint { get; set; }
         Intiqal Iq = new Intiqal();
         LanguageManager.LanguageConverter lang = new LanguageManager.LanguageConverter();
-       
+       APIClient client = new APIClient();  
 
 
         #endregion
@@ -93,15 +93,21 @@ namespace SDC_Application.AL
         #region Fill RO Combo
         private void FillROsCombo()
         {
-            dt = objdb.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
-            DataRow row = dt.NewRow();
-            row["UserId"] = "0";
-            row["CompleteName"] = "--انتخاب کریں--";
-            dt.Rows.InsertAt(row, 0);
-            cboROs.DataSource = dt;
-            cboROs.DisplayMember = "CompleteName";
-            cboROs.ValueMember = "UserId";
-            cboROs.SelectedValue = 0;
+            //dt = objdb.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
+            List<RoGardwar> roGardwars = new List<RoGardwar>();
+            roGardwars = client.GetGardwar(UsersManagments._Tehsilid.ToString(), "0", UsersManagments.userToken, "T");
+            dt = RoGardwar.ToDataTable(roGardwars);
+            if (dt != null)
+            {
+                DataRow row = dt.NewRow();
+                row["UserId"] = "0";
+                row["CompleteName"] = "--انتخاب کریں--";
+                dt.Rows.InsertAt(row, 0);
+                cboROs.DataSource = dt;
+                cboROs.DisplayMember = "CompleteName";
+                cboROs.ValueMember = "UserId";
+                cboROs.SelectedValue = 0;
+            }
         }
         #endregion
 
@@ -163,23 +169,25 @@ namespace SDC_Application.AL
 
                 dtIntiqal = Iq.GetIntiqalatForAttestation("-1");
 
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.DataSource = dtIntiqal;
 
-                GridViewIntiqalat.DataSource = dtIntiqal;
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
 
-                GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
-                GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
-                GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
-                GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
 
-                GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
-                GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
-                GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+                    GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
 
-                GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
-               
-                GridViewIntiqalat.Columns[0].Width = 80;
-                GridViewIntiqalat.Columns[1].Width = 80;
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
             }
             else if (rbCourtDecrees.Checked)
             {
@@ -216,30 +224,32 @@ namespace SDC_Application.AL
 
         private void cmbDawraDt_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if(cmbDawraDt.SelectedIndex>0)
+            if (cmbDawraDt.SelectedIndex > 0)
             {
                 countSelectedIntiqalat = 0;
 
 
                 dtIntiqal = Iq.GetIntiqalatForAttestation(cmbDawraDt.SelectedValue.ToString());
 
+                if (dtIntiqal != null)
+                {
+                    GridViewIntiqalat.DataSource = dtIntiqal;
 
-                GridViewIntiqalat.DataSource = dtIntiqal;
+                    GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                    GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
 
-                GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
-                GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
-                GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
-                GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+                    GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                    GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                    GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
 
-                GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
-                GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
-                GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+                    GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
 
-                GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
-
-                GridViewIntiqalat.Columns[0].Width = 80;
-                GridViewIntiqalat.Columns[1].Width = 80;
+                    GridViewIntiqalat.Columns[0].Width = 80;
+                    GridViewIntiqalat.Columns[1].Width = 80;
+                }
             }
         }
 
@@ -263,39 +273,10 @@ namespace SDC_Application.AL
 
                 dtIntiqal = Iq.GetIntiqalatForAttestation("-1");
 
-
-                GridViewIntiqalat.DataSource = dtIntiqal;
-
-                GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
-                GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
-                GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
-                GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
-
-                GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
-                GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
-                GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
-
-                GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
-
-                GridViewIntiqalat.Columns[0].Width = 80;
-                GridViewIntiqalat.Columns[1].Width = 80;
-
-            }
-            else if (rbCourtDecrees.Checked)
-            {
-                lbDawraDt.Visible = false;
-                cmbDawraDt.Visible = false;
-
-                countSelectedIntiqalat = 0;
-
-
-                dtIntiqal = Iq.GetIntiqalatForAttestation("3");
-
-
-                GridViewIntiqalat.DataSource = dtIntiqal;
                 if (dtIntiqal != null)
                 {
+                    GridViewIntiqalat.DataSource = dtIntiqal;
+
                     GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
                     GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
                     GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
@@ -310,6 +291,37 @@ namespace SDC_Application.AL
 
                     GridViewIntiqalat.Columns[0].Width = 80;
                     GridViewIntiqalat.Columns[1].Width = 80;
+                }
+            }
+            else if (rbCourtDecrees.Checked)
+            {
+                lbDawraDt.Visible = false;
+                cmbDawraDt.Visible = false;
+
+                countSelectedIntiqalat = 0;
+
+
+                dtIntiqal = Iq.GetIntiqalatForAttestation("3");
+
+                if(dtIntiqal != null) {
+                GridViewIntiqalat.DataSource = dtIntiqal;
+                    if (dtIntiqal != null)
+                    {
+                        GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
+                        GridViewIntiqalat.Columns["IntiqalNo"].DisplayIndex = 2;
+                        GridViewIntiqalat.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                        GridViewIntiqalat.Columns["IntiqalInitiationType"].DisplayIndex = 4;
+
+                        GridViewIntiqalat.Columns["SNo"].HeaderText = "سیریل نمبر";
+                        GridViewIntiqalat.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                        GridViewIntiqalat.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                        GridViewIntiqalat.Columns["IntiqalInitiationType"].HeaderText = "قسم";
+
+                        GridViewIntiqalat.Columns["IntiqalId"].Visible = false;
+
+                        GridViewIntiqalat.Columns[0].Width = 80;
+                        GridViewIntiqalat.Columns[1].Width = 80;
+                    }
                 }
 
             }
@@ -326,7 +338,7 @@ namespace SDC_Application.AL
                     {
                         this.lblRoName.Text = row["CompleteName"].ToString();
                         pictureBox1.Image = Resource1.FingerprintImage;
-                        this.PersonFingerPrint = (byte[])row["FingerPrintImage"];
+                        this.PersonFingerPrint = (byte[])row["FingerPrintImage"];// (byte[])row["FingerPrintImage"];
 
                     }
                 }
@@ -581,7 +593,7 @@ namespace SDC_Application.AL
 
                 dtIntiqal = Iq.GetIntiqalatForAttestation("-1");
 
-
+                if(dtIntiqal != null) { 
                 GridViewIntiqalat.DataSource = dtIntiqal;
 
                 GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
@@ -598,7 +610,7 @@ namespace SDC_Application.AL
 
                 GridViewIntiqalat.Columns[0].Width = 80;
                 GridViewIntiqalat.Columns[1].Width = 80;
-
+                    }
             }
             else if (rbCourtDecrees.Checked)
             {

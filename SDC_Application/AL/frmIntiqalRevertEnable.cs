@@ -116,15 +116,18 @@ namespace SDC_Application.AL
         {
             try
             {
-                DataTable dt = new DataTable();
-                dt = intiqal.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
-                dgInteqalKhattas.DataSource = dt;
-                dgInteqalKhattas.Columns["IntiqalId"].Visible = false;
-                dgInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
-                dgInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
-                dgInteqalKhattas.Columns["AmaldaramadStatus"].HeaderText = "موجودہ نوعیت عمل";
-                dgInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
-                dgInteqalKhattas.Columns["IsJuzviKhatta"].Visible = false;
+                if (dtAllKhewatFareeqain != null)
+                {
+                    DataTable dt = new DataTable();
+                    dt = intiqal.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
+                    dgInteqalKhattas.DataSource = dt;
+                    dgInteqalKhattas.Columns["IntiqalId"].Visible = false;
+                    dgInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
+                    dgInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
+                    dgInteqalKhattas.Columns["AmaldaramadStatus"].HeaderText = "موجودہ نوعیت عمل";
+                    dgInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
+                    dgInteqalKhattas.Columns["IsJuzviKhatta"].Visible = false;
+                }
             }
             catch (Exception ex)
             {

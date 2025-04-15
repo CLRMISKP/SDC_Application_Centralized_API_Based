@@ -41,6 +41,7 @@ namespace SDC_Application.AL
             toolTip1.SetToolTip(btnSave, "محفوظ کریں");
         }
         #endregion
+
         #region Load form
         private void frmIntiqalDucomentCheckList_Load(object sender, EventArgs e)
         {
@@ -73,29 +74,31 @@ namespace SDC_Application.AL
 
         }
         #endregion
+
         #region Document list grid setting
         public void FillGridDocuments()
         {
 
             dt = intiq.GetIntiqalDocumentsList();
             gdrDucoments.DataSource = dt;
-            for (int i = 0; i <= gdrDucoments.Rows.Count - 1; i++)
+            if (dt != null)
             {
-                gdrDucoments.Rows[i].Cells["increment"].Value = "-1";
-                gdrDucoments.Rows[i].Cells["Seq"].Value = i + 1;
+                for (int i = 0; i <= gdrDucoments.Rows.Count - 1; i++)
+                {
+                    gdrDucoments.Rows[i].Cells["increment"].Value = "-1";
+                    gdrDucoments.Rows[i].Cells["Seq"].Value = i + 1;
+                }
+                gdrDucoments.Columns["IntiqalDocName_Urdu"].HeaderText = "دستاویز انتقال";
+                gdrDucoments.Columns["IntiqalDocName_Urdu"].DisplayIndex = 2;
+                gdrDucoments.Columns["Seq"].DisplayIndex = 1;
+                gdrDucoments.Columns["IntiqalDocId"].Visible = false;
+                gdrDucoments.Columns["increment"].Visible = false;
+                datagridcontrols.gridControls(gdrDucoments);
+                datagridcontrols.colorrbackgrid(gdrDucoments);
             }
-            gdrDucoments.Columns["IntiqalDocName_Urdu"].HeaderText = "دستاویز انتقال";
-            gdrDucoments.Columns["IntiqalDocName_Urdu"].DisplayIndex = 2;
-            gdrDucoments.Columns["Seq"].DisplayIndex = 1;
-            gdrDucoments.Columns["IntiqalDocId"].Visible = false;
-            gdrDucoments.Columns["increment"].Visible = false;
-            datagridcontrols.gridControls(gdrDucoments);
-            datagridcontrols.colorrbackgrid(gdrDucoments);
-
-
-
         }
         #endregion
+
         #region Save ducoments
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -158,6 +161,7 @@ namespace SDC_Application.AL
             chkAddDoc.Checked = false;
         }
         #endregion
+
         #region Retrive Saved Required Ducomts
         public void CallRequireDocuments()
         {
@@ -194,6 +198,7 @@ namespace SDC_Application.AL
             }
         }
         #endregion
+
         #region ducoment list checked true false on click
         private void gdrDucoments_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -209,6 +214,7 @@ namespace SDC_Application.AL
             }
         }
         #endregion
+
         #region delete ducoments
         private void grdDucomentsUpdate_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -231,6 +237,7 @@ namespace SDC_Application.AL
             }
         }
         #endregion
+
         #region Delete doc
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -317,6 +324,7 @@ namespace SDC_Application.AL
             }
         }
         #endregion
+
         #region Check all Documents
         private void chkAddDoc_Click(object sender, EventArgs e)
         {

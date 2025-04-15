@@ -10,7 +10,6 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.IO;
 using SDC_Application.Classess;
-using LandInfo.ControlsLib;
 using SDC_Application.BL;
 using SDC_Application.DL;
 using DPFP.Capture;
@@ -24,6 +23,8 @@ using System.Dynamic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
+using SDC_Application.Classess;
+//using iTextSharp.text;
 
 namespace SDC_Application.AL
 {
@@ -43,6 +44,7 @@ namespace SDC_Application.AL
         byte[] DeSerializee=null; 
         public string IntiqalId { get; set; }
         BL.frmToken objbusines = new BL.frmToken();
+        Database db = new Database();
         WebCam cam=new WebCam();
         string InsertUserId = UsersManagments.UserId != null ? UsersManagments.UserId.ToString() : "Null";
         string InsertLoginName = UsersManagments.UserName != null ? UsersManagments.UserName.ToString() : "Null";
@@ -119,21 +121,23 @@ namespace SDC_Application.AL
         #region Declaring DataGrids of Pictures shoots and Pictures Retrives
         public void grdImagesRetrivListe()
         {
-            grdImagesRetrive.Columns["ImageSelection"].DisplayIndex = 0;
-            grdImagesRetrive.Columns["CompleteName"].DisplayIndex = 1;
-            grdImagesRetrive.Columns["PersonPic"].DisplayIndex = 2;
-            grdImagesRetrive.Columns["PersonFingerPrint"].DisplayIndex = 3;
-            grdImagesRetrive.Columns["CompleteName"].HeaderText = "فرد تفصیل";
-            grdImagesRetrive.Columns["PersonPic"].HeaderText = "تصویر";
-            grdImagesRetrive.Columns["PersonFingerPrint"].HeaderText = "انگوٹھے کی نشان";
-            grdImagesRetrive.Columns["IntialPersonImageId"].Visible = false;
-            grdImagesRetrive.Columns["PersonFingerPrint"].Visible = false;           
-            grdImagesRetrive.Columns["PersonId"].Visible = false;
+            if (grdImagesRetrive.DataSource != null)
+            {
+                grdImagesRetrive.Columns["ImageSelection"].DisplayIndex = 0;
+                grdImagesRetrive.Columns["CompleteName"].DisplayIndex = 1;
+                grdImagesRetrive.Columns["PersonPic"].DisplayIndex = 2;
+                grdImagesRetrive.Columns["PersonFingerPrint"].DisplayIndex = 3;
+                grdImagesRetrive.Columns["CompleteName"].HeaderText = "فرد تفصیل";
+                grdImagesRetrive.Columns["PersonPic"].HeaderText = "تصویر";
+                grdImagesRetrive.Columns["PersonFingerPrint"].HeaderText = "انگوٹھے کی نشان";
+                grdImagesRetrive.Columns["IntialPersonImageId"].Visible = false;
+                grdImagesRetrive.Columns["PersonFingerPrint"].Visible = false;
+                grdImagesRetrive.Columns["PersonId"].Visible = false;
 
-            grdImagesRetrive.Columns["PersonPic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grdImagesRetrive.Columns["PersonFingerPrint"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grdImagesRetrive.Columns["CompleteName"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+                grdImagesRetrive.Columns["PersonPic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grdImagesRetrive.Columns["PersonFingerPrint"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grdImagesRetrive.Columns["CompleteName"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
 
@@ -217,40 +221,48 @@ namespace SDC_Application.AL
 
         private void GetPersonImageFingerPrint(string PersonId)
         {
-            DataTable PersonPics = new System.Data.DataTable();
-            PersonPics = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Intiqal_PersonFingerPrintImage_By_PersonId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + PersonId + "', " + this.IntiqalId);
-            if (PersonPics != null)
-            {
-                if (PersonPics.Rows.Count > 0)
-                {
-                    foreach (DataRow dr in PersonPics.Rows)
-                    {
-
-                        //this.txtStatus.Text = dr["Token_CurrentStatus"].ToString();
-                        //this.label12.Text = dr["TokenNo"].ToString();
-
-                        pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
-                        imgDataFinger = (byte[])dr["PersonFingerPrint"];
-                        //txtDate.Text = dr["TokenDate"].ToString();
-                        //this.txttokenid.Text = dr["TokenId"].ToString();
-                        //this.txtToken.Text = dr["TokenNo"].ToString();
-                        // this.labeltimetoken.Text = dr["TokenTime"].ToString();
-                        // string PrintDuplicateStatus = dr["Token_DuplicatePrint"].ToString();
+            //DataTable PersonPics = new System.Data.DataTable();
+            //PersonPics = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Intiqal_PersonFingerPrintImage_By_PersonId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + PersonId + "', " + this.IntiqalId);
+            //var List = db.execGetFardPersonImages(UsersManagments._Tehsilid.ToString(), PersonId, this.IntiqalId, UsersManagments.userToken);
+            //if(List != null) 
+            //    {
+            //    foreach (var dr in List)
+            //    {
+            //        pboxFingerPrint.Image= dr.PersonFingerPrint != null ? Resource1.FingerprintImage : null;
+            //        imgDataFinger = dr.PersonFingerPrint;
 
 
-                    }
-                }
-                else
-                {
+            //    }
+                    //if (PersonPics.Rows.Count > 0)
+                    //{
+                    //    foreach (DataRow dr in PersonPics.Rows)
+                    //    {
+
+                    //        //this.txtStatus.Text = dr["Token_CurrentStatus"].ToString();
+                    //        //this.label12.Text = dr["TokenNo"].ToString();
+
+                    //        pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
+                    //        imgDataFinger = (byte[])dr["PersonFingerPrint"];
+                    //        //txtDate.Text = dr["TokenDate"].ToString();
+                    //        //this.txttokenid.Text = dr["TokenId"].ToString();
+                    //        //this.txtToken.Text = dr["TokenNo"].ToString();
+                    //        // this.labeltimetoken.Text = dr["TokenTime"].ToString();
+                    //        // string PrintDuplicateStatus = dr["Token_DuplicatePrint"].ToString();
+
+
+                    //    }
+                //    //}
+                //}
+                //else
+                //{
                     
-                    pboxFingerPrint.Image = null;
-                    imgDataFinger = null;
-                }
+                //    pboxFingerPrint.Image = null;
+                //    imgDataFinger = null;
+                //}
 
 
 
             }
-        }
 
         #endregion
 
@@ -319,15 +331,15 @@ namespace SDC_Application.AL
 
             string RetriveImageIntiqalID = this.IntiqalId;
             string PersonID = txtpersonID.Text.ToString();
-            dt = intiqal.GetCamFingerImage(RetriveImageIntiqalID, PersonID);
-            foreach (DataRow row in dt.Rows)
+            var dtImages = intiqal.GetCamFingerImage(RetriveImageIntiqalID, PersonID);
+            foreach (var row in dtImages)
             {
 
-               // string personIdSelected = grfIntiqalPersonSanps.CurrentRow.Cells["PersonId"].Value.ToString();
-               // string personIdFromDB = row["PersonId"].ToString();
+                // string personIdSelected = grfIntiqalPersonSanps.CurrentRow.Cells["PersonId"].Value.ToString();
+                // string personIdFromDB = row["PersonId"].ToString();
 
-              
-                    byte[] Person = (byte[])row["PersonPic"];
+
+                byte[] Person = row.PersonPic;// ["PersonPic"];
                     //byte[] Finger = (byte[])row["PersonFingerPrint"];
                     Image RetrunImgae = MStream(Person);
                     //Image ReturnFinger = MStream(Finger);
@@ -371,13 +383,13 @@ namespace SDC_Application.AL
                 if (txtpersonID.Text != null)
                 {
                     string PersonID = txtpersonID.Text.ToString();
-                    dt = intiqal.GetCamFingerImage(IntiqalId, PersonID);
-                    grdImagesRetrive.DataSource = dt;
+                    var dtImages = intiqal.GetCamFingerImage(IntiqalId, PersonID);
+                    grdImagesRetrive.DataSource = dtImages;
                     int count=0;
-                    foreach (DataRow row in dt.Rows)
+                    foreach (var row in dtImages)
                     {
-                        grdImagesRetrive.Rows[count].Cells["CompleteName"].Value= row["CompleteName"].ToString();
-                        byte[] Person = (byte[])row["PersonPic"];
+                        grdImagesRetrive.Rows[count].Cells["CompleteName"].Value = row.CompleteName;// row["CompleteName"].ToString();
+                        byte[] Person = row.PersonPic; //(byte[])row["PersonPic"];
                        // byte[] Finger = (byte[])row["PersonFingerPrint"];
                         Image RetrunImgae = MStream(Person);
                         //Image ReturnFinger = MStream(Finger);

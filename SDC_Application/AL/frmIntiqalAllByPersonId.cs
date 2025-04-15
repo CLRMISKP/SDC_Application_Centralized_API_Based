@@ -27,9 +27,12 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dt= intiqal.GetAllIntiqalByPersonId(this.PersonId);
-                dv = dt.AsDataView();
-                dgvAllMutations.DataSource = dv;
-                fillDataGrid();
+                if (dt != null)
+                {
+                    dv = dt.AsDataView();
+                    dgvAllMutations.DataSource = dv;
+                    fillDataGrid();
+                }
             }
             catch (Exception ex)
             {

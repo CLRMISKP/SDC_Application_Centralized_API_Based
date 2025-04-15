@@ -72,14 +72,17 @@ namespace SDC_Application.AL
         private void FillROsCombo()
         {
             dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
-            DataRow row = dt.NewRow();
-            row["UserId"] = "0";
-            row["CompleteName"] = "--انتخاب کریں--";
-            dt.Rows.InsertAt(row, 0);
-            cboROs.DataSource = dt;
-            cboROs.DisplayMember = "CompleteName";
-            cboROs.ValueMember = "UserId";
-            cboROs.SelectedValue = 0;
+            if (dt != null)
+            {
+                DataRow row = dt.NewRow();
+                row["UserId"] = "0";
+                row["CompleteName"] = "--انتخاب کریں--";
+                dt.Rows.InsertAt(row, 0);
+                cboROs.DataSource = dt;
+                cboROs.DisplayMember = "CompleteName";
+                cboROs.ValueMember = "UserId";
+                cboROs.SelectedValue = 0;
+            }
         }
 
         public Image MStream(byte[] img)
@@ -148,7 +151,7 @@ namespace SDC_Application.AL
                     {
                         this.lblRoName.Text = row["CompleteName"].ToString();
                         pictureBox1.Image = Resource1.FingerprintImage;
-                        this.PersonFingerPrint = (byte[])row["FingerPrintImage"];
+                        this.PersonFingerPrint = Encoding.ASCII.GetBytes(row["FingerPrintImage"].ToString());// row["FingerPrintImage"];
 
                     }
                 }

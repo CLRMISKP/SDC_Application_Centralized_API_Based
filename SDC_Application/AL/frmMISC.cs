@@ -899,11 +899,11 @@ private void HandleOutputFormat(Dictionary<string, string> metaData, Dictionary<
 
                         // Now you have a parameterDictionary with parameter names and values
                         // Call your LoadGenericReport method with this dictionary as an argument
-                        FardForPersonalRecord_Cr frm = new FardForPersonalRecord_Cr();
-                        frm.bUsingForGeneralpurposeThisReport = true;
-                        frm.LoadGenericReport(data, parameterDictionary, reportName);
-                        //frm.Show();
-                        frm.ShowDialog();
+                        //FardForPersonalRecord_Cr frm = new FardForPersonalRecord_Cr();
+                        //frm.bUsingForGeneralpurposeThisReport = true;
+                        //frm.LoadGenericReport(data, parameterDictionary, reportName);
+                        ////frm.Show();
+                        //frm.ShowDialog();
 
                     }
                     catch (Exception ex2)

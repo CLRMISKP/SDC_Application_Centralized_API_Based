@@ -30,7 +30,7 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rvIntiqalReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            //this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private Microsoft.Reporting.WinForms.ReportViewer rvIntiqalReport;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
+        //private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
     }
 }
 

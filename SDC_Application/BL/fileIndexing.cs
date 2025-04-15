@@ -179,20 +179,21 @@ namespace SDC_Application.BL
         public string saveCamFingerImage(string IntialPersonImageId,string IntiqalId,string PersonId,byte[] imgDataPerson,byte[]imgDataFinger, string InsertUserId, string InsertLoginName, string UpdateUserId, string UpdateLoginName)
         {
             string lastId = "";
-            SqlCommand mycomm = new SqlCommand();
-            mycomm.Parameters.AddWithValue("@Tehsilid", SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
-            mycomm.Parameters.AddWithValue("@IntialPersonImageId", IntialPersonImageId);
-            mycomm.Parameters.AddWithValue("@IntiqalId", IntiqalId);
-            mycomm.Parameters.AddWithValue("@PersonId", PersonId);
-            mycomm.Parameters.AddWithValue("@PersonPic", imgDataPerson);
-            mycomm.Parameters.AddWithValue("@PersonFingerPrint", imgDataFinger);
-            mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
-            mycomm.Parameters.AddWithValue("@InsertLoginName", InsertLoginName);
-            mycomm.Parameters.AddWithValue("@UpdateUserId", UpdateUserId);
-            mycomm.Parameters.AddWithValue("@UpdateLoginName", UpdateLoginName);
+            UserRequestIwthPicBiometric request=new UserRequestIwthPicBiometric();
+            request.TehsilId= SDC_Application.Classess.UsersManagments._Tehsilid.ToString();
+            request.IntialPersonImageId= IntialPersonImageId ;
+            request.IntiqalId= IntiqalId ;
+            request.PersonId= PersonId ;
+            request.PersonPic=Convert.ToBase64String(imgDataPerson) ;
+            request.PersonFingerPrint=Convert.ToBase64String(imgDataFinger) ;
+            request.InsertUserId= InsertUserId ;
+            request.InsertLoginName= InsertLoginName ;
+            request.UpdateUserId= UpdateUserId ;
+            request.UpdateLoginName= UpdateLoginName ;
+            request.Query = "WEB_SP_INSERT_Intiqal_PersonsImages";
             try
             {
-                lastId = ojbdb.ExecStoredProcedure("WEB_SP_INSERT_Intiqal_PersonsImages", mycomm);
+                lastId = ojbdb.ExecStoredProcedure("WEB_SP_INSERT_Intiqal_PersonsImages", request);
 
             }
             catch (Exception e)
@@ -205,21 +206,34 @@ namespace SDC_Application.BL
         public string saveFingerImageSelf(string FardPersonFingerId, string tokenId, string PersonId, string FardRepRecId, byte[] imgDataPerson, byte[] imgDataFinger, string InsertUserId, string InsertLoginName, string UpdateUserId, string UpdateLoginName)
         {
             string lastId = "";
-            SqlCommand mycomm = new SqlCommand();
-            mycomm.Parameters.AddWithValue("@Tehsilid", SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
-            mycomm.Parameters.AddWithValue("@PersonFingerPrintId", FardPersonFingerId);
-            mycomm.Parameters.AddWithValue("@tokenId", tokenId);
-            mycomm.Parameters.AddWithValue("@PersonId", PersonId);
-            mycomm.Parameters.AddWithValue("@FardRepRecId", FardRepRecId);
-            mycomm.Parameters.AddWithValue("@PersonPic", imgDataPerson);
-            mycomm.Parameters.AddWithValue("@PersonFingerPrint", imgDataFinger);
-            mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
-            mycomm.Parameters.AddWithValue("@InsertLoginName", InsertLoginName);
-            mycomm.Parameters.AddWithValue("@UpdateUserId", UpdateUserId);
-            mycomm.Parameters.AddWithValue("@UpdateLoginName", UpdateLoginName);
+            //SqlCommand mycomm = new SqlCommand();
+            //mycomm.Parameters.AddWithValue("@Tehsilid", SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
+            //mycomm.Parameters.AddWithValue("@PersonFingerPrintId", FardPersonFingerId);
+            //mycomm.Parameters.AddWithValue("@tokenId", tokenId);
+            //mycomm.Parameters.AddWithValue("@PersonId", PersonId);
+            //mycomm.Parameters.AddWithValue("@FardRepRecId", FardRepRecId);
+            //mycomm.Parameters.AddWithValue("@PersonPic", imgDataPerson);
+            //mycomm.Parameters.AddWithValue("@PersonFingerPrint", imgDataFinger);
+            //mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
+            //mycomm.Parameters.AddWithValue("@InsertLoginName", InsertLoginName);
+            //mycomm.Parameters.AddWithValue("@UpdateUserId", UpdateUserId);
+            //mycomm.Parameters.AddWithValue("@UpdateLoginName", UpdateLoginName);
+            UserRequestBioFard request = new UserRequestBioFard();
+            request.TehsilId = SDC_Application.Classess.UsersManagments._Tehsilid.ToString();
+            request.PersonFingerPrintId = FardPersonFingerId;
+            request.tokenId = tokenId;
+            request.PersonId = PersonId;
+            request.FardRepRecId = FardRepRecId;
+            request.PersonPic = Convert.ToBase64String(imgDataPerson);
+            request.PersonFingerPrint = Convert.ToBase64String(imgDataFinger);
+            request.InsertUserId = InsertUserId;
+            request.InsertLoginName = InsertLoginName;
+            request.UpdateUserId = UpdateUserId;
+            request.UpdateLoginName = UpdateLoginName;
+            request.Query = "Proc_Self_WEB_SP_INSERT_Fard_PersonsFingerPrints";
             try
             {
-                lastId = ojbdb.ExecStoredProcedure("Proc_Self_WEB_SP_INSERT_Fard_PersonsFingerPrints", mycomm);
+                lastId = ojbdb.ExecStoredProcedure("Proc_Self_WEB_SP_INSERT_Fard_PersonsFingerPrints", request);
 
             }
             catch (Exception e)

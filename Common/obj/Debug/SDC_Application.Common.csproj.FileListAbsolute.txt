@@ -30,3 +30,9 @@ C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\Common\obj\Debug\S
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.pdb
 D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.csproj.AssemblyReference.cache
 D:\Office Data\Land System\SDC_Application_Centralized\Common\obj\Debug\SDC_Application.Common.csproj.CoreCompileInputs.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\Common\bin\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\Common\bin\Debug\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\Common\obj\Debug\SDC_Application.Common.csproj.AssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\Common\obj\Debug\SDC_Application.Common.csproj.CoreCompileInputs.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\Common\obj\Debug\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\Common\obj\Debug\SDC_Application.Common.pdb

@@ -45,6 +45,7 @@
             this.grdFamilyHead = new System.Windows.Forms.DataGridView();
             this.colChooseFH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grpFamilyHeadMiddle = new System.Windows.Forms.GroupBox();
+            this.btnSearchH = new System.Windows.Forms.Button();
             this.btnLoadShajra = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -128,6 +129,7 @@
             this.grdFardForFH = new System.Windows.Forms.DataGridView();
             this.colChooseFardFH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearchHP = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearchFHFard = new System.Windows.Forms.TextBox();
             this.tabOrganization = new System.Windows.Forms.TabPage();
@@ -164,6 +166,7 @@
             this.grdRahin = new System.Windows.Forms.DataGridView();
             this.colChooseRahin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSearchM = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearchRahin = new System.Windows.Forms.TextBox();
             this.tabFamilyChg = new System.Windows.Forms.TabPage();
@@ -267,7 +270,7 @@
             this.rbMurtahin.Enabled = false;
             this.rbMurtahin.Location = new System.Drawing.Point(67, 24);
             this.rbMurtahin.Name = "rbMurtahin";
-            this.rbMurtahin.Size = new System.Drawing.Size(56, 20);
+            this.rbMurtahin.Size = new System.Drawing.Size(55, 20);
             this.rbMurtahin.TabIndex = 104;
             this.rbMurtahin.Text = "مرتہن";
             this.rbMurtahin.UseVisualStyleBackColor = true;
@@ -278,7 +281,7 @@
             this.rbOrg.Enabled = false;
             this.rbOrg.Location = new System.Drawing.Point(140, 24);
             this.rbOrg.Name = "rbOrg";
-            this.rbOrg.Size = new System.Drawing.Size(51, 20);
+            this.rbOrg.Size = new System.Drawing.Size(50, 20);
             this.rbOrg.TabIndex = 103;
             this.rbOrg.Text = "ادارہ";
             this.rbOrg.UseVisualStyleBackColor = true;
@@ -289,7 +292,7 @@
             this.rbFard.Enabled = false;
             this.rbFard.Location = new System.Drawing.Point(206, 24);
             this.rbFard.Name = "rbFard";
-            this.rbFard.Size = new System.Drawing.Size(45, 20);
+            this.rbFard.Size = new System.Drawing.Size(44, 20);
             this.rbFard.TabIndex = 102;
             this.rbFard.Text = "فرد";
             this.rbFard.UseVisualStyleBackColor = true;
@@ -301,7 +304,7 @@
             this.rbFamilyHead.Enabled = false;
             this.rbFamilyHead.Location = new System.Drawing.Point(261, 24);
             this.rbFamilyHead.Name = "rbFamilyHead";
-            this.rbFamilyHead.Size = new System.Drawing.Size(60, 20);
+            this.rbFamilyHead.Size = new System.Drawing.Size(59, 20);
             this.rbFamilyHead.TabIndex = 101;
             this.rbFamilyHead.TabStop = true;
             this.rbFamilyHead.Text = "سربراہ";
@@ -414,6 +417,7 @@
             this.grdFamilyHead.Name = "grdFamilyHead";
             this.grdFamilyHead.ReadOnly = true;
             this.grdFamilyHead.RowHeadersVisible = false;
+            this.grdFamilyHead.RowHeadersWidth = 51;
             this.grdFamilyHead.RowTemplate.Height = 30;
             this.grdFamilyHead.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdFamilyHead.Size = new System.Drawing.Size(1326, 217);
@@ -423,11 +427,13 @@
             // colChooseFH
             // 
             this.colChooseFH.HeaderText = "انتخاب کریں";
+            this.colChooseFH.MinimumWidth = 6;
             this.colChooseFH.Name = "colChooseFH";
             this.colChooseFH.ReadOnly = true;
             // 
             // grpFamilyHeadMiddle
             // 
+            this.grpFamilyHeadMiddle.Controls.Add(this.btnSearchH);
             this.grpFamilyHeadMiddle.Controls.Add(this.btnLoadShajra);
             this.grpFamilyHeadMiddle.Controls.Add(this.btnPrint);
             this.grpFamilyHeadMiddle.Controls.Add(this.label3);
@@ -441,6 +447,17 @@
             this.grpFamilyHeadMiddle.Size = new System.Drawing.Size(1332, 90);
             this.grpFamilyHeadMiddle.TabIndex = 1;
             this.grpFamilyHeadMiddle.TabStop = false;
+            // 
+            // btnSearchH
+            // 
+            this.btnSearchH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchH.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchH.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnSearchH.Location = new System.Drawing.Point(983, 40);
+            this.btnSearchH.Name = "btnSearchH";
+            this.btnSearchH.Size = new System.Drawing.Size(45, 35);
+            this.btnSearchH.TabIndex = 102;
+            this.btnSearchH.UseVisualStyleBackColor = true;
             // 
             // btnLoadShajra
             // 
@@ -483,7 +500,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1058, 37);
+            this.label3.Location = new System.Drawing.Point(1185, 37);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(127, 38);
@@ -495,7 +512,7 @@
             // 
             this.txtSearchFH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchFH.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchFH.Location = new System.Drawing.Point(914, 34);
+            this.txtSearchFH.Location = new System.Drawing.Point(1041, 34);
             this.txtSearchFH.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtSearchFH.Name = "txtSearchFH";
             this.txtSearchFH.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -997,6 +1014,7 @@
             this.grdFard.Name = "grdFard";
             this.grdFard.ReadOnly = true;
             this.grdFard.RowHeadersVisible = false;
+            this.grdFard.RowHeadersWidth = 51;
             this.grdFard.RowTemplate.Height = 30;
             this.grdFard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdFard.Size = new System.Drawing.Size(927, 188);
@@ -1006,6 +1024,7 @@
             // colChooseFard
             // 
             this.colChooseFard.HeaderText = "انتخاب کریں";
+            this.colChooseFard.MinimumWidth = 6;
             this.colChooseFard.Name = "colChooseFard";
             this.colChooseFard.ReadOnly = true;
             // 
@@ -1587,6 +1606,7 @@
             this.grdFardForFH.Name = "grdFardForFH";
             this.grdFardForFH.ReadOnly = true;
             this.grdFardForFH.RowHeadersVisible = false;
+            this.grdFardForFH.RowHeadersWidth = 51;
             this.grdFardForFH.RowTemplate.Height = 30;
             this.grdFardForFH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdFardForFH.Size = new System.Drawing.Size(359, 347);
@@ -1596,11 +1616,13 @@
             // colChooseFardFH
             // 
             this.colChooseFardFH.HeaderText = "انتخاب کریں";
+            this.colChooseFardFH.MinimumWidth = 6;
             this.colChooseFardFH.Name = "colChooseFardFH";
             this.colChooseFardFH.ReadOnly = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSearchHP);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSearchFHFard);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1609,6 +1631,16 @@
             this.groupBox1.Size = new System.Drawing.Size(365, 76);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // btnSearchHP
+            // 
+            this.btnSearchHP.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchHP.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnSearchHP.Location = new System.Drawing.Point(36, 30);
+            this.btnSearchHP.Name = "btnSearchHP";
+            this.btnSearchHP.Size = new System.Drawing.Size(45, 35);
+            this.btnSearchHP.TabIndex = 98;
+            this.btnSearchHP.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -1626,7 +1658,7 @@
             // txtSearchFHFard
             // 
             this.txtSearchFHFard.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchFHFard.Location = new System.Drawing.Point(83, 24);
+            this.txtSearchFHFard.Location = new System.Drawing.Point(94, 24);
             this.txtSearchFHFard.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtSearchFHFard.Name = "txtSearchFHFard";
             this.txtSearchFHFard.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1670,6 +1702,7 @@
             this.grdOrganization.Name = "grdOrganization";
             this.grdOrganization.ReadOnly = true;
             this.grdOrganization.RowHeadersVisible = false;
+            this.grdOrganization.RowHeadersWidth = 51;
             this.grdOrganization.RowTemplate.Height = 30;
             this.grdOrganization.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdOrganization.Size = new System.Drawing.Size(1334, 275);
@@ -1679,6 +1712,7 @@
             // colChooseOrg
             // 
             this.colChooseOrg.HeaderText = "انتخاب کریں";
+            this.colChooseOrg.MinimumWidth = 6;
             this.colChooseOrg.Name = "colChooseOrg";
             this.colChooseOrg.ReadOnly = true;
             // 
@@ -1852,6 +1886,7 @@
             this.grdMurtahin.Name = "grdMurtahin";
             this.grdMurtahin.ReadOnly = true;
             this.grdMurtahin.RowHeadersVisible = false;
+            this.grdMurtahin.RowHeadersWidth = 51;
             this.grdMurtahin.RowTemplate.Height = 30;
             this.grdMurtahin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMurtahin.Size = new System.Drawing.Size(988, 217);
@@ -1861,6 +1896,7 @@
             // colChooseMurtahin
             // 
             this.colChooseMurtahin.HeaderText = "انتخاب کریں";
+            this.colChooseMurtahin.MinimumWidth = 6;
             this.colChooseMurtahin.Name = "colChooseMurtahin";
             this.colChooseMurtahin.ReadOnly = true;
             // 
@@ -2024,6 +2060,7 @@
             this.grdRahin.Name = "grdRahin";
             this.grdRahin.ReadOnly = true;
             this.grdRahin.RowHeadersVisible = false;
+            this.grdRahin.RowHeadersWidth = 51;
             this.grdRahin.RowTemplate.Height = 30;
             this.grdRahin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdRahin.Size = new System.Drawing.Size(300, 307);
@@ -2033,11 +2070,13 @@
             // colChooseRahin
             // 
             this.colChooseRahin.HeaderText = "انتخاب کریں";
+            this.colChooseRahin.MinimumWidth = 6;
             this.colChooseRahin.Name = "colChooseRahin";
             this.colChooseRahin.ReadOnly = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnSearchM);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.txtSearchRahin);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -2047,6 +2086,16 @@
             this.groupBox4.TabIndex = 100;
             this.groupBox4.TabStop = false;
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // btnSearchM
+            // 
+            this.btnSearchM.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchM.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.btnSearchM.Location = new System.Drawing.Point(3, 26);
+            this.btnSearchM.Name = "btnSearchM";
+            this.btnSearchM.Size = new System.Drawing.Size(45, 35);
+            this.btnSearchM.TabIndex = 100;
+            this.btnSearchM.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -2064,7 +2113,7 @@
             // txtSearchRahin
             // 
             this.txtSearchRahin.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchRahin.Location = new System.Drawing.Point(48, 22);
+            this.txtSearchRahin.Location = new System.Drawing.Point(56, 22);
             this.txtSearchRahin.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtSearchRahin.Name = "txtSearchRahin";
             this.txtSearchRahin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2247,6 +2296,7 @@
             this.txtFardSearch.Name = "txtFardSearch";
             this.txtFardSearch.Size = new System.Drawing.Size(167, 44);
             this.txtFardSearch.TabIndex = 0;
+            this.txtFardSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageCheckUrdu);
             // 
             // frmAfradRegister
             // 
@@ -2467,5 +2517,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtSearchFamilyFardName;
         public System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnSearchH;
+        private System.Windows.Forms.Button btnSearchHP;
+        private System.Windows.Forms.Button btnSearchM;
     }
 }

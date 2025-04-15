@@ -24,25 +24,25 @@ namespace SDC_Application.BL
         {
             return objdb.filldatatable_from_storedProcedure(Query);
         }
-        public DataTable viewGridData(string b)
-        {
-            return objdb.viewGridData(b);
-        }
-        public int Insert_StoreProcedure(string str)
-        {
-            return objdb.Insert_StoreProcedure(str);
+        //public DataTable viewGridData(string b)
+        //{
+        //    return objdb.viewGridData(b);
+        //}
+        //public int Insert_StoreProcedure(string str)
+        //{
+        //    return objdb.Insert_StoreProcedure(str);
 
-        }
-        public SqlDataReader fillDataReader(string str)
-        {
-            return objdb.fillDataReader(str);
-        }
-        public void VoucherGrid(DataGridView grdVoucherDetails)
-        {
+        //}
+        //public SqlDataReader fillDataReader(string str)
+        //{
+        //    return objdb.fillDataReader(str);
+        //}
+        //public void VoucherGrid(DataGridView grdVoucherDetails)
+        //{
            
          
             
-        }
+        //}
       
        
     }

@@ -34,3 +34,24 @@ C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\bin\Debug
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\bin\Debug\EDSDKLib.pdb
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
 C:\Users\shehzad\Documents\GitHub\SDC_Application_Centralized\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\EDSDKLib.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\EDSDKLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\mscorlib.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\sortkey.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\sorttbls.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\big5.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\bopomofo.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\ksc.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\prc.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\prcp.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\xjis.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\normidna.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\normnfc.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\normnfd.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\normnfkc.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\bin\Debug\normnfkd.nlp
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\obj\x86\Debug\EDSDKLib.csproj.AssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\obj\x86\Debug\EDSDKLib.csproj.CoreCompileInputs.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\obj\x86\Debug\EDSDKLib.csproj.Up2Date
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb

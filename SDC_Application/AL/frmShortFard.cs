@@ -205,61 +205,63 @@ namespace SDC_Application.AL
 
                 grdRecipt.DataSource = dtGrd;
                 //======= fill grid=============
-
-                grdRecipt.Columns["RVDetailSeqNo"].DisplayIndex = 0;
-                grdRecipt.Columns["SDCServiceName_Urdu"].DisplayIndex = 1;
-                grdRecipt.Columns["PaymentType_Urdu"].DisplayIndex = 2;
-
-                grdRecipt.Columns["NetPayableAmount"].DisplayIndex = 3;
-                grdRecipt.Columns["ReceivedAmount"].DisplayIndex = 4;
-
-                grdRecipt.Columns["RVDetailSeqNo"].HeaderText = "نمبرشمار";
-                grdRecipt.Columns["SDCServiceName_Urdu"].HeaderText = "سہولت";
-                grdRecipt.Columns["PaymentType_Urdu"].HeaderText = "رقم کی ادائیگی بذریعہ";
-
-                grdRecipt.Columns["NetPayableAmount"].HeaderText = "قابل ادا رقم";
-                grdRecipt.Columns["ReceivedAmount"].HeaderText = "وصول کی گئی رقم";
-
-
-                grdRecipt.Columns["BankAccountNo"].Visible = false;
-                grdRecipt.Columns["BankName"].Visible = false;
-                grdRecipt.Columns["PVDetailRemarks"].Visible = false;
-                grdRecipt.Columns["BankBranchName"].Visible = false;
-                grdRecipt.Columns["PaymentTypeId"].Visible = false;
-                grdRecipt.Columns["RVDetailId"].Visible = false;
-                grdRecipt.Columns["IntiqalTaxId"].Visible = false;
-                grdRecipt.Columns["PVDetailId"].Visible = false;
-
-                grdRecipt.Columns["RVId"].Visible = false;
-                grdRecipt.Columns["ChallanNo"].Visible = false;
-                grdRecipt.Columns["TaxNotificationDetailId"].Visible = false;
-                grdRecipt.Columns["ChallanDate"].Visible = false;
-
-                grdRecipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                grdRecipt.DefaultCellStyle.ForeColor = Color.Black;
-
-
-                //    =========== end====================
-                if (grdRecipt.Rows.Count > 0)
+                if (dtGrd != null)
                 {
-                    objdatagird.SumDataGridColumn(grdRecipt, txtTotPaymentRecived, "ReceivedAmount");
-                    objdatagird.SumDataGridColumn(grdRecipt, this.txtNetAmountToPay, "NetPayableAmount");
-                }
-                else
-                {
-                    txtTotPaymentRecived.Clear();
-                    txtNetAmountToPay.Clear();
-                }
 
-                DataGridViewColumn column = grdRecipt.Columns["RVDetailSeqNo"];
-                column.Width = 70;
+                    grdRecipt.Columns["RVDetailSeqNo"].DisplayIndex = 0;
+                    grdRecipt.Columns["SDCServiceName_Urdu"].DisplayIndex = 1;
+                    grdRecipt.Columns["PaymentType_Urdu"].DisplayIndex = 2;
 
-                for (int i = 0; i <= grdRecipt.Rows.Count - 1; i++)
-                {
-                    DataGridViewRow row = grdRecipt.Rows[i];
-                    row.Height = 35;
+                    grdRecipt.Columns["NetPayableAmount"].DisplayIndex = 3;
+                    grdRecipt.Columns["ReceivedAmount"].DisplayIndex = 4;
+
+                    grdRecipt.Columns["RVDetailSeqNo"].HeaderText = "نمبرشمار";
+                    grdRecipt.Columns["SDCServiceName_Urdu"].HeaderText = "سہولت";
+                    grdRecipt.Columns["PaymentType_Urdu"].HeaderText = "رقم کی ادائیگی بذریعہ";
+
+                    grdRecipt.Columns["NetPayableAmount"].HeaderText = "قابل ادا رقم";
+                    grdRecipt.Columns["ReceivedAmount"].HeaderText = "وصول کی گئی رقم";
+
+
+                    grdRecipt.Columns["BankAccountNo"].Visible = false;
+                    grdRecipt.Columns["BankName"].Visible = false;
+                    grdRecipt.Columns["PVDetailRemarks"].Visible = false;
+                    grdRecipt.Columns["BankBranchName"].Visible = false;
+                    grdRecipt.Columns["PaymentTypeId"].Visible = false;
+                    grdRecipt.Columns["RVDetailId"].Visible = false;
+                    grdRecipt.Columns["IntiqalTaxId"].Visible = false;
+                    grdRecipt.Columns["PVDetailId"].Visible = false;
+
+                    grdRecipt.Columns["RVId"].Visible = false;
+                    grdRecipt.Columns["ChallanNo"].Visible = false;
+                    grdRecipt.Columns["TaxNotificationDetailId"].Visible = false;
+                    grdRecipt.Columns["ChallanDate"].Visible = false;
+
+                    grdRecipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                    grdRecipt.DefaultCellStyle.ForeColor = Color.Black;
+
+
+                    //    =========== end====================
+                    if (grdRecipt != null)
+                    {
+                        objdatagird.SumDataGridColumn(grdRecipt, txtTotPaymentRecived, "ReceivedAmount");
+                        objdatagird.SumDataGridColumn(grdRecipt, this.txtNetAmountToPay, "NetPayableAmount");
+                    }
+                    else
+                    {
+                        txtTotPaymentRecived.Clear();
+                        txtNetAmountToPay.Clear();
+                    }
+
+                    DataGridViewColumn column = grdRecipt.Columns["RVDetailSeqNo"];
+                    column.Width = 70;
+
+                    for (int i = 0; i <= grdRecipt.Rows.Count - 1; i++)
+                    {
+                        DataGridViewRow row = grdRecipt.Rows[i];
+                        row.Height = 35;
+                    }
                 }
-
             }
             catch (Exception ex)
             {
@@ -310,7 +312,7 @@ namespace SDC_Application.AL
                             dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId '" + this.SelectedTokenId.ToString() + "'," + "P");
 
 
-                            if (dtPayment.Rows.Count > 0)
+                            if (dtPayment!=null)
                             {
                                 foreach (DataRow dr in dtPayment.Rows)
                                 {
@@ -362,7 +364,7 @@ namespace SDC_Application.AL
                                 txtServiceName.Items.Clear();
                                 dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId "+UsersManagments._Tehsilid.ToString()+", '" + this.SelectedTokenId.ToString() + "' ");
 
-                                if (dtPayment.Rows.Count > 0)
+                                if (dtPayment!=null)
                                 {
                                     foreach (DataRow dr in dtPayment.Rows)
                                     {
@@ -442,7 +444,7 @@ namespace SDC_Application.AL
                             dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId "+UsersManagments._Tehsilid.ToString()+",'" + this.SelectedTokenId.ToString() + "' ");
 
 
-                            if (dtReceipt.Rows.Count > 0)
+                            if (dtReceipt!=null)
                             {
                                 foreach (DataRow dr in dtReceipt.Rows)
                                 {
@@ -501,7 +503,7 @@ namespace SDC_Application.AL
                                 cmbRServices.Items.Clear();
                                 dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId '" + this.SelectedTokenId.ToString() + "'," + "R");
 
-                                if (dtPayment.Rows.Count > 0)
+                                if (dtPayment!=null)
                                 {
                                     foreach (DataRow dr in dtPayment.Rows)
                                     {
@@ -934,7 +936,7 @@ namespace SDC_Application.AL
 
         private void FillPersonGridview(DataTable datatable)
         {
-            if (datatable.Rows.Count > 0)
+            if (datatable!=null)
             {
 
                 this.gridviewPersonNames.DataSource = datatable;
@@ -1046,7 +1048,7 @@ namespace SDC_Application.AL
             
             //---------------------------------------
             this.grdPersonKatajats.DataSource = dtKhattas;
-            if (dtKhattas.Rows.Count > 0)
+            if (dtKhattas!=null)
             {
                 chkAll.Visible = true;
                 grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ";
@@ -1117,7 +1119,7 @@ namespace SDC_Application.AL
             DataTable dtKhatoonies = new DataTable();
             dtKhatoonies = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Person_Khatoonies_ForShortFard " + PID);
             this.grdPersonKatajats.DataSource = dtKhatoonies;
-            if (dtKhatoonies.Rows.Count > 0)
+            if (dtKhatoonies!=null)
             {
                 grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
                 grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
@@ -1168,7 +1170,7 @@ namespace SDC_Application.AL
             dtSaved = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_SavedRecord_of_ShortFard " + this.SelectedTokenId);
             //---------------------------------------
             this.gridviewSavedRecord.DataSource = dtSaved;
-            if (dtSaved.Rows.Count > 0)
+            if (dtSaved!=null)
             {
                 chkAllSaved.Visible = true;
                 gridviewSavedRecord.Columns["KhataNo"].HeaderText = "کھاتہ";

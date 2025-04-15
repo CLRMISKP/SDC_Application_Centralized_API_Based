@@ -71,36 +71,39 @@ namespace SDC_Application.AL
         }
         public void gridfill()
         {
-            foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
+            if (GridViewMalikan.DataSource != null)
             {
-
-                if (row.Cells[0].Value != null)
+                foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
                 {
-                    if (Convert.ToBoolean(row.Cells[0].Value))
-                    {
-                        int i = GridViewMalikanSelect.Rows.Count;
-                        //int rowcount = GridViewMalikanSelect.Rows.Count;
-                        if (checkBoxSearchByFamily.Checked)
-                        {
-                            GridViewMalikanSelect.Rows.Add();
-                            GridViewMalikanSelect.Rows[i].Cells["FamilyName"].Value = row.Cells["FamilyName"].Value.ToString();
-                            GridViewMalikanSelect.Rows[i].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
-                        }
-                        else
-                        {
-                            GridViewMalikanSelect.Rows.Add();
-                            GridViewMalikanSelect.Rows[i].Cells["FamilyName"].Value = row.Cells["personname"].Value.ToString();
-                            GridViewMalikanSelect.Rows[i].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
-                            GridViewMalikanSelect.Rows[i].Cells["FardAreaPart"].Value = row.Cells["FardAreaPart"].Value.ToString();
-                            GridViewMalikanSelect.Rows[i].Cells["Fard_Area"].Value = row.Cells["Fard_Area"].Value.ToString();
-                            GridViewMalikanSelect.Rows[i].Cells["KhewatTypeId"].Value = row.Cells["KhewatTypeId"].Value.ToString();
-                        }
-                        
-                    }
-                }
 
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            int i = GridViewMalikanSelect.Rows.Count;
+                            //int rowcount = GridViewMalikanSelect.Rows.Count;
+                            if (checkBoxSearchByFamily.Checked)
+                            {
+                                GridViewMalikanSelect.Rows.Add();
+                                GridViewMalikanSelect.Rows[i].Cells["FamilyName"].Value = row.Cells["FamilyName"].Value.ToString();
+                                GridViewMalikanSelect.Rows[i].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
+                            }
+                            else
+                            {
+                                GridViewMalikanSelect.Rows.Add();
+                                GridViewMalikanSelect.Rows[i].Cells["FamilyName"].Value = row.Cells["personname"].Value.ToString();
+                                GridViewMalikanSelect.Rows[i].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
+                                GridViewMalikanSelect.Rows[i].Cells["FardAreaPart"].Value = row.Cells["FardAreaPart"].Value.ToString();
+                                GridViewMalikanSelect.Rows[i].Cells["Fard_Area"].Value = row.Cells["Fard_Area"].Value.ToString();
+                                GridViewMalikanSelect.Rows[i].Cells["KhewatTypeId"].Value = row.Cells["KhewatTypeId"].Value.ToString();
+                            }
+
+                        }
+                    }
+
+                }
+                removeFromGridDuplicate(GridViewMalikanSelect);
             }
-            removeFromGridDuplicate(GridViewMalikanSelect);
         }
        
 
@@ -112,13 +115,16 @@ namespace SDC_Application.AL
         {
             DataTable MozaFamilies = new DataTable();
             MozaFamilies = intiq.GetMozaFamilyListByMozaId(MozaId);
-            DataRow row = MozaFamilies.NewRow();
-            row["FamilyName"] = " - فیملی کا انتخاب کریں - ";
-            row["FmailyNo"] = "0";
-            MozaFamilies.Rows.InsertAt(row,0);
-            this.cbFamily.DataSource = MozaFamilies;
-            this.cbFamily.DisplayMember = "FamilyName";
-            this.cbFamily.ValueMember = "FmailyNo";
+            if (MozaFamilies != null)
+            {
+                DataRow row = MozaFamilies.NewRow();
+                row["FamilyName"] = " - فیملی کا انتخاب کریں - ";
+                row["FmailyNo"] = "0";
+                MozaFamilies.Rows.InsertAt(row, 0);
+                this.cbFamily.DataSource = MozaFamilies;
+                this.cbFamily.DisplayMember = "FamilyName";
+                this.cbFamily.ValueMember = "FmailyNo";
+            }
         }
         public void FillGridByFamilyPersons(string FamilyId)
         {
@@ -126,17 +132,20 @@ namespace SDC_Application.AL
             DataTable dt = new DataTable();
             dt = intiq.GetMozaFamilyListByFamilyId(FamilyId);
             GridViewMalikan.DataSource = dt;
-            GridViewMalikan.Columns["FamilyName"].HeaderText = "افراد خاندان";
-            GridViewMalikan.Columns["PersonId"].Visible = false;
-            GridViewMalikan.Columns["familyType"].Visible = false;
-            GridViewMalikan.Columns["familytypeId"].Visible = false;
-            foreach (DataGridViewRow row in GridViewMalikan.Rows)
+            if (dt != null)
             {
-                if (row.Selected)
+                GridViewMalikan.Columns["FamilyName"].HeaderText = "افراد خاندان";
+                GridViewMalikan.Columns["PersonId"].Visible = false;
+                GridViewMalikan.Columns["familyType"].Visible = false;
+                GridViewMalikan.Columns["familytypeId"].Visible = false;
+                foreach (DataGridViewRow row in GridViewMalikan.Rows)
                 {
-                    row.Selected = false;
-                    btnSelect.Enabled = false;
-                
+                    if (row.Selected)
+                    {
+                        row.Selected = false;
+                        btnSelect.Enabled = false;
+
+                    }
                 }
             }
         }
@@ -171,26 +180,29 @@ namespace SDC_Application.AL
 
                 this.GridViewMalikan.DataSource = null;
                 this.GridViewMalikan.DataSource = intiq.GetIntiqalKhataMalikanByKhataId(cbKhatas.SelectedValue.ToString());
-                GridViewMalikan.Columns["RegisterHqDKhataId"].Visible = false;
-                GridViewMalikan.Columns["KhewatGroupId"].Visible = false;
-                GridViewMalikan.Columns["PersonId"].Visible = false;
-                GridViewMalikan.Columns["Farad_Kanal"].Visible = false;
-                GridViewMalikan.Columns["Fard_Marla"].Visible = false;
-                GridViewMalikan.Columns["Fard_Sarsai"].Visible = false;
-                GridViewMalikan.Columns["Fard_Feet"].Visible = false;
-                GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
-                GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible = false;
-                GridViewMalikan.Columns["KhataNo"].Visible = false;
-                GridViewMalikan.Columns["FardAreaPart"].HeaderText = "حصہ";
-                GridViewMalikan.Columns["Fard_Area"].HeaderText = "رقبہ";
-                GridViewMalikan.Columns["KhewatType"].HeaderText = "قسم مالک";
-                GridViewMalikan.Columns["personname"].HeaderText = "نام مالک";
-                GridViewMalikan.Columns["FardAreaPart"].DisplayIndex=3;
-                GridViewMalikan.Columns["Fard_Area"].DisplayIndex = 4;
-                GridViewMalikan.Columns["KhewatType"].DisplayIndex = 2;
-                GridViewMalikan.Columns["personname"].DisplayIndex=1;
-                //this.GetMalikanbyKhataIdDataSource.DataSource = malikan;
-                //this.GetMalikanbyKhataIdDataSource.DataSource = client.GetKhewatMalikanByKhataId(khataid);
+                if (GridViewMalikan != null)
+                {
+                    GridViewMalikan.Columns["RegisterHqDKhataId"].Visible = false;
+                    GridViewMalikan.Columns["KhewatGroupId"].Visible = false;
+                    GridViewMalikan.Columns["PersonId"].Visible = false;
+                    GridViewMalikan.Columns["Farad_Kanal"].Visible = false;
+                    GridViewMalikan.Columns["Fard_Marla"].Visible = false;
+                    GridViewMalikan.Columns["Fard_Sarsai"].Visible = false;
+                    GridViewMalikan.Columns["Fard_Feet"].Visible = false;
+                    GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
+                    GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible = false;
+                    GridViewMalikan.Columns["KhataNo"].Visible = false;
+                    GridViewMalikan.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    GridViewMalikan.Columns["Fard_Area"].HeaderText = "رقبہ";
+                    GridViewMalikan.Columns["KhewatType"].HeaderText = "قسم مالک";
+                    GridViewMalikan.Columns["personname"].HeaderText = "نام مالک";
+                    GridViewMalikan.Columns["FardAreaPart"].DisplayIndex = 3;
+                    GridViewMalikan.Columns["Fard_Area"].DisplayIndex = 4;
+                    GridViewMalikan.Columns["KhewatType"].DisplayIndex = 2;
+                    GridViewMalikan.Columns["personname"].DisplayIndex = 1;
+                    //this.GetMalikanbyKhataIdDataSource.DataSource = malikan;
+                    //this.GetMalikanbyKhataIdDataSource.DataSource = client.GetKhewatMalikanByKhataId(khataid);
+                }
 
             }
             catch (Exception ex)
@@ -222,50 +234,53 @@ namespace SDC_Application.AL
 
         public void removeFromGridDuplicate(DataGridView grv)
         {
-            for (int currentRow = 0; currentRow < grv.Rows.Count - 1; currentRow++)
-            {
-                DataGridViewRow rowToCompare = grv.Rows[currentRow];
-
-                for (int otherRow = currentRow + 1; otherRow < grv.Rows.Count; otherRow++)
+            if (grv.DataSource != null) {
+                for (int currentRow = 0; currentRow < grv.Rows.Count - 1; currentRow++)
                 {
-                    DataGridViewRow row = grv.Rows[otherRow];
+                    DataGridViewRow rowToCompare = grv.Rows[currentRow];
 
-                    bool duplicateRow = true;
-
-                    for (int cellIndex = 0; cellIndex < row.Cells.Count; cellIndex++)
+                    for (int otherRow = currentRow + 1; otherRow < grv.Rows.Count; otherRow++)
                     {
-                        if (!rowToCompare.Cells["PersonId"].Value.Equals(row.Cells["PersonId"].Value))
+                        DataGridViewRow row = grv.Rows[otherRow];
+
+                        bool duplicateRow = true;
+
+                        for (int cellIndex = 0; cellIndex < row.Cells.Count; cellIndex++)
                         {
-                            duplicateRow = false;
-                            break;
+                            if (!rowToCompare.Cells["PersonId"].Value.Equals(row.Cells["PersonId"].Value))
+                            {
+                                duplicateRow = false;
+                                break;
+                            }
                         }
-                    }
 
-                    if (duplicateRow)
-                    {
-                        grv.Rows.Remove(row);
-                        otherRow--;
+                        if (duplicateRow)
+                        {
+                            grv.Rows.Remove(row);
+                            otherRow--;
+                        }
                     }
                 }
             }
-
-
         }
+
         #region Funtion Get Selected Malikan from Prevoius Khata malikans
         /// <summary>
         /// select malkan from the previous khatta and a list is made to use in new khatta
         /// </summary>
         public void getMalikanSelected()
         {
-            
-          
-            foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
+
+            if (GridViewMalikan != null)
             {
-                if (row.Cells[0].Value != null)
+                foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
                 {
-                    if ((Boolean)row.Cells[0].Value)
-                        //this.malikanSel.Add(this.malikan.Where(p => p.PersonId.ToString() == (row.Cells[8].Value.ToString()) && p.FardAreaPart.ToString() == row.Cells[2].Value.ToString()).FirstOrDefault());
-                        this.GridViewMalikanSelect.Rows.Add();
+                    if (row.Cells[0].Value != null)
+                    {
+                        if ((Boolean)row.Cells[0].Value)
+                            //this.malikanSel.Add(this.malikan.Where(p => p.PersonId.ToString() == (row.Cells[8].Value.ToString()) && p.FardAreaPart.ToString() == row.Cells[2].Value.ToString()).FirstOrDefault());
+                            this.GridViewMalikanSelect.Rows.Add();
+                    }
                 }
             }
             //this.GetMalikanSelectedDataSource.DataSource = null;

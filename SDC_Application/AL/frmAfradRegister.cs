@@ -100,28 +100,31 @@ namespace SDC_Application.AL
             try
     			{
                 FamilyId = "-1";// Reset the current family id selected
-            if (cboFardMauza.SelectedIndex > 0)
-            {
-                grpFamilyHeadTop.Enabled = true;
-                FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
-              //  FillFardGrid(txtFardFamilyId.Text.ToString());
-                FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                FillRahinGrid(cboFardMauza.SelectedValue.ToString());
-                FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                grpFardTop.Enabled = false;
-                grpFardMiddle.Enabled = false;
-                grpFardBottom.Enabled = false;
-                MozaId = cboFardMauza.SelectedValue.ToString();
-                //grpMurtahinTop.Enabled = false;
-                //grpMurtahinMiddle.Enabled = false;
-                //grpMurtahinBottom.Enabled = false;
-            }
-            else
-            {
-                grpFamilyHeadTop.Enabled = false;
+                if (cboFardMauza.DataSource != null)
+                {
+                    if (cboFardMauza.SelectedIndex > 0)
+                    {
+                        grpFamilyHeadTop.Enabled = true;
+                        FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                        //FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
+                        //FillFardGrid(txtFardFamilyId.Text.ToString());
+                        FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                        FillRahinGrid(cboFardMauza.SelectedValue.ToString());
+                        //FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                        grpFardTop.Enabled = false;
+                        grpFardMiddle.Enabled = false;
+                        grpFardBottom.Enabled = false;
+                        MozaId = cboFardMauza.SelectedValue.ToString();
+                        //grpMurtahinTop.Enabled = false;
+                        //grpMurtahinMiddle.Enabled = false;
+                        //grpMurtahinBottom.Enabled = false;
+                    }
+                }
+                else
+                {
+                    grpFamilyHeadTop.Enabled = false;
 
-            }
+                }
                 }
             catch (Exception ex)
             {
@@ -133,51 +136,54 @@ namespace SDC_Application.AL
 
         private void tabControlFard_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControlFard.SelectedIndex == 0)
+            if (cboFardMauza.DataSource != null)
             {
-                rbFamilyHead.Checked = true;
-                rbFard.Checked = false;
-                rbOrg.Checked = false;
-                rbMurtahin.Checked = false;
-                PersonFamilyStatus = "1";
-            }
-            else if (tabControlFard.SelectedIndex == 1)
-            {
-                rbFamilyHead.Checked = false;
-                rbFard.Checked = true;
-                rbOrg.Checked = false;
-                rbMurtahin.Checked = false;
-                PersonFamilyStatus = "2";         
-                FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
-                //FillFardGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                grpFardTop.Enabled = false;
-                grpFardMiddle.Enabled = false;
-                grpFardBottom.Enabled = false;
-            }
-            else if (tabControlFard.SelectedIndex == 2)
-            {
-                rbFamilyHead.Checked = false;
-                rbFard.Checked = false;
-                rbOrg.Checked = true;
-                rbMurtahin.Checked = false;
-                PersonFamilyStatus = "3";
-                FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                txtOrgName.Enabled = false;
-                btnSaveOrg.Enabled = true;
-                btnDelOrg.Enabled = true;
-            }
-            else if (tabControlFard.SelectedIndex == 3)
-            {
-                rbFamilyHead.Checked = false;
-                rbFard.Checked = false;
-                rbOrg.Checked = false;
-                rbMurtahin.Checked = true;
-                PersonFamilyStatus = "4";
-                FillRahinGrid(cboFardMauza.SelectedValue.ToString());
-                FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                //grpMurtahinTop.Enabled = false;
-                //grpMurtahinMiddle.Enabled = false;
-                //grpMurtahinBottom.Enabled = false;
+                if (tabControlFard.SelectedIndex == 0)
+                {
+                    rbFamilyHead.Checked = true;
+                    rbFard.Checked = false;
+                    rbOrg.Checked = false;
+                    rbMurtahin.Checked = false;
+                    PersonFamilyStatus = "1";
+                }
+                else if (tabControlFard.SelectedIndex == 1)
+                {
+                    rbFamilyHead.Checked = false;
+                    rbFard.Checked = true;
+                    rbOrg.Checked = false;
+                    rbMurtahin.Checked = false;
+                    PersonFamilyStatus = "2";
+                    FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
+                    //FillFardGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    grpFardTop.Enabled = false;
+                    grpFardMiddle.Enabled = false;
+                    grpFardBottom.Enabled = false;
+                }
+                else if (tabControlFard.SelectedIndex == 2)
+                {
+                    rbFamilyHead.Checked = false;
+                    rbFard.Checked = false;
+                    rbOrg.Checked = true;
+                    rbMurtahin.Checked = false;
+                    PersonFamilyStatus = "3";
+                    FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    txtOrgName.Enabled = false;
+                    btnSaveOrg.Enabled = true;
+                    btnDelOrg.Enabled = true;
+                }
+                else if (tabControlFard.SelectedIndex == 3)
+                {
+                    rbFamilyHead.Checked = false;
+                    rbFard.Checked = false;
+                    rbOrg.Checked = false;
+                    rbMurtahin.Checked = true;
+                    PersonFamilyStatus = "4";
+                    FillRahinGrid(cboFardMauza.SelectedValue.ToString());
+                    FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    //grpMurtahinTop.Enabled = false;
+                    //grpMurtahinMiddle.Enabled = false;
+                    //grpMurtahinBottom.Enabled = false;
+                }
             }
         }
         # endregion
@@ -237,7 +243,7 @@ namespace SDC_Application.AL
                     string FamilyHead;
                     if (rbFamilyHead.Checked) { FamilyHead = "1"; } else { FamilyHead = "0"; }
                     string ParentId = txtFHParentId.Text.ToString();
-                    string FamilyLevel = ObjPerson.GetFamilyLevel(ParentId);
+                    string FamilyLevel = ParentId=="-1"?"10": ObjPerson.GetFamilyLevel(ParentId);
                     string PersonName = txtFamilyHeadName.Text.ToString();
                     string Relation = cboFamilyHeadRelation.Text.ToString();
                     string FatherName = txtFamilyHeadFatherName.Text.ToString();
@@ -301,14 +307,17 @@ namespace SDC_Application.AL
             try
     			{
             this.dtcbpc = ObjPerson.GetPersonCategory(TehsilId);
-            DataRow PersonCategory = dtcbpc.NewRow();
-            PersonCategory["PersonCategoryId"] = "0";
-            PersonCategory["PersonCategory"] = " -  قسم افراد چنیے - ";
-            dtcbpc.Rows.InsertAt(PersonCategory, 0);
-            cboFamilyHeadPersonCategroy.DataSource = dtcbpc;
-            cboFamilyHeadPersonCategroy.DisplayMember = "PersonCategory";
-            cboFamilyHeadPersonCategroy.ValueMember = "PersonCategoryId";
-            cboFamilyHeadPersonCategroy.SelectedValue = 0;
+                if (dtcbpc != null)
+                {
+                    DataRow PersonCategory = dtcbpc.NewRow();
+                    PersonCategory["PersonCategoryId"] = "0";
+                    PersonCategory["PersonCategory"] = " -  قسم افراد چنیے - ";
+                    dtcbpc.Rows.InsertAt(PersonCategory, 0);
+                    cboFamilyHeadPersonCategroy.DataSource = dtcbpc;
+                    cboFamilyHeadPersonCategroy.DisplayMember = "PersonCategory";
+                    cboFamilyHeadPersonCategroy.ValueMember = "PersonCategoryId";
+                    cboFamilyHeadPersonCategroy.SelectedValue = 0;
+                }
                 }
             catch (Exception ex)
             {
@@ -321,13 +330,16 @@ namespace SDC_Application.AL
             try
     			{
             this.dtMoza = ObjPerson.GetMozaList();
-            DataRow MozaList = dtMoza.NewRow();
-            MozaList["MozaId"] = "0";
-            MozaList["MozaNameUrdu"] = " -  موضع چنیے - ";
-            dtMoza.Rows.InsertAt(MozaList, 0);
-            cboFardMauza.DataSource = dtMoza;
-            cboFardMauza.DisplayMember = "MozaNameUrdu";
-            cboFardMauza.ValueMember = "MozaId";
+                if (dtMoza != null)
+                {
+                    DataRow MozaList = dtMoza.NewRow();
+                    MozaList["MozaId"] = "0";
+                    MozaList["MozaNameUrdu"] = " -  موضع چنیے - ";
+                    dtMoza.Rows.InsertAt(MozaList, 0);
+                    cboFardMauza.DataSource = dtMoza;
+                    cboFardMauza.DisplayMember = "MozaNameUrdu";
+                    cboFardMauza.ValueMember = "MozaId";
+                }
             
             if (MozaId==null)
             {
@@ -350,14 +362,17 @@ namespace SDC_Application.AL
             try
             {
             this.dtcbpq = ObjPerson.GetQoam(TehsilId);
-            DataRow PersonQoam = dtcbpq.NewRow();
-            PersonQoam["QoamId"] = "0";
-            PersonQoam["Qoam"] = " -  قوم چنیے - ";
-            dtcbpq.Rows.InsertAt(PersonQoam, 0);
-            cboFamilyHeadCaste.DataSource = dtcbpq;
-            cboFamilyHeadCaste.DisplayMember = "Qoam";
-            cboFamilyHeadCaste.ValueMember = "QoamId";
-            cboFamilyHeadCaste.SelectedValue = 0;
+                if (dtcbpq != null)
+                {
+                    DataRow PersonQoam = dtcbpq.NewRow();
+                    PersonQoam["QoamId"] = "0";
+                    PersonQoam["Qoam"] = " -  قوم چنیے - ";
+                    dtcbpq.Rows.InsertAt(PersonQoam, 0);
+                    cboFamilyHeadCaste.DataSource = dtcbpq;
+                    cboFamilyHeadCaste.DisplayMember = "Qoam";
+                    cboFamilyHeadCaste.ValueMember = "QoamId";
+                    cboFamilyHeadCaste.SelectedValue = 0;
+                }
             }
  			catch (Exception ex)
             {
@@ -418,7 +433,10 @@ namespace SDC_Application.AL
 
         private void txtSearchFH_TextChanged(object sender, EventArgs e)
         {
-            bsFH.Filter = string.Format("FamilyName LIKE '%{0}%' ", txtSearchFH.Text);
+            if (bsFH != null)
+            {
+                bsFH.Filter = string.Format("FamilyName LIKE '%{0}%' ", txtSearchFH.Text);
+            }
         }
 
         #endregion
@@ -881,14 +899,17 @@ namespace SDC_Application.AL
             try
     			{
             this.dtFard = ObjPerson.GetMozaParentsList(muzaId, familyId);
-            DataRow FardPrnt = dtFard.NewRow();
-            FardPrnt["PersonId"] = "0";
-            FardPrnt["FamilyName"] = " -  سربراہ چنیے - ";
-            dtFard.Rows.InsertAt(FardPrnt, 0);
-            cboFardParent.DataSource = dtFard;
-            cboFardParent.DisplayMember = "FamilyName";
-            cboFardParent.ValueMember = "PersonId";
-            cboFardParent.SelectedValue = 0;
+                if (this.dtFard != null)
+                {
+                    DataRow FardPrnt = dtFard.NewRow();
+                    FardPrnt["PersonId"] = "0";
+                    FardPrnt["FamilyName"] = " -  سربراہ چنیے - ";
+                    dtFard.Rows.InsertAt(FardPrnt, 0);
+                    cboFardParent.DataSource = dtFard;
+                    cboFardParent.DisplayMember = "FamilyName";
+                    cboFardParent.ValueMember = "PersonId";
+                    cboFardParent.SelectedValue = 0;
+                }
                 }
             catch (Exception ex)
             {
@@ -900,15 +921,20 @@ namespace SDC_Application.AL
         {
             try
             {
-            this.dtFard = ObjPerson.GetPersonCategory(TehsilId);
-            DataRow PersonCategory = dtFard.NewRow();
-            PersonCategory["PersonCategoryId"] = "0";
-            PersonCategory["PersonCategory"] = " -  قسم افراد چنیے - ";
-            dtFard.Rows.InsertAt(PersonCategory, 0);
-            cboFardAfradType.DataSource = dtFard;
-            cboFardAfradType.DisplayMember = "PersonCategory";
-            cboFardAfradType.ValueMember = "PersonCategoryId";
-            cboFardAfradType.SelectedValue = 0;
+                DataTable dtPersonCategory = new DataTable();
+            dtPersonCategory = ObjPerson.GetPersonCategory(TehsilId);
+                if (dtPersonCategory != null)
+                {
+
+                    DataRow Category = dtPersonCategory.NewRow();
+                    Category["PersonCategoryId"] = "0";
+                    Category["PersonCategory"] = " -  قسم افراد چنیے - ";
+                    dtPersonCategory.Rows.InsertAt(Category, 0);
+                    cboFardAfradType.DataSource = dtPersonCategory;
+                    cboFardAfradType.DisplayMember = "PersonCategory";
+                    cboFardAfradType.ValueMember = "PersonCategoryId";
+                    cboFardAfradType.SelectedValue = 0;
+                }
             }
  			catch (Exception ex)
                         {
@@ -920,15 +946,19 @@ namespace SDC_Application.AL
         {
             try
     			{
-            this.dtFard = ObjPerson.GetQoam(TehsilId);
-            DataRow PersonQoam = dtFard.NewRow();
-            PersonQoam["QoamId"] = "0";
-            PersonQoam["Qoam"] = " -  قوم چنیے - ";
-            dtFard.Rows.InsertAt(PersonQoam, 0);
-            cboFardCaste.DataSource = dtFard;
-            cboFardCaste.DisplayMember = "Qoam";
-            cboFardCaste.ValueMember = "QoamId";
-            cboFardCaste.SelectedValue = 0;
+                DataTable dtPersonQoam = new DataTable();
+            dtPersonQoam = ObjPerson.GetQoam(TehsilId);
+                if (dtPersonQoam != null)
+                {
+                    DataRow PersonQoam = dtPersonQoam.NewRow();
+                    PersonQoam["QoamId"] = "0";
+                    PersonQoam["Qoam"] = " -  قوم چنیے - ";
+                    dtPersonQoam.Rows.InsertAt(PersonQoam, 0);
+                    cboFardCaste.DataSource = dtPersonQoam;
+                    cboFardCaste.DisplayMember = "Qoam";
+                    cboFardCaste.ValueMember = "QoamId";
+                    cboFardCaste.SelectedValue = 0;
+                }
                 }
             catch (Exception ex)
             {
@@ -989,7 +1019,10 @@ namespace SDC_Application.AL
 
         private void txtSearchFHFard_TextChanged(object sender, EventArgs e)
         {
-            bs.Filter = string.Format("FamilyName LIKE '%{0}%' ", txtSearchFHFard.Text);
+            if (bs != null)
+            {
+                bs.Filter = string.Format("FamilyName LIKE '%{0}%' ", txtSearchFHFard.Text);
+            }
         }
 
         public void FillFardGrid(string famlyId, string mouzaId)
@@ -1217,7 +1250,8 @@ namespace SDC_Application.AL
                             cboFardParent.SelectedValue = row.Cells["ParentId"].Value.ToString();
                             if (cbMother.DataSource != null)
                             {
-                                cbMother.SelectedValue = row.Cells["MotherName"].Value != null ? row.Cells["MotherName"].Value.ToString() : "0";
+                                if(cbMother.Items.Count > 1)
+                                        cbMother.SelectedValue = row.Cells["MotherName"].Value != null ? row.Cells["MotherName"].Value.ToString() : "0";
                             }
                             cboFardGender.Text = row.Cells["Gender"].Value.ToString();
                             fillPersonCatergoryFard(UsersManagments._Tehsilid.ToString());
@@ -1328,7 +1362,10 @@ namespace SDC_Application.AL
 
         private void txtSearchRahin_TextChanged(object sender, EventArgs e)
         {
-            bsR.Filter = string.Format("FamilyName LIKE '%{0}%' ", txtSearchRahin.Text);
+            if (bsR != null)
+            {
+                bsR.Filter = string.Format("FamilyName LIKE '%{0}%' ", txtSearchRahin.Text);
+            }
         }
 
         public void FillMurtahinGrid(string mozId, string familyStatusId)
@@ -1780,12 +1817,18 @@ namespace SDC_Application.AL
 
         private void txtSearchFamilyFardName_TextChanged(object sender, EventArgs e)
         {
-            bsFamilyFard.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchFamilyFardName.Text);
+            if (bsFamilyFard != null)
+            {
+                bsFamilyFard.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchFamilyFardName.Text);
+            }
         }
 
         private void txtSearchFamilyFardCNIC_TextChanged(object sender, EventArgs e)
         {
-            bsFamilyFard.Filter = string.Format("CNIC LIKE '%{0}%' ", Convert.ToInt64(txtSearchFamilyFardCNIC.Text));
+            if (bsFamilyFard != null)
+            {
+                bsFamilyFard.Filter = string.Format("CNIC LIKE '%{0}%' ", Convert.ToInt64(txtSearchFamilyFardCNIC.Text));
+            }
         }
     }
 }

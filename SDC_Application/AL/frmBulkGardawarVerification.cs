@@ -36,7 +36,8 @@ namespace SDC_Application.AL
         public byte[] PersonFingerPrint { get; set; }
         Intiqal Iq = new Intiqal();
         LanguageManager.LanguageConverter lang = new LanguageManager.LanguageConverter();
-       
+        APIClient client = new APIClient();
+
 
 
         #endregion
@@ -89,15 +90,20 @@ namespace SDC_Application.AL
         #region Fill RO Combo
         private void FillROsCombo()
         {
-            dt = objdb.filldatatable_from_storedProcedure("Proc_Get_Girdawars " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() );
-            DataRow row = dt.NewRow();
-            row["UserId"] = "0";
-            row["CompleteName"] = "--انتخاب کریں--";
-            dt.Rows.InsertAt(row, 0);
-            cboROs.DataSource = dt;
-            cboROs.DisplayMember = "CompleteName";
-            cboROs.ValueMember = "UserId";
-            cboROs.SelectedValue = 0;
+            List<RoGardwar> roGardwars = new List<RoGardwar>();
+            roGardwars = client.GetGardwar(UsersManagments._Tehsilid.ToString(), "0", UsersManagments.userToken, "G"); //objdb.filldatatable_from_storedProcedure("Proc_Get_Girdawars " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() );
+            dt= RoGardwar.ToDataTable(roGardwars);
+            if (dt != null)
+            {
+                DataRow row = dt.NewRow();
+                row["UserId"] = "0";
+                row["CompleteName"] = "--انتخاب کریں--";
+                dt.Rows.InsertAt(row, 0);
+                cboROs.DataSource = dt;
+                cboROs.DisplayMember = "CompleteName";
+                cboROs.ValueMember = "UserId";
+                cboROs.SelectedValue = 0;
+            }
         }
         #endregion
 
@@ -110,7 +116,7 @@ namespace SDC_Application.AL
 
             dtIntiqal = Iq.GetIntiqalatForVerification(type);
 
-
+            if(dtIntiqal != null) { 
             GridViewIntiqalat.DataSource = dtIntiqal;
 
             GridViewIntiqalat.Columns["SNo"].DisplayIndex = 1;
@@ -128,6 +134,7 @@ namespace SDC_Application.AL
             GridViewIntiqalat.Columns[0].Width = 80;
             GridViewIntiqalat.Columns[1].Width = 80;
             //GridViewIntiqalat.Columns[3].Width = 120;
+            }
         }
         #endregion
 
@@ -230,7 +237,7 @@ namespace SDC_Application.AL
                     {
                         this.lblRoName.Text = row["CompleteName"].ToString();
                         pictureBox1.Image = Resource1.FingerprintImage;
-                        this.PersonFingerPrint = (byte[])row["FingerPrintImage"];
+                        this.PersonFingerPrint = (byte[]) row["FingerPrintImage"];// (byte[])row["FingerPrintImage"];
 
                     }
                 }

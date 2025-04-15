@@ -81,7 +81,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                int idValue = Convert.ToInt32(intiqal.GetDawraValidity(DateTime.Today.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                int idValue = Convert.ToInt32(intiqal.GetDawraValidity(DateTime.Today.ToString(System.Globalization.CultureInfo.InvariantCulture))!=null?intiqal.GetDawraValidity(DateTime.Today.ToString(System.Globalization.CultureInfo.InvariantCulture)):"0");
 
                 return idValue == 1;
             }

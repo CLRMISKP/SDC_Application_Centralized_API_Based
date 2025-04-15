@@ -185,14 +185,17 @@ namespace SDC_Application.AL
             try
             {
                 this.dtkj = inteq.GetKhataJatForintiqalByMozaId(mozaId);
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = " - کھاتہ نمبر چنیے - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cbokhataNo.DataSource = dtkj;
-                cbokhataNo.DisplayMember = "KhataNo";
-                cbokhataNo.ValueMember = "RegisterHqDKhataId";
-                cbokhataNo.SelectedValue = 0;
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = " - کھاتہ نمبر چنیے - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cbokhataNo.DataSource = dtkj;
+                    cbokhataNo.DisplayMember = "KhataNo";
+                    cbokhataNo.ValueMember = "RegisterHqDKhataId";
+                    cbokhataNo.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -602,17 +605,20 @@ namespace SDC_Application.AL
                 
                 dtIntiqalKhatas = inteq.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
                 GridViewInteqalKhattas.DataSource = dtIntiqalKhatas;
-                GridViewInteqalKhattas.Columns["IntiqalId"].Visible = false;
-                GridViewInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
-                GridViewInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
-                GridViewInteqalKhattas.Columns["AmaldaramadStatus"].Visible = false;
-                GridViewInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
-                GridViewInteqalKhattas.Columns["IsJuzviKhatta"].Visible=false;
-                GridViewInteqalKhattas.Columns["TotalParts"].Visible = false;
-                GridViewInteqalKhattas.Columns["Kanal"].Visible = false;
-                GridViewInteqalKhattas.Columns["Marla"].Visible = false;
-                GridViewInteqalKhattas.Columns["Sarsai"].Visible = false;
-                GridViewInteqalKhattas.Columns["Feet"].Visible = false;
+                if (dtIntiqalKhatas != null)
+                {
+                    GridViewInteqalKhattas.Columns["IntiqalId"].Visible = false;
+                    GridViewInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
+                    GridViewInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
+                    GridViewInteqalKhattas.Columns["AmaldaramadStatus"].Visible = false;
+                    GridViewInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
+                    GridViewInteqalKhattas.Columns["IsJuzviKhatta"].Visible = false;
+                    GridViewInteqalKhattas.Columns["TotalParts"].Visible = false;
+                    GridViewInteqalKhattas.Columns["Kanal"].Visible = false;
+                    GridViewInteqalKhattas.Columns["Marla"].Visible = false;
+                    GridViewInteqalKhattas.Columns["Sarsai"].Visible = false;
+                    GridViewInteqalKhattas.Columns["Feet"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -844,11 +850,14 @@ namespace SDC_Application.AL
                 DataTable dt = new DataTable();
                 dt = inteq.GetKhatoniDetails(IntiqalKhataId);
                 grdKhatoniDetails.DataSource = dt;
-                grdKhatoniDetails.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-                grdKhatoniDetails.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "کھتونی نمبر";
-                grdKhatoniDetails.Columns["KhatooniKashtkaranFullDetail_New"].Visible = false;
-                grdKhatoniDetails.Columns["IntiqalKhatooniRecId"].Visible = false;
-                grdKhatoniDetails.Columns["KhatooniId"].Visible = false;
+                if (dt != null)
+                {
+                    grdKhatoniDetails.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                    grdKhatoniDetails.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "کھتونی نمبر";
+                    grdKhatoniDetails.Columns["KhatooniKashtkaranFullDetail_New"].Visible = false;
+                    grdKhatoniDetails.Columns["IntiqalKhatooniRecId"].Visible = false;
+                    grdKhatoniDetails.Columns["KhatooniId"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -950,11 +959,13 @@ namespace SDC_Application.AL
                 DataTable dtt = new DataTable();
                 dtt = inteq.GetintiqalSellersListByKhataRecId(IntiqalKhattaRecId, IntiqalKhatooniRecId, MalkiatKashkat.ToString());
                 // dt = Intiqal.GetintiqalSellersListByKhataRecId(IntiqalKhataRecId);
+                bs.DataSource = dtt;
+                GridSellerList.DataSource = bs;
+                GridSellerList.DataSource = dtt;
                 if (dtt != null)
                 {
-                    bs.DataSource = dtt;
-                    GridSellerList.DataSource = bs;
-                    GridSellerList.DataSource = dtt;
+                    
+                    
                     if (dtt != null)
                     {
                         FillGridIntiqalKhataRecId();
@@ -1146,50 +1157,53 @@ namespace SDC_Application.AL
         {
             try
             {
-                GridSellerList.Columns["checkListNew"].DisplayIndex = 0;
-                GridSellerList.Columns["PersonName"].DisplayIndex = 1;
-                GridSellerList.Columns["KhewatType"].DisplayIndex = 2;
+                if (GridSellerList.DataSource != null)
+                {
+                    GridSellerList.Columns["checkListNew"].DisplayIndex = 0;
+                    GridSellerList.Columns["PersonName"].DisplayIndex = 1;
+                    GridSellerList.Columns["KhewatType"].DisplayIndex = 2;
 
-                GridSellerList.Columns["Seller_Total_Hissa"].DisplayIndex = 3;
-                GridSellerList.Columns["Seller_Total_Area"].DisplayIndex = 4;
+                    GridSellerList.Columns["Seller_Total_Hissa"].DisplayIndex = 3;
+                    GridSellerList.Columns["Seller_Total_Area"].DisplayIndex = 4;
 
-                GridSellerList.Columns["Seller_Sold_Hissa"].DisplayIndex = 5;
-                GridSellerList.Columns["Seller_Sold_Area"].DisplayIndex = 6;
-                GridSellerList.Columns["colMutwafiKhataJat"].DisplayIndex = 12;
+                    GridSellerList.Columns["Seller_Sold_Hissa"].DisplayIndex = 5;
+                    GridSellerList.Columns["Seller_Sold_Area"].DisplayIndex = 6;
+                    GridSellerList.Columns["colMutwafiKhataJat"].DisplayIndex = 12;
 
-                GridSellerList.Columns["checkListNew"].HeaderText = "انتخاب کریں";
-                GridSellerList.Columns["PersonName"].HeaderText = "نام";
-                GridSellerList.Columns["KhewatType"].HeaderText = "فرد کی قسم";
+                    GridSellerList.Columns["checkListNew"].HeaderText = "انتخاب کریں";
+                    GridSellerList.Columns["PersonName"].HeaderText = "نام";
+                    GridSellerList.Columns["KhewatType"].HeaderText = "فرد کی قسم";
 
-                GridSellerList.Columns["Seller_Total_Hissa"].HeaderText = "کل حصہ";
-                GridSellerList.Columns["Seller_Total_Area"].HeaderText = "کل رقبہ";
+                    GridSellerList.Columns["Seller_Total_Hissa"].HeaderText = "کل حصہ";
+                    GridSellerList.Columns["Seller_Total_Area"].HeaderText = "کل رقبہ";
 
-                GridSellerList.Columns["Seller_Sold_Hissa"].HeaderText = " حصہ منتقلہ";
-                GridSellerList.Columns["Seller_Sold_Area"].HeaderText = "رقبہ منتقلہ";
+                    GridSellerList.Columns["Seller_Sold_Hissa"].HeaderText = " حصہ منتقلہ";
+                    GridSellerList.Columns["Seller_Sold_Area"].HeaderText = "رقبہ منتقلہ";
 
-                GridSellerList.Columns["IntiqalSellerRecId"].Visible = false;
-                GridSellerList.Columns["IntiqalKhataRecId"].Visible = false;
-                GridSellerList.Columns["IntiqalSellerPersonId"].Visible = false;
-                GridSellerList.Columns["SellerPersonDied"].Visible = false;
-                GridSellerList.Columns["SellerPersonDeathDate"].Visible = false;
-                GridSellerList.Columns["IntiqalKhatooniRecId"].Visible = false;
-                GridSellerList.Columns["MushtriFareeqId"].Visible = false;
-                GridSellerList.Columns["Seller_Total_Marla"].Visible = false;
-                GridSellerList.Columns["Seller_Total_Kanal"].Visible = false;
-                GridSellerList.Columns["Seller_Total_Sarsai"].Visible = false;
-                GridSellerList.Columns["Seller_Total_Feet"].Visible = false;
-                GridSellerList.Columns["Seller_Sold_Kanal"].Visible = false;
-                GridSellerList.Columns["Seller_Sold_Marla"].Visible = false;
-                GridSellerList.Columns["Seller_Sold_Sarsai"].Visible = false;
-                GridSellerList.Columns["Seller_Sold_Feet"].Visible = false;
+                    GridSellerList.Columns["IntiqalSellerRecId"].Visible = false;
+                    GridSellerList.Columns["IntiqalKhataRecId"].Visible = false;
+                    GridSellerList.Columns["IntiqalSellerPersonId"].Visible = false;
+                    GridSellerList.Columns["SellerPersonDied"].Visible = false;
+                    GridSellerList.Columns["SellerPersonDeathDate"].Visible = false;
+                    GridSellerList.Columns["IntiqalKhatooniRecId"].Visible = false;
+                    GridSellerList.Columns["MushtriFareeqId"].Visible = false;
+                    GridSellerList.Columns["Seller_Total_Marla"].Visible = false;
+                    GridSellerList.Columns["Seller_Total_Kanal"].Visible = false;
+                    GridSellerList.Columns["Seller_Total_Sarsai"].Visible = false;
+                    GridSellerList.Columns["Seller_Total_Feet"].Visible = false;
+                    GridSellerList.Columns["Seller_Sold_Kanal"].Visible = false;
+                    GridSellerList.Columns["Seller_Sold_Marla"].Visible = false;
+                    GridSellerList.Columns["Seller_Sold_Sarsai"].Visible = false;
+                    GridSellerList.Columns["Seller_Sold_Feet"].Visible = false;
 
-            
-                GridSellerList.Columns["KhewatTypeId"].Visible = false;
-                GridSellerList.Columns["KhewatGroupFareeqId"].Visible = false;
-                GridSellerList.Columns["FardTokenId"].Visible = false;
-                GridSellerList.Columns["FardTokenDate"].Visible = false;
-                datacontrols.colorrbackgrid(GridSellerList);
-                datacontrols.gridControls(GridSellerList);
+
+                    GridSellerList.Columns["KhewatTypeId"].Visible = false;
+                    GridSellerList.Columns["KhewatGroupFareeqId"].Visible = false;
+                    GridSellerList.Columns["FardTokenId"].Visible = false;
+                    GridSellerList.Columns["FardTokenDate"].Visible = false;
+                    datacontrols.colorrbackgrid(GridSellerList);
+                    datacontrols.gridControls(GridSellerList);
+                }
             }
             catch (Exception ex)
             {
@@ -1403,130 +1417,131 @@ namespace SDC_Application.AL
                                 {
                                     dtFareeqain = mnk.GetFardKhewatFareeqainRemainingAreaNewFard(row.Cells["KhewatGroupFareeqId"].Value.ToString());
                                 }
-
-                                if (dtFareeqain.Rows.Count > 0)
+                                if (dtFareeqain != null)
                                 {
-                                    double KulHissayWOTM = Convert.ToDouble(dtFareeqain.Rows[0]["FardAreaPartTotal"].ToString());
-                                    double KulHissay = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Hissa"].Value.ToString());
-                                    double KulKanal = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Kanal"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Kanal"].Value.ToString());
-                                    double KulMarla = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Marla"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Marla"].Value.ToString());
-                                    double KulSarsai = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Sarsai"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Sarsai"].Value.ToString());
-                                    double KulFeet = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Feet"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Feet"].Value.ToString());
-
-                                    //================================= function for raqba calculate =============================
-
-                                    double PersonRaqba = ((KulKanal * 20 + KulMarla) * 272.25) + (KulSarsai > 0 ? KulSarsai * 30.25 : KulFeet);
-                                   
-                                    
-                                    if (PersonRaqba >= 272.25)
+                                    if (dtFareeqain.Rows.Count > 0)
                                     {
-                                        KulFeet = PersonRaqba % 272.25;
-                                        KulMarla = Convert.ToInt32((PersonRaqba - KulFeet) / 272.25);
-
-                                        if (KulMarla >= 20)
-                                        {
-                                            KulKanal = (KulMarla - (KulMarla % 20)) / 20;
-                                            KulMarla = KulMarla % 20;
-                                          
-
-                                        }
-                                        else
-                                        {
-                                            KulKanal = 0;
-                                        }
-
-                                    }
-                                    else
-                                    {
-                                        KulMarla = 0;
-                                        KulKanal = 0;
-                                       
-                                    }
-                                    if (KulFeet > 0)
-                                    {
-                                        KulSarsai = Math.Round(KulFeet / 30.25, 4);
-                                    }
-                                    else
-                                    {
-                                        KulSarsai = 0;
-                                    }
-                                    
-
-                                    //================================================================================================
-
-                                    txtKulHissayWOTminhay.Text = KulHissayWOTM.ToString();
-                                    txtKulHisay.Text = KulHissay.ToString();
-                                    txtKullKanal.Text = Math.Round(KulKanal,0).ToString();
-                                    txtKullMarla.Text = Math.Round(KulMarla,0).ToString();
-                                    txtKullSarsai.Text = Math.Round(KulSarsai,4).ToString();
-                                    txtKulFeet.Text = Math.Round(KulFeet,0).ToString();
-                                  
-                                    //_________________________________Self__________________________
-                                    if (this.FardTokenId != "0")
-                                    {
-
-                                        double FardHissay = Convert.ToDouble(dtFard.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Hissa"].Value.ToString());
-                                        double FardKanal = Convert.ToDouble(dtFard.Rows[0]["Rem_Kanal"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Kanal"].Value.ToString());
-                                        double FardMarla = Convert.ToDouble(dtFard.Rows[0]["Rem_Marla"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Marla"].Value.ToString());
-                                        double FardSarsai = Convert.ToDouble(dtFard.Rows[0]["Rem_Sarsai"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Sarsai"].Value.ToString());
-                                        double FardFeet = Convert.ToDouble(dtFard.Rows[0]["Rem_Feet"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Feet"].Value.ToString());
-
+                                        double KulHissayWOTM = Convert.ToDouble(dtFareeqain.Rows[0]["FardAreaPartTotal"].ToString());
+                                        double KulHissay = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Hissa"].Value.ToString());
+                                        double KulKanal = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Kanal"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Kanal"].Value.ToString());
+                                        double KulMarla = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Marla"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Marla"].Value.ToString());
+                                        double KulSarsai = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Sarsai"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Sarsai"].Value.ToString());
+                                        double KulFeet = Convert.ToDouble(dtFareeqain.Rows[0]["Rem_Feet"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Feet"].Value.ToString());
 
                                         //================================= function for raqba calculate =============================
 
-                                        double PersonRaqbaFard = ((FardKanal * 20 + FardMarla) * 272.25) + (FardSarsai > 0 ? FardSarsai * 30.25 : FardFeet);
-                                       
-                                        if (PersonRaqbaFard >= 272.25)
-                                        {
-                                            FardFeet = PersonRaqbaFard % 272.25;
-                                            FardMarla = Convert.ToInt32((PersonRaqbaFard - FardFeet) / 272.25);
+                                        double PersonRaqba = ((KulKanal * 20 + KulMarla) * 272.25) + (KulSarsai > 0 ? KulSarsai * 30.25 : KulFeet);
 
-                                            if (FardMarla >= 20)
+
+                                        if (PersonRaqba >= 272.25)
+                                        {
+                                            KulFeet = PersonRaqba % 272.25;
+                                            KulMarla = Convert.ToInt32((PersonRaqba - KulFeet) / 272.25);
+
+                                            if (KulMarla >= 20)
                                             {
-                                                FardKanal = (FardMarla - (FardMarla % 20)) / 20;
-                                                FardMarla = FardMarla % 20;
+                                                KulKanal = (KulMarla - (KulMarla % 20)) / 20;
+                                                KulMarla = KulMarla % 20;
 
 
                                             }
                                             else
                                             {
-                                                FardKanal = 0;
+                                                KulKanal = 0;
                                             }
 
                                         }
                                         else
                                         {
-                                            FardMarla = 0;
-                                            FardKanal = 0;
+                                            KulMarla = 0;
+                                            KulKanal = 0;
 
                                         }
-                                        if (FardFeet > 0)
+                                        if (KulFeet > 0)
                                         {
-                                            FardSarsai = Math.Round(FardFeet / 30.25,4);
+                                            KulSarsai = Math.Round(KulFeet / 30.25, 4);
                                         }
                                         else
                                         {
-                                            FardSarsai = 0;
+                                            KulSarsai = 0;
                                         }
 
-                                        //================================================================================================
-                                        txtFardHissay.Text = FardHissay.ToString();
-                                        txtFardKanal.Text = Math.Round(FardKanal, 0).ToString();
-                                        txtFardMarla.Text = Math.Round(FardMarla, 0).ToString();
-                                        txtFardSarsai.Text = Math.Round(FardSarsai, 4).ToString();
-                                        txtFardFeet.Text = Math.Round(FardFeet, 0).ToString();
 
-                                       
+                                        //================================================================================================
+
+                                        txtKulHissayWOTminhay.Text = KulHissayWOTM.ToString();
+                                        txtKulHisay.Text = KulHissay.ToString();
+                                        txtKullKanal.Text = Math.Round(KulKanal, 0).ToString();
+                                        txtKullMarla.Text = Math.Round(KulMarla, 0).ToString();
+                                        txtKullSarsai.Text = Math.Round(KulSarsai, 4).ToString();
+                                        txtKulFeet.Text = Math.Round(KulFeet, 0).ToString();
+
+                                        //_________________________________Self__________________________
+                                        if (this.FardTokenId != "0")
+                                        {
+
+                                            double FardHissay = Convert.ToDouble(dtFard.Rows[0]["Rem_Hissa"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Hissa"].Value.ToString());
+                                            double FardKanal = Convert.ToDouble(dtFard.Rows[0]["Rem_Kanal"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Kanal"].Value.ToString());
+                                            double FardMarla = Convert.ToDouble(dtFard.Rows[0]["Rem_Marla"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Marla"].Value.ToString());
+                                            double FardSarsai = Convert.ToDouble(dtFard.Rows[0]["Rem_Sarsai"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Sarsai"].Value.ToString());
+                                            double FardFeet = Convert.ToDouble(dtFard.Rows[0]["Rem_Feet"].ToString()) + Convert.ToDouble(row.Cells["Seller_Sold_Feet"].Value.ToString());
+
+
+                                            //================================= function for raqba calculate =============================
+
+                                            double PersonRaqbaFard = ((FardKanal * 20 + FardMarla) * 272.25) + (FardSarsai > 0 ? FardSarsai * 30.25 : FardFeet);
+
+                                            if (PersonRaqbaFard >= 272.25)
+                                            {
+                                                FardFeet = PersonRaqbaFard % 272.25;
+                                                FardMarla = Convert.ToInt32((PersonRaqbaFard - FardFeet) / 272.25);
+
+                                                if (FardMarla >= 20)
+                                                {
+                                                    FardKanal = (FardMarla - (FardMarla % 20)) / 20;
+                                                    FardMarla = FardMarla % 20;
+
+
+                                                }
+                                                else
+                                                {
+                                                    FardKanal = 0;
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                FardMarla = 0;
+                                                FardKanal = 0;
+
+                                            }
+                                            if (FardFeet > 0)
+                                            {
+                                                FardSarsai = Math.Round(FardFeet / 30.25, 4);
+                                            }
+                                            else
+                                            {
+                                                FardSarsai = 0;
+                                            }
+
+                                            //================================================================================================
+                                            txtFardHissay.Text = FardHissay.ToString();
+                                            txtFardKanal.Text = Math.Round(FardKanal, 0).ToString();
+                                            txtFardMarla.Text = Math.Round(FardMarla, 0).ToString();
+                                            txtFardSarsai.Text = Math.Round(FardSarsai, 4).ToString();
+                                            txtFardFeet.Text = Math.Round(FardFeet, 0).ToString();
+
+
+
+
+                                        }
+
+
+                                        //----------------------------------end Self-----------------------------------------
 
 
                                     }
-
-                                   
-                                    //----------------------------------end Self-----------------------------------------
-
-                                  
                                 }
-
 
 
                                 //-----------------------------------------------------------
@@ -2065,19 +2080,22 @@ namespace SDC_Application.AL
                         else
                         {
                             dt = Intiqal.GetIntiqalKhanaKasht(IntiqalKhataId);
-                            foreach (DataRow row in dt.Rows)
+                            if (dt != null)
                             {
-                                if (row["MushtriFareeqId"].ToString() == this.cboPersonSeller.SelectedValue.ToString())
+                                foreach (DataRow row in dt.Rows)
                                 {
-                                    txtKulHisay.Text = row["FardAreaPart"].ToString();
-                                    txtKullKanal.Text = row["Farad_Kanal"].ToString();
-                                    txtKullMarla.Text = row["Fard_Marla"].ToString();
-                                    txtKullSarsai.Text = row["Fard_Sarsai"].ToString();
-                                    txtKulFeet.Text = row["Fard_Feet"].ToString();
-                                    txtHiddenPersonID.Text = row["PersonId"].ToString();
-                                    txtHiddenKewatGroupFareeqID.Text = "NULL";
-                                    txtHidenMustariFareeqID.Text = row[" MushtriFareeqId"].ToString();
-                                    break;
+                                    if (row["MushtriFareeqId"].ToString() == this.cboPersonSeller.SelectedValue.ToString())
+                                    {
+                                        txtKulHisay.Text = row["FardAreaPart"].ToString();
+                                        txtKullKanal.Text = row["Farad_Kanal"].ToString();
+                                        txtKullMarla.Text = row["Fard_Marla"].ToString();
+                                        txtKullSarsai.Text = row["Fard_Sarsai"].ToString();
+                                        txtKulFeet.Text = row["Fard_Feet"].ToString();
+                                        txtHiddenPersonID.Text = row["PersonId"].ToString();
+                                        txtHiddenKewatGroupFareeqID.Text = "NULL";
+                                        txtHidenMustariFareeqID.Text = row[" MushtriFareeqId"].ToString();
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -2601,11 +2619,12 @@ namespace SDC_Application.AL
                     //IntiqalKhatooniRecId = KhatoniRecid;
                 }
                 dt = inteq.GetIntiqalBuyersByIntiqalKhataRecId(IntiqalKhattaRecId, KhatoniRecid, MalkiatKashkat.ToString());
+                bb.DataSource = dt;
+                GridBuyersList.DataSource = bb;
+                GridBuyersList.DataSource = dt;
                 if (dt != null)
                 {
-                    bb.DataSource = dt;
-                    GridBuyersList.DataSource = bb;
-                    GridBuyersList.DataSource = dt;
+                   
                     BuyerGrid();
                 }
                 //GridBuyersList.DataSource = dt;
@@ -2619,34 +2638,36 @@ namespace SDC_Application.AL
         }
         public void BuyerGrid()
         {
-            GridBuyersList.Columns["IntiqalBuyerRecId"].Visible = false;
-            GridBuyersList.Columns["IntiqalKhataRecId"].Visible = false;
-            GridBuyersList.Columns["IntiqalBuyerPersonId"].Visible = false;
-            GridBuyersList.Columns["Buyer_Hissa"].HeaderText = "حصے";
-            GridBuyersList.Columns["Buyer_Kanal"].Visible = false;
-            GridBuyersList.Columns["Buyer_Marla"].Visible = false;
-            GridBuyersList.Columns["Buyer_Sarsai"].Visible = false;
-            GridBuyersList.Columns["Buyer_Feet"].Visible = false;
-            GridBuyersList.Columns["IntiqalKhatooniRecId"].Visible = false;
-            GridBuyersList.Columns["Buyer_Area"].HeaderText = "رقبہ";
-            GridBuyersList.Columns["PersonName"].HeaderText = "نام";
-            GridBuyersList.Columns["KhewatType"].HeaderText = "قسم ملکیت";
-            //if (IntiqalTypeId == "37")
-            //{
-            //    GridBuyersList.Columns["Rishta"].HeaderText = "رشتہ";
-            //}
-            //else
-            //{
+            if(GridBuyersList.DataSource != null){
+                GridBuyersList.Columns["IntiqalBuyerRecId"].Visible = false;
+                GridBuyersList.Columns["IntiqalKhataRecId"].Visible = false;
+                GridBuyersList.Columns["IntiqalBuyerPersonId"].Visible = false;
+                GridBuyersList.Columns["Buyer_Hissa"].HeaderText = "حصے";
+                GridBuyersList.Columns["Buyer_Kanal"].Visible = false;
+                GridBuyersList.Columns["Buyer_Marla"].Visible = false;
+                GridBuyersList.Columns["Buyer_Sarsai"].Visible = false;
+                GridBuyersList.Columns["Buyer_Feet"].Visible = false;
+                GridBuyersList.Columns["IntiqalKhatooniRecId"].Visible = false;
+                GridBuyersList.Columns["Buyer_Area"].HeaderText = "رقبہ";
+                GridBuyersList.Columns["PersonName"].HeaderText = "نام";
+                GridBuyersList.Columns["KhewatType"].HeaderText = "قسم ملکیت";
+                //if (IntiqalTypeId == "37")
+                //{
+                //    GridBuyersList.Columns["Rishta"].HeaderText = "رشتہ";
+                //}
+                //else
+                //{
                 GridBuyersList.Columns["Rishta"].Visible = false;
-            //}
-            GridBuyersList.Columns["KhewatTypeId"].Visible = false;
-            GridBuyersList.Columns["RishtaId"].Visible = false;
-            GridBuyersList.Columns["chk1"].DisplayIndex = 0;
-            GridBuyersList.Columns["chk1"].Width = 100;
-            GridBuyersList.Columns["Buyer_Hissa"].Width = 100;
-            GridBuyersList.Columns["Buyer_Area"].Width = 100;
+                //}
+                GridBuyersList.Columns["KhewatTypeId"].Visible = false;
+                GridBuyersList.Columns["RishtaId"].Visible = false;
+                GridBuyersList.Columns["chk1"].DisplayIndex = 0;
+                GridBuyersList.Columns["chk1"].Width = 100;
+                GridBuyersList.Columns["Buyer_Hissa"].Width = 100;
+                GridBuyersList.Columns["Buyer_Area"].Width = 100;
 
-            this.setRowNumber(GridBuyersList);
+                this.setRowNumber(GridBuyersList);
+            }
         }
         #endregion
         private void clearMushtryanControls()
@@ -2814,15 +2835,17 @@ namespace SDC_Application.AL
             {
                 DataTable dt = new DataTable();
                 dt = inteq.GetKhewatTypes(UsersManagments._Tehsilid.ToString());
-
-                DataRow TypeRow = dt.NewRow();
-                TypeRow["KhewatTypeId"] = "0";
-                TypeRow["KhewatType"] = " - انتخاب مالک - ";
-                dt.Rows.InsertAt(TypeRow, 0);
-                cboKhewatType.DataSource = dt;
-                cboKhewatType.DisplayMember = "KhewatType";
-                cboKhewatType.ValueMember = "KhewatTypeId";
-                cboKhewatType.SelectedValue = 0;
+                if (dt != null)
+                {
+                    DataRow TypeRow = dt.NewRow();
+                    TypeRow["KhewatTypeId"] = "0";
+                    TypeRow["KhewatType"] = " - انتخاب مالک - ";
+                    dt.Rows.InsertAt(TypeRow, 0);
+                    cboKhewatType.DataSource = dt;
+                    cboKhewatType.DisplayMember = "KhewatType";
+                    cboKhewatType.ValueMember = "KhewatTypeId";
+                    cboKhewatType.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -3086,19 +3109,22 @@ namespace SDC_Application.AL
             DataTable dt = new DataTable();
             dt = inteq.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
             GridIntiqalKhattaJatforMin.DataSource = dt;
-            GridIntiqalKhattaJatforMin.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-            GridIntiqalKhattaJatforMin.Columns["IntiqalId"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["IntiqalKhataId"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["IntiqalKhataRecId"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["Kanal"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["Marla"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["Sarsai"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["Feet"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["TotalParts"].Visible = false;
+            if (dt != null)
+            {
+                GridIntiqalKhattaJatforMin.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                GridIntiqalKhattaJatforMin.Columns["IntiqalId"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["IntiqalKhataId"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["IntiqalKhataRecId"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["Kanal"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["Marla"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["Sarsai"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["Feet"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["TotalParts"].Visible = false;
 
-            GridIntiqalKhattaJatforMin.Columns["AmaldaramadStatus"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["AmaldaramadDate"].Visible = false;
-            GridIntiqalKhattaJatforMin.Columns["IsJuzviKhatta"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["AmaldaramadStatus"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["AmaldaramadDate"].Visible = false;
+                GridIntiqalKhattaJatforMin.Columns["IsJuzviKhatta"].Visible = false;
+            }
         }
 
         public void FillGridMalikan()
@@ -3149,29 +3175,32 @@ namespace SDC_Application.AL
                 dtk = inteq.GetIntiqalMinKhassraJat(IntiqalId, cboMinGroups.SelectedValue.ToString());
                 //dtk = inteq.GetIntiqalMinKhassraJat(IntiqalId, v_IntiqalMinGroupId);
                 gridkhasrajat.DataSource = dtk;
-                gridkhasrajat.Columns["MinTypeName"].HeaderText = "قسم تہتیمہ";
-                gridkhasrajat.Columns["Min_KhassraNo"].HeaderText = "من خسرہ نمبر";
-                gridkhasrajat.Columns["KhassraMinArea"].HeaderText = "رقبہ";
-                gridkhasrajat.Columns["IntiqalMinKhassraRecId"].Visible = false;
-                gridkhasrajat.Columns["IntiqalId"].Visible = false;
-                gridkhasrajat.Columns["IntiqalMinGroupId"].Visible = false;
-                gridkhasrajat.Columns["OldKhataId"].Visible = false;
-                gridkhasrajat.Columns["oldkhatooniid"].Visible = false;
-                gridkhasrajat.Columns["OldKhassraId"].Visible = false;
-                gridkhasrajat.Columns["OldKhassraDetailId"].Visible = false;
-                gridkhasrajat.Columns["MinKhassraId"].Visible = false;
-                // gridkhasrajat.Columns["Min_KhassraNo"].Visible = false;
-                gridkhasrajat.Columns["MinNo"].Visible = false;
-                gridkhasrajat.Columns["Min_KhatooniNo"].Visible = false;
-                gridkhasrajat.Columns["AreaTypeId"].Visible = false;
-                gridkhasrajat.Columns["AreaType"].Visible = false;
-                gridkhasrajat.Columns["MinTypeId"].Visible = false;
-                //gridkhasrajat.Columns["MinTypeName"].Visible = false;
-                gridkhasrajat.Columns["Min_Kanal"].Visible = false;
-                gridkhasrajat.Columns["Min_Marla"].Visible = false;
-                gridkhasrajat.Columns["Min_Sarsai"].Visible = false;
-                gridkhasrajat.Columns["Min_Feet"].Visible = false;
-                //gridkhasrajat.Columns["KhassraMinArea"].Visible = false;
+                if (dtk != null)
+                {
+                    gridkhasrajat.Columns["MinTypeName"].HeaderText = "قسم تہتیمہ";
+                    gridkhasrajat.Columns["Min_KhassraNo"].HeaderText = "من خسرہ نمبر";
+                    gridkhasrajat.Columns["KhassraMinArea"].HeaderText = "رقبہ";
+                    gridkhasrajat.Columns["IntiqalMinKhassraRecId"].Visible = false;
+                    gridkhasrajat.Columns["IntiqalId"].Visible = false;
+                    gridkhasrajat.Columns["IntiqalMinGroupId"].Visible = false;
+                    gridkhasrajat.Columns["OldKhataId"].Visible = false;
+                    gridkhasrajat.Columns["oldkhatooniid"].Visible = false;
+                    gridkhasrajat.Columns["OldKhassraId"].Visible = false;
+                    gridkhasrajat.Columns["OldKhassraDetailId"].Visible = false;
+                    gridkhasrajat.Columns["MinKhassraId"].Visible = false;
+                    // gridkhasrajat.Columns["Min_KhassraNo"].Visible = false;
+                    gridkhasrajat.Columns["MinNo"].Visible = false;
+                    gridkhasrajat.Columns["Min_KhatooniNo"].Visible = false;
+                    gridkhasrajat.Columns["AreaTypeId"].Visible = false;
+                    gridkhasrajat.Columns["AreaType"].Visible = false;
+                    gridkhasrajat.Columns["MinTypeId"].Visible = false;
+                    //gridkhasrajat.Columns["MinTypeName"].Visible = false;
+                    gridkhasrajat.Columns["Min_Kanal"].Visible = false;
+                    gridkhasrajat.Columns["Min_Marla"].Visible = false;
+                    gridkhasrajat.Columns["Min_Sarsai"].Visible = false;
+                    gridkhasrajat.Columns["Min_Feet"].Visible = false;
+                    //gridkhasrajat.Columns["KhassraMinArea"].Visible = false;
+                }
             }
             else
             {
@@ -3384,14 +3413,17 @@ namespace SDC_Application.AL
         {
             bool iEx = false;
             DataTable dtMinGroup = Intiqal.GetIntiqalMinGroup(this.IntiqalId);
-            foreach (DataRow dtrow in dtMinGroup.Rows)
+            if (dtMinGroup != null)
             {
-                string MinGroupNo = txtmingroup.Text.Trim().ToString();
-                if (dtrow["IntiqalMinGroupNo"].ToString() == MinGroupNo)
+                foreach (DataRow dtrow in dtMinGroup.Rows)
                 {
-                    //MessageBox.Show("من گروپ محفوظ ہو گیا ہے");
-                    iEx = true;
-                    break;
+                    string MinGroupNo = txtmingroup.Text.Trim().ToString();
+                    if (dtrow["IntiqalMinGroupNo"].ToString() == MinGroupNo)
+                    {
+                        //MessageBox.Show("من گروپ محفوظ ہو گیا ہے");
+                        iEx = true;
+                        break;
+                    }
                 }
             }
 
@@ -3407,15 +3439,18 @@ namespace SDC_Application.AL
             try
             {
                 this.dtmg = inteq.GetIntiqalMinGroup(intiqalId, intiqalKhataId, IntiqalKhatooniRecId);
-                DataRow rowMg = dtmg.NewRow();
-                rowMg["IntiqalMinGroupId"] = "0";
-                rowMg["IntiqalMinGroupNo"] = " - من گروپ چنیے - ";
-                // MinGroupNo = rowMg["IntiqalMinGroupNo"].ToString();
-                dtmg.Rows.InsertAt(rowMg, 0);
-                cboMinGroups.DataSource = dtmg;
-                cboMinGroups.DisplayMember = "IntiqalMinGroupNo";
-                cboMinGroups.ValueMember = "IntiqalMinGroupId";
-                cboMinGroups.SelectedValue = 0;
+                if (this.dtmg != null)
+                {
+                    DataRow rowMg = dtmg.NewRow();
+                    rowMg["IntiqalMinGroupId"] = "0";
+                    rowMg["IntiqalMinGroupNo"] = " - من گروپ چنیے - ";
+                    // MinGroupNo = rowMg["IntiqalMinGroupNo"].ToString();
+                    dtmg.Rows.InsertAt(rowMg, 0);
+                    cboMinGroups.DataSource = dtmg;
+                    cboMinGroups.DisplayMember = "IntiqalMinGroupNo";
+                    cboMinGroups.ValueMember = "IntiqalMinGroupId";
+                    cboMinGroups.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -3872,15 +3907,18 @@ namespace SDC_Application.AL
                 }
                 bool MinhayeIntiqalAmaldaramadStatus = true;// Convert.ToBoolean(Intiqal.GetIntiqalAmaldaramadStatusForMinhayeIntiqal(this.MinhayeIntiqalId));
                 string MinIntiqalNo = "0";
-                foreach(DataRow row in this.MinhayeIntiqals.Rows)
+                if (this.MinhayeIntiqals != null)
                 {
-                    if (Convert.ToBoolean(row["AmalDaramadStatus"].ToString()) == false)
+                    foreach (DataRow row in this.MinhayeIntiqals.Rows)
                     {
-                        MinhayeIntiqalAmaldaramadStatus = false;
-                        MinIntiqalNo = row["IntiqalNo"].ToString();
-                        break;
-                    }
+                        if (Convert.ToBoolean(row["AmalDaramadStatus"].ToString()) == false)
+                        {
+                            MinhayeIntiqalAmaldaramadStatus = false;
+                            MinIntiqalNo = row["IntiqalNo"].ToString();
+                            break;
+                        }
 
+                    }
                 }
                 if (MinhayeIntiqalAmaldaramadStatus)
                 {
@@ -4050,25 +4088,27 @@ namespace SDC_Application.AL
         {
             DataTable dt = new DataTable();
             dt = taqseemnewkhata.Proc_Get_Taqseem_RegisterHqDKhataId(RegHadkhataid);
-            foreach (DataRow dr in dt.Rows)
+            if (dt != null)
             {
-                //RegisterHqDKhataId = dr["RegisterHqDKhataId"].ToString();
-                txtRegHaqKhataID.Text = dr["RegisterHqDKhataId"].ToString();
-                txtRegHagDaranID.Text = dr["RegisterHaqdaranId"].ToString();
-                txtParentid.Text = dr["ParentKhattaId"].ToString();
-                txtKhataNoChange.Text = dr["KhataNo"].ToString();
-                txthissayChagne.Text = dr["TotalParts"].ToString();
-                txtKanalChange.Text = dr["Khata_Kanal"].ToString();
-                txtMarlayChange.Text = dr["Khata_Marla"].ToString();
-                txtSarsasiChange.Text = dr["Khata_Sarsai"].ToString();
-                txtFeetChange.Text = dr["Khata_Feet"].ToString();
-                txtMaliaChange.Text = dr["Malia"].ToString();
-                txtKefiyatChange.Text = dr["Kyfiat"].ToString();
-                txtPati.Text = dr["Pati"].ToString();
-                txtTaraf.Text = dr["Tarf"].ToString();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    //RegisterHqDKhataId = dr["RegisterHqDKhataId"].ToString();
+                    txtRegHaqKhataID.Text = dr["RegisterHqDKhataId"].ToString();
+                    txtRegHagDaranID.Text = dr["RegisterHaqdaranId"].ToString();
+                    txtParentid.Text = dr["ParentKhattaId"].ToString();
+                    txtKhataNoChange.Text = dr["KhataNo"].ToString();
+                    txthissayChagne.Text = dr["TotalParts"].ToString();
+                    txtKanalChange.Text = dr["Khata_Kanal"].ToString();
+                    txtMarlayChange.Text = dr["Khata_Marla"].ToString();
+                    txtSarsasiChange.Text = dr["Khata_Sarsai"].ToString();
+                    txtFeetChange.Text = dr["Khata_Feet"].ToString();
+                    txtMaliaChange.Text = dr["Malia"].ToString();
+                    txtKefiyatChange.Text = dr["Kyfiat"].ToString();
+                    txtPati.Text = dr["Pati"].ToString();
+                    txtTaraf.Text = dr["Tarf"].ToString();
 
+                }
             }
-
         }
 
         #endregion
@@ -4339,20 +4379,20 @@ namespace SDC_Application.AL
         public void FillGridTaqseemMushtryan(DataTable dt)
         {
             dgvMushtryan.DataSource = dt;
-            dgvMushtryan.Columns["FardAreaPart"].HeaderText = "حصہ";
-            dgvMushtryan.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
-            dgvMushtryan.Columns["CompleteName"].HeaderText = "نام مالک";
-            dgvMushtryan.Columns["SeqNo"].HeaderText = "نمبر شمار";
+            if (dt != null)
+            {
+                dgvMushtryan.Columns["FardAreaPart"].HeaderText = "حصہ";
+                dgvMushtryan.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
+                dgvMushtryan.Columns["CompleteName"].HeaderText = "نام مالک";
+                dgvMushtryan.Columns["SeqNo"].HeaderText = "نمبر شمار";
 
-            dgvMushtryan.Columns["MushtriFareeqId"].Visible = false;
-            dgvMushtryan.Columns["PersonId"].Visible = false;
-
-
-            dgvMushtryan.Columns["CompleteName"].DisplayIndex = 2;
-            dgvMushtryan.Columns["seqno"].DisplayIndex = 1;
+                dgvMushtryan.Columns["MushtriFareeqId"].Visible = false;
+                dgvMushtryan.Columns["PersonId"].Visible = false;
 
 
-
+                dgvMushtryan.Columns["CompleteName"].DisplayIndex = 2;
+                dgvMushtryan.Columns["seqno"].DisplayIndex = 1;
+            }
         }
 
         #endregion
@@ -4415,6 +4455,8 @@ namespace SDC_Application.AL
         public void FillGridMalikanChange( DataTable dt)
         {
                 grdMushtrianMalinkanChange.DataSource = dt;
+            if (dt != null)
+            {
                 grdMushtrianMalinkanChange.Columns["chk_change_Malikan"].DisplayIndex = 0;
                 grdMushtrianMalinkanChange.Columns["PersonName"].DisplayIndex = 2;
                 grdMushtrianMalinkanChange.Columns["Khewat_Area"].DisplayIndex = 5;
@@ -4429,20 +4471,20 @@ namespace SDC_Application.AL
                 grdMushtrianMalinkanChange.Columns["KhewatGroupFareeqId"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["KhewatGroupId"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["PersonId"].Visible = false;
-                
+
                 grdMushtrianMalinkanChange.Columns["KhewatTypeId"].Visible = false;
 
                 grdMushtrianMalinkanChange.Columns["DarNo"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["TotalDarPart"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["FardPart_Bata"].Visible = false;
-                
+
                 grdMushtrianMalinkanChange.Columns["CNIC"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["PersonDarPart"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["PersonNetPart"].Visible = false;
                 grdMushtrianMalinkanChange.Columns["OfDarPart"].Visible = false;
 
                 GetFaraqIstirak();
-
+            }
         }
 
         #endregion
@@ -4725,23 +4767,26 @@ namespace SDC_Application.AL
         private void FillKhatooniGrid()
         {
             grdGetkhatonichange.DataSource = dvTaqseemKhatoonies;
-            grdGetkhatonichange.ReadOnly = false;
-            grdGetkhatonichange.Columns[1].ReadOnly = true;
-            grdGetkhatonichange.Columns[2].ReadOnly = true;
-            grdGetkhatonichange.Columns[3].ReadOnly = true;
-            grdGetkhatonichange.Columns[4].ReadOnly = true;
-            grdGetkhatonichange.Columns[5].ReadOnly = true;
-            grdGetkhatonichange.Columns["KhatooniId"].Visible = false;
-            grdGetkhatonichange.Columns["RegisterHqDKhataId"].Visible = false;
-            grdGetkhatonichange.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-            grdGetkhatonichange.Columns["Khatooni_Hissa"].HeaderText = "حصہ";
-            grdGetkhatonichange.Columns["Khatooni_Kanal"].HeaderText = "کنال";
-            grdGetkhatonichange.Columns["Khatooni_Marla"].HeaderText = "مرلہ";
-            grdGetkhatonichange.Columns["Khatooni_Sarsai"].HeaderText = "سرسائی";
-            grdGetkhatonichange.Columns["Khatooni_Feet"].HeaderText = "فٹ";
-            grdGetkhatonichange.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "تفصیل حصہ داران وکاشتکاران";
-            grdGetkhatonichange.Columns["KhatooniLagan"].HeaderText = "لگان";
-            grdGetkhatonichange.Columns["Wasail_e_Abpashi"].HeaderText = "وسایل آبپاشی";
+            if (dvTaqseemKhatoonies != null)
+            {
+                grdGetkhatonichange.ReadOnly = false;
+                grdGetkhatonichange.Columns[1].ReadOnly = true;
+                grdGetkhatonichange.Columns[2].ReadOnly = true;
+                grdGetkhatonichange.Columns[3].ReadOnly = true;
+                grdGetkhatonichange.Columns[4].ReadOnly = true;
+                grdGetkhatonichange.Columns[5].ReadOnly = true;
+                grdGetkhatonichange.Columns["KhatooniId"].Visible = false;
+                grdGetkhatonichange.Columns["RegisterHqDKhataId"].Visible = false;
+                grdGetkhatonichange.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                grdGetkhatonichange.Columns["Khatooni_Hissa"].HeaderText = "حصہ";
+                grdGetkhatonichange.Columns["Khatooni_Kanal"].HeaderText = "کنال";
+                grdGetkhatonichange.Columns["Khatooni_Marla"].HeaderText = "مرلہ";
+                grdGetkhatonichange.Columns["Khatooni_Sarsai"].HeaderText = "سرسائی";
+                grdGetkhatonichange.Columns["Khatooni_Feet"].HeaderText = "فٹ";
+                grdGetkhatonichange.Columns["KhatooniKashtkaranFullDetail_New"].HeaderText = "تفصیل حصہ داران وکاشتکاران";
+                grdGetkhatonichange.Columns["KhatooniLagan"].HeaderText = "لگان";
+                grdGetkhatonichange.Columns["Wasail_e_Abpashi"].HeaderText = "وسایل آبپاشی";
+            }
         }
 
         #endregion
@@ -4848,11 +4893,14 @@ namespace SDC_Application.AL
                 ClearKhatooni();
                 string moza = this.IntiqalId.Substring(0, 5);
                 dt = taqseemnewkhata.Proc_Get_Max_Khatooni_No_By_Moza(moza);
-                foreach (DataRow d in dt.Rows)
+                if (dt != null)
                 {
-                    int kata = Convert.ToInt32(d["NewKhatooniNo"].ToString());
-                    kata = kata + 1;
-                    this.txtKhatooninumchagee.Text = kata.ToString();
+                    foreach (DataRow d in dt.Rows)
+                    {
+                        int kata = Convert.ToInt32(d["NewKhatooniNo"].ToString());
+                        kata = kata + 1;
+                        this.txtKhatooninumchagee.Text = kata.ToString();
+                    }
                 }
             }
             catch (Exception)
@@ -4961,23 +5009,25 @@ namespace SDC_Application.AL
                         if (dt != null)
                         {
                             this.grdNewKhasrajat.DataSource = dt;
+                            if (dt != null)
+                            {
+                                grdNewKhasrajat.Columns["KhassraDetailId"].Visible = false;
+                                grdNewKhasrajat.Columns["AreaTypeId"].Visible = false;
+                                grdNewKhasrajat.Columns["KhatooniId"].Visible = false;
+                                grdNewKhasrajat.Columns["KhassraId"].Visible = false;
+                                //grdNewKhasrajat.Columns["AreaType"].Visible = false;
+                                //grdNewKhasrajat.Columns["Kanal"].Visible = false;
+                                //grdNewKhasrajat.Columns["Marla"].Visible = false;
+                                //grdNewKhasrajat.Columns["Sarsai"].Visible = false;
+                                //grdNewKhasrajat.Columns["Feet"].Visible = false;
+                                grdNewKhasrajat.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
+                                grdNewKhasrajat.Columns["AreaType"].HeaderText = "قسم خسرہ";
 
-                            grdNewKhasrajat.Columns["KhassraDetailId"].Visible = false;
-                            grdNewKhasrajat.Columns["AreaTypeId"].Visible = false;
-                            grdNewKhasrajat.Columns["KhatooniId"].Visible = false;
-                            grdNewKhasrajat.Columns["KhassraId"].Visible = false;
-                            //grdNewKhasrajat.Columns["AreaType"].Visible = false;
-                            //grdNewKhasrajat.Columns["Kanal"].Visible = false;
-                            //grdNewKhasrajat.Columns["Marla"].Visible = false;
-                            //grdNewKhasrajat.Columns["Sarsai"].Visible = false;
-                            //grdNewKhasrajat.Columns["Feet"].Visible = false;
-                            grdNewKhasrajat.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
-                            grdNewKhasrajat.Columns["AreaType"].HeaderText = "قسم خسرہ";
-
-                            grdNewKhasrajat.Columns["Kanal"].HeaderText = "کنال";
-                            grdNewKhasrajat.Columns["Marla"].HeaderText = "مرلہ";
-                            grdNewKhasrajat.Columns["Sarsai"].HeaderText = "سرسائی";
-                            grdNewKhasrajat.Columns["Feet"].HeaderText = "فٹ";
+                                grdNewKhasrajat.Columns["Kanal"].HeaderText = "کنال";
+                                grdNewKhasrajat.Columns["Marla"].HeaderText = "مرلہ";
+                                grdNewKhasrajat.Columns["Sarsai"].HeaderText = "سرسائی";
+                                grdNewKhasrajat.Columns["Feet"].HeaderText = "فٹ";
+                            }
                         }
                     }
                 }
@@ -5992,22 +6042,24 @@ namespace SDC_Application.AL
     private void FillGridviewSalamJuzviKhassra()
     {
         GridviewSaveSalamJuzviKhassra.DataSource = Intiqal.GetIntiqalSalamJuzviKhassra(this.IntiqalKhataRecId);
-        GridviewSaveSalamJuzviKhassra.Columns["MinType"].HeaderText = "قسم من";
-        GridviewSaveSalamJuzviKhassra.Columns["Min_KhassraNo"].HeaderText = "نمبر خسرہ";
-        GridviewSaveSalamJuzviKhassra.Columns["KhatooniNo"].HeaderText = "نمبر کھتونی";
-        GridviewSaveSalamJuzviKhassra.Columns["AreaType"].HeaderText = "قسم زمین";
-        GridviewSaveSalamJuzviKhassra.Columns["Min_Kanal"].HeaderText = "کنال";
-        GridviewSaveSalamJuzviKhassra.Columns["Min_Marla"].HeaderText = "مرلہ";
-        GridviewSaveSalamJuzviKhassra.Columns["Min_Sarsai"].HeaderText = "سرسائی";
-        GridviewSaveSalamJuzviKhassra.Columns["Min_Feet"].HeaderText = "فٹ";
+            if (GridviewSaveSalamJuzviKhassra.DataSource != null)
+            {
+                GridviewSaveSalamJuzviKhassra.Columns["MinType"].HeaderText = "قسم من";
+                GridviewSaveSalamJuzviKhassra.Columns["Min_KhassraNo"].HeaderText = "نمبر خسرہ";
+                GridviewSaveSalamJuzviKhassra.Columns["KhatooniNo"].HeaderText = "نمبر کھتونی";
+                GridviewSaveSalamJuzviKhassra.Columns["AreaType"].HeaderText = "قسم زمین";
+                GridviewSaveSalamJuzviKhassra.Columns["Min_Kanal"].HeaderText = "کنال";
+                GridviewSaveSalamJuzviKhassra.Columns["Min_Marla"].HeaderText = "مرلہ";
+                GridviewSaveSalamJuzviKhassra.Columns["Min_Sarsai"].HeaderText = "سرسائی";
+                GridviewSaveSalamJuzviKhassra.Columns["Min_Feet"].HeaderText = "فٹ";
 
-        GridviewSaveSalamJuzviKhassra.Columns["SalamJuzviKhassraId"].Visible = false;
-        GridviewSaveSalamJuzviKhassra.Columns["KhatooniId"].Visible = false;
-        GridviewSaveSalamJuzviKhassra.Columns["KhassraId"].Visible = false;
-        GridviewSaveSalamJuzviKhassra.Columns["IntiqalKhataRecId"].Visible = false;
-        GridviewSaveSalamJuzviKhassra.Columns["AreaTypeId"].Visible = false;
-        GridviewSaveSalamJuzviKhassra.Columns["khassraDetailId"].Visible = false;
-
+                GridviewSaveSalamJuzviKhassra.Columns["SalamJuzviKhassraId"].Visible = false;
+                GridviewSaveSalamJuzviKhassra.Columns["KhatooniId"].Visible = false;
+                GridviewSaveSalamJuzviKhassra.Columns["KhassraId"].Visible = false;
+                GridviewSaveSalamJuzviKhassra.Columns["IntiqalKhataRecId"].Visible = false;
+                GridviewSaveSalamJuzviKhassra.Columns["AreaTypeId"].Visible = false;
+                GridviewSaveSalamJuzviKhassra.Columns["khassraDetailId"].Visible = false;
+            }
     }
         #endregion
 
@@ -6075,15 +6127,20 @@ namespace SDC_Application.AL
         private void txtSearchMalik_TextChanged(object sender, EventArgs e)
         {
             string filter = txtSearchMalik.Text.Trim();
-            dvTaqseemMalkan.RowFilter = "PersonName LIKE '%" + filter + "%'";
-            FillGridMalikanChange(dvTaqseemMalkan.ToTable());
+            if (dvTaqseemMalkan != null)
+            {
+                dvTaqseemMalkan.RowFilter = "PersonName LIKE '%" + filter + "%'";
+                FillGridMalikanChange(dvTaqseemMalkan.ToTable());
+            }
         }
         private void txtMushtriTaqseemSearch_TextChanged(object sender, EventArgs e)
         {
             string filter = txtMushtriTaqseemSearch.Text.Trim();
-            dvTaqseemMushtryan.RowFilter = "CompleteName LIKE '%" + filter + "%'";
-            FillGridTaqseemMushtryan(dvTaqseemMushtryan.ToTable());
-
+            if (dvTaqseemMushtryan != null)
+            {
+                dvTaqseemMushtryan.RowFilter = "CompleteName LIKE '%" + filter + "%'";
+                FillGridTaqseemMushtryan(dvTaqseemMushtryan.ToTable());
+            }
 
         }
         #endregion
@@ -6372,9 +6429,12 @@ namespace SDC_Application.AL
             txtparentKhataId.Text = "-1";
             string IntiqalNoONParentKhata = "0";
             IntiqalNoONParentKhata = Intiqal.GetIntiqalOnParentKhata(cbokhataNo.SelectedValue.ToString(), this.IntiqalId);
-            if (IntiqalNoONParentKhata !="0")
+            if (IntiqalNoONParentKhata != null)
             {
-                MessageBox.Show(" انتخاب کردہ کھاتہ انتقال نمبر " + IntiqalNoONParentKhata + " من ہو چکا ہے۔ اگر اپنے اس کھاتہ میں انتقال کا اندراج کیا تو اسکا عمل نہیں ائیگا۔ ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (IntiqalNoONParentKhata != "0")
+                {
+                    MessageBox.Show(" انتخاب کردہ کھاتہ انتقال نمبر " + IntiqalNoONParentKhata + " من ہو چکا ہے۔ اگر اپنے اس کھاتہ میں انتقال کا اندراج کیا تو اسکا عمل نہیں ائیگا۔ ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             Fill_InteqalKhataGrid();
         }
@@ -6548,7 +6608,10 @@ namespace SDC_Application.AL
 
         private void txtSearchBuyers_TextChanged(object sender, EventArgs e)
         {
-            bb.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchBuyers.Text);
+            if (bb.DataSource != null)
+            {
+                bb.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchBuyers.Text);
+            }
         }
 
         private void txtSearchBuyers_KeyPress(object sender, KeyPressEventArgs e)
@@ -6653,14 +6716,17 @@ namespace SDC_Application.AL
             string year = date.Year.ToString();
             datetoken = year + "-" + month + "-" + day;
             this.TokenList = inteq.GetTransactionalTokenNoListByDateKhata(this.IntiqalKhataId.ToString(), datetoken);
-            DataRow Token = TokenList.NewRow();
-            Token["TokenId"] = "0";
-            Token["TokenNo"] = " - ٹوکن نمبر - ";
-            TokenList.Rows.InsertAt(Token, 0);
-            cmbFardTokenNo.DataSource = TokenList;
-            cmbFardTokenNo.DisplayMember = "TokenNo";
-            cmbFardTokenNo.ValueMember = "TokenId";
-            cmbFardTokenNo.SelectedIndex = 0;
+            if (this.TokenList != null)
+            {
+                DataRow Token = TokenList.NewRow();
+                Token["TokenId"] = "0";
+                Token["TokenNo"] = " - ٹوکن نمبر - ";
+                TokenList.Rows.InsertAt(Token, 0);
+                cmbFardTokenNo.DataSource = TokenList;
+                cmbFardTokenNo.DisplayMember = "TokenNo";
+                cmbFardTokenNo.ValueMember = "TokenId";
+                cmbFardTokenNo.SelectedIndex = 0;
+            }
         }
 
         private void cmbFardTokenNo_SelectedValueChanged(object sender, EventArgs e)
@@ -7024,8 +7090,11 @@ namespace SDC_Application.AL
         private void txtSearchKhatooni_TextChanged(object sender, EventArgs e)
         {
             string filter = txtSearchKhatooni.Text.Trim();
-            dvTaqseemKhatoonies.RowFilter = "KhatooniNo LIKE '%" + filter + "%'";
-            FillKhatooniGrid();
+            if (dvTaqseemKhatoonies != null)
+            {
+                dvTaqseemKhatoonies.RowFilter = "KhatooniNo LIKE '%" + filter + "%'";
+                FillKhatooniGrid();
+            }
         }
 
        

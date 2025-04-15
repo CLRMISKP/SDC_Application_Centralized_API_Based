@@ -70,6 +70,8 @@ namespace SDC_Application.AL
         {
         try
             {
+                dt = null;
+                grdTokenData.DataSource = null;
                 if (fromform == "1" || fromform == "2" || fromform == "4")
                 {
                     dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + fromform + "',"+UsersManagments.SubSdcId.ToString());
@@ -83,17 +85,20 @@ namespace SDC_Application.AL
                 {
                     dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "' ,"+UsersManagments.SubSdcId.ToString());
                 }
-                DataTable outputTable = dt.Clone();
-
-                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                if (dt != null)
                 {
-                    outputTable.ImportRow(dt.Rows[i]);
+                    DataTable outputTable = dt.Clone();
+
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        outputTable.ImportRow(dt.Rows[i]);
+                    }
+                    grdTokenData.DataSource = outputTable;
+                    TT_forSearch();
+
+
+                    Populategrid();
                 }
-                grdTokenData.DataSource = outputTable;
-                TT_forSearch();
-
-
-                Populategrid();
             }
             catch (Exception ex)
             {
@@ -103,50 +108,53 @@ namespace SDC_Application.AL
         public void   Populategrid()
 
         {
-            grdTokenData.Columns["Token_ShortDate"].DisplayIndex = 0; 
-            grdTokenData.Columns["TokenNo"].DisplayIndex = 1;
-            grdTokenData.Columns["Visitor_Name"].DisplayIndex = 2;
-            grdTokenData.Columns["Visitor_FatherName"].DisplayIndex = 3;
-            grdTokenData.Columns["Visitor_CNIC"].DisplayIndex = 4;
-            grdTokenData.Columns["ServiceTypeName_Urdu"].DisplayIndex =5;        
-            grdTokenData.Columns["Token_Verified"].DisplayIndex = 6;
-            grdTokenData.Columns["MozaNameUrdu"].DisplayIndex = 7;
-          
-
-            
-            grdTokenData.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-            grdTokenData.Columns["Token_ShortDate"].HeaderText = "ٹوکن کی تاریخ";
-            grdTokenData.Columns["Visitor_Name"].HeaderText = "نام";
-            grdTokenData.Columns["Visitor_FatherName"].HeaderText = "والد/شوہر";
-            grdTokenData.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ";
-            grdTokenData.Columns["Token_Verified"].HeaderText =  "تصدیق شدہ";
-            grdTokenData.Columns["MozaNameUrdu"].HeaderText = "موضع";
-            grdTokenData.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
-            grdTokenData.Columns["TokenService_For_MozaId"].Visible = false;
-            grdTokenData.Columns["TokenDate"].Visible = false;
-            grdTokenData.Columns["ServiceTypeId"].Visible = false;
-            grdTokenData.Columns["TokenId"].Visible = false;
-            //grdTokenData.Columns["PV_Status"].Visible = false;
-
-            if (fromform == "1" || fromform == "2" || fromform == "3" || fromform == "4")
+            if (grdTokenData.DataSource != null)
             {
-                grdTokenData.Columns["TokenPurposeId"].Visible = false;
-            }
+                grdTokenData.Columns["Token_ShortDate"].DisplayIndex = 0;
+                grdTokenData.Columns["TokenNo"].DisplayIndex = 1;
+                grdTokenData.Columns["Visitor_Name"].DisplayIndex = 2;
+                grdTokenData.Columns["Visitor_FatherName"].DisplayIndex = 3;
+                grdTokenData.Columns["Visitor_CNIC"].DisplayIndex = 4;
+                grdTokenData.Columns["ServiceTypeName_Urdu"].DisplayIndex = 5;
+                grdTokenData.Columns["Token_Verified"].DisplayIndex = 6;
+                grdTokenData.Columns["MozaNameUrdu"].DisplayIndex = 7;
 
-            if (fromform == "3")
-            {
-                grdTokenData.Columns["IntiqalId"].Visible = false;
-                grdTokenData.Columns["IntiqalTypeId"].Visible = false;
-                grdTokenData.Columns["KKM"].Visible = false;
-                grdTokenData.Columns["PV_Verified_Status"].Visible = false;
+
+
+                grdTokenData.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
+                grdTokenData.Columns["Token_ShortDate"].HeaderText = "ٹوکن کی تاریخ";
+                grdTokenData.Columns["Visitor_Name"].HeaderText = "نام";
+                grdTokenData.Columns["Visitor_FatherName"].HeaderText = "والد/شوہر";
+                grdTokenData.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ";
+                grdTokenData.Columns["Token_Verified"].HeaderText = "تصدیق شدہ";
+                grdTokenData.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdTokenData.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
+                grdTokenData.Columns["TokenService_For_MozaId"].Visible = false;
+                grdTokenData.Columns["TokenDate"].Visible = false;
+                grdTokenData.Columns["ServiceTypeId"].Visible = false;
+                grdTokenData.Columns["TokenId"].Visible = false;
+                //grdTokenData.Columns["PV_Status"].Visible = false;
+
+                if (fromform == "1" || fromform == "2" || fromform == "3" || fromform == "4")
+                {
+                    grdTokenData.Columns["TokenPurposeId"].Visible = false;
+                }
+
+                if (fromform == "3")
+                {
+                    grdTokenData.Columns["IntiqalId"].Visible = false;
+                    grdTokenData.Columns["IntiqalTypeId"].Visible = false;
+                    grdTokenData.Columns["KKM"].Visible = false;
+                    grdTokenData.Columns["PV_Verified_Status"].Visible = false;
+                }
+                if (fromform == "4")
+                {
+                    grdTokenData.Columns["pvstatus"].Visible = false;
+                }
+                objdatagrid.colorrbackgrid(grdTokenData);
+                objdatagrid.gridControls(grdTokenData);
+                grdTokenData.Columns["Visitor_CNIC"].Width = 180;
             }
-            if (fromform == "4")
-            {
-                grdTokenData.Columns["pvstatus"].Visible = false;
-            }
-            objdatagrid.colorrbackgrid(grdTokenData);
-            objdatagrid.gridControls(grdTokenData);
-            grdTokenData.Columns["Visitor_CNIC"].Width = 180;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -155,43 +163,51 @@ namespace SDC_Application.AL
         }
         public void fillgv_by_filter(string Condition)
         {
-           
-            DataView v = new DataView(dt);
-            v.RowFilter = Condition;
-            grdTokenData.DataSource = v;
+            if (dt != null)
+            {
+                DataView v = new DataView(dt);
+                v.RowFilter = Condition;
+                grdTokenData.DataSource = v;
+            }
+            else
+                grdTokenData.DataSource = null;
         }
 
 
 
         public void filldatagrid(string query)
         {
-            dt.Clear();
-            dt = this.objbusines.filldatatable_from_storedProcedure(query);
-           // bs.DataSource = dt;
-            grdTokenData.DataSource = dt;
-            if (dt.Rows.Count > 0)
+            if (dt != null)
             {
-                objdatagrid.gridControls(grdTokenData);
-                //lblrecordfound.Text = dt.Rows.Count.ToString();
+                dt.Clear();
+                dt = this.objbusines.filldatatable_from_storedProcedure(query);
+                // bs.DataSource = dt;
+                grdTokenData.DataSource = dt;
+                if (dt.Rows.Count > 0)
+                {
+                    objdatagrid.gridControls(grdTokenData);
+                    //lblrecordfound.Text = dt.Rows.Count.ToString();
+                }
+                else
+                {
+                    //lblrecordfound.Text = "0";
+                }
+                objdatagrid.colorrbackgrid(grdTokenData);
+
+                //grdTokenData.Columns[0].HeaderText = "ٹوکن نمبر";
+                //grdTokenData.Columns[1].HeaderText = "ںام";
+                //grdTokenData.Columns[2].HeaderText = "شناختی کارڈ";
+                //grdTokenData.Columns[3].HeaderText = "مقصد";
+                //grdTokenData.Columns[4].HeaderText = "سہولت";
+                //grdTokenData.Columns[5].HeaderText = "ٹوکن کا موجودہ حالت";
+                //grdTokenData.Columns[6].HeaderText = "تاریخ";
+                //grdTokenData.Columns[7].Visible = false;
+                //grdTokenData.Columns[8].Visible = false;
+                //grdTokenData.Columns[9].Visible = false;
+                //grdTokenData.Columns[10].Visible = false;
             }
             else
-            {
-                //lblrecordfound.Text = "0";
-            }
-            objdatagrid.colorrbackgrid(grdTokenData);
-
-            //grdTokenData.Columns[0].HeaderText = "ٹوکن نمبر";
-            //grdTokenData.Columns[1].HeaderText = "ںام";
-            //grdTokenData.Columns[2].HeaderText = "شناختی کارڈ";
-            //grdTokenData.Columns[3].HeaderText = "مقصد";
-            //grdTokenData.Columns[4].HeaderText = "سہولت";
-            //grdTokenData.Columns[5].HeaderText = "ٹوکن کا موجودہ حالت";
-            //grdTokenData.Columns[6].HeaderText = "تاریخ";
-            //grdTokenData.Columns[7].Visible = false;
-            //grdTokenData.Columns[8].Visible = false;
-            //grdTokenData.Columns[9].Visible = false;
-            //grdTokenData.Columns[10].Visible = false;
-
+                grdTokenData.DataSource = null;
         }
 
         private void grdTokenData_Click(object sender, EventArgs e)
@@ -328,16 +344,21 @@ namespace SDC_Application.AL
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if(dt!=null)
             dt.Clear();
             Proc_Get_SDC_TokenList_For_PaymentVoucher();
         }
 
         private void dateTime_ValueChanged(object sender, EventArgs e)
         {
+            
             btnSearch_Click(sender, e);
-            objdatagrid.colorrbackgrid(grdTokenData);
-            objdatagrid.gridControls(grdTokenData);
-            grdTokenData.Columns["Visitor_CNIC"].Width = 180;
+            if (grdTokenData.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdTokenData);
+                objdatagrid.gridControls(grdTokenData);
+                grdTokenData.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
         private void grdTokenData_CellContentClick(object sender, DataGridViewCellEventArgs e)

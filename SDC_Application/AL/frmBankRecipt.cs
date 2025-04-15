@@ -10,7 +10,6 @@ using System.Collections;
 using System.IO;
 using System.Drawing.Drawing2D;
 using SDC_Application.Classess;
-using LandInfo.ControlsLib;
 using SDC_Application.DL;
 using SDC_Application.BL;
 using System.Data.SqlClient;
@@ -245,28 +244,31 @@ public void PupulateGrid(string getstatus)
 {
 
     dt = bankobj.getBankRecords(getstatus);
-    bs.DataSource = dt;
-    grdBankData.DataSource = dt;
-    grdBankData.Columns["DepositId"].Visible = false;
-    grdBankData.Columns["TehsilId"].Visible = false;
-    grdBankData.Columns["ServiceTypeId"].Visible = false;  
-    
-    grdBankData.Columns["BankRecieptNo"].DisplayIndex = 1;
-    grdBankData.Columns["Amount"].DisplayIndex = 2;
-    grdBankData.Columns["DepositedBy"].DisplayIndex = 3;
-    grdBankData.Columns["DepositDate"].DisplayIndex = 4;
-    grdBankData.Columns["DepositDateBank"].DisplayIndex = 5;
-    grdBankData.Columns["Bank"].DisplayIndex = 6;
-    grdBankData.Columns["sdc"].DisplayIndex = 7;
-   
-   
-    grdBankData.Columns["Amount"].HeaderText = "رقم";
-    grdBankData.Columns["BankRecieptNo"].HeaderText = "رسید نمبر";
-    grdBankData.Columns["DepositDate"].HeaderText = " تاریخ";
-    grdBankData.Columns["DepositDateBank"].HeaderText = " بتاریخ";
-    grdBankData.Columns["DepositedBy"].HeaderText = "نام جمع کنندہ";
-    objdatagrid.colorrbackgrid(grdBankData);
-    objdatagrid.gridControls(grdBankData);
+            if (dt != null)
+            {
+                bs.DataSource = dt;
+                grdBankData.DataSource = dt;
+                grdBankData.Columns["DepositId"].Visible = false;
+                grdBankData.Columns["TehsilId"].Visible = false;
+                grdBankData.Columns["ServiceTypeId"].Visible = false;
+
+                grdBankData.Columns["BankRecieptNo"].DisplayIndex = 1;
+                grdBankData.Columns["Amount"].DisplayIndex = 2;
+                grdBankData.Columns["DepositedBy"].DisplayIndex = 3;
+                grdBankData.Columns["DepositDate"].DisplayIndex = 4;
+                grdBankData.Columns["DepositDateBank"].DisplayIndex = 5;
+                grdBankData.Columns["Bank"].DisplayIndex = 6;
+                grdBankData.Columns["sdc"].DisplayIndex = 7;
+
+
+                grdBankData.Columns["Amount"].HeaderText = "رقم";
+                grdBankData.Columns["BankRecieptNo"].HeaderText = "رسید نمبر";
+                grdBankData.Columns["DepositDate"].HeaderText = " تاریخ";
+                grdBankData.Columns["DepositDateBank"].HeaderText = " بتاریخ";
+                grdBankData.Columns["DepositedBy"].HeaderText = "نام جمع کنندہ";
+                objdatagrid.colorrbackgrid(grdBankData);
+                objdatagrid.gridControls(grdBankData);
+            }
 }
 #endregion
 #region ClearFields
@@ -299,20 +301,23 @@ private void grdBankData_CellClick(object sender, DataGridViewCellEventArgs e)
             if (e.ColumnIndex == this.grdBankData.CurrentRow.Cells["Bank"].ColumnIndex)
             {
                 dtt = bankobj.getBankRecords("Proc_Get_SDC_BankDeposit_ScanImages '" + depositidee + "'");
-                foreach (DataRow dr in dtt.Rows)
-                {
+                        if (dtt != null)
+                        {
+                            foreach (DataRow dr in dtt.Rows)
+                            {
 
-                    if (dr["ImgBankReciept"] == DBNull.Value)
-                    {
-                        MessageBox.Show("بنک کے رسید کا امیج نہی ملا", "", MessageBoxButtons.OK);
-                    }
-                    else
-                    {
-                        byte[] fileData = (byte[])dr["ImgBankReciept"];
-                        this.ReceivedImage = fileData;
-                        CreatePdf();
-                    }
-                }
+                                if (dr["ImgBankReciept"] == DBNull.Value)
+                                {
+                                    MessageBox.Show("بنک کے رسید کا امیج نہی ملا", "", MessageBoxButtons.OK);
+                                }
+                                else
+                                {
+                                    byte[] fileData = (byte[])dr["ImgBankReciept"];
+                                    this.ReceivedImage = fileData;
+                                    CreatePdf();
+                                }
+                            }
+                        }
 
             }
             if (e.ColumnIndex == this.grdBankData.CurrentRow.Cells["sdc"].ColumnIndex)
@@ -399,16 +404,22 @@ void p_Exited(object sender, EventArgs e)
 
 private void txtrecSearch_TextChanged(object sender, EventArgs e)
 {
-    bs.Filter = string.Format("BankRecieptNo LIKE '%{0}%'", txtrecSearch.Text);
-    objdatagrid.colorrbackgrid(grdBankData);
-    objdatagrid.gridControls(grdBankData);
+            if (bs != null)
+            {
+                bs.Filter = string.Format("BankRecieptNo LIKE '%{0}%'", txtrecSearch.Text);
+                objdatagrid.colorrbackgrid(grdBankData);
+                objdatagrid.gridControls(grdBankData);
+            }
 }
 
 private void txtDateSearch_TextChanged(object sender, EventArgs e)
 {
-    bs.Filter = string.Format("DepositDate LIKE '%{0}%'", txtrecSearch.Text);
-    objdatagrid.colorrbackgrid(grdBankData);
-    objdatagrid.gridControls(grdBankData);
+            if (bs != null)
+            {
+                bs.Filter = string.Format("DepositDate LIKE '%{0}%'", txtrecSearch.Text);
+                objdatagrid.colorrbackgrid(grdBankData);
+                objdatagrid.gridControls(grdBankData);
+            }
 }
 
 private void grdBankData_DoubleClick(object sender, EventArgs e)
@@ -436,27 +447,28 @@ private void grdBankData_DoubleClick(object sender, EventArgs e)
                     DataTable dtt = new DataTable();
                     Dep_ID = grdBankData.CurrentRow.Cells["DepositId"].Value.ToString();
                     dtt = bankobj.getBankRecords("Proc_Get_SDC_BankDeposit_ScanImages'" + Dep_ID + "'");
-                   foreach (DataRow dr in dtt.Rows)
-            {
+                if(dtt!=null) {
+                    foreach (DataRow dr in dtt.Rows)
+                    {
 
-                if (dr["ImgBankReciept"] == DBNull.Value)
-                {
-                    BankImage = null;
-                }
-                    else
-                {
-                    BankImage = (byte[])dr["ImgBankReciept"];
-                }
+                        if (dr["ImgBankReciept"] == DBNull.Value)
+                        {
+                            BankImage = null;
+                        }
+                        else
+                        {
+                            BankImage = (byte[])dr["ImgBankReciept"];
+                        }
 
-                if (dr["ImgSDCReport"] == DBNull.Value)
-                {
-                    SDCImage = null;
-                }
-                else
-                {
-                    SDCImage = (byte[])dr["ImgSDCReport"];
-                }              
-            
+                        if (dr["ImgSDCReport"] == DBNull.Value)
+                        {
+                            SDCImage = null;
+                        }
+                        else
+                        {
+                            SDCImage = (byte[])dr["ImgSDCReport"];
+                        }
+                    }
 
         }
 

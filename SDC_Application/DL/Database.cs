@@ -10,109 +10,86 @@ using System.Text;
 using System.Windows.Forms;
 using SDC_Application.AL;
 using System.Configuration;
+using SDC_Application.Classess;
 
 namespace SDC_Application.DL
 {
     class Database
     {
-        public static SqlConnection Connection=null;
-        public static SqlDataReader dr=null;
-        public SqlCommand insertCommand;
-        public SqlCommand Command;
-        public SqlDataAdapter da=new SqlDataAdapter();
+        public APIClient client = new APIClient();
+//        public static SqlConnection Connection=null;
+//        public static SqlDataReader dr=null;
+//        public SqlCommand insertCommand;
+//        public SqlCommand Command;
+//        public SqlDataAdapter da=new SqlDataAdapter();
 
-        static string ds =SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
-        static string db =SDC_Application.Classess.Crypto.Decrypt(ConfigurationSettings.AppSettings["db"]);
-        //static string password = ConfigurationSettings.AppSettings["allow"];
-        static string password = SDC_Application.Classess.Crypto.Decrypt(ConfigurationSettings.AppSettings["allow"]);
+//        static string ds =SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
+//        static string db =SDC_Application.Classess.Crypto.Decrypt(ConfigurationSettings.AppSettings["db"]);
+//        //static string password = ConfigurationSettings.AppSettings["allow"];
+//        static string password = SDC_Application.Classess.Crypto.Decrypt(ConfigurationSettings.AppSettings["allow"]);
         
-        //
-//private static string mySqlConnectionString = "Data Source=unh-pak-1860\\unhabitat1;Initial Catalog=Mardan_AmalDaramad; MultipleActiveResultSets=True;integrated security=true";
-        private static string mySqlConnectionString = "Data Source=" + ds + ";Initial Catalog=" + db + ";user id=dlis; Password="+password+";MultipleActiveResultSets=True";
+//        //
+////private static string mySqlConnectionString = "Data Source=unh-pak-1860\\unhabitat1;Initial Catalog=Mardan_AmalDaramad; MultipleActiveResultSets=True;integrated security=true";
+//        private static string mySqlConnectionString = "Data Source=" + ds + ";Initial Catalog=" + db + ";user id=dlis; Password="+password+";MultipleActiveResultSets=True";
         
-        #region  Connection Estiblishment
-        public static void CloseConn()
-        {
-            if (Connection != null)
-            {
-                if (Connection.State == ConnectionState.Open)
-                {
-                    Connection.Close();
-                }
-                Connection.Dispose();
-
-            }
-        }
-        public static SqlConnection CreateConn()
-        {
-            if (Connection == null)
-            {
-                Connection = new SqlConnection();
-            }
-            if (Connection.ConnectionString == string.Empty || Connection.ConnectionString == null)
-            {
-                try
-                {
-                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=100;Connect Timeout=600;" + mySqlConnectionString + ";";
-                    Connection.Open();
-                }
-                catch (Exception)
-                {
-                    if (Connection.State != ConnectionState.Closed)
-                    {
-                        Connection.Close();
-                    }
-                    Connection.ConnectionString = "Pooling=false;Connect Timeout=600;" + mySqlConnectionString + ";";
-                    Connection.Open();
-                }
-                return Connection;
-            }
-            if (Connection.State != ConnectionState.Open)
-            {
-                try
-                {
-                    Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=100;Connect Timeout=600;" + mySqlConnectionString + ";";
-                    Connection.Open();
-                }
-                catch (Exception)
-                {
-                    if (Connection.State != ConnectionState.Closed)
-                    {
-                        Connection.Close();
-                    }
-                    Connection.ConnectionString = "Pooling=false;Connect Timeout=600;" + mySqlConnectionString + ";";
-                    Connection.Open();
-                }
-            }
-            return Connection;
-        }
-        #endregion Connection Closed
-
-        /// <summary>
-        /// selection_squery when Need data reader password or textbinding
-        /// </summary>
-        
-        #region Selection_Query
-        //public SqlDataReader selection_squery(string str)
+        //#region  Connection Estiblishment
+        //public static void CloseConn()
         //{
+        //    if (Connection != null)
+        //    {
+        //        if (Connection.State == ConnectionState.Open)
+        //        {
+        //            Connection.Close();
+        //        }
+        //        Connection.Dispose();
 
-        //    dr = null;
-
-        //    SqlCommand cmd = new SqlCommand(str,CreateConn());
-        //    dr = cmd.ExecuteReader();
-
-        //    return dr;
+        //    }
         //}
+        //public static SqlConnection CreateConn()
+        //{
+        //    if (Connection == null)
+        //    {
+        //        Connection = new SqlConnection();
+        //    }
+        //    if (Connection.ConnectionString == string.Empty || Connection.ConnectionString == null)
+        //    {
+        //        try
+        //        {
+        //            Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=100;Connect Timeout=600;" + mySqlConnectionString + ";";
+        //            Connection.Open();
+        //        }
+        //        catch (Exception)
+        //        {
+        //            if (Connection.State != ConnectionState.Closed)
+        //            {
+        //                Connection.Close();
+        //            }
+        //            Connection.ConnectionString = "Pooling=false;Connect Timeout=600;" + mySqlConnectionString + ";";
+        //            Connection.Open();
+        //        }
+        //        return Connection;
+        //    }
+        //    if (Connection.State != ConnectionState.Open)
+        //    {
+        //        try
+        //        {
+        //            Connection.ConnectionString = "Min Pool Size=5;Max Pool Size=100;Connect Timeout=600;" + mySqlConnectionString + ";";
+        //            Connection.Open();
+        //        }
+        //        catch (Exception)
+        //        {
+        //            if (Connection.State != ConnectionState.Closed)
+        //            {
+        //                Connection.Close();
+        //            }
+        //            Connection.ConnectionString = "Pooling=false;Connect Timeout=600;" + mySqlConnectionString + ";";
+        //            Connection.Open();
+        //        }
+        //    }
+        //    return Connection;
+        //}
+        //#endregion Connection Closed
 
-
-        public static bool drclose()
-        {
-            if (!dr.IsClosed)
-                dr.Close();
-            return true;
-        }
-
-        #endregion 
         /// <summary>
         /// filldatatable direct access to database table
         /// </summary>
@@ -120,200 +97,133 @@ namespace SDC_Application.DL
         #region Datatable
         public DataTable fillDataTable(string query)
         {
-            try
-            {
-             DataTable dtt = new DataTable();
-             da= new SqlDataAdapter(query,CreateConn());
-             da.Fill(dtt);
-             CloseConn();
-             return dtt;
-
-             
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-        }
-        /// <summary>
-        /// viewgriddata Fill  gridview by Storeprocedure
-        /// </summary>
-       
-        public DataTable viewGridData(string query)
-        {
-            try
-            {
-
-            DataTable dt_storeProcedure = new DataTable();
-            SqlCommand cmd = new SqlCommand(query, CreateConn());
-            cmd.CommandTimeout = 600;
-            cmd.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand = cmd;
-            da.Fill(dt_storeProcedure);
-            return dt_storeProcedure;
-
-            }
-            catch (Exception ex)
-            {
-                 CloseConn();
-                MessageBox.Show(ex.Message);
-                return null;
-            }
+            UserRequest request = new UserRequest();
+            request.Query = query;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            DataTable dt = client.GetData(request, UsersManagments.userToken);
+            return dt != null ? dt.Columns.Count > 0 ? dt : null : null;
         }
 
+ 
         /// <summary>
         /// filldatatable_from_storedProcedure used to insert/update and retrive result to users
         /// </summary>
        
         public DataTable filldatatable_from_storedProcedure(string spWithParams)
         {
-            try
-            {
-            DataTable dt_storeProcedure = new DataTable();
-            da = new SqlDataAdapter(spWithParams, CreateConn());
-            da.Fill(dt_storeProcedure);
-            CloseConn();
-            return dt_storeProcedure;
-
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return null;
-            }
+            UserRequest request = new UserRequest();
+            request.Query = spWithParams;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            DataTable dt = client.GetData(request, UsersManagments.userToken);
+            return dt != null ? dt.Columns.Count > 0 ? dt : null : null;
 
         }
 
-        public DataTable filldatatable_from_storedProcedure(string storedProcedureName, SqlParameter[] parameters)
+        public DataTable GetUserInfoForMachineReg(string spWithParams)
         {
-            try
-            {
-                DataTable dt_storeProcedure = new DataTable();
-                using (SqlConnection conn = CreateConn())
-                {
-                    using (SqlCommand cmd = new SqlCommand(storedProcedureName, conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddRange(parameters);
-
-                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                        {
-                            da.Fill(dt_storeProcedure);
-                        }
-                    }
-                }
-                return dt_storeProcedure;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-            finally
-            {
-                CloseConn();
-            }
-        }
-
-        public DataTable filldatatable_from_storedProcedureWithReturnVals(string spWithParams , out int RetVal , out string ErrorMsg)
-        {
-            CloseConn();
-            RetVal = 0;
-            ErrorMsg = "";
-
-            try
-            {
-
-                DataSet ds = new DataSet();
-                DataTable dt_storeProcedure = new DataTable();
-                da = new SqlDataAdapter(spWithParams, CreateConn());
-                //da.Fill(dt_storeProcedure);
-                //return dt_storeProcedure;
-
-                SqlConnection con = CreateConn();
-                using (SqlCommand cmd = new SqlCommand(spWithParams, con))
-                {
-                    cmd.CommandTimeout = 600;
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // set up the parameters                    
-                    SqlParameter errorMessage =  cmd.Parameters.Add("@ErrorMsg", SqlDbType.VarChar,1000);//.Direction = 
-                    errorMessage.Direction = ParameterDirection.Output;
-                    SqlParameter retVal = cmd.Parameters.Add("@ReturnValue", SqlDbType.Int);//.Direction = 
-                    retVal.Direction = ParameterDirection.ReturnValue;
-                    // open connection and execute stored procedure
-                   // con.Open();
-                    cmd.ExecuteNonQuery();
-
-                    da.SelectCommand = cmd;
-
-                    da.Fill(ds);
-
-                    return ds.Tables[0];
-                }
-
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return null;
-            }
+            UserInfoForMachinReg request = new UserInfoForMachinReg();
+            request.Query = spWithParams;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            DataTable dt = client.GetUserInfo(request);
+            return dt != null ? dt.Columns.Count > 0 ? dt : null : null;
 
         }
+        //public DataTable filldatatable_from_storedProcedure(string storedProcedureName, SqlParameter[] parameters)
+        //{
+        //    try
+        //    {
+        //        DataTable dt_storeProcedure = new DataTable();
+        //        using (SqlConnection conn = CreateConn())
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand(storedProcedureName, conn))
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.AddRange(parameters);
+
+        //                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+        //                {
+        //                    da.Fill(dt_storeProcedure);
+        //                }
+        //            }
+        //        }
+        //        return dt_storeProcedure;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        CloseConn();
+        //    }
+        //}
+
+        //public DataTable filldatatable_from_storedProcedureWithReturnVals(string spWithParams , out int RetVal , out string ErrorMsg)
+        //{
+        //    CloseConn();
+        //    RetVal = 0;
+        //    ErrorMsg = "";
+
+        //    try
+        //    {
+
+        //        DataSet ds = new DataSet();
+        //        DataTable dt_storeProcedure = new DataTable();
+        //        da = new SqlDataAdapter(spWithParams, CreateConn());
+        //        //da.Fill(dt_storeProcedure);
+        //        //return dt_storeProcedure;
+
+        //        SqlConnection con = CreateConn();
+        //        using (SqlCommand cmd = new SqlCommand(spWithParams, con))
+        //        {
+        //            cmd.CommandTimeout = 600;
+        //            cmd.CommandType = CommandType.StoredProcedure;
+
+        //            // set up the parameters                    
+        //            SqlParameter errorMessage =  cmd.Parameters.Add("@ErrorMsg", SqlDbType.VarChar,1000);//.Direction = 
+        //            errorMessage.Direction = ParameterDirection.Output;
+        //            SqlParameter retVal = cmd.Parameters.Add("@ReturnValue", SqlDbType.Int);//.Direction = 
+        //            retVal.Direction = ParameterDirection.ReturnValue;
+        //            // open connection and execute stored procedure
+        //           // con.Open();
+        //            cmd.ExecuteNonQuery();
+
+        //            da.SelectCommand = cmd;
+
+        //            da.Fill(ds);
+
+        //            return ds.Tables[0];
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        CloseConn();
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //    }
+
+        //}
 
         #endregion
 
         /// <summary>
         /// Insert_StoreProcedure/update when only insertion needed 
         /// </summary>
-        
-        public int Insert_StoreProcedure(string str)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand(str, CreateConn());
-                cmd.CommandTimeout = 600;
-                int retVal=cmd.ExecuteNonQuery();
-                CloseConn();
-                return retVal;
 
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return 0;
-            }
+        public void ExecuteNonQuery(string SpWithParams)
+        {
+            UserRequest request = new UserRequest();
+            request.Query = SpWithParams;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            client.executeNonQuery(request, UsersManagments.userToken);
 
         }
 
         /// <summary>
         /// selection_squery when Need data for databinding
         /// </summary>
-        public SqlDataReader fillDataReader(string str)
-        {
-            try
-            {
-            dr = null;
-
-            SqlCommand cmd = new SqlCommand(str, CreateConn());
-            cmd.CommandTimeout = 600;
-            dr = cmd.ExecuteReader();
-            CloseConn();
-            return dr;
-
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-        }
 
         /// <summary>
         /// Executes Inserts and Updates Stored Procedures and return last Id as string
@@ -322,23 +232,27 @@ namespace SDC_Application.DL
         /// <returns>LastId</returns>
         public string ExecInsertUpdateStoredProcedure(string SpWithParams)
         {
-            try
-            {
-                string lastId = "0";
-                SqlCommand cmd = new SqlCommand(SpWithParams, CreateConn());
-                cmd.CommandTimeout = 600;
-                object retVal =cmd.ExecuteScalar();
-                lastId = retVal != null ? retVal.ToString() : "0";
-                CloseConn();
-                return lastId;
-                
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return "0";
-            }
+            UserRequest request = new UserRequest();
+            request.Query = SpWithParams;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            return client.exexuteScalar(request, UsersManagments.userToken);
+            //try
+            //{
+            //    string lastId = "0";
+            //    SqlCommand cmd = new SqlCommand(SpWithParams, CreateConn());
+            //    cmd.CommandTimeout = 600;
+            //    object retVal =cmd.ExecuteScalar();
+            //    lastId = retVal != null ? retVal.ToString() : "0";
+            //    CloseConn();
+            //    return lastId;
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    CloseConn();
+            //    MessageBox.Show(ex.Message);
+            //    return "0";
+            //}
         }
 
         /// <summary>
@@ -348,26 +262,39 @@ namespace SDC_Application.DL
         /// <returns>LastId</returns>
         public string ExecStoredProcedure(string SpWithParams, SqlCommand c)
         {
-            try
-            {
-                string lastId = "0";
-                SqlCommand cmd = c as SqlCommand;
-                cmd.CommandTimeout = 600;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = CreateConn();
-                cmd.CommandText = SpWithParams;
-                object retVal = cmd.ExecuteScalar();
-                lastId = retVal != null ? retVal.ToString() : "0";
-                CloseConn();
-                return lastId;
-               
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                return "0";
-            }
+            UserRequest request = new UserRequest();
+            request.Query = SpWithParams;
+            //request.cmd = c;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            return client.executeCommand(request, UsersManagments.userToken);
+        }
+        public List<FardPersonImages> execGetFardPersonImages(string TehsilId,string TokenId, string PersonId, string FardPersonRecId, string Token)
+        {
+            return client.GetFardlPersonImages(TehsilId,TokenId, PersonId, FardPersonRecId, Token);
+        }
+        public string ExecStoredProcedure(string SpWithParams, UserRequestIwthPicBiometric userRequest)
+        {
+            //UserRequest request = new UserRequest();
+            //request.Query = SpWithParams;
+            ////request.cmd = c;
+            //request.TehsilId = UsersManagments._Tehsilid.ToString();
+            return client.exexuteScalarWithPicBio(userRequest, UsersManagments.userToken);
+        }
+        public string ExecStoredProcedure(string SpWithParams, UserRequestBioFard userRequest)
+        {
+            //UserRequest request = new UserRequest();
+            //request.Query = SpWithParams;
+            ////request.cmd = c;
+            //request.TehsilId = UsersManagments._Tehsilid.ToString();
+            return client.exexuteScalarWithPicBio(userRequest, UsersManagments.userToken);
+        }
+        public string ExecStoredProcedure(string SpWithParams, UserRequestUserProfile userRequest)
+        {
+            //UserRequest request = new UserRequest();
+            //request.Query = SpWithParams;
+            ////request.cmd = c;
+            //request.TehsilId = UsersManagments._Tehsilid.ToString();
+            return client.exexuteScalarWithPicBio(userRequest, UsersManagments.userToken);
         }
 
         /// <summary>
@@ -377,19 +304,10 @@ namespace SDC_Application.DL
         /// <returns>LastId</returns>
         public void ExecUpdateStoredProcedureWithNoRet(string SpWithParams)
         {
-            try
-            {
-                SqlCommand cmd = new SqlCommand(SpWithParams, CreateConn());
-                cmd.CommandTimeout = 600;
-                int row = cmd.ExecuteNonQuery();
-                CloseConn();
-            }
-            catch (Exception ex)
-            {
-                CloseConn();
-                MessageBox.Show(ex.Message);
-                //return null;
-            }
+            UserRequest request = new UserRequest();
+            request.Query = SpWithParams;
+            request.TehsilId = UsersManagments._Tehsilid.ToString();
+            client.exexuteScalar(request, UsersManagments.userToken);
 
         }
       

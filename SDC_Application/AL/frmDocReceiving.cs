@@ -206,7 +206,9 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dt = DocRc.GetDocReceivedByDate(Date);
-                this.gridviewRcByDate.DataSource = dt;
+                if (dt != null)
+                {
+                    this.gridviewRcByDate.DataSource = dt;
                     gridviewRcByDate.Columns["DocumentNo"].HeaderText = "دستویز نمبر";
                     //gridviewRcByDate.Columns["ReceivingDate"].HeaderText = "تاریخ";
                     gridviewRcByDate.Columns["Title"].HeaderText = "عنوان";
@@ -218,7 +220,7 @@ namespace SDC_Application.AL
                     gridviewRcByDate.Columns["ReceivingId"].Visible = false;
                     gridviewRcByDate.Columns["RecStatus"].Visible = false;
                     gridviewRcByDate.Columns["ReceivingDate"].Visible = false;
-               
+                }
             }
             catch (Exception ex)
             {
@@ -227,7 +229,6 @@ namespace SDC_Application.AL
         }
         #endregion
 
-
         #region Get Registry Received By Date
 
         private void GetRegReceivedByDate(string Date)
@@ -235,37 +236,39 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dt = DocRc.GetRegReceivedByDate(Date);
-                this.grdvReg.DataSource = dt;
+                if (dt != null)
+                {
+                    this.grdvReg.DataSource = dt;
 
-                grdvReg.Columns["RegNo"].DisplayIndex = 0;
-                grdvReg.Columns["JildNo"].DisplayIndex = 1;
-                grdvReg.Columns["RegDate"].DisplayIndex = 2;
-                grdvReg.Columns["SRUrduName"].DisplayIndex = 4;
-                grdvReg.Columns["Seller"].DisplayIndex = 5;
-                grdvReg.Columns["Buyer"].DisplayIndex = 6;
-                grdvReg.Columns["MozaNameUrdu"].DisplayIndex = 3;
-                grdvReg.Columns["status"].DisplayIndex = 7;
-                grdvReg.Columns["Kafiyat"].DisplayIndex = 8;
+                    grdvReg.Columns["RegNo"].DisplayIndex = 0;
+                    grdvReg.Columns["JildNo"].DisplayIndex = 1;
+                    grdvReg.Columns["RegDate"].DisplayIndex = 2;
+                    grdvReg.Columns["SRUrduName"].DisplayIndex = 4;
+                    grdvReg.Columns["Seller"].DisplayIndex = 5;
+                    grdvReg.Columns["Buyer"].DisplayIndex = 6;
+                    grdvReg.Columns["MozaNameUrdu"].DisplayIndex = 3;
+                    grdvReg.Columns["status"].DisplayIndex = 7;
+                    grdvReg.Columns["Kafiyat"].DisplayIndex = 8;
 
-                grdvReg.Columns["RegNo"].HeaderText = "رجسٹری نمبر";
-                grdvReg.Columns["JildNo"].HeaderText = "جلد نمبر";
-                grdvReg.Columns["RegDate"].HeaderText = "رجسٹری تاریخ";
-                grdvReg.Columns["MozaNameUrdu"].HeaderText = "موضع";
-                grdvReg.Columns["SRUrduName"].HeaderText = "سب رجسٹرار";
-                grdvReg.Columns["Seller"].HeaderText = "بائع";
-                grdvReg.Columns["Buyer"].HeaderText = "مشتری";
-                grdvReg.Columns["status"].HeaderText = "حالت";
-                grdvReg.Columns["Kafiyat"].HeaderText = "کیفیت";
-                grdvReg.Columns["SRId"].Visible = false;
-                
-                grdvReg.Columns["MozaId"].Visible = false;
-                grdvReg.Columns["ReceivingId"].Visible = false;
-                grdvReg.Columns["RecStatus"].Visible = false;
+                    grdvReg.Columns["RegNo"].HeaderText = "رجسٹری نمبر";
+                    grdvReg.Columns["JildNo"].HeaderText = "جلد نمبر";
+                    grdvReg.Columns["RegDate"].HeaderText = "رجسٹری تاریخ";
+                    grdvReg.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                    grdvReg.Columns["SRUrduName"].HeaderText = "سب رجسٹرار";
+                    grdvReg.Columns["Seller"].HeaderText = "بائع";
+                    grdvReg.Columns["Buyer"].HeaderText = "مشتری";
+                    grdvReg.Columns["status"].HeaderText = "حالت";
+                    grdvReg.Columns["Kafiyat"].HeaderText = "کیفیت";
+                    grdvReg.Columns["SRId"].Visible = false;
 
-                objdatagrid.colorrbackgrid(grdvReg);
-                objdatagrid.gridControls(grdvReg);
-                grdvReg.ColumnHeadersHeight = 20;
-               
+                    grdvReg.Columns["MozaId"].Visible = false;
+                    grdvReg.Columns["ReceivingId"].Visible = false;
+                    grdvReg.Columns["RecStatus"].Visible = false;
+
+                    objdatagrid.colorrbackgrid(grdvReg);
+                    objdatagrid.gridControls(grdvReg);
+                    grdvReg.ColumnHeadersHeight = 20;
+                }
 
             }
             catch (Exception ex)
@@ -976,8 +979,9 @@ namespace SDC_Application.AL
                 try
                 {
 
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_RegistryList_Registrar_Dispatch " + DispatchId);
-
+                 dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_RegistryList_Registrar_Dispatch " + DispatchId);
+                if (dt != null)
+                {
                     DataTable outputTable = dt.Clone();
 
                     for (int i = dt.Rows.Count - 1; i >= 0; i--)
@@ -988,6 +992,7 @@ namespace SDC_Application.AL
                     PopulategridSavedRegistries();
                     LbFardatNos.Text = grdInsertedFardat.Rows.Count.ToString();
                 }
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -995,6 +1000,8 @@ namespace SDC_Application.AL
                 }
             }
             public void PopulategridSavedRegistries()
+            {
+            if (grdInsertedFardat.DataSource != null)
             {
                 grdInsertedFardat.Columns["RegNo"].DisplayIndex = 1;
                 grdInsertedFardat.Columns["RegDate"].DisplayIndex = 2;
@@ -1007,9 +1014,7 @@ namespace SDC_Application.AL
                 grdInsertedFardat.Columns["Kafiyat"].HeaderText = "کیفیت";
                 grdInsertedFardat.Columns["RegDispatchId"].Visible = false;
                 grdInsertedFardat.Columns["ReceivingId"].Visible = false;
-
-
-
+            }
             }
             private void cbLetterNo_SelectionChangeCommitted(object sender, EventArgs e)
             {
@@ -1239,7 +1244,8 @@ namespace SDC_Application.AL
                 {
 
                     dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_Registries_List_For_Registrar " +UsersManagments._Tehsilid.ToString());
-
+                if (dt != null)
+                {
                     DataTable outputTable = dt.Clone();
 
                     for (int i = dt.Rows.Count - 1; i >= 0; i--)
@@ -1251,6 +1257,7 @@ namespace SDC_Application.AL
 
                     Populategrid();
                 }
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -1258,6 +1265,8 @@ namespace SDC_Application.AL
                 }
             }
             public void Populategrid()
+            {
+            if (grdFardToInsert.DataSource != null)
             {
                 grdFardToInsert.Columns["RegNo"].DisplayIndex = 1;
                 grdFardToInsert.Columns["Regdate"].DisplayIndex = 2;
@@ -1270,7 +1279,7 @@ namespace SDC_Application.AL
                 grdFardToInsert.Columns["Kafiyat"].HeaderText = "کیفیت";
 
                 grdFardToInsert.Columns["ReceivingId"].Visible = false;
-
+            }
             }
             private void grdFardToInsert_CellContentClick(object sender, DataGridViewCellEventArgs e)
             {

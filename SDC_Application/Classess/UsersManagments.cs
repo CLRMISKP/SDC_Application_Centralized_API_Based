@@ -28,6 +28,7 @@ namespace SDC_Application.Classess
         public static string _RoleName;
         public static Boolean _IsAdmin;
         public static int _LocationId;
+        public static string userToken { get; set; }
 
         public static string TransFard { get; set; }
         public static string Intiqal { get; set; }
@@ -144,6 +145,7 @@ namespace SDC_Application.Classess
                 _LocationId = value;
             }
         }
+
 
         #endregion
     }

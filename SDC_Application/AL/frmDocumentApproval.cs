@@ -112,31 +112,34 @@ namespace SDC_Application.AL
         private void FillDocAppGrid(string Condition)
         {
             DataTable dt = new DataTable();
-            dt.Rows.Clear();
-            dt = docApp.GetDocumentApprovalStatus();
-            DataView v = new DataView(dt);
-            v.RowFilter = Condition;
-            gridViewDocments.DataSource = v;
+            
+                dt.Rows.Clear();
+                dt = docApp.GetDocumentApprovalStatus();
+            if (dt != null)
+            {
+                DataView v = new DataView(dt);
+                v.RowFilter = Condition;
+                gridViewDocments.DataSource = v;
 
-            gridViewDocments.Columns["TokenDateTime"].Visible = false;
-            gridViewDocments.Columns["TokenDate"].HeaderText = "ٹوکن تاریخ";
-            gridViewDocments.Columns["TokenId"].Visible = false;
-            gridViewDocments.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-            gridViewDocments.Columns["Visitor_Name"].HeaderText = "سائل کانام";
-            gridViewDocments.Columns["Visitor_FatherName"].Visible = false;
-            gridViewDocments.Columns["Visitor_CNIC"].HeaderText = "سائل کا شناختی کارڈ نمبر";
-            gridViewDocments.Columns["ServiceTypeId"].Visible =false;
-            gridViewDocments.Columns["TokenService_For_MozaId"].Visible = false;
-            gridViewDocments.Columns["MozaNameUrdu"].HeaderText = "موضع";
-            gridViewDocments.Columns["ServiceTypeName_Urdu"].HeaderText = "سروس کی قسم کا نام";
-            gridViewDocments.Columns["PVId"].Visible =false;
-            gridViewDocments.Columns["GrossAmount"].HeaderText = "مجموعی رقم";
-            gridViewDocments.Columns["RVID"].Visible = false;
-            gridViewDocments.Columns["receivedAmount"].HeaderText = "رقم اصول";
-            gridViewDocments.Columns["Token_CurrentStatus"].HeaderText = "ٹوکن کی موجودہ حیثیت";
-            gridViewDocments.Columns["Token_CurrentStatus_Reason"].HeaderText = "وجہ نامنظوری ";
-            gridViewDocments.Columns["Token_CurrentStatus_Timestamp"].Visible = false;  
-
+                gridViewDocments.Columns["TokenDateTime"].Visible = false;
+                gridViewDocments.Columns["TokenDate"].HeaderText = "ٹوکن تاریخ";
+                gridViewDocments.Columns["TokenId"].Visible = false;
+                gridViewDocments.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
+                gridViewDocments.Columns["Visitor_Name"].HeaderText = "سائل کانام";
+                gridViewDocments.Columns["Visitor_FatherName"].Visible = false;
+                gridViewDocments.Columns["Visitor_CNIC"].HeaderText = "سائل کا شناختی کارڈ نمبر";
+                gridViewDocments.Columns["ServiceTypeId"].Visible = false;
+                gridViewDocments.Columns["TokenService_For_MozaId"].Visible = false;
+                gridViewDocments.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                gridViewDocments.Columns["ServiceTypeName_Urdu"].HeaderText = "سروس کی قسم کا نام";
+                gridViewDocments.Columns["PVId"].Visible = false;
+                gridViewDocments.Columns["GrossAmount"].HeaderText = "مجموعی رقم";
+                gridViewDocments.Columns["RVID"].Visible = false;
+                gridViewDocments.Columns["receivedAmount"].HeaderText = "رقم اصول";
+                gridViewDocments.Columns["Token_CurrentStatus"].HeaderText = "ٹوکن کی موجودہ حیثیت";
+                gridViewDocments.Columns["Token_CurrentStatus_Reason"].HeaderText = "وجہ نامنظوری ";
+                gridViewDocments.Columns["Token_CurrentStatus_Timestamp"].Visible = false;
+            }
 
             
 
@@ -146,8 +149,6 @@ namespace SDC_Application.AL
 
 
         #region Gridview cell content click
-        
-       
         private void gridViewDocments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //if (e.ColumnIndex != 0 || e.RowIndex < 0)
@@ -185,8 +186,6 @@ namespace SDC_Application.AL
         #endregion
 
         #region Button Approve click event
-        
-        
         private void btnApprove_Click(object sender, EventArgs e)
         {
             
@@ -195,8 +194,6 @@ namespace SDC_Application.AL
         #endregion
 
         #region Button Disapprove click event
-        
-       
         private void btndisApprove_Click(object sender, EventArgs e)
         {
             try
@@ -223,8 +220,6 @@ namespace SDC_Application.AL
         #endregion
 
         #region Form Disapprove closed event
-        
-        
         void DisApprove_FormClosed(object sender, FormClosedEventArgs e)
         {
             string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
@@ -252,8 +247,6 @@ namespace SDC_Application.AL
         #endregion
 
         #region checkBox previous check changed event
-        
-       
         private void cbprev_CheckedChanged(object sender, EventArgs e)
         {
             string datefrom = dtpFrom.Value.ToString(SDC_Application.frmMain.getShortDateFormateString());
@@ -322,8 +315,6 @@ namespace SDC_Application.AL
         #endregion
 
         #region checkBox Disapprove check changed event
-        
-        
         private void cbdisAprove_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -442,10 +433,7 @@ namespace SDC_Application.AL
         }
         #endregion
 
-
         #region Gridview selection changed
-        
-       
         private void gridViewDocments_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView g = sender as DataGridView;
@@ -514,10 +502,6 @@ namespace SDC_Application.AL
         }
         #endregion
 
-
-        
-        
-        
         private void txtsearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 22 && e.KeyChar != 24 && e.KeyChar != 3 && e.KeyChar != 1 && e.KeyChar != 13)

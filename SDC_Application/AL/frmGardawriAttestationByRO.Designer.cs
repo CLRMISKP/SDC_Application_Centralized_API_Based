@@ -37,7 +37,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFingerHysoon = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            //this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.gbSelectRO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -204,6 +204,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblRoName;
         private System.Windows.Forms.Button btnFingerHysoon;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
+        //private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
     }
 }

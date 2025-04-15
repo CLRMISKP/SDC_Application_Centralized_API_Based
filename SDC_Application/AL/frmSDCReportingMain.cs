@@ -114,19 +114,22 @@ namespace SDC_Application.AL
         private void SetCredentials(string report, ReportParameter[] r, bool isSdcReports)
         {
             this.rvIntiqalReport.RefreshReport();
-            string Server = "http://" + SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["rptserver"]) + UsersManagments._rptPort + "/ReportServer";//ReportServerTextBox.Text;
-            string reportProject = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"] + "/";
-            string reportProjectLand = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"] + "/";
+            //string Server = "http://" + SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["rptserver"]) + UsersManagments._rptPort + "/ReportServer";//ReportServerTextBox.Text;
+            //string reportProject = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"] + "/";
+            //string reportProjectLand = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"] + "/";
+            string Server = "http://175.107.59.12/ReportServer";//ReportServerTextBox.Text;
+            string reportProject = "/LandWebReportingCLRMIS/";// + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"] + "/";
+            string reportProjectLand = "/LandWebReportingCLRMIS/";// + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"] + "/";
             string reportName = report; //"IntiqalMainPart_Baeh_ADC";
             rvIntiqalReport.ProcessingMode = ProcessingMode.Remote;
             ServerReport serverReport;
             serverReport = rvIntiqalReport.ServerReport;
 
-            string usr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["usr"]);
-            string password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["adpsreport"]);
-            string domain = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["domain"]);
-            this.ReportingFolder = System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"];
-            this.ReportinFolderLand = System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"];
+            string usr = "rptUserCLRMIS";// SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["usr"]);
+            string password = "Pmu@#reports";// SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["adpsreport"]);
+            string domain = "localhost";// SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["domain"]);
+            this.ReportingFolder = "LandWebReportingCLRMIS";// System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"];
+            this.ReportinFolderLand = "LandWebReportingCLRMIS";// System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"];
             //
 
             NetworkCredential myCred = new

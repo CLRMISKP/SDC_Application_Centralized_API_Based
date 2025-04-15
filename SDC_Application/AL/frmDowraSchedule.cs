@@ -19,6 +19,7 @@ namespace SDC_Application.AL
 {
     public partial class frmDowraSchedule : Form
     {
+        DL.Database objDB=new DL.Database();
         public frmDowraSchedule()
         {
             InitializeComponent();
@@ -135,10 +136,10 @@ namespace SDC_Application.AL
         private void frmDowraSchedule_Load(object sender, EventArgs e)
         {
 
-              dsvr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
-              db = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);
-              password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
-              connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
+              //dsvr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["server"]);
+              //db = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["db"]);
+              //password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["allow"]);
+              //connectionString = "Data Source=" + dsvr + ";Initial Catalog=" + db + ";user id=dlis; Password=" + password + ";MultipleActiveResultSets=True";
 
 
             chkWeekDays = new CheckBox[]
@@ -217,86 +218,111 @@ namespace SDC_Application.AL
             //int tehsilId = UsersManagments._Tehsilid;
 
             // Connection string setup
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                try
+                DataTable dt = new DataTable();
+                dt = objDB.filldatatable_from_storedProcedure("getDowraStatus " + Tehsilid + ",'" + dated + "'," + UsersManagments.SubSdcId.ToString());
+                if (dt != null)
                 {
-                    connection.Open();
-
-                    // Create a SqlCommand instance for the stored procedure
-                    SqlCommand command = new SqlCommand("getDowraStatus", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandTimeout = 5;
-
-                    // Add parameters to the stored procedure
-                    command.Parameters.AddWithValue("@TehsilId", Tehsilid);
-                    command.Parameters.AddWithValue("@Dated", dated);
-                    command.Parameters.AddWithValue("@SubSdcId", UsersManagments.SubSdcId);
-
-                    // Execute the stored procedure and retrieve the result set
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.Read())
+                    dowraStatus = new DowraStatus
                     {
-                        dowraStatus = new DowraStatus
-                        {
-                            TehsilId = reader.GetInt32(reader.GetOrdinal("Tehsilid")),
-                            WeekDays = reader.GetString(reader.GetOrdinal("WeekDays")),
-                            DaysOfMonth = reader.GetString(reader.GetOrdinal("DaysOfMonth")),
-                            Dated = reader.GetDateTime(reader.GetOrdinal("Dated"))
-                        };
-
-                        // Use the retrieved values as needed
-                    }
-
-                    reader.Close();
+                        TehsilId = int.Parse(dt.Rows[0]["Tehsilid"].ToString()),
+                        WeekDays = dt.Rows[0]["WeekDays"].ToString(),
+                        DaysOfMonth = dt.Rows[0]["DaysOfMonth"].ToString(),
+                        Dated = DateTime.Parse(dt.Rows[0]["Dated"].ToString())
+                    };
                 }
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            //{
+            //    try
+            //    {
+            //        connection.Open();
+
+            //        // Create a SqlCommand instance for the stored procedure
+            //        SqlCommand command = new SqlCommand("getDowraStatus", connection);
+            //        command.CommandType = CommandType.StoredProcedure;
+            //        command.CommandTimeout = 5;
+
+            //        // Add parameters to the stored procedure
+            //        command.Parameters.AddWithValue("@TehsilId", Tehsilid);
+            //        command.Parameters.AddWithValue("@Dated", dated);
+            //        command.Parameters.AddWithValue("@SubSdcId", UsersManagments.SubSdcId);
+
+            //        // Execute the stored procedure and retrieve the result set
+            //        SqlDataReader reader = command.ExecuteReader();
+                    
+            //        if (reader.Read())
+            //        {
+            //            dowraStatus = new DowraStatus
+            //            {
+            //                TehsilId = reader.GetInt32(reader.GetOrdinal("Tehsilid")),
+            //                WeekDays = reader.GetString(reader.GetOrdinal("WeekDays")),
+            //                DaysOfMonth = reader.GetString(reader.GetOrdinal("DaysOfMonth")),
+            //                Dated = reader.GetDateTime(reader.GetOrdinal("Dated"))
+            //            };
+
+            //            // Use the retrieved values as needed
+            //        }
+
+            //        reader.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
             return dowraStatus;
         }
 
 
         private void InsertOrUpdateDowaraStatus(int tehsilId, string weekDays, string daysOfMonth, DateTime dated)
         {
-
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                try
-                {
-                    connection.Open();
+            DataTable dt= objDB.filldatatable_from_storedProcedure("insertOrUpdateDowraStatus " + tehsilId + ",'" + weekDays + "','" + daysOfMonth + "','" + dated + "', NULL," + UsersManagments.SubSdcId.ToString());
 
-                    // Create a SqlCommand instance for the stored procedure
-                    SqlCommand command = new SqlCommand("insertOrUpdateDowraStatus", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandTimeout = 5;
-
-                    // Add parameters to the stored procedure
-                    command.Parameters.AddWithValue("@TehsilId", tehsilId);
-                    command.Parameters.AddWithValue("@WeekDays", weekDays);
-                    command.Parameters.AddWithValue("@DaysOfMonth", daysOfMonth);
-                    command.Parameters.AddWithValue("@Dated", dated);
-                    command.Parameters.Add("@Err_Msg", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
-                    command.Parameters.AddWithValue("@SubSdcId", UsersManagments.SubSdcId);
-
-                    // Execute the stored procedure
-                    command.ExecuteNonQuery();
-
-                    // Retrieve the output parameter value (if needed)
-                    string errMessage = command.Parameters["@Err_Msg"].Value.ToString();
-
-                    // Handle the output parameter value as needed
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            //{
+            //    try
+            //    {
+            //        connection.Open();
+
+            //        // Create a SqlCommand instance for the stored procedure
+            //        SqlCommand command = new SqlCommand("insertOrUpdateDowraStatus", connection);
+            //        command.CommandType = CommandType.StoredProcedure;
+            //        command.CommandTimeout = 5;
+
+            //        // Add parameters to the stored procedure
+            //        command.Parameters.AddWithValue("@TehsilId", tehsilId);
+            //        command.Parameters.AddWithValue("@WeekDays", weekDays);
+            //        command.Parameters.AddWithValue("@DaysOfMonth", daysOfMonth);
+            //        command.Parameters.AddWithValue("@Dated", dated);
+            //        command.Parameters.Add("@Err_Msg", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+            //        command.Parameters.AddWithValue("@SubSdcId", UsersManagments.SubSdcId);
+
+            //        // Execute the stored procedure
+            //        command.ExecuteNonQuery();
+
+            //        // Retrieve the output parameter value (if needed)
+            //        string errMessage = command.Parameters["@Err_Msg"].Value.ToString();
+
+            //        // Handle the output parameter value as needed
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
         }
 
         private string getChkWeekDaysToCSV()

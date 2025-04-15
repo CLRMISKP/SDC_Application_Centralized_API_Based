@@ -58,14 +58,17 @@ namespace SDC_Application.AL
             {
             
                 dtkj = misal.GetKhatajatByMoza(Convert.ToInt32(cmbMouza.SelectedValue.ToString()));
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cbokhataNo.DataSource = dtkj;
-                cbokhataNo.DisplayMember = "KhataNo";
-                cbokhataNo.ValueMember = "RegisterHqDKhataId";
-                cbokhataNo.SelectedValue = 0;
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cbokhataNo.DataSource = dtkj;
+                    cbokhataNo.DisplayMember = "KhataNo";
+                    cbokhataNo.ValueMember = "RegisterHqDKhataId";
+                    cbokhataNo.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
            {

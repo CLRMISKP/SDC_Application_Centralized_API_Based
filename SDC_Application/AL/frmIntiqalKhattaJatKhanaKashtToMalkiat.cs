@@ -6080,7 +6080,10 @@ namespace SDC_Application.AL
 
         private void txtSearchBuyers_TextChanged(object sender, EventArgs e)
         {
-            bb.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchBuyers.Text);
+            if (bb.DataSource != null)
+            {
+                bb.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchBuyers.Text);
+            }
         }
 
         private void btnKhatooniAllMushtryanSave_Click(object sender, EventArgs e)

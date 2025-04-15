@@ -25,7 +25,6 @@ using AForge.Video.DirectShow;
 
 using System.Drawing.Imaging;
 using SDC_Application.DL;
-using LandInfo.ControlsLib;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
@@ -60,7 +59,7 @@ namespace SDC_Application.AL
         DataTable dtReceipt = new DataTable();
         DataTable dtGrd = new DataTable();
         DataTable dtKhassrasByKhata = new DataTable();
-
+        Database db= new Database();
         public string ReportingFolder { get; set; }
         public string ReportinFolderLand { get; set; }
         public string MozaId { get; set; }
@@ -200,23 +199,32 @@ namespace SDC_Application.AL
             if(TokenId!=null)
             {
                 DataTable dt = mnk.GetFardConfDetails(TokenId);
-                if(dt.Rows.Count>0)
+                if (dt != null)
                 {
-                    this.isConfirm= Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
-                    btnConfirm.Enabled =!Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
-                    btnUnConfirm.Enabled= Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
-                    txtOperatorReport.Text = dt.Rows[0]["OperatorReport"].ToString();
-                    //--- Restrict Fard Printing ------////
-                    if (UsersManagments.UserId.ToString() == dt.Rows[0]["InsertUserId"].ToString() || dt.Rows[0]["InsertUserId"].ToString()=="0")
-                        rvIntiqalReport.ShowPrintButton = true;
-                    else
-                        rvIntiqalReport.ShowPrintButton = false;
-                    this.gbKhatajat.Enabled = !isConfirm;
-                    gbKhatooni.Enabled = !isConfirm;
-                    gbKhewatFareeqain.Enabled = !isConfirm;
-                    gbMushteriFareeqain.Enabled = !isConfirm;
-                    gbOperatorReport.Enabled = !isConfirm;
+                    if (dt.Rows.Count > 0)
+                    {
+                        this.isConfirm = Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
+                        btnConfirm.Enabled = !Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
+                        btnUnConfirm.Enabled = Convert.ToBoolean(dt.Rows[0]["isConfirmed"].ToString());
+                        txtOperatorReport.Text = dt.Rows[0]["OperatorReport"].ToString();
+                        //--- Restrict Fard Printing ------////
+                        if (UsersManagments.UserId.ToString() == dt.Rows[0]["InsertUserId"].ToString() || dt.Rows[0]["InsertUserId"].ToString() == "0")
+                            rvIntiqalReport.ShowPrintButton = true;
+                        else
+                            rvIntiqalReport.ShowPrintButton = false;
+                        this.gbKhatajat.Enabled = !isConfirm;
+                        gbKhatooni.Enabled = !isConfirm;
+                        gbKhewatFareeqain.Enabled = !isConfirm;
+                        gbMushteriFareeqain.Enabled = !isConfirm;
+                        gbOperatorReport.Enabled = !isConfirm;
 
+                    }
+                    else
+                    {
+                        btnUnConfirm.Enabled = false;
+                        btnConfirm.Enabled = true;
+                        txtOperatorReport.Clear();
+                    }
                 }
                 else
                 {
@@ -1607,19 +1615,19 @@ namespace SDC_Application.AL
         private void SetCredentials(string report, ReportParameter[] r, bool isSdcReports)
         {
             this.rvIntiqalReport.RefreshReport();
-            string Server = "http://" + SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["rptserver"]) + UsersManagments._rptPort + "/ReportServer";//ReportServerTextBox.Text;
-            string reportProject = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"] + "/";
-            string reportProjectLand = "/" + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"] + "/";
+            string Server = "http://175.107.59.12/ReportServer";//ReportServerTextBox.Text;
+            string reportProject = "/LandWebReportingCLRMIS/";// + System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"] + "/";
+            string reportProjectLand = "/LandWebReportingCLRMIS/";
             string reportName = report; //"IntiqalMainPart_Baeh_ADC";
             rvIntiqalReport.ProcessingMode = ProcessingMode.Remote;
             ServerReport serverReport;
             serverReport = rvIntiqalReport.ServerReport;
 
-            string usr = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["usr"]);
-            string password = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["adpsreport"]);
-            string domain = SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["domain"]);
-            this.ReportingFolder = System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"];
-            this.ReportinFolderLand = System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"];
+            string usr = "rptUserCLRMIS";// SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["usr"]);
+            string password = "Pmu@#reports";// SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["adpsreport"]);
+            string domain = "localhost";// SDC_Application.Classess.Crypto.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["domain"]);
+            this.ReportingFolder = "LandWebReportingCLRMIS";// System.Configuration.ConfigurationSettings.AppSettings["ReportingFolder"];
+            this.ReportinFolderLand = "LandWebReportingCLRMIS";// System.Configuration.ConfigurationSettings.AppSettings["ReportingFolderLand"];
             //
 
             NetworkCredential myCred = new
@@ -1840,26 +1848,38 @@ namespace SDC_Application.AL
 
         private void GetPersonFingerPrint(string PersonId, string FardRepRecId)
         {
-           
-            DataTable PersonPics = new System.Data.DataTable();
-            PersonPics = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_Fard_PersonFingerPrint_By_PersonId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.SelectedTokenId + ",'" + PersonId + "','" + FardRepRecId + "'");
-          
-            if (PersonPics != null)
+
+            //DataTable PersonPics = new System.Data.DataTable();
+            var List = db.execGetFardPersonImages(UsersManagments._Tehsilid.ToString(), SelectedTokenId, PersonId, FardRepRecId, UsersManagments.userToken);
+            if (List != null)
             {
-                if (PersonPics.Rows.Count > 0)
+                foreach (var dr in List)
                 {
-                    foreach (DataRow dr in PersonPics.Rows)
-                    {
+                    pboxFingerPrint.Image = dr.PersonFingerPrint != null ? Resource1.FingerprintImage : null;
+                    imgDataFinger = dr.PersonFingerPrint;
+                    txtIntPersonImageid.Text = dr.FardPersonFingerId;
+                    pboxPicture.Image = dr.PersonPic != null ? MStream(dr.PersonPic) : null;
 
-                        if(dr["PersonFingerPrint"].ToString().Length>10)
-                            pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
-                        if (dr["PersonFingerPrint"].ToString().Length > 10)
-                            imgDataFinger = (byte[])dr["PersonFingerPrint"];
-                        txtIntPersonImageid.Text = dr["FardPersonFingerId"].ToString();
-                        pboxPicture.Image = dr["PersonPic"] != DBNull.Value ? MStream((byte[])dr["PersonPic"]) : null;
 
-                    }
                 }
+                //    PersonPics = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_Fard_PersonFingerPrint_By_PersonId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.SelectedTokenId + ",'" + PersonId + "','" + FardRepRecId + "'");
+
+                //if (PersonPics != null)
+                //{
+                //    if (PersonPics.Rows.Count > 0)
+                //    {
+                //        foreach (DataRow dr in PersonPics.Rows)
+                //        {
+
+                //            if(dr["PersonFingerPrint"].ToString().Length>10)
+                //                pboxFingerPrint.Image = (byte[])dr["PersonFingerPrint"] != null ? Resource1.FingerprintImage : null;
+                //            if (dr["PersonFingerPrint"].ToString().Length > 10)
+                //                imgDataFinger = (byte[])dr["PersonFingerPrint"];
+                //            txtIntPersonImageid.Text = dr["FardPersonFingerId"].ToString();
+                //            pboxPicture.Image = dr["PersonPic"] != DBNull.Value ? MStream((byte[])dr["PersonPic"]) : null;
+
+                //        }
+            }
                 else
                 {
 
@@ -1870,7 +1890,6 @@ namespace SDC_Application.AL
 
 
             }
-        }
 
         #endregion
 

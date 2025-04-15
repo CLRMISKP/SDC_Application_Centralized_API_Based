@@ -223,6 +223,8 @@ namespace SDC_Application.AL
                     if (frmSearchRecipt.btn)
                     {
                         string RecieptNo = this.GetRecieptNoAgainstTokenId(frmSearchRecipt.tokenID);
+                    if (RecieptNo != null)
+                    {
                         if (RecieptNo == "0")
                         {
                             ClearWholeForm();
@@ -252,6 +254,7 @@ namespace SDC_Application.AL
                         {
                             MessageBox.Show(RecieptNo, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                    }
                 }
             
              }
@@ -530,14 +533,16 @@ namespace SDC_Application.AL
                 //{
                 //    outputTable.ImportRow(dtGrd.Rows[i]);
                 //}
-               // grdVoucherDetails.DataSource = outputTable;
-                grdRecipt.DataSource = dtGrd;
-                objbusines.VoucherGrid(grdRecipt);
-                if (grdRecipt.Rows.Count > 0)
+                // grdVoucherDetails.DataSource = outputTable;
+                if (dtGrd != null)
                 {
-                    objdatagrid.SumDataGridColumn(grdRecipt, txtTotPaymentRecived, "ReceivedAmount");
-                    objdatagrid.SumDataGridColumn(grdRecipt, this.txtNetAmountToPay, "NetPayableAmount");
-                }
+                    grdRecipt.DataSource = dtGrd;
+                    objbusines.VoucherGrid(grdRecipt);
+                    if (grdRecipt.Rows.Count > 0)
+                    {
+                        objdatagrid.SumDataGridColumn(grdRecipt, txtTotPaymentRecived, "ReceivedAmount");
+                        objdatagrid.SumDataGridColumn(grdRecipt, this.txtNetAmountToPay, "NetPayableAmount");
+                    }
                     chkVerfiedReciptMaster.Enabled = true;
                     DataGridViewColumn column = grdRecipt.Columns["RVDetailSeqNo"];
                     column.Width = 40;
@@ -551,8 +556,8 @@ namespace SDC_Application.AL
                     {
                         DataGridViewRow row = grdRecipt.Rows[i];
                         row.Height = 35;
-                    }                 
-                
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -652,8 +657,11 @@ namespace SDC_Application.AL
             this.btnMasterSave.Enabled = false;
             txtNetAmountToPay.Text = "";
             txtTotPaymentRecived.Text = "";
-            dtGrd.Clear();
-            ClearFormsGroupsFields.ClearGroupBoxControls(groupBox2,groupBox5);        
+            if (dtGrd != null)
+            {
+                dtGrd.Clear();
+                ClearFormsGroupsFields.ClearGroupBoxControls(groupBox2, groupBox5);
+            }
                    }
 
         #endregion
@@ -897,13 +905,16 @@ namespace SDC_Application.AL
             {
                 string serrviceId = this.cmbServices.SelectedValue.ToString() != "0" ? this.cmbServices.SelectedValue.ToString() : "0";
                 dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_For_Recipt " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.txtHiddenPvid.Text + "','" + serrviceId + "'");
-                foreach (DataRow dr in dt.Rows)
+                if (dt != null)
                 {
-                    this.txtAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
-                    this.txtRemarks.Text = dr["PVDetailRemarks"].ToString();
-                    this.txtRemarks.SelectedText = this.txtRemarks.Text;
-                    this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
-                    this.cmbPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        this.txtAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
+                        this.txtRemarks.Text = dr["PVDetailRemarks"].ToString();
+                        this.txtRemarks.SelectedText = this.txtRemarks.Text;
+                        this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
+                        this.cmbPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
+                    }
                 }
             }
         }

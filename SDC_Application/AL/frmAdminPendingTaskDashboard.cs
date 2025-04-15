@@ -41,10 +41,13 @@ namespace SDC_Application.AL
         private void frmAdminPendingTaskDashboard_Load(object sender, EventArgs e)
         {
             dtRHZ_ChangeList_Summary = rhz.GetRHZChangeSummary();
-            if (dtRHZ_ChangeList_Summary.Rows.Count > 0)
+            if (dtRHZ_ChangeList_Summary != null)
             {
-                dgTasksSummary.DataSource = dtRHZ_ChangeList_Summary;
-                fillDgTaskSummary();
+                if (dtRHZ_ChangeList_Summary.Rows.Count > 0)
+                {
+                    dgTasksSummary.DataSource = dtRHZ_ChangeList_Summary;
+                    fillDgTaskSummary();
+                }
             }
         }
         private void fillDgTaskSummary()
@@ -68,18 +71,21 @@ namespace SDC_Application.AL
                 {
                     MozaId = dgTasksSummary.SelectedRows[0].Cells["MozaId"].Value.ToString();
                     dtRHZ_ChangeList_details = rhz.GetRHZChangeDetailsByMoza(MozaId);
-                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                    dvRHZ_ChangeList_details.RowFilter = "ImplementedBY =0";
-                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details; //dgKhataEditColSel
-                    fillDgTaskDetails();
-                    foreach (DataGridViewRow row in dgTasksSummary.Rows)
+                    if (dtRHZ_ChangeList_details != null)
                     {
-                        if (row.Selected)
+                        dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                        dvRHZ_ChangeList_details.RowFilter = "ImplementedBY =0";
+                        dgTaskDetails.DataSource = dvRHZ_ChangeList_details; //dgKhataEditColSel
+                        fillDgTaskDetails();
+                        foreach (DataGridViewRow row in dgTasksSummary.Rows)
                         {
-                            row.Cells["dgKhataEditColSel"].Value = true;
+                            if (row.Selected)
+                            {
+                                row.Cells["dgKhataEditColSel"].Value = true;
+                            }
+                            else
+                                row.Cells["dgKhataEditColSel"].Value = false;
                         }
-                        else
-                            row.Cells["dgKhataEditColSel"].Value = false;
                     }
                 }
             }
@@ -103,27 +109,30 @@ namespace SDC_Application.AL
 
         private void rbPending_CheckedChanged(object sender, EventArgs e)
         {
-            if (dtRHZ_ChangeList_details.Rows.Count > 0)
+            if (dtRHZ_ChangeList_details != null)
             {
-                if (rbPending.Checked)
+                if (dtRHZ_ChangeList_details.Rows.Count > 0)
                 {
-                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                    dvRHZ_ChangeList_details.RowFilter = "ImplementedBY =0";
-                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
-                    fillDgTaskDetails();
-                }
-                else if (rbCompleted.Checked)
-                {
-                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                    dvRHZ_ChangeList_details.RowFilter = "ImplementedBY <>0";
-                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
-                    fillDgTaskDetails();
-                }
-                else if (rbAllTasks.Checked)
-                {
-                    dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
-                    dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
-                    fillDgTaskDetails();
+                    if (rbPending.Checked)
+                    {
+                        dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                        dvRHZ_ChangeList_details.RowFilter = "ImplementedBY =0";
+                        dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
+                        fillDgTaskDetails();
+                    }
+                    else if (rbCompleted.Checked)
+                    {
+                        dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                        dvRHZ_ChangeList_details.RowFilter = "ImplementedBY <>0";
+                        dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
+                        fillDgTaskDetails();
+                    }
+                    else if (rbAllTasks.Checked)
+                    {
+                        dvRHZ_ChangeList_details = new DataView(dtRHZ_ChangeList_details);
+                        dgTaskDetails.DataSource = dvRHZ_ChangeList_details;
+                        fillDgTaskDetails();
+                    }
                 }
             }
         }
@@ -133,14 +142,16 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dtAllPendingTasks= rhz.GetRHZChangePendingAllMouzas();
-                if (dtAllPendingTasks.Rows.Count > 0)
+                if (dtAllPendingTasks != null)
                 {
-                    dgAllPendingTasks.DataSource = dtAllPendingTasks;
-                    fillDgAllPendingTasks();
+                    if (dtAllPendingTasks.Rows.Count > 0)
+                    {
+                        dgAllPendingTasks.DataSource = dtAllPendingTasks;
+                        fillDgAllPendingTasks();
+                    }
+                    else
+                        dgAllPendingTasks.DataSource = null;
                 }
-                else
-                    dgAllPendingTasks.DataSource = null;
-
             }
             catch (Exception ex)
             {
@@ -235,14 +246,17 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dtPendingMutations = rhz.GetIntiqalPendingMissingAll();
-                dvPendingIntiqal = dtPendingMutations.AsDataView();
-                if (dtPendingMutations.Rows.Count > 0)
+                if (dtPendingMutations != null)
                 {
-                    dgPendingMutations.DataSource = dvPendingIntiqal;
-                    fillDgPendingMutations();
+                    dvPendingIntiqal = dtPendingMutations.AsDataView();
+                    if (dtPendingMutations.Rows.Count > 0)
+                    {
+                        dgPendingMutations.DataSource = dvPendingIntiqal;
+                        fillDgPendingMutations();
+                    }
+                    else
+                        dgPendingMutations.DataSource = null;
                 }
-                else
-                    dgPendingMutations.DataSource = null;
             }
             catch (Exception ex)
             {
@@ -413,15 +427,17 @@ namespace SDC_Application.AL
             {
 
                 dtkj = misal.GetAllKhatajatByMoza(Convert.ToInt32(cmbMouza.SelectedValue.ToString()));
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = " - انتخاب کرِیں - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cbKhattajatAll.DataSource = dtkj;
-                cbKhattajatAll.DisplayMember = "KhataNo";
-                cbKhattajatAll.ValueMember = "RegisterHqDKhataId";
-                cbKhattajatAll.SelectedValue = 0;
-
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = " - انتخاب کرِیں - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cbKhattajatAll.DataSource = dtkj;
+                    cbKhattajatAll.DisplayMember = "KhataNo";
+                    cbKhattajatAll.ValueMember = "RegisterHqDKhataId";
+                    cbKhattajatAll.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
             {
@@ -436,9 +452,12 @@ namespace SDC_Application.AL
             {
                 this.dtKhewatFareeqain = khatas.Proc_Self_Get_KhewatFareeqeinByKhataId(cbokhataNo.SelectedValue.ToString());
                 this.dgKhewatFareeqainAll.DataSource = null;
-                this.dgKhewatFareeqainAll.DataSource = dtKhewatFareeqain;
-                view = new DataView(dtKhewatFareeqain);
-                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+                if (dtKhewatFareeqain != null)
+                {
+                    this.dgKhewatFareeqainAll.DataSource = dtKhewatFareeqain;
+                    view = new DataView(dtKhewatFareeqain);
+                    this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+                }
             }
             catch (Exception ex)
             {
@@ -451,14 +470,17 @@ namespace SDC_Application.AL
             if (cboKhatoonies.SelectedValue.ToString() != "0")
             {
                 DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
-                foreach (DataRow row in KhatooniDetail.Rows)
+                if (KhatooniDetail != null)
                 {
-                        chkBeahShoda.Checked =Convert.ToBoolean( row["BeahShud"]);
-                    txtKhatooniHissa.Text = row["KhatooniHissa"].ToString().Length>0?row["KhatooniHissa"].ToString():"0";
-                    txtKhatooniKanal.Text = row["KhatooniKanal"].ToString().Length>0?row["KhatooniKanal"].ToString():"0";
-                    txtKhatooniMarla.Text = row["KhatooniMarla"].ToString().Length>0?row["KhatooniMarla"].ToString():"0";
-                    txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString().Length>0? row["KhatooniSarsai"].ToString():"0";
-                    txtKhatooniFeet.Text = row["KhatooniFeet"].ToString().Length>0?row["KhatooniFeet"].ToString():"0";
+                    foreach (DataRow row in KhatooniDetail.Rows)
+                    {
+                        chkBeahShoda.Checked = Convert.ToBoolean(row["BeahShud"]);
+                        txtKhatooniHissa.Text = row["KhatooniHissa"].ToString().Length > 0 ? row["KhatooniHissa"].ToString() : "0";
+                        txtKhatooniKanal.Text = row["KhatooniKanal"].ToString().Length > 0 ? row["KhatooniKanal"].ToString() : "0";
+                        txtKhatooniMarla.Text = row["KhatooniMarla"].ToString().Length > 0 ? row["KhatooniMarla"].ToString() : "0";
+                        txtKhatooniSarsai.Text = row["KhatooniSarsai"].ToString().Length > 0 ? row["KhatooniSarsai"].ToString() : "0";
+                        txtKhatooniFeet.Text = row["KhatooniFeet"].ToString().Length > 0 ? row["KhatooniFeet"].ToString() : "0";
+                    }
                 }
             }
             this.GetKhatooniMushteryan(cboKhatoonies.SelectedValue.ToString());
@@ -624,14 +646,17 @@ namespace SDC_Application.AL
             try
             {
                 DataTable dtPendingMutations = rhz.GetIntiqalPendingAll();
-                dvPendingIntiqalAllPend = dtPendingMutations.AsDataView();
-                if (dtPendingMutations.Rows.Count > 0)
+                if (dtPendingMutations != null)
                 {
-                    dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
-                    fillDgPendingMutationsAll();
+                    dvPendingIntiqalAllPend = dtPendingMutations.AsDataView();
+                    if (dtPendingMutations.Rows.Count > 0)
+                    {
+                        dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
+                        fillDgPendingMutationsAll();
+                    }
+                    else
+                        dgPendingMutationsAll.DataSource = null;
                 }
-                else
-                    dgPendingMutationsAll.DataSource = null;
             }
             catch (Exception ex)
             {
@@ -707,17 +732,23 @@ namespace SDC_Application.AL
         private void txtSearchIntiqal_TextChanged(object sender, EventArgs e)
         {
             string filter = this.txtSearchIntiqal.Text.ToString();
-            dvPendingIntiqal.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
-            dgPendingMutations.DataSource = dvPendingIntiqal;
-            fillDgPendingMutations();
+            if (dvPendingIntiqal != null)
+            {
+                dvPendingIntiqal.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
+                dgPendingMutations.DataSource = dvPendingIntiqal;
+                fillDgPendingMutations();
+            }
         }
 
         private void txtSearchIntiqalAllPending_TextChanged(object sender, EventArgs e)
         {
             string filter = this.txtSearchIntiqalAllPending.Text.ToString();
-            dvPendingIntiqalAllPend.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
-            dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
-                    fillDgPendingMutationsAll();
+            if (dvPendingIntiqalAllPend != null)
+            {
+                dvPendingIntiqalAllPend.RowFilter = "IntiqalNo LIKE '%" + filter + "%'";
+                dgPendingMutationsAll.DataSource = dvPendingIntiqalAllPend;// dtPendingMutations;
+                fillDgPendingMutationsAll();
+            }
         }
         #region Fill Gridview Malkan by Khata
 
@@ -852,10 +883,12 @@ namespace SDC_Application.AL
             {
                 //DataTable mushteryanCUrrent = khatooni.Get_MushtriFareeqein_By_KhatooniId(KhatooniId);
                 DataTable mushteryanCUrrent = khatooni.Get_MushtriFareeqein_By_Khatooni_All_Status(KhatooniId);
-                dgMushteriFareeqainAll.DataSource = mushteryanCUrrent;
-                viewMF = new DataView(mushteryanCUrrent);
-                PopulateGrid(dgMushteriFareeqainAll);
-
+                if (mushteryanCUrrent != null)
+                {
+                    dgMushteriFareeqainAll.DataSource = mushteryanCUrrent;
+                    viewMF = new DataView(mushteryanCUrrent);
+                    PopulateGrid(dgMushteriFareeqainAll);
+                }
             }
             catch (Exception ex)
             {
@@ -867,21 +900,23 @@ namespace SDC_Application.AL
         {
             try
             {
-                g.Columns["FardAreaPart"].HeaderText = "حصہ";
-                g.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
-                g.Columns["CompleteName"].HeaderText = "نام مالک";
-                g.Columns["KhewatType"].HeaderText = "قسم مالک";
-                g.Columns["FardPart_Bata"].Visible = false;
-                g.Columns["seqno"].HeaderText = "نمبر شمار";
-                g.Columns["MushtriFareeqId"].Visible = false;
-                g.Columns["KhatooniId"].Visible = false;
-                g.Columns["PersonId"].Visible = false;
-                g.Columns["KhewatTypeId"].Visible = false;
-                g.Columns["RecStatus"].HeaderText = "حالت";
-                g.Columns["CompleteName"].DisplayIndex = 2;
-                g.Columns["KhewatType"].DisplayIndex = 3;
-                g.Columns["seqno"].DisplayIndex = 1;
-
+                if (g.DataSource != null)
+                {
+                    g.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    g.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
+                    g.Columns["CompleteName"].HeaderText = "نام مالک";
+                    g.Columns["KhewatType"].HeaderText = "قسم مالک";
+                    g.Columns["FardPart_Bata"].Visible = false;
+                    g.Columns["seqno"].HeaderText = "نمبر شمار";
+                    g.Columns["MushtriFareeqId"].Visible = false;
+                    g.Columns["KhatooniId"].Visible = false;
+                    g.Columns["PersonId"].Visible = false;
+                    g.Columns["KhewatTypeId"].Visible = false;
+                    g.Columns["RecStatus"].HeaderText = "حالت";
+                    g.Columns["CompleteName"].DisplayIndex = 2;
+                    g.Columns["KhewatType"].DisplayIndex = 3;
+                    g.Columns["seqno"].DisplayIndex = 1;
+                }
             }
             catch (Exception ex)
             {
@@ -969,29 +1004,34 @@ namespace SDC_Application.AL
         private void txtSearchKhanakasht_TextChanged(object sender, EventArgs e)
         {
             string filter = this.txtSearchKhanakasht.Text.ToString();
-            viewMF.RowFilter = "CompleteName LIKE '%" + filter + "%'";
-            this.dgMushteriFareeqainAll.DataSource = viewMF;
-            this.PopulateGridViewMushteryanAll();
+            if (viewMF != null)
+            {
+                viewMF.RowFilter = "CompleteName LIKE '%" + filter + "%'";
+                this.dgMushteriFareeqainAll.DataSource = viewMF;
+                this.PopulateGridViewMushteryanAll();
+            }
         }
         #region Fill Gridview Mushteryan by Khata
 
         private void PopulateGridViewMushteryanAll()
         {
-            dgMushteriFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
-            dgMushteriFareeqainAll.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
-            dgMushteriFareeqainAll.Columns["CompleteName"].HeaderText = "نام مالک";
-            dgMushteriFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
-            dgMushteriFareeqainAll.Columns["FardPart_Bata"].Visible = false;
-            dgMushteriFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
-            dgMushteriFareeqainAll.Columns["MushtriFareeqId"].Visible = false;
-            dgMushteriFareeqainAll.Columns["KhatooniId"].Visible = false;
-            dgMushteriFareeqainAll.Columns["PersonId"].Visible = false;
-            dgMushteriFareeqainAll.Columns["KhewatTypeId"].Visible = false;
-            dgMushteriFareeqainAll.Columns["RecStatus"].HeaderText = "حالت";
-            dgMushteriFareeqainAll.Columns["CompleteName"].DisplayIndex = 2;
-            dgMushteriFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
-            dgMushteriFareeqainAll.Columns["seqno"].DisplayIndex = 1;
-
+            if (dgMushteriFareeqainAll != null)
+            {
+                dgMushteriFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
+                dgMushteriFareeqainAll.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
+                dgMushteriFareeqainAll.Columns["CompleteName"].HeaderText = "نام مالک";
+                dgMushteriFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
+                dgMushteriFareeqainAll.Columns["FardPart_Bata"].Visible = false;
+                dgMushteriFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
+                dgMushteriFareeqainAll.Columns["MushtriFareeqId"].Visible = false;
+                dgMushteriFareeqainAll.Columns["KhatooniId"].Visible = false;
+                dgMushteriFareeqainAll.Columns["PersonId"].Visible = false;
+                dgMushteriFareeqainAll.Columns["KhewatTypeId"].Visible = false;
+                dgMushteriFareeqainAll.Columns["RecStatus"].HeaderText = "حالت";
+                dgMushteriFareeqainAll.Columns["CompleteName"].DisplayIndex = 2;
+                dgMushteriFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
+                dgMushteriFareeqainAll.Columns["seqno"].DisplayIndex = 1;
+            }
         }
 
         #endregion
@@ -999,9 +1039,12 @@ namespace SDC_Application.AL
         private void txtSearchCurrentKhewatFareeqain_TextChanged(object sender, EventArgs e)
         {
             string filter = this.txtSearchCurrentKhewatFareeqain.Text.ToString();
-            view.RowFilter = "PersonName LIKE '%" + filter + "%'";
-            dgKhewatFareeqainAll.DataSource = view;
-            this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+            if (view != null)
+            {
+                view.RowFilter = "PersonName LIKE '%" + filter + "%'";
+                dgKhewatFareeqainAll.DataSource = view;
+                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+            }
         }
 
         private void txtSearchCurrentKhewatFareeqain_KeyPress(object sender, KeyPressEventArgs e)

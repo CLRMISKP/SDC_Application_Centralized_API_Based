@@ -112,10 +112,10 @@ namespace SDC_Application
                         OS_Password = SDC_Application.Classess.Crypto.Decrypt(dt.Rows[0].Field<String>("OS_Password"));
 
 
-                        FardMalkan_Pwa ojbktg = new FardMalkan_Pwa();
-                        ojbktg.SetDatabaseLogon(DB_UserName, DB_Password, ReportServer_Ip, ReportServer_DB_Name);
-                        ojbktg.SetParameterValue("TokenID", TokenID);
-                        crystalReportViewer1.ReportSource = ojbktg;
+                        //FardMalkan_Pwa ojbktg = new FardMalkan_Pwa();
+                        //ojbktg.SetDatabaseLogon(DB_UserName, DB_Password, ReportServer_Ip, ReportServer_DB_Name);
+                        //ojbktg.SetParameterValue("TokenID", TokenID);
+                        //crystalReportViewer1.ReportSource = ojbktg;
                         //FardMalkan_Rzr ojbktg = new FardMalkan_Rzr();
                         ////ojbktg.SetDatabaseLogon(DB_UserName, DB_Password, ReportServer_Ip, ReportServer_DB_Name);
                         //TestDS testDs=new TestDS();

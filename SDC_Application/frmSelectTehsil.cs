@@ -9,12 +9,14 @@ using System.Windows.Forms;
 using SDC_Application.DL;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using SDC_Application.Classess;
 
 namespace SDC_Application
 {
     public partial class frmSelectTehsil : Form
     {
         Database ojbdb = new Database();
+        APIClient client = new APIClient();
         public int TehsilIdSelected  = -1;
         public frmSelectTehsil()
         {
@@ -25,7 +27,7 @@ namespace SDC_Application
         {
             //DataTable districts = ojbdb.fillDataTable(
                string spWithParam = "Proc_Entry_DistrictsAll ";//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
-               DataTable districts = ojbdb.filldatatable_from_storedProcedure(spWithParam);
+               DataTable districts = client.GetDistrictList(UsersManagments.userToken);
                this.cmdDistrict.DataSource = districts;
                cmdDistrict.DisplayMember = "DistrictnameUrdu";
                cmdDistrict.ValueMember = "DistrictId";
@@ -35,34 +37,34 @@ namespace SDC_Application
 
         private void cmdDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string distirctid = "";
-            distirctid = cmdDistrict.SelectedValue.ToString();
+            //string distirctid = "";
+            //distirctid = cmdDistrict.SelectedValue.ToString();
 
-            int selectedIndex = cmdDistrict.SelectedIndex;
+            //int selectedIndex = cmdDistrict.SelectedIndex;
 
 
-            if(cmdDistrict.SelectedValue.GetType() != typeof(System.Int32))return;
-            System.Int32 selectedValue = (System.Int32)cmdDistrict.SelectedValue;
-            if (distirctid != "")
-            {
-                string spWithParam = "Proc_Entry_Tehsils  " + selectedValue.ToString();//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
-                DataTable tehsils = ojbdb.filldatatable_from_storedProcedure(spWithParam);
-                this.cmbTehsil.DataSource = tehsils;
+            //if(cmdDistrict.SelectedValue.GetType() != typeof(System.Int32))return;
+            //System.Int32 selectedValue = (System.Int32)cmdDistrict.SelectedValue;
+            //if (distirctid != "")
+            //{
+            //    string spWithParam = "Proc_Entry_Tehsils  " + selectedValue.ToString();//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
+            //    DataTable tehsils = ojbdb.filldatatable_from_storedProcedure(spWithParam);
+            //    this.cmbTehsil.DataSource = tehsils;
 
-                cmbTehsil.DisplayMember = "TehsilNameUrdu";
-                cmbTehsil.ValueMember = "TehsilId";
-            }
+            //    cmbTehsil.DisplayMember = "TehsilNameUrdu";
+            //    cmbTehsil.ValueMember = "TehsilId";
+            //}
         }
 
         private void cmbTehsil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTehsil.SelectedValue.GetType() != typeof(System.Int32)) return;
-            System.Int32 selectedValue = (System.Int32)cmbTehsil.SelectedValue;
-            //if (cmbTehsil != "")
-            {
-                //MessageBox.Show(selectedValue.ToString());
-                TehsilIdSelected = selectedValue;
-            }
+            //if (cmbTehsil.SelectedValue.GetType() != typeof(System.Int32)) return;
+            //System.Int32 selectedValue = (System.Int32)cmbTehsil.SelectedValue;
+            ////if (cmbTehsil != "")
+            //{
+            //    //MessageBox.Show(selectedValue.ToString());
+            //    TehsilIdSelected = selectedValue;
+            //}
         }
 
       
@@ -126,5 +128,25 @@ namespace SDC_Application
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
+        private void cmdDistrict_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string distirctid = "";
+            distirctid = cmdDistrict.SelectedValue.ToString();
+            if (distirctid != "")
+            {
+                string spWithParam = "Proc_Entry_Tehsils  " + distirctid;//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
+                DataTable tehsils = client.GetTehsilList(distirctid, UsersManagments.userToken);
+                this.cmbTehsil.DataSource = tehsils;
+
+                cmbTehsil.DisplayMember = "TehsilNameUrdu";
+                cmbTehsil.ValueMember = "TehsilId";
+            }
+        }
+
+        private void cmbTehsil_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            TehsilIdSelected = int.Parse(cmbTehsil.SelectedValue.ToString());
+            UsersManagments._Tehsilid =int.Parse( cmbTehsil.SelectedValue.ToString());
+        }
     }
 }

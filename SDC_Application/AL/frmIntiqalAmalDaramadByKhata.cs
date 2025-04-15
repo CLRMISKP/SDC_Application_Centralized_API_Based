@@ -107,19 +107,26 @@ namespace SDC_Application.AL
                 DataTable dt = new DataTable();
                 dt = intiqal.GetIntiqalKhataJaatListByIntiqalId(IntiqalId);
                 dgInteqalKhattas.DataSource = dt;
-                dgInteqalKhattas.Columns["IntiqalId"].Visible = false;
-                dgInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
-                dgInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
-                dgInteqalKhattas.Columns["AmaldaramadStatus"].Visible = false;
-                dgInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
-                //dgInteqalKhattas.Columns["Khata_Area"].Visible = false;
-                //dgInteqalKhattas.Columns["Khata_TotalParts"].Visible = false;
-                dgInteqalKhattas.Columns["IsJuzviKhatta"].Visible = false;
-                dgInteqalKhattas.Columns["TotalParts"].Visible = false;
-                dgInteqalKhattas.Columns["Kanal"].Visible = false;
-                dgInteqalKhattas.Columns["Marla"].Visible = false;
-                dgInteqalKhattas.Columns["Sarsai"].Visible = false;
-                dgInteqalKhattas.Columns["Feet"].Visible = false;
+                if (dt != null)
+                {
+                    dgInteqalKhattas.Columns["IntiqalId"].Visible = false;
+                    dgInteqalKhattas.Columns["IntiqalKhataId"].Visible = false;
+                    dgInteqalKhattas.Columns["IntiqalKhataRecId"].Visible = false;
+                    dgInteqalKhattas.Columns["AmaldaramadStatus"].Visible = false;
+                    dgInteqalKhattas.Columns["AmaldaramadDate"].Visible = false;
+                    //dgInteqalKhattas.Columns["Khata_Area"].Visible = false;
+                    //dgInteqalKhattas.Columns["Khata_TotalParts"].Visible = false;
+                    dgInteqalKhattas.Columns["IsJuzviKhatta"].Visible = false;
+                    dgInteqalKhattas.Columns["TotalParts"].Visible = false;
+                    dgInteqalKhattas.Columns["Kanal"].Visible = false;
+                    dgInteqalKhattas.Columns["Marla"].Visible = false;
+                    dgInteqalKhattas.Columns["Sarsai"].Visible = false;
+                    dgInteqalKhattas.Columns["Feet"].Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("کوئی ریکارڈ نہں ملا", "ریکارڈ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -158,43 +165,46 @@ namespace SDC_Application.AL
          {
              try
              {
-                 dgSellersBeforeAmal.Columns["PersonName"].DisplayIndex = 1;
-                 dgSellersBeforeAmal.Columns["KhewatType"].DisplayIndex = 10;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].DisplayIndex = 2;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Area"].DisplayIndex = 3;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].DisplayIndex = 4;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Area"].DisplayIndex = 5;
-                 dgSellersBeforeAmal.Columns["PersonName"].HeaderText = "نام مالک";
-                 dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].HeaderText = "کل حصہ";
-                 dgSellersBeforeAmal.Columns["Seller_Total_Area"].HeaderText = "کل رقبہ";
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].HeaderText = " حصہ منتقلہ";
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Area"].HeaderText = "رقبہ منتقلہ";
-                 dgSellersBeforeAmal.Columns["IntiqalSellerRecId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["IntiqalSellerPersonId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["SellerPersonDied"].Visible = false;
-                 dgSellersBeforeAmal.Columns["SellerPersonDeathDate"].Visible = false;
-                 dgSellersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["MushtriFareeqId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Marla"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Kanal"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Sarsai"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Feet"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Kanal"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Marla"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Sarsai"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Feet"].Visible = false;
-                 dgSellersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["KhewatGroupFareeqId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["KhewatType"].Visible = false;
-                 dgSellersBeforeAmal.Columns["FardTokenId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["FardTokenDate"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].Width=60;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Area"].Width=60;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].Width=60;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Area"].Width=80;
-                 dgSellersBeforeAmal.Columns[0].Width = 80;
-                 dgSellersBeforeAmal.Columns[0].DisplayIndex = 6;
+                if (dgSellersBeforeAmal.DataSource != null)
+                {
+                    dgSellersBeforeAmal.Columns["PersonName"].DisplayIndex = 1;
+                    dgSellersBeforeAmal.Columns["KhewatType"].DisplayIndex = 10;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].DisplayIndex = 2;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Area"].DisplayIndex = 3;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].DisplayIndex = 4;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Area"].DisplayIndex = 5;
+                    dgSellersBeforeAmal.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].HeaderText = "کل حصہ";
+                    dgSellersBeforeAmal.Columns["Seller_Total_Area"].HeaderText = "کل رقبہ";
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].HeaderText = " حصہ منتقلہ";
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Area"].HeaderText = "رقبہ منتقلہ";
+                    dgSellersBeforeAmal.Columns["IntiqalSellerRecId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["IntiqalSellerPersonId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["SellerPersonDied"].Visible = false;
+                    dgSellersBeforeAmal.Columns["SellerPersonDeathDate"].Visible = false;
+                    dgSellersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["MushtriFareeqId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Marla"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Kanal"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Sarsai"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Feet"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Kanal"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Marla"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Sarsai"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Feet"].Visible = false;
+                    dgSellersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["KhewatType"].Visible = false;
+                    dgSellersBeforeAmal.Columns["FardTokenId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["FardTokenDate"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].Width = 60;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Area"].Width = 60;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].Width = 60;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Area"].Width = 80;
+                    dgSellersBeforeAmal.Columns[0].Width = 80;
+                    dgSellersBeforeAmal.Columns[0].DisplayIndex = 6;
+                }
              }
              catch (Exception ex)
              {
@@ -207,44 +217,47 @@ namespace SDC_Application.AL
          {
              try
              {
-                 dgSellersBeforeAmal.Columns["PersonName"].DisplayIndex = 1;
-                 dgSellersBeforeAmal.Columns["KhatooniNo"].DisplayIndex = 2;
-                 dgSellersBeforeAmal.Columns["KhewatType"].DisplayIndex = 10;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].DisplayIndex = 3;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Area"].DisplayIndex = 4;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].DisplayIndex = 5;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Area"].DisplayIndex = 6;
-                 dgSellersBeforeAmal.Columns["PersonName"].HeaderText = "نام مالک";
-                 dgSellersBeforeAmal.Columns["KhatooniNo"].HeaderText = "کھتونی";
-                 dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].HeaderText = "کل حصہ";
-                 dgSellersBeforeAmal.Columns["Seller_Total_Area"].HeaderText = "کل رقبہ";
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].HeaderText = " حصہ منتقلہ";
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Area"].HeaderText = "رقبہ منتقلہ";
-                 dgSellersBeforeAmal.Columns["IntiqalSellerRecId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["IntiqalSellerPersonId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["SellerPersonDied"].Visible = false;
-                 dgSellersBeforeAmal.Columns["SellerPersonDeathDate"].Visible = false;
-                 dgSellersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["MushtriFareeqId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Marla"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Kanal"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Sarsai"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Feet"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Kanal"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Marla"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Sarsai"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Feet"].Visible = false;
-                 dgSellersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["KhewatGroupFareeqId"].Visible = false;
-                 dgSellersBeforeAmal.Columns["KhewatType"].Visible = false;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].Width = 60;
-                 dgSellersBeforeAmal.Columns["Seller_Total_Area"].Width = 60;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].Width = 60;
-                 dgSellersBeforeAmal.Columns["Seller_Sold_Area"].Width = 80;
-                 dgSellersBeforeAmal.Columns["KhatooniNo"].Width = 60;
-                 dgSellersBeforeAmal.Columns[0].Width = 80;
-                 dgSellersBeforeAmal.Columns[0].DisplayIndex = 6;
+                if (dgSellersBeforeAmal.DataSource != null)
+                {
+                    dgSellersBeforeAmal.Columns["PersonName"].DisplayIndex = 1;
+                    dgSellersBeforeAmal.Columns["KhatooniNo"].DisplayIndex = 2;
+                    dgSellersBeforeAmal.Columns["KhewatType"].DisplayIndex = 10;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].DisplayIndex = 3;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Area"].DisplayIndex = 4;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].DisplayIndex = 5;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Area"].DisplayIndex = 6;
+                    dgSellersBeforeAmal.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgSellersBeforeAmal.Columns["KhatooniNo"].HeaderText = "کھتونی";
+                    dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].HeaderText = "کل حصہ";
+                    dgSellersBeforeAmal.Columns["Seller_Total_Area"].HeaderText = "کل رقبہ";
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].HeaderText = " حصہ منتقلہ";
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Area"].HeaderText = "رقبہ منتقلہ";
+                    dgSellersBeforeAmal.Columns["IntiqalSellerRecId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["IntiqalSellerPersonId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["SellerPersonDied"].Visible = false;
+                    dgSellersBeforeAmal.Columns["SellerPersonDeathDate"].Visible = false;
+                    dgSellersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["MushtriFareeqId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Marla"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Kanal"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Sarsai"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Feet"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Kanal"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Marla"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Sarsai"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Feet"].Visible = false;
+                    dgSellersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgSellersBeforeAmal.Columns["KhewatType"].Visible = false;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Hissa"].Width = 60;
+                    dgSellersBeforeAmal.Columns["Seller_Total_Area"].Width = 60;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Hissa"].Width = 60;
+                    dgSellersBeforeAmal.Columns["Seller_Sold_Area"].Width = 80;
+                    dgSellersBeforeAmal.Columns["KhatooniNo"].Width = 60;
+                    dgSellersBeforeAmal.Columns[0].Width = 80;
+                    dgSellersBeforeAmal.Columns[0].DisplayIndex = 6;
+                }
              }
              catch (Exception ex)
              {
@@ -379,22 +392,25 @@ namespace SDC_Application.AL
          {
              try
              {
-                 dgSellersAfterAmal.Columns["PersonName"].DisplayIndex = 1;
-                 dgSellersAfterAmal.Columns["Fareeq_Hissa"].DisplayIndex = 2;
-                 dgSellersAfterAmal.Columns["Fareeq_Area"].DisplayIndex = 3;
-                 dgSellersAfterAmal.Columns["PersonName"].HeaderText = "نام مالک";
-                 dgSellersAfterAmal.Columns["Fareeq_Hissa"].HeaderText = "حصہ";
-                 dgSellersAfterAmal.Columns["Fareeq_Area"].HeaderText = "رقبہ";
-                 dgSellersAfterAmal.Columns["RecStatus"].HeaderText = "حالت";
-                 dgSellersAfterAmal.Columns["IntiqalSellerRecId"].Visible = false;
-                 dgSellersAfterAmal.Columns["IntiqalKhataRecId"].Visible = false;
-                 dgSellersAfterAmal.Columns["IntiqalSellerPersonId"].Visible = false;
-                 dgSellersAfterAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
-                 dgSellersAfterAmal.Columns["MushtriFareeqId"].Visible = false;
-                 dgSellersAfterAmal.Columns["KhewatGroupFareeqId"].Visible = false;
-                 dgSellersAfterAmal.Columns["Fareeq_Hissa"].Width = 70;
-                 dgSellersAfterAmal.Columns["Fareeq_Area"].Width=70;
-                 dgSellersAfterAmal.Columns["RecStatus"].Width=70;
+                if (dgSellersAfterAmal != null)
+                {
+                    dgSellersAfterAmal.Columns["PersonName"].DisplayIndex = 1;
+                    dgSellersAfterAmal.Columns["Fareeq_Hissa"].DisplayIndex = 2;
+                    dgSellersAfterAmal.Columns["Fareeq_Area"].DisplayIndex = 3;
+                    dgSellersAfterAmal.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgSellersAfterAmal.Columns["Fareeq_Hissa"].HeaderText = "حصہ";
+                    dgSellersAfterAmal.Columns["Fareeq_Area"].HeaderText = "رقبہ";
+                    dgSellersAfterAmal.Columns["RecStatus"].HeaderText = "حالت";
+                    dgSellersAfterAmal.Columns["IntiqalSellerRecId"].Visible = false;
+                    dgSellersAfterAmal.Columns["IntiqalKhataRecId"].Visible = false;
+                    dgSellersAfterAmal.Columns["IntiqalSellerPersonId"].Visible = false;
+                    dgSellersAfterAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
+                    dgSellersAfterAmal.Columns["MushtriFareeqId"].Visible = false;
+                    dgSellersAfterAmal.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgSellersAfterAmal.Columns["Fareeq_Hissa"].Width = 70;
+                    dgSellersAfterAmal.Columns["Fareeq_Area"].Width = 70;
+                    dgSellersAfterAmal.Columns["RecStatus"].Width = 70;
+                }
              }
              catch (Exception ex)
              {
@@ -406,24 +422,27 @@ namespace SDC_Application.AL
          {
              try
              {
-                 dgSellersAfterAmal.Columns["PersonName"].DisplayIndex = 1;
-                 dgSellersAfterAmal.Columns["KhatooniNo"].DisplayIndex = 2;
-                 dgSellersAfterAmal.Columns["Fareeq_Hissa"].DisplayIndex = 3;
-                 dgSellersAfterAmal.Columns["Fareeq_Area"].DisplayIndex = 4;
-                 dgSellersAfterAmal.Columns["PersonName"].HeaderText = "نام مالک";
-                 dgSellersAfterAmal.Columns["KhatooniNo"].HeaderText = "کھتونی";
-                 dgSellersAfterAmal.Columns["Fareeq_Hissa"].HeaderText = "حصہ";
-                 dgSellersAfterAmal.Columns["Fareeq_Area"].HeaderText = "رقبہ";
-                 dgSellersAfterAmal.Columns["RecStatus"].HeaderText = "حالت";
-                 dgSellersAfterAmal.Columns["IntiqalSellerRecId"].Visible = false;
-                 dgSellersAfterAmal.Columns["IntiqalKhataRecId"].Visible = false;
-                 dgSellersAfterAmal.Columns["IntiqalSellerPersonId"].Visible = false;
-                 dgSellersAfterAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
-                 dgSellersAfterAmal.Columns["MushtriFareeqId"].Visible = false;
-                 dgSellersAfterAmal.Columns["KhewatGroupFareeqId"].Visible = false;
-                 dgSellersAfterAmal.Columns["Fareeq_Hissa"].Width = 70;
-                 dgSellersAfterAmal.Columns["Fareeq_Area"].Width = 70;
-                 dgSellersAfterAmal.Columns["RecStatus"].Width = 70;
+                if (dgSellersAfterAmal != null)
+                {
+                    dgSellersAfterAmal.Columns["PersonName"].DisplayIndex = 1;
+                    dgSellersAfterAmal.Columns["KhatooniNo"].DisplayIndex = 2;
+                    dgSellersAfterAmal.Columns["Fareeq_Hissa"].DisplayIndex = 3;
+                    dgSellersAfterAmal.Columns["Fareeq_Area"].DisplayIndex = 4;
+                    dgSellersAfterAmal.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgSellersAfterAmal.Columns["KhatooniNo"].HeaderText = "کھتونی";
+                    dgSellersAfterAmal.Columns["Fareeq_Hissa"].HeaderText = "حصہ";
+                    dgSellersAfterAmal.Columns["Fareeq_Area"].HeaderText = "رقبہ";
+                    dgSellersAfterAmal.Columns["RecStatus"].HeaderText = "حالت";
+                    dgSellersAfterAmal.Columns["IntiqalSellerRecId"].Visible = false;
+                    dgSellersAfterAmal.Columns["IntiqalKhataRecId"].Visible = false;
+                    dgSellersAfterAmal.Columns["IntiqalSellerPersonId"].Visible = false;
+                    dgSellersAfterAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
+                    dgSellersAfterAmal.Columns["MushtriFareeqId"].Visible = false;
+                    dgSellersAfterAmal.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgSellersAfterAmal.Columns["Fareeq_Hissa"].Width = 70;
+                    dgSellersAfterAmal.Columns["Fareeq_Area"].Width = 70;
+                    dgSellersAfterAmal.Columns["RecStatus"].Width = 70;
+                }
              }
              catch (Exception ex)
              {
@@ -470,48 +489,53 @@ namespace SDC_Application.AL
 
          public void PopulateBuyerGrid()
          {
-             dgBuyersBeforeAmal.Columns["IntiqalBuyerRecId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["IntiqalBuyerPersonId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Hissa"].HeaderText = "حصہ";
-             dgBuyersBeforeAmal.Columns["Buyer_Kanal"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Marla"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Sarsai"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Feet"].Visible = false;
-             dgBuyersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Area"].HeaderText = "رقبہ";
-             dgBuyersBeforeAmal.Columns["PersonName"].HeaderText = "نام";
-             dgBuyersBeforeAmal.Columns["KhewatType"].Visible=false;
-             dgBuyersBeforeAmal.Columns["Rishta"].Visible = false;
-             dgBuyersBeforeAmal.Columns["RishtaId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["PersonName"].DisplayIndex = 0;
-             dgBuyersBeforeAmal.Columns["Buyer_Hissa"].Width = 70;
-             dgBuyersBeforeAmal.Columns["Buyer_Area"].Width = 90;
+            if (dgBuyersBeforeAmal.DataSource != null)
+            {
+                dgBuyersBeforeAmal.Columns["IntiqalBuyerRecId"].Visible = false;
+                dgBuyersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
+                dgBuyersBeforeAmal.Columns["IntiqalBuyerPersonId"].Visible = false;
+                dgBuyersBeforeAmal.Columns["Buyer_Hissa"].HeaderText = "حصہ";
+                dgBuyersBeforeAmal.Columns["Buyer_Kanal"].Visible = false;
+                dgBuyersBeforeAmal.Columns["Buyer_Marla"].Visible = false;
+                dgBuyersBeforeAmal.Columns["Buyer_Sarsai"].Visible = false;
+                dgBuyersBeforeAmal.Columns["Buyer_Feet"].Visible = false;
+                dgBuyersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
+                dgBuyersBeforeAmal.Columns["Buyer_Area"].HeaderText = "رقبہ";
+                dgBuyersBeforeAmal.Columns["PersonName"].HeaderText = "نام";
+                dgBuyersBeforeAmal.Columns["KhewatType"].Visible = false;
+                dgBuyersBeforeAmal.Columns["Rishta"].Visible = false;
+                dgBuyersBeforeAmal.Columns["RishtaId"].Visible = false;
+                dgBuyersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
+                dgBuyersBeforeAmal.Columns["PersonName"].DisplayIndex = 0;
+                dgBuyersBeforeAmal.Columns["Buyer_Hissa"].Width = 70;
+                dgBuyersBeforeAmal.Columns["Buyer_Area"].Width = 90;
+            }
          }
 
-         public void PopulateBuyerGridKK()
-         {
-             dgBuyersBeforeAmal.Columns["IntiqalBuyerRecId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["IntiqalBuyerPersonId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Hissa"].HeaderText = "حصہ";
-             dgBuyersBeforeAmal.Columns["Buyer_Kanal"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Marla"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Sarsai"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Feet"].Visible = false;
-             dgBuyersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Buyer_Area"].HeaderText = "رقبہ";
-             dgBuyersBeforeAmal.Columns["PersonName"].HeaderText = "نام";
-             dgBuyersBeforeAmal.Columns["KhatooniNo"].HeaderText = "کھتونی";
-             dgBuyersBeforeAmal.Columns["KhewatType"].Visible = false;
-             dgBuyersBeforeAmal.Columns["Rishta"].Visible = false;
-             dgBuyersBeforeAmal.Columns["RishtaId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
-             dgBuyersBeforeAmal.Columns["PersonName"].DisplayIndex = 0;
-             dgBuyersBeforeAmal.Columns["KhatooniNo"].DisplayIndex = 1;
-             dgBuyersBeforeAmal.Columns["Buyer_Hissa"].Width = 70;
-             dgBuyersBeforeAmal.Columns["Buyer_Area"].Width = 90;
+        public void PopulateBuyerGridKK()
+        {
+            if (dgBuyersBeforeAmal.DataSource != null) { 
+            dgBuyersBeforeAmal.Columns["IntiqalBuyerRecId"].Visible = false;
+            dgBuyersBeforeAmal.Columns["IntiqalKhataRecId"].Visible = false;
+            dgBuyersBeforeAmal.Columns["IntiqalBuyerPersonId"].Visible = false;
+            dgBuyersBeforeAmal.Columns["Buyer_Hissa"].HeaderText = "حصہ";
+            dgBuyersBeforeAmal.Columns["Buyer_Kanal"].Visible = false;
+            dgBuyersBeforeAmal.Columns["Buyer_Marla"].Visible = false;
+            dgBuyersBeforeAmal.Columns["Buyer_Sarsai"].Visible = false;
+            dgBuyersBeforeAmal.Columns["Buyer_Feet"].Visible = false;
+            dgBuyersBeforeAmal.Columns["IntiqalKhatooniRecId"].Visible = false;
+            dgBuyersBeforeAmal.Columns["Buyer_Area"].HeaderText = "رقبہ";
+            dgBuyersBeforeAmal.Columns["PersonName"].HeaderText = "نام";
+            dgBuyersBeforeAmal.Columns["KhatooniNo"].HeaderText = "کھتونی";
+            dgBuyersBeforeAmal.Columns["KhewatType"].Visible = false;
+            dgBuyersBeforeAmal.Columns["Rishta"].Visible = false;
+            dgBuyersBeforeAmal.Columns["RishtaId"].Visible = false;
+            dgBuyersBeforeAmal.Columns["KhewatTypeId"].Visible = false;
+            dgBuyersBeforeAmal.Columns["PersonName"].DisplayIndex = 0;
+            dgBuyersBeforeAmal.Columns["KhatooniNo"].DisplayIndex = 1;
+            dgBuyersBeforeAmal.Columns["Buyer_Hissa"].Width = 70;
+            dgBuyersBeforeAmal.Columns["Buyer_Area"].Width = 90;
+        }
          }
 
          #endregion
@@ -740,15 +764,17 @@ namespace SDC_Application.AL
              {
                  DataTable dtkj = new DataTable();
                 dtkj = intiqal.GetKhataJatForintiqalByMozaId(this.MozaId);
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = " - کھاتہ نمبر چنیے - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cbokhataNo.DataSource = dtkj;
-                cbokhataNo.DisplayMember = "KhataNo";
-                cbokhataNo.ValueMember = "RegisterHqDKhataId";
-                cbokhataNo.SelectedValue = 0;
-           
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = " - کھاتہ نمبر چنیے - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cbokhataNo.DataSource = dtkj;
+                    cbokhataNo.DisplayMember = "KhataNo";
+                    cbokhataNo.ValueMember = "RegisterHqDKhataId";
+                    cbokhataNo.SelectedValue = 0;
+                }
              }
              catch (Exception ex)
              {
@@ -768,22 +794,24 @@ namespace SDC_Application.AL
 
          private void PopulateGridViewKhewatMalkanAll()
          {
-             dgKhewatFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
-             dgKhewatFareeqainAll.Columns["Khewat_Area"].HeaderText = "رقبہ";
-             dgKhewatFareeqainAll.Columns["PersonName"].HeaderText = "نام مالک";
-             dgKhewatFareeqainAll.Columns["CNIC"].HeaderText = "شناختی نمبر";
-             dgKhewatFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
-             dgKhewatFareeqainAll.Columns["FardPart_Bata"].Visible=false;
-             dgKhewatFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
-             dgKhewatFareeqainAll.Columns["KhewatGroupFareeqId"].Visible = false;
-             dgKhewatFareeqainAll.Columns["KhewatGroupId"].Visible = false;
-             dgKhewatFareeqainAll.Columns["PersonId"].Visible = false;
-             dgKhewatFareeqainAll.Columns["KhewatTypeId"].Visible = false;
-             dgKhewatFareeqainAll.Columns["RecStatus"].HeaderText = "حالت";
-             dgKhewatFareeqainAll.Columns["PersonName"].DisplayIndex = 2;
-             dgKhewatFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
-             dgKhewatFareeqainAll.Columns["seqno"].DisplayIndex = 1;
-
+            if (dgKhewatFareeqainAll.DataSource != null)
+            {
+                dgKhewatFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
+                dgKhewatFareeqainAll.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                dgKhewatFareeqainAll.Columns["PersonName"].HeaderText = "نام مالک";
+                dgKhewatFareeqainAll.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                dgKhewatFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
+                dgKhewatFareeqainAll.Columns["FardPart_Bata"].Visible = false;
+                dgKhewatFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
+                dgKhewatFareeqainAll.Columns["KhewatGroupFareeqId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["KhewatGroupId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["PersonId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["KhewatTypeId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["RecStatus"].HeaderText = "حالت";
+                dgKhewatFareeqainAll.Columns["PersonName"].DisplayIndex = 2;
+                dgKhewatFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
+                dgKhewatFareeqainAll.Columns["seqno"].DisplayIndex = 1;
+            }
          }
 
 
@@ -825,26 +853,28 @@ namespace SDC_Application.AL
          {
              try
              {
-             dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-             dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-             dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
-             dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
-             dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-             dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
-             dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-             dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
-             dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
-             dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
-             dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
-             dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
-             dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
-             dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
-             dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
-             dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
-             dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
-             dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
-             dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
-
+                if (dgKhewatFreeqDetails.DataSource != null)
+                {
+                    dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                    dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
+                    dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                    dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
+                    dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
+                    dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
+                    dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
+                    dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
+                    dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
+                }
              }
              catch (Exception ex)
              {
@@ -855,9 +885,12 @@ namespace SDC_Application.AL
          private void txtSearchFromGrid_TextChanged(object sender, EventArgs e)
          {
              string filter = this.txtSearchFromGrid.Text.ToString();
-             view.RowFilter = "PersonName LIKE '%" + filter + "%'";
-             dgKhewatFareeqainAll.DataSource = view;
-             this.PopulateGridViewKhewatMalkanAll();
+            if (view != null)
+            {
+                view.RowFilter = "PersonName LIKE '%" + filter + "%'";
+                dgKhewatFareeqainAll.DataSource = view;
+                this.PopulateGridViewKhewatMalkanAll();
+            }
          }
 
          private void txtSearchFromGrid_KeyPress(object sender, KeyPressEventArgs e)

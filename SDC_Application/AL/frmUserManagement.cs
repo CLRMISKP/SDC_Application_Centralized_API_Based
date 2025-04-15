@@ -82,10 +82,10 @@ namespace SDC_Application.AL
                         DataRowView drv = (DataRowView)this.cbUserRoles.SelectedItem;
                         int.TryParse(drv["RoleId"].ToString(), out iSelectedValue);
                     }
-
+                    //imgDataFinger=
                     string Err_Msg = "";
                     string LastId = ObjUser.WEB_SP_INSERT_Users_Profile_withRoleId(UserId, TehsilID, FirstName, LastName, LoginId, Password, userid, recstatus, imgDataFinger, isRO, ((DataRowView)this.cbUserRoles.SelectedItem)["RoleId"].ToString(), out Err_Msg);
-                    if(Err_Msg!=""){
+                    if(Err_Msg!=null){
                         string [] ar = Err_Msg.Split('|');
                         MessageBox.Show(ar[0]);
                         if (ar.Length > 1 && ar[1] == "INVALID_PASS") this.txtConfPassword.Focus();
@@ -240,11 +240,14 @@ namespace SDC_Application.AL
          DataTable d = new DataTable();
                 dt = ObjUser.getRoleObjectdetails(roleid);
                 grdUserRoles.DataSource = dt;
+            if (dt != null)
+            {
                 grdUserRoles.Columns["ObjectId"].Visible = false;
                 grdUserRoles.Columns["RoleDetailId"].Visible = false;
                 grdUserRoles.Columns["ObjectId"].Visible = false;
                 grdUserRoles.Columns["ObjectActualName"].Visible = false;
                 grdUserRoles.Columns["RoleId"].Visible = false;
+            }
         }
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
@@ -261,10 +264,13 @@ namespace SDC_Application.AL
             string TehsilId = UsersManagments._Tehsilid.ToString();
             dt = ObjUser.getProfile(TehsilId);
             grdExistingUsers.DataSource = dt;
-            grdExistingUsers.Columns["RecStatus"].HeaderText = "Active";
-            grdExistingUsers.Columns["UserId"].Visible = false;
-            grdExistingUsers.Columns["Password"].Visible = false;
-            grdExistingUsers.Columns["BiometricCaptured"].Visible = false;
+            if (dt != null)
+            {
+                grdExistingUsers.Columns["RecStatus"].HeaderText = "Active";
+                grdExistingUsers.Columns["UserId"].Visible = false;
+                grdExistingUsers.Columns["Password"].Visible = false;
+                grdExistingUsers.Columns["BiometricCaptured"].Visible = false;
+            }
         }
 
         private void grdExistingUsers_Click(object sender, EventArgs e)

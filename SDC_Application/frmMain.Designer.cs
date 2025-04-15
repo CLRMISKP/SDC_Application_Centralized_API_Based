@@ -258,7 +258,6 @@
             this.menuCovid19Booking.Size = new System.Drawing.Size(221, 42);
             this.menuCovid19Booking.Text = "2 - بکنگ";
             this.menuCovid19Booking.Visible = false;
-            this.menuCovid19Booking.Click += new System.EventHandler(this.menuCovid19Booking_Click);
             // 
             // mnuRoznamchaROorders
             // 

@@ -63,63 +63,68 @@ namespace SDC_Application.AL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text;DataGridViewHelper.addHelpterToAllFormGridViews(this);
 
             dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_ReceiptVoucherMaster_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "',"+UsersManagments.SubSdcId.ToString());
-            bs.DataSource = dt;
-            grdReciptMaster.DataSource = bs;
-            DataTable outputTable = dt.Clone();
-
-            for (int i = dt.Rows.Count - 1; i >= 0; i--)
+            if (dt != null)
             {
-                outputTable.ImportRow(dt.Rows[i]);
+                bs.DataSource = dt;
+                grdReciptMaster.DataSource = bs;
+                DataTable outputTable = dt.Clone();
+
+                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                {
+                    outputTable.ImportRow(dt.Rows[i]);
+                }
+                // grdVoucherDetails.DataSource = outputTable;
+                grdReciptMaster.DataSource = outputTable;
+
+
+                PopulateGrid();
             }
-            // grdVoucherDetails.DataSource = outputTable;
-            grdReciptMaster.DataSource = outputTable;
-
-
-            PopulateGrid();
-
                        
         }
 
         public void PopulateGrid()
         {
-            grdReciptMaster.Columns["PV_Date"].DisplayIndex = 0;
-            grdReciptMaster.Columns["RVDate"].DisplayIndex = 1;
-            grdReciptMaster.Columns["RVNo"].DisplayIndex = 2;
-            grdReciptMaster.Columns["PV_No"].DisplayIndex = 3;
+            if (grdReciptMaster.DataSource != null)
+            {
+                grdReciptMaster.Columns["PV_Date"].DisplayIndex = 0;
+                grdReciptMaster.Columns["RVDate"].DisplayIndex = 1;
+                grdReciptMaster.Columns["RVNo"].DisplayIndex = 2;
+                grdReciptMaster.Columns["PV_No"].DisplayIndex = 3;
 
-            grdReciptMaster.Columns["Visitor_Name"].DisplayIndex = 4;
-            grdReciptMaster.Columns["Visitor_FatherName"].DisplayIndex = 5;
-            grdReciptMaster.Columns["Visitor_CNIC"].DisplayIndex = 6;
-            grdReciptMaster.Columns["ServiceTypeName_Urdu"].DisplayIndex = 7;
-            grdReciptMaster.Columns["MozaNameUrdu"].DisplayIndex = 8;
-            grdReciptMaster.Columns["RV_VerifiedStatus"].DisplayIndex = 9;
+                grdReciptMaster.Columns["Visitor_Name"].DisplayIndex = 4;
+                grdReciptMaster.Columns["Visitor_FatherName"].DisplayIndex = 5;
+                grdReciptMaster.Columns["Visitor_CNIC"].DisplayIndex = 6;
+                grdReciptMaster.Columns["ServiceTypeName_Urdu"].DisplayIndex = 7;
+                grdReciptMaster.Columns["MozaNameUrdu"].DisplayIndex = 8;
+                grdReciptMaster.Columns["RV_VerifiedStatus"].DisplayIndex = 9;
 
-            //grdReciptMaster.Columns["RVId"].HeaderText = " رسید آیی ڈی";
-            grdReciptMaster.Columns["RVNo"].HeaderText = "رسید نمبر";
-            grdReciptMaster.Columns["PV_No"].HeaderText = "چالان فارم نمبر";
-            grdReciptMaster.Columns["PV_Date"].HeaderText = "چالان فارم تاریخ";
-            grdReciptMaster.Columns["RVDate"].HeaderText = "رسید کی تاریخ";
-            grdReciptMaster.Columns["Visitor_Name"].HeaderText = " نام";
-            grdReciptMaster.Columns["Visitor_FatherName"].HeaderText = "والد/شوہر ";
-            grdReciptMaster.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ نمبر";
-            grdReciptMaster.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
-            grdReciptMaster.Columns["MozaNameUrdu"].HeaderText = "موضع";
-            grdReciptMaster.Columns["RV_VerifiedStatus"].HeaderText = "تصدیق شدہ";
+                //grdReciptMaster.Columns["RVId"].HeaderText = " رسید آیی ڈی";
+                grdReciptMaster.Columns["RVNo"].HeaderText = "رسید نمبر";
+                grdReciptMaster.Columns["PV_No"].HeaderText = "چالان فارم نمبر";
+                grdReciptMaster.Columns["PV_Date"].HeaderText = "چالان فارم تاریخ";
+                grdReciptMaster.Columns["RVDate"].HeaderText = "رسید کی تاریخ";
+                grdReciptMaster.Columns["Visitor_Name"].HeaderText = " نام";
+                grdReciptMaster.Columns["Visitor_FatherName"].HeaderText = "والد/شوہر ";
+                grdReciptMaster.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ نمبر";
+                grdReciptMaster.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
+                grdReciptMaster.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdReciptMaster.Columns["RV_VerifiedStatus"].HeaderText = "تصدیق شدہ";
 
-            grdReciptMaster.Columns["RVId"].Visible = false;
-            grdReciptMaster.Columns["RVRemarks"].Visible = false;
-            grdReciptMaster.Columns["TehsilId"].Visible = false;
-            grdReciptMaster.Columns["TokenId"].Visible = false;
-            grdReciptMaster.Columns["TokenDate"].Visible = false;
-            grdReciptMaster.Columns["Visitor_FatherName"].Visible = false;
-            grdReciptMaster.Columns["ServiceTypeId"].Visible = false;
-            grdReciptMaster.Columns["PVId"].Visible = false;
-            grdReciptMaster.Columns["MozaId"].Visible = false;
-            grdReciptMaster.Columns["TokenNo"].Visible = false;
-            //grdReciptMaster.Columns["RV_Date"].Visible = false;
-            objdatagrid.colorrbackgrid(grdReciptMaster);
-            objdatagrid.gridControls(grdReciptMaster);
-            grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+                grdReciptMaster.Columns["RVId"].Visible = false;
+                grdReciptMaster.Columns["RVRemarks"].Visible = false;
+                grdReciptMaster.Columns["TehsilId"].Visible = false;
+                grdReciptMaster.Columns["TokenId"].Visible = false;
+                grdReciptMaster.Columns["TokenDate"].Visible = false;
+                grdReciptMaster.Columns["Visitor_FatherName"].Visible = false;
+                grdReciptMaster.Columns["ServiceTypeId"].Visible = false;
+                grdReciptMaster.Columns["PVId"].Visible = false;
+                grdReciptMaster.Columns["MozaId"].Visible = false;
+                grdReciptMaster.Columns["TokenNo"].Visible = false;
+                //grdReciptMaster.Columns["RV_Date"].Visible = false;
+                objdatagrid.colorrbackgrid(grdReciptMaster);
+                objdatagrid.gridControls(grdReciptMaster);
+                grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
         private void grdReciptMaster_DoubleClick(object sender, EventArgs e)
         {
@@ -214,10 +219,12 @@ namespace SDC_Application.AL
 
         public void fillgv_by_filter(string Condition)
         {
-
-            DataView v = new DataView(dt);
-            v.RowFilter = Condition;
-            grdReciptMaster.DataSource = v;
+            if (dt != null)
+            {
+                DataView v = new DataView(dt);
+                v.RowFilter = Condition;
+                grdReciptMaster.DataSource = v;
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -225,27 +232,36 @@ namespace SDC_Application.AL
 
             string filter = this.txtSearch.Text.ToString();
             fillgv_by_filter("RVNo LIKE '%" + filter + "%'");
-            objdatagrid.colorrbackgrid(grdReciptMaster);
-            objdatagrid.gridControls(grdReciptMaster);
-            grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            if (grdReciptMaster.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdReciptMaster);
+                objdatagrid.gridControls(grdReciptMaster);
+                grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
         private void txtChallanNo_TextChanged(object sender, EventArgs e)
         {
 
             string filter = this.txtChallanNo.Text.ToString();
             fillgv_by_filter("PV_No LIKE '%" + filter + "%'");
-            objdatagrid.colorrbackgrid(grdReciptMaster);
-            objdatagrid.gridControls(grdReciptMaster);
-            grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            if (grdReciptMaster.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdReciptMaster);
+                objdatagrid.gridControls(grdReciptMaster);
+                grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
         private void txtCNIC_TextChanged(object sender, EventArgs e)
         {
             string filter = this.txtCNIC.Text.ToString();
             fillgv_by_filter("Visitor_CNIC LIKE '%" + filter + "%'");
-            objdatagrid.colorrbackgrid(grdReciptMaster);
-            objdatagrid.gridControls(grdReciptMaster);
-            grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            if (grdReciptMaster.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdReciptMaster);
+                objdatagrid.gridControls(grdReciptMaster);
+                grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -253,9 +269,12 @@ namespace SDC_Application.AL
 
             string filter = this.txtName.Text.ToString();
             fillgv_by_filter("Visitor_Name LIKE '%" + filter + "%'");
-            objdatagrid.colorrbackgrid(grdReciptMaster);
-            objdatagrid.gridControls(grdReciptMaster);
-            grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            if (grdReciptMaster.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdReciptMaster);
+                objdatagrid.gridControls(grdReciptMaster);
+                grdReciptMaster.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)

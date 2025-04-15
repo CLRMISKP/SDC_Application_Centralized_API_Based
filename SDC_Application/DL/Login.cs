@@ -12,6 +12,7 @@ using SDC_Application.BL;
 using SDC_Application.AL;
 using System.Configuration;
 using System.Net.NetworkInformation;
+using System.Net;
 
 namespace SDC_Application.DL
 {
@@ -23,7 +24,7 @@ namespace SDC_Application.DL
 
         UserMangement usm = new UserMangement();
         Database objDb = new Database();
-        public string ver =  "3.0.2.34";
+        public string ver =  "4.0.0.5";
         frmSelectTehsil mfrmSelectTehsil = new frmSelectTehsil();
         frmSystemRegistration mSystemRegistration = new frmSystemRegistration();
         DataTable SystemInfo = new DataTable();
@@ -38,7 +39,7 @@ namespace SDC_Application.DL
             this.Text = "سروس ڈیلیوری سنٹر سسٹم   " + "( Version "+ver+" )";
         }
 
-        
+
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -48,11 +49,13 @@ namespace SDC_Application.DL
             if (showFormName != null && showFormName.ToUpper() == "TRUE") this.Text = this.Name + "|" + this.Text; DataGridViewHelper.addHelpterToAllFormGridViews(this);
             mac = string.Join(",", mfrmSelectTehsil.getmacs().Cast<String>().Select(p => p.ToString()));
             usm.currentPcMacs = mac;
+            //SystemInfo = usm.GetSystemInfo(System.Environment.MachineName, mac);
             SystemInfo = usm.GetSystemInfo(System.Environment.MachineName, mac);
-
+            if (SystemInfo != null)
+            { 
             if (SystemInfo.Rows.Count > 0)
             {
-               // MessageBox.Show(UsersManagments._Tehsilid.ToString());
+                // MessageBox.Show(UsersManagments._Tehsilid.ToString());
                 int v;
                 if (Int32.TryParse(SystemInfo.Rows[0]["SiteId"].ToString(), out v))
                 {
@@ -66,7 +69,7 @@ namespace SDC_Application.DL
             }
             else
             {
-              //  MessageBox.Show("System is not registered");
+                //  MessageBox.Show("System is not registered");
                 mSystemRegistration.ShowDialog(this);
                 if (mSystemRegistration.DialogResult == System.Windows.Forms.DialogResult.Abort || mSystemRegistration.DialogResult == System.Windows.Forms.DialogResult.Cancel)
                 {
@@ -81,9 +84,33 @@ namespace SDC_Application.DL
                     GetLogin(mSystemRegistration.txtUser.Text.ToString().Trim(), mSystemRegistration.txtPass.Text.ToString().Trim());
                     //this.Hide();
                     this.BeginInvoke(new MethodInvoker(this.Hide));
-                   // Login mlogin = new Login();
-                   // this.Hide();
-                   // mlogin.Dispose();
+                    // Login mlogin = new Login();
+                    // this.Hide();
+                    // mlogin.Dispose();
+
+                }
+            }
+        }
+            else
+            {
+                //  MessageBox.Show("System is not registered");
+                mSystemRegistration.ShowDialog(this);
+                if (mSystemRegistration.DialogResult == System.Windows.Forms.DialogResult.Abort || mSystemRegistration.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    mfrmSelectTehsil.Dispose();
+                    this.Dispose();
+                    Application.Exit();
+                    return;
+
+                }
+                else
+                {
+                    GetLogin(mSystemRegistration.txtUser.Text.ToString().Trim(), mSystemRegistration.txtPass.Text.ToString().Trim());
+                    //this.Hide();
+                    this.BeginInvoke(new MethodInvoker(this.Hide));
+                    // Login mlogin = new Login();
+                    // this.Hide();
+                    // mlogin.Dispose();
 
                 }
             }
@@ -113,8 +140,8 @@ namespace SDC_Application.DL
 
             //}
 
-            
-            
+
+
         }
 
 
@@ -123,6 +150,7 @@ namespace SDC_Application.DL
 
         private void btnSaveLogin_Click_1(object sender, EventArgs e)
         {
+            
 
             DataTable dt = new DataTable();
             dt = user.GetMachineAccessControl("", mac);

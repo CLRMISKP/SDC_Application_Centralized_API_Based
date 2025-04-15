@@ -17,6 +17,7 @@ namespace SDC_Application.AL
     {
         Database ojbdb = new Database();
         UserMangement usm = new UserMangement();
+        APIClient client = new APIClient();
         public int TehsilIdSelected = -1;
         public frmSystemRegistration()
         {
@@ -26,10 +27,13 @@ namespace SDC_Application.AL
         private void SystemRegistration_Load(object sender, EventArgs e)
         {
             string spWithParam = "Proc_Entry_DistrictsAll ";//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
-            DataTable districts = ojbdb.filldatatable_from_storedProcedure(spWithParam);
-            this.cmdDistrict.DataSource = districts;
-            cmdDistrict.DisplayMember = "DistrictnameUrdu";
-            cmdDistrict.ValueMember = "DistrictId";
+            DataTable districts = client.GetDistrictList(UsersManagments.userToken); //ojbdb.filldatatable_from_storedProcedure(spWithParam);
+            if (districts != null)
+            {
+                this.cmdDistrict.DataSource = districts;
+                cmdDistrict.DisplayMember = "DistrictnameUrdu";
+                cmdDistrict.ValueMember = "DistrictId";
+            }
             macList.DataSource = getmacs();
             macList.Text = getmac_default();
             ipList.DataSource = GetAllLocalIPv4(NetworkInterfaceType.Ethernet);
@@ -98,23 +102,26 @@ namespace SDC_Application.AL
             if (distirctid != "")
             {
                 string spWithParam = "Proc_Entry_Tehsils  " + selectedValue.ToString();//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
-                DataTable tehsils = ojbdb.filldatatable_from_storedProcedure(spWithParam);
+                DataTable tehsils = client.GetTehsilList(selectedValue.ToString(), UsersManagments.userToken);
                 this.cmbTehsil.DataSource = tehsils;
-
-                cmbTehsil.DisplayMember = "TehsilNameUrdu";
-                cmbTehsil.ValueMember = "TehsilId";
+                if(tehsils!= null)
+                {
+                    cmbTehsil.DisplayMember = "TehsilNameUrdu";
+                    cmbTehsil.ValueMember = "TehsilId";
+                }
+               
             }
         }
 
         private void cmbTehsil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTehsil.SelectedValue.GetType() != typeof(System.Int32)) return;
-            System.Int32 selectedValue = (System.Int32)cmbTehsil.SelectedValue;
-            //if (cmbTehsil != "")
-            {
-                //MessageBox.Show(selectedValue.ToString());
-                TehsilIdSelected = selectedValue;
-            }
+            //if (cmbTehsil.SelectedValue.GetType() != typeof(System.Int32)) return;
+            //System.Int32 selectedValue = (System.Int32)cmbTehsil.SelectedValue;
+            ////if (cmbTehsil != "")
+            //{
+            //    //MessageBox.Show(selectedValue.ToString());
+            //    TehsilIdSelected = selectedValue;
+            //}
         }
 
         private void txtPass_Leave(object sender, EventArgs e)
@@ -136,10 +143,13 @@ namespace SDC_Application.AL
                 string password = txtPass.Text.Trim();
                 string encPass = Crypto.getEncryptedCode(txtPass.Text.Trim());
                 DataTable UserInfo = new DataTable();
-                UserInfo = usm.GetUserInfo(txtUser.Text, encPass);
+                string SpWithParam = "CLRMIS_getAdminUserInfo '" + txtUser.Text + "','" + encPass+"'";
+                UserInfo = ojbdb.GetUserInfoForMachineReg(SpWithParam); //usm.GetUserInfo(txtUser.Text, encPass);
               String error ="";
               int retVal = 0;
-              UserInfo = usm.GetUserInfo2(txtUser.Text, encPass,out error, out retVal);
+              //UserInfo = usm.GetUserInfo2(txtUser.Text, encPass,out error, out retVal);
+              if(UserInfo!=null)
+                { 
                 if (UserInfo.Rows.Count > 0)
                 {
                     
@@ -156,8 +166,11 @@ namespace SDC_Application.AL
                         {   
                             UsersManagments._Tehsilid = v;
                             cmdDistrict.SelectedValue = UserInfo.Rows[0]["DistrictId"].ToString();
-                            cmbTehsil.SelectedValue = UserInfo.Rows[0]["TehsilId"].ToString();
-                            cboCounter.Focus();
+                                cmdDistrict_SelectionChangeCommitted(sender, e);
+                                //cmbTehsil.SelectedValue = UserInfo.Rows[0]["TehsilId"].ToString();
+                                cmbTehsil.Enabled = true;
+                                cmdDistrict.Enabled = false;
+                                cboCounter.Focus();
                         }
                     }
                    
@@ -167,6 +180,7 @@ namespace SDC_Application.AL
 
 
                   
+                }
                 }
             }
           catch (Exception ex)
@@ -201,5 +215,33 @@ namespace SDC_Application.AL
             this.Close();
         }
 
+        private void cmdDistrict_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string distirctid = "";
+            distirctid = cmdDistrict.SelectedValue.ToString();
+
+            int selectedIndex = cmdDistrict.SelectedIndex;
+
+
+            
+            if (distirctid != "")
+            {
+                string spWithParam = "Proc_Entry_Tehsils  " + distirctid;//+ Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
+                DataTable tehsils = client.GetTehsilList(distirctid, UsersManagments.userToken);
+                this.cmbTehsil.DataSource = tehsils;
+                if (tehsils != null)
+                {
+                    cmbTehsil.DisplayMember = "TehsilNameUrdu";
+                    cmbTehsil.ValueMember = "TehsilId";
+                }
+            }
+        }
+
+        private void cmbTehsil_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+            TehsilIdSelected =int.Parse(cmbTehsil.SelectedValue.ToString()) ;
+            
+        }
     }
 }

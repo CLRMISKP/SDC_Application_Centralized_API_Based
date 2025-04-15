@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
 using SDC_Application.Classess;
-using LandInfo.ControlsLib;
 using SDC_Application.DL;
 using SDC_Application.BL;
 using System.Data.SqlClient;
@@ -232,83 +231,102 @@ namespace SDC_Application.AL
         private void fillIntiqalType()
         {
             this.inType = Iq.GetintiqalTypes();
-            DataRow IntiqalType = inType.NewRow();
-            IntiqalType["IntiqalTypeId"] = "0";
-            IntiqalType["IntiqalType"] = " - انتقال قسم چنیے - ";
-            inType.Rows.InsertAt(IntiqalType, 0);
-            cboIntiqalType.DataSource = inType;
-            cboIntiqalType.DisplayMember = "IntiqalType";
-            cboIntiqalType.ValueMember = "IntiqalTypeId";
-            cboIntiqalType.SelectedValue = 0;
+            if (this.inType != null)
+            {
+                DataRow IntiqalType = inType.NewRow();
+                IntiqalType["IntiqalTypeId"] = "0";
+                IntiqalType["IntiqalType"] = " - انتقال قسم چنیے - ";
+                inType.Rows.InsertAt(IntiqalType, 0);
+                cboIntiqalType.DataSource = inType;
+                cboIntiqalType.DisplayMember = "IntiqalType";
+                cboIntiqalType.ValueMember = "IntiqalTypeId";
+                cboIntiqalType.SelectedValue = 0;
+            }
         }
         private void fillIntiqalListForMinhayeIntiqal(string MozaIdForIntiqalList)
         {
             this.IntiqalList = Iq.GetintiqalNoListByMozaId(MozaIdForIntiqalList);
-            DataRow IntiqalType = IntiqalList.NewRow();
-            IntiqalType["IntiqalId"] = "0";
-            IntiqalType["IntiqalNo"] = " - انتقال نمبر - ";
-            IntiqalList.Rows.InsertAt(IntiqalType, 0);
-            cmbIntialListForMinhayeIntiqal.DataSource = IntiqalList;
-            cmbIntialListForMinhayeIntiqal.DisplayMember = "IntiqalNo";
-            cmbIntialListForMinhayeIntiqal.ValueMember = "IntiqalId";
-            cmbIntialListForMinhayeIntiqal.SelectedValue = 0;
-            if (MinhayeIntiqalId != "0")
+            if (this.IntiqalList != null)
             {
-                this.cmbIntialListForMinhayeIntiqal.SelectedValue =Convert.ToInt32( MinhayeIntiqalId);
+                DataRow IntiqalType = IntiqalList.NewRow();
+                IntiqalType["IntiqalId"] = "0";
+                IntiqalType["IntiqalNo"] = " - انتقال نمبر - ";
+                IntiqalList.Rows.InsertAt(IntiqalType, 0);
+                cmbIntialListForMinhayeIntiqal.DataSource = IntiqalList;
+                cmbIntialListForMinhayeIntiqal.DisplayMember = "IntiqalNo";
+                cmbIntialListForMinhayeIntiqal.ValueMember = "IntiqalId";
+                cmbIntialListForMinhayeIntiqal.SelectedValue = 0;
+                if (MinhayeIntiqalId != "0")
+                {
+                    this.cmbIntialListForMinhayeIntiqal.SelectedValue = Convert.ToInt32(MinhayeIntiqalId);
+                }
             }
+
         }
 
         private void fillIntiqalAreaType()
         {
             this.dttx = tx.GetIntiqalTerritoryTypeList();
-            DataRow AreaType = dttx.NewRow();
-            AreaType["PlotTerritoryTypeId"] = "0";
-            AreaType["PlotTerritory_Urdu"] = " - قسم علاقہ چنیے - ";
-            dttx.Rows.InsertAt(AreaType, 0);
-            cboAreaType.DataSource = dttx;
-            cboAreaType.DisplayMember = "PlotTerritory_Urdu";
-            cboAreaType.ValueMember = "PlotTerritoryTypeId";
-            cboAreaType.SelectedValue = 0;
+            if (this.dttx != null)
+            {
+                DataRow AreaType = dttx.NewRow();
+                AreaType["PlotTerritoryTypeId"] = "0";
+                AreaType["PlotTerritory_Urdu"] = " - قسم علاقہ چنیے - ";
+                dttx.Rows.InsertAt(AreaType, 0);
+                cboAreaType.DataSource = dttx;
+                cboAreaType.DisplayMember = "PlotTerritory_Urdu";
+                cboAreaType.ValueMember = "PlotTerritoryTypeId";
+                cboAreaType.SelectedValue = 0;
+            }
         }
 
         private void fillIntiqalPlotType()
         {
             this.dtpt = tx.GetIntiqalPlotTypeList();
-            DataRow PlotType = dtpt.NewRow();
-            PlotType["PlotTypeId"] = "0";
-            PlotType["PlotType_Urdu"] = " - قسم اراضی / پلاٹ چنیے - ";
-            dtpt.Rows.InsertAt(PlotType, 0);
-            cboPlotType.DataSource = dtpt;
-            cboPlotType.DisplayMember = "PlotType_Urdu";
-            cboPlotType.ValueMember = "PlotTypeId";
-            cboPlotType.SelectedValue = 0;
+            if (this.dtpt != null)
+            {
+                DataRow PlotType = dtpt.NewRow();
+                PlotType["PlotTypeId"] = "0";
+                PlotType["PlotType_Urdu"] = " - قسم اراضی / پلاٹ چنیے - ";
+                dtpt.Rows.InsertAt(PlotType, 0);
+                cboPlotType.DataSource = dtpt;
+                cboPlotType.DisplayMember = "PlotType_Urdu";
+                cboPlotType.ValueMember = "PlotTypeId";
+                cboPlotType.SelectedValue = 0;
+            }
         }
 
         private void fillIntiqalPlotConstrucitonType(string PlotTypeId)
         {
 
             this.dtcpt = tx.GetIntiqalPlotConstructionTypeList(PlotTypeId);
-            DataRow PlotConType = dtcpt.NewRow();
-            PlotConType["PlotConstructionTypeId"] = "0";
-            PlotConType["PlotConstructionType_Urdu"] = " - حالت قسم اراضی / پلاٹ چنیے - ";
-            dtcpt.Rows.InsertAt(PlotConType, 0);
-            cboPlotConstructionType.DataSource = dtcpt;
-            cboPlotConstructionType.DisplayMember = "PlotConstructionType_Urdu";
-            cboPlotConstructionType.ValueMember = "PlotConstructionTypeId";
-            cboPlotConstructionType.SelectedValue = 0;
+            if (this.dtcpt != null)
+            {
+                DataRow PlotConType = dtcpt.NewRow();
+                PlotConType["PlotConstructionTypeId"] = "0";
+                PlotConType["PlotConstructionType_Urdu"] = " - حالت قسم اراضی / پلاٹ چنیے - ";
+                dtcpt.Rows.InsertAt(PlotConType, 0);
+                cboPlotConstructionType.DataSource = dtcpt;
+                cboPlotConstructionType.DisplayMember = "PlotConstructionType_Urdu";
+                cboPlotConstructionType.ValueMember = "PlotConstructionTypeId";
+                cboPlotConstructionType.SelectedValue = 0;
+            }
         }
 
         private void GetIntiqalInitiationList()
         {
             this.inList = Iq.GetIntiqalInitiationList();
-            DataRow IntiqalList = inList.NewRow();
-            IntiqalList["IntiqalInitiationId"] = "0";
-            IntiqalList["IntiqalInitiationType"] = " - انتقال بذریعہ چنیے - ";
-            inList.Rows.InsertAt(IntiqalList, 0);
-            cboIntiqalInitiation.DataSource = inList;
-            cboIntiqalInitiation.DisplayMember = "IntiqalInitiationType";
-            cboIntiqalInitiation.ValueMember = "IntiqalInitiationId";
-            cboIntiqalInitiation.SelectedValue = 0;
+            if (this.inList != null)
+            {
+                DataRow IntiqalList = inList.NewRow();
+                IntiqalList["IntiqalInitiationId"] = "0";
+                IntiqalList["IntiqalInitiationType"] = " - انتقال بذریعہ چنیے - ";
+                inList.Rows.InsertAt(IntiqalList, 0);
+                cboIntiqalInitiation.DataSource = inList;
+                cboIntiqalInitiation.DisplayMember = "IntiqalInitiationType";
+                cboIntiqalInitiation.ValueMember = "IntiqalInitiationId";
+                cboIntiqalInitiation.SelectedValue = 0;
+            }
         }
 
 
@@ -536,387 +554,388 @@ namespace SDC_Application.AL
         private void FillIntiqalByIntiqalId(string mozaId, string intiqalNo)
         {
             this.intiqalRtrv = Iq.GetintiqalMainByIntiqalIdMozaId(mozaId, intiqalNo);
-            
-           if (intiqalRtrv.Rows.Count > 0)
+            if (intiqalRtrv != null)
             {
-            foreach (DataRow data in intiqalRtrv.Rows)
-            {
-                
-                    this.MozaId = Convert.ToInt32(mozaId);
-                    this.IntiqalId = data["IntiqalId"].ToString();
-                    txtIntiqalNo.Text = data["IntiqalNo"].ToString();
-                    radKhanaMalkiat.Checked = (bool)(data["IntiqalKhanaMalkiat"]!=""?data["IntiqalKhanaMalkiat"]:false);
-                    radKhanaKasht.Checked = (bool)(data["IntiqalKhanaKasht"]!=""?data["IntiqalKhanaKasht"]:false);
-                    this.radkhanakashtmalkiat.Checked = (bool)(data["IntiqalKhanaMalkiatKasht"]!=""?data["IntiqalKhanaMalkiatKasht"]:false);
-                    if ((bool)(data["IntiqalKhanaMalkiatKasht"]) == false && (bool)(data["IntiqalKhanaMalkiat"]) == false && (bool)(data["IntiqalKhanaKasht"]) == false)
+                if (intiqalRtrv.Rows.Count > 0)
+                {
+                    foreach (DataRow data in intiqalRtrv.Rows)
                     {
-                        radkhanakashtToMalkiat.Checked = true;
-                    }
-                    dtpIntiqalAndrajDate.Value = Convert.ToDateTime(data["IntiqalAndrajDate"]);
-                    dtpIntiqalAmaldramadDate.Value = Convert.ToDateTime(data["IntiqalAmaldramadDate"]); 
-                    dtpTasdiq.Value = Convert.ToDateTime(data["IntiqalAttestationDate"]);
-                    cboIntiqalType.SelectedValue = data["IntiqalTypeId"];
-                    this.intiqalTypeId = data["IntiqalTypeId"].ToString();
-                    cboIntiqalInitiation.SelectedValue = data["IntiqalInitiationId"];
-                    this.intiqalIId = data["IntiqalInitiationId"].ToString();
-                    txtRegisteryNo.Text = data["IntiqalHawalaNo"].ToString();
-                    txtLandValue.Text = data["LandValue"].ToString();
-                    LandValue = data["LandValue"].ToString();
-                    txtIntiqalRapatNo.Text = data["IntiqalRapatNo"].ToString();
-                    dtpIntiqalRapatDate.Value = Convert.ToDateTime(data["IntiqalRapatDate"]);
-                    txtTafsil.Text = data["OtherDetail"].ToString();
-                    this.Teh_Report = data["Teh_Report"].ToString().Length;
-                    this.RegStatus = data["RegStatus"].ToString();
-                    this.cboMoza.Enabled = false;
-                    // dtpTasdiq.Value = data.IntiqalAttestationDate;
-                    if (cboIntiqalInitiation.SelectedValue.ToString() == "2") // Not registery
-                    {
-                        dtpDateOfDec.Checked = true;
-                        dtFardToken.Checked = true;
-                        btnIntiqalPersonSnaps.Enabled = false;
-                        btnChkGainTax.Enabled = false;
-                        btnIntiqalTaxes.Enabled = false;
-                        btnIntiqalWitness.Enabled = false;
-                        btnBankChallan.Enabled = false;
-                        btnIntiqalTasdiqDate.Enabled = false;
 
-                    }
-                    else
-                    {
-                        btnIntiqalPersonSnaps.Enabled = true;
-                        btnChkGainTax.Enabled = true;
-                        btnIntiqalTaxes.Enabled = true;
-                        btnIntiqalWitness.Enabled = true;
-                        btnBankChallan.Enabled = true;
-                        btnIntiqalTasdiqDate.Enabled = true;
-                    }
-                    dtpDateOfDec.Value = Convert.ToDateTime(data["DegreeDate"]);
-                    txtCourt.Text = data["CourtName"].ToString();
-                    txtMisalNo.Text = data["MisalNo"].ToString();
-                    txtTrialSubject.Text = data["LastIntiqalDate"].ToString();
-                    cboAreaType.SelectedValue = data["PlotTerritoryTypeId"];
-                    cboPlotType.SelectedValue = data["PlotTypeId"];
-                    dtFardToken.Value = Convert.ToDateTime(data["fardTokenDate"]);
-
-                // ,,,,,,,,,,,,,If registry fard is of same date,,,,,,,,,,,,,,,,,,,,,,,,,
- 
-                    if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
-                    {
-                        DateTime date = dtFardToken.Value;
-                        string month = date.Month.ToString();
-                        string day = date.Day.ToString();
-                        string year = date.Year.ToString();
-                        datetoken = year + "-" + month + "-" + day;
-                        this.TokenList = Iq.GetTransactionalTokenNoListByDate(this.MozaId, datetoken);
-                        DataRow Token = TokenList.NewRow();
-                        Token["TokenId"] = "0";
-                        Token["TokenNo"] = " - ٹوکن نمبر - ";
-                        TokenList.Rows.InsertAt(Token, 0);
-                        cmbFardTokenNo.DataSource = TokenList;
-                        cmbFardTokenNo.DisplayMember = "TokenNo";
-                        cmbFardTokenNo.ValueMember = "TokenId";
-                        cmbFardTokenNo.SelectedIndex = 0;
-
-                    }
-                //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-                    cmbFardTokenNo.SelectedValue = data["fardTokenId"];
-                    this.fardTokenId = data["fardTokenId"].ToString();
-                    fillIntiqalPlotConstrucitonType(cboPlotType.SelectedValue != null ? cboPlotType.SelectedValue.ToString() : "0");
-                    cboPlotConstructionType.SelectedValue = data["PlotConstructionTypeId"];
-                    string tokId = data["TokenId"].ToString();
-                    TokenId = data["TokenId"].ToString();
-                    txtTokenNo.Text = dtTok.GetTokenNoByTokenId((tokId != null && tokId != "") ? tokId : "0");
-                    btnDelMain.Enabled = true;
-                    //radKhanaKasht.Enabled = false;
-                    //radKhanaMalkiat.Enabled = false;
-                    //radkhanakashtmalkiat.Enabled = false;
-                    this.MinhayeIntiqalId = data["MinhaieIntiqalId"].ToString();
-                    this.AmalDaramad = Convert.ToBoolean(data["AmalDaramadStatus"]);
-                    this.Attested = Convert.ToBoolean(data["Attested"]);  //Cancelled
-                    this.isConfirmed = Convert.ToBoolean(data["OperatorConfirm"]); 
-                    this.btnConfirm.Enabled =!this.isConfirmed;
-                    this.Cancelled = Convert.ToBoolean(data["Cancelled"]);
-                    this.GardawarId = data["GardawarId"].ToString();
-                    this.GardawarUserId = data["GardawarUserId"].ToString();
-                    btnIntiqalCancel.Enabled = true;
-                    if (cboMoza.SelectedIndex != -1 && txtIntiqalNo.Text.Trim().Length > 0 && cboIntiqalInitiation.SelectedValue.ToString() == "2")
-                    {
-                        chkkhata = Iq.GetRegistryIntiqalKhataCheck(cboMoza.SelectedValue.ToString(), txtIntiqalNo.Text.Trim());
-                        if (this.chkkhata == "1")
+                        this.MozaId = Convert.ToInt32(mozaId);
+                        this.IntiqalId = data["IntiqalId"].ToString();
+                        txtIntiqalNo.Text = data["IntiqalNo"].ToString();
+                        radKhanaMalkiat.Checked = Convert.ToBoolean(data["IntiqalKhanaMalkiat"] != "" ? data["IntiqalKhanaMalkiat"] : false);
+                        radKhanaKasht.Checked = Convert.ToBoolean(data["IntiqalKhanaKasht"] != "" ? data["IntiqalKhanaKasht"] : false);
+                        this.radkhanakashtmalkiat.Checked = Convert.ToBoolean(data["IntiqalKhanaMalkiatKasht"] != "" ? data["IntiqalKhanaMalkiatKasht"] : false);
+                        if (Convert.ToBoolean(data["IntiqalKhanaMalkiatKasht"]) == false && Convert.ToBoolean(data["IntiqalKhanaMalkiat"]) == false && Convert.ToBoolean(data["IntiqalKhanaKasht"]) == false)
                         {
-                            cmbFardTokenNo.Enabled = false;
-                            dtFardToken.Enabled = false;
+                            radkhanakashtToMalkiat.Checked = true;
+                        }
+                        dtpIntiqalAndrajDate.Value = Convert.ToDateTime(data["IntiqalAndrajDate"]);
+                        dtpIntiqalAmaldramadDate.Value = Convert.ToDateTime(data["IntiqalAmaldramadDate"]);
+                        dtpTasdiq.Value = Convert.ToDateTime(data["IntiqalAttestationDate"]);
+                        cboIntiqalType.SelectedValue = data["IntiqalTypeId"];
+                        this.intiqalTypeId = data["IntiqalTypeId"].ToString();
+                        cboIntiqalInitiation.SelectedValue = data["IntiqalInitiationId"];
+                        this.intiqalIId = data["IntiqalInitiationId"].ToString();
+                        txtRegisteryNo.Text = data["IntiqalHawalaNo"].ToString();
+                        txtLandValue.Text = data["LandValue"].ToString();
+                        LandValue = data["LandValue"].ToString();
+                        txtIntiqalRapatNo.Text = data["IntiqalRapatNo"].ToString();
+                        dtpIntiqalRapatDate.Value = Convert.ToDateTime(data["IntiqalRapatDate"]);
+                        txtTafsil.Text = data["OtherDetail"].ToString();
+                        this.Teh_Report = data["Teh_Report"].ToString().Length;
+                        this.RegStatus = data["RegStatus"].ToString();
+                        this.cboMoza.Enabled = false;
+                        // dtpTasdiq.Value = data.IntiqalAttestationDate;
+                        if (cboIntiqalInitiation.SelectedValue.ToString() == "2") // Not registery
+                        {
+                            dtpDateOfDec.Checked = true;
+                            dtFardToken.Checked = true;
+                            btnIntiqalPersonSnaps.Enabled = false;
+                            btnChkGainTax.Enabled = false;
+                            btnIntiqalTaxes.Enabled = false;
+                            btnIntiqalWitness.Enabled = false;
+                            btnBankChallan.Enabled = false;
+                            btnIntiqalTasdiqDate.Enabled = false;
+
                         }
                         else
                         {
-                            cmbFardTokenNo.Enabled = true;
-                            dtFardToken.Enabled = true;
+                            btnIntiqalPersonSnaps.Enabled = true;
+                            btnChkGainTax.Enabled = true;
+                            btnIntiqalTaxes.Enabled = true;
+                            btnIntiqalWitness.Enabled = true;
+                            btnBankChallan.Enabled = true;
+                            btnIntiqalTasdiqDate.Enabled = true;
                         }
-                    }
+                        dtpDateOfDec.Value = Convert.ToDateTime(data["DegreeDate"]);
+                        txtCourt.Text = data["CourtName"].ToString();
+                        txtMisalNo.Text = data["MisalNo"].ToString();
+                        txtTrialSubject.Text = data["LastIntiqalDate"].ToString();
+                        cboAreaType.SelectedValue = data["PlotTerritoryTypeId"];
+                        cboPlotType.SelectedValue = data["PlotTypeId"];
+                        dtFardToken.Value = Convert.ToDateTime(data["fardTokenDate"]);
 
-                    if(AmalDaramad)
-                    {
-                        btnIntiqalRevert.Enabled = true;
-                        this.btnSave.Enabled = false;
-                    }
-                    else
-                    {
-                        btnIntiqalRevert.Enabled = false;
-                        this.btnSave.Enabled = true;
-                    }
-                    
-                    if (Attested)
-                    {
-                        this.btnROattestation.Enabled = false;
-                        this.btnIntiqalCancel.Enabled = false;
-                        this.btnIntiqalTasdiqDate.Enabled = false;
-                        this.btnSave.Enabled = false;
-                        if (!AmalDaramad)
-                            this.btnIntiqalRemoveFP.Enabled = true;
-                    }
-                    else
-                    {
-                        this.btnROattestation.Enabled = true;
-                        this.btnIntiqalRemoveFP.Enabled = false;
-                        //this.btnIntiqalCancel.Enabled = true;
-                        //this.btnSave.Enabled = true;
+                        // ,,,,,,,,,,,,,If registry fard is of same date,,,,,,,,,,,,,,,,,,,,,,,,,
+
+                        if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+                        {
+                            DateTime date = dtFardToken.Value;
+                            string month = date.Month.ToString();
+                            string day = date.Day.ToString();
+                            string year = date.Year.ToString();
+                            datetoken = year + "-" + month + "-" + day;
+                            this.TokenList = Iq.GetTransactionalTokenNoListByDate(this.MozaId, datetoken);
+                            DataRow Token = TokenList.NewRow();
+                            Token["TokenId"] = "0";
+                            Token["TokenNo"] = " - ٹوکن نمبر - ";
+                            TokenList.Rows.InsertAt(Token, 0);
+                            cmbFardTokenNo.DataSource = TokenList;
+                            cmbFardTokenNo.DisplayMember = "TokenNo";
+                            cmbFardTokenNo.ValueMember = "TokenId";
+                            cmbFardTokenNo.SelectedIndex = 0;
+
+                        }
+                        //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+                        cmbFardTokenNo.SelectedValue = data["fardTokenId"];
+                        this.fardTokenId = data["fardTokenId"].ToString();
+                        fillIntiqalPlotConstrucitonType(cboPlotType.SelectedValue != null ? cboPlotType.SelectedValue.ToString() : "0");
+                        cboPlotConstructionType.SelectedValue = data["PlotConstructionTypeId"];
+                        string tokId = data["TokenId"].ToString();
+                        TokenId = data["TokenId"].ToString();
+                        txtTokenNo.Text = dtTok.GetTokenNoByTokenId((tokId != null && tokId != "") ? tokId : "0");
+                        btnDelMain.Enabled = true;
+                        //radKhanaKasht.Enabled = false;
+                        //radKhanaMalkiat.Enabled = false;
+                        //radkhanakashtmalkiat.Enabled = false;
+                        this.MinhayeIntiqalId = data["MinhaieIntiqalId"].ToString();
+                        this.AmalDaramad = Convert.ToBoolean(data["AmalDaramadStatus"]);
+                        this.Attested = Convert.ToBoolean(data["Attested"]);  //Cancelled
+                        this.isConfirmed = Convert.ToBoolean(data["OperatorConfirm"]);
+                        this.btnConfirm.Enabled = !this.isConfirmed;
+                        this.Cancelled = Convert.ToBoolean(data["Cancelled"]);
+                        this.GardawarId = data["GardawarId"].ToString();
+                        this.GardawarUserId = data["GardawarUserId"].ToString();
+                        btnIntiqalCancel.Enabled = true;
+                        if (cboMoza.SelectedIndex != -1 && txtIntiqalNo.Text.Trim().Length > 0 && cboIntiqalInitiation.SelectedValue.ToString() == "2")
+                        {
+                            chkkhata = Iq.GetRegistryIntiqalKhataCheck(cboMoza.SelectedValue.ToString(), txtIntiqalNo.Text.Trim());
+                            if (this.chkkhata == "1")
+                            {
+                                cmbFardTokenNo.Enabled = false;
+                                dtFardToken.Enabled = false;
+                            }
+                            else
+                            {
+                                cmbFardTokenNo.Enabled = true;
+                                dtFardToken.Enabled = true;
+                            }
+                        }
+
                         if (AmalDaramad)
                         {
+                            btnIntiqalRevert.Enabled = true;
                             this.btnSave.Enabled = false;
                         }
                         else
                         {
+                            btnIntiqalRevert.Enabled = false;
                             this.btnSave.Enabled = true;
                         }
-                        if(this.intiqalIId=="2")
+
+                        if (Attested)
                         {
+                            this.btnROattestation.Enabled = false;
+                            this.btnIntiqalCancel.Enabled = false;
                             this.btnIntiqalTasdiqDate.Enabled = false;
+                            this.btnSave.Enabled = false;
+                            if (!AmalDaramad)
+                                this.btnIntiqalRemoveFP.Enabled = true;
                         }
                         else
                         {
-                            this.btnIntiqalTasdiqDate.Enabled = true;
+                            this.btnROattestation.Enabled = true;
+                            this.btnIntiqalRemoveFP.Enabled = false;
+                            //this.btnIntiqalCancel.Enabled = true;
+                            //this.btnSave.Enabled = true;
+                            if (AmalDaramad)
+                            {
+                                this.btnSave.Enabled = false;
+                            }
+                            else
+                            {
+                                this.btnSave.Enabled = true;
+                            }
+                            if (this.intiqalIId == "2")
+                            {
+                                this.btnIntiqalTasdiqDate.Enabled = false;
+                            }
+                            else
+                            {
+                                this.btnIntiqalTasdiqDate.Enabled = true;
+                            }
+
                         }
-                        
-                    }
-                    if (this.GardawarUserId == "0")
-                    {
-                        this.btnGirdawar.Enabled = true;
-                        //if(!Attested)
-                        //{
-                        //    //this.btnROattestation.Enabled = false;
-                        //    //this.btnIntiqalCancel.Enabled = false;
-                        //    this.btnSave.Enabled = true;
-                        //}
-                      
-                    }
-                    else
-                    {
-                        this.btnGirdawar.Enabled = false;
-                        //this.btnSave.Enabled = false;
-                        //if (!Attested)
-                        //{
-                        //    this.btnROattestation.Enabled = true;
-                        //    this.btnIntiqalCancel.Enabled = true;
-                        //}
-                       
-                    }
-                    if (Cancelled)
-                    {
-                        //this.groupBox1.Enabled = false;
-                        //this.groupBox7.Enabled = false;
-                        btnSave.Enabled = false;
-                        btnConfirm.Enabled = false;
-                        btnEdit.Enabled = false;
-                        btnIntiqalRevert.Enabled = false;
-                        btnIntiqalCancel.Enabled = false;
-                        btnROattestation.Enabled = false;
-                        btnGirdawar.Enabled = false;
-                        btnIntiqalAmalDaramadByKhata.Enabled = false;
-                        btnIntiqalTasdiqDate.Enabled = false;
-                        btnTaqseem.Enabled = false;
-                        btnIntiqalWitness.Enabled = false;
-                        btnIntiqalDoc.Enabled = true;
-                        btnRoznamcha.Enabled = false;
-                        btnIntiqalPersonSnaps.Enabled = false;
-                        btnChkGainTax.Enabled = false;
-                        btnIntiqalRemoveFP.Enabled = true;
-                    }
-                    else
-                    {
-                        //this.groupBox1.Enabled = true;
-                        //this.groupBox7.Enabled = true;
-                        btnIntiqalAmalDaramadByKhata.Enabled = true;
-                        if (cboIntiqalInitiation.SelectedValue.ToString() != "2")
+                        if (this.GardawarUserId == "0")
                         {
-                            btnIntiqalPersonSnaps.Enabled = true;
-                            btnChkGainTax.Enabled = true;
-                            btnIntiqalWitness.Enabled = true;
-                            btnIntiqalTasdiqDate.Enabled = true;
+                            this.btnGirdawar.Enabled = true;
+                            //if(!Attested)
+                            //{
+                            //    //this.btnROattestation.Enabled = false;
+                            //    //this.btnIntiqalCancel.Enabled = false;
+                            //    this.btnSave.Enabled = true;
+                            //}
+
                         }
-                    }
-                    if (data["IntiqalPending"].ToString()=="True")
-                    {
-                        this.chkPendingIntiqal.Checked = true;
-                        //this.groupBox7.Enabled = false;
-                        //this.groupBox1.Enabled = false;
-                        btnSave.Enabled = false;
-                        btnConfirm.Enabled = false;
-                        btnEdit.Enabled = false;
-                        btnIntiqalRevert.Enabled = false;
-                        btnIntiqalCancel.Enabled = false;
-                        btnROattestation.Enabled = false;
-                        btnGirdawar.Enabled = false;
-                        btnIntiqalAmalDaramadByKhata.Enabled = false;
-                        btnIntiqalTasdiqDate.Enabled = false;
-                        btnTaqseem.Enabled = false;
-                        btnIntiqalWitness.Enabled = false;
-                        btnIntiqalDoc.Enabled = true;
-                        btnRoznamcha.Enabled = false;
-                        //this.gbAmalDaramad.Height = 150;
-                        this.lblIntiqalPending.Text = data["IntiqalPendingReason_Urdu"].ToString();
-                        //this.IntiqalRemarks = data.IntiqalPendingRemakrs;
-                        this.intiqalPending = true;
-                    }
-                    else
-                    {
-                        this.chkPendingIntiqal.Checked = false;
-                        //this.gbAmalDaramad.Height = 80;
-                        //this.groupBox7.Enabled = true;
-                        //this.groupBox1.Enabled = true;
-                        btnIntiqalAmalDaramadByKhata.Enabled = true;
-                        if (cboIntiqalInitiation.SelectedValue.ToString() != "2")
+                        else
                         {
-                            btnIntiqalPersonSnaps.Enabled = true;
-                            btnChkGainTax.Enabled = true;
-                            btnIntiqalWitness.Enabled = true;
-                            btnIntiqalTasdiqDate.Enabled = true;
+                            this.btnGirdawar.Enabled = false;
+                            //this.btnSave.Enabled = false;
+                            //if (!Attested)
+                            //{
+                            //    this.btnROattestation.Enabled = true;
+                            //    this.btnIntiqalCancel.Enabled = true;
+                            //}
+
                         }
-                        this.lblIntiqalPending.Text = "";
-                        this.intiqalPending = false;
-                        this.lblIntiqalPending.Text = "";
-                        lblOperatorNote.Text = data["IntiqalPendingReason_Urdu"].ToString().Length<2? "آپریٹر نوٹ لکھنے کیلئے کلک کریں" : data["IntiqalPendingReason_Urdu"].ToString();
+                        if (Cancelled)
+                        {
+                            //this.groupBox1.Enabled = false;
+                            //this.groupBox7.Enabled = false;
+                            btnSave.Enabled = false;
+                            btnConfirm.Enabled = false;
+                            btnEdit.Enabled = false;
+                            btnIntiqalRevert.Enabled = false;
+                            btnIntiqalCancel.Enabled = false;
+                            btnROattestation.Enabled = false;
+                            btnGirdawar.Enabled = false;
+                            btnIntiqalAmalDaramadByKhata.Enabled = false;
+                            btnIntiqalTasdiqDate.Enabled = false;
+                            btnTaqseem.Enabled = false;
+                            btnIntiqalWitness.Enabled = false;
+                            btnIntiqalDoc.Enabled = true;
+                            btnRoznamcha.Enabled = false;
+                            btnIntiqalPersonSnaps.Enabled = false;
+                            btnChkGainTax.Enabled = false;
+                            btnIntiqalRemoveFP.Enabled = true;
+                        }
+                        else
+                        {
+                            //this.groupBox1.Enabled = true;
+                            //this.groupBox7.Enabled = true;
+                            btnIntiqalAmalDaramadByKhata.Enabled = true;
+                            if (cboIntiqalInitiation.SelectedValue.ToString() != "2")
+                            {
+                                btnIntiqalPersonSnaps.Enabled = true;
+                                btnChkGainTax.Enabled = true;
+                                btnIntiqalWitness.Enabled = true;
+                                btnIntiqalTasdiqDate.Enabled = true;
+                            }
+                        }
+                        if (data["IntiqalPending"].ToString() == "True")
+                        {
+                            this.chkPendingIntiqal.Checked = true;
+                            //this.groupBox7.Enabled = false;
+                            //this.groupBox1.Enabled = false;
+                            btnSave.Enabled = false;
+                            btnConfirm.Enabled = false;
+                            btnEdit.Enabled = false;
+                            btnIntiqalRevert.Enabled = false;
+                            btnIntiqalCancel.Enabled = false;
+                            btnROattestation.Enabled = false;
+                            btnGirdawar.Enabled = false;
+                            btnIntiqalAmalDaramadByKhata.Enabled = false;
+                            btnIntiqalTasdiqDate.Enabled = false;
+                            btnTaqseem.Enabled = false;
+                            btnIntiqalWitness.Enabled = false;
+                            btnIntiqalDoc.Enabled = true;
+                            btnRoznamcha.Enabled = false;
+                            //this.gbAmalDaramad.Height = 150;
+                            this.lblIntiqalPending.Text = data["IntiqalPendingReason_Urdu"].ToString();
+                            //this.IntiqalRemarks = data.IntiqalPendingRemakrs;
+                            this.intiqalPending = true;
+                        }
+                        else
+                        {
+                            this.chkPendingIntiqal.Checked = false;
+                            //this.gbAmalDaramad.Height = 80;
+                            //this.groupBox7.Enabled = true;
+                            //this.groupBox1.Enabled = true;
+                            btnIntiqalAmalDaramadByKhata.Enabled = true;
+                            if (cboIntiqalInitiation.SelectedValue.ToString() != "2")
+                            {
+                                btnIntiqalPersonSnaps.Enabled = true;
+                                btnChkGainTax.Enabled = true;
+                                btnIntiqalWitness.Enabled = true;
+                                btnIntiqalTasdiqDate.Enabled = true;
+                            }
+                            this.lblIntiqalPending.Text = "";
+                            this.intiqalPending = false;
+                            this.lblIntiqalPending.Text = "";
+                            lblOperatorNote.Text = data["IntiqalPendingReason_Urdu"].ToString().Length < 2 ? "آپریٹر نوٹ لکھنے کیلئے کلک کریں" : data["IntiqalPendingReason_Urdu"].ToString();
+                        }
+
+                        //========== for current status ============================
+                        panelCurrentStatus.Visible = true;
+                        if (Cancelled)
+                        {
+                            lbCurrentStatus.Text = "خارج شدہ";
+                            lbCurrentStatus.ForeColor = Color.Red;
+                        }
+                        else if (intiqalPending)
+                        {
+                            lbCurrentStatus.Text = "زیر التوا";
+                            lbCurrentStatus.ForeColor = Color.DarkViolet;
+                        }
+                        else if (AmalDaramad)
+                        {
+                            lbCurrentStatus.Text = "عمل درآمدشدہ";
+                            lbCurrentStatus.ForeColor = Color.Green;
+                        }
+                        else if (Attested)
+                        {
+                            lbCurrentStatus.Text = "تصدیق شدہ";
+                            lbCurrentStatus.ForeColor = Color.Chocolate;
+                        }
+                        else if (GardawarUserId != "0")
+                        {
+                            lbCurrentStatus.Text = "منظور شدہ";
+                            lbCurrentStatus.ForeColor = Color.Blue;
+                        }
+                        else
+                        {
+                            lbCurrentStatus.Text = "درج شدہ";
+                            lbCurrentStatus.ForeColor = Color.Teal;
+                        }
+
+
+                        //============== end ========================================
+
+                        #region UnUsed Text
+                        // this.IntiqalType = data.IntiqalType;
+                        //    if (data.IntiqalPending)
+                        //    {
+                        //        this.chkPendingIntiqal.Checked = true;
+                        //        this.gbAmalDaramad.Height = 150;
+                        //        this.lblIntiqalPending.Text = data.IntiqalPendingReason_Urdu;
+                        //    }
+                        //    else
+                        //    {
+                        //        this.chkPendingIntiqal.Checked = false;
+                        //        this.gbAmalDaramad.Height = 80;
+                        //        this.lblIntiqalPending.Text = "";
+                        //    }
+                        //    if (data.AmalDaramadStatus )
+                        //    {
+
+                        //        lblMutStatus.Text = "عمل درامد شدہ";
+                        //        lblMutStatus.ForeColor = Color.Green;
+                        //        this.IntiqalStatus = true;
+                        //        btnAmaldaramad.Enabled = false;
+                        //        btnAmalDaramadTaqseem.Visible = false;
+                        //        btnSave.Visible = false;
+                        //        btnDelMain.Visible = false;
+                        //        //btnSaveSeller.Visible = false;
+                        //        //btnSaveBuyer.Visible = false;
+                        //        //btnDelSeller.Visible = false;
+                        //        //btnDelBuyer.Visible = false;
+                        //        this.panel8.Visible = false;  // Intiqal Sellers Operation Buttons set to invisible
+                        //        this.panel9.Visible = false;  // Intiqal Buyers Operation Buttons set to invisible
+                        //        // Disable MinGroup Editing
+
+                        //        lblAmalDaramdTaqseem.Text = "عمل درامد شدہ";
+                        //        lblAmalDaramdTaqseem.ForeColor = Color.Green;
+                        //        this.btnsavemingroup.Visible = false;
+                        //        this.btnmlikan.Visible = false;
+                        //        this.btnkhasrajat.Visible = false;
+                        //        this.btnSaveMinFareeq.Visible = false;
+                        //        this.btnSaveIntiqalMinKhassra.Visible = false;
+                        //        this.gridkhasrajat.Columns[16].Visible = false;
+                        //        this.gridmalikan.Columns[6].Visible = false;
+
+                        //    }
+                        //    else
+                        //    {
+
+                        //        lblMutStatus.Text = " عمل درامد زیر غور";
+                        //        lblMutStatus.ForeColor = Color.Red;
+                        //        this.IntiqalStatus = false;
+                        //        btnAmaldaramad.Enabled = true;
+                        //        btnSave.Visible = true;
+                        //        btnDelMain.Visible = true;
+                        //        this.panel9.Visible = true;   // Intiqal Sellers Operation Buttons set to invisible
+                        //        this.panel8.Visible = true;   // Intiqal Buyers Operation Buttons set to invisible
+                        //        //btnSaveSeller.Visible = true;
+                        //        //btnSaveBuyer.Visible = true;
+                        //        //btnDelSeller.Visible = true;
+                        //        //btnDelBuyer.Visible = true;
+                        //        // Enable MinGroup Editing
+                        //        lblAmalDaramdTaqseem.Text = " عمل درامد زیر غور";
+                        //        lblAmalDaramdTaqseem.ForeColor = Color.Red;
+                        //        this.btnAmalDaramadTaqseem.Visible = true;
+                        //        this.btnsavemingroup.Visible = true;
+                        //        this.btnmlikan.Visible = true;
+                        //        this.btnkhasrajat.Visible = true;
+                        //        this.btnSaveMinFareeq.Visible = true;
+                        //        this.btnSaveIntiqalMinKhassra.Visible = true;
+                        //        this.gridkhasrajat.Columns[16].Visible = true;
+                        //        this.gridmalikan.Columns[6].Visible = true;
+                        //        if (data.IntiqalPending)
+                        //        {
+                        //            btnAmaldaramad.Enabled = false;
+                        //            btnAmalDaramadTaqseem.Enabled = false;
+                        //        }
+                        //    }
+
+
+                        //}
+                        #endregion
                     }
 
-                //========== for current status ============================
-                    panelCurrentStatus.Visible = true;
-                if(Cancelled)
-                {
-                    lbCurrentStatus.Text = "خارج شدہ";
-                    lbCurrentStatus.ForeColor = Color.Red;
                 }
-                else if (intiqalPending)
-                {
-                    lbCurrentStatus.Text = "زیر التوا";
-                    lbCurrentStatus.ForeColor = Color.DarkViolet;
-                }
-                else if (AmalDaramad)
-                {
-                    lbCurrentStatus.Text = "عمل درآمدشدہ";
-                    lbCurrentStatus.ForeColor = Color.Green;
-                }
-                else if (Attested)
-                {
-                    lbCurrentStatus.Text = "تصدیق شدہ";
-                    lbCurrentStatus.ForeColor = Color.Chocolate;
-                }
-                else if (GardawarUserId!="0")
-                {
-                    lbCurrentStatus.Text = "منظور شدہ";
-                    lbCurrentStatus.ForeColor = Color.Blue;
-                }
-                else
-                {
-                    lbCurrentStatus.Text = "درج شدہ";
-                    lbCurrentStatus.ForeColor = Color.Teal;
-                }
-
-
-                //============== end ========================================
-
-                #region UnUsed Text
-                // this.IntiqalType = data.IntiqalType;
-                    //    if (data.IntiqalPending)
-                    //    {
-                    //        this.chkPendingIntiqal.Checked = true;
-                    //        this.gbAmalDaramad.Height = 150;
-                    //        this.lblIntiqalPending.Text = data.IntiqalPendingReason_Urdu;
-                    //    }
-                    //    else
-                    //    {
-                    //        this.chkPendingIntiqal.Checked = false;
-                    //        this.gbAmalDaramad.Height = 80;
-                    //        this.lblIntiqalPending.Text = "";
-                    //    }
-                    //    if (data.AmalDaramadStatus )
-                    //    {
-
-                    //        lblMutStatus.Text = "عمل درامد شدہ";
-                    //        lblMutStatus.ForeColor = Color.Green;
-                    //        this.IntiqalStatus = true;
-                    //        btnAmaldaramad.Enabled = false;
-                    //        btnAmalDaramadTaqseem.Visible = false;
-                    //        btnSave.Visible = false;
-                    //        btnDelMain.Visible = false;
-                    //        //btnSaveSeller.Visible = false;
-                    //        //btnSaveBuyer.Visible = false;
-                    //        //btnDelSeller.Visible = false;
-                    //        //btnDelBuyer.Visible = false;
-                    //        this.panel8.Visible = false;  // Intiqal Sellers Operation Buttons set to invisible
-                    //        this.panel9.Visible = false;  // Intiqal Buyers Operation Buttons set to invisible
-                    //        // Disable MinGroup Editing
-
-                    //        lblAmalDaramdTaqseem.Text = "عمل درامد شدہ";
-                    //        lblAmalDaramdTaqseem.ForeColor = Color.Green;
-                    //        this.btnsavemingroup.Visible = false;
-                    //        this.btnmlikan.Visible = false;
-                    //        this.btnkhasrajat.Visible = false;
-                    //        this.btnSaveMinFareeq.Visible = false;
-                    //        this.btnSaveIntiqalMinKhassra.Visible = false;
-                    //        this.gridkhasrajat.Columns[16].Visible = false;
-                    //        this.gridmalikan.Columns[6].Visible = false;
-
-                    //    }
-                    //    else
-                    //    {
-
-                    //        lblMutStatus.Text = " عمل درامد زیر غور";
-                    //        lblMutStatus.ForeColor = Color.Red;
-                    //        this.IntiqalStatus = false;
-                    //        btnAmaldaramad.Enabled = true;
-                    //        btnSave.Visible = true;
-                    //        btnDelMain.Visible = true;
-                    //        this.panel9.Visible = true;   // Intiqal Sellers Operation Buttons set to invisible
-                    //        this.panel8.Visible = true;   // Intiqal Buyers Operation Buttons set to invisible
-                    //        //btnSaveSeller.Visible = true;
-                    //        //btnSaveBuyer.Visible = true;
-                    //        //btnDelSeller.Visible = true;
-                    //        //btnDelBuyer.Visible = true;
-                    //        // Enable MinGroup Editing
-                    //        lblAmalDaramdTaqseem.Text = " عمل درامد زیر غور";
-                    //        lblAmalDaramdTaqseem.ForeColor = Color.Red;
-                    //        this.btnAmalDaramadTaqseem.Visible = true;
-                    //        this.btnsavemingroup.Visible = true;
-                    //        this.btnmlikan.Visible = true;
-                    //        this.btnkhasrajat.Visible = true;
-                    //        this.btnSaveMinFareeq.Visible = true;
-                    //        this.btnSaveIntiqalMinKhassra.Visible = true;
-                    //        this.gridkhasrajat.Columns[16].Visible = true;
-                    //        this.gridmalikan.Columns[6].Visible = true;
-                    //        if (data.IntiqalPending)
-                    //        {
-                    //            btnAmaldaramad.Enabled = false;
-                    //            btnAmalDaramadTaqseem.Enabled = false;
-                    //        }
-                    //    }
-
-
-                //}
-                #endregion
             }
-               
-            }
-
             else
             {
 
@@ -1513,17 +1532,26 @@ namespace SDC_Application.AL
         {
             frmTokenPopulate Populate = sender as frmTokenPopulate;
             this.TokenId = Populate.TokenID;
-           txtTokenNo.Text=Populate.TokenNo;
-           this.MozaId =  Convert.ToInt32(Populate.Mouzaid);
-           this.cboMoza.SelectedValue = (Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0";
-           string lastNo= Iq.GetNextIntiqalNoForMoza((Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0", Populate.TokenID);
-           this.fillIntiqalListForMinhayeIntiqal(cboMoza.SelectedValue!=null?cboMoza.SelectedValue.ToString():"0");
-           this.cboMoza.Enabled = false;
-           long MaxNo=0;
-           if (long.TryParse(lastNo, out MaxNo))
-           {
-               this.txtIntiqalNo.Text = MaxNo.ToString();
-           }
+            txtTokenNo.Text = Populate.TokenNo;
+            this.MozaId = Convert.ToInt32(Populate.Mouzaid);
+            this.cboMoza.SelectedValue = (Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0";
+            string lastNo = Iq.GetNextIntiqalNoForMoza((Populate.Mouzaid != null && Populate.Mouzaid != "") ? Populate.Mouzaid : "0", Populate.TokenID);
+            this.fillIntiqalListForMinhayeIntiqal(cboMoza.SelectedValue != null ? cboMoza.SelectedValue.ToString() : "0");
+            this.cboMoza.Enabled = false;
+            long MaxNo = 0;
+            if (lastNo != null) { 
+                if (long.TryParse(lastNo, out MaxNo))
+                {
+                    this.txtIntiqalNo.Text = MaxNo.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("سسٹم اگلے انتقال نمبر پیدا کرنے میں ناکام راہا۔ خود سے نیا انتقال نمبر کا اندراج کریں-", "انتقال نمبر غلطی", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cboMoza.Enabled = true;
+                    cboMoza.SelectedIndex = 0;
+                    txtIntiqalNo.Enabled = false;
+                }
+            }
            else
            {
                MessageBox.Show("سسٹم اگلے انتقال نمبر پیدا کرنے میں ناکام راہا۔ خود سے نیا انتقال نمبر کا اندراج کریں-", "انتقال نمبر غلطی", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1725,9 +1753,12 @@ txtLandValue.Enabled = false;
                 {
                     string val;
                     val = Iq.setIntiqalPendingReason(this.IntiqalId.ToString(), false, "", UsersManagments.UserId.ToString(),"");
-                    if (val != "1")
+                    if (val != null)
                     {
-                        MessageBox.Show(" صرف " + val.ToString() + " زیر التوا ختم کر سکتا ہے۔", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (val != "1")
+                        {
+                            MessageBox.Show(" صرف " + val.ToString() + " زیر التوا ختم کر سکتا ہے۔", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     this.btnSearchInteqal_Click(sender, e);
                 }
@@ -2080,15 +2111,17 @@ txtLandValue.Enabled = false;
             string year = date.Year.ToString();
             datetoken = year + "-"+ month + "-" + day;
             this.TokenList = Iq.GetTransactionalTokenNoListByDate(this.MozaId,datetoken);
-            DataRow Token = TokenList.NewRow();
-            Token["TokenId"] = "0";
-            Token["TokenNo"] = " - ٹوکن نمبر - ";
-            TokenList.Rows.InsertAt(Token, 0);
-            cmbFardTokenNo.DataSource = TokenList;
-            cmbFardTokenNo.DisplayMember = "TokenNo";
-            cmbFardTokenNo.ValueMember = "TokenId";
-            cmbFardTokenNo.SelectedIndex = 0;
-           
+            if (TokenList != null)
+            {
+                DataRow Token = TokenList.NewRow();
+                Token["TokenId"] = "0";
+                Token["TokenNo"] = " - ٹوکن نمبر - ";
+                TokenList.Rows.InsertAt(Token, 0);
+                cmbFardTokenNo.DataSource = TokenList;
+                cmbFardTokenNo.DisplayMember = "TokenNo";
+                cmbFardTokenNo.ValueMember = "TokenId";
+                cmbFardTokenNo.SelectedIndex = 0;
+            }
         }
 
         private void cmbFardTokenNo_SelectedValueChanged(object sender, EventArgs e)
@@ -2212,10 +2245,12 @@ txtLandValue.Enabled = false;
 
         private void dtpDateOfDec_ValueChanged(object sender, EventArgs e)
         {
-            
-                if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+
+            if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+            {
+                string SRName = Iq.Proc_Self_Get_Registrar_For_Intiqal(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
+                if (SRName != null)
                 {
-                    string SRName = Iq.Proc_Self_Get_Registrar_For_Intiqal(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
                     if (SRName == "-1")
                     {
                         txtCourt.Clear();
@@ -2226,14 +2261,19 @@ txtLandValue.Enabled = false;
                     }
 
                 }
+                else
+                    txtCourt.Clear();
+            }
         }
 
         private void txtRegisteryNo_Leave(object sender, EventArgs e)
         {
-            
-                if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+
+            if (cboIntiqalInitiation.SelectedValue.ToString() == "2")
+            {
+                string SRName = Iq.Proc_Self_Get_Registrar_For_Intiqal(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
+                if (SRName != null)
                 {
-                    string SRName = Iq.Proc_Self_Get_Registrar_For_Intiqal(txtRegisteryNo.Text, dtpDateOfDec.Value.Year, MozaId.ToString());
                     if (SRName == "-1")
                     {
                         txtCourt.Clear();
@@ -2244,6 +2284,7 @@ txtLandValue.Enabled = false;
                     }
 
                 }
+            }
         }
 
         private void btnRegReciev_Click(object sender, EventArgs e)

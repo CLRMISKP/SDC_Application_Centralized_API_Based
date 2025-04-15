@@ -46,6 +46,9 @@
             this.dgvRegUpdate = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtUpdateBuyer = new System.Windows.Forms.GroupBox();
+            this.rbBackToSR = new System.Windows.Forms.RadioButton();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cmbRegUpdateSR = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtUpdateBuyer1 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -64,10 +67,12 @@
             this.rbUpdateComplete = new System.Windows.Forms.RadioButton();
             this.rbUpdatePending = new System.Windows.Forms.RadioButton();
             this.rbUpdateRecieve = new System.Windows.Forms.RadioButton();
+            this.btnRegUpdate = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.btnRegSearch = new System.Windows.Forms.Button();
             this.cmbRegSearchMoza = new System.Windows.Forms.ComboBox();
             this.txtSearchRegNo = new System.Windows.Forms.TextBox();
             this.dtRegFrom = new System.Windows.Forms.DateTimePicker();
@@ -76,6 +81,9 @@
             this.tabRegEntry = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cmbSR = new System.Windows.Forms.ComboBox();
+            this.btnRegNew = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.txtBuyer = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -83,6 +91,7 @@
             this.txtRegId = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtJildNo = new System.Windows.Forms.TextBox();
+            this.btnRegSave = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtKafiyat = new System.Windows.Forms.TextBox();
             this.dtReg = new System.Windows.Forms.DateTimePicker();
@@ -93,6 +102,7 @@
             this.cmbRegMoza = new System.Windows.Forms.ComboBox();
             this.grdvReg = new System.Windows.Forms.DataGridView();
             this.tabReport = new System.Windows.Forms.TabPage();
+            this.btnPrintMisalBadar = new System.Windows.Forms.Button();
             this.tabStatusUpdate = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridveiwDocs = new System.Windows.Forms.DataGridView();
@@ -121,9 +131,11 @@
             this.rbComplete = new System.Windows.Forms.RadioButton();
             this.rbPending = new System.Windows.Forms.RadioButton();
             this.rbRecieved = new System.Windows.Forms.RadioButton();
+            this.btnSaveDocStatus = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cboMouzaSearch = new System.Windows.Forms.ComboBox();
             this.txtDocNoSearch = new System.Windows.Forms.TextBox();
             this.dtpDateStart = new System.Windows.Forms.DateTimePicker();
@@ -147,26 +159,22 @@
             this.dtpReceivingDate = new System.Windows.Forms.DateTimePicker();
             this.lbl11 = new System.Windows.Forms.Label();
             this.txtRcId = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label73 = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
             this.txtDocDetails = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label40 = new System.Windows.Forms.Label();
-            this.cmbSR = new System.Windows.Forms.ComboBox();
             this.tabSentBackReg = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.LbFardatNos = new System.Windows.Forms.Label();
-            this.cbLetterNo = new System.Windows.Forms.ComboBox();
-            this.dtDispatchDate = new System.Windows.Forms.DateTimePicker();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.grdFardToInsert = new System.Windows.Forms.DataGridView();
             this.colCheckInsert = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
             this.chkAllToSave = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtRegToInsert = new System.Windows.Forms.TextBox();
             this.grdInsertedFardat = new System.Windows.Forms.DataGridView();
             this.colCheckInserted = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -174,26 +182,18 @@
             this.label41 = new System.Windows.Forms.Label();
             this.txtRegistryInserted = new System.Windows.Forms.TextBox();
             this.chkAllDetails = new System.Windows.Forms.CheckBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.cmbRegUpdateSR = new System.Windows.Forms.ComboBox();
-            this.rbBackToSR = new System.Windows.Forms.RadioButton();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSaveDocStatus = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnPrintMisalBadar = new System.Windows.Forms.Button();
-            this.btnRegNew = new System.Windows.Forms.Button();
-            this.btnRegSave = new System.Windows.Forms.Button();
-            this.btnRegUpdate = new System.Windows.Forms.Button();
-            this.btnRegSearch = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnSaveLetter = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnNewLetter = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.LbFardatNos = new System.Windows.Forms.Label();
+            this.cbLetterNo = new System.Windows.Forms.ComboBox();
+            this.dtDispatchDate = new System.Windows.Forms.DateTimePicker();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabSerachReg.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -221,7 +221,6 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabSentBackReg.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -231,6 +230,7 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdInsertedFardat)).BeginInit();
             this.panel8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -318,6 +318,7 @@
             this.dgvRegUpdate.MultiSelect = false;
             this.dgvRegUpdate.Name = "dgvRegUpdate";
             this.dgvRegUpdate.ReadOnly = true;
+            this.dgvRegUpdate.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRegUpdate.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRegUpdate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -329,6 +330,7 @@
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
@@ -364,6 +366,43 @@
             this.txtUpdateBuyer.TabStop = false;
             this.txtUpdateBuyer.Text = "حالت دستویز";
             // 
+            // rbBackToSR
+            // 
+            this.rbBackToSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbBackToSR.AutoSize = true;
+            this.rbBackToSR.Enabled = false;
+            this.rbBackToSR.Location = new System.Drawing.Point(381, 140);
+            this.rbBackToSR.Name = "rbBackToSR";
+            this.rbBackToSR.Size = new System.Drawing.Size(147, 35);
+            this.rbBackToSR.TabIndex = 84;
+            this.rbBackToSR.Text = "واپس سب رجسٹرار آفس";
+            this.rbBackToSR.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(713, 29);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(72, 31);
+            this.label39.TabIndex = 83;
+            this.label39.Text = "سب رجسٹرار";
+            // 
+            // cmbRegUpdateSR
+            // 
+            this.cmbRegUpdateSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbRegUpdateSR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbRegUpdateSR.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbRegUpdateSR.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbRegUpdateSR.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRegUpdateSR.FormattingEnabled = true;
+            this.cmbRegUpdateSR.Location = new System.Drawing.Point(633, 72);
+            this.cmbRegUpdateSR.Name = "cmbRegUpdateSR";
+            this.cmbRegUpdateSR.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbRegUpdateSR.Size = new System.Drawing.Size(139, 31);
+            this.cmbRegUpdateSR.TabIndex = 82;
+            // 
             // label25
             // 
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -390,7 +429,7 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(592, 29);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(34, 31);
+            this.label26.Size = new System.Drawing.Size(36, 31);
             this.label26.TabIndex = 77;
             this.label26.Text = " بائع";
             // 
@@ -473,7 +512,7 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(1094, 29);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(71, 31);
+            this.label20.Size = new System.Drawing.Size(73, 31);
             this.label20.TabIndex = 70;
             this.label20.Text = " رجسٹری نمبر";
             // 
@@ -556,6 +595,18 @@
             this.rbUpdateRecieve.Text = "وصول شدہ";
             this.rbUpdateRecieve.UseVisualStyleBackColor = true;
             // 
+            // btnRegUpdate
+            // 
+            this.btnRegUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegUpdate.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnRegUpdate.Location = new System.Drawing.Point(196, 130);
+            this.btnRegUpdate.Name = "btnRegUpdate";
+            this.btnRegUpdate.Size = new System.Drawing.Size(53, 48);
+            this.btnRegUpdate.TabIndex = 42;
+            this.btnRegUpdate.TabStop = false;
+            this.btnRegUpdate.UseVisualStyleBackColor = true;
+            this.btnRegUpdate.Click += new System.EventHandler(this.btnRegUpdate_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label13);
@@ -603,6 +654,18 @@
             this.label16.Size = new System.Drawing.Size(40, 31);
             this.label16.TabIndex = 50;
             this.label16.Text = "تاریخ";
+            // 
+            // btnRegSearch
+            // 
+            this.btnRegSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegSearch.Image = global::SDC_Application.Resource1.search01;
+            this.btnRegSearch.Location = new System.Drawing.Point(504, 14);
+            this.btnRegSearch.Name = "btnRegSearch";
+            this.btnRegSearch.Size = new System.Drawing.Size(42, 29);
+            this.btnRegSearch.TabIndex = 12;
+            this.btnRegSearch.UseVisualStyleBackColor = true;
+            this.btnRegSearch.Click += new System.EventHandler(this.btnRegSearch_Click);
             // 
             // cmbRegSearchMoza
             // 
@@ -727,6 +790,42 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "تفصیل رجسٹری";
             // 
+            // label40
+            // 
+            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(707, 23);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(72, 31);
+            this.label40.TabIndex = 74;
+            this.label40.Text = "سب رجسٹرار";
+            // 
+            // cmbSR
+            // 
+            this.cmbSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbSR.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSR.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbSR.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSR.FormattingEnabled = true;
+            this.cmbSR.Location = new System.Drawing.Point(648, 55);
+            this.cmbSR.Name = "cmbSR";
+            this.cmbSR.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbSR.Size = new System.Drawing.Size(146, 39);
+            this.cmbSR.TabIndex = 73;
+            // 
+            // btnRegNew
+            // 
+            this.btnRegNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegNew.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnRegNew.Location = new System.Drawing.Point(490, 112);
+            this.btnRegNew.Name = "btnRegNew";
+            this.btnRegNew.Size = new System.Drawing.Size(53, 48);
+            this.btnRegNew.TabIndex = 70;
+            this.btnRegNew.UseVisualStyleBackColor = true;
+            this.btnRegNew.Click += new System.EventHandler(this.btnRegNew_Click);
+            // 
             // label24
             // 
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -795,6 +894,18 @@
             this.txtJildNo.Name = "txtJildNo";
             this.txtJildNo.Size = new System.Drawing.Size(81, 30);
             this.txtJildNo.TabIndex = 2;
+            // 
+            // btnRegSave
+            // 
+            this.btnRegSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegSave.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnRegSave.Location = new System.Drawing.Point(414, 112);
+            this.btnRegSave.Name = "btnRegSave";
+            this.btnRegSave.Size = new System.Drawing.Size(53, 48);
+            this.btnRegSave.TabIndex = 6;
+            this.btnRegSave.Text = " ";
+            this.btnRegSave.UseVisualStyleBackColor = true;
+            this.btnRegSave.Click += new System.EventHandler(this.btnRegSave_Click);
             // 
             // label14
             // 
@@ -898,6 +1009,7 @@
             this.grdvReg.MultiSelect = false;
             this.grdvReg.Name = "grdvReg";
             this.grdvReg.ReadOnly = true;
+            this.grdvReg.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Alvi Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdvReg.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdvReg.RowTemplate.Height = 40;
@@ -916,6 +1028,18 @@
             this.tabReport.TabIndex = 2;
             this.tabReport.Text = "رپورٹ دستویزات";
             this.tabReport.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintMisalBadar
+            // 
+            this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
+            this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrintMisalBadar.Location = new System.Drawing.Point(596, 178);
+            this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
+            this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
+            this.btnPrintMisalBadar.TabIndex = 203;
+            this.btnPrintMisalBadar.UseVisualStyleBackColor = true;
+            this.btnPrintMisalBadar.Click += new System.EventHandler(this.btnPrintMisalBadar_Click);
             // 
             // tabStatusUpdate
             // 
@@ -954,6 +1078,7 @@
             this.gridveiwDocs.MultiSelect = false;
             this.gridveiwDocs.Name = "gridveiwDocs";
             this.gridveiwDocs.ReadOnly = true;
+            this.gridveiwDocs.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridveiwDocs.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.gridveiwDocs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -965,6 +1090,7 @@
             // ColCheck
             // 
             this.ColCheck.HeaderText = "انتخاب کریں";
+            this.ColCheck.MinimumWidth = 6;
             this.ColCheck.Name = "ColCheck";
             this.ColCheck.ReadOnly = true;
             // 
@@ -992,7 +1118,7 @@
             // 
             this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(886, 16);
+            this.label34.Location = new System.Drawing.Point(878, 16);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(44, 31);
             this.label34.TabIndex = 90;
@@ -1095,7 +1221,7 @@
             // 
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(667, 37);
+            this.label32.Location = new System.Drawing.Point(662, 37);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(76, 31);
             this.label32.TabIndex = 211;
@@ -1173,7 +1299,7 @@
             // 
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(1093, 35);
+            this.label30.Location = new System.Drawing.Point(1096, 35);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(69, 31);
             this.label30.TabIndex = 83;
@@ -1183,7 +1309,7 @@
             // 
             this.txtDocNoUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDocNoUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocNoUpdate.Location = new System.Drawing.Point(998, 36);
+            this.txtDocNoUpdate.Location = new System.Drawing.Point(1001, 36);
             this.txtDocNoUpdate.Name = "txtDocNoUpdate";
             this.txtDocNoUpdate.Size = new System.Drawing.Size(89, 30);
             this.txtDocNoUpdate.TabIndex = 79;
@@ -1207,7 +1333,7 @@
             this.cboMouzaUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cboMouzaUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMouzaUpdate.FormattingEnabled = true;
-            this.cboMouzaUpdate.Location = new System.Drawing.Point(1155, 34);
+            this.cboMouzaUpdate.Location = new System.Drawing.Point(1164, 34);
             this.cboMouzaUpdate.Name = "cboMouzaUpdate";
             this.cboMouzaUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cboMouzaUpdate.Size = new System.Drawing.Size(121, 31);
@@ -1254,6 +1380,18 @@
             this.rbRecieved.Text = "وصول شدہ";
             this.rbRecieved.UseVisualStyleBackColor = true;
             // 
+            // btnSaveDocStatus
+            // 
+            this.btnSaveDocStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveDocStatus.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveDocStatus.Location = new System.Drawing.Point(406, 86);
+            this.btnSaveDocStatus.Name = "btnSaveDocStatus";
+            this.btnSaveDocStatus.Size = new System.Drawing.Size(53, 48);
+            this.btnSaveDocStatus.TabIndex = 42;
+            this.btnSaveDocStatus.TabStop = false;
+            this.btnSaveDocStatus.UseVisualStyleBackColor = true;
+            this.btnSaveDocStatus.Click += new System.EventHandler(this.btnSaveDocStatus_Click);
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1271,7 +1409,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1264, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 31);
+            this.label3.Size = new System.Drawing.Size(70, 31);
             this.label3.TabIndex = 48;
             this.label3.Text = " دستویز نمبر";
             // 
@@ -1284,6 +1422,18 @@
             this.label4.Size = new System.Drawing.Size(40, 31);
             this.label4.TabIndex = 50;
             this.label4.Text = "تاریخ";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Image = global::SDC_Application.Resource1.search01;
+            this.btnSearch.Location = new System.Drawing.Point(166, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(42, 29);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cboMouzaSearch
             // 
@@ -1387,6 +1537,7 @@
             this.gridviewRcByDate.MultiSelect = false;
             this.gridviewRcByDate.Name = "gridviewRcByDate";
             this.gridviewRcByDate.ReadOnly = true;
+            this.gridviewRcByDate.RowHeadersWidth = 51;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridviewRcByDate.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridviewRcByDate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1398,6 +1549,7 @@
             // colSel
             // 
             this.colSel.HeaderText = "انتخاب کریں";
+            this.colSel.MinimumWidth = 6;
             this.colSel.Name = "colSel";
             this.colSel.ReadOnly = true;
             // 
@@ -1572,6 +1724,17 @@
             this.txtRcId.Text = "-1";
             this.txtRcId.Visible = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSave.Location = new System.Drawing.Point(236, 309);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(53, 48);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // label73
             // 
             this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1581,6 +1744,17 @@
             this.label73.Size = new System.Drawing.Size(50, 31);
             this.label73.TabIndex = 39;
             this.label73.Text = " تفصیل";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNew.Location = new System.Drawing.Point(304, 309);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(53, 48);
+            this.btnNew.TabIndex = 7;
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // txtDocDetails
             // 
@@ -1608,31 +1782,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1352, 448);
             this.tabControl1.TabIndex = 2;
             // 
-            // label40
-            // 
-            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(707, 23);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(72, 31);
-            this.label40.TabIndex = 74;
-            this.label40.Text = "سب رجسٹرار";
-            // 
-            // cmbSR
-            // 
-            this.cmbSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbSR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbSR.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSR.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbSR.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSR.FormattingEnabled = true;
-            this.cmbSR.Location = new System.Drawing.Point(648, 55);
-            this.cmbSR.Name = "cmbSR";
-            this.cmbSR.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbSR.Size = new System.Drawing.Size(146, 39);
-            this.cmbSR.TabIndex = 73;
-            // 
             // tabSentBackReg
             // 
             this.tabSentBackReg.Controls.Add(this.splitContainer2);
@@ -1644,6 +1793,221 @@
             this.tabSentBackReg.TabIndex = 5;
             this.tabSentBackReg.Text = "واپسی سب رجسٹرار";
             this.tabSentBackReg.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 72);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.grdFardToInsert);
+            this.splitContainer2.Panel1.Controls.Add(this.panel6);
+            this.splitContainer2.Panel1.Controls.Add(this.panel7);
+            this.splitContainer2.Panel1.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.splitContainer2.Panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.grdInsertedFardat);
+            this.splitContainer2.Panel2.Controls.Add(this.panel8);
+            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.splitContainer2.Size = new System.Drawing.Size(1338, 329);
+            this.splitContainer2.SplitterDistance = 650;
+            this.splitContainer2.TabIndex = 58;
+            // 
+            // grdFardToInsert
+            // 
+            this.grdFardToInsert.AllowUserToAddRows = false;
+            this.grdFardToInsert.AllowUserToDeleteRows = false;
+            this.grdFardToInsert.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdFardToInsert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdFardToInsert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCheckInsert});
+            this.grdFardToInsert.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdFardToInsert.Location = new System.Drawing.Point(61, 67);
+            this.grdFardToInsert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.grdFardToInsert.Name = "grdFardToInsert";
+            this.grdFardToInsert.ReadOnly = true;
+            this.grdFardToInsert.RowHeadersWidth = 51;
+            this.grdFardToInsert.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdFardToInsert.Size = new System.Drawing.Size(587, 260);
+            this.grdFardToInsert.TabIndex = 2;
+            this.grdFardToInsert.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFardToInsert_CellContentClick);
+            // 
+            // colCheckInsert
+            // 
+            this.colCheckInsert.HeaderText = "انتخاب کریں";
+            this.colCheckInsert.MinimumWidth = 6;
+            this.colCheckInsert.Name = "colCheckInsert";
+            this.colCheckInsert.ReadOnly = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnInsert);
+            this.panel6.Controls.Add(this.btnRemove);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 67);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(61, 260);
+            this.panel6.TabIndex = 1;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnInsert.Enabled = false;
+            this.btnInsert.Image = global::SDC_Application.Resource1.LeftImage;
+            this.btnInsert.Location = new System.Drawing.Point(3, 114);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(50, 50);
+            this.btnInsert.TabIndex = 1;
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnRemove.Enabled = false;
+            this.btnRemove.Image = global::SDC_Application.Resource1.rightimage;
+            this.btnRemove.Location = new System.Drawing.Point(4, 170);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(50, 50);
+            this.btnRemove.TabIndex = 0;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label38);
+            this.panel7.Controls.Add(this.chkAllToSave);
+            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.txtRegToInsert);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(648, 67);
+            this.panel7.TabIndex = 0;
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(443, 7);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(70, 31);
+            this.label38.TabIndex = 77;
+            this.label38.Text = "رجسٹری نمبر";
+            // 
+            // chkAllToSave
+            // 
+            this.chkAllToSave.AutoSize = true;
+            this.chkAllToSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAllToSave.Location = new System.Drawing.Point(527, 37);
+            this.chkAllToSave.Name = "chkAllToSave";
+            this.chkAllToSave.Size = new System.Drawing.Size(97, 30);
+            this.chkAllToSave.TabIndex = 2;
+            this.chkAllToSave.Text = "تمام منتخب کریں";
+            this.chkAllToSave.UseVisualStyleBackColor = true;
+            this.chkAllToSave.CheckedChanged += new System.EventHandler(this.chkAllToSave_CheckedChanged);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::SDC_Application.Resource1._1338735730_search_lense;
+            this.button2.Location = new System.Drawing.Point(9, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 35);
+            this.button2.TabIndex = 73;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // txtRegToInsert
+            // 
+            this.txtRegToInsert.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtRegToInsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRegToInsert.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegToInsert.Location = new System.Drawing.Point(306, 4);
+            this.txtRegToInsert.Multiline = true;
+            this.txtRegToInsert.Name = "txtRegToInsert";
+            this.txtRegToInsert.Size = new System.Drawing.Size(119, 33);
+            this.txtRegToInsert.TabIndex = 69;
+            this.txtRegToInsert.TextChanged += new System.EventHandler(this.txtRegToInsert_TextChanged);
+            // 
+            // grdInsertedFardat
+            // 
+            this.grdInsertedFardat.AllowUserToAddRows = false;
+            this.grdInsertedFardat.AllowUserToDeleteRows = false;
+            this.grdInsertedFardat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdInsertedFardat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdInsertedFardat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCheckInserted});
+            this.grdInsertedFardat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdInsertedFardat.Location = new System.Drawing.Point(0, 67);
+            this.grdInsertedFardat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.grdInsertedFardat.Name = "grdInsertedFardat";
+            this.grdInsertedFardat.ReadOnly = true;
+            this.grdInsertedFardat.RowHeadersWidth = 51;
+            this.grdInsertedFardat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdInsertedFardat.Size = new System.Drawing.Size(682, 260);
+            this.grdInsertedFardat.TabIndex = 3;
+            this.grdInsertedFardat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdInsertedFardat_CellContentClick);
+            // 
+            // colCheckInserted
+            // 
+            this.colCheckInserted.HeaderText = "انتخاب کریں";
+            this.colCheckInserted.MinimumWidth = 6;
+            this.colCheckInserted.Name = "colCheckInserted";
+            this.colCheckInserted.ReadOnly = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label41);
+            this.panel8.Controls.Add(this.txtRegistryInserted);
+            this.panel8.Controls.Add(this.chkAllDetails);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(682, 67);
+            this.panel8.TabIndex = 0;
+            // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(444, 20);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(70, 31);
+            this.label41.TabIndex = 76;
+            this.label41.Text = "رجسٹری نمبر";
+            // 
+            // txtRegistryInserted
+            // 
+            this.txtRegistryInserted.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtRegistryInserted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRegistryInserted.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegistryInserted.Location = new System.Drawing.Point(314, 16);
+            this.txtRegistryInserted.Multiline = true;
+            this.txtRegistryInserted.Name = "txtRegistryInserted";
+            this.txtRegistryInserted.Size = new System.Drawing.Size(124, 33);
+            this.txtRegistryInserted.TabIndex = 73;
+            this.txtRegistryInserted.TextChanged += new System.EventHandler(this.txtRegistryInserted_TextChanged);
+            // 
+            // chkAllDetails
+            // 
+            this.chkAllDetails.AutoSize = true;
+            this.chkAllDetails.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAllDetails.Location = new System.Drawing.Point(522, 38);
+            this.chkAllDetails.Name = "chkAllDetails";
+            this.chkAllDetails.Size = new System.Drawing.Size(97, 30);
+            this.chkAllDetails.TabIndex = 3;
+            this.chkAllDetails.Text = "تمام منتخب کریں";
+            this.chkAllDetails.UseVisualStyleBackColor = true;
+            this.chkAllDetails.CheckedChanged += new System.EventHandler(this.chkAllDetails_CheckedChanged);
             // 
             // groupBox7
             // 
@@ -1665,6 +2029,73 @@
             this.groupBox7.Size = new System.Drawing.Size(1338, 69);
             this.groupBox7.TabIndex = 57;
             this.groupBox7.TabStop = false;
+            // 
+            // btnSaveLetter
+            // 
+            this.btnSaveLetter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveLetter.Enabled = false;
+            this.btnSaveLetter.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveLetter.Image = global::SDC_Application.Resource1.Save_icon;
+            this.btnSaveLetter.Location = new System.Drawing.Point(393, 15);
+            this.btnSaveLetter.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnSaveLetter.Name = "btnSaveLetter";
+            this.btnSaveLetter.Size = new System.Drawing.Size(59, 50);
+            this.btnSaveLetter.TabIndex = 78;
+            this.btnSaveLetter.UseVisualStyleBackColor = true;
+            this.btnSaveLetter.Click += new System.EventHandler(this.btnSaveLetter_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.Enabled = false;
+            this.btnDel.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Image = global::SDC_Application.Resource1.edit_delete1;
+            this.btnDel.Location = new System.Drawing.Point(263, 15);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(59, 50);
+            this.btnDel.TabIndex = 77;
+            this.btnDel.TabStop = false;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Visible = false;
+            // 
+            // btnNewLetter
+            // 
+            this.btnNewLetter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewLetter.Image = global::SDC_Application.Resource1.New_icon1_res;
+            this.btnNewLetter.Location = new System.Drawing.Point(458, 15);
+            this.btnNewLetter.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnNewLetter.Name = "btnNewLetter";
+            this.btnNewLetter.Size = new System.Drawing.Size(59, 50);
+            this.btnNewLetter.TabIndex = 76;
+            this.btnNewLetter.UseVisualStyleBackColor = true;
+            this.btnNewLetter.Click += new System.EventHandler(this.btnNewLetter_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirm.Enabled = false;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
+            this.btnConfirm.Location = new System.Drawing.Point(101, 15);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(53, 50);
+            this.btnConfirm.TabIndex = 63;
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Visible = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackgroundImage = global::SDC_Application.Resource1.Print31;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.Location = new System.Drawing.Point(328, 15);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(59, 50);
+            this.btnPrint.TabIndex = 65;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // LbFardatNos
             // 
@@ -1748,426 +2179,6 @@
             this.label37.TabIndex = 48;
             this.label37.Text = "لیٹر نمبر";
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 72);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.grdFardToInsert);
-            this.splitContainer2.Panel1.Controls.Add(this.panel6);
-            this.splitContainer2.Panel1.Controls.Add(this.panel7);
-            this.splitContainer2.Panel1.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.splitContainer2.Panel1.Margin = new System.Windows.Forms.Padding(5);
-            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.grdInsertedFardat);
-            this.splitContainer2.Panel2.Controls.Add(this.panel8);
-            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer2.Size = new System.Drawing.Size(1338, 329);
-            this.splitContainer2.SplitterDistance = 650;
-            this.splitContainer2.TabIndex = 58;
-            // 
-            // grdFardToInsert
-            // 
-            this.grdFardToInsert.AllowUserToAddRows = false;
-            this.grdFardToInsert.AllowUserToDeleteRows = false;
-            this.grdFardToInsert.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdFardToInsert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdFardToInsert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCheckInsert});
-            this.grdFardToInsert.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdFardToInsert.Location = new System.Drawing.Point(61, 67);
-            this.grdFardToInsert.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.grdFardToInsert.Name = "grdFardToInsert";
-            this.grdFardToInsert.ReadOnly = true;
-            this.grdFardToInsert.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdFardToInsert.Size = new System.Drawing.Size(587, 260);
-            this.grdFardToInsert.TabIndex = 2;
-            this.grdFardToInsert.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFardToInsert_CellContentClick);
-            // 
-            // colCheckInsert
-            // 
-            this.colCheckInsert.HeaderText = "انتخاب کریں";
-            this.colCheckInsert.Name = "colCheckInsert";
-            this.colCheckInsert.ReadOnly = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnInsert);
-            this.panel6.Controls.Add(this.btnRemove);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 67);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(61, 260);
-            this.panel6.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label38);
-            this.panel7.Controls.Add(this.chkAllToSave);
-            this.panel7.Controls.Add(this.button2);
-            this.panel7.Controls.Add(this.txtRegToInsert);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(648, 67);
-            this.panel7.TabIndex = 0;
-            // 
-            // label38
-            // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(443, 7);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(70, 31);
-            this.label38.TabIndex = 77;
-            this.label38.Text = "رجسٹری نمبر";
-            // 
-            // chkAllToSave
-            // 
-            this.chkAllToSave.AutoSize = true;
-            this.chkAllToSave.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAllToSave.Location = new System.Drawing.Point(527, 37);
-            this.chkAllToSave.Name = "chkAllToSave";
-            this.chkAllToSave.Size = new System.Drawing.Size(97, 30);
-            this.chkAllToSave.TabIndex = 2;
-            this.chkAllToSave.Text = "تمام منتخب کریں";
-            this.chkAllToSave.UseVisualStyleBackColor = true;
-            this.chkAllToSave.CheckedChanged += new System.EventHandler(this.chkAllToSave_CheckedChanged);
-            // 
-            // txtRegToInsert
-            // 
-            this.txtRegToInsert.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtRegToInsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRegToInsert.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegToInsert.Location = new System.Drawing.Point(306, 4);
-            this.txtRegToInsert.Multiline = true;
-            this.txtRegToInsert.Name = "txtRegToInsert";
-            this.txtRegToInsert.Size = new System.Drawing.Size(119, 33);
-            this.txtRegToInsert.TabIndex = 69;
-            this.txtRegToInsert.TextChanged += new System.EventHandler(this.txtRegToInsert_TextChanged);
-            // 
-            // grdInsertedFardat
-            // 
-            this.grdInsertedFardat.AllowUserToAddRows = false;
-            this.grdInsertedFardat.AllowUserToDeleteRows = false;
-            this.grdInsertedFardat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdInsertedFardat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdInsertedFardat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCheckInserted});
-            this.grdInsertedFardat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdInsertedFardat.Location = new System.Drawing.Point(0, 67);
-            this.grdInsertedFardat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.grdInsertedFardat.Name = "grdInsertedFardat";
-            this.grdInsertedFardat.ReadOnly = true;
-            this.grdInsertedFardat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdInsertedFardat.Size = new System.Drawing.Size(682, 260);
-            this.grdInsertedFardat.TabIndex = 3;
-            this.grdInsertedFardat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdInsertedFardat_CellContentClick);
-            // 
-            // colCheckInserted
-            // 
-            this.colCheckInserted.HeaderText = "انتخاب کریں";
-            this.colCheckInserted.Name = "colCheckInserted";
-            this.colCheckInserted.ReadOnly = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label41);
-            this.panel8.Controls.Add(this.txtRegistryInserted);
-            this.panel8.Controls.Add(this.chkAllDetails);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(682, 67);
-            this.panel8.TabIndex = 0;
-            // 
-            // label41
-            // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(444, 20);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(70, 31);
-            this.label41.TabIndex = 76;
-            this.label41.Text = "رجسٹری نمبر";
-            // 
-            // txtRegistryInserted
-            // 
-            this.txtRegistryInserted.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtRegistryInserted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRegistryInserted.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistryInserted.Location = new System.Drawing.Point(314, 16);
-            this.txtRegistryInserted.Multiline = true;
-            this.txtRegistryInserted.Name = "txtRegistryInserted";
-            this.txtRegistryInserted.Size = new System.Drawing.Size(124, 33);
-            this.txtRegistryInserted.TabIndex = 73;
-            this.txtRegistryInserted.TextChanged += new System.EventHandler(this.txtRegistryInserted_TextChanged);
-            // 
-            // chkAllDetails
-            // 
-            this.chkAllDetails.AutoSize = true;
-            this.chkAllDetails.Font = new System.Drawing.Font("Alvi Nastaleeq", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAllDetails.Location = new System.Drawing.Point(522, 38);
-            this.chkAllDetails.Name = "chkAllDetails";
-            this.chkAllDetails.Size = new System.Drawing.Size(97, 30);
-            this.chkAllDetails.TabIndex = 3;
-            this.chkAllDetails.Text = "تمام منتخب کریں";
-            this.chkAllDetails.UseVisualStyleBackColor = true;
-            this.chkAllDetails.CheckedChanged += new System.EventHandler(this.chkAllDetails_CheckedChanged);
-            // 
-            // label39
-            // 
-            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(713, 29);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(72, 31);
-            this.label39.TabIndex = 83;
-            this.label39.Text = "سب رجسٹرار";
-            // 
-            // cmbRegUpdateSR
-            // 
-            this.cmbRegUpdateSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbRegUpdateSR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbRegUpdateSR.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRegUpdateSR.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbRegUpdateSR.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRegUpdateSR.FormattingEnabled = true;
-            this.cmbRegUpdateSR.Location = new System.Drawing.Point(633, 72);
-            this.cmbRegUpdateSR.Name = "cmbRegUpdateSR";
-            this.cmbRegUpdateSR.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbRegUpdateSR.Size = new System.Drawing.Size(139, 31);
-            this.cmbRegUpdateSR.TabIndex = 82;
-            // 
-            // rbBackToSR
-            // 
-            this.rbBackToSR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbBackToSR.AutoSize = true;
-            this.rbBackToSR.Enabled = false;
-            this.rbBackToSR.Location = new System.Drawing.Point(381, 140);
-            this.rbBackToSR.Name = "rbBackToSR";
-            this.rbBackToSR.Size = new System.Drawing.Size(147, 35);
-            this.rbBackToSR.TabIndex = 84;
-            this.rbBackToSR.Text = "واپس سب رجسٹرار آفس";
-            this.rbBackToSR.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSave.Location = new System.Drawing.Point(236, 309);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(53, 48);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNew.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNew.Location = new System.Drawing.Point(304, 309);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(53, 48);
-            this.btnNew.TabIndex = 7;
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnSaveDocStatus
-            // 
-            this.btnSaveDocStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveDocStatus.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveDocStatus.Location = new System.Drawing.Point(406, 86);
-            this.btnSaveDocStatus.Name = "btnSaveDocStatus";
-            this.btnSaveDocStatus.Size = new System.Drawing.Size(53, 48);
-            this.btnSaveDocStatus.TabIndex = 42;
-            this.btnSaveDocStatus.TabStop = false;
-            this.btnSaveDocStatus.UseVisualStyleBackColor = true;
-            this.btnSaveDocStatus.Click += new System.EventHandler(this.btnSaveDocStatus_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Image = global::SDC_Application.Resource1.search01;
-            this.btnSearch.Location = new System.Drawing.Point(166, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(42, 29);
-            this.btnSearch.TabIndex = 12;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnPrintMisalBadar
-            // 
-            this.btnPrintMisalBadar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintMisalBadar.BackgroundImage = global::SDC_Application.Resource1.Print3;
-            this.btnPrintMisalBadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintMisalBadar.Location = new System.Drawing.Point(596, 178);
-            this.btnPrintMisalBadar.Name = "btnPrintMisalBadar";
-            this.btnPrintMisalBadar.Size = new System.Drawing.Size(53, 55);
-            this.btnPrintMisalBadar.TabIndex = 203;
-            this.btnPrintMisalBadar.UseVisualStyleBackColor = true;
-            this.btnPrintMisalBadar.Click += new System.EventHandler(this.btnPrintMisalBadar_Click);
-            // 
-            // btnRegNew
-            // 
-            this.btnRegNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegNew.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnRegNew.Location = new System.Drawing.Point(490, 112);
-            this.btnRegNew.Name = "btnRegNew";
-            this.btnRegNew.Size = new System.Drawing.Size(53, 48);
-            this.btnRegNew.TabIndex = 70;
-            this.btnRegNew.UseVisualStyleBackColor = true;
-            this.btnRegNew.Click += new System.EventHandler(this.btnRegNew_Click);
-            // 
-            // btnRegSave
-            // 
-            this.btnRegSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegSave.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnRegSave.Location = new System.Drawing.Point(414, 112);
-            this.btnRegSave.Name = "btnRegSave";
-            this.btnRegSave.Size = new System.Drawing.Size(53, 48);
-            this.btnRegSave.TabIndex = 6;
-            this.btnRegSave.Text = " ";
-            this.btnRegSave.UseVisualStyleBackColor = true;
-            this.btnRegSave.Click += new System.EventHandler(this.btnRegSave_Click);
-            // 
-            // btnRegUpdate
-            // 
-            this.btnRegUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegUpdate.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnRegUpdate.Location = new System.Drawing.Point(196, 130);
-            this.btnRegUpdate.Name = "btnRegUpdate";
-            this.btnRegUpdate.Size = new System.Drawing.Size(53, 48);
-            this.btnRegUpdate.TabIndex = 42;
-            this.btnRegUpdate.TabStop = false;
-            this.btnRegUpdate.UseVisualStyleBackColor = true;
-            this.btnRegUpdate.Click += new System.EventHandler(this.btnRegUpdate_Click);
-            // 
-            // btnRegSearch
-            // 
-            this.btnRegSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegSearch.Image = global::SDC_Application.Resource1.search01;
-            this.btnRegSearch.Location = new System.Drawing.Point(504, 14);
-            this.btnRegSearch.Name = "btnRegSearch";
-            this.btnRegSearch.Size = new System.Drawing.Size(42, 29);
-            this.btnRegSearch.TabIndex = 12;
-            this.btnRegSearch.UseVisualStyleBackColor = true;
-            this.btnRegSearch.Click += new System.EventHandler(this.btnRegSearch_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnInsert.Enabled = false;
-            this.btnInsert.Image = global::SDC_Application.Resource1.LeftImage;
-            this.btnInsert.Location = new System.Drawing.Point(3, 114);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(50, 50);
-            this.btnInsert.TabIndex = 1;
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnRemove.Enabled = false;
-            this.btnRemove.Image = global::SDC_Application.Resource1.rightimage;
-            this.btnRemove.Location = new System.Drawing.Point(4, 170);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(50, 50);
-            this.btnRemove.TabIndex = 0;
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::SDC_Application.Resource1._1338735730_search_lense;
-            this.button2.Location = new System.Drawing.Point(9, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 35);
-            this.button2.TabIndex = 73;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // btnSaveLetter
-            // 
-            this.btnSaveLetter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveLetter.Enabled = false;
-            this.btnSaveLetter.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveLetter.Image = global::SDC_Application.Resource1.Save_icon;
-            this.btnSaveLetter.Location = new System.Drawing.Point(393, 15);
-            this.btnSaveLetter.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnSaveLetter.Name = "btnSaveLetter";
-            this.btnSaveLetter.Size = new System.Drawing.Size(59, 50);
-            this.btnSaveLetter.TabIndex = 78;
-            this.btnSaveLetter.UseVisualStyleBackColor = true;
-            this.btnSaveLetter.Click += new System.EventHandler(this.btnSaveLetter_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Enabled = false;
-            this.btnDel.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Image = global::SDC_Application.Resource1.edit_delete1;
-            this.btnDel.Location = new System.Drawing.Point(263, 15);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(59, 50);
-            this.btnDel.TabIndex = 77;
-            this.btnDel.TabStop = false;
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Visible = false;
-            // 
-            // btnNewLetter
-            // 
-            this.btnNewLetter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewLetter.Image = global::SDC_Application.Resource1.New_icon1_res;
-            this.btnNewLetter.Location = new System.Drawing.Point(458, 15);
-            this.btnNewLetter.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnNewLetter.Name = "btnNewLetter";
-            this.btnNewLetter.Size = new System.Drawing.Size(59, 50);
-            this.btnNewLetter.TabIndex = 76;
-            this.btnNewLetter.UseVisualStyleBackColor = true;
-            this.btnNewLetter.Click += new System.EventHandler(this.btnNewLetter_Click);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirm.Enabled = false;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Image = global::SDC_Application.Resource1.Check_Res;
-            this.btnConfirm.Location = new System.Drawing.Point(101, 15);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(53, 50);
-            this.btnConfirm.TabIndex = 63;
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Visible = false;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackgroundImage = global::SDC_Application.Resource1.Print31;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.Location = new System.Drawing.Point(328, 15);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(59, 50);
-            this.btnPrint.TabIndex = 65;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // frmDocReceiving
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2213,8 +2224,6 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabSentBackReg.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -2226,6 +2235,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdInsertedFardat)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }

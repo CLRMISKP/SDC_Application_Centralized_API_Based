@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
 using SDC_Application.Classess;
-using LandInfo.ControlsLib;
 using SDC_Application.DL;
 using SDC_Application.BL;
 using System.Data.SqlClient;

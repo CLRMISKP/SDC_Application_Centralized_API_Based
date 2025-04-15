@@ -35,19 +35,19 @@ namespace SDC_Application.BL
                return ojbdb.filldatatable_from_storedProcedure(b);
         }
 
-           public DataTable viewGridData(string b)
-        {
-            return ojbdb.viewGridData(b);
-        }
-           public int Insert_StoreProcedure(string str)
-        {
-            return ojbdb.Insert_StoreProcedure(str);
+        //   public DataTable viewGridData(string b)
+        //{
+        //    return ojbdb.viewGridData(b);
+        //}
+        //   public int Insert_StoreProcedure(string str)
+        //{
+        //    return ojbdb.Insert_StoreProcedure(str);
 
-        }
-           public SqlDataReader fillDataReader(string str)
-           {
-               return ojbdb.fillDataReader(str);
-           }
+        //}
+        //   public SqlDataReader fillDataReader(string str)
+        //   {
+        //       return ojbdb.fillDataReader(str);
+        //   }
 
         #region Get Token No by Token Id
 

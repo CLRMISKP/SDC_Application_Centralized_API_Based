@@ -118,15 +118,18 @@ namespace SDC_Application.AL
                 if (mozaid != 0)
                 {
                     khattasByMoza =mnk.GetMozaKhattajat(mozaid.ToString());
-                    DataRow row = khattasByMoza.NewRow();
-                    row["RegisterHqDKhataId"] = 0;
-                    row["KhataNo"] = "- کھاتہ چنِے -";
-                    khattasByMoza.Rows.InsertAt(row, 0);
-                    //this.GetKhataJaatByMozaByRegisterBindingSource.DataSource = this.khattasByMoza;
-                    cbokhataNo.DataSource = khattasByMoza;
-                    cbokhataNo.DisplayMember = "KhataNo";
-                    cbokhataNo.ValueMember = "RegisterHqDKhataId";
-                    cbokhataNo.SelectedIndex = 0;
+                    if (khattasByMoza != null)
+                    {
+                        DataRow row = khattasByMoza.NewRow();
+                        row["RegisterHqDKhataId"] = 0;
+                        row["KhataNo"] = "- کھاتہ چنِے -";
+                        khattasByMoza.Rows.InsertAt(row, 0);
+                        //this.GetKhataJaatByMozaByRegisterBindingSource.DataSource = this.khattasByMoza;
+                        cbokhataNo.DataSource = khattasByMoza;
+                        cbokhataNo.DisplayMember = "KhataNo";
+                        cbokhataNo.ValueMember = "RegisterHqDKhataId";
+                        cbokhataNo.SelectedIndex = 0;
+                    }
                 }
                 else
                 {
@@ -204,11 +207,6 @@ namespace SDC_Application.AL
             }
         }
         #endregion
-
-      
-       
-
-      
 
         #region Fard Khata controls
 
@@ -296,8 +294,6 @@ namespace SDC_Application.AL
 
         #endregion
 
-      
-
         #region Fill Grid view Fard Khatajat
         private void filldgFardKhatas()
         {
@@ -330,8 +326,6 @@ namespace SDC_Application.AL
 
        
         #endregion
-
-
 
         #region Print Detailed Fard
         private void btnPrint_Click(object sender, EventArgs e)
@@ -470,12 +464,6 @@ namespace SDC_Application.AL
 
         #endregion
 
-
-
-
-
-
-
         #region Tab Control Change
         private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -496,62 +484,7 @@ namespace SDC_Application.AL
                             grdVoucherDetails.DataSource = null;
                             dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId "+SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+", '" + this.SelectedTokenId.ToString() + "'," + "P");
 
-
-                            if (dtPayment.Rows.Count > 0)
-                            {
-                                foreach (DataRow dr in dtPayment.Rows)
-                                {
-                                    txtTokenNO.Text = dr["TokenNo"].ToString();
-                                    dtTokenDate.Text = dr["TokenDate"].ToString();
-                                    txtVisitorName.Text = dr["Visitor_Name"].ToString();
-                                    txtFatherName.Text = dr["Visitor_FatherName"].ToString();
-                                    txtMouza.Text = dr["MozaNameUrdu"].ToString();
-                                    txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
-                                    TxtCNIC.Text = dr["Visitor_CNIC"].ToString();
-                                    this.MozaId = dr["TokenService_For_MozaId"].ToString();
-                                    txtMasterRemarks.Text = dr["PV_Remarks"].ToString();
-                                    this.txtVoucherNo.Text = dr["PV_No"].ToString();
-                                    dtChallan.Text = dr["PV_Date"].ToString();
-                                    txtPVID.Text = dr["PVID"].ToString();
-                                    txtPVNo.Text = dr["PV_No"].ToString();
-                                    bool pvstatus = Convert.ToBoolean(dr["PV_Verified_Status"]);
-                                    btnMasterSave.Enabled = false;
-
-                                    txtQuantity.Enabled = true;
-
-                                    txtServiceName.Enabled = true;
-                                    Proc_Get_SDC_Services_For_PaymentVoucher();
-                                    calldataGrid();
-
-                                    if (pvstatus)
-                                    {
-
-                                        btnSave.Enabled = false;
-
-                                        chkMasterVoucherUpdate.Checked = true;
-                                        chkMasterVoucherUpdate.Enabled = false;
-                                        lbPaymentTasdeeq.Text = "تصدیق شدہ";
-
-                                    }
-                                    else
-                                    {
-                                        btnSave.Enabled = true;
-                                        chkMasterVoucherUpdate.Enabled = true;
-
-                                        chkMasterVoucherUpdate.Checked = false;
-                                        lbPaymentTasdeeq.Text = "تصدیق کریں";
-
-                                    }
-
-                                }
-                            }
-
-                            else
-                            {
-                                txtServiceName.DataSource = null;
-                                txtServiceName.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
-
+                            if(dtPayment != null) {
                                 if (dtPayment.Rows.Count > 0)
                                 {
                                     foreach (DataRow dr in dtPayment.Rows)
@@ -564,26 +497,83 @@ namespace SDC_Application.AL
                                         txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
                                         TxtCNIC.Text = dr["Visitor_CNIC"].ToString();
                                         this.MozaId = dr["TokenService_For_MozaId"].ToString();
-                                        txtPVID.Text = "-1";
-                                        txtPVNo.Text = "-1";
-                                        this.txtVoucherNo.Clear();
-                                        dtChallan.Value = DateTime.Now;
-                                        txtMasterRemarks.Clear();
-                                        btnSave.Enabled = false;
-                                        txtQuantity.Enabled = false;
+                                        txtMasterRemarks.Text = dr["PV_Remarks"].ToString();
+                                        this.txtVoucherNo.Text = dr["PV_No"].ToString();
+                                        dtChallan.Text = dr["PV_Date"].ToString();
+                                        txtPVID.Text = dr["PVID"].ToString();
+                                        txtPVNo.Text = dr["PV_No"].ToString();
+                                        bool pvstatus = Convert.ToBoolean(dr["PV_Verified_Status"]);
+                                        btnMasterSave.Enabled = false;
 
-                                        txtServiceName.Enabled = false;
-                                        btnMasterSave.Enabled = true;
+                                        txtQuantity.Enabled = true;
 
+                                        txtServiceName.Enabled = true;
+                                        Proc_Get_SDC_Services_For_PaymentVoucher();
+                                        calldataGrid();
 
-                                        chkMasterVoucherUpdate.Enabled = true;
-                                        chkMasterVoucherUpdate.Checked = false;
-                                        lbPaymentTasdeeq.Text = "تصدیق کریں";
+                                        if (pvstatus)
+                                        {
 
+                                            btnSave.Enabled = false;
+
+                                            chkMasterVoucherUpdate.Checked = true;
+                                            chkMasterVoucherUpdate.Enabled = false;
+                                            lbPaymentTasdeeq.Text = "تصدیق شدہ";
+
+                                        }
+                                        else
+                                        {
+                                            btnSave.Enabled = true;
+                                            chkMasterVoucherUpdate.Enabled = true;
+
+                                            chkMasterVoucherUpdate.Checked = false;
+                                            lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+                                        }
 
                                     }
                                 }
+                            }
 
+                            else
+                            {
+                                txtServiceName.DataSource = null;
+                                txtServiceName.Items.Clear();
+                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
+                                if (dtPayment != null)
+                                {
+                                    if (dtPayment.Rows.Count > 0)
+                                    {
+                                        foreach (DataRow dr in dtPayment.Rows)
+                                        {
+                                            txtTokenNO.Text = dr["TokenNo"].ToString();
+                                            dtTokenDate.Text = dr["TokenDate"].ToString();
+                                            txtVisitorName.Text = dr["Visitor_Name"].ToString();
+                                            txtFatherName.Text = dr["Visitor_FatherName"].ToString();
+                                            txtMouza.Text = dr["MozaNameUrdu"].ToString();
+                                            txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
+                                            TxtCNIC.Text = dr["Visitor_CNIC"].ToString();
+                                            this.MozaId = dr["TokenService_For_MozaId"].ToString();
+                                            txtPVID.Text = "-1";
+                                            txtPVNo.Text = "-1";
+                                            this.txtVoucherNo.Clear();
+                                            dtChallan.Value = DateTime.Now;
+                                            txtMasterRemarks.Clear();
+                                            btnSave.Enabled = false;
+                                            txtQuantity.Enabled = false;
+
+                                            txtServiceName.Enabled = false;
+                                            btnMasterSave.Enabled = true;
+
+
+                                            chkMasterVoucherUpdate.Enabled = true;
+                                            chkMasterVoucherUpdate.Checked = false;
+                                            lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+
+                                        }
+                                    }
+                                }
                             }
 
 
@@ -635,75 +625,11 @@ namespace SDC_Application.AL
                             objauto.FillCombo("Proc_Get_SDC_PaymentTypes_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbRPaymentofSource, "PaymentType_Urdu", "PaymentTypeId");
                             dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
 
-
-                            if (dtReceipt.Rows.Count > 0)
+                            if (dtReceipt != null)
                             {
-                                foreach (DataRow dr in dtReceipt.Rows)
+                                if (dtReceipt.Rows.Count > 0)
                                 {
-                                    txtRTokenNo.Text = dr["TokenNo"].ToString();
-                                    dtRTokenDate.Text = dr["TokenDate"].ToString();
-                                    txtRService.Text = dr["ServiceTypeName_Urdu"].ToString();
-                                    txtRName.Text = dr["Visitor_Name"].ToString();
-                                    txtRFatherName.Text = dr["Visitor_FatherName"].ToString();
-                                    txtRMouza.Text = dr["MozaNameUrdu"].ToString();
-                                    txtRCNIC.Text = dr["Visitor_CNIC"].ToString();
-
-                                    txtRRemarks.Text = dr["RVRemarks"].ToString();
-                                    txtRChallanNo.Text = dr["PV_No"].ToString();
-                                    dtRChallanDate.Text = dr["PV_Date"].ToString();
-                                    txtReciptNo.Text = dr["RVNo"].ToString();
-                                    txtRNo.Text = dr["RVNo"].ToString();
-                                    dtReciptDate.Text = dr["RVDate"].ToString();
-                                    txtRPVID.Text = dr["PVID"].ToString();
-                                    txtRVID.Text = dr["RVID"].ToString();
-                                    bool rvstatus = Convert.ToBoolean(dr["RV_VerifiedStatus"]);
-
-                                    btnMasterReceiptSave.Enabled = false;
-                                    btnRSaveDetails.Enabled = true;
-                                    btnRClear.Enabled = true;
-                                    cmbRServices.Enabled = true;
-
-
-                                    if (rvstatus)
-                                    {
-
-                                        btnRSaveDetails.Enabled = false;
-                                        btnRClear.Enabled = false;
-                                        btnDelReceipt.Enabled = false;
-
-                                        chkVerfiedReciptMaster.Checked = true;
-                                        chkVerfiedReciptMaster.Enabled = false;
-                                        lbReceiptTasdeeq.Text = "تصدیق شدہ";
-
-                                    }
-                                    else
-                                    {
-                                        btnRSaveDetails.Enabled = true;
-                                        btnRClear.Enabled = true;
-                                        btnDelReceipt.Enabled = true;
-
-                                        chkVerfiedReciptMaster.Enabled = true;
-                                        chkVerfiedReciptMaster.Checked = false;
-                                        lbReceiptTasdeeq.Text = "تصدیق کریں";
-
-                                    }
-
-                                    Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_ServiceTypeId();
-                                    call_Details_Recipt_Grd();
-                                    btnRClear_Click(sender, e);
-
-                                }
-                            }
-
-                            else
-                            {
-                                cmbRServices.DataSource = null;
-                                cmbRServices.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + this.SelectedTokenId.ToString() + "'," + "R");
-
-                                if (dtPayment.Rows.Count > 0)
-                                {
-                                    foreach (DataRow dr in dtPayment.Rows)
+                                    foreach (DataRow dr in dtReceipt.Rows)
                                     {
                                         txtRTokenNo.Text = dr["TokenNo"].ToString();
                                         dtRTokenDate.Text = dr["TokenDate"].ToString();
@@ -713,31 +639,97 @@ namespace SDC_Application.AL
                                         txtRMouza.Text = dr["MozaNameUrdu"].ToString();
                                         txtRCNIC.Text = dr["Visitor_CNIC"].ToString();
 
-                                        txtRPVID.Text = dr["PVID"].ToString();
+                                        txtRRemarks.Text = dr["RVRemarks"].ToString();
                                         txtRChallanNo.Text = dr["PV_No"].ToString();
                                         dtRChallanDate.Text = dr["PV_Date"].ToString();
+                                        txtReciptNo.Text = dr["RVNo"].ToString();
+                                        txtRNo.Text = dr["RVNo"].ToString();
+                                        dtReciptDate.Text = dr["RVDate"].ToString();
+                                        txtRPVID.Text = dr["PVID"].ToString();
+                                        txtRVID.Text = dr["RVID"].ToString();
+                                        bool rvstatus = Convert.ToBoolean(dr["RV_VerifiedStatus"]);
+
+                                        btnMasterReceiptSave.Enabled = false;
+                                        btnRSaveDetails.Enabled = true;
+                                        btnRClear.Enabled = true;
+                                        cmbRServices.Enabled = true;
 
 
+                                        if (rvstatus)
+                                        {
 
-                                        txtRNo.Text = "-1";
-                                        txtRVID.Text = "-1";
-                                        txtReciptNo.Clear();
-                                        dtReciptDate.Value = DateTime.Now;
-                                        txtRRemarks.Clear();
+                                            btnRSaveDetails.Enabled = false;
+                                            btnRClear.Enabled = false;
+                                            btnDelReceipt.Enabled = false;
 
-                                        btnMasterReceiptSave.Enabled = true;
-                                        btnRSaveDetails.Enabled = false;
-                                        btnRClear.Enabled = false;
-                                        cmbRServices.Enabled = false;
+                                            chkVerfiedReciptMaster.Checked = true;
+                                            chkVerfiedReciptMaster.Enabled = false;
+                                            lbReceiptTasdeeq.Text = "تصدیق شدہ";
 
+                                        }
+                                        else
+                                        {
+                                            btnRSaveDetails.Enabled = true;
+                                            btnRClear.Enabled = true;
+                                            btnDelReceipt.Enabled = true;
 
-                                        chkVerfiedReciptMaster.Enabled = true;
-                                        chkVerfiedReciptMaster.Checked = false;
-                                        lbReceiptTasdeeq.Text = "تصدیق کریں";
+                                            chkVerfiedReciptMaster.Enabled = true;
+                                            chkVerfiedReciptMaster.Checked = false;
+                                            lbReceiptTasdeeq.Text = "تصدیق کریں";
+
+                                        }
+
+                                        Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_ServiceTypeId();
+                                        call_Details_Recipt_Grd();
+                                        btnRClear_Click(sender, e);
 
                                     }
                                 }
+                            }
+                            else
+                            {
+                                cmbRServices.DataSource = null;
+                                cmbRServices.Items.Clear();
+                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + this.SelectedTokenId.ToString() + "'," + "R");
+                                if (dtPayment != null)
+                                {
+                                    if (dtPayment.Rows.Count > 0)
+                                    {
+                                        foreach (DataRow dr in dtPayment.Rows)
+                                        {
+                                            txtRTokenNo.Text = dr["TokenNo"].ToString();
+                                            dtRTokenDate.Text = dr["TokenDate"].ToString();
+                                            txtRService.Text = dr["ServiceTypeName_Urdu"].ToString();
+                                            txtRName.Text = dr["Visitor_Name"].ToString();
+                                            txtRFatherName.Text = dr["Visitor_FatherName"].ToString();
+                                            txtRMouza.Text = dr["MozaNameUrdu"].ToString();
+                                            txtRCNIC.Text = dr["Visitor_CNIC"].ToString();
 
+                                            txtRPVID.Text = dr["PVID"].ToString();
+                                            txtRChallanNo.Text = dr["PV_No"].ToString();
+                                            dtRChallanDate.Text = dr["PV_Date"].ToString();
+
+
+
+                                            txtRNo.Text = "-1";
+                                            txtRVID.Text = "-1";
+                                            txtReciptNo.Clear();
+                                            dtReciptDate.Value = DateTime.Now;
+                                            txtRRemarks.Clear();
+
+                                            btnMasterReceiptSave.Enabled = true;
+                                            btnRSaveDetails.Enabled = false;
+                                            btnRClear.Enabled = false;
+                                            cmbRServices.Enabled = false;
+
+
+                                            chkVerfiedReciptMaster.Enabled = true;
+                                            chkVerfiedReciptMaster.Checked = false;
+                                            lbReceiptTasdeeq.Text = "تصدیق کریں";
+
+                                        }
+                                    }
+                                }
                             }
 
 
@@ -1164,6 +1156,7 @@ namespace SDC_Application.AL
             {
 
                 dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_For_Recipt " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.txtRPVID.Text + "','" + this.cmbRServices.SelectedValue.ToString() + "'");
+                if(dt != null) {
                 foreach (DataRow dr in dt.Rows)
                 {
                     this.txtRAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
@@ -1171,7 +1164,7 @@ namespace SDC_Application.AL
                     this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
                     this.cmbRPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
                 }
-
+                }
 
             }
         }
@@ -1519,13 +1512,15 @@ namespace SDC_Application.AL
             {
                 DataTable dt = new DataTable();
                 dt = mnk.GetDetailedFardKhatonies(KhataRecId);
-                grdKhatoniDetails.DataSource = dt;
-                grdKhatoniDetails.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-                grdKhatoniDetails.Columns["Khatooni_TotalParts"].HeaderText = "کل حصے";
-                grdKhatoniDetails.Columns["Khatooni_Area"].HeaderText = "کل رقبہ";
-                grdKhatoniDetails.Columns["KhatooniRecId"].Visible = false;
-                grdKhatoniDetails.Columns["KhatooniId"].Visible = false;
-                
+                if (dt != null)
+                {
+                    grdKhatoniDetails.DataSource = dt;
+                    grdKhatoniDetails.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                    grdKhatoniDetails.Columns["Khatooni_TotalParts"].HeaderText = "کل حصے";
+                    grdKhatoniDetails.Columns["Khatooni_Area"].HeaderText = "کل رقبہ";
+                    grdKhatoniDetails.Columns["KhatooniRecId"].Visible = false;
+                    grdKhatoniDetails.Columns["KhatooniId"].Visible = false;
+                }
             }
             catch (Exception ex)
             {

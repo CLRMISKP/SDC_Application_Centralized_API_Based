@@ -68,63 +68,67 @@ namespace SDC_Application.AL
             string year = date.Year.ToString();
             datetoken = month + "/" + day + "/" + year;
             dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherMaster_List  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "',"+UsersManagments.SubSdcId.ToString());
-            DataTable outputTable = dt.Clone();
-
-            for (int i = dt.Rows.Count - 1; i >= 0; i--)
+            if (dt != null)
             {
-                outputTable.ImportRow(dt.Rows[i]);
-            }
-            bs.DataSource = dt;
-            grdPaymentMaster.DataSource = bs;
-            grdPaymentMaster.DataSource = outputTable;
+                DataTable outputTable = dt.Clone();
 
+                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                {
+                    outputTable.ImportRow(dt.Rows[i]);
+                }
+                bs.DataSource = dt;
+                grdPaymentMaster.DataSource = bs;
+                grdPaymentMaster.DataSource = outputTable;
+            }
 
         }
 
         public void PupoulateGrid()
         {
-            grdPaymentMaster.Columns["TokenDate"].DisplayIndex = 0;
-            grdPaymentMaster.Columns["PV_Date"].DisplayIndex = 1;
-            grdPaymentMaster.Columns["TokenNo"].DisplayIndex = 2;
-            grdPaymentMaster.Columns["PV_No"].DisplayIndex = 3;
-            grdPaymentMaster.Columns["Visitor_Name"].DisplayIndex = 4;
-            grdPaymentMaster.Columns["Visitor_FatherName"].DisplayIndex = 5;
-            grdPaymentMaster.Columns["Visitor_CNIC"].DisplayIndex = 6;
-            grdPaymentMaster.Columns["ServiceTypeName_Urdu"].DisplayIndex = 7;
-            grdPaymentMaster.Columns["MozaNameUrdu"].DisplayIndex = 8;
-            grdPaymentMaster.Columns["PV_Verified_Status"].DisplayIndex = 9;
-            grdPaymentMaster.Columns["TokenDate"].HeaderText = "ٹوکن تاریخ";
-            grdPaymentMaster.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-            grdPaymentMaster.Columns["PV_No"].HeaderText = "چالان نمبر";
-            grdPaymentMaster.Columns["PV_Date"].HeaderText = "چالان  تاریخ";
-            grdPaymentMaster.Columns["Visitor_Name"].HeaderText = "نام";
-            grdPaymentMaster.Columns["Visitor_FatherName"].HeaderText = "ولد/شوہر ";
+            if (grdPaymentMaster.DataSource != null)
+            {
+                grdPaymentMaster.Columns["TokenDate"].DisplayIndex = 0;
+                grdPaymentMaster.Columns["PV_Date"].DisplayIndex = 1;
+                grdPaymentMaster.Columns["TokenNo"].DisplayIndex = 2;
+                grdPaymentMaster.Columns["PV_No"].DisplayIndex = 3;
+                grdPaymentMaster.Columns["Visitor_Name"].DisplayIndex = 4;
+                grdPaymentMaster.Columns["Visitor_FatherName"].DisplayIndex = 5;
+                grdPaymentMaster.Columns["Visitor_CNIC"].DisplayIndex = 6;
+                grdPaymentMaster.Columns["ServiceTypeName_Urdu"].DisplayIndex = 7;
+                grdPaymentMaster.Columns["MozaNameUrdu"].DisplayIndex = 8;
+                grdPaymentMaster.Columns["PV_Verified_Status"].DisplayIndex = 9;
+                grdPaymentMaster.Columns["TokenDate"].HeaderText = "ٹوکن تاریخ";
+                grdPaymentMaster.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
+                grdPaymentMaster.Columns["PV_No"].HeaderText = "چالان نمبر";
+                grdPaymentMaster.Columns["PV_Date"].HeaderText = "چالان  تاریخ";
+                grdPaymentMaster.Columns["Visitor_Name"].HeaderText = "نام";
+                grdPaymentMaster.Columns["Visitor_FatherName"].HeaderText = "ولد/شوہر ";
 
-            grdPaymentMaster.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ نمبر";
-            grdPaymentMaster.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
-            grdPaymentMaster.Columns["MozaNameUrdu"].HeaderText = "موصغ";
-            grdPaymentMaster.Columns["PV_Verified_Status"].HeaderText = "تصدیق شدہ";
+                grdPaymentMaster.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ نمبر";
+                grdPaymentMaster.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
+                grdPaymentMaster.Columns["MozaNameUrdu"].HeaderText = "موصغ";
+                grdPaymentMaster.Columns["PV_Verified_Status"].HeaderText = "تصدیق شدہ";
 
-            grdPaymentMaster.Columns["PVId"].Visible = false;
-            grdPaymentMaster.Columns["TehsilId"].Visible = false;
-            grdPaymentMaster.Columns["TokenId"].Visible = false;
-            grdPaymentMaster.Columns["PV_Status"].Visible = false;
-            grdPaymentMaster.Columns["PV_Remarks"].Visible = false;
-            grdPaymentMaster.Columns["TokenService_For_MozaId"].Visible = false;
-            grdPaymentMaster.Columns["TokenPurposeId"].Visible = false;
-            grdPaymentMaster.Columns["ServiceTypeId"].Visible = false;
-            grdPaymentMaster.Columns["TokenPurpose_Urdu"].Visible = false;
-            grdPaymentMaster.Columns["ServiceTypeId"].Visible = false;
-            grdPaymentMaster.Columns["PV_Status"].Visible = false;
-            //grdPaymentMaster.Columns["TokenNo"].Visible = false;
+                grdPaymentMaster.Columns["PVId"].Visible = false;
+                grdPaymentMaster.Columns["TehsilId"].Visible = false;
+                grdPaymentMaster.Columns["TokenId"].Visible = false;
+                grdPaymentMaster.Columns["PV_Status"].Visible = false;
+                grdPaymentMaster.Columns["PV_Remarks"].Visible = false;
+                grdPaymentMaster.Columns["TokenService_For_MozaId"].Visible = false;
+                grdPaymentMaster.Columns["TokenPurposeId"].Visible = false;
+                grdPaymentMaster.Columns["ServiceTypeId"].Visible = false;
+                grdPaymentMaster.Columns["TokenPurpose_Urdu"].Visible = false;
+                grdPaymentMaster.Columns["ServiceTypeId"].Visible = false;
+                grdPaymentMaster.Columns["PV_Status"].Visible = false;
+                //grdPaymentMaster.Columns["TokenNo"].Visible = false;
 
-            objdatagrid.colorrbackgrid(grdPaymentMaster);
-            objdatagrid.gridControls(grdPaymentMaster);
-            grdPaymentMaster.Columns["Visitor_CNIC"].Width = 180;
-            grdPaymentMaster.ColumnHeadersHeight = 30;
-            int colCount = grdPaymentMaster.RowCount;
+                objdatagrid.colorrbackgrid(grdPaymentMaster);
+                objdatagrid.gridControls(grdPaymentMaster);
+                grdPaymentMaster.Columns["Visitor_CNIC"].Width = 180;
+                grdPaymentMaster.ColumnHeadersHeight = 30;
+                int colCount = grdPaymentMaster.RowCount;
 
-
+            }
             //for (int i = 0; i < colCount; i++)
             //{
 
@@ -190,12 +194,11 @@ namespace SDC_Application.AL
         {
 
             string filter = txtTokenNo.Text.ToString();
-            fillgv_by_filter("TokenNo LIKE '%" + filter + "%'");
-            objdatagrid.colorrbackgrid(grdPaymentMaster);
-            objdatagrid.gridControls(grdPaymentMaster);
-            grdPaymentMaster.Columns["Visitor_CNIC"].Width = 180;
-
-           
+                fillgv_by_filter("TokenNo LIKE '%" + filter + "%'");
+                objdatagrid.colorrbackgrid(grdPaymentMaster);
+                objdatagrid.gridControls(grdPaymentMaster);
+                grdPaymentMaster.Columns["Visitor_CNIC"].Width = 180;
+                       
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -265,10 +268,11 @@ namespace SDC_Application.AL
 
         public void fillgv_by_filter(string Condition)
         {
-
+            if (dt != null) { 
             DataView v = new DataView(dt);
             v.RowFilter = Condition;
             grdPaymentMaster.DataSource = v;
+        }
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)

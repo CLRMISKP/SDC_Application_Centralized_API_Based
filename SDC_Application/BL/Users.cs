@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using SDC_Application.DL;
+using SDC_Application.Classess;
 
 namespace SDC_Application.BL
 {
@@ -14,6 +15,7 @@ namespace SDC_Application.BL
         //Database ojbdb = new Database();
         //Proc_Get_Admin_Roles
         //[]
+        APIClient client = new APIClient();
          
         public DataTable DeleteRoleDetail(string Roledetailid)
         {
@@ -48,9 +50,9 @@ namespace SDC_Application.BL
         {
             String Info = "";            
             string spWithParam = "isObjectExists  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + UserID.ToString() + "," + Object.ToString() + ",'" + Info+"'";
-            String Err_Msg; int RetVal;
-             dbobject.filldatatable_from_storedProcedureWithReturnVals(spWithParam,out RetVal,out Err_Msg);
-             return RetVal == 0 ? false : true;
+            String Err_Msg; string RetVal;
+            RetVal= dbobject.ExecInsertUpdateStoredProcedure(spWithParam).ToString();
+             return RetVal == "0" ? false : true;
         }
           
 
@@ -141,29 +143,45 @@ namespace SDC_Application.BL
         public string WEB_SP_INSERT_Users_Profile_withRoleId(string UserId, string TehsilId, string FirstName, string LastName, string LoginName, string Password, string InsertUserId, bool recstatus, byte[] FingerPrint, bool isRO,string RoleId,out string ErrorMsg )
         {
             string lastId = "";
-            SqlCommand mycomm = new SqlCommand();
+            //SqlCommand mycomm = new SqlCommand();
 
-            mycomm.Parameters.AddWithValue("@UserId", UserId);
-            mycomm.Parameters.AddWithValue("@TehsilId", TehsilId);
-            mycomm.Parameters.AddWithValue("@FirstName", FirstName);
-            mycomm.Parameters.AddWithValue("@LastName", LastName);
-            mycomm.Parameters.AddWithValue("@LoginName", LoginName);
-            mycomm.Parameters.AddWithValue("@Password", Password);
-            mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
-            mycomm.Parameters.AddWithValue("@FingerPrint", (FingerPrint == null) ? (object)DBNull.Value : FingerPrint).SqlDbType = SqlDbType.Image;
-            mycomm.Parameters.AddWithValue("@RecordStatus", recstatus);
-            mycomm.Parameters.AddWithValue("@IsRevenueOfficer", isRO);
-            mycomm.Parameters.AddWithValue("@RoleId", RoleId);
+            //mycomm.Parameters.AddWithValue("@UserId", UserId);
+            //mycomm.Parameters.AddWithValue("@TehsilId", TehsilId);
+            //mycomm.Parameters.AddWithValue("@FirstName", FirstName);
+            //mycomm.Parameters.AddWithValue("@LastName", LastName);
+            //mycomm.Parameters.AddWithValue("@LoginName", LoginName);
+            //mycomm.Parameters.AddWithValue("@Password", Password);
+            //mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
+            //mycomm.Parameters.AddWithValue("@FingerPrint", (FingerPrint == null) ? (object)DBNull.Value : FingerPrint).SqlDbType = SqlDbType.Image;
+            //mycomm.Parameters.AddWithValue("@RecordStatus", recstatus);
+            //mycomm.Parameters.AddWithValue("@IsRevenueOfficer", isRO);
+            //mycomm.Parameters.AddWithValue("@RoleId", RoleId);
 
-                        // Adding the output parameter for error message
-            SqlParameter errParam = new SqlParameter("@Err_Msg", SqlDbType.VarChar, -1) { Direction = ParameterDirection.Output };
-            mycomm.Parameters.Add(errParam);
+            UserRequestUserProfile myRequestUserProfile = new UserRequestUserProfile();
+            myRequestUserProfile.TehsilId = UsersManagments._Tehsilid.ToString();
+            myRequestUserProfile.UserId = UserId;   
+            myRequestUserProfile.RoleId = RoleId;
+            myRequestUserProfile.FirstName = FirstName; 
+            myRequestUserProfile.LastName = LastName;   
+            myRequestUserProfile.LoginName = LoginName;
+            myRequestUserProfile.Password = Password;
+            myRequestUserProfile.InsertUserId = InsertUserId;
+            myRequestUserProfile.RoleId = RoleId;
+            myRequestUserProfile.RecordStatus = recstatus.ToString();
+            myRequestUserProfile.IsRevenueOfficer = isRO.ToString();
+            myRequestUserProfile.FingerPrint = FingerPrint==null? "bnVsbA==":Convert.ToBase64String(FingerPrint);
+            //byte[] finger = Convert.FromBase64String(myRequestUserProfile.FingerPrint);
+            myRequestUserProfile.Query = "WEB_SP_INSERT_Users_Profile_withRoleId";
+            // Adding the output parameter for error message
+            //SqlParameter errParam = new SqlParameter("@Err_Msg", SqlDbType.VarChar, -1) { Direction = ParameterDirection.Output };
+            //mycomm.Parameters.Add(errParam);
 
             try
             {
-                lastId = dbobject.ExecStoredProcedure("WEB_SP_INSERT_Users_Profile_withRoleId", mycomm);
+                lastId = dbobject.ExecStoredProcedure("WEB_SP_INSERT_Users_Profile_withRoleId", myRequestUserProfile);
                 // Retrieve the output parameter value
-                ErrorMsg = errParam.Value.ToString();
+                int lastId2 = 0;
+                ErrorMsg = int.TryParse(lastId,out lastId2)==true? null:lastId;
 
             }
             catch (Exception e)
@@ -178,16 +196,18 @@ namespace SDC_Application.BL
         public string WEB_Self_SP_Update_Users_TokenRole(string InsertUserId, string UserId, string TokenRole)
         {
             string lastId = "";
-            SqlCommand mycomm = new SqlCommand();
+            //SqlCommand mycomm = new SqlCommand();
 
-            mycomm.Parameters.AddWithValue("@Tehsilid", SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
-            mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
-            mycomm.Parameters.AddWithValue("@UserId", UserId);
-            mycomm.Parameters.AddWithValue("@TokenRole", TokenRole);
+            //mycomm.Parameters.AddWithValue("@Tehsilid", SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
+            //mycomm.Parameters.AddWithValue("@InsertUserId", InsertUserId);
+            //mycomm.Parameters.AddWithValue("@UserId", UserId);
+            //mycomm.Parameters.AddWithValue("@TokenRole", TokenRole);
 
             try
             {
-                lastId = dbobject.ExecStoredProcedure("WEB_Self_SP_Update_Users_TokenRole ", mycomm);
+                //lastId = dbobject.ExecStoredProcedure("WEB_Self_SP_Update_Users_TokenRole ", mycomm);
+                lastId = dbobject.ExecInsertUpdateStoredProcedure("WEB_Self_SP_Update_Users_TokenRole "+ SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+","+
+                    InsertUserId+","+UserId+","+TokenRole);
 
             }
             catch (Exception e)
@@ -209,8 +229,12 @@ namespace SDC_Application.BL
         }
         public DataTable GetMachineAccessControl(string MachineName, string MacAddress)
         {
-            string spWithParam = "Proc_Get_MachineAccesControl  '" + MachineName + "','" + MacAddress + "'";
-            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+            MachineRegistrationDetails requestMacInfo = new MachineRegistrationDetails();
+            requestMacInfo.Query = "Proc_Get_MachineAccesControl '" + MachineName + "','" + MacAddress + "'";
+            DataTable dtSysAccess = client.GetMachineAccessRights(requestMacInfo);
+            return dtSysAccess;  
+            //string spWithParam = "Proc_Get_MachineAccesControl  '" + MachineName + "','" + MacAddress + "'";
+            //return dbobject.filldatatable_from_storedProcedure(spWithParam);
         }
         public DataTable GetSystemRegistrationLogs(string TehsilId)
         {

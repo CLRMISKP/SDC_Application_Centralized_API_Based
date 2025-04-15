@@ -6,6 +6,9 @@ using SDC_Application.DL;
 using System.Data;
 using System.Data.SqlClient;
 using SDC_Application.Classess;
+using System.Runtime.ConstrainedExecution;
+using System.Web.UI.WebControls;
+using System.Net;
 
 namespace SDC_Application.BL
 {
@@ -14,6 +17,7 @@ namespace SDC_Application.BL
         #region Class Variables
         public String currentPcMacs = "";
         Database ojbdb = new Database();
+        APIClient client = new APIClient();
 
         #endregion
 
@@ -47,13 +51,14 @@ namespace SDC_Application.BL
                             UsersManagments.Password = row["Password"].ToString();
                             UsersManagments._Ver = row["ver"].ToString();
                             UsersManagments._RoleName = row["RoleName"].ToString();
-                            UsersManagments._IsAdmin = Convert.ToBoolean(row["IsAdmin"]);
+                            UsersManagments._IsAdmin = Convert.ToBoolean(row["IsAdmin"].ToString()=="1"?true:false);
                             UsersManagments.TransFard = row["TransFard"].ToString();
                             UsersManagments.Intiqal = row["Intiqal"].ToString();
                             UsersManagments.Registry = row["Registry"].ToString();
                             UsersManagments.Misal = row["Misal"].ToString();
                             UsersManagments.Implementation = row["Implementation"].ToString();
                             UsersManagments.SubSdcId = Convert.ToInt32(row["SubSDCId"].ToString().Length > 0 && row["SubSDCId"].ToString()!="null"? row["SubSDCId"].ToString() : "0");
+                            UsersManagments.userToken = row["Token"].ToString();
                             //UsersManagments = row["DistrictNameUrdu"];
                             // = row["tehsilNameUrdu"];
                             //CurrentUser.UserName =  row["username"];
@@ -90,8 +95,15 @@ namespace SDC_Application.BL
 
         public DataTable AuthenticateUser(string Login, string Password, string  tehsilId, string ver)
             {
-                string spWithParam = "CLRMIS_AthunticateUser '" + Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
-                return ojbdb.filldatatable_from_storedProcedure(spWithParam);
+            UserRequestLogin requestLogin = new UserRequestLogin();
+            requestLogin.Query = "CLRMIS_AthunticateUser '" + Login + "','" + ver + "','" + Password + "'," + tehsilId;
+            requestLogin.TehsilId = tehsilId;
+            string HostName = Dns.GetHostName();
+            string myIP = Dns.GetHostEntry(HostName).AddressList[0].ToString();
+            requestLogin.IP = myIP;
+            DataTable usr = client.UserAuthentication(requestLogin); //usm.Authenticated(login, encPass, cbTehsil.SelectedValue.ToString(), externalip);
+                                                                     //string spWithParam = "CLRMIS_AthunticateUser '" + Login + "', '" + ver + "', '" + Password + "'," + tehsilId;
+            return usr; //ojbdb.filldatatable_from_storedProcedure(spWithParam);
             }
 
         #region Insert User Profile
@@ -125,8 +137,10 @@ namespace SDC_Application.BL
 
         public DataTable GetSystemInfo(String MachineName, String mac)
         {
-            String spWithParam = "CLRMIS_SystemRegistrationLog_get '" + MachineName + "','" + mac + "'";
-            return ojbdb.filldatatable_from_storedProcedure(spWithParam);
+            MachineRegistrationDetails requestMacInfo = new MachineRegistrationDetails();
+            requestMacInfo.Query = "CLRMIS_SystemRegistrationLog_get '" + MachineName + "','" + mac + "'";
+            DataTable macInfo = client.GetMacInfo(requestMacInfo);
+            return macInfo;  //ojbdb.filldatatable_from_storedProcedure(spWithParam);
         }
 
         public DataTable GetUserInfo(String UserName, String Pass)

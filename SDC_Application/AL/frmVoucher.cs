@@ -357,7 +357,7 @@ namespace SDC_Application.AL
         #region GridFilling after Saving In Details
         public void calldataGrid()
         {
-           
+
             try
             {
 
@@ -369,22 +369,24 @@ namespace SDC_Application.AL
                 //{
                 //    outputTable.ImportRow(dtPayment.Rows[i]);
                 //}
-                grdVoucherDetails.DataSource = dtPayment;
+                if (dtPayment != null) { 
+                    grdVoucherDetails.DataSource = dtPayment;
                 objbusines.VoucherGrid(grdVoucherDetails);
                 grdVoucherDetails.Columns["ServiceCostAmount"].Width = 100;
-                grdVoucherDetails.Columns["IntiqalTaxId"].Visible=false;
-            
+                grdVoucherDetails.Columns["IntiqalTaxId"].Visible = false;
+
                 if (grdVoucherDetails.Rows.Count > 0)
                 {
                     objdatagrid.SumDataGridColumn(grdVoucherDetails, txtTotalCostVoucher, "ServiceCostAmount");
                 }
 
-               
+
                 grdVoucherDetails.ColumnHeadersHeight = 35;
+            }
             }
             catch (Exception ex)
             {
-             
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -435,21 +437,22 @@ namespace SDC_Application.AL
                         + this.txtMasterStatus.Text + "',N'" + this.txtMasterRemarks.Text.ToString() + "','"
                         + UsersManagments.UserId.ToString() + "','"
                         + UsersManagments.UserName.ToString() + "','',''");
+                        if (dt != null) { 
+                            foreach (DataRow dr in dt.Rows)
+                            {
+                                txtPVID.Text = dr[0].ToString();
+                                this.txtPVNo.Text = dr[1].ToString();
+                                this.txtVoucherNo.Text = dr[1].ToString();
+                                if (txtPVID.Text != "")
+                                {
 
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            txtPVID.Text = dr[0].ToString();
-                            this.txtPVNo.Text = dr[1].ToString();
-                            this.txtVoucherNo.Text = dr[1].ToString();
-                            if (txtPVID.Text != "")
-                            {                           
-                                    
-                          
-                                Proc_Get_SDC_Services_For_PaymentVoucher();
-                               EnableDetailPortion();
-                               btnAddTazIntiqal.Enabled = true;
+
+                                    Proc_Get_SDC_Services_For_PaymentVoucher();
+                                    EnableDetailPortion();
+                                    btnAddTazIntiqal.Enabled = true;
+                                }
                             }
-                        }
+                    }
                     }
                     txtRsPerPage.Text = "";
                    // MessageBox.Show("ریکارڈ محفوظ ہوچکا ہے", "محفوظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -488,10 +491,13 @@ namespace SDC_Application.AL
              string PV_No = "0";
              DataTable dtVoucher = new DataTable();
              dtVoucher = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherNo_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", '" + TokenId + "'");
-             if (dtVoucher.Rows.Count > 0)
-             {
-                 PV_No ="اس ٹوکن پر چلان پہلے سے موجود ہے۔"+ " - چلان نمبر -"+ dtVoucher.Rows[0][0].ToString() +" - بتاریخ - "+ dtVoucher.Rows[0][1].ToString();
-             }
+            if (dtVoucher != null)
+            {
+                if (dtVoucher.Rows.Count > 0)
+                {
+                    PV_No = "اس ٹوکن پر چلان پہلے سے موجود ہے۔" + " - چلان نمبر -" + dtVoucher.Rows[0][0].ToString() + " - بتاریخ - " + dtVoucher.Rows[0][1].ToString();
+                }
+            }
              return PV_No;
         }
 
@@ -606,7 +612,8 @@ namespace SDC_Application.AL
             this.txtSequenceID.Text = "-1";
             this.txtPVID.Text = "-1";
             this.txtPVNo.Text = "-1";
-            dtPayment.Clear();
+            if (dtPayment!=null)
+                dtPayment.Clear();
           
 
         }
@@ -710,7 +717,7 @@ namespace SDC_Application.AL
                 txtTokenID.Text = frmVoucherPopulate.TokenID;
                 txtMasterRemarks.Text = frmVoucherPopulate.Remarks;
                 txtHidenServiceTypeID.Text = frmVoucherPopulate.ServiceType;
-                bool pvstatus = Convert.ToBoolean(frmVoucherPopulate.Pvstatus);
+                bool pvstatus = Convert.ToBoolean(frmVoucherPopulate.Pvstatus==null? frmVoucherPopulate.Pvstatus:"false");
                 txtSequenceID.Text = "-1";
                 txtVoucherDetailsLastID.Text = "-1";
                 bool Populated = frmVoucherPopulate.btn;
@@ -924,15 +931,18 @@ namespace SDC_Application.AL
             {
 
                 dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Service_Detail " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.txtServiceName.SelectedValue.ToString() + "'");
-                foreach (DataRow dr in dt.Rows)
+                if (dt != null)
                 {
+                    foreach (DataRow dr in dt.Rows)
+                    {
 
-                    txtRsPerPage.Text = dr["ServiceCostPerUnit"].ToString();
-                    txtNotificationUnitID.Text = dr["TaxNotificationDetailId"].ToString();
-                    txtMasterCostunitID.Text = dr["ServiceCostUnitId"].ToString();
-                    txtMasterServiceID.Text = dr["TaxNotificationDetailId"].ToString();
-                    txtUnit.Text = dr["SDCUnitName_Urdu"].ToString();
+                        txtRsPerPage.Text = dr["ServiceCostPerUnit"].ToString();
+                        txtNotificationUnitID.Text = dr["TaxNotificationDetailId"].ToString();
+                        txtMasterCostunitID.Text = dr["ServiceCostUnitId"].ToString();
+                        txtMasterServiceID.Text = dr["TaxNotificationDetailId"].ToString();
+                        txtUnit.Text = dr["SDCUnitName_Urdu"].ToString();
 
+                    }
                 }
             }
         }

@@ -50,6 +50,7 @@
             this.cmdDistrict.Size = new System.Drawing.Size(427, 44);
             this.cmdDistrict.TabIndex = 0;
             this.cmdDistrict.SelectedIndexChanged += new System.EventHandler(this.cmdDistrict_SelectedIndexChanged);
+            this.cmdDistrict.SelectionChangeCommitted += new System.EventHandler(this.cmdDistrict_SelectionChangeCommitted);
             // 
             // cmbTehsil
             // 
@@ -63,6 +64,7 @@
             this.cmbTehsil.Size = new System.Drawing.Size(427, 44);
             this.cmbTehsil.TabIndex = 1;
             this.cmbTehsil.SelectedIndexChanged += new System.EventHandler(this.cmbTehsil_SelectedIndexChanged);
+            this.cmbTehsil.SelectionChangeCommitted += new System.EventHandler(this.cmbTehsil_SelectionChangeCommitted);
             // 
             // ok
             // 
@@ -93,7 +95,7 @@
             this.label1.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(532, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 38);
+            this.label1.Size = new System.Drawing.Size(38, 36);
             this.label1.TabIndex = 4;
             this.label1.Text = "ضلع";
             // 
@@ -103,7 +105,7 @@
             this.label2.Font = new System.Drawing.Font("Alvi Nastaleeq", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(532, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 38);
+            this.label2.Size = new System.Drawing.Size(52, 36);
             this.label2.TabIndex = 5;
             this.label2.Text = "تحصیل";
             // 

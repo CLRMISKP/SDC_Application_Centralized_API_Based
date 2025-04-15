@@ -95,18 +95,21 @@ namespace SDC_Application.AL
            
             DataTable dt = new DataTable();
             dt = intiq.GetMozaFamilyListByFamilyId(FamilyId);
-            GridViewSellers.DataSource = dt;
-            GridViewSellers.Columns["FamilyName"].HeaderText = "افراد خاندان";
-            GridViewSellers.Columns["PersonId"].Visible = false;
-            GridViewSellers.Columns["familyType"].Visible = false;
-            GridViewSellers.Columns["familytypeId"].Visible = false;
-            foreach (DataGridViewRow row in GridViewSellers.Rows)
+            if (dt != null)
             {
-                if (row.Selected)
+                GridViewSellers.DataSource = dt;
+                GridViewSellers.Columns["FamilyName"].HeaderText = "افراد خاندان";
+                GridViewSellers.Columns["PersonId"].Visible = false;
+                GridViewSellers.Columns["familyType"].Visible = false;
+                GridViewSellers.Columns["familytypeId"].Visible = false;
+                foreach (DataGridViewRow row in GridViewSellers.Rows)
                 {
-                    row.Selected = false;
-                    btnSelect.Enabled = false;
-                
+                    if (row.Selected)
+                    {
+                        row.Selected = false;
+                        btnSelect.Enabled = false;
+
+                    }
                 }
             }
         }

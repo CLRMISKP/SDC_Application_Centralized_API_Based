@@ -33,15 +33,17 @@ namespace SDC_Application.AL
 
             DataTable Reasons = new DataTable();
             Reasons = client.GetIntiqalPendingReason();
-            DataRow Reason = Reasons.NewRow();
-            Reason["IntiqalPendingreason_Urdu"] = "انتخاب واجہ التواء";
-            Reason["Intiqalpendingreasonid"] = 0;
-            Reasons.Rows.InsertAt(Reason,0);
-            this.cboIntiqalPendingReasons.DataSource = Reasons;
-            this.cboIntiqalPendingReasons.DisplayMember = "IntiqalPendingreason_Urdu";
-            this.cboIntiqalPendingReasons.ValueMember = "Intiqalpendingreasonid";
-            this.cboIntiqalPendingReasons.SelectedValue = 0;
-            
+            if (Reasons != null)
+            {
+                DataRow Reason = Reasons.NewRow();
+                Reason["IntiqalPendingreason_Urdu"] = "انتخاب واجہ التواء";
+                Reason["Intiqalpendingreasonid"] = 0;
+                Reasons.Rows.InsertAt(Reason, 0);
+                this.cboIntiqalPendingReasons.DataSource = Reasons;
+                this.cboIntiqalPendingReasons.DisplayMember = "IntiqalPendingreason_Urdu";
+                this.cboIntiqalPendingReasons.ValueMember = "Intiqalpendingreasonid";
+                this.cboIntiqalPendingReasons.SelectedValue = 0;
+            }
         }
 
         private void btnSaveIntiqalPendingStatus_Click(object sender, EventArgs e)

@@ -122,7 +122,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblOperatorNote = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
+            //this.cachedFardMalkan_Rzr_Trans1 = new SDC_Application.AL.CachedFardMalkan_Rzr_Trans();
             this.btnIntiqalRemoveFP = new System.Windows.Forms.Button();
             this.btnShowScanImg = new System.Windows.Forms.Button();
             this.btnLandTax = new System.Windows.Forms.Button();
@@ -1868,7 +1868,7 @@
         private System.Windows.Forms.Button btnRoznamcha;
         private System.Windows.Forms.DateTimePicker dtpIntiqalAndrajDate;
         private System.Windows.Forms.Button btnLandTax;
-        private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
+        //private CachedFardMalkan_Rzr_Trans cachedFardMalkan_Rzr_Trans1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLetterNo;
         private System.Windows.Forms.TextBox txtLetterFrom;

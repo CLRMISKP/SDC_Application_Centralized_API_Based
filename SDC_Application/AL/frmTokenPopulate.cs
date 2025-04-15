@@ -61,70 +61,74 @@ namespace SDC_Application.AL
        
         public void PupulateGrid()
         {
-         
 
-            //grdToken.Columns["TokenID"].DisplayIndex = 0;
-
-            grdToken.Columns["Token_ShortDate"].DisplayIndex = 0;
-            grdToken.Columns["TokenNo"].DisplayIndex = 1;
-            grdToken.Columns["Visitor_Name"].DisplayIndex =2;
-            grdToken.Columns["Visitor_FatherName"].DisplayIndex = 3;
-            grdToken.Columns["Visitor_CNIC"].DisplayIndex = 4;
-            grdToken.Columns["ServiceTypeName_Urdu"].DisplayIndex = 5;
-            grdToken.Columns["MozaNameUrdu"].DisplayIndex = 6;
-            grdToken.Columns["TokenPurpose_Urdu"].DisplayIndex = 7;
-            grdToken.Columns["Token_CurrentStatus"].DisplayIndex = 8;                 
-            grdToken.Columns["TokenID"].HeaderText = "ٹوکن آئی ڈی";
-            grdToken.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-            grdToken.Columns["Token_ShortDate"].HeaderText = "ٹوکن کی تاریخ";
-            grdToken.Columns["Visitor_Name"].HeaderText = "نام";
-            grdToken.Columns["Visitor_FatherName"].HeaderText = "والد/شوہر ";
-            grdToken.Columns["MozaNameUrdu"].HeaderText = "موضع";
-            grdToken.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ نمبر";
-            grdToken.Columns["VisitorContactNo"].HeaderText = "ربطہ نمبر";
-            grdToken.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
-            grdToken.Columns["TokenPurpose_Urdu"].HeaderText = "مقصد";
-            grdToken.Columns["Token_CurrentStatus"].HeaderText = "تصدیق شدہ";
-            grdToken.Columns["Relation"].Visible = false;
-            grdToken.Columns["TokenId"].Visible = false;
-            grdToken.Columns["TokenDate"].Visible = false;
-            grdToken.Columns["TokenPurposeId"].Visible = false;
-            grdToken.Columns["Token_Verified"].Visible = false;
-            grdToken.Columns["TehsilId"].Visible = false;
-            grdToken.Columns["Visitor_TempAddress"].Visible = false;
-            grdToken.Columns["Visitor_PermAddress"].Visible = false;
-            grdToken.Columns["ServiceTypeId"].Visible = false;
-            grdToken.Columns["ServiceTypeId"].Visible = false;
-            grdToken.Columns["TokenPurposeId"].Visible = false;
-            grdToken.Columns["ServiceTypeId"].Visible = false;
-            grdToken.Columns["Token_DuplicatePrint"].Visible = false;
-            grdToken.Columns["TokenService_For_MozaId"].Visible = false;
-            grdToken.Columns["TehsilNameUrdu"].Visible = false;
-            grdToken.Columns["Token_Time"].Visible = false;
-            objdatagrid.colorrbackgrid(grdToken);
-            objdatagrid.gridControls(grdToken);
-            grdToken.Columns["Visitor_CNIC"].Width = 180;
-            grdToken.Columns["personPic"].Visible = false;
-            // Assuming you already have a DataGridView named grdToken
-
-
-            if (!grdToken.Columns.Contains("personPic"))
+            if (grdToken.DataSource != null)
             {
-                DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
-                imgColumn.Name = "personPic";
-                imgColumn.HeaderText = "Person Picture";
-                imgColumn.ImageLayout = DataGridViewImageCellLayout.Zoom; // Adjust image to fit cell
-                grdToken.Columns.Add(imgColumn);
-            }
-            else {
+                //grdToken.Columns["TokenID"].DisplayIndex = 0;
 
-                grdToken.Columns["personPic"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                grdToken.Columns["personPic"].DefaultCellStyle.NullValue = null; // Optional: Set a default image for empty cells
-                grdToken.Columns["personPic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center the image in the cell
+                grdToken.Columns["Token_ShortDate"].DisplayIndex = 0;
+                grdToken.Columns["TokenNo"].DisplayIndex = 1;
+                grdToken.Columns["Visitor_Name"].DisplayIndex = 2;
+                grdToken.Columns["Visitor_FatherName"].DisplayIndex = 3;
+                grdToken.Columns["Visitor_CNIC"].DisplayIndex = 4;
+                grdToken.Columns["ServiceTypeName_Urdu"].DisplayIndex = 5;
+                grdToken.Columns["MozaNameUrdu"].DisplayIndex = 6;
+                grdToken.Columns["TokenPurpose_Urdu"].DisplayIndex = 7;
+                grdToken.Columns["Token_CurrentStatus"].DisplayIndex = 8;
+                grdToken.Columns["TokenID"].HeaderText = "ٹوکن آئی ڈی";
+                grdToken.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
+                grdToken.Columns["Token_ShortDate"].HeaderText = "ٹوکن کی تاریخ";
+                grdToken.Columns["Visitor_Name"].HeaderText = "نام";
+                grdToken.Columns["Visitor_FatherName"].HeaderText = "والد/شوہر ";
+                grdToken.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdToken.Columns["Visitor_CNIC"].HeaderText = "شناختی کارڈ نمبر";
+                grdToken.Columns["VisitorContactNo"].HeaderText = "ربطہ نمبر";
+                grdToken.Columns["ServiceTypeName_Urdu"].HeaderText = "سہولت";
+                grdToken.Columns["TokenPurpose_Urdu"].HeaderText = "مقصد";
+                grdToken.Columns["Token_CurrentStatus"].HeaderText = "تصدیق شدہ";
+                grdToken.Columns["Relation"].Visible = false;
+                grdToken.Columns["TokenId"].Visible = false;
+                grdToken.Columns["TokenDate"].Visible = false;
+                grdToken.Columns["TokenPurposeId"].Visible = false;
+                grdToken.Columns["Token_Verified"].Visible = false;
+                grdToken.Columns["TehsilId"].Visible = false;
+                grdToken.Columns["Visitor_TempAddress"].Visible = false;
+                grdToken.Columns["Visitor_PermAddress"].Visible = false;
+                grdToken.Columns["ServiceTypeId"].Visible = false;
+                grdToken.Columns["ServiceTypeId"].Visible = false;
+                grdToken.Columns["TokenPurposeId"].Visible = false;
+                grdToken.Columns["ServiceTypeId"].Visible = false;
+                grdToken.Columns["Token_DuplicatePrint"].Visible = false;
+                grdToken.Columns["TokenService_For_MozaId"].Visible = false;
+                grdToken.Columns["TehsilNameUrdu"].Visible = false;
+                grdToken.Columns["Token_Time"].Visible = false;
+                objdatagrid.colorrbackgrid(grdToken);
+                objdatagrid.gridControls(grdToken);
+                grdToken.Columns["Visitor_CNIC"].Width = 180;
+                if (grdToken.Columns.Contains("personPic"))
+                    grdToken.Columns["personPic"].Visible = false;
+                // Assuming you already have a DataGridView named grdToken
 
-                // Adjust row height to fit the icon
-                grdToken.RowTemplate.Height = 50; // Set this to the desired icon size
-                ((DataGridViewImageColumn)grdToken.Columns["personPic"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+                if (!grdToken.Columns.Contains("personPic"))
+                {
+                    DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
+                    imgColumn.Name = "personPic";
+                    imgColumn.HeaderText = "Person Picture";
+                    imgColumn.ImageLayout = DataGridViewImageCellLayout.Zoom; // Adjust image to fit cell
+                    grdToken.Columns.Add(imgColumn);
+                }
+                else
+                {
+
+                    grdToken.Columns["personPic"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    grdToken.Columns["personPic"].DefaultCellStyle.NullValue = null; // Optional: Set a default image for empty cells
+                    grdToken.Columns["personPic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center the image in the cell
+
+                    // Adjust row height to fit the icon
+                    //grdToken.RowTemplate.Height = 50; // Set this to the desired icon size
+                    //((DataGridViewImageColumn)grdToken.Columns["personPic"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                }
             }
         }
         private void grdToken_DoubleClick(object sender, EventArgs e)
@@ -184,22 +188,27 @@ namespace SDC_Application.AL
                         dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDCToken_Detail_All_withPics " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + datetoken + "'," + UsersManagments.SubSdcId.ToString());
                     }
                 }
-                 
-               // }
-                DataTable outputTable = dt.Clone();
 
-                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                // }
+                if (dt != null)
                 {
-                    outputTable.ImportRow(dt.Rows[i]);
-                }
-                grdToken.DataSource = outputTable;
-            if (dt != null)
-            {
-                PupulateGrid();
-            }
-            else
-            { MessageBox.Show(""); }
+                    DataTable outputTable = dt.Clone();
 
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        outputTable.ImportRow(dt.Rows[i]);
+                    }
+                    grdToken.DataSource = outputTable;
+                    if (dt != null)
+                    {
+                        PupulateGrid();
+                    }
+                    else
+                    { MessageBox.Show(""); }
+
+                }
+                else
+                    grdToken.DataSource=null;
             }
             catch (Exception ex)
             {
@@ -223,12 +232,15 @@ namespace SDC_Application.AL
             if (grdToken.CurrentRow != null)
             {
                 // Assuming picSelected is a PictureBox or similar control to display the image
-                if (grdToken.CurrentRow.Cells["personPic"].Value != DBNull.Value)
+                if (grdToken.CurrentRow.Cells["personPic"].Value.ToString()!="null")
                 {
-                    byte[] imageBytes = (byte[])grdToken.CurrentRow.Cells["personPic"].Value;
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imageBytes))
+                    byte[] imageBytes =(byte[])grdToken.CurrentRow.Cells["personPic"].Value;
+                    if (imageBytes != null)
                     {
-                        this.picSelected.Image = System.Drawing.Image.FromStream(ms);
+                        using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imageBytes))
+                        {
+                            this.picSelected.Image = System.Drawing.Image.FromStream(ms);
+                        }
                     }
                 }
                 else
@@ -359,9 +371,12 @@ namespace SDC_Application.AL
         {
             string Name = txtName.Text;
             this.fillgrid_byfilter("Visitor_Name like '%"+Name+"%'");
-            objdatagrid.colorrbackgrid(grdToken);
-            objdatagrid.gridControls(grdToken);
-            grdToken.Columns["Visitor_CNIC"].Width = 180;
+            if (grdToken.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdToken);
+                objdatagrid.gridControls(grdToken);
+                grdToken.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
         private void txtMoza_TextChanged(object sender, EventArgs e)
@@ -369,10 +384,12 @@ namespace SDC_Application.AL
 
             string filter = this.txtMoza.Text.ToString();
             fillgrid_byfilter("MozaNameUrdu LIKE '%" + filter + "%'");
-            objdatagrid.colorrbackgrid(grdToken);
-            objdatagrid.gridControls(grdToken);
-            grdToken.Columns["Visitor_CNIC"].Width = 180;
-
+            if (grdToken.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdToken);
+                objdatagrid.gridControls(grdToken);
+                grdToken.Columns["Visitor_CNIC"].Width = 180;
+            }
 
         }
 
@@ -445,9 +462,12 @@ namespace SDC_Application.AL
         {
             string Nic = txtCNIC.Text;
             this.fillgrid_byfilter("Visitor_CNIC like '%"+Nic+"%'");
-            objdatagrid.colorrbackgrid(grdToken);
-            objdatagrid.gridControls(grdToken);
-            grdToken.Columns["Visitor_CNIC"].Width = 180;
+            if (grdToken.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdToken);
+                objdatagrid.gridControls(grdToken);
+                grdToken.Columns["Visitor_CNIC"].Width = 180;
+            }
 
         }
         public void TooltipPopulate()
@@ -460,8 +480,12 @@ namespace SDC_Application.AL
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dt.Clear();
-            Proc_Get_SDCToken_Detail_All();
+            if (dt != null)
+            {
+                dt.Clear();
+            }
+                Proc_Get_SDCToken_Detail_All();
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -472,19 +496,24 @@ namespace SDC_Application.AL
         private void dateTime_ValueChanged(object sender, EventArgs e)
         {
             btnSearch_Click(sender, e);
-            objdatagrid.colorrbackgrid(grdToken);
-            objdatagrid.gridControls(grdToken);
-            grdToken.Columns["Visitor_CNIC"].Width = 180;
+            if (grdToken.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdToken);
+                objdatagrid.gridControls(grdToken);
+                grdToken.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
         private void txtToken_TextChanged(object sender, EventArgs e)
         {
             string token = this.txtToken.Text;
             this.fillgrid_byfilter("TokenNo like '%" + token + "%'");
-            objdatagrid.colorrbackgrid(grdToken);
-            objdatagrid.gridControls(grdToken);
-            grdToken.Columns["Visitor_CNIC"].Width = 180;
-
+            if (grdToken.DataSource != null)
+            {
+                objdatagrid.colorrbackgrid(grdToken);
+                objdatagrid.gridControls(grdToken);
+                grdToken.Columns["Visitor_CNIC"].Width = 180;
+            }
         }
 
 

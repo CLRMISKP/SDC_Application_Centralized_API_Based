@@ -4873,7 +4873,9 @@ namespace SDC_Application.AL
 
         private void txtSearchBuyers_TextChanged(object sender, EventArgs e)
         {
+            if (bb.DataSource != null) { 
             bb.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchBuyers.Text);
+        }
         }
 
         private void txtSearchBuyers_KeyPress(object sender, KeyPressEventArgs e)

@@ -42,16 +42,18 @@ namespace SDC_Application.AL
         {
             
             dt = objdb.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_Intiqal_For_Gardawar_Verification "+SDC_Application.Classess.UsersManagments._Tehsilid.ToString()+"," + intiqalId);
-            DataTable outputTable = dt.Clone();
-
-            for (int i = dt.Rows.Count - 1; i >= 0; i--)
+            if (dt != null)
             {
-                outputTable.ImportRow(dt.Rows[i]);
-            }
-            bs.DataSource = dt;
-            grdIntiqalList.DataSource = bs;
-            grdIntiqalList.DataSource = outputTable;
+                DataTable outputTable = dt.Clone();
 
+                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                {
+                    outputTable.ImportRow(dt.Rows[i]);
+                }
+                bs.DataSource = dt;
+                grdIntiqalList.DataSource = bs;
+                grdIntiqalList.DataSource = outputTable;
+            }
         }
 
         #region Fill Intiqal DropDown
@@ -82,46 +84,48 @@ namespace SDC_Application.AL
 
         public void PupoulateGrid()
         {
-            
-            grdIntiqalList.Columns["IntiqalNo"].DisplayIndex = 0;
-            grdIntiqalList.Columns["IntiqalType"].DisplayIndex = 1;
-            grdIntiqalList.Columns["IntiqalInitiationType"].DisplayIndex = 2;
-            grdIntiqalList.Columns["MozaNameUrdu"].DisplayIndex = 3;
-            
-            grdIntiqalList.Columns["IntiqalAndrajDate"].DisplayIndex = 4;
-            grdIntiqalList.Columns["TokenNo"].DisplayIndex = 5;
-            grdIntiqalList.Columns["LandValue"].DisplayIndex = 6;
-            grdIntiqalList.Columns["Raqba"].DisplayIndex = 7;
-            grdIntiqalList.Columns["Status"].DisplayIndex = 8;
-            grdIntiqalList.Columns["Token_CurrentStatus"].DisplayIndex = 9;
-            grdIntiqalList.Columns["InsertLoginName"].DisplayIndex = 10;
-            grdIntiqalList.Columns["Remarks"].DisplayIndex = 11;
-           
+            if (grdIntiqalList.DataSource != null)
+            {
+                grdIntiqalList.Columns["IntiqalNo"].DisplayIndex = 0;
+                grdIntiqalList.Columns["IntiqalType"].DisplayIndex = 1;
+                grdIntiqalList.Columns["IntiqalInitiationType"].DisplayIndex = 2;
+                grdIntiqalList.Columns["MozaNameUrdu"].DisplayIndex = 3;
 
-        
-            grdIntiqalList.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-            grdIntiqalList.Columns["IntiqalType"].HeaderText = "قسم انتقال";
-            grdIntiqalList.Columns["IntiqalInitiationType"].HeaderText = "انتقال بذریعہ";
-            grdIntiqalList.Columns["MozaNameUrdu"].HeaderText = "موضع";
-            grdIntiqalList.Columns["IntiqalAndrajDate"].HeaderText = "تاریخ انتقال";
-            grdIntiqalList.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
-            grdIntiqalList.Columns["LandValue"].HeaderText = "قیمت";
-            grdIntiqalList.Columns["Raqba"].HeaderText = "رقبہ";
-            grdIntiqalList.Columns["Status"].HeaderText = " حالت انتقال";
-            grdIntiqalList.Columns["Token_CurrentStatus"].HeaderText = " حالت ٹوکن";
-            grdIntiqalList.Columns["InsertLoginName"].HeaderText = "آپریٹر";
-            grdIntiqalList.Columns["Remarks"].HeaderText = "ریمارکس";
+                grdIntiqalList.Columns["IntiqalAndrajDate"].DisplayIndex = 4;
+                grdIntiqalList.Columns["TokenNo"].DisplayIndex = 5;
+                grdIntiqalList.Columns["LandValue"].DisplayIndex = 6;
+                grdIntiqalList.Columns["Raqba"].DisplayIndex = 7;
+                grdIntiqalList.Columns["Status"].DisplayIndex = 8;
+                grdIntiqalList.Columns["Token_CurrentStatus"].DisplayIndex = 9;
+                grdIntiqalList.Columns["InsertLoginName"].DisplayIndex = 10;
+                grdIntiqalList.Columns["Remarks"].DisplayIndex = 11;
 
 
-            grdIntiqalList.Columns["GardawarId"].Visible = false;
-            grdIntiqalList.Columns["IntiqalId"].Visible = false;
-            grdIntiqalList.Columns["TokenId"].Visible = false;
 
-           // objdatagrid.colorrbackgrid(grdIntiqalList);
-            objdatagrid.gridControls(grdIntiqalList);
-            //grdPaymentMaster.Columns["Visitor_CNIC"].Width = 180;
-            grdIntiqalList.ColumnHeadersHeight = 30;
-            int colCount = grdIntiqalList.RowCount;
+                grdIntiqalList.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                grdIntiqalList.Columns["IntiqalType"].HeaderText = "قسم انتقال";
+                grdIntiqalList.Columns["IntiqalInitiationType"].HeaderText = "انتقال بذریعہ";
+                grdIntiqalList.Columns["MozaNameUrdu"].HeaderText = "موضع";
+                grdIntiqalList.Columns["IntiqalAndrajDate"].HeaderText = "تاریخ انتقال";
+                grdIntiqalList.Columns["TokenNo"].HeaderText = "ٹوکن نمبر";
+                grdIntiqalList.Columns["LandValue"].HeaderText = "قیمت";
+                grdIntiqalList.Columns["Raqba"].HeaderText = "رقبہ";
+                grdIntiqalList.Columns["Status"].HeaderText = " حالت انتقال";
+                grdIntiqalList.Columns["Token_CurrentStatus"].HeaderText = " حالت ٹوکن";
+                grdIntiqalList.Columns["InsertLoginName"].HeaderText = "آپریٹر";
+                grdIntiqalList.Columns["Remarks"].HeaderText = "ریمارکس";
+
+
+                grdIntiqalList.Columns["GardawarId"].Visible = false;
+                grdIntiqalList.Columns["IntiqalId"].Visible = false;
+                grdIntiqalList.Columns["TokenId"].Visible = false;
+
+                // objdatagrid.colorrbackgrid(grdIntiqalList);
+                objdatagrid.gridControls(grdIntiqalList);
+                //grdPaymentMaster.Columns["Visitor_CNIC"].Width = 180;
+                grdIntiqalList.ColumnHeadersHeight = 30;
+                int colCount = grdIntiqalList.RowCount;
+            }
 
         }
       
@@ -180,14 +184,17 @@ namespace SDC_Application.AL
 
             objauto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString(), cmbMouza, "MozaNameUrdu", "MozaId");
             dt = objdb.filldatatable_from_storedProcedure("Proc_Get_Girdawars " + Classess.UsersManagments._Tehsilid.ToString());
-            DataRow row = dt.NewRow();
-            row["UserId"] = "0";
-            row["CompleteName"] = "--انتخاب کریں--";
-            dt.Rows.InsertAt(row, 0);
-            cboROs.DataSource = dt;
-            cboROs.DisplayMember = "CompleteName";
-            cboROs.ValueMember = "UserId";
-            cboROs.SelectedValue = 0;
+            if(dt!=null)
+            {
+                DataRow row = dt.NewRow();
+                row["UserId"] = "0";
+                row["CompleteName"] = "--انتخاب کریں--";
+                dt.Rows.InsertAt(row, 0);
+                cboROs.DataSource = dt;
+                cboROs.DisplayMember = "CompleteName";
+                cboROs.ValueMember = "UserId";
+                cboROs.SelectedValue = 0;
+            }
         }
 
         void IntiqalAtt_FormClosed(object sender, FormClosedEventArgs e)

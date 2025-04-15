@@ -10,7 +10,6 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.IO;
 using SDC_Application.Classess;
-using LandInfo.ControlsLib;
 using SDC_Application.BL;
 using SDC_Application.DL;
 using DPFP.Capture;
@@ -389,7 +388,7 @@ namespace SDC_Application.AL
 
             string RetriveImageIntiqalID = this.IntiqalId;
             string PersonID = txtpersonID.Text.ToString();
-            dt = intiqal.GetCamFingerImage(RetriveImageIntiqalID, PersonID);
+            var dtImges = intiqal.GetCamFingerImage(RetriveImageIntiqalID, PersonID);
             foreach (DataRow row in dt.Rows)
             {
 
@@ -445,7 +444,7 @@ namespace SDC_Application.AL
 
             string RetriveImageIntiqalID = this.IntiqalId;
             string PersonID = txtpersonID.Text.ToString();
-            dt = intiqal.GetCamFingerImage(RetriveImageIntiqalID, PersonID);
+            var dtImages = intiqal.GetCamFingerImage(RetriveImageIntiqalID, PersonID);
             foreach (DataRow row in dt.Rows)
             {
 
@@ -488,7 +487,7 @@ namespace SDC_Application.AL
                 if (txtpersonID.Text != null)
                 {
                     string PersonID = txtpersonID.Text.ToString();
-                    dt = intiqal.GetCamFingerImage(IntiqalId, PersonID);
+                    var dtImages = intiqal.GetCamFingerImage(IntiqalId, PersonID);
                     grdImagesRetrive.DataSource = dt;
                     int count=0;
                     foreach (DataRow row in dt.Rows)

@@ -224,14 +224,24 @@ namespace SDC_Application
             string DistNameEng = "";
             //string TehsilNameUrdu="";
             string TehsilNameEng = "";
-            foreach (DataRow r in dt.Rows)
+            if (dt != null)
             {
-                DistNameEng = r["DistrictNameEng"].ToString();
-                DistNameUrdu = r["DistrictnameUrdu"].ToString();
-                TehsilNameEng = r["TehsilNameEng"].ToString();
-                UsersManagments.TehsilNameUrdu = r["TehsilNameUrdu"].ToString();
+                if (!dt.Rows[0][0].ToString().Contains("An error has occurred"))
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        DistNameEng = r["DistrictNameEng"].ToString();
+                        DistNameUrdu = r["DistrictnameUrdu"].ToString();
+                        TehsilNameEng = r["TehsilNameEng"].ToString();
+                        UsersManagments.TehsilNameUrdu = r["TehsilNameUrdu"].ToString();
 
+                    }
+                }
+                else
+                    MessageBox.Show("Authentication Issue.. Unable to authenticate user/system.");
             }
+            else
+                MessageBox.Show("Authentication Issue.. Unable to authenticate user/system.");
             this.lblSDCTitle.Text = "   مرکز ترسیل سہولیات آراضی -   " + UsersManagments.TehsilNameUrdu + " | Service Delivery Center -  Tehsil  " + TehsilNameEng + " - District - " + DistNameEng;
 
 
@@ -1182,22 +1192,6 @@ namespace SDC_Application
             }
         }
 
-        private void menuCovid19Booking_Click(object sender, EventArgs e)
-        {
-            bool isopen = IsFrmOpen("frmCovid19Booking");
-            if (!isopen)
-            {
-                UsersManagments.check = 1;
-                frmCovid19Booking tk = new frmCovid19Booking();
-                tk.MdiParent = this;
-                tk.WindowState = this.WindowState;
-                //tk.WindowState =
-                tk.Show();
-                string ObjAccessId = db.ExecInsertUpdateStoredProcedure("WEB_SP_INSERT_Users_Access_Details " + UsersManagments.LoginRecId + "," + UsersManagments._Tehsilid.ToString() + ",'Booking Form'");
-
-            }
-        }
-
         private void tsmBultROAttestation_Click(object sender, EventArgs e)
         {
             bool isopen = IsFrmOpen("frmBulkROAttestation");
@@ -1961,10 +1955,10 @@ namespace SDC_Application
             {
 
                 //UsersManagments.check = 2;
-                RHZ obj = new RHZ();
-                obj.MdiParent = this;
-                obj.WindowState = this.WindowState;
-                obj.Show();
+                //RHZ obj = new RHZ();
+                //obj.MdiParent = this;
+                //obj.WindowState = this.WindowState;
+                //obj.Show();
             }
         }
 
@@ -1976,10 +1970,10 @@ namespace SDC_Application
             {
 
                 //UsersManagments.check = 2;
-                RHZ obj = new RHZ();
-                obj.MdiParent = this;
-                obj.WindowState = this.WindowState;
-                obj.Show();
+                //RHZ obj = new RHZ();
+                //obj.MdiParent = this;
+                //obj.WindowState = this.WindowState;
+                //obj.Show();
             }
             
             
