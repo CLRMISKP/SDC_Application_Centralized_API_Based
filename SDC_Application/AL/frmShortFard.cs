@@ -843,43 +843,49 @@ namespace SDC_Application.AL
                 if (txtReciptTokenID.Text.Trim().Length > 0)
                 {
                     this.TokenRetrieve = Intiq.GetNonTransactionalFard(this.txtReciptTokenID.Text, dtTokenAndrajDate.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()));
-
-                    if (TokenRetrieve.Rows.Count > 0)
+                    if (TokenRetrieve != null)
                     {
-                        foreach (DataRow data in TokenRetrieve.Rows)
+                        if (TokenRetrieve.Rows.Count > 0)
                         {
-                            this.SelectedMozaId = data["MozaId"].ToString();
-                            this.SelectedTokenId = data["TokenId"].ToString();
-                            this.SelectedTokenNo = data["TokenNo"].ToString(); 
-                            this.tokenDate = Convert.ToDateTime(data["TokenDate"]);
-                            pvstatus = Convert.ToBoolean(data["pvstatus"].ToString());
-                            if (pvstatus)
+                            foreach (DataRow data in TokenRetrieve.Rows)
                             {
-                                btnSavePersons.Enabled = false;
-                                btnDelPersons.Enabled = false;
+                                this.SelectedMozaId = data["MozaId"].ToString();
+                                this.SelectedTokenId = data["TokenId"].ToString();
+                                this.SelectedTokenNo = data["TokenNo"].ToString();
+                                this.tokenDate = Convert.ToDateTime(data["TokenDate"]);
+                                pvstatus = Convert.ToBoolean(data["pvstatus"].ToString());
+                                if (pvstatus)
+                                {
+                                    btnSavePersons.Enabled = false;
+                                    btnDelPersons.Enabled = false;
+                                }
+                                else
+                                {
+                                    btnSavePersons.Enabled = true;
+                                    btnDelPersons.Enabled = true;
+                                }
+
+                                this.tabControl1.SelectedIndex = 0;
+
+
+                                txtMoza.Text = data["MozaNameUrdu"].ToString();
+                                txtReciptTokenID.Text = this.SelectedTokenNo;
+                                txtReciptTokenID.Enabled = false;
+                                txtFardType.Text = data["TokenPurpose_Urdu"].ToString();
+                                txtHiddenServiceTypeId.Text = data["ServiceTypeId"].ToString();
+                                dtTokenAndrajDate.Value = Convert.ToDateTime(data["TokenDate"]);
+                                dtTokenAndrajDate.Enabled = false;
+                                getOperatorReport();
+                                GetPersonSavedRecord(SelectedTokenId);
+
+
+
+
                             }
-                            else
-                            {
-                                btnSavePersons.Enabled = true;
-                                btnDelPersons.Enabled = true;
-                            }
-
-                            this.tabControl1.SelectedIndex = 0;
-
-
-                            txtMoza.Text = data["MozaNameUrdu"].ToString();
-                            txtReciptTokenID.Text = this.SelectedTokenNo;
-                            txtReciptTokenID.Enabled = false;
-                            txtFardType.Text = data["TokenPurpose_Urdu"].ToString();
-                            txtHiddenServiceTypeId.Text = data["ServiceTypeId"].ToString();
-                            dtTokenAndrajDate.Value = Convert.ToDateTime(data["TokenDate"]);
-                            dtTokenAndrajDate.Enabled = false;
-                            getOperatorReport();
-                            GetPersonSavedRecord(SelectedTokenId);
-
-
-
-
+                        }
+                        else
+                        {
+                            MessageBox.Show("فردات میں مطلوبہ ٹوکن کا ریکارڈ نہیں مل سکا", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -936,10 +942,9 @@ namespace SDC_Application.AL
 
         private void FillPersonGridview(DataTable datatable)
         {
+            this.gridviewPersonNames.DataSource = datatable;
             if (datatable!=null)
             {
-
-                this.gridviewPersonNames.DataSource = datatable;
                 this.gridviewPersonNames.Columns["PersonFullName"].HeaderText = "نام مالک";
                 this.gridviewPersonNames.Columns["PersonId"].Visible = false;
                 this.gridviewPersonNames.Columns["CNIC"].Visible = false;
@@ -1890,21 +1895,23 @@ namespace SDC_Application.AL
               + "Generated" + "',N'" + this.txtMasterRemarks.Text.ToString() + "','"
              + UsersManagments.UserId.ToString() + "','"
              + UsersManagments.UserName.ToString() + "','',''");
-
-            foreach (DataRow dr in dt.Rows)
+            if (dt != null)
             {
-                txtPVID.Text = dr[0].ToString();
-                this.txtPVNo.Text = dr[1].ToString();
-                this.txtVoucherNo.Text = dr[1].ToString();
-                if (txtPVID.Text != "")
+                foreach (DataRow dr in dt.Rows)
                 {
-                    btnMasterSave.Enabled = false;
-                    btnSave.Enabled = true;
-                    txtQuantity.Enabled = true;
-                    //txtTotalRs.Enabled = true;
-                    txtServiceName.Enabled = true;
-                    Proc_Get_SDC_Services_For_PaymentVoucher();
+                    txtPVID.Text = dr[0].ToString();
+                    this.txtPVNo.Text = dr[1].ToString();
+                    this.txtVoucherNo.Text = dr[1].ToString();
+                    if (txtPVID.Text != "")
+                    {
+                        btnMasterSave.Enabled = false;
+                        btnSave.Enabled = true;
+                        txtQuantity.Enabled = true;
+                        //txtTotalRs.Enabled = true;
+                        txtServiceName.Enabled = true;
+                        Proc_Get_SDC_Services_For_PaymentVoucher();
 
+                    }
                 }
             }
         }
@@ -1996,15 +2003,18 @@ namespace SDC_Application.AL
             {
 
                 dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_Service_Detail "+UsersManagments._Tehsilid.ToString()+",'" + this.txtServiceName.SelectedValue.ToString() + "'");
-                foreach (DataRow dr in dt.Rows)
+                if (dt != null)
                 {
+                    foreach (DataRow dr in dt.Rows)
+                    {
 
 
-                    txtNotificationUnitID.Text = dr["TaxNotificationDetailId"].ToString();
-                    txtMasterCostunitID.Text = dr["ServiceCostUnitId"].ToString();
-                    txtUnit.Text = dr["SDCUnitName_Urdu"].ToString();
-                    txtMasterCostunitID.Text = dr["ServiceCostUnitId"].ToString();
+                        txtNotificationUnitID.Text = dr["TaxNotificationDetailId"].ToString();
+                        txtMasterCostunitID.Text = dr["ServiceCostUnitId"].ToString();
+                        txtUnit.Text = dr["SDCUnitName_Urdu"].ToString();
+                        txtMasterCostunitID.Text = dr["ServiceCostUnitId"].ToString();
 
+                    }
                 }
             }
         }
@@ -2147,14 +2157,16 @@ namespace SDC_Application.AL
                     txtRPVID.Text = "-1";
                 }
                 dt = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_For_Recipt "+UsersManagments._Tehsilid.ToString()+",'" + this.txtRPVID.Text + "','" + cmbRServiceSelectedValue + "'");
-                foreach (DataRow dr in dt.Rows)
+                if (dt != null)
                 {
-                    this.txtRAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
-                    this.txtRAmountRecieve.Text = dr["ServiceCostAmount"].ToString();
-                    this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
-                    this.cmbRPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        this.txtRAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
+                        this.txtRAmountRecieve.Text = dr["ServiceCostAmount"].ToString();
+                        this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
+                        this.cmbRPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
+                    }
                 }
-
 
             }
         }
@@ -2472,7 +2484,7 @@ namespace SDC_Application.AL
             if ((fardpersonrecId.Length > 5 || FardMushteriRecId.Length > 5) && txtHissaMuntaqla.Text.Trim().Length > 0 && txtKanalMuntaqal.Text.Trim().Length > 0 && txtMarlaMuntaqla.Text.Trim().Length > 0 && txtSarsaiMuntaqla.Text.Trim().Length > 0 && txtSFTmuntaqla.Text.Trim().Length > 0)
             {
                string lastId= Intiq.WEB_Self_SP_INSERT_ShortFard_Fareeqain_Hissa_Raqba_Muntaqla_Update(fardpersonrecId, FardMushteriRecId, txtHissaMuntaqla.Text.Trim(), txtKanalMuntaqal.Text.Trim(), txtMarlaMuntaqla.Text.Trim(), txtSarsaiMuntaqla.Text.Trim(), txtSFTmuntaqla.Text.Trim(), UsersManagments.UserId.ToString(), UsersManagments.UserName);
-               if (lastId.Length > 5)
+               if (lastId!=null)
                {
                    txtSFTmuntaqla.Clear();
                    txtHissaMuntaqla.Clear();

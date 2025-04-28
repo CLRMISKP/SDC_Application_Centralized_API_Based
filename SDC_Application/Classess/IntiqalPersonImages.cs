@@ -87,13 +87,13 @@ namespace SDC_Application.Classess
         {
             List<RoGardwar> people = new List<RoGardwar>();
             string[] jsonStringArray = Regex.Split(jsonString.Replace("[", "").Replace("]", ""), "},{");
-            int arraySize = jsonStringArray.Length; int indx = 0;
+            int arraySize = jsonStringArray.Length; int indx = 1;
             foreach (string rowData in jsonStringArray)
             {
 
                 try
                 {
-                    
+
                     RoGardwar person = new RoGardwar();
                     int idx = rowData.IndexOf("UserId");
                     person.RecStatus = rowData.Substring(rowData.IndexOf("RecStatus\":\"") + 12, rowData.IndexOf("UserId") - (rowData.IndexOf("RecStatus\":\"") + 15));
@@ -114,6 +114,29 @@ namespace SDC_Application.Classess
                     }
                     people.Add(person);
                     indx = indx + 1;
+                    //JsonUtility util= new JsonUtility(rowData);
+                    //if(rowData.Contains("Result"))
+                    //{
+                    //    string data=util.Get("Result");
+                    //    JsonUtility util1 = new JsonUtility(data);
+                    //    util = util1;
+                    //}
+
+                    //// Extract needed fields
+                    //person.RecStatus = util.Get("RecStatus");
+                    //person.UserId = util.Get("UserId");
+                    //person.CompleteName= util.Get("CompleteName");
+                    //person.LoginName = util.Get("LoginName");
+                    //try
+                    //{
+                    //    person.FingerPrintImage = Convert.FromBase64String(util.Get("FingerPrintImage"));
+                    //}
+                    //catch (Exception)
+                    //{
+                    //    person.FingerPrintImage = null;
+                    //}
+
+                    //people.Add(person);
                 }
                 catch (Exception)
                 {

@@ -69,15 +69,21 @@ namespace SDC_Application.AL
             {
                 DataTable dtkj = new DataTable();
                 dtkj = intiqal.GetKhataJatForintiqalByMozaId(cmbMouza.SelectedValue.ToString());
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cbokhataNo.DataSource = dtkj;
-                cbokhataNo.DisplayMember = "KhataNo";
-                cbokhataNo.ValueMember = "RegisterHqDKhataId";
-                cbokhataNo.SelectedValue = 0;
-
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cbokhataNo.DataSource = dtkj;
+                    cbokhataNo.DisplayMember = "KhataNo";
+                    cbokhataNo.ValueMember = "RegisterHqDKhataId";
+                    cbokhataNo.SelectedValue = 0;
+                }
+                else
+                {
+                    MessageBox.Show("کھاتہ جات کی فہرست نہیں ملی", "کھاتہ جات کی فہرست نہیں ملی", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -91,11 +97,15 @@ namespace SDC_Application.AL
         private void cbokhataNo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             DataTable dtAllKhewatFareeqain = null;
-            this.dgKhewatFreeqDetails.Rows.Clear();
+            this.dgKhewatFreeqDetails.DataSource = null;
             dtAllKhewatFareeqain = khatas.Proc_Get_KhewatFareeqeinByKhataId(cbokhataNo.SelectedValue.ToString());
             this.dgKhewatFareeqainAll.DataSource = dtAllKhewatFareeqain;
-            view = new DataView(dtAllKhewatFareeqain);
-            this.PopulateGridViewKhewatMalkanAll();
+            if(dtAllKhewatFareeqain != null)
+            {
+                view = new DataView(dtAllKhewatFareeqain);
+                this.PopulateGridViewKhewatMalkanAll();
+            }
+            
         }
 
         #endregion
@@ -104,31 +114,34 @@ namespace SDC_Application.AL
 
         private void PopulateGridViewKhewatMalkanAll()
         {
-            dgKhewatFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
-            dgKhewatFareeqainAll.Columns["Khewat_Area"].HeaderText = "رقبہ";
-            dgKhewatFareeqainAll.Columns["PersonName"].HeaderText = "نام مالک";
-            dgKhewatFareeqainAll.Columns["CNIC"].HeaderText = "شناختی نمبر";
-            dgKhewatFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
-            dgKhewatFareeqainAll.Columns["FardPart_Bata"].Visible = false;
-            dgKhewatFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
-            dgKhewatFareeqainAll.Columns["KhewatGroupFareeqId"].Visible = false;
-            dgKhewatFareeqainAll.Columns["KhewatGroupId"].Visible = false;
-            dgKhewatFareeqainAll.Columns["PersonId"].Visible = false;
-            dgKhewatFareeqainAll.Columns["darno"].Visible = false;
-            dgKhewatFareeqainAll.Columns["TotalDarPart"].Visible = false;
-            dgKhewatFareeqainAll.Columns["PersonDarPart"].Visible = false;
-            dgKhewatFareeqainAll.Columns["OfDarPart"].Visible = false;
-            dgKhewatFareeqainAll.Columns["PersonNetPart"].Visible = false;
-            dgKhewatFareeqainAll.Columns["KhewatTypeId"].Visible = false;
-            dgKhewatFareeqainAll.Columns["PersonName"].DisplayIndex = 2;
-            dgKhewatFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
-            dgKhewatFareeqainAll.Columns["seqno"].DisplayIndex = 1;
+            if (dgKhewatFareeqainAll.DataSource != null)
+            {
+                dgKhewatFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
+                dgKhewatFareeqainAll.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                dgKhewatFareeqainAll.Columns["PersonName"].HeaderText = "نام مالک";
+                dgKhewatFareeqainAll.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                dgKhewatFareeqainAll.Columns["KhewatType"].HeaderText = "قسم مالک";
+                dgKhewatFareeqainAll.Columns["FardPart_Bata"].Visible = false;
+                dgKhewatFareeqainAll.Columns["seqno"].HeaderText = "نمبر شمار";
+                dgKhewatFareeqainAll.Columns["KhewatGroupFareeqId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["KhewatGroupId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["PersonId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["darno"].Visible = false;
+                dgKhewatFareeqainAll.Columns["TotalDarPart"].Visible = false;
+                dgKhewatFareeqainAll.Columns["PersonDarPart"].Visible = false;
+                dgKhewatFareeqainAll.Columns["OfDarPart"].Visible = false;
+                dgKhewatFareeqainAll.Columns["PersonNetPart"].Visible = false;
+                dgKhewatFareeqainAll.Columns["KhewatTypeId"].Visible = false;
+                dgKhewatFareeqainAll.Columns["PersonName"].DisplayIndex = 2;
+                dgKhewatFareeqainAll.Columns["KhewatType"].DisplayIndex = 3;
+                dgKhewatFareeqainAll.Columns["seqno"].DisplayIndex = 1;
 
-        }
+            }
+            }
 
         #endregion
 
-        #region Gridview Khewat group fareeqain Cell Click Event
+            #region Gridview Khewat group fareeqain Cell Click Event
 
         private void dgKhewatFareeqainAll_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -215,27 +228,29 @@ namespace SDC_Application.AL
         {
             try
             {
-                dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-                dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
-                dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-                dgKhewatFreeqDetails.Columns["KhewatType"].HeaderText = "قسم مالک";
-                dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
-                dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
-                dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["darno"].Visible = false;
-                dgKhewatFreeqDetails.Columns["TotalDarPart"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonDarPart"].Visible = false;
-                dgKhewatFreeqDetails.Columns["OfDarPart"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonNetPart"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
-                dgKhewatFreeqDetails.Columns["KhewatType"].DisplayIndex = 3;
-                dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
-                dgKhewatFreeqDetails.Columns["ColSelection"].Visible = false;
-
+                if (dgKhewatFreeqDetails != null)
+                {
+                    dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                    dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                    dgKhewatFreeqDetails.Columns["KhewatType"].HeaderText = "قسم مالک";
+                    dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
+                    dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["darno"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["TotalDarPart"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonDarPart"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["OfDarPart"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonNetPart"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
+                    dgKhewatFreeqDetails.Columns["KhewatType"].DisplayIndex = 3;
+                    dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
+                    dgKhewatFreeqDetails.Columns["ColSelection"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -250,9 +265,12 @@ namespace SDC_Application.AL
         private void txtSearchFromGrid_TextChanged(object sender, EventArgs e)
         {
             string filter = this.txtSearchFromGrid.Text.ToString();
-            view.RowFilter = "PersonName LIKE '%" + filter + "%'";
-            dgKhewatFareeqainAll.DataSource = view;
-            this.PopulateGridViewKhewatMalkanAll();
+            if (view != null)
+            {
+                view.RowFilter = "PersonName LIKE '%" + filter + "%'";
+                dgKhewatFareeqainAll.DataSource = view;
+                this.PopulateGridViewKhewatMalkanAll();
+            }
         }
 
         #endregion
@@ -431,15 +449,21 @@ namespace SDC_Application.AL
             {
                 DataTable dtkj = new DataTable();
                 dtkj = intiqal.GetKhataJatForintiqalByMozaId(cmbMozaKhanakasht.SelectedValue.ToString());
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["RegisterHqDKhataId"] = "0";
-                inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cmbKhataNoKhanakasht.DataSource = dtkj;
-                cmbKhataNoKhanakasht.DisplayMember = "KhataNo";
-                cmbKhataNoKhanakasht.ValueMember = "RegisterHqDKhataId";
-                cmbKhataNoKhanakasht.SelectedValue = 0;
-
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["RegisterHqDKhataId"] = "0";
+                    inteqKj["KhataNo"] = " - کھاتہ نمبر کا انتخاب کرِیں - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cmbKhataNoKhanakasht.DataSource = dtkj;
+                    cmbKhataNoKhanakasht.DisplayMember = "KhataNo";
+                    cmbKhataNoKhanakasht.ValueMember = "RegisterHqDKhataId";
+                    cmbKhataNoKhanakasht.SelectedValue = 0;
+                }
+                else
+                {
+                    MessageBox.Show("کھاتہ جات کی فہرست نہیں ملی", "کھاتہ جات کی فہرست نہیں ملی", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -454,15 +478,21 @@ namespace SDC_Application.AL
             {
                 DataTable dtkj = new DataTable();
                 dtkj = khatooni.Get_KhatoonisbyKhataId(cmbKhataNoKhanakasht.SelectedValue.ToString());
-                DataRow inteqKj = dtkj.NewRow();
-                inteqKj["KhatooniId"] = "0";
-                inteqKj["KhatooniNo"] = " - کھتونی کا انتخاب کرِیں - ";
-                dtkj.Rows.InsertAt(inteqKj, 0);
-                cmbKhatooniNo.DataSource = dtkj;
-                cmbKhatooniNo.DisplayMember = "KhatooniNo";
-                cmbKhatooniNo.ValueMember = "KhatooniId";
-                cmbKhatooniNo.SelectedValue = 0;
-
+                if (dtkj != null)
+                {
+                    DataRow inteqKj = dtkj.NewRow();
+                    inteqKj["KhatooniId"] = "0";
+                    inteqKj["KhatooniNo"] = " - کھتونی کا انتخاب کرِیں - ";
+                    dtkj.Rows.InsertAt(inteqKj, 0);
+                    cmbKhatooniNo.DataSource = dtkj;
+                    cmbKhatooniNo.DisplayMember = "KhatooniNo";
+                    cmbKhatooniNo.ValueMember = "KhatooniId";
+                    cmbKhatooniNo.SelectedValue = 0;
+                }
+                else
+                {
+                    MessageBox.Show("کھتونی کی فہرست نہیں ملی", "کھتونی کی فہرست نہیں ملی", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -478,8 +508,12 @@ namespace SDC_Application.AL
                 //this.dgMushteryanKhatooni.Rows.Clear();
                 dtMushteriFareeqain = khatooni.Get_MushtriFareeqein_By_KhatooniId(cmbKhatooniNo.SelectedValue.ToString());
                 this.dgMushteryanKhatooni.DataSource = dtMushteriFareeqain;
-                viewKhanakasht = new DataView(dtMushteriFareeqain);
-                this.PopulateGridViewMushteryan(dgMushteryanKhatooni);
+                if(dtMushteriFareeqain != null)
+                {
+                    viewKhanakasht = new DataView(dtMushteriFareeqain);
+                    this.PopulateGridViewMushteryan(dgMushteryanKhatooni);
+                }
+
             }
             catch (Exception ex)
             {
@@ -489,6 +523,7 @@ namespace SDC_Application.AL
         }
         private void PopulateGridViewMushteryan(DataGridView g)
         {
+            if (g.DataSource != null) { 
             g.Columns["SeqNo"].HeaderText = "نمبر شمار";
             g.Columns["CompleteName"].HeaderText = "نام مشتری";
             g.Columns["KhewatType"].HeaderText = "قسم مالک";
@@ -510,6 +545,7 @@ namespace SDC_Application.AL
             g.Columns["Fard_Sarsai"].Visible = false;
             g.Columns["Fard_Feet"].Visible = false;
             g.Columns["Mushtri_Area_KMSr"].Visible = false;
+        }
         }
 
         private void dgMushteryanKhatooni_CellClick(object sender, DataGridViewCellEventArgs e)

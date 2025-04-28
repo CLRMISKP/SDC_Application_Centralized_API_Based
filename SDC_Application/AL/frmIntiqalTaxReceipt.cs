@@ -82,61 +82,8 @@ namespace SDC_Application.AL
             grdVoucherDetails.DataSource = null;
             dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "'," + "P");
 
-
-            if (dtPayment.Rows.Count > 0)
+            if (dtPayment != null)
             {
-                foreach (DataRow dr in dtPayment.Rows)
-                {
-                    txtTokenNO.Text = dr["TokenNo"].ToString();
-                    dtTokenDate.Text = dr["TokenDate"].ToString();
-                    txtVisitorName.Text = dr["Visitor_Name"].ToString();
-                    txtFatherName.Text = dr["Visitor_FatherName"].ToString();
-                    txtMouza.Text = dr["MozaNameUrdu"].ToString();
-                    txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
-                    TxtCNIC.Text = dr["Visitor_CNIC"].ToString();
-                    this.MozaId = dr["TokenService_For_MozaId"].ToString();
-                    txtMasterRemarks.Text = dr["PV_Remarks"].ToString();
-                    this.txtVoucherNo.Text = dr["PV_No"].ToString();
-                    dtChallan.Text = dr["PV_Date"].ToString();
-                    txtPVID.Text = dr["PVID"].ToString();
-                    txtPVNo.Text = dr["PV_No"].ToString();
-                    bool pvstatus = Convert.ToBoolean(dr["PV_Verified_Status"]);
-                    btnMasterSave.Enabled = false;
-
-                  
-
-                    calldataGrid();
-
-                    if (pvstatus)
-                    {
-
-                        btnSave.Enabled = false;
-
-                        chkMasterVoucherUpdate.Checked = true;
-                        chkMasterVoucherUpdate.Enabled = false;
-                        chkPaymentCorrection.Enabled = true;
-                        lbPaymentTasdeeq.Text = "تصدیق شدہ";
-
-                    }
-                    else
-                    {
-                        btnSave.Enabled = true;
-                        chkMasterVoucherUpdate.Enabled = true;
-                        chkMasterVoucherUpdate.Checked = false;
-                        chkPaymentCorrection.Enabled = false;
-                        lbPaymentTasdeeq.Text = "تصدیق کریں";
-
-                    }
-
-                }
-            }
-
-            else
-            {
-
-                txtSDCUnit.Clear();
-                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
-
                 if (dtPayment.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtPayment.Rows)
@@ -149,22 +96,78 @@ namespace SDC_Application.AL
                         txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
                         TxtCNIC.Text = dr["Visitor_CNIC"].ToString();
                         this.MozaId = dr["TokenService_For_MozaId"].ToString();
-                        txtPVID.Text = "-1";
-                        txtPVNo.Text = "-1";
-                        this.txtVoucherNo.Clear();
-                        dtChallan.Value = DateTime.Now;
-                        txtMasterRemarks.Clear();
-                        btnSave.Enabled = false;
-                       
-                        btnMasterSave.Enabled = true;
+                        txtMasterRemarks.Text = dr["PV_Remarks"].ToString();
+                        this.txtVoucherNo.Text = dr["PV_No"].ToString();
+                        dtChallan.Text = dr["PV_Date"].ToString();
+                        txtPVID.Text = dr["PVID"].ToString();
+                        txtPVNo.Text = dr["PV_No"].ToString();
+                        bool pvstatus = Convert.ToBoolean(dr["PV_Verified_Status"]);
+                        btnMasterSave.Enabled = false;
 
 
-                        chkMasterVoucherUpdate.Enabled = true;
-                        chkMasterVoucherUpdate.Checked = false;
-                        chkPaymentCorrection.Enabled = false;
-                        lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+                        calldataGrid();
+
+                        if (pvstatus)
+                        {
+
+                            btnSave.Enabled = false;
+
+                            chkMasterVoucherUpdate.Checked = true;
+                            chkMasterVoucherUpdate.Enabled = false;
+                            chkPaymentCorrection.Enabled = true;
+                            lbPaymentTasdeeq.Text = "تصدیق شدہ";
+
+                        }
+                        else
+                        {
+                            btnSave.Enabled = true;
+                            chkMasterVoucherUpdate.Enabled = true;
+                            chkMasterVoucherUpdate.Checked = false;
+                            chkPaymentCorrection.Enabled = false;
+                            lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+
+                txtSDCUnit.Clear();
+                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
+                if (dtPayment != null)
+                {
+                    if (dtPayment.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dtPayment.Rows)
+                        {
+                            txtTokenNO.Text = dr["TokenNo"].ToString();
+                            dtTokenDate.Text = dr["TokenDate"].ToString();
+                            txtVisitorName.Text = dr["Visitor_Name"].ToString();
+                            txtFatherName.Text = dr["Visitor_FatherName"].ToString();
+                            txtMouza.Text = dr["MozaNameUrdu"].ToString();
+                            txtService.Text = dr["ServiceTypeName_Urdu"].ToString();
+                            TxtCNIC.Text = dr["Visitor_CNIC"].ToString();
+                            this.MozaId = dr["TokenService_For_MozaId"].ToString();
+                            txtPVID.Text = "-1";
+                            txtPVNo.Text = "-1";
+                            this.txtVoucherNo.Clear();
+                            dtChallan.Value = DateTime.Now;
+                            txtMasterRemarks.Clear();
+                            btnSave.Enabled = false;
+
+                            btnMasterSave.Enabled = true;
 
 
+                            chkMasterVoucherUpdate.Enabled = true;
+                            chkMasterVoucherUpdate.Checked = false;
+                            chkPaymentCorrection.Enabled = false;
+                            lbPaymentTasdeeq.Text = "تصدیق کریں";
+
+
+                        }
                     }
                 }
 
@@ -188,61 +191,62 @@ namespace SDC_Application.AL
 
                 grdRecipt.DataSource = dtGrd;
                 //======= fill grid=============
-
-                grdRecipt.Columns["RVDetailSeqNo"].DisplayIndex = 0;
-                grdRecipt.Columns["SDCServiceName_Urdu"].DisplayIndex = 1;
-                grdRecipt.Columns["PaymentType_Urdu"].DisplayIndex = 2;
-
-                grdRecipt.Columns["NetPayableAmount"].DisplayIndex = 3;
-                grdRecipt.Columns["ReceivedAmount"].DisplayIndex = 4;
-
-                grdRecipt.Columns["RVDetailSeqNo"].HeaderText = "نمبرشمار";
-                grdRecipt.Columns["SDCServiceName_Urdu"].HeaderText = "سہولت";
-                grdRecipt.Columns["PaymentType_Urdu"].HeaderText = "رقم کی ادائیگی بذریعہ";
-
-                grdRecipt.Columns["NetPayableAmount"].HeaderText = "قابل ادا رقم";
-                grdRecipt.Columns["ReceivedAmount"].HeaderText = "وصول کی گئی رقم";
-
-
-                grdRecipt.Columns["BankAccountNo"].Visible = false;
-                grdRecipt.Columns["BankName"].Visible = false;
-                grdRecipt.Columns["PVDetailRemarks"].Visible = false;
-                grdRecipt.Columns["BankBranchName"].Visible = false;
-                grdRecipt.Columns["PaymentTypeId"].Visible = false;
-                grdRecipt.Columns["RVDetailId"].Visible = false;
-                grdRecipt.Columns["IntiqalTaxId"].Visible = false;
-                grdRecipt.Columns["PVDetailId"].Visible = false;
-
-                grdRecipt.Columns["RVId"].Visible = false;
-                grdRecipt.Columns["ChallanNo"].Visible = false;
-                grdRecipt.Columns["TaxNotificationDetailId"].Visible = false;
-                grdRecipt.Columns["ChallanDate"].Visible = false;
-
-                grdRecipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                grdRecipt.DefaultCellStyle.ForeColor = Color.Black;
-
-
-                //    =========== end====================
-                if (grdRecipt.Rows.Count > 0)
+                if (dtGrd != null)
                 {
-                    objdatagird.SumDataGridColumn(grdRecipt, txtTotPaymentRecived, "ReceivedAmount");
-                    objdatagird.SumDataGridColumn(grdRecipt, this.txtNetAmountToPay, "NetPayableAmount");
-                }
-                else
-                {
-                    txtTotPaymentRecived.Clear();
-                    txtNetAmountToPay.Clear();
-                }
+                    grdRecipt.Columns["RVDetailSeqNo"].DisplayIndex = 0;
+                    grdRecipt.Columns["SDCServiceName_Urdu"].DisplayIndex = 1;
+                    grdRecipt.Columns["PaymentType_Urdu"].DisplayIndex = 2;
 
-                DataGridViewColumn column = grdRecipt.Columns["RVDetailSeqNo"];
-                column.Width = 70;
+                    grdRecipt.Columns["NetPayableAmount"].DisplayIndex = 3;
+                    grdRecipt.Columns["ReceivedAmount"].DisplayIndex = 4;
 
-                for (int i = 0; i <= grdRecipt.Rows.Count - 1; i++)
-                {
-                    DataGridViewRow row = grdRecipt.Rows[i];
-                    row.Height = 35;
+                    grdRecipt.Columns["RVDetailSeqNo"].HeaderText = "نمبرشمار";
+                    grdRecipt.Columns["SDCServiceName_Urdu"].HeaderText = "سہولت";
+                    grdRecipt.Columns["PaymentType_Urdu"].HeaderText = "رقم کی ادائیگی بذریعہ";
+
+                    grdRecipt.Columns["NetPayableAmount"].HeaderText = "قابل ادا رقم";
+                    grdRecipt.Columns["ReceivedAmount"].HeaderText = "وصول کی گئی رقم";
+
+
+                    grdRecipt.Columns["BankAccountNo"].Visible = false;
+                    grdRecipt.Columns["BankName"].Visible = false;
+                    grdRecipt.Columns["PVDetailRemarks"].Visible = false;
+                    grdRecipt.Columns["BankBranchName"].Visible = false;
+                    grdRecipt.Columns["PaymentTypeId"].Visible = false;
+                    grdRecipt.Columns["RVDetailId"].Visible = false;
+                    grdRecipt.Columns["IntiqalTaxId"].Visible = false;
+                    grdRecipt.Columns["PVDetailId"].Visible = false;
+
+                    grdRecipt.Columns["RVId"].Visible = false;
+                    grdRecipt.Columns["ChallanNo"].Visible = false;
+                    grdRecipt.Columns["TaxNotificationDetailId"].Visible = false;
+                    grdRecipt.Columns["ChallanDate"].Visible = false;
+
+                    grdRecipt.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                    grdRecipt.DefaultCellStyle.ForeColor = Color.Black;
+
+
+                    //    =========== end====================
+                    if (grdRecipt.Rows.Count > 0)
+                    {
+                        objdatagird.SumDataGridColumn(grdRecipt, txtTotPaymentRecived, "ReceivedAmount");
+                        objdatagird.SumDataGridColumn(grdRecipt, this.txtNetAmountToPay, "NetPayableAmount");
+                    }
+                    else
+                    {
+                        txtTotPaymentRecived.Clear();
+                        txtNetAmountToPay.Clear();
+                    }
+
+                    DataGridViewColumn column = grdRecipt.Columns["RVDetailSeqNo"];
+                    column.Width = 70;
+
+                    for (int i = 0; i <= grdRecipt.Rows.Count - 1; i++)
+                    {
+                        DataGridViewRow row = grdRecipt.Rows[i];
+                        row.Height = 35;
+                    }
                 }
-
             }
             catch (Exception ex)
             {
@@ -285,7 +289,8 @@ namespace SDC_Application.AL
                             grdVoucherDetails.DataSource = null;
                             dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "'," + "P");
 
-
+                        if (dtPayment != null)
+                        {
                             if (dtPayment.Rows.Count > 0)
                             {
                                 foreach (DataRow dr in dtPayment.Rows)
@@ -306,7 +311,7 @@ namespace SDC_Application.AL
                                     bool pvstatus = Convert.ToBoolean(dr["PV_Verified_Status"]);
                                     btnMasterSave.Enabled = false;
 
-                                  
+
                                     calldataGrid();
 
                                     if (pvstatus)
@@ -332,13 +337,14 @@ namespace SDC_Application.AL
 
                                 }
                             }
+                        }
+                        else
+                        {
 
-                            else
+                            txtSDCUnit.Clear();
+                            dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
+                            if (dtPayment != null)
                             {
-
-                                txtSDCUnit.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_For_PaymentVoucher_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
-
                                 if (dtPayment.Rows.Count > 0)
                                 {
                                     foreach (DataRow dr in dtPayment.Rows)
@@ -357,7 +363,7 @@ namespace SDC_Application.AL
                                         dtChallan.Value = DateTime.Now;
                                         txtMasterRemarks.Clear();
                                         btnSave.Enabled = false;
-                                       
+
                                         btnMasterSave.Enabled = true;
 
 
@@ -369,8 +375,8 @@ namespace SDC_Application.AL
 
                                     }
                                 }
-
                             }
+                        }
 
                         break;
                     }
@@ -411,7 +417,8 @@ namespace SDC_Application.AL
                             objauto.FillCombo("Proc_Get_SDC_PaymentTypes_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() , cmbRPaymentofSource, "PaymentType_Urdu", "PaymentTypeId");
                             dtReceipt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_ReceiptVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "' ");
 
-
+                        if (dtReceipt != null)
+                        {
                             if (dtReceipt.Rows.Count > 0)
                             {
                                 foreach (DataRow dr in dtReceipt.Rows)
@@ -472,13 +479,14 @@ namespace SDC_Application.AL
 
                                 }
                             }
-
-                            else
+                        }
+                        else
+                        {
+                            cmbRServices.DataSource = null;
+                            cmbRServices.Items.Clear();
+                            dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "'," + "R");
+                            if (dtPayment != null)
                             {
-                                cmbRServices.DataSource = null;
-                                cmbRServices.Items.Clear();
-                                dtPayment = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_PaymentVoucherMaster_List_By_TokenId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.SelectedTokenId.ToString() + "'," + "R");
-
                                 if (dtPayment.Rows.Count > 0)
                                 {
                                     foreach (DataRow dr in dtPayment.Rows)
@@ -516,8 +524,9 @@ namespace SDC_Application.AL
 
                                     }
                                 }
-
                             }
+
+                        }
 
                         break;
                     }
@@ -1258,15 +1267,17 @@ namespace SDC_Application.AL
             {
                 DataTable dt2;
                 dt2 = objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_PaymentVoucherDetail_BY_VoucerId_For_Recipt " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ",'" + this.txtRPVID.Text + "','" + this.cmbRServices.SelectedValue.ToString() + "'");
-                foreach (DataRow dr in dt2.Rows)
+                if (dt2 != null)
                 {
-                    this.txtRAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
-                    this.txtRAmountRecieve.Text = dr["ServiceCostAmount"].ToString();
-                    this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
-                    this.cmbRPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
-                    this.RIntiqalTaxId = dr["IntiqalTaxId"].ToString();
+                    foreach (DataRow dr in dt2.Rows)
+                    {
+                        this.txtRAmounttoPay.Text = dr["ServiceCostAmount"].ToString();
+                        this.txtRAmountRecieve.Text = dr["ServiceCostAmount"].ToString();
+                        this.txtPVDetailID.Text = dr["PVDetailId"].ToString();
+                        this.cmbRPaymentofSource.Text = dr["PaymentType_Urdu"].ToString();
+                        this.RIntiqalTaxId = dr["IntiqalTaxId"].ToString();
+                    }
                 }
-
 
             }
         }

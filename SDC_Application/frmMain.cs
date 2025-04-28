@@ -343,9 +343,12 @@ namespace SDC_Application
             {
                 roledetail = db.filldatatable_from_storedProcedure("Proc_Get_Admin_RolesDetail_SDC  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + roleid.ToString()); // --NOT_IMPLEMENTED_ TEHSIL ID NOT NEEDED
             }
-            foreach (DataRow row in roledetail.Rows)
+            if (roledetail != null)
             {
-                list.Add(row["ObjectActualName"].ToString());
+                foreach (DataRow row in roledetail.Rows)
+                {
+                    list.Add(row["ObjectActualName"].ToString());
+                }
             }
         }
 

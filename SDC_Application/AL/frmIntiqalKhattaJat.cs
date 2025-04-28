@@ -1276,16 +1276,12 @@ namespace SDC_Application.AL
                         {
                             dt = Intiqal.DeleteIntiqalSellerAllBYKhata(txtKhattaRecId.Text.ToString());
                             string IntiqalKhatooniRecId;
-                            if (dt != null)
-                            {
                                 txtSellerID.Text = "-1";
                                 proc_Get_Intiqal_Sellers_List_ByKhata(IntiqalKhataRecId, KhatoniRecid);
                                 CalculateSellerBuyerRaqbaHissa();
                                 btnDelSeller.Enabled = false;
                                 chkDeleteAllBayan.Checked = false;
                                 ClearAll();
-
-                            }
                         }
                         catch (Exception ex)
                         {
@@ -4255,7 +4251,10 @@ namespace SDC_Application.AL
                     khataid = "0";
                 }
                 dt = this.taqseemnewkhata.Proc_Get_KhewatFareeqeinByKhataId(khataid);
+                if(dt!=null)
                 dvTaqseemMalkan = new DataView(dt);
+                else
+                    dvTaqseemMalkan = null;
                 FillGridMalikanChange(dt);
 
             }
@@ -4267,7 +4266,10 @@ namespace SDC_Application.AL
 
 
                 Mushdt = Khatooni.Get_Self_MushtriFareeqein_By_KhatooniId(KhatooniId);
+                if(Mushdt!=null)
                 dvTaqseemMushtryan = new DataView(Mushdt);
+                else
+                    dvTaqseemMushtryan = null;
                 FillGridTaqseemMushtryan(Mushdt);
 
 
@@ -4754,8 +4756,11 @@ namespace SDC_Application.AL
                 string khataid = RegisterHqDKhataId;
                 //dt = taqseemnewkhata.Proc_Get_Khatoonis(RegisterHqDKhataId.ToString());
                 dt = taqseemnewkhata.Proc_Self_Get_Khatoonis(RegisterHqDKhataId.ToString());
-                dvTaqseemKhatoonies = new DataView(dt);
-                FillKhatooniGrid();
+                if (dt != null)
+                    dvTaqseemKhatoonies = new DataView(dt);
+                else
+                    dvTaqseemKhatoonies = null;
+               FillKhatooniGrid();
             }
             catch (Exception)
             {

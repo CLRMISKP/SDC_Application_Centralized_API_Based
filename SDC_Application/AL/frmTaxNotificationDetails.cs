@@ -50,28 +50,29 @@ namespace SDC_Application.AL
             dt = tax.GetIntiqalTaxNotificationDetails(UsersManagments._Tehsilid.ToString());
           
             gridTextDetails.DataSource = dt;
+                if (dt != null)
+                {
+                    gridTextDetails.Columns["TaxNotificationId"].Visible = false;
+                    gridTextDetails.Columns["TaxNotificationNo"].HeaderText = "نوٹیفکیشن نمبر";
+                    gridTextDetails.Columns["PaymentType_Urdu"].HeaderText = "رقم کی ادائیگی بزریغہ";
+                    gridTextDetails.Columns["TehsilId"].Visible = false;
+                    gridTextDetails.Columns["TaxNotificationActive"].Visible = false;
+                    gridTextDetails.Columns["TaxNotificationDetailId"].Visible = false;
+                    gridTextDetails.Columns["TaxRate"].HeaderText = "نرخ";
+                    gridTextDetails.Columns["TaxeId"].Visible = false;
+                    gridTextDetails.Columns["paymenttypeid"].Visible = false;
+                    gridTextDetails.Columns["TaxName_Urdu"].HeaderText = "ٹیکس";
+                    gridTextDetails.Columns["SDCUnitId"].Visible = false;
+                    gridTextDetails.Columns["SDCUnitName_Urdu"].HeaderText = "اکائی";
+                    gridTextDetails.Columns["TaxRateType"].Visible = false;
 
-            gridTextDetails.Columns["TaxNotificationId"].Visible = false;
-            gridTextDetails.Columns["TaxNotificationNo"].HeaderText = "نوٹیفکیشن نمبر";
-            gridTextDetails.Columns["PaymentType_Urdu"].HeaderText = "رقم کی ادائیگی بزریغہ";
-            gridTextDetails.Columns["TehsilId"].Visible = false;
-            gridTextDetails.Columns["TaxNotificationActive"].Visible = false;
-            gridTextDetails.Columns["TaxNotificationDetailId"].Visible = false;
-            gridTextDetails.Columns["TaxRate"].HeaderText = "نرخ";
-            gridTextDetails.Columns["TaxeId"].Visible = false;
-            gridTextDetails.Columns["paymenttypeid"].Visible = false;
-            gridTextDetails.Columns["TaxName_Urdu"].HeaderText = "ٹیکس";
-            gridTextDetails.Columns["SDCUnitId"].Visible = false;
-            gridTextDetails.Columns["SDCUnitName_Urdu"].HeaderText = "اکائی";
-            gridTextDetails.Columns["TaxRateType"].Visible = false;
-           
-            
-            gridTextDetails.Columns["cbgrid"].Width = 70;
-            gridTextDetails.Columns["TaxRate"].Width = 60;
-            gridTextDetails.Columns["TaxNotificationNo"].Width = 80;
-            gridTextDetails.Columns["TaxName_Urdu"].Width = 200;
-            gridTextDetails.Columns["SDCUnitName_Urdu"].Width = 80;
 
+                    gridTextDetails.Columns["cbgrid"].Width = 70;
+                    gridTextDetails.Columns["TaxRate"].Width = 60;
+                    gridTextDetails.Columns["TaxNotificationNo"].Width = 80;
+                    gridTextDetails.Columns["TaxName_Urdu"].Width = 200;
+                    gridTextDetails.Columns["SDCUnitName_Urdu"].Width = 80;
+                }
 
             }
             catch (Exception ex)

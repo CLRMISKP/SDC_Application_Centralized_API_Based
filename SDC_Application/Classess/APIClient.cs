@@ -64,6 +64,7 @@ namespace SDC_Application
             ////baseUrlLogout= "https://175.107.63.31:9080/api/executeNonQuery/logout";
 
             // Server Machine Data Center - CLRMIS  APIs
+            //baseUrlReader = "http://localhost:65171/api/executeReader/execute";
             baseUrlReader = "https://kplr.gkp.pk:5001/api/executeReader/execute";
             baseUrlScalar = "https://kplr.gkp.pk:5001/api/executeScalar/execute";
             baseUrlNonQuery = "https://kplr.gkp.pk:5001/api/executeNonQuery/execute";

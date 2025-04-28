@@ -92,7 +92,7 @@ namespace SDC_Application.AL
 
         /// Load tax details
 
-        #region
+        #region Load tax details
         public void LoadNotificationDetails()
         {
             dt = objbusines.GetIntiqalTaxesDetails(Intiqal_Id);
@@ -104,6 +104,7 @@ namespace SDC_Application.AL
         {
             try
             {
+                if (grdNotificationdetails.DataSource != null) { 
                 grdNotificationdetails.Columns["TaxName_Urdu"].DisplayIndex = 1;
                 grdNotificationdetails.Columns["SDCUnitName_Urdu"].DisplayIndex = 2;
                 grdNotificationdetails.Columns["TaxRate"].DisplayIndex = 3;
@@ -131,6 +132,7 @@ namespace SDC_Application.AL
                 grdNotificationdetails.Columns["TaxAmount"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 grdNotificationdetails.Columns["TaxRate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -141,11 +143,9 @@ namespace SDC_Application.AL
 
         #endregion
 
-
-
         /// Load Form Notification form Event
 
-        #region
+        #region form closed event
 
         private void taxNotification_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -172,7 +172,7 @@ namespace SDC_Application.AL
 
         /// Update txt notification data
 
-        #region
+        #region button update click event
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -215,7 +215,7 @@ namespace SDC_Application.AL
 
         /// grdNotificationdetails double click ,fill textBoxes
 
-        #region
+        #region grdNotificationdetails double click
         private void grdNotificationdetails_DoubleClick(object sender, EventArgs e)
         {
             txtAmount.Text = grdNotificationdetails.CurrentRow.Cells["TaxAmount"].Value.ToString();
@@ -227,8 +227,7 @@ namespace SDC_Application.AL
         #endregion
 
         /// Validations
-
-        #region
+        #region Validations
         private void txtRate_KeyPress(object sender, KeyPressEventArgs e)
         {
 

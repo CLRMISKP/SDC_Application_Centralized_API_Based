@@ -1,8 +1,0 @@
-
-*.cache
-SDC_Application/app.config
-SDC_Application/Program.cs
-*.cache
-*.dll
-*.pdb
-*.suo

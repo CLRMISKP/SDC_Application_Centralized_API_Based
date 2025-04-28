@@ -105,11 +105,11 @@ namespace SDC_Application.AL
                     if (cboFardMauza.SelectedIndex > 0)
                     {
                         grpFamilyHeadTop.Enabled = true;
-                        FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                        //FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
                         //FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
                         //FillFardGrid(txtFardFamilyId.Text.ToString());
-                        FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
-                        FillRahinGrid(cboFardMauza.SelectedValue.ToString());
+                        FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
+                        //FillRahinGrid(cboFardMauza.SelectedValue.ToString());
                         //FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
                         grpFardTop.Enabled = false;
                         grpFardMiddle.Enabled = false;
@@ -153,7 +153,7 @@ namespace SDC_Application.AL
                     rbOrg.Checked = false;
                     rbMurtahin.Checked = false;
                     PersonFamilyStatus = "2";
-                    FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
+                    //FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1");
                     //FillFardGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
                     grpFardTop.Enabled = false;
                     grpFardMiddle.Enabled = false;
@@ -166,7 +166,7 @@ namespace SDC_Application.AL
                     rbOrg.Checked = true;
                     rbMurtahin.Checked = false;
                     PersonFamilyStatus = "3";
-                    FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
                     txtOrgName.Enabled = false;
                     btnSaveOrg.Enabled = true;
                     btnDelOrg.Enabled = true;
@@ -178,8 +178,8 @@ namespace SDC_Application.AL
                     rbOrg.Checked = false;
                     rbMurtahin.Checked = true;
                     PersonFamilyStatus = "4";
-                    FillRahinGrid(cboFardMauza.SelectedValue.ToString());
-                    FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    //FillRahinGrid(cboFardMauza.SelectedValue.ToString());
+                    FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
                     //grpMurtahinTop.Enabled = false;
                     //grpMurtahinMiddle.Enabled = false;
                     //grpMurtahinBottom.Enabled = false;
@@ -384,11 +384,11 @@ namespace SDC_Application.AL
 
         #region GridView Fill Methods
 
-        public void FillFamilyHeadGrid(string mozId, string familyStatusId)
+        public void FillFamilyHeadGrid(string mozId, string familyStatusId, string FamilyHeadName)
         {
             try
     			{
-            dtgridFH = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId);
+            dtgridFH = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId, FamilyHeadName);
             if (dtgridFH != null)
             {
                 bsFH.DataSource = dtgridFH;
@@ -450,8 +450,9 @@ namespace SDC_Application.AL
 
         private void btnSaveFamilyHead_Click(object sender, EventArgs e)
         {
+            string personName = txtFamilyHeadName.Text;
             SaveFamilyHead();
-            FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+            FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, personName);
         }
 
         private void btnNewFamilyHead_Click(object sender, EventArgs e)
@@ -560,10 +561,10 @@ namespace SDC_Application.AL
             {
                 if (MessageBox.Show("کیا آپ حذف کرنا چاہتے ہیں:::::", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
                 {
-
-                    ObjPerson.DeleteAfradRegister(txtFamilyHeadId.Text.ToString());
+                    string personName = txtFamilyHeadName.Text;
+                        ObjPerson.DeleteAfradRegister(txtFamilyHeadId.Text.ToString());
                     MessageBox.Show("ریکارڈ حذف ہوگیا ہے۔");
-                    FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, personName);
                     btnSaveFamilyHead.Enabled = true;
                     btnDelFamilyHead.Enabled = true;
                     this.ClearFormControls(grpFamilyHeadTop);
@@ -618,7 +619,7 @@ namespace SDC_Application.AL
         private void btnSaveOrg_Click(object sender, EventArgs e)
         {
             SaveOrg();
-            FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+            FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
         }
 
         #endregion
@@ -676,11 +677,11 @@ namespace SDC_Application.AL
 
         #region GridView Fill Methods
 
-        public void FillOrgGrid(string mozId, string familyStatusId)
+        public void FillOrgGrid(string mozId, string familyStatusId, string PersonName)
         {            
 			try
     			{
-            dtgridOrg = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId);
+            dtgridOrg = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId, PersonName);
             if (dtgridOrg != null)
             {
                 grdOrganization.DataSource = dtgridOrg;
@@ -773,7 +774,7 @@ namespace SDC_Application.AL
 
                     ObjPerson.DeleteAfradRegister(txtOrgId.Text.ToString());
                     MessageBox.Show("ریکارڈ حذف ہوگیا ہے۔");
-                    FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    FillOrgGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
                     btnSaveOrg.Enabled = true;
                     btnDelOrg.Enabled = true;
                     this.ClearFormControls(grpTopOrg);
@@ -970,11 +971,11 @@ namespace SDC_Application.AL
 
         #region GridView Fill Methods
 
-        public void FillFardForFHGrid(string mozId, string familyStatusId)
+        public void FillFardForFHGrid(string mozId, string familyStatusId, string PersonName)
         {
             try
             {
-            dtgridFH = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId);
+            dtgridFH = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId, PersonName);
             if (dtgridFH != null)
             {
                 bs.DataSource = dtgridFH;
@@ -1332,11 +1333,11 @@ namespace SDC_Application.AL
 
         #region GridView Fill Methods
 
-        public void FillRahinGrid(string mozaId)
+        public void FillRahinGrid(string mozaId, string personName)
         {
             try
     			{
-            dtMurtahin = ObjPerson.GetMozaAfradListAllTypes(mozaId);
+            dtMurtahin = ObjPerson.GetMozaAfradListAllTypes(mozaId,  personName );
             if (dtMurtahin != null)
             {
                 bsR.DataSource = dtMurtahin;
@@ -1368,11 +1369,11 @@ namespace SDC_Application.AL
             }
         }
 
-        public void FillMurtahinGrid(string mozId, string familyStatusId)
+        public void FillMurtahinGrid(string mozId, string familyStatusId, string personName)
         {
             try
             {
-            dtMurtahin = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId);
+            dtMurtahin = ObjPerson.GetMozaAfradListByTypeId(mozId, familyStatusId, personName);
             if (dtMurtahin != null)
             {
                 grdMurtahin.DataSource = dtMurtahin;
@@ -1473,7 +1474,7 @@ namespace SDC_Application.AL
                             {
                                 if (grdRahin.Rows[i].Cells["PersonId"].Value.ToString() == row.Cells["PersonId"].Value.ToString())
                                 {
-                                    FillRahinGrid(cboFardMauza.SelectedValue.ToString());
+                                    FillRahinGrid(cboFardMauza.SelectedValue.ToString(), row.Cells["PersonName"].Value.ToString() );
                                     grdRahin.Rows[i].Cells["colChooseRahin"].Value = 1;
                                     grdRahin.Rows[i].Selected = true;
                                     grdRahin.CurrentCell = grdRahin.Rows[i].Cells["colChooseRahin"];
@@ -1567,7 +1568,7 @@ namespace SDC_Application.AL
         private void btnSaveMurtahin_Click(object sender, EventArgs e)
         {
             SaveMurtahin();
-            FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+            FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
         }
 
         #endregion
@@ -1585,7 +1586,7 @@ namespace SDC_Application.AL
 
                     ObjPerson.DeleteAfradRegister(txtMurtahinId.Text.ToString());
                     MessageBox.Show("ریکارڈ حذف ہوگیا ہے۔");
-                    FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus);
+                    FillMurtahinGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, "");
                     txtMurtahinName.Clear();
                     btnSaveMurtahin.Enabled = true;
                     btnDelMurtahin.Enabled = true;
@@ -1821,6 +1822,30 @@ namespace SDC_Application.AL
             {
                 bsFamilyFard.Filter = string.Format("PersonName LIKE '%{0}%' ", txtSearchFamilyFardName.Text);
             }
+        }
+
+        private void btnSearchH_Click(object sender, EventArgs e)
+        {
+            if(txtSearchFH.Text.Trim().Length > 1)
+            FillFamilyHeadGrid(cboFardMauza.SelectedValue.ToString(), PersonFamilyStatus, txtSearchFHFard.Text.Trim());
+            else
+                MessageBox.Show("براے مھربانی سربراہ کے نام کا اندراج کریں");
+        }
+
+        private void btnSearchHP_Click(object sender, EventArgs e)
+        {
+            if(txtSearchFHFard.Text.Trim().Length > 1)
+                FillFardForFHGrid(cboFardMauza.SelectedValue.ToString(), "1", txtSearchFHFard.Text.Trim());
+            else
+                MessageBox.Show("براے مھربانی سربراہ کے نام کا اندراج کریں");
+        }
+
+        private void btnSearchM_Click(object sender, EventArgs e)
+        {
+            if(txtSearchRahin.Text.Trim().Length > 1)
+                FillRahinGrid(cboFardMauza.SelectedValue.ToString(), txtSearchRahin.Text.Trim());
+            else
+                MessageBox.Show("براے مھربانی راہن کے نام کا اندراج کریں");
         }
 
         private void txtSearchFamilyFardCNIC_TextChanged(object sender, EventArgs e)

@@ -16,6 +16,7 @@ using System.Dynamic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
+using SDC_Application.Classess;
 namespace SDC_Application.AL
 {
     public partial class frmIntiqalAttestationByRO : Form
@@ -37,7 +38,7 @@ namespace SDC_Application.AL
         public string intiqalId { get; set; }
         public bool AttStatus { get; set; }
 
-
+        APIClient client = new APIClient();
         public frmIntiqalAttestationByRO()
         {
             InitializeComponent();
@@ -66,7 +67,9 @@ namespace SDC_Application.AL
 
         private void FillROsCombo()
         {
-            dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_ROs " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
+            List<RoGardwar> roGardwars = new List<RoGardwar>();
+            roGardwars = client.GetGardwar(UsersManagments._Tehsilid.ToString(), "0", UsersManagments.userToken, "T");
+            dt = RoGardwar.ToDataTable(roGardwars);
             if (dt != null)
             {
                 DataRow row = dt.NewRow();
@@ -78,6 +81,7 @@ namespace SDC_Application.AL
                 cboROs.ValueMember = "UserId";
                 cboROs.SelectedValue = 0;
             }
+           
         }
 
         public Image MStream(byte[] img)

@@ -80,15 +80,15 @@ namespace SDC_Application.BL
             return objdatabase.filldatatable_from_storedProcedure(spWithParam);
         }
 
-        public DataTable GetMozaAfradListAllTypes(string MozaId)
+        public DataTable GetMozaAfradListAllTypes(string MozaId, string personName)
         {
-            string spWithParam = "Proc_Get_Moza_AfradList_All_Types  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId;
+            string spWithParam = "Proc_Get_Moza_AfradList_All_Types  " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId+",N'"+personName+"'";
             return objdatabase.filldatatable_from_storedProcedure(spWithParam);
         }
 
-        public DataTable GetMozaAfradListByTypeId(string MozaId, string PersonFamilyStatusId)
+        public DataTable GetMozaAfradListByTypeId(string MozaId, string PersonFamilyStatusId, string PersonName)
         {
-            string spWithParam = "Proc_Get_Moza_AfradList_By_TypeId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + ", " + PersonFamilyStatusId;
+            string spWithParam = "Proc_Get_Moza_AfradList_By_TypeId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + ", " + PersonFamilyStatusId+",N'"+PersonName+"'";
             return objdatabase.filldatatable_from_storedProcedure(spWithParam);
         }
 

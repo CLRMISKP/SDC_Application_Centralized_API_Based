@@ -48,7 +48,7 @@ namespace SDC_Application.AL
             {
                 DataTable dt = DocRc.GetRegReceivedByDate(Date);
                 this.grdvReg.DataSource = dt;
-
+                if (dt != null) { 
                 grdvReg.Columns["RegNo"].DisplayIndex = 0;
                 grdvReg.Columns["JildNo"].DisplayIndex = 1;
                 grdvReg.Columns["RegDate"].DisplayIndex = 2;
@@ -79,7 +79,7 @@ namespace SDC_Application.AL
                 objdatagrid.colorrbackgrid(grdvReg);
                 objdatagrid.gridControls(grdvReg);
                 grdvReg.ColumnHeadersHeight = 20;
-
+            }
 
             }
             catch (Exception ex)

@@ -134,6 +134,7 @@ namespace SDC_Application.AL
         private string getNextSrNoByMoza(string mozaId)
         {
             string maxSrNo = rhz.GetMaxSrNoRHZChangeBYMozaId(mozaId);
+
             if (maxSrNo != null && maxSrNo.Length > 0)
             {
                 maxSrNo = (Convert.ToInt32(maxSrNo) + 1).ToString();
@@ -208,72 +209,87 @@ namespace SDC_Application.AL
             this.txtParentKhata.Clear();
             this.ClearKhatooniControls();
             txtKhataRecId.Text = "-1";
-            foreach (DataRow row in dtkj.Rows)
+            if (dtkj != null)
             {
-                if (cbokhataNo.SelectedValue != null)
+                foreach (DataRow row in dtkj.Rows)
                 {
-                    if ((row["RegisterHqDKhataId"].ToString() == cbokhataNo.SelectedValue.ToString()) && cbokhataNo.SelectedValue.ToString() != "0")
+                    if (cbokhataNo.SelectedValue != null)
                     {
-                        this.txtKhataHissa.Text = row["TotalParts"].ToString();
-                        txtKhataHissaProp.Text = row["TotalParts"].ToString();
-                        txtKhataMeezanKulHissay.Text = row["TotalParts"].ToString();
-                        this.txtKhataKanal.Text = row["Kanal"].ToString();
-                        this.txtKhataKanalProp.Text = row["Kanal"].ToString();
-                        txtKhataMarla.Text = row["Marla"].ToString();
-                        txtKhataMarlaProp.Text = row["Marla"].ToString();
-                        txtKhataSarsai.Text = row["sarsai"].ToString();
-                        txtKhataSarsaiProp.Text = row["sarsai"].ToString();
-                        txtKhataSFT.Text = Math.Round(float.Parse(row["sarsai"].ToString()) * (float)30.25, 0).ToString();
-                        txtKhataSFTprop.Text = txtKhataSFT.Text;
-                        txtKhataMeezanRaqba.Text = txtKhataKanal.Text + "-" + txtKhataMarla.Text + "-" + txtKhataSarsai.Text;
-                        txtKhataKifiat.Text = row["Kyfiat"].ToString();
-                        txtKhataKifiatProp.Text = row["Kyfiat"].ToString();
-                        this.KhataId = row["RegisterHqDKhataId"].ToString();
-                        txtKhataNoProp.Text = row["KhataNo"].ToString();
-                        rbCurrentKhata.Checked = row["KhataNo"].ToString().Contains("سابقہ") ? false : true;
-                        rbPreviousKhata.Checked = row["KhataNo"].ToString().Contains("سابقہ") ? true : false;
-                        LoadDataByKhata();
-                        FillKhatooniList();
-                        objauto.FillCombo("Proc_Get_AreaTypes_List " + UsersManagments._Tehsilid.ToString(), cboAreaType, "AreaType", "AreaTypeId");
-                        this.LoadKhewatFareeqainMeezan(cbokhataNo.SelectedValue.ToString());
-                        tabControlMain.Enabled = true;
-                        this.LoadKhataLockDetails(cbokhataNo.SelectedValue.ToString());
-                        //dtKhatajatEdit = rhz.GetKhatajatEditByKhataId(cbokhataNo.SelectedValue.ToString());
-                        //if (dtKhatajatEdit.Rows.Count > 0)
-                        //{
-                        //    cbKhataEdits.DataSource = dtKhatajatEdit;
-                        //    cbKhataEdits.DisplayMember = "KhataNoProp";
-                        //    cbKhataEdits.ValueMember = "KhataRecId";
-                        //    txtKhataNoProp.Text = dtKhatajatEdit.Rows[0]["KhataNoProp"].ToString();
-                        //    txtKhataRecId.Text = dtKhatajatEdit.Rows[0]["KhataRecId"].ToString();
-                        //    txtKhataHissaProp.Text = dtKhatajatEdit.Rows[0]["TotalPartsProp"].ToString();
-                        //    txtKhataKanalProp.Text = dtKhatajatEdit.Rows[0]["Khata_KanalProp"].ToString();
-                        //    txtKhataMarlaProp.Text = dtKhatajatEdit.Rows[0]["Khata_MarlaProp"].ToString();
-                        //    txtKhataSarsaiProp.Text = dtKhatajatEdit.Rows[0]["Khata_SarsaiProp"].ToString();
-                        //    txtKhataSFTprop.Text = dtKhatajatEdit.Rows[0]["Khata_FeetProp"].ToString();
+                        if ((row["RegisterHqDKhataId"].ToString() == cbokhataNo.SelectedValue.ToString()) && cbokhataNo.SelectedValue.ToString() != "0")
+                        {
+                            this.txtKhataHissa.Text = row["TotalParts"].ToString();
+                            txtKhataHissaProp.Text = row["TotalParts"].ToString();
+                            txtKhataMeezanKulHissay.Text = row["TotalParts"].ToString();
+                            this.txtKhataKanal.Text = row["Kanal"].ToString();
+                            this.txtKhataKanalProp.Text = row["Kanal"].ToString();
+                            txtKhataMarla.Text = row["Marla"].ToString();
+                            txtKhataMarlaProp.Text = row["Marla"].ToString();
+                            txtKhataSarsai.Text = row["sarsai"].ToString();
+                            txtKhataSarsaiProp.Text = row["sarsai"].ToString();
+                            txtKhataSFT.Text = Math.Round(float.Parse(row["sarsai"].ToString()) * (float)30.25, 0).ToString();
+                            txtKhataSFTprop.Text = txtKhataSFT.Text;
+                            txtKhataMeezanRaqba.Text = txtKhataKanal.Text + "-" + txtKhataMarla.Text + "-" + txtKhataSarsai.Text;
+                            txtKhataKifiat.Text = row["Kyfiat"].ToString();
+                            txtKhataKifiatProp.Text = row["Kyfiat"].ToString();
+                            this.KhataId = row["RegisterHqDKhataId"].ToString();
+                            txtKhataNoProp.Text = row["KhataNo"].ToString();
+                            rbCurrentKhata.Checked = row["KhataNo"].ToString().Contains("سابقہ") ? false : true;
+                            rbPreviousKhata.Checked = row["KhataNo"].ToString().Contains("سابقہ") ? true : false;
+                            LoadDataByKhata();
+                            FillKhatooniList();
+                            objauto.FillCombo("Proc_Get_AreaTypes_List " + UsersManagments._Tehsilid.ToString(), cboAreaType, "AreaType", "AreaTypeId");
+                            this.LoadKhewatFareeqainMeezan(cbokhataNo.SelectedValue.ToString());
+                            tabControlMain.Enabled = true;
+                            this.LoadKhataLockDetails(cbokhataNo.SelectedValue.ToString());
+                            //dtKhatajatEdit = rhz.GetKhatajatEditByKhataId(cbokhataNo.SelectedValue.ToString());
+                            //if (dtKhatajatEdit.Rows.Count > 0)
+                            //{
+                            //    cbKhataEdits.DataSource = dtKhatajatEdit;
+                            //    cbKhataEdits.DisplayMember = "KhataNoProp";
+                            //    cbKhataEdits.ValueMember = "KhataRecId";
+                            //    txtKhataNoProp.Text = dtKhatajatEdit.Rows[0]["KhataNoProp"].ToString();
+                            //    txtKhataRecId.Text = dtKhatajatEdit.Rows[0]["KhataRecId"].ToString();
+                            //    txtKhataHissaProp.Text = dtKhatajatEdit.Rows[0]["TotalPartsProp"].ToString();
+                            //    txtKhataKanalProp.Text = dtKhatajatEdit.Rows[0]["Khata_KanalProp"].ToString();
+                            //    txtKhataMarlaProp.Text = dtKhatajatEdit.Rows[0]["Khata_MarlaProp"].ToString();
+                            //    txtKhataSarsaiProp.Text = dtKhatajatEdit.Rows[0]["Khata_SarsaiProp"].ToString();
+                            //    txtKhataSFTprop.Text = dtKhatajatEdit.Rows[0]["Khata_FeetProp"].ToString();
 
-                        //    if (dtKhatajatEdit.Rows.Count > 1)
-                        //    {
-                        //        cbKhataEdits.Visible = true;
-                        //    }
-                        //    else
-                        //        cbKhataEdits.Visible = false;
-                        //}
-                        break;
+                            //    if (dtKhatajatEdit.Rows.Count > 1)
+                            //    {
+                            //        cbKhataEdits.Visible = true;
+                            //    }
+                            //    else
+                            //        cbKhataEdits.Visible = false;
+                            //}
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        this.txtKhataHissa.Clear();
+                        this.txtKhataKanal.Clear();
+                        txtKhataMarla.Clear();
+                        txtKhataSarsai.Clear();
+                        txtKhataSFT.Clear();
+                        txtKhataKifiat.Clear();
+                        this.KhataId = "0";
+                        txtKhataRecId.Text = "-1";
+                        //tabControlMain.Enabled = false;
                     }
                 }
-                else
-                {
-                    this.txtKhataHissa.Clear();
-                    this.txtKhataKanal.Clear();
-                    txtKhataMarla.Clear();
-                    txtKhataSarsai.Clear();
-                    txtKhataSFT.Clear();
-                    txtKhataKifiat.Clear();
-                    this.KhataId = "0";
-                    txtKhataRecId.Text = "-1";
-                    //tabControlMain.Enabled = false;
-                }
+            }
+            else
+            {
+                this.txtKhataHissa.Clear();
+                this.txtKhataKanal.Clear();
+                txtKhataMarla.Clear();
+                txtKhataSarsai.Clear();
+                txtKhataSFT.Clear();
+                txtKhataKifiat.Clear();
+                this.KhataId = "0";
+                txtKhataRecId.Text = "-1";
+                //tabControlMain.Enabled = false;
             }
         }
 
@@ -371,9 +387,12 @@ namespace SDC_Application.AL
             {
                 this.dtKhewatFareeqain = khatas.Proc_Self_Get_KhewatFareeqeinByKhataId(this.KhataId);
                 this.dgKhewatFareeqainAll.DataSource = dtKhewatFareeqain;
-                view = new DataView(dtKhewatFareeqain);
-                this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
-                this.PopulateGridviewKhewFareeqByPersonId();
+                if (dtKhewatFareeqain != null)
+                    view = new DataView(dtKhewatFareeqain);
+                else
+                    view = null;
+                    this.PopulateGridViewKhewatMalkanAll(dgKhewatFareeqainAll, false);
+                    this.PopulateGridviewKhewFareeqByPersonId();
             }
             catch (Exception ex)
             {
@@ -388,7 +407,10 @@ namespace SDC_Application.AL
             {
                 this.dtKhewatFareeqainAll = intiqal.GetKhewatFareeqeinGroupByKhataPrevious(this.KhataId);
                 this.dgKhewatFreeqDetails.DataSource = dtKhewatFareeqainAll;
+                if(dtKhewatFareeqainAll != null)
                 viewAll = new DataView(dtKhewatFareeqainAll);
+                else
+                    viewAll = null;
                 this.PopulateGridViewKhewatMalkanAll(dgKhewatFreeqDetails, false);
             }
             catch (Exception ex)
@@ -596,7 +618,7 @@ namespace SDC_Application.AL
                     this.panelKhassra.Enabled = true;
                     //DataTable KhatooniDetail = khatooni.GetKhatooniDetailbyKhatooniId(cboKhatoonies.SelectedValue.ToString());
                     DataTable KhatooniEditingDetails = rhz.GetKhatooniEditingDetailsByKhatooniId(cboKhatoonies.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
-                if (KhatooniEditingDetails != null)
+                if (KhatooniesByKhata != null)
                 {
                     foreach (DataRow row in KhatooniesByKhata.Rows)
                     {
@@ -757,7 +779,11 @@ namespace SDC_Application.AL
                 //DataTable mushteryanCUrrent = khatooni.Get_MushtriFareeqein_By_KhatooniId(KhatooniId);
                 DataTable mushteryanCUrrent = khatooni.Get_MushtriFareeqein_By_Khatooni_All_Status(KhatooniId);
                 dgMushteriFareeqainAll.DataSource = mushteryanCUrrent;
+                if(mushteryanCUrrent != null) 
                 viewMF = new DataView(mushteryanCUrrent);
+                else 
+                    viewMF = null;
+
                 PopulateGrid(dgMushteriFareeqainAll);
 
             }
@@ -773,7 +799,7 @@ namespace SDC_Application.AL
             {
                 DataTable dtKhatooniBayan = khatooni.GetKhatooniBayanByKhatooniId(KhatooniId);
                 dgKhatooniBayan.DataSource = dtKhatooniBayan;
-                if (dgKhatooniBayan != null)
+                if (dgKhatooniBayan.DataSource != null)
                 {
                     dgKhatooniBayan.Columns["CompleteName"].HeaderText = "نام مالک";
                     dgKhatooniBayan.Columns["KhewatFareeq_Sold_Hissa"].HeaderText = "بیع کردہ حصہ";
@@ -812,7 +838,10 @@ namespace SDC_Application.AL
                 dtKhassrasEdit = rhz.GetKhatooniKhassraDetailEdit(cboKhatoonies.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
                 dgKhatooniKhassras.DataSource = dtKhassras;
                 dgkhatooniKhassraEdit.DataSource = dtKhassrasEdit;
+                if(dtKhassras!=null)
                 this.viewKhassra = new DataView(dtKhassras);
+                else 
+                    this.viewKhassra=null;
                 this.PopulateKhassraGrid();
                 PopulateKhassraEditGrid();
             }
@@ -824,7 +853,7 @@ namespace SDC_Application.AL
 
         private void PopulateKhassraGrid()
         {
-            if (dgKhatooniKhassras != null)
+            if (dgKhatooniKhassras.DataSource != null)
             {
                 dgKhatooniKhassras.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
                 dgKhatooniKhassras.Columns["AreaType"].HeaderText = "قسم آراضی";
@@ -840,7 +869,7 @@ namespace SDC_Application.AL
         }
         private void PopulateKhassraEditGrid()
         {
-            if (dgkhatooniKhassraEdit != null)
+            if (dgkhatooniKhassraEdit.DataSource != null)
             {
                 dgkhatooniKhassraEdit.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
                 dgkhatooniKhassraEdit.Columns["AreaType"].Visible = false;
@@ -992,7 +1021,7 @@ namespace SDC_Application.AL
         {
             try
             {
-                if (dgMushteriFareeqainEdit != null)
+                if (dgMushteriFareeqainEdit.DataSource != null)
                 {
                     dgMushteriFareeqainEdit.Columns["FardAreaPart"].HeaderText = "حصہ";
                     dgMushteriFareeqainEdit.Columns["Khewat_Area"].HeaderText = "رقبہ";
@@ -1065,7 +1094,7 @@ namespace SDC_Application.AL
 
         private void PopulateGridViewMushteryanAll()
         {
-            if (dgMushteriFareeqainAll != null)
+            if (dgMushteriFareeqainAll.DataSource != null)
             {
                 dgMushteriFareeqainAll.Columns["FardAreaPart"].HeaderText = "حصہ";
                 dgMushteriFareeqainAll.Columns["Mushtri_Area_KMSqft"].HeaderText = "رقبہ";
@@ -2008,14 +2037,17 @@ namespace SDC_Application.AL
             resetKhassraFields();
             ResetMushteriEntryFields();
             bool ImplementedBy = false;
-            DataRow[] row = dtRHZchangeDetailsList.Select("RHZ_ChangeId=" + cbSrNo.SelectedValue.ToString());
-            txtSerialNo.Text = row[0]["SrNo"].ToString();
-            txtRHZ_ChangeId.Text = row[0]["RHZ_ChangeId"].ToString();
-            txtDetails.Text = row[0]["ChangeDetails"].ToString();
-            ImplementedBy = row[0]["ImplemnetedBy"].ToString() == "0" ? false : true;
-            btnConfirm.Enabled = row[0]["ConfirmedBy"].ToString() == "0" ? true : false;
-            tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() || UsersManagments._IsAdmin ? true : false) : false;//ImplemnetedBy
-            //tabControlMain.Enabled=UsersManagments.UserId.ToString()=="111111"?true:false;
+            if (cbSrNo.DataSource != null)
+            {
+                DataRow[] row = dtRHZchangeDetailsList.Select("RHZ_ChangeId=" + cbSrNo.SelectedValue.ToString());
+                txtSerialNo.Text = row[0]["SrNo"].ToString();
+                txtRHZ_ChangeId.Text = row[0]["RHZ_ChangeId"].ToString();
+                txtDetails.Text = row[0]["ChangeDetails"].ToString();
+                ImplementedBy = row[0]["ImplemnetedBy"].ToString() == "0" ? false : true;
+                btnConfirm.Enabled = row[0]["ConfirmedBy"].ToString() == "0" ? true : false;
+                tabControlMain.Enabled = !ImplementedBy ? (row[0]["InsertUserId"].ToString() == UsersManagments.UserId.ToString() || UsersManagments._IsAdmin ? true : false) : false;//ImplemnetedBy
+            }
+                //tabControlMain.Enabled=UsersManagments.UserId.ToString()=="111111"?true:false;
             PopulateDgKhataJatEdited();
             FillDgFBAfrad();
             btnImplementChanges.Enabled = UsersManagments._IsAdmin && !ImplementedBy;
@@ -2026,7 +2058,7 @@ namespace SDC_Application.AL
         {
             DataTable dtKhatajatEdited = rhz.GetKhatajatEditedByRHZ_ChangeId(cmbMouza.SelectedValue.ToString(), txtRHZ_ChangeId.Text);
             dgKhatajatProposed.DataSource = dtKhatajatEdited;
-            if (dtKhatajatEdit != null)
+            if (dtKhatajatEdited != null)
             {
                 dgKhatajatProposed.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
                 dgKhatajatProposed.Columns["TotalParts"].HeaderText = "کھاتہ کل حصے";
@@ -2063,7 +2095,7 @@ namespace SDC_Application.AL
                         if (row.Selected)
                         {
                             row.Cells["dgKhataEditColSel"].Value = true;
-                            bool KhataStatus = (bool)row.Cells["RecStatus"].Value;
+                            bool KhataStatus = Convert.ToBoolean(row.Cells["RecStatus"].Value);
                             //if (KhataStatus)
                             //{
                                 cbokhataNo.SelectedValue = row.Cells["RegisterHqDKhataId"].Value;
@@ -2226,7 +2258,8 @@ namespace SDC_Application.AL
         #region Load Save Fb Afrad gridview
         private void FillDgFBAfrad()
         {
-            dtAfradRegisterEdit.Clear();
+            if(dtAfradRegisterEdit != null)
+                dtAfradRegisterEdit.Clear();
             dgFBAfrad.DataSource = null;
             dtAfradRegisterEdit = rhz.GetAfradListProposed(txtRHZ_ChangeId.Text);
             if (dtAfradRegisterEdit != null)
@@ -2420,7 +2453,7 @@ namespace SDC_Application.AL
         {
                     DataTable dtMushteriFareeqainEdit = rhz.GetMushteriFareeqainEdit(cboKhatoonies.SelectedValue.ToString());
                     dgMushteriFareeqainEdit.DataSource = dtMushteriFareeqainEdit;
-            if (dgMushteriFareeqainAll != null)
+            if (dgMushteriFareeqainEdit.DataSource != null)
             {
                 dgMushteriFareeqainEdit.Columns["CompleteName"].HeaderText = "نام مالک";
                 dgMushteriFareeqainEdit.Columns["NameProp"].HeaderText = "مجوزہ نام";
@@ -2604,22 +2637,27 @@ namespace SDC_Application.AL
         {
              dtKhewatFareeqainForBayan = rhz.Proc_Get_KhewatFareeqeinBy_KhataId(cbKhataForBayan.SelectedValue.ToString());
              cbKhataMalikanForBayan.DataSource = dtKhewatFareeqainForBayan;
-            cbKhataMalikanForBayan.DisplayMember = "PersonName";
-            cbKhataMalikanForBayan.ValueMember = "KhewatGroupFareeqId";
+            if (dtKhewatFareeqainForBayan != null)
+            {
+                cbKhataMalikanForBayan.DisplayMember = "PersonName";
+                cbKhataMalikanForBayan.ValueMember = "KhewatGroupFareeqId";
+            }
         }
 
         private void cbKhataMalikanForBayan_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataRow filteredRows = dtKhewatFareeqainForBayan.Select("KhewatGroupFareeqId = " + cbKhataMalikanForBayan.SelectedValue.ToString()).First() ;
-            if (filteredRows != null)
+            if (cbKhataMalikanForBayan.DataSource != null)
             {
-                txtBayaHissa.Text =Math.Round(Convert.ToDecimal(filteredRows["FardAreaPart"].ToString()), 5).ToString();
-                txtBayaKanal.Text = filteredRows["Kanal"].ToString();
-                txtBayaMarla.Text = filteredRows["marla"].ToString();
-                txtBayaSarsai.Text =Math.Round(Convert.ToDecimal( filteredRows["sarsai"].ToString()), 3).ToString();
-                txtBayaPersonId.Text = filteredRows["PersonId"].ToString();
+                DataRow filteredRows = dtKhewatFareeqainForBayan.Select("KhewatGroupFareeqId = " + cbKhataMalikanForBayan.SelectedValue.ToString()).First();
+                if (filteredRows != null)
+                {
+                    txtBayaHissa.Text = Math.Round(Convert.ToDecimal(filteredRows["FardAreaPart"].ToString()), 5).ToString();
+                    txtBayaKanal.Text = filteredRows["Kanal"].ToString();
+                    txtBayaMarla.Text = filteredRows["marla"].ToString();
+                    txtBayaSarsai.Text = Math.Round(Convert.ToDecimal(filteredRows["sarsai"].ToString()), 3).ToString();
+                    txtBayaPersonId.Text = filteredRows["PersonId"].ToString();
+                }
             }
-
         }
 
         private void txtBayaHissaSold_Leave(object sender, EventArgs e)

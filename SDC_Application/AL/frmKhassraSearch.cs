@@ -36,15 +36,23 @@ namespace SDC_Application.AL
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.Khassras = intiqal.SearchKhassraByKhassraNoMozaId(txtKhassraNo.Text.Trim(), this.MozaId);
-            this.GridViewKhassras.DataSource = this.Khassras;
-            GridViewKhassras.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-            GridViewKhassras.Columns["RecStatus"].HeaderText = "حالت";
-            GridViewKhassras.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
-            GridViewKhassras.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-            GridViewKhassras.Columns["KhatooniId"].Visible = false;
-            GridViewKhassras.Columns["KhassraId"].Visible = false;
-            GridViewKhassras.Columns["RegisterHqDKhataId"].Visible = false;
+            if (txtKhassraNo.Text.Trim().Length > 0)
+            {
+                this.Khassras = intiqal.SearchKhassraByKhassraNoMozaId(txtKhassraNo.Text.Trim(), this.MozaId);
+                this.GridViewKhassras.DataSource = this.Khassras;
+                if (this.Khassras != null)
+                {
+                    GridViewKhassras.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                    GridViewKhassras.Columns["RecStatus"].HeaderText = "حالت";
+                    GridViewKhassras.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
+                    GridViewKhassras.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                    GridViewKhassras.Columns["KhatooniId"].Visible = false;
+                    GridViewKhassras.Columns["KhassraId"].Visible = false;
+                    GridViewKhassras.Columns["RegisterHqDKhataId"].Visible = false;
+                }
+            }
+            else
+                MessageBox.Show("خسرہ نمبر درج کریں");
         }
 
         private void cmbMouza_KeyPress(object sender, KeyPressEventArgs e)

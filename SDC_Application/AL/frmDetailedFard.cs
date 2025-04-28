@@ -333,16 +333,22 @@ namespace SDC_Application.AL
             if (this.SelectedTokenId != null && this.SelectedTokenId != "0")
             {
 
-                FardMalikan_Report rptDetail = new FardMalikan_Report();
-                rptDetail.TokenID = this.SelectedTokenId;
-                rptDetail.isTrans = false;
-                rptDetail.ShowDialog();
+                //FardMalikan_Report rptDetail = new FardMalikan_Report();
+                //rptDetail.TokenID = this.SelectedTokenId;
+                //rptDetail.isTrans = false;
+                //rptDetail.ShowDialog();
+                frmDetailFardReport rpt=new frmDetailFardReport();
+                rpt.TehsilId = UsersManagments._Tehsilid.ToString();
+                rpt.TokenId = this.SelectedTokenId;
+                rpt.MozaId = this.SelectedMozaId;
+                rpt.currentUser = UsersManagments.UserName;
+                rpt.ShowDialog();
 
                 //FardMalikan_Report_TTx rptDetail = new FardMalikan_Report_TTx();
                 //rptDetail.TokenId = this.SelectedTokenId.ToString();
                 ////rptDetail.isTrans = false;
                 //rptDetail.ShowDialog();
-                
+
             }
         }
         #endregion

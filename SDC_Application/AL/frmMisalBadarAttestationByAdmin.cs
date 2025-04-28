@@ -1,21 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DPFP.Gui;
-using DPFP.Processing;
-using DPFP.Verification;
 using System.IO;
-using DPFP.Gui.Enrollment;
-using DPFP.Capture;
-using System.Dynamic;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Permissions;
+using SDC_Application.Classess;
 namespace SDC_Application.AL
 {
     public partial class frmMisalBadarAttestationByAdmin : Form
@@ -40,7 +30,7 @@ namespace SDC_Application.AL
 
         public string FB_Id { get; set; }
         public bool AttStatus { get; set; }
-
+        APIClient client = new APIClient();
 
         public frmMisalBadarAttestationByAdmin()
         {
@@ -62,15 +52,20 @@ namespace SDC_Application.AL
         {
             if (isE_FB)
             {
-                dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
-                DataRow row = dt.NewRow();
-                row["UserId"] = "0";
-                row["CompleteName"] = "--انتخاب کریں--";
-                dt.Rows.InsertAt(row, 0);
-                cboROs.DataSource = dt;
-                cboROs.DisplayMember = "CompleteName";
-                cboROs.ValueMember = "UserId";
-                cboROs.SelectedValue = 0;
+                List<RoGardwar> roGardwars = new List<RoGardwar>();
+                roGardwars = client.GetGardwar(UsersManagments._Tehsilid.ToString(), "0", UsersManagments.userToken, "T");
+                dt = RoGardwar.ToDataTable(roGardwars);
+                if (dt != null)
+                {
+                    DataRow row = dt.NewRow();
+                    row["UserId"] = "0";
+                    row["CompleteName"] = "--انتخاب کریں--";
+                    dt.Rows.InsertAt(row, 0);
+                    cboROs.DataSource = dt;
+                    cboROs.DisplayMember = "CompleteName";
+                    cboROs.ValueMember = "UserId";
+                    cboROs.SelectedValue = 0;
+                }
             }
             else
             {

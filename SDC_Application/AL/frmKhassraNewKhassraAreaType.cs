@@ -55,28 +55,34 @@ namespace SDC_Application.AL
         private void FillKhassraComboNGridview()
         {
             dgKhatooniKhassras.DataSource = dtKhassra;
-            dgKhatooniKhassras.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
-            dgKhatooniKhassras.Columns["KhatooniKhassraGroupId"].Visible = false;
-            dgKhatooniKhassras.Columns["KhatooniId"].Visible = false;
-            dgKhatooniKhassras.Columns["KhassraId"].Visible = false;
+            if (dgKhatooniKhassras.DataSource != null)
+            {
+                dgKhatooniKhassras.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
+                dgKhatooniKhassras.Columns["KhatooniKhassraGroupId"].Visible = false;
+                dgKhatooniKhassras.Columns["KhatooniId"].Visible = false;
+                dgKhatooniKhassras.Columns["KhassraId"].Visible = false;
 
-            cbKhassras.DataSource = dtKhassra;
-            cbKhassras.DisplayMember = "KhassraNo";
-            cbKhassras.ValueMember = "KhassraId";
+                cbKhassras.DataSource = dtKhassra;
+                cbKhassras.DisplayMember = "KhassraNo";
+                cbKhassras.ValueMember = "KhassraId";
+            }
         }
         private void FillKhassraDetailsGridview()
         {
             dgKhassraDetails.DataSource = dtKhassraDetails;
-            dgKhassraDetails.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
-            dgKhassraDetails.Columns["Kanal"].HeaderText = "کنال";
-            dgKhassraDetails.Columns["Marla"].HeaderText = "مرلہ";
-            dgKhassraDetails.Columns["Sarsai"].HeaderText = "سرسائی";
-            dgKhassraDetails.Columns["Feet"].HeaderText = "فٹ";
-            dgKhassraDetails.Columns["AreaType"].HeaderText = "قسم زمین";
-            dgKhassraDetails.Columns["KhassraDetailId"].Visible = false;
-            dgKhassraDetails.Columns["KhatooniId"].Visible = false;
-            dgKhassraDetails.Columns["KhassraId"].Visible = false;
-            dgKhassraDetails.Columns["AreaTypeId"].Visible = false;
+            if (dgKhassraDetails.DataSource != null)
+            {
+                dgKhassraDetails.Columns["KhassraNo"].HeaderText = "نمبر خسرہ";
+                dgKhassraDetails.Columns["Kanal"].HeaderText = "کنال";
+                dgKhassraDetails.Columns["Marla"].HeaderText = "مرلہ";
+                dgKhassraDetails.Columns["Sarsai"].HeaderText = "سرسائی";
+                dgKhassraDetails.Columns["Feet"].HeaderText = "فٹ";
+                dgKhassraDetails.Columns["AreaType"].HeaderText = "قسم زمین";
+                dgKhassraDetails.Columns["KhassraDetailId"].Visible = false;
+                dgKhassraDetails.Columns["KhatooniId"].Visible = false;
+                dgKhassraDetails.Columns["KhassraId"].Visible = false;
+                dgKhassraDetails.Columns["AreaTypeId"].Visible = false;
+            }
         }
         #endregion
 

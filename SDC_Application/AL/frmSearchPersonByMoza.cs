@@ -64,14 +64,17 @@ namespace SDC_Application.AL
             }       
             DataTable FardPersonGroup = new DataTable();
             FardPersonGroup = mnk.GetFardPersonGroupDetail(TokenId);
-            if (FardPersonGroup.Rows.Count > 0)
+            if (FardPersonGroup != null)
             {
-                this.FPGid = FardPersonGroup.Rows[0]["FPGId"].ToString();
-                GetMalikKhattasPersonDetails(FPGid);
-                GetSavedKhasraDetails(FPGid);
-                if (gridviewMalikan.Rows.Count > 0)
+                if (FardPersonGroup.Rows.Count > 0)
                 {
-                 
+                    this.FPGid = FardPersonGroup.Rows[0]["FPGId"].ToString();
+                    GetMalikKhattasPersonDetails(FPGid);
+                    GetSavedKhasraDetails(FPGid);
+                    if (gridviewMalikan.Rows.Count > 0)
+                    {
+
+                    }
                 }
             }
             int savedKhataNo = GridViewKhattajat_for_Token.Rows.Count;
@@ -132,43 +135,49 @@ namespace SDC_Application.AL
             if (radKhanaMalkiat.Checked)
             {
                 this.gridViewMalakan_For_Token.DataSource = malikan;
-                this.gridViewMalakan_For_Token.Columns["KhataNo"].HeaderText = "کھاتہ نمبرز";
-                this.gridViewMalakan_For_Token.Columns["TotalParts"].HeaderText = "کل حصے";
-                this.gridViewMalakan_For_Token.Columns["HissaDifference"].HeaderText = "حصص فرق";
-                this.gridViewMalakan_For_Token.Columns["RecordLockedCon"].HeaderText = "حالت لاک";
-                this.gridViewMalakan_For_Token.Columns["RecordLockedDetails"].HeaderText = "تفصیل لاک";
-                this.gridViewMalakan_For_Token.Columns["RecordLockingDate"].HeaderText = "تاریخ لاک";
-                this.gridViewMalakan_For_Token.Columns["RegisterHaqdaranId"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["RecordLocked"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["chk2"].Visible = true;
-                this.gridViewMalakan_For_Token.Columns["RegisterHqDKhataId"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["TotalParts"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["Khata_Area"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["sarsai"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["Marla"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["Kanal"].Visible = false;
-                //this.gridViewMalakan_For_Token.Columns["KhasraNo"].Visible=false;
-                //this.gridViewMalakan_For_Token.Columns["Area"].Visible=false;
-                //this.gridViewMalakan_For_Token.Columns["KhatoniNo"].Visible = false;
-                gridViewMalakan_For_Token.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+                if (malikan != null)
+                {
+                    this.gridViewMalakan_For_Token.Columns["KhataNo"].HeaderText = "کھاتہ نمبرز";
+                    this.gridViewMalakan_For_Token.Columns["TotalParts"].HeaderText = "کل حصے";
+                    this.gridViewMalakan_For_Token.Columns["HissaDifference"].HeaderText = "حصص فرق";
+                    this.gridViewMalakan_For_Token.Columns["RecordLockedCon"].HeaderText = "حالت لاک";
+                    this.gridViewMalakan_For_Token.Columns["RecordLockedDetails"].HeaderText = "تفصیل لاک";
+                    this.gridViewMalakan_For_Token.Columns["RecordLockingDate"].HeaderText = "تاریخ لاک";
+                    this.gridViewMalakan_For_Token.Columns["RegisterHaqdaranId"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["RecordLocked"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["chk2"].Visible = true;
+                    this.gridViewMalakan_For_Token.Columns["RegisterHqDKhataId"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["TotalParts"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["Khata_Area"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["sarsai"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["Marla"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["Kanal"].Visible = false;
+                    //this.gridViewMalakan_For_Token.Columns["KhasraNo"].Visible=false;
+                    //this.gridViewMalakan_For_Token.Columns["Area"].Visible=false;
+                    //this.gridViewMalakan_For_Token.Columns["KhatoniNo"].Visible = false;
+                    gridViewMalakan_For_Token.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+                }
             }
             else if (RadKhanKashat.Checked)
             {
                 this.gridViewMalakan_For_Token.DataSource = malikan;
-                this.gridViewMalakan_For_Token.Columns["KhataNo"].HeaderText = "کھاتہ نمبرز";
-                this.gridViewMalakan_For_Token.Columns["TotalParts"].HeaderText = "کل حصے";
-                this.gridViewMalakan_For_Token.Columns["RegisterHaqdaranId"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["chk2"].Visible = true;
-                this.gridViewMalakan_For_Token.Columns["RegisterHqDKhataId"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["TotalParts"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["Khata_Area"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["sarsai"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["Marla"].Visible = false;
-                this.gridViewMalakan_For_Token.Columns["Kanal"].Visible = false;
-                //this.gridViewMalakan_For_Token.Columns["KhasraNo"].Visible=false;
-                //this.gridViewMalakan_For_Token.Columns["Area"].Visible=false;
-                //this.gridViewMalakan_For_Token.Columns["KhatoniNo"].Visible = false;
-                gridViewMalakan_For_Token.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+                if (malikan != null)
+                {
+                    this.gridViewMalakan_For_Token.Columns["KhataNo"].HeaderText = "کھاتہ نمبرز";
+                    this.gridViewMalakan_For_Token.Columns["TotalParts"].HeaderText = "کل حصے";
+                    this.gridViewMalakan_For_Token.Columns["RegisterHaqdaranId"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["chk2"].Visible = true;
+                    this.gridViewMalakan_For_Token.Columns["RegisterHqDKhataId"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["TotalParts"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["Khata_Area"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["sarsai"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["Marla"].Visible = false;
+                    this.gridViewMalakan_For_Token.Columns["Kanal"].Visible = false;
+                    //this.gridViewMalakan_For_Token.Columns["KhasraNo"].Visible=false;
+                    //this.gridViewMalakan_For_Token.Columns["Area"].Visible=false;
+                    //this.gridViewMalakan_For_Token.Columns["KhatoniNo"].Visible = false;
+                    gridViewMalakan_For_Token.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+                }
             }
          
         }
@@ -178,19 +187,22 @@ namespace SDC_Application.AL
             DataTable khasrajat = new DataTable();
             khasrajat = mnk.GetFardPersonsKhasraJajat(MozaId, FPGid);
             this.grdKhasraJat.DataSource = khasrajat;
-            this.grdKhasraJat.Columns["chkKhasra"].DisplayIndex = 0;
-            this.grdKhasraJat.Columns["KhataNo"].DisplayIndex = 1;
-            this.grdKhasraJat.Columns["KhassraNo"].DisplayIndex = 2;
-            this.grdKhasraJat.Columns["KhatooniNo"].DisplayIndex = 3;
-            this.grdKhasraJat.Columns["Area"].DisplayIndex = 4;
-            this.grdKhasraJat.Columns["KhataNo"].HeaderText = "کھاتہ نمبرز";
-            this.grdKhasraJat.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
-            this.grdKhasraJat.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-            this.grdKhasraJat.Columns["Area"].HeaderText = "کل رقبہ";
-            this.grdKhasraJat.Columns["RegisterHqDKhataId"].Visible = false;
-            this.grdKhasraJat.Columns["KhatooniId"].Visible = false;
-            this.grdKhasraJat.Columns["Khassraid"].Visible = false;
-            grdKhasraJat.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+            if (khasrajat != null)
+            {
+                this.grdKhasraJat.Columns["chkKhasra"].DisplayIndex = 0;
+                this.grdKhasraJat.Columns["KhataNo"].DisplayIndex = 1;
+                this.grdKhasraJat.Columns["KhassraNo"].DisplayIndex = 2;
+                this.grdKhasraJat.Columns["KhatooniNo"].DisplayIndex = 3;
+                this.grdKhasraJat.Columns["Area"].DisplayIndex = 4;
+                this.grdKhasraJat.Columns["KhataNo"].HeaderText = "کھاتہ نمبرز";
+                this.grdKhasraJat.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
+                this.grdKhasraJat.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                this.grdKhasraJat.Columns["Area"].HeaderText = "کل رقبہ";
+                this.grdKhasraJat.Columns["RegisterHqDKhataId"].Visible = false;
+                this.grdKhasraJat.Columns["KhatooniId"].Visible = false;
+                this.grdKhasraJat.Columns["Khassraid"].Visible = false;
+                grdKhasraJat.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+            }
                     }
 
         #endregion
@@ -201,19 +213,21 @@ namespace SDC_Application.AL
         {
                  DataTable Khattass=new DataTable();
                //this.PVPersonId=row.Cells["PVPersonRecId"].Value.ToString();
-                 Khattass = mnk.GetFardMalkanKFardPersonsDetail(fpgid);              
+                 Khattass = mnk.GetFardMalkanKFardPersonsDetail(fpgid);  
                 DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
-                //col.HeaderText = "انتخاب کریں";
-                //col.TrueValue = 1;
-                //col.FalseValue = 0;
-                //col.IndeterminateValue = 2;
-                //col.FillWeight = 25;
-                //col.Selected = false;
-                //col.Name = "chk";
-                ////col.CellType=chk;
-                //this.GridViewKhattajat.Columns.Add(col);
-
-                this.GridViewSaveMalikanName.DataSource = Khattass;
+            //col.HeaderText = "انتخاب کریں";
+            //col.TrueValue = 1;
+            //col.FalseValue = 0;
+            //col.IndeterminateValue = 2;
+            //col.FillWeight = 25;
+            //col.Selected = false;
+            //col.Name = "chk";
+            ////col.CellType=chk;
+            //this.GridViewKhattajat.Columns.Add(col);
+            this.GridViewSaveMalikanName.DataSource = Khattass;
+            if (Khattass != null)
+            {
+                
                 this.GridViewSaveMalikanName.Columns["DeleteMalikName"].DisplayIndex = 2;
                 this.GridViewSaveMalikanName.Columns["CompleteName"].DisplayIndex = 1;
                 this.GridViewSaveMalikanName.Columns["CompleteName"].HeaderText = "نام مالکان";
@@ -225,7 +239,7 @@ namespace SDC_Application.AL
                 this.GridViewSaveMalikanName.Columns["PVPersonKhataNos"].Visible = false;
                 GridViewSaveMalikanName.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
                 //DataGridView g = sender as DataGridView;
-
+            }
 
         }
 
@@ -282,12 +296,15 @@ namespace SDC_Application.AL
 
            
             this.gridviewMalikan.DataSource = SearchedAfradLis;
-            this.gridviewMalikan.Columns["PersonFullName"].HeaderText = "نام مالک";
-            this.gridviewMalikan.Columns["FamilyId"].Visible = false;
-            this.gridviewMalikan.Columns["ParentId"].Visible = false;
-            this.gridviewMalikan.Columns["PersonId"].Visible = false;
-            gridviewMalikan.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
-            // this.gridviewMalikan.Columns[""].HeaderText = "";
+            if (SearchedAfradLis != null)
+            {
+                this.gridviewMalikan.Columns["PersonFullName"].HeaderText = "نام مالک";
+                this.gridviewMalikan.Columns["FamilyId"].Visible = false;
+                this.gridviewMalikan.Columns["ParentId"].Visible = false;
+                this.gridviewMalikan.Columns["PersonId"].Visible = false;
+                gridviewMalikan.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+                // this.gridviewMalikan.Columns[""].HeaderText = "";
+            }
         }
 
         #endregion
@@ -413,18 +430,21 @@ namespace SDC_Application.AL
                 DataTable PersonKhattas = new DataTable();
                 PersonKhattas = searchPerson.GetMalikKhattasPersonDetails(FGID);
                 this.GridViewKhattajat_for_Token.DataSource = PersonKhattas;
+            if (PersonKhattas != null)
+            {
                 DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
-               
+
                 this.GridViewKhattajat_for_Token.Columns["KhataNo"].DisplayIndex = 1;
                 this.GridViewKhattajat_for_Token.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
                 this.GridViewKhattajat_for_Token.Columns["PVKhataRecId"].Visible = false;
                 this.GridViewKhattajat_for_Token.Columns["TehsilId"].Visible = false;
                 this.GridViewKhattajat_for_Token.Columns["PVPersonRecId"].Visible = false;
                 this.GridViewKhattajat_for_Token.Columns["PVKhataSeqNo"].Visible = false;
-                this.GridViewKhattajat_for_Token.Columns["PVKhataId"].Visible = false;              
-                this.GridViewKhattajat_for_Token.Columns["TotalParts"].Visible = false;               
+                this.GridViewKhattajat_for_Token.Columns["PVKhataId"].Visible = false;
+                this.GridViewKhattajat_for_Token.Columns["TotalParts"].Visible = false;
                 this.GridViewKhattajat_for_Token.Columns["Khata_Total_Area"].Visible = false;
                 GridViewKhattajat_for_Token.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+            }
     }
 
         public void GetSavedKhasraDetails(string FGID)
@@ -432,22 +452,25 @@ namespace SDC_Application.AL
             DataTable KhasraDetails = new DataTable();
             KhasraDetails = mnk.GetSavedKhasraDetails(FGID);
             this.grdShowSaveKhasraNo.DataSource = KhasraDetails;
-            this.grdShowSaveKhasraNo.Columns["KhassraNo"].DisplayIndex = 0;
-            this.grdShowSaveKhasraNo.Columns["KhatooniNo"].DisplayIndex = 2;
-            this.grdShowSaveKhasraNo.Columns["KhataNo"].DisplayIndex = 1;
-            this.grdShowSaveKhasraNo.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
-            this.grdShowSaveKhasraNo.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-            this.grdShowSaveKhasraNo.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-            this.grdShowSaveKhasraNo.Columns["FPGId"].Visible = false;
-            this.grdShowSaveKhasraNo.Columns["PVKhassraRecId"].Visible = false;
-            this.grdShowSaveKhasraNo.Columns["TokenId"].Visible = false;
-            this.grdShowSaveKhasraNo.Columns["KhataId"].Visible = false;
-           
-            this.grdShowSaveKhasraNo.Columns["KhatooniId"].Visible = false;
-            
-            this.grdShowSaveKhasraNo.Columns["PVKhassraSeqNo"].Visible = false;
-            this.grdShowSaveKhasraNo.Columns["PVKhassraId"].Visible = false;
-            grdShowSaveKhasraNo.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+            if (KhasraDetails != null)
+            {
+                this.grdShowSaveKhasraNo.Columns["KhassraNo"].DisplayIndex = 0;
+                this.grdShowSaveKhasraNo.Columns["KhatooniNo"].DisplayIndex = 2;
+                this.grdShowSaveKhasraNo.Columns["KhataNo"].DisplayIndex = 1;
+                this.grdShowSaveKhasraNo.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
+                this.grdShowSaveKhasraNo.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                this.grdShowSaveKhasraNo.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                this.grdShowSaveKhasraNo.Columns["FPGId"].Visible = false;
+                this.grdShowSaveKhasraNo.Columns["PVKhassraRecId"].Visible = false;
+                this.grdShowSaveKhasraNo.Columns["TokenId"].Visible = false;
+                this.grdShowSaveKhasraNo.Columns["KhataId"].Visible = false;
+
+                this.grdShowSaveKhasraNo.Columns["KhatooniId"].Visible = false;
+
+                this.grdShowSaveKhasraNo.Columns["PVKhassraSeqNo"].Visible = false;
+                this.grdShowSaveKhasraNo.Columns["PVKhassraId"].Visible = false;
+                grdShowSaveKhasraNo.ColumnHeadersDefaultCellStyle.Font = new Font("Alvi Nastaleeq", 14, GraphicsUnit.Point);
+            }
         }
 
         #endregion
@@ -1091,12 +1114,21 @@ namespace SDC_Application.AL
 
         private void btnShowKhattaReport_Click(object sender, EventArgs e)
         {
-            FardMalikan_Report Fard = new FardMalikan_Report();
-       
-            Fard.FormClosed -= new FormClosedEventHandler(Fard_FormClosed);
-            Fard.FormClosed += new FormClosedEventHandler(Fard_FormClosed);
-            Fard.TokenID = TokenId;
-            Fard.ShowDialog();
+            //FardMalikan_Report Fard = new FardMalikan_Report();
+
+            //Fard.FormClosed -= new FormClosedEventHandler(Fard_FormClosed);
+            //Fard.FormClosed += new FormClosedEventHandler(Fard_FormClosed);
+            //Fard.TokenID = TokenId;
+            //Fard.ShowDialog();
+            if (this.TokenId.Length > 0)
+            {
+                frmDetailFardReport fard = new frmDetailFardReport();
+                fard.TehsilId = UsersManagments._Tehsilid.ToString();
+                fard.MozaId = this.MozaId;
+                fard.TokenId = this.TokenId;
+                fard.currentUser = UsersManagments.UserName.ToString();
+                fard.ShowDialog();
+            }
         }
 
         private void Fard_FormClosed(object sender, FormClosedEventArgs e)

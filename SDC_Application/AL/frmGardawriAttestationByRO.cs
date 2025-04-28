@@ -16,13 +16,14 @@ using System.Dynamic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
+using SDC_Application.Classess;
 namespace SDC_Application.AL
 {
     public partial class frmGardawriAttestationByRO : Form
     {
         byte[] DeSerializee; 
         DPFP.Template Template = new DPFP.Template();
-       
+       APIClient client = new APIClient();
         public string FPTempByte
         { get; set; }
         public bool Btn 
@@ -71,7 +72,9 @@ namespace SDC_Application.AL
 
         private void FillROsCombo()
         {
-            dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_ROs " + Classess.UsersManagments._Tehsilid.ToString() + "," + SDC_Application.Classess.UsersManagments.SubSdcId.ToString());
+            List<RoGardwar> roGardwars = new List<RoGardwar>();
+            roGardwars = client.GetGardwar(UsersManagments._Tehsilid.ToString(), "0", UsersManagments.userToken, "T");
+            dt = RoGardwar.ToDataTable(roGardwars);
             if (dt != null)
             {
                 DataRow row = dt.NewRow();

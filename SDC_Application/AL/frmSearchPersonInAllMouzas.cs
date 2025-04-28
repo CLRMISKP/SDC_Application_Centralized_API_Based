@@ -88,15 +88,18 @@ namespace SDC_Application.AL
         {
             dt = intt.GetSearchedPersonListforAllMouzas(name, FatherName);
             this.dataGridView1.DataSource = dt;
-           // string personname = this.textBox1.Text.ToString();
-           // dt = intt.Proc_Get_Searched_Afrad_With_Family_Head("0", "");
-           // this.dataGridView1.DataSource = dt;
-            this.dataGridView1.Columns["CompleteName"].HeaderText = "نام";
-            this.dataGridView1.Columns["CNIC"].HeaderText ="شناختی کارڈ نمبر";
-            this.dataGridView1.Columns["Sakna"].HeaderText = "سکنہ ";
-            this.dataGridView1.Columns["Address"].HeaderText = "مکمل پتہ";
-            this.dataGridView1.Columns["MozaNameUrdu"].HeaderText = "موضع ";
-            this.dataGridView1.Columns["PersonId"].Visible = false;
+            if (dt != null)
+            {
+                // string personname = this.textBox1.Text.ToString();
+                // dt = intt.Proc_Get_Searched_Afrad_With_Family_Head("0", "");
+                // this.dataGridView1.DataSource = dt;
+                this.dataGridView1.Columns["CompleteName"].HeaderText = "نام";
+                this.dataGridView1.Columns["CNIC"].HeaderText = "شناختی کارڈ نمبر";
+                this.dataGridView1.Columns["Sakna"].HeaderText = "سکنہ ";
+                this.dataGridView1.Columns["Address"].HeaderText = "مکمل پتہ";
+                this.dataGridView1.Columns["MozaNameUrdu"].HeaderText = "موضع ";
+                this.dataGridView1.Columns["PersonId"].Visible = false;
+            }
         }
     }
 }

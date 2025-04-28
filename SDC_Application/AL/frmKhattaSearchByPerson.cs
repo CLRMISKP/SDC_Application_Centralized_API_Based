@@ -70,6 +70,8 @@ namespace SDC_Application.AL
         #region  DataGrid Filling
         public void PopulateGird()
         {
+            if(grdPersonKatajats.DataSource != null)
+            {
             this.grdPersonKatajats.Columns["KhataNo"].DisplayIndex = 0;
             grdPersonKatajats.Columns["Khata_Area"].DisplayIndex = 1;
             grdPersonKatajats.Columns["TotalParts"].DisplayIndex = 2;
@@ -90,6 +92,13 @@ namespace SDC_Application.AL
             grdPersonKatajats.RowHeadersDefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
             grdPersonKatajats.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             datagridcontrols.colorrbackgrid(grdPersonKatajats);
+            }
+            else
+            {
+                this.grdPersonKatajats.DataSource = null;
+                this.grdPersonKatajats.ColumnCount = 1;
+                this.grdPersonKatajats.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");
+            }
         }
         private string CalculateTotalKhatta()
         {
@@ -128,7 +137,7 @@ namespace SDC_Application.AL
             dataGridViewPersons.DataSource = null;
             dgKhewatFreeqDetails.DataSource = null;
             grdPersonKatajats.DataSource = null;
-            this.Persons.Clear();
+            if(this.Persons!=null) this.Persons.Clear();
             if ((txtVisitorName.Text.Trim() != "" || txtFatherName.Text.Trim() != "" ) && Convert.ToInt32(cmbMouza.SelectedValue) > 0) // search on moza and (name or father name)
             {
                 this.MozaID = cmbMouza.SelectedValue.ToString();
@@ -173,29 +182,32 @@ namespace SDC_Application.AL
 
         private void FillPersonGridview(DataTable datatable)
         {
-            if (datatable.Rows.Count > 0)
+            if (datatable != null)
             {
-                this.dataGridViewPersons.DataSource = datatable;
-                this.dataGridViewPersons.Columns["PersonFullName"].HeaderText = "نام مالک";
-                //this.dataGridViewPersons.Columns["FatherName"].HeaderText = "نام والد / شوہر";
-                this.dataGridViewPersons.Columns["PersonId"].Visible = false;
-                this.dataGridViewPersons.Columns["CNIC"].Visible = false;
-                this.dataGridViewPersons.Columns["MozaId"].Visible = false;
-                this.dataGridViewPersons.Columns["QoamId"].Visible = false;
-                this.dataGridViewPersons.Columns["PersonName"].Visible = false;
-                this.dataGridViewPersons.Columns["FatherName"].Visible = false;
-                
-                if (txtCNIC.Text.Trim().Length > 0)
+                if (datatable.Rows.Count > 0)
                 {
-                    this.dataGridViewPersons.Columns["CNIC"].Visible = true;
-                    this.dataGridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ";
-                    if(this.MozaID != "-1")
-                    {
-                        this.dataGridViewPersons.Columns["موضع"].Visible = false;
-                    }
-                  
-                }
+                    this.dataGridViewPersons.DataSource = datatable;
+                    this.dataGridViewPersons.Columns["PersonFullName"].HeaderText = "نام مالک";
+                    //this.dataGridViewPersons.Columns["FatherName"].HeaderText = "نام والد / شوہر";
+                    this.dataGridViewPersons.Columns["PersonId"].Visible = false;
+                    this.dataGridViewPersons.Columns["CNIC"].Visible = false;
+                    this.dataGridViewPersons.Columns["MozaId"].Visible = false;
+                    this.dataGridViewPersons.Columns["QoamId"].Visible = false;
+                    this.dataGridViewPersons.Columns["PersonName"].Visible = false;
+                    this.dataGridViewPersons.Columns["FatherName"].Visible = false;
 
+                    if (txtCNIC.Text.Trim().Length > 0)
+                    {
+                        this.dataGridViewPersons.Columns["CNIC"].Visible = true;
+                        this.dataGridViewPersons.Columns["CNIC"].HeaderText = "شناختی کارڈ";
+                        if (this.MozaID != "-1")
+                        {
+                            this.dataGridViewPersons.Columns["موضع"].Visible = false;
+                        }
+
+                    }
+
+                }
             }
         }
 
@@ -261,26 +273,29 @@ namespace SDC_Application.AL
             dtKhattas = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Person_KhataJats_WithLocks " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + "," + PersonId);
             //---------------------------------------
             this.grdPersonKatajats.DataSource = dtKhattas;
-            if (dtKhattas.Rows.Count > 0)
+            if (dtKhattas != null)
             {
-                grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-                grdPersonKatajats.Columns["TotalParts"].HeaderText = "کل حصے";
-                grdPersonKatajats.Columns["Khata_Area"].HeaderText = "کل رقبہ";
-                grdPersonKatajats.Columns["Malik_Area"].HeaderText = "مالک کا رقبہ";
-                //grdPersonKatajats.Columns["Tran_Fard"].HeaderText = "ٹرانزیکشنل فرد";
-               // grdPersonKatajats.Columns["Malik_Part"].HeaderText = "مالک کے حصے";
-                grdPersonKatajats.Columns["RecordLockedCon"].HeaderText = "موجودہ حالت";
-                grdPersonKatajats.Columns["RecordLockedDetails"].HeaderText = "لاک تفصیل";
-                grdPersonKatajats.Columns["RecordLockingDate"].HeaderText = "تاریخ لاک";
-                grdPersonKatajats.Columns["HissaDifference"].HeaderText = "حصص فرق";
-                grdPersonKatajats.Columns["RegisterHaqdaranId"].Visible = false;
-                grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
-                grdPersonKatajats.Columns["RecordLockedCon"].Visible = false;
-                grdPersonKatajats.Columns["Kanal"].Visible = false;
-                grdPersonKatajats.Columns["Marla"].Visible = false;
-                grdPersonKatajats.Columns["sarsai"].Visible = false;
-                grdPersonKatajats.Columns["RecordLocked"].Visible = false;
-                grdPersonKatajats.Columns["PersonId"].Visible = false;
+                if (dtKhattas.Rows.Count > 0)
+                {
+                    grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                    grdPersonKatajats.Columns["TotalParts"].HeaderText = "کل حصے";
+                    grdPersonKatajats.Columns["Khata_Area"].HeaderText = "کل رقبہ";
+                    grdPersonKatajats.Columns["Malik_Area"].HeaderText = "مالک کا رقبہ";
+                    //grdPersonKatajats.Columns["Tran_Fard"].HeaderText = "ٹرانزیکشنل فرد";
+                    // grdPersonKatajats.Columns["Malik_Part"].HeaderText = "مالک کے حصے";
+                    grdPersonKatajats.Columns["RecordLockedCon"].HeaderText = "موجودہ حالت";
+                    grdPersonKatajats.Columns["RecordLockedDetails"].HeaderText = "لاک تفصیل";
+                    grdPersonKatajats.Columns["RecordLockingDate"].HeaderText = "تاریخ لاک";
+                    grdPersonKatajats.Columns["HissaDifference"].HeaderText = "حصص فرق";
+                    grdPersonKatajats.Columns["RegisterHaqdaranId"].Visible = false;
+                    grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
+                    grdPersonKatajats.Columns["RecordLockedCon"].Visible = false;
+                    grdPersonKatajats.Columns["Kanal"].Visible = false;
+                    grdPersonKatajats.Columns["Marla"].Visible = false;
+                    grdPersonKatajats.Columns["sarsai"].Visible = false;
+                    grdPersonKatajats.Columns["RecordLocked"].Visible = false;
+                    grdPersonKatajats.Columns["PersonId"].Visible = false;
+                }
             }
             else
             {
@@ -289,16 +304,26 @@ namespace SDC_Application.AL
                 this.grdPersonKatajats.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");// this.grdPersonKatajats.Rows.Insert(0, "one", "two", "three", "four");
             }
             // Get Total Raqba
-            if (dtKhattas.Rows.Count > 0)
+            if (dtKhattas != null)
             {
-             
-              DataTable PersonTotalArea = new DataTable();
-              PersonTotalArea = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + "," + PersonId);
-              foreach (DataRow row in PersonTotalArea.Rows)
-              {
-                  txtTotalRaqba.Text = row["Fardarea"].ToString();
-                  
-              }
+                if (dtKhattas.Rows.Count > 0)
+                {
+
+                    DataTable PersonTotalArea = new DataTable();
+                    PersonTotalArea = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + "," + PersonId);
+                    if (PersonTotalArea != null)
+                    {
+                        foreach (DataRow row in PersonTotalArea.Rows)
+                        {
+                            txtTotalRaqba.Text = row["Fardarea"].ToString();
+
+                        }
+                    }
+                }
+                else
+                {
+                    txtTotalRaqba.Clear();
+                }
             }
             else
             {
@@ -349,26 +374,34 @@ namespace SDC_Application.AL
         {
             try
             {
-                dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-                dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
-                dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
-                dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-                dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
-                dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
-                dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
-                dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
-                dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
-                dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
-                dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
-                dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
-
+                if (dgKhewatFreeqDetails.DataSource != null)
+                {
+                    dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                    dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
+                    dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                    dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
+                    dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
+                    dgKhewatFreeqDetails.Columns["KhewatGroupFareeqId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatGroupId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
+                    dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
+                    dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
+                    dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
+                }
+                else
+                {
+                    this.dgKhewatFreeqDetails.DataSource = null;
+                    this.dgKhewatFreeqDetails.ColumnCount = 1;
+                    this.dgKhewatFreeqDetails.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");
+                }
             }
             catch (Exception ex)
             {
@@ -384,26 +417,34 @@ namespace SDC_Application.AL
         {
             try
             {
-                dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
-                dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
-                dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
-                dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
-                dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
-                dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
-                dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
-                dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
-                dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
-                dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
-                dgKhewatFreeqDetails.Columns["MushtriFareeqId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhatooniId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
-                dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
-                dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
-                dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
-                dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
-
+                if (dgKhewatFreeqDetails != null)
+                {
+                    dgKhewatFreeqDetails.Columns["FardAreaPart"].HeaderText = "حصہ";
+                    dgKhewatFreeqDetails.Columns["Khewat_Area"].HeaderText = "رقبہ";
+                    dgKhewatFreeqDetails.Columns["PersonName"].HeaderText = "نام مالک";
+                    dgKhewatFreeqDetails.Columns["TransactionType"].HeaderText = "زریعہ";
+                    dgKhewatFreeqDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+                    dgKhewatFreeqDetails.Columns["IntiqalId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["CNIC"].HeaderText = "شناختی نمبر";
+                    dgKhewatFreeqDetails.Columns["SellerBuyer"].HeaderText = "حیثیت";
+                    dgKhewatFreeqDetails.Columns["KhewatType"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["FardPart_Bata"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["seqno"].HeaderText = "نمبر شمار";
+                    dgKhewatFreeqDetails.Columns["MushtriFareeqId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhatooniId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["PersonId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["KhewatTypeId"].Visible = false;
+                    dgKhewatFreeqDetails.Columns["RecStatus"].HeaderText = "حالت";
+                    dgKhewatFreeqDetails.Columns["PersonName"].DisplayIndex = 2;
+                    dgKhewatFreeqDetails.Columns["TransactionType"].DisplayIndex = 3;
+                    dgKhewatFreeqDetails.Columns["seqno"].DisplayIndex = 1;
+                }
+                else
+                {
+                    this.dgKhewatFreeqDetails.DataSource = null;
+                    this.dgKhewatFreeqDetails.ColumnCount = 1;
+                    this.dgKhewatFreeqDetails.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");
+                }
             }
             catch (Exception ex)
             {
@@ -421,16 +462,22 @@ namespace SDC_Application.AL
             DataTable dtKhassras = new DataTable();
             dtKhassras = objBusiness.filldatatable_from_storedProcedure("Proc_Get_Person_Khassrajat " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + "," + PersonId);
             this.grdPersonKatajats.DataSource = dtKhassras;
-            if (dtKhassras.Rows.Count > 0)
+            if (dtKhassras != null)
             {
-                grdPersonKatajats.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
-                grdPersonKatajats.Columns["AreaType"].HeaderText = "قسم اراضی";
-                grdPersonKatajats.Columns["Khassra_Area"].HeaderText = "رقبہ";
-                grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-                grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-                grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
-                grdPersonKatajats.Columns["KhassraId"].Visible = false;
-                grdPersonKatajats.Columns["KhatooniId"].Visible = false;
+                if (dtKhassras.Rows.Count > 0)
+                {
+                    grdPersonKatajats.Columns["KhassraNo"].HeaderText = "خسرہ نمبر";
+                    grdPersonKatajats.Columns["AreaType"].HeaderText = "قسم اراضی";
+                    grdPersonKatajats.Columns["Khassra_Area"].HeaderText = "رقبہ";
+                    grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                    grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                    grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
+                    grdPersonKatajats.Columns["KhassraId"].Visible = false;
+                    grdPersonKatajats.Columns["KhatooniId"].Visible = false;
+                }
+                this.grdPersonKatajats.DataSource = null;
+                this.grdPersonKatajats.ColumnCount = 1;
+                this.grdPersonKatajats.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");// this.grdPersonKatajats.Rows.Insert(0, "one", "two", "three", "four");
             }
             else
             {
@@ -451,12 +498,14 @@ namespace SDC_Application.AL
             DataTable dtKhatoonies = new DataTable();
             dtKhatoonies = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_Person_Khatoonies " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + PID);
             this.grdPersonKatajats.DataSource = dtKhatoonies;
-            if (dtKhatoonies.Rows.Count > 0)
+            if (dtKhatoonies != null)
             {
-                //grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-                //grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-                //grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
-                //grdPersonKatajats.Columns["KhatooniId"].Visible = false;
+                if (dtKhatoonies.Rows.Count > 0)
+                {
+                    //grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                    //grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                    //grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
+                    //grdPersonKatajats.Columns["KhatooniId"].Visible = false;
 
 
 
@@ -464,41 +513,47 @@ namespace SDC_Application.AL
 
 
 
-                //grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
-                //grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
-                //grdPersonKatajats.Columns["Khatooni_Hissa"].HeaderText = "کل حصے";
-                //grdPersonKatajats.Columns["HissaDifference"].HeaderText = "حصص فرق";
-                //grdPersonKatajats.Columns["Khatooni_Area"].HeaderText = "کل رقبہ";
-                //grdPersonKatajats.Columns["RecordLockedDetails"].HeaderText = "لاک تفصیل";
-                //grdPersonKatajats.Columns["RecordLockingDate"].HeaderText = "تاریخ لاک";
-                grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
-                grdPersonKatajats.Columns["KhatooniId"].Visible = false;
-                grdPersonKatajats.Columns["PersonId"].Visible = false;
-               
+                    //grdPersonKatajats.Columns["KhataNo"].HeaderText = "کھاتہ نمبر";
+                    //grdPersonKatajats.Columns["KhatooniNo"].HeaderText = "کھتونی نمبر";
+                    //grdPersonKatajats.Columns["Khatooni_Hissa"].HeaderText = "کل حصے";
+                    //grdPersonKatajats.Columns["HissaDifference"].HeaderText = "حصص فرق";
+                    //grdPersonKatajats.Columns["Khatooni_Area"].HeaderText = "کل رقبہ";
+                    //grdPersonKatajats.Columns["RecordLockedDetails"].HeaderText = "لاک تفصیل";
+                    //grdPersonKatajats.Columns["RecordLockingDate"].HeaderText = "تاریخ لاک";
+                    grdPersonKatajats.Columns["RegisterHqDKhataId"].Visible = false;
+                    grdPersonKatajats.Columns["KhatooniId"].Visible = false;
+                    grdPersonKatajats.Columns["PersonId"].Visible = false;
+
+                }
+                else
+                {
+                    this.grdPersonKatajats.DataSource = null;
+                    this.grdPersonKatajats.ColumnCount = 1;
+                    this.grdPersonKatajats.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");// this.grdPersonKatajats.Rows.Insert(0, "one", "two", "three", "four");
+                }
+
+                // Get Total Raqba
+                if (dtKhatoonies.Rows.Count > 0)
+                {
+
+                    DataTable PersonTotalAreaKK = new DataTable();
+                    PersonTotalAreaKK = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId_KhanaKasht " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + "," + PID);
+                    foreach (DataRow row in PersonTotalAreaKK.Rows)
+                    {
+                        txtTotalRaqba.Text = row["Fardarea"].ToString();
+
+                    }
+                }
+                else
+                {
+                    txtTotalRaqba.Clear();
+                }
             }
             else
             {
                 this.grdPersonKatajats.DataSource = null;
                 this.grdPersonKatajats.ColumnCount = 1;
                 this.grdPersonKatajats.Rows.Add("انتخاب کردہ مالک کا کوئی ریکارڈ موجود نہیں");// this.grdPersonKatajats.Rows.Insert(0, "one", "two", "three", "four");
-            }
-
-
-            // Get Total Raqba
-            if (dtKhatoonies.Rows.Count > 0)
-            {
-              
-                DataTable PersonTotalAreaKK = new DataTable();
-                PersonTotalAreaKK = objBusiness.filldatatable_from_storedProcedure("Proc_Self_Get_TotalRaqba_By_PersonId_MozaId_KhanaKasht " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + this.MozaID + "," + PID);
-                foreach (DataRow row in PersonTotalAreaKK.Rows)
-                {
-                    txtTotalRaqba.Text = row["Fardarea"].ToString();
-
-                }
-            }
-            else
-            {
-                txtTotalRaqba.Clear();
             }
         }
 

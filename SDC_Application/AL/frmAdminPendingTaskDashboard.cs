@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using SDC_Application.Classess;
 using SDC_Application.BL;
 using SDC_Application.LanguageManager;
+using System.Globalization;
 
 namespace SDC_Application.AL
 {
@@ -31,6 +32,9 @@ namespace SDC_Application.AL
         DataView view;
         DataView viewMF;
         LanguageConverter lang = new LanguageConverter();
+        DataTable dtIntiqalListForAdminOps = new DataTable();
+        DataTable TokenList = new DataTable();
+        DataTable dtFbList = new DataTable();
         public string intiqalTypeId { get; set; }
 
         public frmAdminPendingTaskDashboard()
@@ -152,6 +156,8 @@ namespace SDC_Application.AL
                     else
                         dgAllPendingTasks.DataSource = null;
                 }
+                else
+                    dgAllPendingTasks.DataSource = null;
             }
             catch (Exception ex)
             {
@@ -257,6 +263,8 @@ namespace SDC_Application.AL
                     else
                         dgPendingMutations.DataSource = null;
                 }
+                else
+                    dgPendingMutations.DataSource = null;
             }
             catch (Exception ex)
             {
@@ -1060,6 +1068,308 @@ namespace SDC_Application.AL
                     e.KeyChar = lang.UrduChar(Convert.ToChar(e.KeyChar));
                 }
             }
+        }
+
+        private void btnLoadMouza_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                auto.FillCombo("Proc_Get_Moza_List " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + UsersManagments.SubSdcId.ToString(), cmbMouzaAdminOps, "MozaNameUrdu", "MozaId");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLoadIntiqal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbMouzaAdminOps.DataSource!=null)
+                {
+                    dtIntiqalListForAdminOps = null;
+                    dtIntiqalListForAdminOps = Iq.GetIntiqalListByMoza(cmbMouzaAdminOps.SelectedValue.ToString());
+                    if (dtIntiqalListForAdminOps != null)
+                    {
+                        cmbIntiqalAdminOps.DataSource = dtIntiqalListForAdminOps;
+                        cmbIntiqalAdminOps.ValueMember = "IntiqalId";
+                        cmbIntiqalAdminOps.DisplayMember = "IntiqalNo";
+                    }
+                }
+                else
+                    dtIntiqalListForAdminOps = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLoadFardbadar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbMouzaAdminOps.SelectedValue.ToString().Length > 2)
+                {
+                    dtFbList = null;
+                    dtFbList = Iq.GetFardbadarList(cmbMouzaAdminOps.SelectedValue.ToString());
+                    if (dtFbList != null)
+                    {
+                        cmbFardBadarAdminOps.DataSource = dtFbList;
+                        cmbFardBadarAdminOps.ValueMember = "FB_Id";
+                        cmbFardBadarAdminOps.DisplayMember = "FB_DocumentNo";
+                    }
+                }
+                else
+                    dtIntiqalListForAdminOps = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtpAdminOps_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                TokenList = Iq.GetTokenListByDate(dtpAdminOps.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), UsersManagments.SubSdcId.ToString());
+                if (TokenList != null)
+                {
+                    DataRow Token = TokenList.NewRow();
+                    Token["TokenId"] = "0";
+                    Token["TokenNo"] = " - ٹوکن نمبر - ";
+                    TokenList.Rows.InsertAt(Token, 0);
+                    cmbTokenAdminOps.DataSource = TokenList;
+                    cmbTokenAdminOps.DisplayMember = "TokenNo";
+                    cmbTokenAdminOps.ValueMember = "TokenId";
+                    cmbTokenAdminOps.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbIntiqalAdminOps_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            chkAmalshuda.Checked = false;
+            chkAttested.Checked = false;
+            chkOperatorConfirm.Checked = false;
+            chkCancelled.Checked = false;
+            chkPending.Checked = false;
+            if (dtIntiqalListForAdminOps != null)
+            {
+                foreach (DataRow row in dtIntiqalListForAdminOps.Rows)
+                {
+                    if (row["IntiqalId"].ToString() == cmbIntiqalAdminOps.SelectedValue.ToString())
+                    {
+                        chkAmalshuda.Checked = Convert.ToBoolean(row["AmalShoda"].ToString());
+                        chkAttested.Checked = Convert.ToBoolean(row["Attested"].ToString());
+                        chkOperatorConfirm.Checked = Convert.ToBoolean(row["Confirmed"].ToString());
+                        chkCancelled.Checked = Convert.ToBoolean(row["Cancelled"].ToString());
+                        chkPending.Checked = Convert.ToBoolean(row["IntiqalPending"].ToString());
+                    }
+                }
+            }
+        }
+
+        private void cmbTokenAdminOps_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            chkFardConfirm.Checked = false;
+            chkChalan.Checked = false;
+            chkReceipt.Checked = false;
+            if (TokenList != null)
+            {
+                foreach (DataRow row in TokenList.Rows)
+                {
+                    if (row["TokenId"].ToString() == cmbTokenAdminOps.SelectedValue.ToString() && cmbTokenAdminOps.SelectedValue.ToString() != "0")
+                    {
+                        chkFardConfirm.Checked = Convert.ToBoolean(row["isConfirmed"].ToString());
+                        chkChalan.Checked = Convert.ToBoolean(row["PvStatus"].ToString());
+                        chkReceipt.Checked = Convert.ToBoolean(row["RvStatus"].ToString());
+                    }
+                }
+            }
+        }
+
+        private void cmbFardBadarAdminOps_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            chkfbFinal.Checked = false;
+            chkFbAmalShoda.Checked = false;
+            if (dtFbList != null)
+            {
+                foreach (DataRow row in dtFbList.Rows)
+                {
+                    if (row["FB_Id"].ToString() == cmbFardBadarAdminOps.SelectedValue.ToString() && cmbFardBadarAdminOps.SelectedValue.ToString() != "0")
+                    {
+                        chkFbAmalShoda.Checked = Convert.ToBoolean(row["AmaldaramadStatus"].ToString());
+                        chkfbFinal.Checked = Convert.ToBoolean(row["ConfirmationStatus"].ToString());
+                        rbEFB.Checked = Convert.ToBoolean(row["isEFB"].ToString()); //isManualFb
+                        rbMFB.Checked = Convert.ToBoolean(row["isManualFb"].ToString());
+                    }
+                }
+            }
+        }
+
+        private string UpdateIntiqalOperations()
+        {
+            string lastId = "0";
+            if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ انتقال کی حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    lastId = Iq.UpdateIntiqalAdminOps(cmbIntiqalAdminOps.SelectedValue.ToString(), chkAttested.Checked ? "1" : "0", chkAmalshuda.Checked ? "1" : "0", chkOperatorConfirm.Checked ? "1" : "0", chkPending.Checked ? "1" : "0", chkCancelled.Checked ? "1" : "0");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return lastId;
+        }
+        private string UpdateFardatsOperations()
+        {
+            string lastId = "0";
+            if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ فرد کی حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    lastId = Iq.UpdateFardatsAdminOps(cmbTokenAdminOps.SelectedValue.ToString(), chkFardConfirm.Checked ? "1" : "0", chkChalan.Checked ? "1" : "0", chkReceipt.Checked ? "1" : "0");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return lastId;
+        }
+        private string UpdateFardBadratsOperations()
+        {
+            string lastId = "0";
+            if (DialogResult.Yes == MessageBox.Show("آپ انتخاب کردہ فرد بدر کی حیثیت تبدیل کرنا چاہتے ہیں ؟", " تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    lastId = Iq.UpdateFardBadratsAdminOps(cmbFardBadarAdminOps.SelectedValue.ToString(), chkfbFinal.Checked ? "1" : "0", chkFbAmalShoda.Checked ? "1" : "0", rbEFB.Checked ? "1" : "0", rbMFB.Checked ? "1" : "0");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return lastId;
+        }
+
+        private void chkOperatorConfirm_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateIntiqalOperations();
+            if (retVal != "0" && retVal!=null)
+               MessageBox.Show("انتقال  فائنل سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkAttested_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateIntiqalOperations();
+            if (retVal != "0" && retVal != null)
+               MessageBox.Show("انتقال  تصدیق شدہ سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkAmalshuda_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateIntiqalOperations();
+            if (retVal != "0" && retVal != null)
+             MessageBox.Show("انتقال  عمل شدہ سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkPending_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateIntiqalOperations();
+            if (retVal != "0" && retVal != null)
+             MessageBox.Show("انتقال  زیر التوا سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkCancelled_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateIntiqalOperations();
+            if (retVal != "0" && retVal != null)
+           MessageBox.Show("انتقال  خارج سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkFardConfirm_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardatsOperations();
+            if (retVal != "0" && retVal != null)
+            MessageBox.Show("فرد آپریٹر کنفرم سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkChalan_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardatsOperations();
+            if (retVal != "0" && retVal != null)
+           MessageBox.Show("فرد چالان سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkReceipt_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardatsOperations();
+            if (retVal != "0" && retVal != null)
+             MessageBox.Show("فرد رسید سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkfbFinal_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardBadratsOperations();
+            if (retVal != "0" && retVal != null)
+             MessageBox.Show("فرد بدر فائنل سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void chkFbAmalShoda_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardBadratsOperations();
+            if (retVal != "0" && retVal != null)
+              MessageBox.Show("فردبدر عمل شدہ سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+        }
+
+        private void rbEFB_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardBadratsOperations();
+            if (retVal != "0" && retVal != null)
+                            MessageBox.Show("فردبدر ای فرد بدر سٹیٹس آپڈیٹ ہو گیا ہے۔");
+           else
+                    MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
+         }
+
+        private void rbMFB_Click(object sender, EventArgs e)
+        {
+            string retVal = UpdateFardBadratsOperations();
+            if (retVal != "0" && retVal != null)
+                MessageBox.Show(" دستی فرد بدر سٹیٹس آپڈیٹ ہو گیا ہے۔");
+            else
+                MessageBox.Show(" مطلوبہ عمل مکمل نہیں ہو سکا۔");
         }
     }
 }

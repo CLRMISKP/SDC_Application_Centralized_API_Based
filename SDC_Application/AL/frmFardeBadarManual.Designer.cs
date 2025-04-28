@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,12 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -132,6 +129,7 @@
             this.gbKhewatGroupFareeq = new System.Windows.Forms.GroupBox();
             this.txtFbFareeqId = new System.Windows.Forms.TextBox();
             this.gbKhataMalikan = new System.Windows.Forms.GroupBox();
+            this.btnDeleteMalikAll = new System.Windows.Forms.Button();
             this.btnHissaRaqba = new System.Windows.Forms.Button();
             this.btnNewFbMalik = new System.Windows.Forms.Button();
             this.btnPersonSave = new System.Windows.Forms.Button();
@@ -499,7 +497,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exportToExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ttMisal = new System.Windows.Forms.ToolTip(this.components);
-            this.btnDeleteMalikAll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -690,7 +687,7 @@
             this.txtIntiqalNos.Size = new System.Drawing.Size(184, 30);
             this.txtIntiqalNos.TabIndex = 216;
             this.ttMisal.SetToolTip(this.txtIntiqalNos, "اگر فرد بدر میں انتقال کی حوالہ دینے کی ضرورت ہو تو انتقال نمبر درج کریں ۔ اگر ان" +
-                    "تقال ایک سے زدہ ہو تو کوما ڈال کر انتقالات درج کریں۔");
+        "تقال ایک سے زدہ ہو تو کوما ڈال کر انتقالات درج کریں۔");
             this.txtIntiqalNos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntiqalNos_KeyPress);
             // 
             // label125
@@ -710,7 +707,7 @@
             this.lblCancel.ForeColor = System.Drawing.Color.Red;
             this.lblCancel.Location = new System.Drawing.Point(190, 533);
             this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(24, 38);
+            this.lblCancel.Size = new System.Drawing.Size(22, 36);
             this.lblCancel.TabIndex = 214;
             this.lblCancel.Text = ".";
             // 
@@ -1060,8 +1057,8 @@
             // 
             this.dgFBKhatajat.AllowUserToAddRows = false;
             this.dgFBKhatajat.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgFBKhatajat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgFBKhatajat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFBKhatajat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFBKhatajat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1071,8 +1068,9 @@
             this.dgFBKhatajat.MultiSelect = false;
             this.dgFBKhatajat.Name = "dgFBKhatajat";
             this.dgFBKhatajat.ReadOnly = true;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgFBKhatajat.RowHeadersWidth = 51;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgFBKhatajat.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgFBKhatajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFBKhatajat.Size = new System.Drawing.Size(1243, 161);
             this.dgFBKhatajat.TabIndex = 1;
@@ -1082,6 +1080,7 @@
             // colKhataSel
             // 
             this.colKhataSel.HeaderText = "انتخاب کریں";
+            this.colKhataSel.MinimumWidth = 6;
             this.colKhataSel.Name = "colKhataSel";
             this.colKhataSel.ReadOnly = true;
             // 
@@ -1183,6 +1182,7 @@
             this.txtKafyat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtKafyat.Size = new System.Drawing.Size(441, 33);
             this.txtKafyat.TabIndex = 108;
+            this.txtKafyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
             // 
             // txtMalia
             // 
@@ -1589,43 +1589,20 @@
             // 
             this.GridViewKhewatMalikaan.AllowUserToAddRows = false;
             this.GridViewKhewatMalikaan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.AliceBlue;
-            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.AliceBlue;
+            this.GridViewKhewatMalikaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.GridViewKhewatMalikaan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridViewKhewatMalikaan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.GridViewKhewatMalikaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewKhewatMalikaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCheck});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridViewKhewatMalikaan.DefaultCellStyle = dataGridViewCellStyle20;
             this.GridViewKhewatMalikaan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewKhewatMalikaan.Location = new System.Drawing.Point(0, 0);
             this.GridViewKhewatMalikaan.MultiSelect = false;
             this.GridViewKhewatMalikaan.Name = "GridViewKhewatMalikaan";
             this.GridViewKhewatMalikaan.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridViewKhewatMalikaan.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.GridViewKhewatMalikaan.RowHeadersWidth = 51;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridViewKhewatMalikaan.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.GridViewKhewatMalikaan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GridViewKhewatMalikaan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridViewKhewatMalikaan.Size = new System.Drawing.Size(1235, 253);
@@ -1637,6 +1614,7 @@
             // ColCheck
             // 
             this.ColCheck.HeaderText = "انتخاب کریں";
+            this.ColCheck.MinimumWidth = 6;
             this.ColCheck.Name = "ColCheck";
             this.ColCheck.ReadOnly = true;
             // 
@@ -1749,6 +1727,19 @@
             this.gbKhataMalikan.TabIndex = 239;
             this.gbKhataMalikan.TabStop = false;
             // 
+            // btnDeleteMalikAll
+            // 
+            this.btnDeleteMalikAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteMalikAll.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteMalikAll.Location = new System.Drawing.Point(139, 19);
+            this.btnDeleteMalikAll.Name = "btnDeleteMalikAll";
+            this.btnDeleteMalikAll.Size = new System.Drawing.Size(123, 37);
+            this.btnDeleteMalikAll.TabIndex = 244;
+            this.btnDeleteMalikAll.TabStop = false;
+            this.btnDeleteMalikAll.Text = "تمام مالکان خذف کریں";
+            this.btnDeleteMalikAll.UseVisualStyleBackColor = true;
+            this.btnDeleteMalikAll.Click += new System.EventHandler(this.btnDeleteMalikAll_Click);
+            // 
             // btnHissaRaqba
             // 
             this.btnHissaRaqba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1833,6 +1824,7 @@
             this.cboQismMalikProp.Name = "cboQismMalikProp";
             this.cboQismMalikProp.Size = new System.Drawing.Size(121, 39);
             this.cboQismMalikProp.TabIndex = 230;
+            this.cboQismMalikProp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
             // 
             // label44
             // 
@@ -2319,6 +2311,7 @@
             this.gridViewKhassraAreaDetails.Name = "gridViewKhassraAreaDetails";
             this.gridViewKhassraAreaDetails.ReadOnly = true;
             this.gridViewKhassraAreaDetails.RowHeadersVisible = false;
+            this.gridViewKhassraAreaDetails.RowHeadersWidth = 51;
             this.gridViewKhassraAreaDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewKhassraAreaDetails.Size = new System.Drawing.Size(1245, 308);
             this.gridViewKhassraAreaDetails.TabIndex = 0;
@@ -2328,6 +2321,7 @@
             // ColCheckKhassra
             // 
             this.ColCheckKhassra.HeaderText = "انتخاب کریں";
+            this.ColCheckKhassra.MinimumWidth = 6;
             this.ColCheckKhassra.Name = "ColCheckKhassra";
             this.ColCheckKhassra.ReadOnly = true;
             // 
@@ -2795,8 +2789,8 @@
             // 
             this.gridviewKhatooniMeezan.AllowUserToAddRows = false;
             this.gridviewKhatooniMeezan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.AliceBlue;
+            this.gridviewKhatooniMeezan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.gridviewKhatooniMeezan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridviewKhatooniMeezan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewKhatooniMeezan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2806,8 +2800,9 @@
             this.gridviewKhatooniMeezan.MultiSelect = false;
             this.gridviewKhatooniMeezan.Name = "gridviewKhatooniMeezan";
             this.gridviewKhatooniMeezan.ReadOnly = true;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            this.gridviewKhatooniMeezan.RowHeadersWidth = 51;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridviewKhatooniMeezan.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.gridviewKhatooniMeezan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridviewKhatooniMeezan.Size = new System.Drawing.Size(1217, 267);
             this.gridviewKhatooniMeezan.TabIndex = 0;
@@ -2817,6 +2812,7 @@
             // colSelKhatooni
             // 
             this.colSelKhatooni.HeaderText = "انتخاب کریں";
+            this.colSelKhatooni.MinimumWidth = 6;
             this.colSelKhatooni.Name = "colSelKhatooni";
             this.colSelKhatooni.ReadOnly = true;
             // 
@@ -3343,8 +3339,8 @@
             // 
             this.dgMushteriFareeqain.AllowUserToAddRows = false;
             this.dgMushteriFareeqain.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMushteriFareeqain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgMushteriFareeqain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMushteriFareeqain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMushteriFareeqain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -3354,8 +3350,9 @@
             this.dgMushteriFareeqain.MultiSelect = false;
             this.dgMushteriFareeqain.Name = "dgMushteriFareeqain";
             this.dgMushteriFareeqain.ReadOnly = true;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgMushteriFareeqain.RowHeadersWidth = 51;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMushteriFareeqain.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgMushteriFareeqain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMushteriFareeqain.Size = new System.Drawing.Size(1217, 256);
             this.dgMushteriFareeqain.TabIndex = 0;
@@ -3365,6 +3362,7 @@
             // ColSelMushteri
             // 
             this.ColSelMushteri.HeaderText = "انتخاب کریں";
+            this.ColSelMushteri.MinimumWidth = 6;
             this.ColSelMushteri.Name = "ColSelMushteri";
             this.ColSelMushteri.ReadOnly = true;
             // 
@@ -3942,6 +3940,7 @@
             this.dgKhatooniBayanFb.Name = "dgKhatooniBayanFb";
             this.dgKhatooniBayanFb.ReadOnly = true;
             this.dgKhatooniBayanFb.RowHeadersVisible = false;
+            this.dgKhatooniBayanFb.RowHeadersWidth = 51;
             this.dgKhatooniBayanFb.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniBayanFb.Size = new System.Drawing.Size(1225, 136);
             this.dgKhatooniBayanFb.TabIndex = 5;
@@ -3950,6 +3949,7 @@
             // ColSelBayanEdit
             // 
             this.ColSelBayanEdit.HeaderText = "انتخاب کریں";
+            this.ColSelBayanEdit.MinimumWidth = 6;
             this.ColSelBayanEdit.Name = "ColSelBayanEdit";
             this.ColSelBayanEdit.ReadOnly = true;
             // 
@@ -3977,6 +3977,7 @@
             this.dgKhatooniBayan.Name = "dgKhatooniBayan";
             this.dgKhatooniBayan.ReadOnly = true;
             this.dgKhatooniBayan.RowHeadersVisible = false;
+            this.dgKhatooniBayan.RowHeadersWidth = 51;
             this.dgKhatooniBayan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniBayan.Size = new System.Drawing.Size(1225, 166);
             this.dgKhatooniBayan.TabIndex = 2;
@@ -3985,6 +3986,7 @@
             // ColSelBayan
             // 
             this.ColSelBayan.HeaderText = "انتخاب کریں";
+            this.ColSelBayan.MinimumWidth = 6;
             this.ColSelBayan.Name = "ColSelBayan";
             this.ColSelBayan.ReadOnly = true;
             // 
@@ -4383,6 +4385,7 @@
             this.dgFBAfrad.Name = "dgFBAfrad";
             this.dgFBAfrad.ReadOnly = true;
             this.dgFBAfrad.RowHeadersVisible = false;
+            this.dgFBAfrad.RowHeadersWidth = 51;
             this.dgFBAfrad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFBAfrad.Size = new System.Drawing.Size(1247, 322);
             this.dgFBAfrad.StandardTab = true;
@@ -4392,6 +4395,7 @@
             // ColSelPerson
             // 
             this.ColSelPerson.HeaderText = "انتخاب کریں";
+            this.ColSelPerson.MinimumWidth = 6;
             this.ColSelPerson.Name = "ColSelPerson";
             this.ColSelPerson.ReadOnly = true;
             // 
@@ -4780,8 +4784,8 @@
             // 
             this.DgMinKhataList.AllowUserToAddRows = false;
             this.DgMinKhataList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.AliceBlue;
-            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.AliceBlue;
+            this.DgMinKhataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.DgMinKhataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMinKhataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMinKhataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -4791,8 +4795,9 @@
             this.DgMinKhataList.MultiSelect = false;
             this.DgMinKhataList.Name = "DgMinKhataList";
             this.DgMinKhataList.ReadOnly = true;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            this.DgMinKhataList.RowHeadersWidth = 51;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgMinKhataList.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.DgMinKhataList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgMinKhataList.Size = new System.Drawing.Size(1223, 223);
             this.DgMinKhataList.TabIndex = 1;
@@ -4802,6 +4807,7 @@
             // dataGridViewCheckBoxColumn2
             // 
             this.dataGridViewCheckBoxColumn2.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             this.dataGridViewCheckBoxColumn2.ReadOnly = true;
             // 
@@ -5125,8 +5131,8 @@
             // 
             this.dgMinKhataMalkan.AllowUserToAddRows = false;
             this.dgMinKhataMalkan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.AliceBlue;
-            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.AliceBlue;
+            this.dgMinKhataMalkan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dgMinKhataMalkan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgMinKhataMalkan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMinKhataMalkan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -5136,8 +5142,9 @@
             this.dgMinKhataMalkan.MultiSelect = false;
             this.dgMinKhataMalkan.Name = "dgMinKhataMalkan";
             this.dgMinKhataMalkan.ReadOnly = true;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            this.dgMinKhataMalkan.RowHeadersWidth = 51;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMinKhataMalkan.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgMinKhataMalkan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMinKhataMalkan.Size = new System.Drawing.Size(1215, 236);
             this.dgMinKhataMalkan.TabIndex = 0;
@@ -5148,6 +5155,7 @@
             // dataGridViewCheckBoxColumn3
             // 
             this.dataGridViewCheckBoxColumn3.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn3.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             this.dataGridViewCheckBoxColumn3.ReadOnly = true;
             // 
@@ -5494,6 +5502,7 @@
             this.grdGetkhatonichange.Location = new System.Drawing.Point(3, 35);
             this.grdGetkhatonichange.Name = "grdGetkhatonichange";
             this.grdGetkhatonichange.ReadOnly = true;
+            this.grdGetkhatonichange.RowHeadersWidth = 51;
             this.grdGetkhatonichange.RowTemplate.Height = 30;
             this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdGetkhatonichange.Size = new System.Drawing.Size(1229, 194);
@@ -5503,6 +5512,7 @@
             // chkkk
             // 
             this.chkkk.HeaderText = "انتخاب کریں";
+            this.chkkk.MinimumWidth = 6;
             this.chkkk.Name = "chkkk";
             this.chkkk.ReadOnly = true;
             // 
@@ -5725,6 +5735,7 @@
             this.dgMinKhataKhassraJat.Location = new System.Drawing.Point(3, 35);
             this.dgMinKhataKhassraJat.Name = "dgMinKhataKhassraJat";
             this.dgMinKhataKhassraJat.ReadOnly = true;
+            this.dgMinKhataKhassraJat.RowHeadersWidth = 51;
             this.dgMinKhataKhassraJat.RowTemplate.Height = 30;
             this.dgMinKhataKhassraJat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMinKhataKhassraJat.Size = new System.Drawing.Size(1229, 227);
@@ -5734,6 +5745,7 @@
             // dataGridViewCheckBoxColumn4
             // 
             this.dataGridViewCheckBoxColumn4.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn4.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.ReadOnly = true;
             // 
@@ -5781,6 +5793,7 @@
             this.cmbMinKhewattypes.Name = "cmbMinKhewattypes";
             this.cmbMinKhewattypes.Size = new System.Drawing.Size(191, 39);
             this.cmbMinKhewattypes.TabIndex = 10004;
+            this.cmbMinKhewattypes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSearch_KeyPress);
             // 
             // label101
             // 
@@ -6003,6 +6016,7 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToExcelToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -6014,19 +6028,6 @@
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
             this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
             this.exportToExcelToolStripMenuItem.Text = "Export To Excel";
-            // 
-            // btnDeleteMalikAll
-            // 
-            this.btnDeleteMalikAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteMalikAll.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMalikAll.Location = new System.Drawing.Point(139, 19);
-            this.btnDeleteMalikAll.Name = "btnDeleteMalikAll";
-            this.btnDeleteMalikAll.Size = new System.Drawing.Size(123, 37);
-            this.btnDeleteMalikAll.TabIndex = 244;
-            this.btnDeleteMalikAll.TabStop = false;
-            this.btnDeleteMalikAll.Text = "تمام مالکان خذف کریں";
-            this.btnDeleteMalikAll.UseVisualStyleBackColor = true;
-            this.btnDeleteMalikAll.Click += new System.EventHandler(this.btnDeleteMalikAll_Click);
             // 
             // frmFardeBadarManual
             // 

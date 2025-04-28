@@ -16,6 +16,7 @@ using System.Dynamic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
+using SDC_Application.Classess;
 namespace SDC_Application.AL
 {
     public partial class frmIntiqalAttestationByGardawar : Form
@@ -38,7 +39,7 @@ namespace SDC_Application.AL
         public string tokenId { get; set; }
         public string gardawarId = "";
         public bool AttStatus { get; set; }
-
+        APIClient client = new APIClient();
 
         public frmIntiqalAttestationByGardawar()
         {
@@ -74,7 +75,21 @@ namespace SDC_Application.AL
 
         private void FillROsCombo()
         {
-            dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_Girdawars " +  Classess.UsersManagments._Tehsilid.ToString());
+            //dt = ObjDB.filldatatable_from_storedProcedure("Proc_Get_Girdawars " +  Classess.UsersManagments._Tehsilid.ToString());
+            //if (dt != null)
+            //{
+            //    DataRow row = dt.NewRow();
+            //    row["UserId"] = "0";
+            //    row["CompleteName"] = "--انتخاب کریں--";
+            //    dt.Rows.InsertAt(row, 0);
+            //    cboROs.DataSource = dt;
+            //    cboROs.DisplayMember = "CompleteName";
+            //    cboROs.ValueMember = "UserId";
+            //    cboROs.SelectedValue = 0;
+            //}
+            List<RoGardwar> roGardwars = new List<RoGardwar>();
+            roGardwars = client.GetGardwar(UsersManagments._Tehsilid.ToString(), "0", UsersManagments.userToken, "G");
+            dt = RoGardwar.ToDataTable(roGardwars);
             if (dt != null)
             {
                 DataRow row = dt.NewRow();

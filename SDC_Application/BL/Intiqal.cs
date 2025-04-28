@@ -1926,5 +1926,41 @@ namespace SDC_Application.BL
             }
 
         #endregion
+
+        #region Admin Dashboard Operations
+        public DataTable GetIntiqalListByMoza(string MouzaId)
+        {
+            DataTable dt = dbobject.filldatatable_from_storedProcedure("proc_Get_Intiqal_List_By_MozaId " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + "," + MouzaId);
+            return dt;
+        }
+
+        public DataTable GetFardbadarList(string MozaId)
+        {
+            string spWithParam = "Proc_Get_FardBadar_List_By_MozaId " + Classess.UsersManagments._Tehsilid.ToString() + "," + MozaId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+
+        public DataTable GetTokenListByDate(string dateToken, string SubSdcId)
+        {
+            string spWithParam = "Proc_Get_Token_List_By_Date " + Classess.UsersManagments._Tehsilid.ToString() + ",'" + dateToken + "'," + SubSdcId;
+            return dbobject.filldatatable_from_storedProcedure(spWithParam);
+        }
+
+        public string UpdateIntiqalAdminOps(string intiqalId, string attested, string Amal, string confirm, string pending, string cancel)
+        {
+            string spWithParam = "WEB_SP_Update_Intiqal_AdminOps " + Classess.UsersManagments._Tehsilid.ToString() + "," + intiqalId + "," + attested + "," + Amal + "," + confirm + "," + pending + "," + cancel;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string UpdateFardatsAdminOps(string TokenId, string OpFinal, string PvmStatus, string RvmStatus)
+        {
+            string spWithParam = "WEB_SP_Update_Fardat_AdminOps " + Classess.UsersManagments._Tehsilid.ToString() + "," + TokenId + "," + OpFinal + "," + PvmStatus + "," + RvmStatus;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        public string UpdateFardBadratsAdminOps(string Fb_Id, string OpFinal, string amal, string eFb, string mFb)
+        {
+            string spWithParam = "WEB_SP_Update_FardBadrat_AdminOps " + Classess.UsersManagments._Tehsilid.ToString() + "," + Fb_Id + "," + OpFinal + "," + amal + "," + eFb + "," + mFb;
+            return dbobject.ExecInsertUpdateStoredProcedure(spWithParam);
+        }
+        #endregion
     }
-    }
+}

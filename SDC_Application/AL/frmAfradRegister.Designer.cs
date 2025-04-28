@@ -458,6 +458,7 @@
             this.btnSearchH.Size = new System.Drawing.Size(45, 35);
             this.btnSearchH.TabIndex = 102;
             this.btnSearchH.UseVisualStyleBackColor = true;
+            this.btnSearchH.Click += new System.EventHandler(this.btnSearchH_Click);
             // 
             // btnLoadShajra
             // 
@@ -1641,6 +1642,7 @@
             this.btnSearchHP.Size = new System.Drawing.Size(45, 35);
             this.btnSearchHP.TabIndex = 98;
             this.btnSearchHP.UseVisualStyleBackColor = true;
+            this.btnSearchHP.Click += new System.EventHandler(this.btnSearchHP_Click);
             // 
             // label2
             // 
@@ -2096,6 +2098,7 @@
             this.btnSearchM.Size = new System.Drawing.Size(45, 35);
             this.btnSearchM.TabIndex = 100;
             this.btnSearchM.UseVisualStyleBackColor = true;
+            this.btnSearchM.Click += new System.EventHandler(this.btnSearchM_Click);
             // 
             // label4
             // 

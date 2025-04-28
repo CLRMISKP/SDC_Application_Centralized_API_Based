@@ -82,6 +82,7 @@ namespace SDC_Application.AL
 
         private void AddColumnsToGrid()
         {
+
             GridViewMalikanSelect.Columns.Add("CompleteName", "مالک کا نام");
             GridViewMalikanSelect.Columns["CompleteName"].DisplayIndex = 1;
             GridViewMalikanSelect.Columns["colRemove"].DisplayIndex = 0;
@@ -162,22 +163,25 @@ namespace SDC_Application.AL
                 string KhataId = this.KhataId != "" ? this.KhataId : "0";
                 malikan = inteq.GetIntiqalMinMalikanList(KhataId, this.MalikanType, this.IntiqalId); //client.GetKhewatMalikanByKhataId(khataid).ToList();
                 GridViewMalikan.DataSource = malikan;
-                GridViewMalikan.Columns["CompleteName"].HeaderText = "نام مالک"; 
-                GridViewMalikan.Columns["PersonId"].Visible = false;
-                GridViewMalikan.Columns["Kanal"].Visible = false;
-                GridViewMalikan.Columns["marla"].Visible = false;
-                GridViewMalikan.Columns["sarsai"].Visible = false;
-                GridViewMalikan.Columns["Feet"].Visible = false;
-                GridViewMalikan.Columns["Area"].Visible = false;
-                GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
-                GridViewMalikan.Columns["KhewatType"].Visible = false;
-                GridViewMalikan.Columns["PersonType"].Visible = false;
-                GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible = false;
-                GridViewMalikan.Columns["FardAreaPart"].Visible = false;
-                GridViewMalikan.Columns["KhewatGroupId"].Visible = false;
-                GridViewMalikan.Columns["RegisterHqDKhataId"].Visible = false;
-                GridViewMalikan.Columns["MushtriFareeqID"].Visible = false;
-                GridViewMalikan.Columns["IntiqalKhatooniRecId"].Visible = false;
+                if (malikan != null)
+                {
+                    GridViewMalikan.Columns["CompleteName"].HeaderText = "نام مالک";
+                    GridViewMalikan.Columns["PersonId"].Visible = false;
+                    GridViewMalikan.Columns["Kanal"].Visible = false;
+                    GridViewMalikan.Columns["marla"].Visible = false;
+                    GridViewMalikan.Columns["sarsai"].Visible = false;
+                    GridViewMalikan.Columns["Feet"].Visible = false;
+                    GridViewMalikan.Columns["Area"].Visible = false;
+                    GridViewMalikan.Columns["KhewatTypeId"].Visible = false;
+                    GridViewMalikan.Columns["KhewatType"].Visible = false;
+                    GridViewMalikan.Columns["PersonType"].Visible = false;
+                    GridViewMalikan.Columns["KhewatGroupFareeqId"].Visible = false;
+                    GridViewMalikan.Columns["FardAreaPart"].Visible = false;
+                    GridViewMalikan.Columns["KhewatGroupId"].Visible = false;
+                    GridViewMalikan.Columns["RegisterHqDKhataId"].Visible = false;
+                    GridViewMalikan.Columns["MushtriFareeqID"].Visible = false;
+                    GridViewMalikan.Columns["IntiqalKhatooniRecId"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -208,34 +212,37 @@ namespace SDC_Application.AL
 
         public void gridfill()
         {
-            foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
+            if (GridViewMalikan.DataSource != null)
             {
-
-                if (row.Cells[0].Value != null)
+                foreach (DataGridViewRow row in this.GridViewMalikan.Rows)
                 {
-                    if ((Boolean)row.Cells[0].Value)
+
+                    if (row.Cells[0].Value != null)
                     {
-                        int rowcount = GridViewMalikanSelect.Rows.Count;
+                        if ((Boolean)row.Cells[0].Value)
+                        {
+                            int rowcount = GridViewMalikanSelect.Rows.Count;
 
-                        GridViewMalikanSelect.Rows.Add();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["CompleteName"].Value = row.Cells["CompleteName"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["Kanal"].Value = row.Cells["Kanal"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["marla"].Value = row.Cells["marla"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["sarsai"].Value = row.Cells["sarsai"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["Feet"].Value = row.Cells["Feet"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["Area"].Value = row.Cells["Area"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatTypeId"].Value = row.Cells["KhewatTypeId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatType"].Value = row.Cells["KhewatType"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["PersonType"].Value = row.Cells["PersonType"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupFareeqId"].Value = row.Cells["KhewatGroupFareeqId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["FardAreaPart"].Value = row.Cells["FardAreaPart"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupId"].Value = row.Cells["KhewatGroupId"].Value.ToString();
-                        GridViewMalikanSelect.Rows[rowcount].Cells["RegisterHqDKhataId"].Value = row.Cells["RegisterHqDKhataId"].Value.ToString();
+                            GridViewMalikanSelect.Rows.Add();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["PersonId"].Value = row.Cells["PersonId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["CompleteName"].Value = row.Cells["CompleteName"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["Kanal"].Value = row.Cells["Kanal"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["marla"].Value = row.Cells["marla"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["sarsai"].Value = row.Cells["sarsai"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["Feet"].Value = row.Cells["Feet"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["Area"].Value = row.Cells["Area"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatTypeId"].Value = row.Cells["KhewatTypeId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatType"].Value = row.Cells["KhewatType"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["PersonType"].Value = row.Cells["PersonType"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupFareeqId"].Value = row.Cells["KhewatGroupFareeqId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["FardAreaPart"].Value = row.Cells["FardAreaPart"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["KhewatGroupId"].Value = row.Cells["KhewatGroupId"].Value.ToString();
+                            GridViewMalikanSelect.Rows[rowcount].Cells["RegisterHqDKhataId"].Value = row.Cells["RegisterHqDKhataId"].Value.ToString();
 
+                        }
                     }
-                }
 
+                }
             }
 
             removeFromGridDuplicate(GridViewMalikanSelect);

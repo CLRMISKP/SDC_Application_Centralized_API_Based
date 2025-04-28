@@ -42,7 +42,7 @@
     <MinimumRequiredVersion>3.0.2.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>26</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -231,6 +231,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AL\frmDetailFardReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AL\frmDetailFardReport.Designer.cs">
+      <DependentUpon>frmDetailFardReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="AL\frmIntiqalRemoveFPorEnableCancel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -530,12 +536,6 @@
     </Compile>
     <Compile Include="AL\frmIntiqalCancellationByRO.Designer.cs">
       <DependentUpon>frmIntiqalCancellationByRO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AL\frmAfradRegisterWIthSplitNames.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AL\frmAfradRegisterWIthSplitNames.Designer.cs">
-      <DependentUpon>frmAfradRegisterWIthSplitNames.cs</DependentUpon>
     </Compile>
     <Compile Include="AL\frmDocReceiving.cs">
       <SubType>Form</SubType>
@@ -1295,6 +1295,9 @@
     <Compile Include="TestGridCSV_Helpter.Designer.cs">
       <DependentUpon>TestGridCSV_Helpter.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AL\frmDetailFardReport.resx">
+      <DependentUpon>frmDetailFardReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalRemoveFPorEnableCancel.resx">
       <DependentUpon>frmIntiqalRemoveFPorEnableCancel.cs</DependentUpon>
     </EmbeddedResource>
@@ -1445,9 +1448,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmIntiqalCancellationByRO.resx">
       <DependentUpon>frmIntiqalCancellationByRO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AL\frmAfradRegisterWIthSplitNames.resx">
-      <DependentUpon>frmAfradRegisterWIthSplitNames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AL\frmDocReceiving.resx">
       <DependentUpon>frmDocReceiving.cs</DependentUpon>
