@@ -455,6 +455,8 @@ namespace SDC_Application.AL
             this.grdGetkhatonichange = new System.Windows.Forms.DataGridView();
             this.chkkk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtSearchKhatooni = new System.Windows.Forms.TextBox();
             this.btnAutoSaveKhatooniKhassras = new System.Windows.Forms.Button();
             this.btnMusheryanFromKhatooni = new System.Windows.Forms.Button();
             this.btnGetkhatoni = new System.Windows.Forms.Button();
@@ -588,8 +590,6 @@ namespace SDC_Application.AL
             this.label146 = new System.Windows.Forms.Label();
             this.txtSearchComp = new System.Windows.Forms.TextBox();
             this.toolTipIntiqalKhatta = new System.Windows.Forms.ToolTip(this.components);
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtSearchKhatooni = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -893,6 +893,7 @@ namespace SDC_Application.AL
             // dataGridViewCheckBoxColumn2
             // 
             this.dataGridViewCheckBoxColumn2.HeaderText = "انتخاب کریں";
+            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             this.dataGridViewCheckBoxColumn2.ReadOnly = true;
             // 
@@ -1020,6 +1021,7 @@ namespace SDC_Application.AL
             // ColSelKhassra
             // 
             this.ColSelKhassra.HeaderText = "انتخاب کریں";
+            this.ColSelKhassra.MinimumWidth = 6;
             this.ColSelKhassra.Name = "ColSelKhassra";
             this.ColSelKhassra.ReadOnly = true;
             // 
@@ -1348,6 +1350,7 @@ namespace SDC_Application.AL
             // chkkhatoni
             // 
             this.chkkhatoni.HeaderText = "انتخاب کریں";
+            this.chkkhatoni.MinimumWidth = 6;
             this.chkkhatoni.Name = "chkkhatoni";
             this.chkkhatoni.ReadOnly = true;
             // 
@@ -1398,6 +1401,7 @@ namespace SDC_Application.AL
             this.GridViewInteqalKhattas.Name = "GridViewInteqalKhattas";
             this.GridViewInteqalKhattas.ReadOnly = true;
             this.GridViewInteqalKhattas.RowHeadersVisible = false;
+            this.GridViewInteqalKhattas.RowHeadersWidth = 51;
             this.GridViewInteqalKhattas.RowTemplate.Height = 30;
             this.GridViewInteqalKhattas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridViewInteqalKhattas.Size = new System.Drawing.Size(582, 361);
@@ -1409,6 +1413,7 @@ namespace SDC_Application.AL
             // colChoose
             // 
             this.colChoose.HeaderText = "انتخاب کریں";
+            this.colChoose.MinimumWidth = 6;
             this.colChoose.Name = "colChoose";
             this.colChoose.ReadOnly = true;
             // 
@@ -1416,6 +1421,7 @@ namespace SDC_Application.AL
             // 
             this.KhataNo.DataPropertyName = "KhataNo";
             this.KhataNo.HeaderText = "کھاتہ نمبر";
+            this.KhataNo.MinimumWidth = 6;
             this.KhataNo.Name = "KhataNo";
             this.KhataNo.ReadOnly = true;
             // 
@@ -1423,6 +1429,7 @@ namespace SDC_Application.AL
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Khata_TotalParts";
             this.dataGridViewTextBoxColumn6.HeaderText = "کل حصے";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
@@ -1430,12 +1437,14 @@ namespace SDC_Application.AL
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Khata_Area";
             this.dataGridViewTextBoxColumn7.HeaderText = "کل رقبہ";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // Sellers
             // 
             this.Sellers.HeaderText = "بائعان/دہندہ گان";
+            this.Sellers.MinimumWidth = 6;
             this.Sellers.Name = "Sellers";
             this.Sellers.ReadOnly = true;
             this.Sellers.Text = "بائعان/دہندہ گان";
@@ -1445,6 +1454,7 @@ namespace SDC_Application.AL
             // Buyers
             // 
             this.Buyers.HeaderText = "مشتریان/گریندہ گان";
+            this.Buyers.MinimumWidth = 6;
             this.Buyers.Name = "Buyers";
             this.Buyers.ReadOnly = true;
             this.Buyers.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1585,8 +1595,8 @@ namespace SDC_Application.AL
             this.btnLoadKhatajat.TabStop = false;
             this.btnLoadKhatajat.Text = "لوڈ کھاتہ جات";
             this.toolTipIntiqalKhatta.SetToolTip(this.btnLoadKhatajat, "وراثت یا کسی اور قسم انتقال جسمیں بائعے کا زیادہ کھاتاجات میں اندراج مطلوب ہو، تو" +
-                    " یہ بٹن استعمال کریں۔ اور مالک تلاش کرکے سارے یا مطلوبہ کھاتاجات کا انتخاب کریں۔" +
-                    " کھاتہ اور بائعا دونوں محفوظ ہو جائنگے۔");
+        " یہ بٹن استعمال کریں۔ اور مالک تلاش کرکے سارے یا مطلوبہ کھاتاجات کا انتخاب کریں۔" +
+        " کھاتہ اور بائعا دونوں محفوظ ہو جائنگے۔");
             this.btnLoadKhatajat.UseVisualStyleBackColor = true;
             this.btnLoadKhatajat.Click += new System.EventHandler(this.btnLoadKhatajat_Click);
             // 
@@ -1659,6 +1669,8 @@ namespace SDC_Application.AL
             // cbokhataNo
             // 
             this.cbokhataNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbokhataNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbokhataNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbokhataNo.DisplayMember = "KhataNo";
             this.cbokhataNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbokhataNo.FormattingEnabled = true;
@@ -1764,6 +1776,7 @@ namespace SDC_Application.AL
             this.GridSellerList.Name = "GridSellerList";
             this.GridSellerList.ReadOnly = true;
             this.GridSellerList.RowHeadersVisible = false;
+            this.GridSellerList.RowHeadersWidth = 51;
             this.GridSellerList.RowTemplate.Height = 30;
             this.GridSellerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridSellerList.Size = new System.Drawing.Size(1451, 323);
@@ -1775,6 +1788,7 @@ namespace SDC_Application.AL
             // checkListNew
             // 
             this.checkListNew.HeaderText = "انتخاب کریں";
+            this.checkListNew.MinimumWidth = 6;
             this.checkListNew.Name = "checkListNew";
             this.checkListNew.ReadOnly = true;
             // 
@@ -1782,6 +1796,7 @@ namespace SDC_Application.AL
             // 
             this.colMutwafiKhataJat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colMutwafiKhataJat.HeaderText = "متوفی/متوفیہ کے ملکیتی کھاتہ جات";
+            this.colMutwafiKhataJat.MinimumWidth = 6;
             this.colMutwafiKhataJat.Name = "colMutwafiKhataJat";
             this.colMutwafiKhataJat.ReadOnly = true;
             this.colMutwafiKhataJat.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -2080,6 +2095,7 @@ namespace SDC_Application.AL
             this.GridSellersList.Name = "GridSellersList";
             this.GridSellersList.ReadOnly = true;
             this.GridSellersList.RowHeadersVisible = false;
+            this.GridSellersList.RowHeadersWidth = 51;
             this.GridSellersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridSellersList.Size = new System.Drawing.Size(1451, 14);
             this.GridSellersList.TabIndex = 6;
@@ -2088,6 +2104,7 @@ namespace SDC_Application.AL
             // chkColumnforGrid
             // 
             this.chkColumnforGrid.HeaderText = "انتخاب کریں";
+            this.chkColumnforGrid.MinimumWidth = 6;
             this.chkColumnforGrid.Name = "chkColumnforGrid";
             this.chkColumnforGrid.ReadOnly = true;
             // 
@@ -2653,6 +2670,7 @@ namespace SDC_Application.AL
             this.GridBuyersList.Location = new System.Drawing.Point(3, 226);
             this.GridBuyersList.Name = "GridBuyersList";
             this.GridBuyersList.ReadOnly = true;
+            this.GridBuyersList.RowHeadersWidth = 51;
             this.GridBuyersList.RowTemplate.Height = 30;
             this.GridBuyersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridBuyersList.Size = new System.Drawing.Size(1441, 370);
@@ -2662,6 +2680,7 @@ namespace SDC_Application.AL
             // chk1
             // 
             this.chk1.HeaderText = "انتخاب کریں";
+            this.chk1.MinimumWidth = 6;
             this.chk1.Name = "chk1";
             this.chk1.ReadOnly = true;
             // 
@@ -3147,6 +3166,8 @@ namespace SDC_Application.AL
             // cboKhewatType
             // 
             this.cboKhewatType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboKhewatType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboKhewatType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboKhewatType.DropDownWidth = 8;
             this.cboKhewatType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKhewatType.FormattingEnabled = true;
@@ -3297,6 +3318,7 @@ namespace SDC_Application.AL
             this.GridIntiqalKhattaJatforMin.Name = "GridIntiqalKhattaJatforMin";
             this.GridIntiqalKhattaJatforMin.ReadOnly = true;
             this.GridIntiqalKhattaJatforMin.RowHeadersVisible = false;
+            this.GridIntiqalKhattaJatforMin.RowHeadersWidth = 51;
             this.GridIntiqalKhattaJatforMin.RowTemplate.Height = 30;
             this.GridIntiqalKhattaJatforMin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridIntiqalKhattaJatforMin.Size = new System.Drawing.Size(401, 133);
@@ -3307,6 +3329,7 @@ namespace SDC_Application.AL
             // colChos
             // 
             this.colChos.HeaderText = "انتخاب کریں";
+            this.colChos.MinimumWidth = 6;
             this.colChos.Name = "colChos";
             this.colChos.ReadOnly = true;
             // 
@@ -3314,6 +3337,7 @@ namespace SDC_Application.AL
             // 
             this.Khata_TotalParts.DataPropertyName = "Khata_TotalParts";
             this.Khata_TotalParts.HeaderText = "کل حصے";
+            this.Khata_TotalParts.MinimumWidth = 6;
             this.Khata_TotalParts.Name = "Khata_TotalParts";
             this.Khata_TotalParts.ReadOnly = true;
             // 
@@ -3321,6 +3345,7 @@ namespace SDC_Application.AL
             // 
             this.Khata_Area.DataPropertyName = "Khata_Area";
             this.Khata_Area.HeaderText = "کل رقبہ";
+            this.Khata_Area.MinimumWidth = 6;
             this.Khata_Area.Name = "Khata_Area";
             this.Khata_Area.ReadOnly = true;
             // 
@@ -3858,6 +3883,7 @@ namespace SDC_Application.AL
             this.gridkhasrajat.Location = new System.Drawing.Point(3, 107);
             this.gridkhasrajat.Name = "gridkhasrajat";
             this.gridkhasrajat.ReadOnly = true;
+            this.gridkhasrajat.RowHeadersWidth = 51;
             this.gridkhasrajat.RowTemplate.Height = 30;
             this.gridkhasrajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridkhasrajat.Size = new System.Drawing.Size(822, 111);
@@ -3867,6 +3893,7 @@ namespace SDC_Application.AL
             // ActColChose
             // 
             this.ActColChose.HeaderText = "انتخاب کریں";
+            this.ActColChose.MinimumWidth = 6;
             this.ActColChose.Name = "ActColChose";
             this.ActColChose.ReadOnly = true;
             // 
@@ -4207,6 +4234,7 @@ namespace SDC_Application.AL
             this.gridmalikan.Location = new System.Drawing.Point(3, 92);
             this.gridmalikan.Name = "gridmalikan";
             this.gridmalikan.ReadOnly = true;
+            this.gridmalikan.RowHeadersWidth = 51;
             this.gridmalikan.RowTemplate.Height = 30;
             this.gridmalikan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridmalikan.Size = new System.Drawing.Size(822, 113);
@@ -4216,6 +4244,7 @@ namespace SDC_Application.AL
             // colSelct
             // 
             this.colSelct.HeaderText = "انتخاب کریں";
+            this.colSelct.MinimumWidth = 6;
             this.colSelct.Name = "colSelct";
             this.colSelct.ReadOnly = true;
             // 
@@ -4819,6 +4848,7 @@ namespace SDC_Application.AL
             this.grdMushtrianMalinkanChange.Location = new System.Drawing.Point(3, 35);
             this.grdMushtrianMalinkanChange.Name = "grdMushtrianMalinkanChange";
             this.grdMushtrianMalinkanChange.ReadOnly = true;
+            this.grdMushtrianMalinkanChange.RowHeadersWidth = 51;
             this.grdMushtrianMalinkanChange.RowTemplate.Height = 30;
             this.grdMushtrianMalinkanChange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMushtrianMalinkanChange.Size = new System.Drawing.Size(1325, 287);
@@ -4829,6 +4859,7 @@ namespace SDC_Application.AL
             // chk_change_Malikan
             // 
             this.chk_change_Malikan.HeaderText = "انتخاب کریں";
+            this.chk_change_Malikan.MinimumWidth = 6;
             this.chk_change_Malikan.Name = "chk_change_Malikan";
             this.chk_change_Malikan.ReadOnly = true;
             // 
@@ -5516,6 +5547,7 @@ namespace SDC_Application.AL
             this.grdGetkhatonichange.Location = new System.Drawing.Point(3, 35);
             this.grdGetkhatonichange.Name = "grdGetkhatonichange";
             this.grdGetkhatonichange.ReadOnly = true;
+            this.grdGetkhatonichange.RowHeadersWidth = 51;
             this.grdGetkhatonichange.RowTemplate.Height = 30;
             this.grdGetkhatonichange.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdGetkhatonichange.Size = new System.Drawing.Size(1419, 325);
@@ -5526,6 +5558,7 @@ namespace SDC_Application.AL
             // chkkk
             // 
             this.chkkk.HeaderText = "انتخاب کریں";
+            this.chkkk.MinimumWidth = 6;
             this.chkkk.Name = "chkkk";
             this.chkkk.ReadOnly = true;
             // 
@@ -5546,6 +5579,27 @@ namespace SDC_Application.AL
             this.groupBox12.Size = new System.Drawing.Size(1425, 90);
             this.groupBox12.TabIndex = 1011;
             this.groupBox12.TabStop = false;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(1355, 37);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(67, 31);
+            this.label30.TabIndex = 1011;
+            this.label30.Text = "تلاش کریں";
+            // 
+            // txtSearchKhatooni
+            // 
+            this.txtSearchKhatooni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchKhatooni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchKhatooni.Location = new System.Drawing.Point(1278, 37);
+            this.txtSearchKhatooni.Name = "txtSearchKhatooni";
+            this.txtSearchKhatooni.Size = new System.Drawing.Size(71, 30);
+            this.txtSearchKhatooni.TabIndex = 1012;
+            this.txtSearchKhatooni.TextChanged += new System.EventHandler(this.txtSearchKhatooni_TextChanged);
             // 
             // btnAutoSaveKhatooniKhassras
             // 
@@ -5887,6 +5941,7 @@ namespace SDC_Application.AL
             this.grdNewKhasrajat.Location = new System.Drawing.Point(3, 35);
             this.grdNewKhasrajat.Name = "grdNewKhasrajat";
             this.grdNewKhasrajat.ReadOnly = true;
+            this.grdNewKhasrajat.RowHeadersWidth = 51;
             this.grdNewKhasrajat.RowTemplate.Height = 30;
             this.grdNewKhasrajat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdNewKhasrajat.Size = new System.Drawing.Size(1431, 236);
@@ -5897,6 +5952,7 @@ namespace SDC_Application.AL
             // chk
             // 
             this.chk.HeaderText = "انتخاب کریں";
+            this.chk.MinimumWidth = 6;
             this.chk.Name = "chk";
             this.chk.ReadOnly = true;
             // 
@@ -6383,6 +6439,7 @@ namespace SDC_Application.AL
             this.dgvMushtryan.Location = new System.Drawing.Point(0, 0);
             this.dgvMushtryan.Name = "dgvMushtryan";
             this.dgvMushtryan.ReadOnly = true;
+            this.dgvMushtryan.RowHeadersWidth = 51;
             this.dgvMushtryan.RowTemplate.Height = 30;
             this.dgvMushtryan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMushtryan.Size = new System.Drawing.Size(1431, 338);
@@ -6391,6 +6448,7 @@ namespace SDC_Application.AL
             // chk_change_Mushtryan
             // 
             this.chk_change_Mushtryan.HeaderText = "انتخاب کریں";
+            this.chk_change_Mushtryan.MinimumWidth = 6;
             this.chk_change_Mushtryan.Name = "chk_change_Mushtryan";
             this.chk_change_Mushtryan.ReadOnly = true;
             // 
@@ -6955,6 +7013,7 @@ namespace SDC_Application.AL
             this.gvComparision.Location = new System.Drawing.Point(0, 32);
             this.gvComparision.Name = "gvComparision";
             this.gvComparision.ReadOnly = true;
+            this.gvComparision.RowHeadersWidth = 51;
             this.gvComparision.RowTemplate.Height = 30;
             this.gvComparision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvComparision.Size = new System.Drawing.Size(1457, 580);
@@ -7008,27 +7067,6 @@ namespace SDC_Application.AL
             this.txtSearchComp.TabStop = false;
             this.txtSearchComp.TextChanged += new System.EventHandler(this.txtSearchComp_TextChanged);
             this.txtSearchComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchComp_KeyPress);
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Alvi Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(1355, 37);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(67, 31);
-            this.label30.TabIndex = 1011;
-            this.label30.Text = "تلاش کریں";
-            // 
-            // txtSearchKhatooni
-            // 
-            this.txtSearchKhatooni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchKhatooni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchKhatooni.Location = new System.Drawing.Point(1278, 37);
-            this.txtSearchKhatooni.Name = "txtSearchKhatooni";
-            this.txtSearchKhatooni.Size = new System.Drawing.Size(71, 30);
-            this.txtSearchKhatooni.TabIndex = 1012;
-            this.txtSearchKhatooni.TextChanged += new System.EventHandler(this.txtSearchKhatooni_TextChanged);
             // 
             // frmIntiqalKhattaJat
             // 

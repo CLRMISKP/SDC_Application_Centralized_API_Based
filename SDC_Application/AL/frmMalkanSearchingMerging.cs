@@ -316,8 +316,18 @@ namespace SDC_Application.AL
                     row.Cells["ColSel"].Value = 0;
                 }
                 g.CurrentCell.Value = g.CurrentCell.Value != null ? (g.CurrentCell.Value.ToString() == "1" ? 0 : 1) : 1;
-
-                MergData();
+                if (g.CurrentCell.Value.ToString() == "1")
+                {
+                    if (g.CurrentRow.Cells["FardAreaPart"].Value.ToString() != "0")
+                    {
+                        MergData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("حصہ 0 کے ساتھ مالک یکجا نہیں ہو سکتا", "مالک حصہ زیرو ہے۔", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        g.CurrentCell.Value = 0;
+                    }
+                }
 
             }
             else if (g.CurrentCell == g.CurrentRow.Cells["ColDel"])

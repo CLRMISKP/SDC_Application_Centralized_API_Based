@@ -298,6 +298,8 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gbAfradRegisterControls = new System.Windows.Forms.Panel();
+            this.lblf6 = new System.Windows.Forms.Label();
+            this.cboFardRelation = new System.Windows.Forms.ComboBox();
             this.cbQoamExisted = new System.Windows.Forms.ComboBox();
             this.label65 = new System.Windows.Forms.Label();
             this.txtDrustNIC = new System.Windows.Forms.TextBox();
@@ -330,8 +332,6 @@
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.lblf6 = new System.Windows.Forms.Label();
-            this.cboFardRelation = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -449,6 +449,8 @@
             // cbokhataNo
             // 
             this.cbokhataNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbokhataNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbokhataNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbokhataNo.DisplayMember = "KhataNo";
             this.cbokhataNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbokhataNo.FormattingEnabled = true;
@@ -667,6 +669,7 @@
             this.dgKhatajatProposed.Name = "dgKhatajatProposed";
             this.dgKhatajatProposed.ReadOnly = true;
             this.dgKhatajatProposed.RowHeadersVisible = false;
+            this.dgKhatajatProposed.RowHeadersWidth = 51;
             this.dgKhatajatProposed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatajatProposed.Size = new System.Drawing.Size(1187, 179);
             this.dgKhatajatProposed.TabIndex = 2;
@@ -676,6 +679,7 @@
             // dgKhataEditColSel
             // 
             this.dgKhataEditColSel.HeaderText = "انتخاب کریں";
+            this.dgKhataEditColSel.MinimumWidth = 6;
             this.dgKhataEditColSel.Name = "dgKhataEditColSel";
             this.dgKhataEditColSel.ReadOnly = true;
             // 
@@ -1208,6 +1212,7 @@
             this.dgKhewatFareeqainAll.Location = new System.Drawing.Point(3, 35);
             this.dgKhewatFareeqainAll.Name = "dgKhewatFareeqainAll";
             this.dgKhewatFareeqainAll.RowHeadersVisible = false;
+            this.dgKhewatFareeqainAll.RowHeadersWidth = 51;
             this.dgKhewatFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhewatFareeqainAll.Size = new System.Drawing.Size(1187, 165);
             this.dgKhewatFareeqainAll.TabIndex = 1;
@@ -1216,6 +1221,7 @@
             // ColSelection
             // 
             this.ColSelection.HeaderText = "انتخاب کریں";
+            this.ColSelection.MinimumWidth = 6;
             this.ColSelection.Name = "ColSelection";
             this.ColSelection.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -1346,7 +1352,7 @@
             this.btnNewMalik.TabIndex = 306;
             this.btnNewMalik.Text = "نیا مالک";
             this.tt.SetToolTip(this.btnNewMalik, "نیا مالک محفوظ کرنے کے لئے اس بٹن پر کلک کرنے کے بعد مالک کا نام تلاش کرکے انتخاب" +
-                    " کریں اور مطلوبہ حصہ دے کر محفوظ کریں");
+        " کریں اور مطلوبہ حصہ دے کر محفوظ کریں");
             this.btnNewMalik.UseVisualStyleBackColor = true;
             this.btnNewMalik.Click += new System.EventHandler(this.btnNewMalik_Click);
             // 
@@ -1374,7 +1380,7 @@
             this.btnDeleteMalik.TabStop = false;
             this.btnDeleteMalik.Text = "خذف کریں";
             this.tt.SetToolTip(this.btnDeleteMalik, "مجوزہ مالک حذف کریں۔ مجودہ مالک کو حذد کرنے کے لئے مالک کے حصے صفر کریں اور محفوظ" +
-                    " کریں۔ عمل کے بعد مالک سابقہ میں چالا جائیگا");
+        " کریں۔ عمل کے بعد مالک سابقہ میں چالا جائیگا");
             this.btnDeleteMalik.UseVisualStyleBackColor = true;
             this.btnDeleteMalik.Click += new System.EventHandler(this.btnDeleteMalik_Click);
             // 
@@ -1561,6 +1567,7 @@
             this.dgKhewatFreeqDetails.Name = "dgKhewatFreeqDetails";
             this.dgKhewatFreeqDetails.ReadOnly = true;
             this.dgKhewatFreeqDetails.RowHeadersVisible = false;
+            this.dgKhewatFreeqDetails.RowHeadersWidth = 51;
             this.dgKhewatFreeqDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhewatFreeqDetails.Size = new System.Drawing.Size(1187, 127);
             this.dgKhewatFreeqDetails.TabIndex = 2;
@@ -1570,6 +1577,7 @@
             // ColSelKgfEdit
             // 
             this.ColSelKgfEdit.HeaderText = "انتخاب کریں";
+            this.ColSelKgfEdit.MinimumWidth = 6;
             this.ColSelKgfEdit.Name = "ColSelKgfEdit";
             this.ColSelKgfEdit.ReadOnly = true;
             // 
@@ -1636,6 +1644,7 @@
             this.dgKhatooniesEdit.Name = "dgKhatooniesEdit";
             this.dgKhatooniesEdit.ReadOnly = true;
             this.dgKhatooniesEdit.RowHeadersVisible = false;
+            this.dgKhatooniesEdit.RowHeadersWidth = 51;
             this.dgKhatooniesEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniesEdit.Size = new System.Drawing.Size(1173, 123);
             this.dgKhatooniesEdit.TabIndex = 2;
@@ -1645,6 +1654,7 @@
             // ColSelKhatooni
             // 
             this.ColSelKhatooni.HeaderText = "انتخاب کریں";
+            this.ColSelKhatooni.MinimumWidth = 6;
             this.ColSelKhatooni.Name = "ColSelKhatooni";
             this.ColSelKhatooni.ReadOnly = true;
             // 
@@ -2236,6 +2246,7 @@
             this.dgKhatooniKhassras.Location = new System.Drawing.Point(3, 35);
             this.dgKhatooniKhassras.Name = "dgKhatooniKhassras";
             this.dgKhatooniKhassras.ReadOnly = true;
+            this.dgKhatooniKhassras.RowHeadersWidth = 51;
             this.dgKhatooniKhassras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniKhassras.Size = new System.Drawing.Size(1173, 169);
             this.dgKhatooniKhassras.TabIndex = 3;
@@ -2244,6 +2255,7 @@
             // ColSelKhassras
             // 
             this.ColSelKhassras.HeaderText = "انتخاب کریں";
+            this.ColSelKhassras.MinimumWidth = 6;
             this.ColSelKhassras.Name = "ColSelKhassras";
             this.ColSelKhassras.ReadOnly = true;
             // 
@@ -2270,6 +2282,7 @@
             this.dgkhatooniKhassraEdit.Location = new System.Drawing.Point(3, 35);
             this.dgkhatooniKhassraEdit.Name = "dgkhatooniKhassraEdit";
             this.dgkhatooniKhassraEdit.ReadOnly = true;
+            this.dgkhatooniKhassraEdit.RowHeadersWidth = 51;
             this.dgkhatooniKhassraEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgkhatooniKhassraEdit.Size = new System.Drawing.Size(1173, 125);
             this.dgkhatooniKhassraEdit.TabIndex = 4;
@@ -2278,6 +2291,7 @@
             // ColKhassraEditSel
             // 
             this.ColKhassraEditSel.HeaderText = "انتخاب کریں";
+            this.ColKhassraEditSel.MinimumWidth = 6;
             this.ColKhassraEditSel.Name = "ColKhassraEditSel";
             this.ColKhassraEditSel.ReadOnly = true;
             // 
@@ -2545,6 +2559,7 @@
             this.dgKhatooniBayan.Name = "dgKhatooniBayan";
             this.dgKhatooniBayan.ReadOnly = true;
             this.dgKhatooniBayan.RowHeadersVisible = false;
+            this.dgKhatooniBayan.RowHeadersWidth = 51;
             this.dgKhatooniBayan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniBayan.Size = new System.Drawing.Size(1173, 159);
             this.dgKhatooniBayan.TabIndex = 2;
@@ -2553,6 +2568,7 @@
             // ColSelBayan
             // 
             this.ColSelBayan.HeaderText = "انتخاب کریں";
+            this.ColSelBayan.MinimumWidth = 6;
             this.ColSelBayan.Name = "ColSelBayan";
             this.ColSelBayan.ReadOnly = true;
             // 
@@ -2580,6 +2596,7 @@
             this.dgKhatooniBayanEdit.Name = "dgKhatooniBayanEdit";
             this.dgKhatooniBayanEdit.ReadOnly = true;
             this.dgKhatooniBayanEdit.RowHeadersVisible = false;
+            this.dgKhatooniBayanEdit.RowHeadersWidth = 51;
             this.dgKhatooniBayanEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhatooniBayanEdit.Size = new System.Drawing.Size(1173, 128);
             this.dgKhatooniBayanEdit.TabIndex = 5;
@@ -2588,6 +2605,7 @@
             // ColSelBayanEdit
             // 
             this.ColSelBayanEdit.HeaderText = "انتخاب کریں";
+            this.ColSelBayanEdit.MinimumWidth = 6;
             this.ColSelBayanEdit.Name = "ColSelBayanEdit";
             this.ColSelBayanEdit.ReadOnly = true;
             // 
@@ -2987,6 +3005,7 @@
             this.dgMushteriFareeqainAll.Location = new System.Drawing.Point(3, 35);
             this.dgMushteriFareeqainAll.Name = "dgMushteriFareeqainAll";
             this.dgMushteriFareeqainAll.RowHeadersVisible = false;
+            this.dgMushteriFareeqainAll.RowHeadersWidth = 51;
             this.dgMushteriFareeqainAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMushteriFareeqainAll.Size = new System.Drawing.Size(1173, 118);
             this.dgMushteriFareeqainAll.TabIndex = 26;
@@ -2995,6 +3014,7 @@
             // ColSelMushtri
             // 
             this.ColSelMushtri.HeaderText = "انتخاب کریں";
+            this.ColSelMushtri.MinimumWidth = 6;
             this.ColSelMushtri.Name = "ColSelMushtri";
             this.ColSelMushtri.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColSelMushtri.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -3023,6 +3043,7 @@
             this.dgMushteriFareeqainEdit.Name = "dgMushteriFareeqainEdit";
             this.dgMushteriFareeqainEdit.ReadOnly = true;
             this.dgMushteriFareeqainEdit.RowHeadersVisible = false;
+            this.dgMushteriFareeqainEdit.RowHeadersWidth = 51;
             this.dgMushteriFareeqainEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMushteriFareeqainEdit.Size = new System.Drawing.Size(1173, 193);
             this.dgMushteriFareeqainEdit.TabIndex = 25;
@@ -3031,6 +3052,7 @@
             // ColSelMushtriEdit
             // 
             this.ColSelMushtriEdit.HeaderText = "انتخاب کریں";
+            this.ColSelMushtriEdit.MinimumWidth = 6;
             this.ColSelMushtriEdit.Name = "ColSelMushtriEdit";
             this.ColSelMushtriEdit.ReadOnly = true;
             // 
@@ -3316,6 +3338,7 @@
             this.dgFBAfrad.Name = "dgFBAfrad";
             this.dgFBAfrad.ReadOnly = true;
             this.dgFBAfrad.RowHeadersVisible = false;
+            this.dgFBAfrad.RowHeadersWidth = 51;
             this.dgFBAfrad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFBAfrad.Size = new System.Drawing.Size(1199, 177);
             this.dgFBAfrad.StandardTab = true;
@@ -3325,6 +3348,7 @@
             // ColSelPerson
             // 
             this.ColSelPerson.HeaderText = "انتخاب کریں";
+            this.ColSelPerson.MinimumWidth = 6;
             this.ColSelPerson.Name = "ColSelPerson";
             this.ColSelPerson.ReadOnly = true;
             // 
@@ -3362,7 +3386,7 @@
             this.groupBox20.TabIndex = 55;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "انتخاب کردہ نام مالک کے موجودہ انتقالات، فرد بدرات ، فردات اور کھاتہ جات (اگر کوئ" +
-                "ی ہو)";
+    "ی ہو)";
             // 
             // txtPersonFardats
             // 
@@ -3559,6 +3583,43 @@
             this.gbAfradRegisterControls.Name = "gbAfradRegisterControls";
             this.gbAfradRegisterControls.Size = new System.Drawing.Size(1199, 157);
             this.gbAfradRegisterControls.TabIndex = 1;
+            // 
+            // lblf6
+            // 
+            this.lblf6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblf6.AutoSize = true;
+            this.lblf6.BackColor = System.Drawing.Color.Transparent;
+            this.lblf6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblf6.Location = new System.Drawing.Point(55, 9);
+            this.lblf6.Name = "lblf6";
+            this.lblf6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblf6.Size = new System.Drawing.Size(53, 38);
+            this.lblf6.TabIndex = 114;
+            this.lblf6.Text = "رشتہ:";
+            this.lblf6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboFardRelation
+            // 
+            this.cboFardRelation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboFardRelation.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFardRelation.FormattingEnabled = true;
+            this.cboFardRelation.Items.AddRange(new object[] {
+            "",
+            "پسر",
+            "دختر",
+            "ولد",
+            "ولدہ",
+            "زوجہ",
+            "بیوہ",
+            "شوہر",
+            "ہمشیرہ",
+            "برادر"});
+            this.cboFardRelation.Location = new System.Drawing.Point(27, 50);
+            this.cboFardRelation.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.cboFardRelation.Name = "cboFardRelation";
+            this.cboFardRelation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cboFardRelation.Size = new System.Drawing.Size(84, 44);
+            this.cboFardRelation.TabIndex = 64;
             // 
             // cbQoamExisted
             // 
@@ -3855,7 +3916,7 @@
             this.btnImplementChanges.Size = new System.Drawing.Size(62, 55);
             this.btnImplementChanges.TabIndex = 42;
             this.tt.SetToolTip(this.btnImplementChanges, "اگر اپ ریکارڈ میں کی گئی تبدیلیوں سے مطمیئن ہے تو تبدیلیوں کے عمل کے لیئے کلک کرِ" +
-                    "یں");
+        "یں");
             this.btnImplementChanges.UseVisualStyleBackColor = true;
             this.btnImplementChanges.Click += new System.EventHandler(this.btnImplementChanges_Click);
             // 
@@ -3948,43 +4009,6 @@
             this.label58.Size = new System.Drawing.Size(49, 31);
             this.label58.TabIndex = 0;
             this.label58.Text = "نمبر شمار";
-            // 
-            // lblf6
-            // 
-            this.lblf6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblf6.AutoSize = true;
-            this.lblf6.BackColor = System.Drawing.Color.Transparent;
-            this.lblf6.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblf6.Location = new System.Drawing.Point(55, 9);
-            this.lblf6.Name = "lblf6";
-            this.lblf6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblf6.Size = new System.Drawing.Size(53, 38);
-            this.lblf6.TabIndex = 114;
-            this.lblf6.Text = "رشتہ:";
-            this.lblf6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboFardRelation
-            // 
-            this.cboFardRelation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboFardRelation.Font = new System.Drawing.Font("Alvi Nastaleeq", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFardRelation.FormattingEnabled = true;
-            this.cboFardRelation.Items.AddRange(new object[] {
-            "",
-            "پسر",
-            "دختر",
-            "ولد",
-            "ولدہ",
-            "زوجہ",
-            "بیوہ",
-            "شوہر",
-            "ہمشیرہ",
-            "برادر"});
-            this.cboFardRelation.Location = new System.Drawing.Point(27, 50);
-            this.cboFardRelation.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.cboFardRelation.Name = "cboFardRelation";
-            this.cboFardRelation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboFardRelation.Size = new System.Drawing.Size(84, 44);
-            this.cboFardRelation.TabIndex = 64;
             // 
             // frmRhzSDCEditing
             // 
