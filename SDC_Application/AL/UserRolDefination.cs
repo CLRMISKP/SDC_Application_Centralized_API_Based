@@ -47,7 +47,10 @@ namespace SDC_Application.AL
             DataTable dt = new DataTable();
             dt = objuser.getRoleName(SDC_Application.Classess.UsersManagments._Tehsilid.ToString());
             grdRoleName.DataSource = dt;
-            grdRoleName.Columns["RoleId"].Visible = false;
+            if (dt != null)
+            {
+                grdRoleName.Columns["RoleId"].Visible = false;
+            }
 
         }
 
@@ -294,9 +297,12 @@ namespace SDC_Application.AL
             DataTable dt = new DataTable();
             dt = objuser.getAllobjectsroles();
             grdObjectNames.DataSource = dt;
-            grdObjectNames.Columns["ObjectActualName"].Visible = false;
-            grdObjectNames.Columns["ObjectId"].Visible = false;
-           // grdObjectNames.Columns["RoleId"].Visible = false;
+            if (dt != null)
+            {
+                grdObjectNames.Columns["ObjectActualName"].Visible = false;
+                grdObjectNames.Columns["ObjectId"].Visible = false;
+                // grdObjectNames.Columns["RoleId"].Visible = false;
+            }
         }
 
         private void grdRoleName_DoubleClick(object sender, EventArgs e)

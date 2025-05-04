@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <Var name="RegenerateDebugInfo" value="false" />
+  <Var name="MarkedOnly" value="false" />
+  <Var name="RenameProperties" value="true" />
+  <Var name="RenameEvents" value="true" />
+  <Var name="RenameFields" value="true" />
+  <Var name="KeepPublicApi" value="true" />
+  <Var name="HidePrivateApi" value="true" />
+  <Var name="ReuseNames" value="false" />
+  <Var name="HideStrings" value="true" />
+  <Var name="OptimizeMethods" value="true" />
+  <Var name="SuppressIldasm" value="true" />
+  <Var name="AnalyzeXaml" value="true" />
+  <Var name="UseUnicodeNames" value="false" />
+  <Var name="UseKoreanNames" value="true" />
+  <Module file="$(InPath)\SDC_Application.exe">
+    <SkipType name="*AnonymousType*" skipProperties="true" skipMethods="true" skipFields="true" skipEvents="true" skipStringHiding="true" />
+  </Module>
+  <AssemblySearchPath path="..\Common\bin\Release\" />
+  <AssemblySearchPath path="..\ControlsLib\bin\Release\" />
+  <AssemblySearchPath path="..\FpReader.Core\bin\Release\" />
+  <AssemblySearchPath path="..\LandInfo.LanguageManager\bin\Release\" />
+  <AssemblySearchPath path="..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\" />
+  <AssemblySearchPath path="..\packages\iTextSharp.5.5.13.4\lib\net461\" />
+  <AssemblySearchPath path="..\packages\managedwifi.1.1.0\lib\net20\" />
+  <AssemblySearchPath path="..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\" />
+  <AssemblySearchPath path="..\packages\Newtonsoft.Json.13.0.3\lib\net45\" />
+  <AssemblySearchPath path="..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\" />
+  <AssemblySearchPath path="..\packages\System.Buffers.4.5.1\lib\net461\" />
+  <AssemblySearchPath path="..\packages\System.Memory.4.5.5\lib\net461\" />
+  <AssemblySearchPath path="..\packages\System.Numerics.Vectors.4.5.0\lib\net46\" />
+  <AssemblySearchPath path="..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\" />
+  <AssemblySearchPath path="..\SDC_Application\" />
+  <AssemblySearchPath path="C:\Program Files (x86)\Microsoft Visual Studio 10.0\ReportViewer\" />
+  <AssemblySearchPath path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\" />
+  <AssemblySearchPath path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Facades\" />
+  <AssemblySearchPath path="obj\x86\Release\" />
+  <AssemblySearchPath path="ReferenceFiles\" />
+</Include>

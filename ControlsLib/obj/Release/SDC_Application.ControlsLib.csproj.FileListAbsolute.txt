@@ -184,3 +184,21 @@ E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\LandInfo.ControlsL
 E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.Cache
 E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
 E:\CLRMIS\SDC_Application_Centralized\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.ControlsLib.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.Common.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.Common.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.LanguageManager.pdb
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.LanguageManager.xml
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\bin\Release\SDC_Application.LanguageManager.dll.config
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.AssemblyReference.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\LandInfo.ControlsLib.khasraControl.resources
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\LandInfo.ControlsLib.KhatooniControl.resources
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\LandInfo.ControlsLib.KhewatControl.resources
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\LandInfo.ControlsLib.picThumbnail.resources
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.GenerateResource.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\SDC_Application.ControlsLib.csproj.CoreCompileInputs.cache
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\SDC_Appl.664E9EE7.Up2Date
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\SDC_Application.ControlsLib.dll
+D:\Office Data\Land System\SDC_Application_Centralized_API_Based\ControlsLib\obj\Release\SDC_Application.ControlsLib.pdb

@@ -12,6 +12,7 @@ using SDC_Application.BL;
 using SDC_Application.DL;
 using System.Collections;
 using SDC_Application.LanguageManager;
+using System.Globalization;
 //using Classess.Validations;
 namespace SDC_Application.AL
 {
@@ -74,16 +75,16 @@ namespace SDC_Application.AL
                 grdTokenData.DataSource = null;
                 if (fromform == "1" || fromform == "2" || fromform == "4")
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + fromform + "',"+UsersManagments.SubSdcId.ToString());
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Fard " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "','" + fromform + "',"+UsersManagments.SubSdcId.ToString());
                 }
 
                 else if (fromform == "3")
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Naqal_Intiqal " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "','" + fromform + "', "+UsersManagments.SubSdcId.ToString());
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Self_Get_SDC_TokenList_Only_Naqal_Intiqal " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "','" + fromform + "', "+UsersManagments.SubSdcId.ToString());
                 }
                 else
                 {
-                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString(SDC_Application.frmMain.getShortDateFormateString()) + "' ,"+UsersManagments.SubSdcId.ToString());
+                    dt = this.objbusines.filldatatable_from_storedProcedure("Proc_Get_SDC_TokenList_For_PaymentVoucher " + UsersManagments._Tehsilid.ToString() + ",'" + dateTime.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "' ,"+UsersManagments.SubSdcId.ToString());
                 }
                 if (dt != null)
                 {

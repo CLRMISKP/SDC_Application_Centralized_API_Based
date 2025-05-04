@@ -1,0 +1,5 @@
+{"Timestamp":"2025-05-03T22:10:47.9286786+05:00","Level":"Debug","MessageTemplate":"Resolving main component from host.","RenderedMessage":"Resolving main component from host."}
+{"Timestamp":"2025-05-03T22:10:49.7379846+05:00","Level":"Information","MessageTemplate":"Looking for ByteHide Shield configuration files...","RenderedMessage":"Looking for ByteHide Shield configuration files..."}
+{"Timestamp":"2025-05-03T22:10:49.7479959+05:00","Level":"Debug","MessageTemplate":"Configuration file not found in project directory. Checking for global configurations.","RenderedMessage":"Configuration file not found in project directory. Checking for global configurations."}
+{"Timestamp":"2025-05-03T22:10:49.7497348+05:00","Level":"Debug","MessageTemplate":"Looking for 'SDC_Application' project in global configurations...","RenderedMessage":"Looking for 'SDC_Application' project in global configurations..."}
+{"Timestamp":"2025-05-03T22:10:49.7608440+05:00","Level":"Error","MessageTemplate":"No valid configuration file found (neither local nor global).","RenderedMessage":"No valid configuration file found (neither local nor global)."}

@@ -38,46 +38,61 @@ namespace SDC_Application.AL
         #region Fill Gridviews
         private void fillGridViewSubSdcs()
         {
-            GridViewSubSdcs.Columns["SDCNameEng"].HeaderText = "زیلی ایس ڈی سی نام انگریزی";
-            GridViewSubSdcs.Columns["SDCNameUrdu"].HeaderText = "زیلی ایس ڈی سی نام اردو";
-            GridViewSubSdcs.Columns["SDCID"].Visible = false;
-            // select SDCID, SDCNameEng, SDCNameUrdu from SubSDCs where TehsilId=@TehsilId  
+            if (GridViewSubSdcs.DataSource != null)
+            {
+                GridViewSubSdcs.Columns["SDCNameEng"].HeaderText = "زیلی ایس ڈی سی نام انگریزی";
+                GridViewSubSdcs.Columns["SDCNameUrdu"].HeaderText = "زیلی ایس ڈی سی نام اردو";
+                GridViewSubSdcs.Columns["SDCID"].Visible = false;
+                // select SDCID, SDCNameEng, SDCNameUrdu from SubSDCs where TehsilId=@TehsilId  
+            }
         }
         private void fillGridVeiwUnassignedMozas()
         {
             DataTable dtUnassignedMozas = def.GetMozaListBySubSdcId("0");
             GridViewUnAssignedMozas.DataSource = dtUnassignedMozas;
-            GridViewUnAssignedMozas.Columns["MozaNameEng"].HeaderText = "موضع نام انگریزی ";
-            GridViewUnAssignedMozas.Columns["MozaNameUrdu"].HeaderText = "موضع نام اردو";
-            GridViewUnAssignedMozas.Columns["HadBastNo"].HeaderText = "حدبست نمبر";
-            GridViewUnAssignedMozas.Columns["MozaId"].Visible = false;
+            if (dtUnassignedMozas != null)
+            {
+                GridViewUnAssignedMozas.Columns["MozaNameEng"].HeaderText = "موضع نام انگریزی ";
+                GridViewUnAssignedMozas.Columns["MozaNameUrdu"].HeaderText = "موضع نام اردو";
+                GridViewUnAssignedMozas.Columns["HadBastNo"].HeaderText = "حدبست نمبر";
+                GridViewUnAssignedMozas.Columns["MozaId"].Visible = false;
+            }
         }
         private void fillGridVeiwAssignedMozas()
         {
             DataTable dtAssignedMozas = def.GetMozaListBySubSdcId(txtSubSdcId.Text);
             GridViewAssignedMozas.DataSource = dtAssignedMozas;
-            GridViewAssignedMozas.Columns["MozaNameEng"].HeaderText = "موضع نام انگریزی ";
-            GridViewAssignedMozas.Columns["MozaNameUrdu"].HeaderText = "موضع نام اردو";
-            GridViewAssignedMozas.Columns["HadBastNo"].HeaderText = "حدبست نمبر";
-            GridViewAssignedMozas.Columns["MozaId"].Visible = false;
+            if (dtAssignedMozas != null)
+            {
+                GridViewAssignedMozas.Columns["MozaNameEng"].HeaderText = "موضع نام انگریزی ";
+                GridViewAssignedMozas.Columns["MozaNameUrdu"].HeaderText = "موضع نام اردو";
+                GridViewAssignedMozas.Columns["HadBastNo"].HeaderText = "حدبست نمبر";
+                GridViewAssignedMozas.Columns["MozaId"].Visible = false;
+            }
         }
         private void fillGridVeiwUnassignedUsers()
         {
             DataTable dtUnassignedUsers = def.GetUsersListBySubSdcId("0");
             GridViewUnAssignedUser.DataSource = dtUnassignedUsers;
-            GridViewUnAssignedUser.Columns["FirstName"].HeaderText = "نام پہلا حصہ ";
-            GridViewUnAssignedUser.Columns["LastName"].HeaderText = "نام دوسرا حصہ";
-            GridViewUnAssignedUser.Columns["LoginName"].HeaderText = "لاگین نام";
-            GridViewUnAssignedUser.Columns["UserId"].Visible = false;
+            if (dtUnassignedUsers != null)
+            {
+                GridViewUnAssignedUser.Columns["FirstName"].HeaderText = "نام پہلا حصہ ";
+                GridViewUnAssignedUser.Columns["LastName"].HeaderText = "نام دوسرا حصہ";
+                GridViewUnAssignedUser.Columns["LoginName"].HeaderText = "لاگین نام";
+                GridViewUnAssignedUser.Columns["UserId"].Visible = false;
+            }
         }
         private void fillGridVeiwAssignedUsers()
         {
             DataTable dtAssignedUsers = def.GetUsersListBySubSdcId(txtSubSdcId.Text);
             GridViewAssignedUser.DataSource = dtAssignedUsers;
-            GridViewAssignedUser.Columns["FirstName"].HeaderText = "نام پہلا حصہ";
-            GridViewAssignedUser.Columns["LastName"].HeaderText = "نام دوسرا حص";
-            GridViewAssignedUser.Columns["LoginName"].HeaderText = "لاگین نام";
-            GridViewAssignedUser.Columns["UserId"].Visible = false;
+            if (dtAssignedUsers != null)
+            {
+                GridViewAssignedUser.Columns["FirstName"].HeaderText = "نام پہلا حصہ";
+                GridViewAssignedUser.Columns["LastName"].HeaderText = "نام دوسرا حص";
+                GridViewAssignedUser.Columns["LoginName"].HeaderText = "لاگین نام";
+                GridViewAssignedUser.Columns["UserId"].Visible = false;
+            }
         }
         #endregion
 

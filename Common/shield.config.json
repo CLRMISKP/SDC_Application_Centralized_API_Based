@@ -1,0 +1,9 @@
+{
+  "Name": "Configuration SDC_Application.Common",
+  "Preset": "Optimized",
+  "ProjectToken": "b44ad687-6b79-4b4e-8700-e572d29aa44a",
+  "ProtectionSecret": "",
+  "Enabled": true,
+  "RunConfiguration": "Release",
+  "Protections": {}
+}

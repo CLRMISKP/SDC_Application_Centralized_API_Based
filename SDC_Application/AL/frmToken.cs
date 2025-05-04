@@ -111,7 +111,12 @@ namespace SDC_Application.AL
             try
             {            
                 Fill_ListBoxes();
-                loadTokenNo();            
+                if (UsersManagments.SubSdcId == 0)
+                {
+                    loadTokenNo();
+                }
+                else
+                  btnNewToken_Click(sender, e);
 
             }
             catch (Exception ex) { throw; }

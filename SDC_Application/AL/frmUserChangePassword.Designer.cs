@@ -45,6 +45,7 @@
             this.txtUserConfPassword = new System.Windows.Forms.TextBox();
             this.txtUserNewPassword = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblStrength = new System.Windows.Forms.Label();
             this.grp.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -67,7 +68,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(473, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 22);
+            this.label1.Size = new System.Drawing.Size(200, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Management";
             // 
@@ -85,15 +86,16 @@
             // 
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox4.Location = new System.Drawing.Point(3, 16);
+            this.groupBox4.Location = new System.Drawing.Point(3, 18);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(674, 662);
+            this.groupBox4.Size = new System.Drawing.Size(674, 660);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Change Password";
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.lblStrength);
             this.groupBox5.Controls.Add(this.txtGetOldPassword);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.txtUserLoginName);
@@ -106,7 +108,7 @@
             this.groupBox5.Controls.Add(this.txtUserConfPassword);
             this.groupBox5.Controls.Add(this.txtUserNewPassword);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox5.Location = new System.Drawing.Point(3, 16);
+            this.groupBox5.Location = new System.Drawing.Point(3, 18);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(668, 338);
             this.groupBox5.TabIndex = 0;
@@ -117,7 +119,7 @@
             this.txtGetOldPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGetOldPassword.Location = new System.Drawing.Point(72, 211);
             this.txtGetOldPassword.Name = "txtGetOldPassword";
-            this.txtGetOldPassword.Size = new System.Drawing.Size(86, 26);
+            this.txtGetOldPassword.Size = new System.Drawing.Size(86, 30);
             this.txtGetOldPassword.TabIndex = 51;
             this.txtGetOldPassword.Text = "-1";
             this.txtGetOldPassword.Visible = false;
@@ -128,7 +130,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(76, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 19);
+            this.label4.Size = new System.Drawing.Size(76, 22);
             this.label4.TabIndex = 48;
             this.label4.Text = "Login Id";
             // 
@@ -139,7 +141,7 @@
             this.txtUserLoginName.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtUserLoginName.Location = new System.Drawing.Point(200, 37);
             this.txtUserLoginName.Name = "txtUserLoginName";
-            this.txtUserLoginName.Size = new System.Drawing.Size(253, 26);
+            this.txtUserLoginName.Size = new System.Drawing.Size(253, 30);
             this.txtUserLoginName.TabIndex = 47;
             // 
             // label2
@@ -148,7 +150,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(69, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 19);
+            this.label2.Size = new System.Drawing.Size(129, 22);
             this.label2.TabIndex = 46;
             this.label2.Text = "Old Password:";
             // 
@@ -158,7 +160,7 @@
             this.txtUserOldPassword.Location = new System.Drawing.Point(200, 76);
             this.txtUserOldPassword.Name = "txtUserOldPassword";
             this.txtUserOldPassword.PasswordChar = '*';
-            this.txtUserOldPassword.Size = new System.Drawing.Size(253, 26);
+            this.txtUserOldPassword.Size = new System.Drawing.Size(253, 30);
             this.txtUserOldPassword.TabIndex = 1;
             // 
             // txtUserId
@@ -166,7 +168,7 @@
             this.txtUserId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserId.Location = new System.Drawing.Point(73, 243);
             this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(86, 26);
+            this.txtUserId.Size = new System.Drawing.Size(86, 30);
             this.txtUserId.TabIndex = 43;
             this.txtUserId.Text = "-1";
             this.txtUserId.Visible = false;
@@ -189,7 +191,7 @@
             this.lbl5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5.Location = new System.Drawing.Point(66, 159);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(125, 19);
+            this.lbl5.Size = new System.Drawing.Size(164, 22);
             this.lbl5.TabIndex = 9;
             this.lbl5.Text = "Confirm Password:";
             // 
@@ -199,7 +201,7 @@
             this.lbl4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.Location = new System.Drawing.Point(69, 118);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(106, 19);
+            this.lbl4.Size = new System.Drawing.Size(137, 22);
             this.lbl4.TabIndex = 8;
             this.lbl4.Text = "New Password:";
             // 
@@ -209,8 +211,9 @@
             this.txtUserConfPassword.Location = new System.Drawing.Point(200, 154);
             this.txtUserConfPassword.Name = "txtUserConfPassword";
             this.txtUserConfPassword.PasswordChar = '*';
-            this.txtUserConfPassword.Size = new System.Drawing.Size(253, 26);
+            this.txtUserConfPassword.Size = new System.Drawing.Size(253, 30);
             this.txtUserConfPassword.TabIndex = 3;
+            this.txtUserConfPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserConfPassword_KeyDown);
             // 
             // txtUserNewPassword
             // 
@@ -218,8 +221,10 @@
             this.txtUserNewPassword.Location = new System.Drawing.Point(200, 115);
             this.txtUserNewPassword.Name = "txtUserNewPassword";
             this.txtUserNewPassword.PasswordChar = '*';
-            this.txtUserNewPassword.Size = new System.Drawing.Size(253, 26);
+            this.txtUserNewPassword.Size = new System.Drawing.Size(253, 30);
             this.txtUserNewPassword.TabIndex = 2;
+            this.txtUserNewPassword.TextChanged += new System.EventHandler(this.txtUserNewPassword_TextChanged);
+            this.txtUserNewPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserNewPassword_KeyDown);
             // 
             // groupBox2
             // 
@@ -229,6 +234,15 @@
             this.groupBox2.Size = new System.Drawing.Size(1190, 42);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            // 
+            // lblStrength
+            // 
+            this.lblStrength.AutoSize = true;
+            this.lblStrength.Location = new System.Drawing.Point(469, 124);
+            this.lblStrength.Name = "lblStrength";
+            this.lblStrength.Size = new System.Drawing.Size(10, 16);
+            this.lblStrength.TabIndex = 52;
+            this.lblStrength.Text = ".";
             // 
             // frmUserChangePassword
             // 
@@ -269,5 +283,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUserLoginName;
         private System.Windows.Forms.TextBox txtGetOldPassword;
+        private System.Windows.Forms.Label lblStrength;
     }
 }
