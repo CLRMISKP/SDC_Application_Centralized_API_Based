@@ -3882,48 +3882,51 @@ namespace SDC_Application.AL
         {
             if (GridViewKhewatMalikaan.Rows.Count < 1)
             {
-                if (cboKhataNo.SelectedValue.ToString().Length > 5)
+                if (DialogResult.Yes == MessageBox.Show("  اگر اس فرد بدر میں تمام مالکان کی درستگی درکا ہے تو تمام مالکان محفوظ کریں۔ اگر سارے مالکان کی درستگی درکا نہیں ہے تو سرچ بٹن دبا کر صرف محصوص مالکان فرد بدر میں محفوظ کریں۔ کیا تمام مالکان کی درستگی درکار ہے۔", "تمام مالکان کی درستکی کی تصدیق", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                 {
-                    DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
-                    if (dtMalkan != null)
+                    if (cboKhataNo.SelectedValue.ToString().Length > 5)
                     {
-                        foreach (DataRow row in dtMalkan.Rows)
+                        DataTable dtMalkan = MinKhataMethods.Proc_Get_KhewatFareeqeinByKhataId(cboKhataNo.SelectedValue.ToString());
+                        if (dtMalkan != null)
                         {
-                            string[] Area = row["Khewat_Area"].ToString().Split('-');
-                            string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
-                                   "-1",
-                                   cbFBDocuments.SelectedValue.ToString().Length < 9 ? txtFbId.Text : cbFBDocuments.SelectedValue.ToString(),
-                                    row["KhewatGroupFareeqId"].ToString(), //kgf_id,
-                                   "0",//row["KhewatGroupId"].ToString(), //kg_id,
-                                   "Fard_e_Badar",
-                                   "0",
-                                   row["seqno"].ToString(), //sqNo.ToString(),
-                                   row["PersonId"].ToString(), //pid,
-                                   row["PersonId"].ToString(), //pidProposed,
-                                   row["KhewatTypeId"].ToString(), //khewatTypeId.ToString(),
-                                   row["KhewatTypeId"].ToString(), //khewatTypeIdProposed.ToString(),
-                                   row["FardAreaPart"].ToString(), //netPart,
-                                   row["FardAreaPart"].ToString(), //netPartProposed,
-                                   Area[0], //kanal.ToString(),
-                                   Area[0], //kanalProposed.ToString(),
-                                   Area[1], //marla.ToString(),
-                                   Area[1], //marlaProposed.ToString(),
-                                   Math.Round((decimal.Parse(Area[2]) / (decimal)30.25), 5).ToString(), //sarsai.ToString(),
-                                   Math.Round((decimal.Parse(Area[2]) / (decimal)30.25), 5).ToString(), //sarsaiProposed.ToString(),
-                                   Area[2], //sft.ToString(),
-                                   Area[2], //sftProposed.ToString(),
-                                   UsersManagments.UserId.ToString(),
-                                   UsersManagments.UserName,
-                                   row["FardAreaPart"].ToString(), //txtPersonNetHissa.Text.Trim(),
-                                   row["FardAreaPart"].ToString(), //txtDrustHissa.Text.Trim(),
-                                   cboKhataNo.SelectedValue.ToString());//KhattaId.ToString());
+                            foreach (DataRow row in dtMalkan.Rows)
+                            {
+                                string[] Area = row["Khewat_Area"].ToString().Split('-');
+                                string s = fardBadarBL.SaveFBKhewatGroupFarqeenProposed(
+                                       "-1",
+                                       cbFBDocuments.SelectedValue.ToString().Length < 9 ? txtFbId.Text : cbFBDocuments.SelectedValue.ToString(),
+                                        row["KhewatGroupFareeqId"].ToString(), //kgf_id,
+                                       "0",//row["KhewatGroupId"].ToString(), //kg_id,
+                                       "Fard_e_Badar",
+                                       "0",
+                                       row["seqno"].ToString(), //sqNo.ToString(),
+                                       row["PersonId"].ToString(), //pid,
+                                       row["PersonId"].ToString(), //pidProposed,
+                                       row["KhewatTypeId"].ToString(), //khewatTypeId.ToString(),
+                                       row["KhewatTypeId"].ToString(), //khewatTypeIdProposed.ToString(),
+                                       row["FardAreaPart"].ToString(), //netPart,
+                                       row["FardAreaPart"].ToString(), //netPartProposed,
+                                       Area[0], //kanal.ToString(),
+                                       Area[0], //kanalProposed.ToString(),
+                                       Area[1], //marla.ToString(),
+                                       Area[1], //marlaProposed.ToString(),
+                                       Math.Round((decimal.Parse(Area[2]) / (decimal)30.25), 5).ToString(), //sarsai.ToString(),
+                                       Math.Round((decimal.Parse(Area[2]) / (decimal)30.25), 5).ToString(), //sarsaiProposed.ToString(),
+                                       Area[2], //sft.ToString(),
+                                       Area[2], //sftProposed.ToString(),
+                                       UsersManagments.UserId.ToString(),
+                                       UsersManagments.UserName,
+                                       row["FardAreaPart"].ToString(), //txtPersonNetHissa.Text.Trim(),
+                                       row["FardAreaPart"].ToString(), //txtDrustHissa.Text.Trim(),
+                                       cboKhataNo.SelectedValue.ToString());//KhattaId.ToString());
+                            }
                         }
-                    }
-                    this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(cbFBDocuments.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString());
+                        this.khewatMalikanByFB = fardBadarBL.GetKhewatGroupFareeqeinByKhataIdByFbId(cbFBDocuments.SelectedValue.ToString(), cboKhataNo.SelectedValue.ToString());
                         this.FillGridviewMalkan(khewatMalikanByFB);
+                    }
+                    else
+                        MessageBox.Show("کھاتہ کا انتخاب کریں");
                 }
-                else
-                    MessageBox.Show("کھاتہ کا انتخاب کریں");
             }
             else
                 MessageBox.Show("پہلے سے محفوظ شدہ مالکان خذف کریں");
@@ -4418,7 +4421,7 @@ namespace SDC_Application.AL
 
             this.cmbMouza.Enabled = false;
             long MaxNo = 0;
-            if (long.TryParse(lastNo, out MaxNo))
+            if (long.TryParse(lastNo.Split('/')[0], out MaxNo))
             {
                 this.txtFardBadarDocNO.Text = MaxNo.ToString();
                 btnSaveFardBadar.Enabled = true;

@@ -1129,13 +1129,16 @@ namespace SDC_Application.AL
             DataTable dtTokens = new DataTable();
             dtTokens = search.GetTokenDetailByPersonCNIC(this.txtCNCI.Text.Trim());
             dgPersonTokenDetails.DataSource = dtTokens;
-            dgPersonTokenDetails.Columns["Visitor_Name"].HeaderText="نام";
-            dgPersonTokenDetails.Columns["Visitor_FatherName"].HeaderText="ولدیت/شوہر";
-            dgPersonTokenDetails.Columns["TokenDate"].HeaderText="بتاریخ";
-            dgPersonTokenDetails.Columns["TokenPurpose_Urdu"].HeaderText="قسم سہولت";
-            dgPersonTokenDetails.Columns["MozaNameUrdu"].HeaderText="برائے موضع";
-            //dgPersonTokenDetails.Columns["VoucherNo"].HeaderText = "چالان نمبر و تاریخ";
-            //dgPersonTokenDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+            if (dtTokens != null)
+            {
+                dgPersonTokenDetails.Columns["Visitor_Name"].HeaderText = "نام";
+                dgPersonTokenDetails.Columns["Visitor_FatherName"].HeaderText = "ولدیت/شوہر";
+                dgPersonTokenDetails.Columns["TokenDate"].HeaderText = "بتاریخ";
+                dgPersonTokenDetails.Columns["TokenPurpose_Urdu"].HeaderText = "قسم سہولت";
+                dgPersonTokenDetails.Columns["MozaNameUrdu"].HeaderText = "برائے موضع";
+                //dgPersonTokenDetails.Columns["VoucherNo"].HeaderText = "چالان نمبر و تاریخ";
+                //dgPersonTokenDetails.Columns["IntiqalNo"].HeaderText = "انتقال نمبر";
+            }
             }
 
 

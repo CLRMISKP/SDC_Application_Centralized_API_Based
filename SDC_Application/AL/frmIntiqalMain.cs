@@ -627,15 +627,17 @@ namespace SDC_Application.AL
                             string year = date.Year.ToString();
                             datetoken = year + "-" + month + "-" + day;
                             this.TokenList = Iq.GetTransactionalTokenNoListByDate(this.MozaId, datetoken);
-                            DataRow Token = TokenList.NewRow();
-                            Token["TokenId"] = "0";
-                            Token["TokenNo"] = " - ٹوکن نمبر - ";
-                            TokenList.Rows.InsertAt(Token, 0);
-                            cmbFardTokenNo.DataSource = TokenList;
-                            cmbFardTokenNo.DisplayMember = "TokenNo";
-                            cmbFardTokenNo.ValueMember = "TokenId";
-                            cmbFardTokenNo.SelectedIndex = 0;
-
+                            if (TokenList != null)
+                            {
+                                DataRow Token = TokenList.NewRow();
+                                Token["TokenId"] = "0";
+                                Token["TokenNo"] = " - ٹوکن نمبر - ";
+                                TokenList.Rows.InsertAt(Token, 0);
+                                cmbFardTokenNo.DataSource = TokenList;
+                                cmbFardTokenNo.DisplayMember = "TokenNo";
+                                cmbFardTokenNo.ValueMember = "TokenId";
+                                cmbFardTokenNo.SelectedIndex = 0;
+                            }
                         }
                         //,,,,,,,,,,,,,,,,,,,end,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 

@@ -9,7 +9,7 @@ namespace SDC_Application.BL
 {
     class KhatooniesZerekar
     {
-        Database dbobject = new Database();
+        DatabaseZerekar dbobject = new DatabaseZerekar();
         public DataTable Get_KhataJatbyMozaId(string MozaId, string registerId)
         {
             string spWithParam = "Proc_Get_Moza_Register_KhataJat " + SDC_Application.Classess.UsersManagments._Tehsilid.ToString() + ", " + MozaId + "," + registerId + "";

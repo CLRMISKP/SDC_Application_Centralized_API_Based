@@ -419,6 +419,7 @@ namespace SDC_Application
             this.mnuNonAdminInitqalRptBoRFormat.Visible = isMenuVisible("mnuNonAdminInitqalRptBoRFormat");
             this.mnuSubInitqalEntryByOperatorNonAdmin.Visible=isMenuVisible("mnuSubInitqalEntryByOperatorNonAdmin");
             this.mnuFardBadarEntryRptNonAdmin.Visible = isMenuVisible("mnuFardBadarEntryRptNonAdmin");
+            this.mnuSearchOwnerBySDC.Visible = isMenuVisible("mnuSearchOwnerBySDC");
             //this.mnuSubUnAttestedMutOPM.Visible = isMenuVisible("Mutation_UnAttested_dem"); IntiqalBoimetricCapturedNotAttestedReport
             this.mnuRhz_ChangeAdminDashboard.Visible = UsersManagments._IsAdmin;
             mnuReports.Visible = UsersManagments._IsAdmin;
@@ -1979,17 +1980,7 @@ namespace SDC_Application
 
         private void mnuRHZreport_Click(object sender, EventArgs e)
         {
-            bool isOpen = IsFrmOpen("RHZ");
-
-            if (!isOpen)
-            {
-
-                //UsersManagments.check = 2;
-                //RHZ obj = new RHZ();
-                //obj.MdiParent = this;
-                //obj.WindowState = this.WindowState;
-                //obj.Show();
-            }
+            
             
             
         }
@@ -2678,6 +2669,92 @@ namespace SDC_Application
                 obj.Show();
             }
         }
-     
+
+        private void mnuJamabandiPrint_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("RHZ");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                //RHZ obj = new RHZ();
+                //obj.MdiParent = this;
+                //obj.WindowState = this.WindowState;
+                //obj.Show();
+            }
+        }
+
+        private void mnuIndexKhassra_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 87;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuIndexRadeefwar_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 88;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuSearchOwnerBySDC_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 89;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
+
+        private void mnuAllMutWithDetails_Click(object sender, EventArgs e)
+        {
+            bool isOpen = IsFrmOpen("frmSDCReportingMain");
+
+            if (!isOpen)
+            {
+
+                //UsersManagments.check = 2;
+                frmSDCReportingMain obj = new frmSDCReportingMain();
+                UsersManagments.check = 86;
+                obj.Tehsilid = UsersManagments._Tehsilid.ToString();
+                obj.SubSdcId = UsersManagments.SubSdcId.ToString();
+                obj.MdiParent = this;
+                obj.WindowState = this.WindowState;
+                obj.Show();
+            }
+        }
     }
 }

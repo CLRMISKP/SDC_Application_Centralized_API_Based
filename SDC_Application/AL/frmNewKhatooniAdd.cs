@@ -93,7 +93,7 @@ namespace SDC_Application.AL
                         string KhatooniKashtkaranFullDetail_New = row.Cells["KhatooniKashtkaranFullDetail_New"].Value.ToString(); ; ;
                         string Wasail_e_Abpashi = row.Cells["Wasail_e_Abpashi"].Value.ToString();
                         string KhatooniLagan = row.Cells["KhatooniLagan"].Value.ToString();
-                        string khatoniid = this.taqseem.WEB_SP_INSERT_KhatooniRegister(KhatooniId, KhatooniNo, KhatooniKashtkaranFullDetail_New, RegisterHaqKhataID, Wasail_e_Abpashi, KhatooniLagan, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
+                        string khatoniid = this.taqseem.WEB_SP_INSERT_KhatooniRegister(KhatooniId, KhatooniNo, KhatooniKashtkaranFullDetail_New, MinKhataId, Wasail_e_Abpashi, KhatooniLagan, UsersManagments.UserId.ToString(), UsersManagments.UserName.ToString());
                     }
                 }
                 MessageBox.Show("کھتونی محفوظ ہوگیے", "کھتونی", MessageBoxButtons.OK, MessageBoxIcon.Information);

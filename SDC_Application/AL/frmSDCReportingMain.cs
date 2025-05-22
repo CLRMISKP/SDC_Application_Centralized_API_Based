@@ -880,7 +880,39 @@ namespace SDC_Application.AL
                     this.SetCredentials("Entered_Mutation_After_Operationalization", rp, false);
 
                 }
+            if (UsersManagments.check == 86) //Registry Fardat for Registrar Report //IntiqalAllImplementedPendingManualSdc
+            {
+                ReportParameter[] rp = new ReportParameter[2];
+                rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                this.SetCredentials("IntiqalAllImplementedPendingManualSdc", rp, false);
+
             }
+            if (UsersManagments.check == 87) //Registry Fardat for Registrar Report //IntiqalAllImplementedPendingManualSdc
+            {
+                ReportParameter[] rp = new ReportParameter[2];
+                rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                this.SetCredentials("IndexKhassra", rp, false);
+
+            }
+            if (UsersManagments.check == 88) //Registry Fardat for Registrar Report //IntiqalAllImplementedPendingManualSdc
+            {
+                ReportParameter[] rp = new ReportParameter[2];
+                rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                this.SetCredentials("IndexRadeefWar", rp, false);
+
+            }
+            if (UsersManagments.check == 89) //Registry Fardat for Registrar Report //IntiqalAllImplementedPendingManualSdc
+            {
+                ReportParameter[] rp = new ReportParameter[2];
+                rp[0] = new ReportParameter("TehsilId", UsersManagments._Tehsilid.ToString());
+                rp[1] = new ReportParameter("SubSdcId", UsersManagments.SubSdcId.ToString());
+                this.SetCredentials("Malkan_Search_By_Tehsil", rp, false);
+
+            }
+        }
 
         }
     

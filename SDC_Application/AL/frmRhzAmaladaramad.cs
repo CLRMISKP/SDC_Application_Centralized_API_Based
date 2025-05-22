@@ -151,32 +151,39 @@ namespace SDC_Application.AL
         private void LoadKhewatFareeqainMeezan(string KhataId)        {
             
             DataTable dtKhewatFareeqainMeezan = khatooni.GetKhewatFareeqainMeezan(KhataId);
-            foreach (DataRow row in dtKhewatFareeqainMeezan.Rows)
+            if (dtKhewatFareeqainMeezan != null)
             {
-                this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
-                this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
-                //this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
-                //this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
-                //decimal KhataHissas, malikanhissas;
-                //Decimal.TryParse(this.txtKhataMeezanKhewatFareeqainHissay.Text, System.Globalization.NumberStyles.Float, null, out malikanhissas);
-                //Decimal.TryParse(txtKhataMeezanKulHissay.Text, System.Globalization.NumberStyles.Float, null, out KhataHissas);
-
-                double KhataSQFT = (double.Parse(txtKhataKanal.Text) * 20 * (double)272.25) + (double.Parse(txtKhataMarla.Text) * (double)272.25) + double.Parse(txtKhataSFT.Text);
-                double differenceInSQFT = KhataSQFT / double.Parse(txtKhataMeezanKulHissay.Text) * Math.Abs(double.Parse(txtKhataMeezanKhewatFareeqainHissay.Text) - double.Parse(txtKhataMeezanKulHissay.Text)); // Calculate Raqba Difference
-              
-               // if (Math.Round(malikanhissas, 4) != Math.Round(KhataHissas, 4))
-                if (Math.Round(differenceInSQFT, 0) >= 30  )
+                foreach (DataRow row in dtKhewatFareeqainMeezan.Rows)
                 {
-                    txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.Red;
-                    txtKhataMeezanKhewatFareeqainHissay.ForeColor = Color.White;
-                }
-                else 
-                { 
-                    txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White;
-                    txtKhataMeezanKhewatFareeqainHissay.ForeColor = Color.Black;
+                    this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
+                    this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
+                    //this.txtKhataMeezanKhewatFareeqainHissay.Text = row["TotalHissa"].ToString();
+                    //this.txtKhataMeezanKhewatFareeqainRaqba.Text = row["TotalRaqba"].ToString();
+                    //decimal KhataHissas, malikanhissas;
+                    //Decimal.TryParse(this.txtKhataMeezanKhewatFareeqainHissay.Text, System.Globalization.NumberStyles.Float, null, out malikanhissas);
+                    //Decimal.TryParse(txtKhataMeezanKulHissay.Text, System.Globalization.NumberStyles.Float, null, out KhataHissas);
+
+                    double KhataSQFT = (double.Parse(txtKhataKanal.Text) * 20 * (double)272.25) + (double.Parse(txtKhataMarla.Text) * (double)272.25) + double.Parse(txtKhataSFT.Text);
+                    double differenceInSQFT = KhataSQFT / double.Parse(txtKhataMeezanKulHissay.Text) * Math.Abs(double.Parse(txtKhataMeezanKhewatFareeqainHissay.Text) - double.Parse(txtKhataMeezanKulHissay.Text)); // Calculate Raqba Difference
+
+                    // if (Math.Round(malikanhissas, 4) != Math.Round(KhataHissas, 4))
+                    if (Math.Round(differenceInSQFT, 0) >= 30)
+                    {
+                        txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.Red;
+                        txtKhataMeezanKhewatFareeqainHissay.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        txtKhataMeezanKhewatFareeqainHissay.BackColor = Color.White;
+                        txtKhataMeezanKhewatFareeqainHissay.ForeColor = Color.Black;
+                    }
                 }
             }
-
+            else
+            {
+                this.txtKhataMeezanKhewatFareeqainHissay.Text = "0";
+                this.txtKhataMeezanKhewatFareeqainRaqba.Text = "0-0-0";
+            }
             txtKhataMeezanKhassraRaqba.Text=intiqal.GetKhassraTotalRaqbaByKhattaId(KhataId);
         }
 
@@ -987,7 +994,7 @@ namespace SDC_Application.AL
             {
                 if (chkKhewatFareeqLock.Checked)
                 {
-                    khatooni.SaveKhewatGroupFareeqainLock(txtKhewatGroupFareeqId.Text, txtKhewatFareeqLockDetails.Text, "1");
+                    khatooni.SaveKhewatGroupFareeqainLock(txtKhewatGroupFareeqId.Text, txtKhewatFareeqLockDetails.Text, "True");
                     MessageBox.Show("ریکارڈ لاک ہو گیا ہے۔");
                     this.txtKhewatFareeqLockDetails.Clear();
                     this.txtKhewatGroupFareeqId.Clear();
@@ -997,7 +1004,7 @@ namespace SDC_Application.AL
                 }
                 else
                 {
-                    khatooni.SaveKhewatGroupFareeqainLock(txtKhewatGroupFareeqId.Text, txtKhewatFareeqLockDetails.Text, "0");
+                    khatooni.SaveKhewatGroupFareeqainLock(txtKhewatGroupFareeqId.Text, txtKhewatFareeqLockDetails.Text, "False");
                     MessageBox.Show("ریکارڈ انلاک ہو گیا ہے۔");
                     this.txtKhewatFareeqLockDetails.Clear();
                     this.txtKhewatGroupFareeqId.Clear();

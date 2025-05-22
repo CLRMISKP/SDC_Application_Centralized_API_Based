@@ -3067,7 +3067,13 @@ namespace SDC_Application.AL
                 {
                     if (MessageBox.Show(" کیا آپ حذف کرنا چاہتے ہیں:::::", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Intiqal.DeleteIntiqalBuyer(ByerKhataRecId);
+                        foreach(DataGridViewRow row in GridBuyersList.Rows)
+                        {
+                            if (row.Selected)
+                            {
+                                Intiqal.DeleteIntiqalBuyer(row.Cells["IntiqalBuyerRecId"].Value.ToString());
+                            }
+                        }
                         txthiddenBuyerRecId.Text = "-1";
                         CalculateSellerBuyerRaqbaHissa();
                         //FillgridByBuyerList();

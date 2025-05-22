@@ -990,12 +990,12 @@ namespace SDC_Application.AL
             {
                 try
                 {
-                    if (rbKhewatMalikCurrent.Checked)
+                    if (rbKhatooniMalikCurrent.Checked)
                     {
                         string status = rhz.UpdateKhatooniMalikRecStatus(txtMushteriFareeqId.Text, rbKhatooniMalikCurrent.Checked ? "1" : "0");
                         MessageBox.Show("انتخاب کردہ مالک کی حیثیت تبدیل ہو چکا ہے۔");
                     }
-                    else if (rbKhewatMalikPrevious.Checked)
+                    else if (rbKhatooniMalikPrevious.Checked)
                     {
                         string status = rhz.UpdateKhatooniMalikRecStatus(txtMushteriFareeqId.Text, rbKhatooniMalikCurrent.Checked ? "1" : "0");
                         MessageBox.Show("انتخاب کردہ مالک کی حیثیت تبدیل ہو چکا ہے۔");

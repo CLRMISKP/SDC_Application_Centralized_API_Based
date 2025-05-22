@@ -3,60 +3,92 @@
   "WorkspaceRootPath": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized_api_based\\sdc_application\\al\\frmtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized_api_based\\sdc_application\\al\\frmtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized_api_based\\sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized_api_based\\sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|d:\\office data\\land system\\sdc_application_centralized_api_based\\sdc_application\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\userroldefination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\userroldefination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\userroldefination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\userroldefination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsdcreportingmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmfardebadarmanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmfardebadarmanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\classess\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\classess\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmfardebadarmanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmfardebadarmanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmsubsdcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmsubsdcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmfardebadar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmfardebadar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmshortfard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmshortfard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmfardebadar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmfardebadar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmshortfard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmshortfard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmusermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmusermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmusermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmusermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmintiqalkhattajat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmintiqalkhattajat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmintiqalkhattajat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmintiqalkhattajat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmrhzsdcediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmrhzsdcediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmrhzsdcediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmrhzsdcediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmtestmalkanselcintiqalwirasath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmtestmalkanselcintiqalwirasath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmtestmalkanselcintiqalwirasath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmtestmalkanselcintiqalwirasath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmrhzamaladaramad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmrhzamaladaramad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmrhzamaladaramad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmrhzamaladaramad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmnewkhatooniadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmnewkhatooniadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmnewkhatooniadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmnewkhatooniadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmadminpendingtaskdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,14 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\al\\frmadminpendingtaskdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\al\\frmadminpendingtaskdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\bl\\intiqal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\bl\\intiqal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\sdc_application\\dl\\databasezerekar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E022551F-2302-475B-9531-5BB65E0A386E}|SDC_Application\\SDC_Application.csproj|solutionrelative:sdc_application\\dl\\databasezerekar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,32 +106,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmToken.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmToken.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmToken.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmToken.cs",
-              "RelativeToolTip": "SDC_Application\\AL\\frmToken.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAnwF8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T09:04:40.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmToken.cs [Design]",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmToken.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmToken.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmToken.cs [Design]",
-              "RelativeToolTip": "SDC_Application\\AL\\frmToken.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T09:04:36.696Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -117,10 +120,9 @@
               "RelativeDocumentMoniker": "SDC_Application\\AL\\frmSDCReportingMain.cs",
               "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSDCReportingMain.cs",
               "RelativeToolTip": "SDC_Application\\AL\\frmSDCReportingMain.cs",
-              "ViewState": "AgIAAN4CAAAAAAAAAAAEwPACAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAHEDAAAAAAAAAAAAAJEDAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:31:02.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T19:18:44.48Z"
             },
             {
               "$type": "Document",
@@ -131,175 +133,264 @@
               "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSDCReportingMain.cs [Design]",
               "RelativeToolTip": "SDC_Application\\AL\\frmSDCReportingMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:31:00.906Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-22T19:18:42.711Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserRolDefination.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\UserRolDefination.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\UserRolDefination.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\UserRolDefination.cs",
-              "RelativeToolTip": "SDC_Application\\AL\\UserRolDefination.cs",
-              "ViewState": "AgIAACEBAAAAAAAAAADwvzIBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T19:10:52.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserRolDefination.cs [Design]",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\UserRolDefination.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\UserRolDefination.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\UserRolDefination.cs [Design]",
-              "RelativeToolTip": "SDC_Application\\AL\\UserRolDefination.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T19:10:48.484Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "frmMain.cs",
               "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\frmMain.cs",
               "RelativeDocumentMoniker": "SDC_Application\\frmMain.cs",
               "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\frmMain.cs",
               "RelativeToolTip": "SDC_Application\\frmMain.cs",
-              "ViewState": "AgIAAMkJAAAAAAAAAADgv9sJAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAJABAAAAAAAAAAAQwKUBAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T11:34:35.24Z",
+              "WhenOpened": "2025-05-22T19:14:30.547Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmSearch.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSearch.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmSearch.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSearch.cs",
-              "RelativeToolTip": "SDC_Application\\AL\\frmSearch.cs",
-              "ViewState": "AgIAAFEBAAAAAAAAAAAowFYAAADrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T11:57:33.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmSearch.cs [Design]",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSearch.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmSearch.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSearch.cs [Design]",
-              "RelativeToolTip": "SDC_Application\\AL\\frmSearch.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T11:57:31.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\frmMain.cs",
               "RelativeDocumentMoniker": "SDC_Application\\frmMain.cs",
               "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\frmMain.cs [Design]",
               "RelativeToolTip": "SDC_Application\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T11:33:02.59Z",
+              "WhenOpened": "2025-05-22T19:12:31.251Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frmSubSdcs.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSubSdcs.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmSubSdcs.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmSubSdcs.cs",
-              "RelativeToolTip": "SDC_Application\\AL\\frmSubSdcs.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAMwDIAAAA1AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "app.config",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\app.config",
+              "RelativeDocumentMoniker": "SDC_Application\\app.config",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\app.config",
+              "RelativeToolTip": "SDC_Application\\app.config",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-22T10:31:02.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmFardeBadarManual.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadarManual.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmFardeBadarManual.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadarManual.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmFardeBadarManual.cs",
+              "ViewState": "AgIAAO4NAAAAAAAAAAAQwFsOAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T11:14:49.908Z"
+              "WhenOpened": "2025-05-22T10:30:13.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmFardeBadarManual.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadarManual.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmFardeBadarManual.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadarManual.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmFardeBadarManual.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:30:09.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmUserManagement.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmUserManagement.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmUserManagement.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmUserManagement.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmUserManagement.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAYwFYAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:48:01.412Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "APIClient.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\Classess\\APIClient.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\Classess\\APIClient.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\Classess\\APIClient.cs",
-              "RelativeToolTip": "SDC_Application\\Classess\\APIClient.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAwNEAAAAQAAAAAAAAAA==",
+              "Title": "frmUserManagement.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmUserManagement.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmUserManagement.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmUserManagement.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmUserManagement.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:13:12.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frmShortFard.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmShortFard.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmShortFard.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmShortFard.cs",
-              "RelativeToolTip": "SDC_Application\\AL\\frmShortFard.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAwAkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T16:24:34.721Z"
+              "WhenOpened": "2025-05-22T06:47:59.273Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "frmShortFard.cs [Design]",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmShortFard.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmShortFard.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmShortFard.cs [Design]",
-              "RelativeToolTip": "SDC_Application\\AL\\frmShortFard.cs [Design]",
+              "Title": "frmRhzSDCEditing.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzSDCEditing.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmRhzSDCEditing.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzSDCEditing.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmRhzSDCEditing.cs",
+              "ViewState": "AgIAAJ8EAAAAAAAAAAASwKsEAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T16:24:29.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Intiqal.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\BL\\Intiqal.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\BL\\Intiqal.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\BL\\Intiqal.cs",
-              "RelativeToolTip": "SDC_Application\\BL\\Intiqal.cs",
-              "ViewState": "AgIAAJAHAAAAAAAAAAAswKoHAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T14:07:22.792Z"
+              "WhenOpened": "2025-05-21T08:13:02.714Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "frmRhzSDCEditing.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzSDCEditing.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmRhzSDCEditing.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzSDCEditing.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmRhzSDCEditing.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:12:54.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frmTestMalkanSelcIntiqalWirasath.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAAAjwP8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:51:22.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmTestMalkanSelcIntiqalWirasath.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmTestMalkanSelcIntiqalWirasath.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:51:18.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmIntiqalKhattaJat.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmIntiqalKhattaJat.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmIntiqalKhattaJat.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmIntiqalKhattaJat.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmIntiqalKhattaJat.cs",
+              "ViewState": "AgIAAOMLAAAAAAAAAAAmwAUMAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:50:59.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmIntiqalKhattaJat.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmIntiqalKhattaJat.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmIntiqalKhattaJat.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmIntiqalKhattaJat.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmIntiqalKhattaJat.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:50:49.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "frmToken.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmToken.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmToken.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmToken.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmToken.cs",
+              "ViewState": "AgIAAGMEAAAAAAAAAAAAAGIEAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:58:00.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "frmRhzAmaladaramad.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzAmaladaramad.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmRhzAmaladaramad.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzAmaladaramad.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmRhzAmaladaramad.cs",
+              "ViewState": "AgIAANUDAAAAAAAAAAAjwOQDAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:39:24.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmRhzAmaladaramad.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzAmaladaramad.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmRhzAmaladaramad.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmRhzAmaladaramad.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmRhzAmaladaramad.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:42:27.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "frmNewKhatooniAdd.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmNewKhatooniAdd.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmNewKhatooniAdd.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmNewKhatooniAdd.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmNewKhatooniAdd.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAFQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:31:21.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "frmNewKhatooniAdd.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmNewKhatooniAdd.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmNewKhatooniAdd.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmNewKhatooniAdd.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmNewKhatooniAdd.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:31:18.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmFardeBadar.cs",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadar.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmFardeBadar.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadar.cs",
+              "RelativeToolTip": "SDC_Application\\AL\\frmFardeBadar.cs",
+              "ViewState": "AgIAACYPAAAAAAAAAAAawFkPAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:30:20.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmFardeBadar.cs [Design]",
+              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadar.cs",
+              "RelativeDocumentMoniker": "SDC_Application\\AL\\frmFardeBadar.cs",
+              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmFardeBadar.cs [Design]",
+              "RelativeToolTip": "SDC_Application\\AL\\frmFardeBadar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T18:30:14.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "frmAdminPendingTaskDashboard.cs",
               "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs",
               "RelativeDocumentMoniker": "SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs",
               "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs",
               "RelativeToolTip": "SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs",
-              "ViewState": "AgIAAMAEAAAAAAAAAAAAAOQEAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAPcDAAAAAAAAAAAAADIEAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T14:03:54.901Z"
+              "WhenOpened": "2025-05-18T12:18:54.7Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "frmAdminPendingTaskDashboard.cs [Design]",
               "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs",
               "RelativeDocumentMoniker": "SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs",
               "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs [Design]",
               "RelativeToolTip": "SDC_Application\\AL\\frmAdminPendingTaskDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T14:01:35.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DatabaseZerekar.cs",
-              "DocumentMoniker": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\DL\\DatabaseZerekar.cs",
-              "RelativeDocumentMoniker": "SDC_Application\\DL\\DatabaseZerekar.cs",
-              "ToolTip": "D:\\Office Data\\Land System\\SDC_Application_Centralized_Api_Based\\SDC_Application\\DL\\DatabaseZerekar.cs",
-              "RelativeToolTip": "SDC_Application\\DL\\DatabaseZerekar.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T18:26:10.747Z"
+              "WhenOpened": "2025-05-18T12:18:48.178Z"
             }
           ]
         }

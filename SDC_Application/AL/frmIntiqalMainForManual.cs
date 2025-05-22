@@ -483,7 +483,7 @@ namespace SDC_Application.AL
                             this.btnCancel.Enabled = false;
                             this.btnCancel.Visible = false;
                         }
-                        if (data["IntiqalPending"].ToString() == "True")
+                        if (data["IntiqalPending"].ToString() == "true")
                         {
                             this.chkPendingIntiqal.Checked = true;
                             //this.groupBox7.Enabled = false;
